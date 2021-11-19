@@ -4,6 +4,6 @@ module.exports = {
   images: {
     domains: ["franzbendezu.me"],
     loader: "imgix",
-    path: "https://noop/",
+    path: "https://franzbendezu.me/",
   },
 };
