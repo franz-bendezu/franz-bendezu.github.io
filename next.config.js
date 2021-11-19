@@ -2,6 +2,8 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['franzbendezu.me'],
+    domains: ["franzbendezu.me"],
+    loader: "imgix",
+    path: "https://noop/",
   },
-}
+};
