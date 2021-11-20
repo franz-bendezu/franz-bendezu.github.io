@@ -4,7 +4,7 @@ import React, { PropsWithChildren } from "react";
 
 export { NavLink };
 
-interface NavLinkProps extends PropsWithChildren<any> {
+interface NavLinkProps{
   href: string;
   className?: string;
   activeClass?: string;
@@ -16,7 +16,7 @@ const defaultProps: NavLinkProps = {
   href: "",
 };
 
-const NavLink = (props: NavLinkProps) => {
+const NavLink: React.FC<NavLinkProps> = (props) => {
   const { href, exact, children, activeClass, className } = props;
   const { pathname } = useRouter();
   const isActive = exact ? pathname === href : pathname.startsWith(href);
@@ -25,7 +25,7 @@ const NavLink = (props: NavLinkProps) => {
   }`;
   return (
     <Link href={href}>
-      <a className={currentClass} {...props}>
+      <a className={currentClass} >
         {children}{" "}
         {isActive && (
           <svg
