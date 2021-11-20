@@ -9,12 +9,12 @@ const About: React.FC = () => {
         <div className="lg:px-4 lg:mt-12 ">
           <div className="mt-6 text-gray-800 dark:text-white">
             <p className="mb-4">
-              Undergraduate student of the Systems Engineering career at the
-              National University of Engineering. Passionate about technology, I
-              enjoy knowing and using new tools that allow me to solve problems
-              in an optimal and efficient way according to the cases that come
-              my way. I believe that you should always be in constant learning
-              and I like to share the knowledge that I have acquired.
+            Estudiante de pregrado de la carrera de Ingeniería de Sistemas en la
+               Universidad Nacional de Ingeniería. Apasionado de la tecnología, yo
+               disfruto conociendo y usando nuevas herramientas que me permitan resolver problemas
+               de forma óptima y eficiente según los casos que vengan
+               a mi manera. Creo que siempre debes estar en constante aprendizaje.
+               y me gusta compartir los conocimientos que he adquirido.
             </p>
           </div>
         </div>
