@@ -1,10 +1,14 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
 
-const Container: React.FC = ({ children, ...customMeta }) => {
+type Props = {
+  children: ReactNode;
+};
+
+const Container: React.FC<Props> = ({ children, ...customMeta }) => {
   const router = useRouter();
   interface IMeta {
     image: string;
