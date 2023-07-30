@@ -4,30 +4,42 @@ import profile from "../../public/profile.jpeg";
 
 const HomePresentation: React.FC = () => {
   return (
-
     <div className="lg:space-x-5 lg:flex lg:flex-row item-center lg:-mx-4 flex flex-col-reverse text-center lg:text-left">
       <div className="lg:px-4 lg:mt-12">
         <div className="mt-6">
           <h1 className="text-md font-semibold">Hola, soy</h1>
           <h1 className="text-4xl mb-2 font-semibold">Franz Bendezu Isidro</h1>
           <h2 className="text-3xl mb-2 font-semibold">
-            Desarrollador de <span className="
+            Desarrollador de{" "}
+            <span
+              className="
                 bg-blue-400
                 dark:bg-blue-500
-                 px-1">Software</span>
+                 px-1"
+            >
+              Software
+            </span>
           </h2>
           <p className="mb-4 text-lg">
             Disfruto crear soluciones que simplifican la vida de las personas,
-            optimizando cada paso del proceso para entregar
-            resultados <span
+            optimizando cada paso del proceso para entregar resultados{" "}
+            <span
               className="bg-green-300
                 dark:bg-green-500
-                   px-1">eficientes</span> y de alta <span
+                   px-1"
+            >
+              eficientes
+            </span>{" "}
+            y de alta{" "}
+            <span
               className="bg-gray-300 
                 dark:bg-gray-500
-                  px-1">calidad</span>.
+                  px-1"
+            >
+              calidad
+            </span>
+            .
           </p>
-
         </div>
       </div>
       <div className="flex-shrink-0 lg:mt-12 lg:px-4 mb-10">
@@ -42,7 +54,6 @@ const HomePresentation: React.FC = () => {
         />
       </div>
     </div>
-
   );
 };
 

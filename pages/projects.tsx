@@ -1,6 +1,6 @@
-import { NextPage } from "next"
+import { NextPage } from "next";
 
 const Projects: NextPage = () => {
-    return (<div></div>)
-}
-export default Projects
+  return <div></div>;
+};
+export default Projects;
