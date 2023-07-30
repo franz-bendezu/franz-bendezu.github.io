@@ -18,7 +18,13 @@ function MyApp({ Component, pageProps }: AppProps) {
         <div className="  bg-white dark:bg-black flex flex-col min-h-screen">
           <Navbar />
           <main className=" flex-grow bg-white dark:bg-gray-900 justify-center text-center align-middle" >
-            <Component {...pageProps} />
+            <div className="space-y-14 lg:space-y-24 ">
+              <div className="container mx-auto px-4 py-8">
+                <div className="max-w-4xl mx-auto antialiased">
+                  <Component {...pageProps} />
+                </div>
+              </div>
+            </div>
           </main>
           <Footer />
         </div>
