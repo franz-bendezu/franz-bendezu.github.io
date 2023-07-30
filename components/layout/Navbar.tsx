@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import React, { Fragment, useState } from "react";
 import ThemeSwitch from "../ThemeSwtich";
 import NavLink from "./NavLink";
-import { MenuIcon, XIcon } from "@heroicons/react/solid";
+import { Bars4Icon } from "@heroicons/react/20/solid";
 import { Menu, Popover, Transition } from "@headlessui/react";
 
 const Navigation: React.FC = () => {
@@ -70,7 +70,7 @@ const Navigation: React.FC = () => {
               focus:outline-none  "
               >
                 <span className="sr-only">Open main menu</span>
-                <MenuIcon className="h-6 w-6" aria-hidden="true" />
+                <Bars4Icon className="h-6 w-6" aria-hidden="true" />
               </Menu.Button>
             </div>
 
