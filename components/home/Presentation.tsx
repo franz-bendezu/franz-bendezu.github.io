@@ -18,7 +18,7 @@ const HomePresentation: React.FC = () => {
                  px-1">Software</span>
               </h2>
               <p className="mb-4 text-lg">
-                Disfruto creando soluciones que simplifican la vida de las personas,
+                Disfruto crear soluciones que simplifican la vida de las personas,
                 optimizando cada paso del proceso para entregar
                 resultados <span
                   className="bg-green-300
