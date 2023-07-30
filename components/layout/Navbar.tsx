@@ -5,32 +5,12 @@ import ThemeSwitch from "../ThemeSwtich";
 import NavLink from "./NavLink";
 import { Bars4Icon } from "@heroicons/react/20/solid";
 import { Menu, Popover, Transition } from "@headlessui/react";
+import { ROUTES_NAVBAR } from "../../constants/navbar";
 
 const Navigation: React.FC = () => {
   const router = useRouter();
   const [navbarOpen, setNavbarOpen] = useState(false);
-  const [routes] = useState([
-    {
-      title: "Inicio",
-      path: "/",
-      exact: true,
-    },
-    {
-      title: "Proyectos",
-      path: "/projects",
-      exact: true,
-    },
-    {
-      title: "Experiencia",
-      path: "/experience",
-      exact: true,
-    },
-    {
-      title: "Contacto",
-      path: "/contact",
-      exact: true,
-    },
-  ]);
+  const [routes] = useState(ROUTES_NAVBAR);
 
   return (
     <nav className="sticky top-0 z-20 py-2 bg-white md:py-6  dark:bg-gray-900 backdrop-filter backdrop-blur-lg !bg-opacity-30">
