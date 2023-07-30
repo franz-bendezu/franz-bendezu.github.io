@@ -33,7 +33,7 @@ const Navigation: React.FC = () => {
   ]);
 
   return (
-    <nav className="sticky top-0 z-20 py-2 bg-white md:py-6  dark:bg-black">
+    <nav className="sticky top-0 z-20 py-2 bg-white md:py-6  dark:bg-gray-900 backdrop-filter backdrop-blur-lg !bg-opacity-30">
       <div className="container px-4 mx-auto lg:max-w-4xl flex items-center justify-between">
         <Link
           href="/"
