@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { Fragment, useState } from "react";
-import ThemeSwitch from "../ThemeSwtich";
+import ThemeSwitch from "../ui/ThemeSwtich";
 import NavLink from "./NavLink";
 import { Bars4Icon } from "@heroicons/react/20/solid";
 import { Menu, Popover, Transition } from "@headlessui/react";
