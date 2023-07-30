@@ -12,5 +12,6 @@ module.exports = {
         pathname: '/image/upload/**',
       },
     ],
+    unoptimized: true,
   },
 };
