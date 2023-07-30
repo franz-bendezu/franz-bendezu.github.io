@@ -9,7 +9,7 @@ interface NavLinkProps {
   className?: string;
   activeClass?: string;
   exact?: boolean;
-  children: ReactNode
+  children: ReactNode;
 }
 const defaultProps: Partial<NavLinkProps> = {
   exact: false,
