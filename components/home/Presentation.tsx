@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import profile from "../public/profile.jpeg";
+import profile from "../../public/profile.jpeg";
 
-const About: React.FC = () => {
+const HomePresentation: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-4xl mx-auto">
@@ -48,4 +48,4 @@ const About: React.FC = () => {
   );
 };
 
-export default About;
+export default HomePresentation;
