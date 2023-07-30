@@ -13,7 +13,7 @@ const Navigation: React.FC = () => {
   const [routes] = useState(ROUTES_NAVBAR);
 
   return (
-    <nav className="sticky top-0 z-20 py-2 bg-white md:py-6  dark:bg-gray-900 backdrop-filter backdrop-blur-lg !bg-opacity-30">
+    <nav className="sticky top-0 z-20 py-2 bg-white md:py-6 border-b-[1px] border-slate-700/90  dark:bg-gray-900 backdrop-filter backdrop-blur-lg !bg-opacity-30">
       <div className="container px-4 mx-auto lg:max-w-4xl flex items-center justify-between">
         <Link
           href="/"
