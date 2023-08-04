@@ -9,12 +9,12 @@ const Navigation: React.FC = () => {
   const [routes] = useState(ROUTES_NAVBAR);
 
   return (
-    <nav className="sticky top-0 z-20 py-2 bg-white md:py-6 border-b-[1px] border-slate-700/90  dark:bg-gray-900 backdrop-filter backdrop-blur-lg !bg-opacity-30">
-      <div className="container px-4 mx-auto lg:max-w-4xl flex items-center justify-between">
+    <nav className="sticky top-0 z-20 border-b-[1px] border-slate-700/90 bg-white !bg-opacity-30 py-2  backdrop-blur-lg backdrop-filter dark:bg-gray-900 md:py-6">
+      <div className="container mx-auto flex items-center justify-between px-4 lg:max-w-4xl">
         <Link
           href="/"
           className={
-            "font-medium tracking-wider transition-colors text-gray-900 hover:text-sky-500 uppercase dark:text-white"
+            "font-medium uppercase tracking-wider text-gray-900 transition-colors hover:text-sky-500 dark:text-white"
           }
         >
           Franz Bendezu

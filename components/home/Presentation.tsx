@@ -4,18 +4,18 @@ import profile from "../../public/profile.jpeg";
 
 const HomePresentation: React.FC = () => {
   return (
-    <div className="lg:space-x-5 lg:flex lg:flex-row item-center lg:-mx-4 flex flex-col-reverse text-center lg:text-left">
-      <div className="lg:px-4 lg:mt-12">
+    <div className="item-center flex flex-col-reverse text-center lg:-mx-4 lg:flex lg:flex-row lg:space-x-5 lg:text-left">
+      <div className="lg:mt-12 lg:px-4">
         <div className="mt-6">
           <h1 className="text-md font-semibold">Hola, soy</h1>
-          <h1 className="text-4xl mb-2 font-semibold">Franz Bendezu Isidro</h1>
-          <h2 className="text-3xl mb-2 font-semibold">
+          <h1 className="mb-2 text-4xl font-semibold">Franz Bendezu Isidro</h1>
+          <h2 className="mb-2 text-3xl font-semibold">
             Desarrollador de{" "}
             <span
               className="
                 bg-blue-400
-                dark:bg-blue-500
-                 px-1"
+                px-1
+                 dark:bg-blue-500"
             >
               Software
             </span>
@@ -25,16 +25,16 @@ const HomePresentation: React.FC = () => {
             optimizando cada paso del proceso para entregar resultados{" "}
             <span
               className="bg-green-300
-                dark:bg-green-500
-                   px-1"
+                px-1
+                   dark:bg-green-500"
             >
               eficientes
             </span>{" "}
             y de alta{" "}
             <span
               className="bg-gray-300 
-                dark:bg-gray-500
-                  px-1"
+                px-1
+                  dark:bg-gray-500"
             >
               calidad
             </span>
@@ -42,12 +42,12 @@ const HomePresentation: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="flex-shrink-0 lg:mt-12 lg:px-4 mb-10">
+      <div className="mb-10 flex-shrink-0 lg:mt-12 lg:px-4">
         <Image
           src={profile}
           alt="Profile"
           priority={true}
-          className="rounded-full mx-auto"
+          className="mx-auto rounded-full"
           width={250}
           height={250}
           placeholder="blur"
