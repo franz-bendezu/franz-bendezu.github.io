@@ -1,10 +1,8 @@
 export type ProjectCategoryCodes = "freelance" | "personal" | "demo";
 
-export interface IProjectCategory<
-  T extends string = ProjectCategoryCodes,
-> {
+export interface IProjectCategory {
   name: string;
-  value: T;
+  value: ProjectCategoryCodes;
 }
 
 export interface IProject {

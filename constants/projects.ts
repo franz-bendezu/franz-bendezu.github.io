@@ -1,16 +1,9 @@
 import type {
   IProject,
   IProjectCategory,
-  ProjectCategoryCodes,
 } from "../interfaces/project";
 
-export const PROJECT_CATEGORIES: IProjectCategory<
-  ProjectCategoryCodes | "all"
->[] = [
-  {
-    name: "Todos",
-    value: "all",
-  },
+export const PROJECT_CATEGORIES: IProjectCategory[] = [
   {
     name: "Freelance",
     value: "freelance",
