@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import Card from "../components/ui/Card";
 import { PROJECTS } from "../constants/projects";
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
+import ProjectCard from "../components/project/Card";
 
 const Projects: NextPage = () => {
   return (
@@ -15,7 +16,7 @@ const Projects: NextPage = () => {
       <span className="mb-5 h-1 w-32 bg-blue-500"></span>
       <div className="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
         {PROJECTS.map((project) => (
-          <Card
+          <ProjectCard
             key={project.title}
             url={project.link}
             title={project.title}
