@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import Card from "../components/ui/Card";
 import { PROJECTS } from "../constants/projects";
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import ProjectCard from "../components/project/Card";
