@@ -1,14 +1,33 @@
-import type { InferGetStaticPropsType, NextPage } from "next";
-import { PROJECTS, PROJECT_CATEGORIES } from "../../constants/projects";
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
-import ProjectCard from "../../components/project/Card";
+import {
+  GetStaticProps,
+  NextPage,
+  InferGetStaticPropsType,
+  GetStaticPaths,
+} from "next";
+import ProjectCard from "../../../components/project/Card";
+import { PROJECTS, PROJECT_CATEGORIES } from "../../../constants/projects";
+import { IProject } from "../../../interfaces/project";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export const getStaticProps = async () => {
+export const getStaticPaths = (async () => {
+  return {
+    paths: PROJECT_CATEGORIES.map((category) => ({
+      params: { category: category.value },
+    })),
+    fallback: false, // false or "blocking"
+  };
+}) satisfies GetStaticPaths;
+
+export const getStaticProps: GetStaticProps<{
+  projects: IProject[];
+  categories: { name: string; value: string }[];
+}> = async (ctx) => {
+  const category = ctx.params?.category;
   return {
     props: {
-      projects: PROJECTS,
+      projects: PROJECTS.filter((project) => project.categoryCode === category),
       categories: PROJECT_CATEGORIES,
     },
   };
@@ -27,7 +46,7 @@ const ProjectsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
       <h1 className="font-monospace text-3xl dark:text-white lg:text-4xl">
         Proyectos
       </h1>
-      <span className="mb-5 h-1 w-32 bg-blue-500"></span>
+      <span className="mb-5 h-1 w-32 bg-blue-500"></span>{" "}
       <div className="mx-10 flex w-full flex-row flex-wrap items-center  justify-center gap-2">
         <Link
           className={`link ${
