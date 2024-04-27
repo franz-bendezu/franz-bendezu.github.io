@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import { EXPERIENCES } from "../constants/experiences";
+import Card from "../components/ui/Card";
 
 const Projects: NextPage = () => {
   return (
@@ -18,7 +19,7 @@ const Projects: NextPage = () => {
                     <i className="fas fa-check-circle text-white"></i>
                   </div>
                 </div>
-                <article className="animate col-start-4 col-end-12 my-4  mr-auto w-full rounded-xl bg-blue-500 px-4  py-3 shadow-md">
+                <Card className=" col-start-4 col-end-12 my-4 mr-auto w-full bg-blue-500 px-4 py-3">
                   <h3 className="mb-1 text-lg font-semibold">{p.position}</h3>
                   <a
                     href={p.link ?? ""}
@@ -29,14 +30,14 @@ const Projects: NextPage = () => {
                   <div className="mb-4 text-sm uppercase">
                     {p.start} - {p.end}
                   </div>
-                  <div className="text-justify leading-tight pl-3 ">
+                  <div className="pl-3 text-justify leading-tight ">
                     <ul className="prose dark:prose-invert list-disc text-sm">
                       {p.tasks.map((i) => (
                         <li key={i}>{i}</li>
                       ))}
                     </ul>
                   </div>
-                </article>
+                </Card>
               </div>
             ))}
           </div>
