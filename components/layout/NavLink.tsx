@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, forwardRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -9,7 +9,6 @@ interface NavLinkProps {
   exact?: boolean;
   children: ReactNode;
 }
-
 
 const DownArrowIcon = () => (
   <svg
@@ -27,25 +26,27 @@ const DownArrowIcon = () => (
   </svg>
 );
 
-const NavLink: React.FC<NavLinkProps> = (props) => {
-  const {
-    href,
-    exact = false,
-    children,
-    activeClass = "text-gray-800 font-bold dark:text-gray-400",
-    className,
-  } = props;
-  const { pathname } = useRouter();
-  const isActive = exact ? pathname === href : pathname.startsWith(href);
-  const currentClass = `${className} text-base px-3 py-2 ${
-    isActive ? activeClass : "text-gray-600 dark:text-white font-normal"
-  }`;
+const NavLink: React.FC<NavLinkProps> = forwardRef(
+  function NavLink(props, ref) {
+    const {
+      href,
+      exact = false,
+      children,
+      activeClass = "text-gray-800 font-bold dark:text-gray-400",
+      className = "",
+    } = props;
+    const { pathname } = useRouter();
+    const isActive = exact ? pathname === href : pathname.startsWith(href);
+    const currentClass = `${className} text-base px-3 py-2 ${
+      isActive ? activeClass : "text-gray-600 dark:text-white font-normal"
+    }`;
 
-  return (
-    <Link href={href} className={currentClass}>
-      {children} {isActive && <DownArrowIcon />}
-    </Link>
-  );
-};
+    return (
+      <Link href={href} className={currentClass}>
+        {children} {isActive && <DownArrowIcon />}
+      </Link>
+    );
+  },
+);
 
 export default NavLink;
