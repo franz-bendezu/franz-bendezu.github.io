@@ -6,7 +6,7 @@ const NavbarDesktop: React.FC<{
   routes: IRouteNavbar[];
 }> = ({ routes }) => {
   return (
-    <div className="hidden md:ml-10 md:block md:space-x-8 md:pr-4">
+    <div className="hidden md:ml-5 md:block md:space-x-8 md:pr-2 lg:ml-10 lg:pr-4">
       {routes.map((route) => (
         <NavLink
           href={route.path}
