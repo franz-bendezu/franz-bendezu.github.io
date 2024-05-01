@@ -8,7 +8,8 @@ export interface IProjectCategory {
 export interface IProject {
   status: "active" | "completed";
   title: string;
-  description: string;
+  shortDescription: string;
+  description?: string;
   tags: string[];
   image: {
     src: string;
