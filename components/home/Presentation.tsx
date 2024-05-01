@@ -10,7 +10,7 @@ const HomePresentation: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const handleCVDownload = async () => {
     setLoading(true);
-   const data = await fetch("/cv.pdf");
+    const data = await fetch("/cv.pdf");
     const blob = await data.blob();
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -59,9 +59,10 @@ const HomePresentation: React.FC = () => {
             .
           </p>
         </div>
-        <Button 
-        onClick={handleCVDownload}
-        className="border-blue-500 bg-blue-500  text-white hover:bg-blue-600 focus-visible:ring-blue-300 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-900 dark:focus-visible:ring-slate-600 ">
+        <Button
+          onClick={handleCVDownload}
+          className="border-blue-500 bg-blue-500  text-white hover:bg-blue-600 focus-visible:ring-blue-300 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-900 dark:focus-visible:ring-slate-600 "
+        >
           {loading ? (
             <LoaderSpin className="me-3 h-4 w-4 fill-slate-100 dark:fill-slate-500" />
           ) : (
@@ -73,13 +74,13 @@ const HomePresentation: React.FC = () => {
       <div className="flex flex-shrink-0 items-center justify-center ">
         <div className="relative m-24 flex h-[250px] w-[250px] items-center justify-center ">
           <svg
-            className="pointer-events-none absolute inset-0 left-1/2 top-1/2 z-0 block h-auto max-w-[200%] -translate-x-1/2 -translate-y-1/2 transform rounded-full fill-blue-600"
+            className="pointer-events-none absolute inset-0 left-1/2 top-1/2 z-0 block h-auto max-w-[200%] -translate-x-1/2 -translate-y-1/2 transform rounded-full "
             width="800"
             height="800"
             viewBox="0 0 800 800"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <g className="fill-blue-400 opacity-75">
+            <g className="fill-slate-500 opacity-75  dark:fill-blue-300">
               <circle className={Styles.pulse} cx="400" cy="400" r="200" />
               <circle
                 className={Styles.pulse + " " + Styles["pulse-1"]}
