@@ -10,11 +10,6 @@ interface NavLinkProps {
   children: ReactNode;
 }
 
-const defaultProps: Partial<NavLinkProps> = {
-  exact: false,
-  activeClass: "text-gray-800 font-bold dark:text-gray-400",
-  href: "",
-};
 
 const DownArrowIcon = () => (
   <svg
@@ -33,7 +28,13 @@ const DownArrowIcon = () => (
 );
 
 const NavLink: React.FC<NavLinkProps> = (props) => {
-  const { href, exact, children, activeClass, className } = props;
+  const {
+    href,
+    exact = false,
+    children,
+    activeClass = "text-gray-800 font-bold dark:text-gray-400",
+    className,
+  } = props;
   const { pathname } = useRouter();
   const isActive = exact ? pathname === href : pathname.startsWith(href);
   const currentClass = `${className} text-base px-3 py-2 ${
@@ -47,5 +48,4 @@ const NavLink: React.FC<NavLinkProps> = (props) => {
   );
 };
 
-NavLink.defaultProps = defaultProps;
 export default NavLink;
