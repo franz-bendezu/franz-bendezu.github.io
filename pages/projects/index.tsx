@@ -61,7 +61,7 @@ const ProjectsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
             key={project.title}
             url={project.link}
             title={project.title}
-            description={project.description}
+            description={project.shortDescription}
             image={project.image}
             tags={project.tags}
           />
