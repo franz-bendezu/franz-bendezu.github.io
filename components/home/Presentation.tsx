@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import profile from "../../public/profile.jpeg";
+import Button from "../ui/Button";
+import { ArrowDownTrayIcon } from "@heroicons/react/20/solid";
 import Styles from "./styles.module.css";
 
 const HomePresentation: React.FC = () => {
@@ -42,6 +44,10 @@ const HomePresentation: React.FC = () => {
             .
           </p>
         </div>
+        <Button className="border-blue-500 bg-blue-500  text-white hover:bg-blue-600 focus-visible:ring-blue-300 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-900 dark:focus-visible:ring-slate-600 ">
+          <ArrowDownTrayIcon className="mr-2 h-4 w-4 fill-slate-100 dark:fill-slate-500" />
+          <span>Descargar CV</span>
+        </Button>
       </div>
       <div className="flex flex-shrink-0 items-center justify-center ">
         <div className="relative m-24 flex h-[250px] w-[250px] items-center justify-center ">
