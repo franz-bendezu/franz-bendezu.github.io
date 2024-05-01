@@ -12,9 +12,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Franz Bendezu - Software Developer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex min-h-screen flex-col bg-white dark:bg-black">
+      <div
+        className="flex min-h-screen flex-col bg-gradient-to-t from-gray-50 to-gray-200 dark:bg-gradient-to-b dark:from-slate-950 dark:to-slate-800"
+      >
         <Navbar />
-        <main className="flex-grow justify-center bg-white  align-middle dark:bg-gray-900">
+        <main className="flex-grow justify-center align-middle">
           <div className="container mx-auto space-y-14 px-4 py-8 antialiased lg:space-y-24">
             <Component {...pageProps} />
           </div>
