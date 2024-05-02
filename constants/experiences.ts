@@ -60,3 +60,15 @@ export const WORK_EXPERIENCES = [
     ],
   },
 ];
+
+export const EDUCATION_EXPERIENCES = [
+  {
+    id: 1,
+    institution: "Universidad Nacional de Ingeniería",
+    location: "Lima, Perú",
+    degree: "Ingeniería de Sistemas",
+    start: "2020",
+    end: "2023",
+    link: "https://www.uni.edu.pe/",
+  },
+];
