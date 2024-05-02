@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import profile from "../../public/profile.jpeg";
+import profile from "../../public/profile.jpg";
 import Button from "../ui/Button";
 import { ArrowDownTrayIcon } from "@heroicons/react/20/solid";
 import Styles from "./styles.module.css";
