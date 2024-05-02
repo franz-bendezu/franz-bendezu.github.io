@@ -10,8 +10,8 @@ export const ROUTES_NAVBAR = [
     exact: true,
   },
   {
-    title: "Experiencia",
-    path: "/experience",
+    title: "Acerca de mí",
+    path: "/about",
     exact: true,
   },
   {
