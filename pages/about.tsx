@@ -6,7 +6,13 @@ const Projects: NextPage = () => {
   return (
     <div>
       <div className="mt-4 p-4">
-        <h1 className="mb-6 text-center text-4xl font-semibold">Experiencia</h1>
+        <h1 className="font-monospace text-3xl dark:text-white lg:text-4xl">
+          Proyectos
+        </h1>
+        <span className="mb-5 h-1 w-32 bg-blue-500"></span>
+        <h2 className="mb-6 text-left text-4xl font-semibold">
+          Experiencia Laboral
+        </h2>
         <div className="container">
           <div className="flex grid-cols-12 flex-col text-gray-50 md:grid">
             {EXPERIENCES.map((p) => (
