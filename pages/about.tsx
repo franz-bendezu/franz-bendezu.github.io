@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { EXPERIENCES } from "../constants/experiences";
+import { WORK_EXPERIENCES } from "../constants/experiences";
 import Card from "../components/ui/Card";
 
 const Projects: NextPage = () => {
@@ -15,7 +15,7 @@ const Projects: NextPage = () => {
         </h2>
         <div className="container">
           <div className="flex grid-cols-12 flex-col text-gray-50 md:grid">
-            {EXPERIENCES.map((p) => (
+            {WORK_EXPERIENCES.map((p) => (
               <div key={p.id} className="flex md:contents">
                 <div className="relative col-start-2 col-end-4 mr-10 md:mx-auto">
                   <div className="flex h-full w-6 items-center justify-center">
