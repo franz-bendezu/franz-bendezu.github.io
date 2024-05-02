@@ -16,7 +16,9 @@ const Projects: NextPage = () => {
       </h1>
       <span className="mb-5 h-1 w-48 bg-blue-500"></span>
       <div className="mt-4 p-4">
-        <h2 className="mb-6 text-left text-4xl font-semibold">Educación</h2>
+        <h2 className="mb-6 text-left text-2xl font-semibold lg:text-3xl">
+          Educación
+        </h2>
         <div className="container">
           <div className="flex grid-cols-12 flex-col text-gray-50 md:grid">
             {EDUCATION_EXPERIENCES.map((p) => (
@@ -43,7 +45,7 @@ const Projects: NextPage = () => {
             ))}
           </div>
         </div>
-        <h2 className="mb-6 text-left text-4xl font-semibold">
+        <h2 className="mb-6 text-left text-2xl font-semibold lg:text-3xl">
           Experiencia Laboral
         </h2>
         <div className="container">
