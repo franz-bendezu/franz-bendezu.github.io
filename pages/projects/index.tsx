@@ -22,12 +22,12 @@ const ProjectsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
   return (
     <section
       data-testid="projects"
-      className="my-5 flex flex-col items-center justify-center"
+      className=" flex flex-col items-center justify-center"
     >
       <h1 className="font-monospace text-3xl dark:text-white lg:text-4xl">
         Proyectos
       </h1>
-      <span className="mb-5 h-1 w-32 bg-blue-500"></span>
+      <span className="mb-5 h-1 w-36 bg-blue-500"></span>
       <div className="mx-10 flex w-full flex-row flex-wrap items-center  justify-center gap-2">
         <Link
           className={`link ${
