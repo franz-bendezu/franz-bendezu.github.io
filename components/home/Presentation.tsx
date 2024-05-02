@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import profile from "../../public/profile.jpg";
+import profile from "../../public/profile.png";
 import Button from "../ui/Button";
 import { ArrowDownTrayIcon } from "@heroicons/react/20/solid";
 import Styles from "./styles.module.css";
@@ -105,8 +105,8 @@ const HomePresentation: React.FC = () => {
           <Image
             src={profile}
             alt="Profile"
-            priority={true}
-            className="relative z-10 mx-auto rounded-full"
+            fetchPriority={"high"}
+            className="relative z-10 mx-auto rounded-full object-cover"
             width={250}
             height={250}
             placeholder="blur"
