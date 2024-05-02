@@ -1,4 +1,4 @@
-export const EXPERIENCES = [
+export const WORK_EXPERIENCES = [
   {
     id: 1,
     company: "Agendalo",
