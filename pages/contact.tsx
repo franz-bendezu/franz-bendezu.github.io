@@ -4,7 +4,7 @@ import { useForm, ValidationError } from '@formspree/react';
 import Script from 'next/script'
 
 const ContactPage: NextPage = () => {
-  const [state, handleSubmit] = useForm("xyyqkeen");
+  const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_SPREE_ID);
   
   if (state.succeeded) {
     return <p>¡Gracias por ponerte en contacto!</p>;
@@ -49,7 +49,7 @@ const ContactPage: NextPage = () => {
           errors={state.errors}
         />
       </div>
-      <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+      <div class="g-recaptcha" data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_ID}></div>
       <button 
         type="submit" 
         disabled={state.submitting}
