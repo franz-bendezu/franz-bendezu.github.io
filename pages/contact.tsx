@@ -4,7 +4,7 @@ import { useForm, ValidationError } from '@formspree/react';
 import Script from 'next/script'
 
 const ContactPage: NextPage = () => {
-  const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_SPREE_ID);
+  const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_SPREE_ID!);
   
   if (state.succeeded) {
     return <p>¡Gracias por ponerte en contacto!</p>;
