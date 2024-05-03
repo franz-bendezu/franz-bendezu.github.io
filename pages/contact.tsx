@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
+import Script from 'next/script'
 
 const ContactPage: NextPage = () => {
   const [state, handleSubmit] = useForm("xyyqkeen");
@@ -16,8 +17,9 @@ const ContactPage: NextPage = () => {
         Estoy interesado en oportunidades de trabajo independiente, proyectos
         increíblemente ambiciosos o grandes. Sin embargo, no dudes en usar el
         formulario si tienes otras solicitudes o preguntas.
-        </p>
-      
+      </p>
+
+    <Script src="https://www.google.com/recaptcha/api.js" async defer></Script>
     <form onSubmit={handleSubmit} className="relative mt-6 h-full">
       <div className="mb-4">
         <label htmlFor="email" className="block font-medium text-gray-700">Correo Electrónico</label>
@@ -47,6 +49,7 @@ const ContactPage: NextPage = () => {
           errors={state.errors}
         />
       </div>
+      <div class="g-recaptcha" data-sitekey="your_site_key"></div>
       <button 
         type="submit" 
         disabled={state.submitting}
