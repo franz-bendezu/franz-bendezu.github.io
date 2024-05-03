@@ -24,8 +24,8 @@ jobs:
       - name: Build project
         run: yarn run build
         env:
-          NEXT_PUBLIC_SPREE_ID: secrets.NEXT_PUBLIC_SPREE_ID
-          NEXT_PUBLIC_RECAPTCHA_ID: secrets.NEXT_PUBLIC_RECAPTCHA_ID
+          NEXT_PUBLIC_SPREE_ID: ${{ secrets.NEXT_PUBLIC_SPREE_ID }}
+          NEXT_PUBLIC_RECAPTCHA_ID: ${{ secrets.NEXT_PUBLIC_RECAPTCHA_ID }}
       - name: Add .nojekyll file
         run: touch ./out/.nojekyll
       - name: Deploy
