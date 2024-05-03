@@ -49,7 +49,7 @@ const ContactPage: NextPage = () => {
           errors={state.errors}
         />
       </div>
-      <div class="g-recaptcha" data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_ID}></div>
+      <div class="g-recaptcha" data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_ID!}></div>
       <button 
         type="submit" 
         disabled={state.submitting}
