@@ -74,7 +74,7 @@ const ContactPage: NextPage = () => {
           <Button
             type="submit"
             disabled={state.submitting}
-            className="bg-primary-500 hover:bg-primary-600 cursor-pointer uppercase text-white transition-colors duration-300"
+            className=" border-slate-500 uppercase transition-colors duration-300 dark:border-slate-100 dark:text-white"
           >
             {state.submitting && (
               <LoaderSpin className="me-3 h-4 w-4 fill-slate-100 dark:fill-slate-500" />
