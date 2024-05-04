@@ -5,7 +5,7 @@ export interface IProjectTechonologyCategory {
   value: string;
 }
 
-export interface IProjectTechnology {
+export interface IBaseProjectTechnology {
   code: string;
   name: string;
   color: string;
@@ -17,7 +17,7 @@ export interface IProjectCategory {
   value: ProjectCategoryCodes;
 }
 
-export interface IProject {
+export interface IBaseProject {
   status: "active" | "completed";
   title: string;
   shortDescription: string;
@@ -29,12 +29,12 @@ export interface IProject {
   };
   link: string;
   categoryCode: ProjectCategoryCodes;
-  technologyCodes: IProjectTechnology["code"][];
+  technologyCodes: IBaseProjectTechnology["code"][];
 }
 
-export interface IProjectTechnologyWithCategory extends IProjectTechnology {
+export interface IProjectTechnology extends IBaseProjectTechnology {
   categories: IProjectTechonologyCategory[];
 }
-export interface IProjectWithTechnologies extends IProject {
-  technologies: IProjectTechnologyWithCategory[];
+export interface IProject extends IBaseProject {
+  technologies: IProjectTechnology[];
 }
