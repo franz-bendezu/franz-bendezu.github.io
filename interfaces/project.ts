@@ -31,3 +31,10 @@ export interface IProject {
   categoryCode: ProjectCategoryCodes;
   technologyCodes: IProjectTechnology["code"][];
 }
+
+export interface IProjectTechnologyWithCategory extends IProjectTechnology {
+  categories: IProjectTechonologyCategory[];
+}
+export interface IProjectWithTechnologies extends IProject {
+  technologies: IProjectTechnologyWithCategory[];
+}

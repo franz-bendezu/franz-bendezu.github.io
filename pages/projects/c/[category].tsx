@@ -1,10 +1,11 @@
-import {
-  GetStaticProps,
-  GetStaticPaths,
-} from "next";
+import { GetStaticProps, GetStaticPaths } from "next";
 import { PROJECTS, PROJECT_CATEGORIES } from "../../../constants/projects";
-import { IProject } from "../../../interfaces/project";
+import { IProjectWithTechnologies } from "../../../interfaces/project";
 import ProjectsPage from "..";
+import {
+  PROJECT_TECHNOLOGIES,
+  PROJECT_TECHNOLOGY_CATEGORY,
+} from "../../../constants/projects/techologies";
 
 export const getStaticPaths = (async () => {
   return {
@@ -16,13 +17,25 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 export const getStaticProps: GetStaticProps<{
-  projects: IProject[];
+  projects: IProjectWithTechnologies[];
   categories: { name: string; value: string }[];
 }> = async (ctx) => {
   const category = ctx.params?.category;
   return {
     props: {
-      projects: PROJECTS.filter((project) => project.categoryCode === category),
+      projects: PROJECTS.filter(
+        (project) => project.categoryCode === category,
+      ).map((project) => ({
+        ...project,
+        technologies: PROJECT_TECHNOLOGIES.filter((technology) =>
+          project.technologyCodes.includes(technology.code),
+        ).map((technology) => ({
+          ...technology,
+          categories: PROJECT_TECHNOLOGY_CATEGORY.filter((category) =>
+            technology.categoryCodes.includes(category.value),
+          ),
+        })),
+      })),
       categories: PROJECT_CATEGORIES,
     },
   };
