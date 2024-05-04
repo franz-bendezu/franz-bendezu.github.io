@@ -85,7 +85,7 @@ const ProjectsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
             title={project.title}
             description={project.shortDescription}
             image={project.image}
-            tags={project.tags}
+            technologies={project.technologies}
           />
         ))}
       </div>
