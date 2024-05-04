@@ -1,4 +1,5 @@
-import type { IProject, IProjectCategory } from "../interfaces/project";
+import type { IProject, IProjectCategory } from "../../interfaces/project";
+
 
 export const PROJECT_CATEGORIES: IProjectCategory[] = [
   {
