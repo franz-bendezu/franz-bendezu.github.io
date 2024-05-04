@@ -1,6 +1,7 @@
 import Image from "next/image";
 import TagList from "../ui/TagList";
 import Card from "../ui/Card";
+import { IProjectTechnology } from "../../interfaces/project";
 
 interface ProjectCardProps {
   url?: string;
@@ -10,12 +11,12 @@ interface ProjectCardProps {
   };
   title?: string;
   description: string;
-  tags: string[];
+  technologies: IProjectTechnology[];
   children?: HTMLElement | HTMLElement[];
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = (props) => {
-  const { url, image, title, description, tags } = props;
+  const { url, image, title, description, technologies } = props;
   return (
     <section className="w-full p-4 md:w-1/2 lg:w-1/3">
       <Card
@@ -40,7 +41,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
             >
               {description}
             </p>
-            <TagList tags={tags} />
+            <TagList tags={technologies.map((tech) => tech.name)} />
           </div>
         </a>
       </Card>
