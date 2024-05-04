@@ -1,14 +1,36 @@
-import type { InferGetStaticPropsType, NextPage } from "next";
+import type {
+  GetStaticPropsContext,
+  InferGetStaticPropsType,
+  NextPage,
+} from "next";
 import { PROJECTS, PROJECT_CATEGORIES } from "../../constants/projects";
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import ProjectCard from "../../components/project/Card";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {
+  PROJECT_TECHNOLOGIES,
+  PROJECT_TECHNOLOGY_CATEGORY,
+} from "../../constants/projects/techologies";
 
-export const getStaticProps = async () => {
+export const getStaticProps = async (ctx: GetStaticPropsContext) => {
+  const category = ctx.params?.category;
   return {
     props: {
-      projects: PROJECTS,
+      projects: (category
+        ? PROJECTS.filter((project) => project.categoryCode === category)
+        : PROJECTS
+      ).map((project) => ({
+        ...project,
+        technologies: PROJECT_TECHNOLOGIES.filter((technology) =>
+          project.technologyCodes.includes(technology.code),
+        ).map((technology) => ({
+          ...technology,
+          categories: PROJECT_TECHNOLOGY_CATEGORY.filter((category) =>
+            technology.categoryCodes.includes(category.value),
+          ),
+        })),
+      })),
       categories: PROJECT_CATEGORIES,
     },
   };
