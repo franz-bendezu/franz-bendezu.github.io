@@ -2,6 +2,8 @@ import { NextPage } from "next";
 import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import Script from "next/script";
+import Button from "../components/ui/Button";
+import LoaderSpin from "../components/ui/LoaderSpin";
 
 const ContactPage: NextPage = () => {
   const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_SPREE_ID!);
@@ -57,13 +59,16 @@ const ContactPage: NextPage = () => {
           className="g-recaptcha"
           data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_ID!}
         ></div>
-        <button
+        <Button
           type="submit"
           disabled={state.submitting}
-          className="bg-primary-500 hover:bg-primary-600 cursor-pointer rounded-md px-4 py-2 font-bold uppercase text-white transition-colors duration-300"
+          className="bg-primary-500 hover:bg-primary-600 cursor-pointer uppercase text-white transition-colors duration-300"
         >
+          {state.submitting && (
+            <LoaderSpin className="me-3 h-4 w-4 fill-slate-100 dark:fill-slate-500" />
+          )}
           Enviar mensaje
-        </button>
+        </Button>
       </form>
     </div>
   );
