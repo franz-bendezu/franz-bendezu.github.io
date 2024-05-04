@@ -4,6 +4,7 @@ export interface IProjectTechonologyCategory {
   name: string;
   value: string;
 }
+
 export interface IProjectTechnology {
   code: string;
   name: string;
