@@ -119,4 +119,46 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
     color: "#007396",
     categoryCodes: ["programming-language"],
   },
+  {
+    code: "kotlin",
+    name: "Kotlin",
+    color: "#0095D5",
+    categoryCodes: ["programming-language"],
+  },
+  {
+    code: "postgresql",
+    name: "PostgreSQL",
+    color: "#336791",
+    categoryCodes: ["database"],
+  },
+  {
+    code: "react",
+    name: "React",
+    color: "#61DAFB",
+    categoryCodes: ["frontend-framework"],
+  },
+  {
+    code: "tailwindcss",
+    name: "Tailwind CSS",
+    color: "#38B2AC",
+    categoryCodes: ["frontend-framework"],
+  },
+  {
+    code: "javascript",
+    name: "Javascript",
+    color: "#F7DF1E",
+    categoryCodes: ["programming-language"],
+  },
+  {
+    code: "nextjs",
+    name: "Next.js",
+    color: "#000000",
+    categoryCodes: ["frontend-framework"],
+  },
+  {
+    code: "sass",
+    name: "SASS",
+    color: "#CC6699",
+    categoryCodes: ["frontend-framework"],
+  },
 ];
