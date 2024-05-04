@@ -4,12 +4,23 @@ import { useForm, ValidationError } from "@formspree/react";
 import Script from "next/script";
 import Button from "../components/ui/Button";
 import LoaderSpin from "../components/ui/LoaderSpin";
+import { CheckIcon } from "@heroicons/react/20/solid";
 
 const ContactPage: NextPage = () => {
   const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_SPREE_ID!);
 
   if (state.succeeded) {
-    return <p>¡Gracias por ponerte en contacto!</p>;
+    return (
+      <div>
+        <CheckIcon className="mx-auto h-12 w-12 text-green-500" />
+        <h2 className="text-center text-3xl font-semibold">
+          Gracias por tu mensaje
+        </h2>
+        <p className="text-center text-lg font-light">
+          Me pondré en contacto contigo lo antes posible.
+        </p>
+      </div>
+    );
   }
 
   return (
@@ -59,7 +70,7 @@ const ContactPage: NextPage = () => {
           className="g-recaptcha"
           data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_ID!}
         ></div>
-        <div className="mt-4 flex align-center justify-center">
+        <div className="align-center mt-4 flex justify-center">
           <Button
             type="submit"
             disabled={state.submitting}
