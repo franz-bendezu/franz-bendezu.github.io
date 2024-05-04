@@ -84,6 +84,12 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
     categoryCodes: ["frontend-framework"],
   },
   {
+    code: "vue3",
+    name: "Vue 2",
+    color: "#4FC08D",
+    categoryCodes: ["frontend-framework"],
+  },
+  {
     code: "cloud-functions",
     name: "Cloud Functions",
     color: "#FFD600",
