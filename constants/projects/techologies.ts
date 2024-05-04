@@ -1,5 +1,5 @@
 import {
-  IProjectTechnology,
+  IBaseProjectTechnology,
   IProjectTechonologyCategory,
 } from "../../interfaces/project";
 
@@ -46,7 +46,7 @@ export const PROJECT_TECHNOLOGY_CATEGORY = [
   },
 ] as const satisfies IProjectTechonologyCategory[];
 
-export const PROJECT_TECHNOLOGIES: IProjectTechnology[] = [
+export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
   {
     code: "nuxtjs",
     name: "Nuxt.js",

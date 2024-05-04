@@ -1,6 +1,6 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 import { PROJECTS, PROJECT_CATEGORIES } from "../../../constants/projects";
-import { IProjectWithTechnologies } from "../../../interfaces/project";
+import { IProject } from "../../../interfaces/project";
 import ProjectsPage from "..";
 import {
   PROJECT_TECHNOLOGIES,
@@ -17,7 +17,7 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 export const getStaticProps: GetStaticProps<{
-  projects: IProjectWithTechnologies[];
+  projects: IProject[];
   categories: { name: string; value: string }[];
 }> = async (ctx) => {
   const category = ctx.params?.category;

@@ -1,4 +1,4 @@
-import type { IProject, IProjectCategory } from "../../interfaces/project";
+import type { IBaseProject, IProjectCategory } from "../../interfaces/project";
 
 
 export const PROJECT_CATEGORIES: IProjectCategory[] = [
@@ -16,7 +16,7 @@ export const PROJECT_CATEGORIES: IProjectCategory[] = [
   },
 ];
 
-export const PROJECTS: IProject[] = [
+export const PROJECTS: IBaseProject[] = [
   {
     status: "completed",
     title: "Con qué profe",
