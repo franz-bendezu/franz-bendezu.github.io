@@ -59,16 +59,18 @@ const ContactPage: NextPage = () => {
           className="g-recaptcha"
           data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_ID!}
         ></div>
-        <Button
-          type="submit"
-          disabled={state.submitting}
-          className="bg-primary-500 hover:bg-primary-600 cursor-pointer uppercase text-white transition-colors duration-300"
-        >
-          {state.submitting && (
-            <LoaderSpin className="me-3 h-4 w-4 fill-slate-100 dark:fill-slate-500" />
-          )}
-          Enviar mensaje
-        </Button>
+        <div className="mt-4 flex align-center justify-center">
+          <Button
+            type="submit"
+            disabled={state.submitting}
+            className="bg-primary-500 hover:bg-primary-600 cursor-pointer uppercase text-white transition-colors duration-300"
+          >
+            {state.submitting && (
+              <LoaderSpin className="me-3 h-4 w-4 fill-slate-100 dark:fill-slate-500" />
+            )}
+            Enviar mensaje
+          </Button>
+        </div>
       </form>
     </div>
   );
