@@ -30,6 +30,7 @@ export const PROJECTS: IProject[] = [
     },
     link: "URL_DE_TU_PROYECTO",
     categoryCode: "personal",
+    technologyCodes: ["nuxtjs", "typescript", "graphql", "apollo-server"],
   },
   {
     status: "completed",
@@ -44,6 +45,7 @@ export const PROJECTS: IProject[] = [
     },
     link: "https://gitlab.com/horext-app",
     categoryCode: "personal",
+    technologyCodes: ["iot", "lorawan", "firebase", "vue2", "cloud-functions"],
   },
   {
     status: "completed",
@@ -57,6 +59,7 @@ export const PROJECTS: IProject[] = [
     },
     link: "https://gitlab.com/horext-app",
     categoryCode: "personal",
+    technologyCodes: ["nuxtjs", "spring-boot", "java", "kotlin", "postgresql"],
   },
   {
     status: "active",
@@ -69,6 +72,7 @@ export const PROJECTS: IProject[] = [
     },
     link: "https://github.com/franz-bendezu/franz-bendezu.github.io",
     categoryCode: "freelance",
+    technologyCodes: ["vue3", "css", "typescript"],
   },
   {
     status: "completed",
@@ -81,6 +85,7 @@ export const PROJECTS: IProject[] = [
     },
     link: "https://github.com/franz-bendezu/franz-bendezu.github.io",
     categoryCode: "personal",
+    technologyCodes: ["react", "tailwindcss", "javascript"],
   },
   {
     status: "completed",
@@ -93,5 +98,6 @@ export const PROJECTS: IProject[] = [
     },
     link: "https://github.com/franz-bendezu/franz-bendezu.github.io",
     categoryCode: "demo",
+    technologyCodes: ["nextjs", "sass", "javascript"],
   },
 ];
