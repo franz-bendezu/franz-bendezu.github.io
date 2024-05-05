@@ -46,6 +46,7 @@ const ContactPage: NextPage = () => {
             id="email"
             type="email"
             name="email"
+            required
             className="focus:ring-primary-500 focus:border-primary-500 w-full rounded-md border border-gray-300 px-4 py-2"
           />
           <ValidationError prefix="Email" field="email" errors={state.errors} />
@@ -57,6 +58,7 @@ const ContactPage: NextPage = () => {
           <textarea
             id="message"
             name="message"
+            required
             className="focus:ring-primary-500 focus:border-primary-500 w-full rounded-md border border-gray-300 px-4 py-2"
             rows={5}
           />
