@@ -70,6 +70,11 @@ const ContactPage: NextPage = () => {
           className="g-recaptcha"
           data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_ID!}
         ></div>
+        <ValidationError
+          prefix="Recaptcha"
+          field="recaptcha"
+          errors={state.errors}
+        />
         <div className="align-center mt-4 flex justify-center">
           <Button
             type="submit"
