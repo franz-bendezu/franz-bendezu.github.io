@@ -12,7 +12,7 @@ const ContactPage: NextPage = () => {
   if (state.succeeded) {
     return (
       <div>
-        <CheckIcon className="mx-auto h-12 w-12 text-green-500" />
+        <CheckIcon className="mx-auto h-12 w-12 bg-green-500 text-white rounded-full p-3" />
         <h2 className="text-center text-3xl font-semibold">
           Gracias por tu mensaje
         </h2>
