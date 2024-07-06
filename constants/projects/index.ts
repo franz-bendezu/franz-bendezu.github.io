@@ -29,7 +29,7 @@ export const PROJECTS: IBaseProject[] = [
     },
     link: "URL_DE_TU_PROYECTO",
     categoryCode: "personal",
-    technologyCodes: ["nuxtjs", "typescript", "graphql", "apollo-server"],
+    technologyCodes: ["nuxt", "typescript", "graphql", "apollo-server"],
   },
   {
     status: "completed",
@@ -58,7 +58,7 @@ export const PROJECTS: IBaseProject[] = [
     },
     link: "https://gitlab.com/horext-app",
     categoryCode: "personal",
-    technologyCodes: ["nuxtjs", "spring-boot", "java", "kotlin", "postgresql"],
+    technologyCodes: ["nuxt", "spring-boot", "java", "kotlin", "postgresql"],
   },
   {
     status: "completed",

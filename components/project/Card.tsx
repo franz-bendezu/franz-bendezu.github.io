@@ -41,7 +41,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
             >
               {description}
             </p>
-            <TagList tags={technologies.map((tech) => tech.name)} />
+            <TagList tags={technologies} />
           </div>
         </a>
       </Card>
