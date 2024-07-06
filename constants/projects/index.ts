@@ -97,7 +97,7 @@ export const PROJECTS: IBaseProject[] = [
       alt: "Migración a AWS",
     },
     categoryCode: "freelance",
-    technologyCodes: ["amplify", "amazon-rds", "ec2", "s3", "spring-framework", "java", "vue"],
+    technologyCodes: ["aws-amplify", "amazon-rds", "aws-ec2", "aws-s3", "spring-framework", "java", "vue"],
   },
   {
     status: "completed",
