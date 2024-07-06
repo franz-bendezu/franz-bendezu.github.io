@@ -161,4 +161,40 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
     color: "#CC6699",
     categoryCodes: ["frontend-framework"],
   },
+  {
+    code: "prisma",
+    name: "Prisma",
+    color: "#CC6699",
+    categoryCodes: ["backend-framework"],
+  },
+  {
+    code: "aws-s3",
+    name: "Amazon S3",
+    color: "#FFD600",
+    categoryCodes: ["cloud"],
+  },
+  {
+    code: "aws-ec2",
+    name: "Amazon EC2",
+    color: "#FFD600",
+    categoryCodes: ["cloud"],
+  },
+  {
+    code: "amazon-rds",
+    name: "Amazon RDS",
+    color: "#FFD600",
+    categoryCodes: ["cloud"],
+  },
+  {
+    code: "aws-amplify",
+    name: "Amazon Amplify",
+    color: "#FFD600",
+    categoryCodes: ["cloud"],
+  }, 
+  {
+    code: "aws-lambda",
+    name: "AWS Lambda",
+    color: "#FFD600",
+    categoryCodes: ["cloud"],
+  },
 ];
