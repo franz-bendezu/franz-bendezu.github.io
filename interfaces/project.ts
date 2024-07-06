@@ -27,7 +27,7 @@ export interface IBaseProject {
     src: string;
     alt: string;
   };
-  link: string;
+  link?: string;
   categoryCode: ProjectCategoryCodes;
   technologyCodes: IBaseProjectTechnology["code"][];
 }
