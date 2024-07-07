@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, test, vi } from "vitest";
 import ProjectsPage, { getStaticProps } from "../index";
-import { IProjectCategory } from "../../../interfaces/project";
+import { IProject, IProjectCategory } from "../../../interfaces/project";
 
 // Mock the next/navigation module
 vi.mock("next/navigation", () => ({
@@ -16,20 +16,28 @@ vi.mock("next/image", () => ({
 
 describe("ProjectsPage", () => {
   test("renders project cards", () => {
-    const projects = [
+    const projects:IProject[] = [
       {
         title: "Project 1",
         shortDescription: "Short description 1",
-        image: "project1.jpg",
+        image: { src: "project1.jpg", alt: "Project 1" },
         technologies: [],
         links: [],
+        status: "active",
+        tags: [],
+        categoryCode: "freelance",
+        technologyCodes: []
       },
       {
         title: "Project 2",
         shortDescription: "Short description 2",
-        image: "project2.jpg",
+        image: { src: "project2.jpg", alt: "Project 2" },
         technologies: [],
         links: [],
+        status: "active",
+        tags: [],
+        categoryCode: "freelance",
+        technologyCodes: []
       },
     ];
 
@@ -50,20 +58,38 @@ describe("ProjectsPage", () => {
   });
 
   test("filters projects by technology", () => {
-    const projects = [
+    const projects:IProject[] = [
       {
         title: "Project 1",
         shortDescription: "Short description 1",
-        image: "project1.jpg",
-        technologies: [{ code: "tech1", name: "Technology 1" }],
+        image: { src: "project1.jpg", alt: "Project 1" },
+        technologies: [{
+          code: "tech1", name: "Technology 1",
+          categories: [],
+          color: "",
+          categoryCodes: []
+        }],
         links: [],
+        status: "active",
+        tags: [],
+        categoryCode: "freelance",
+        technologyCodes: []
       },
       {
         title: "Project 2",
         shortDescription: "Short description 2",
-        image: "project2.jpg",
-        technologies: [{ code: "tech2", name: "Technology 2" }],
+        image: { src: "project2.jpg", alt: "Project 2" },
+        technologies: [{
+          code: "tech2", name: "Technology 2",
+          categories: [],
+          color: "",
+          categoryCodes: []
+        }],
         links: [],
+        status: "active",
+        tags: [],
+        categoryCode: "freelance",
+        technologyCodes: []
       },
     ];
 
