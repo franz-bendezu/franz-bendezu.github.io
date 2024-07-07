@@ -108,9 +108,9 @@ const ProjectsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
             key={category.value}
             className={`link ${
               pathname === `/projects/c/${category.value}`
-                ? "text-blue-500 dark:text-blue-500"
-                : "text-black dark:text-white"
-            } hover:text-blue-500 dark:hover:text-blue-500`}
+                ? "bg-blue-500 text-white"
+                : "text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-500"
+            } rounded px-2 py-1`}
             aria-label={`link to ${category.name} projects`}
             href={`/projects/c/${category.value}`}
           >
@@ -120,7 +120,7 @@ const ProjectsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
       </div>
       <div className="mt-4 flex flex-row flex-wrap justify-center gap-2">
         {filterTechs.length > 0 && (
-          <div className="flex flex-row gap-2 items-center justify-center flex-wrap">
+          <div className="flex flex-row flex-wrap items-center justify-center gap-2">
             <span className="text-sm dark:text-white">Filtrado por:</span>
             {filterTechs.map((tech) => (
               <button
