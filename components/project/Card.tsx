@@ -11,6 +11,7 @@ interface ProjectCardProps {
   };
   title?: string;
   description: string;
+  selectedTechs?: IProjectTechnology[];
   technologies: IProjectTechnology[];
   links?: IProjectLink[];
   children?: HTMLElement | HTMLElement[];
@@ -18,7 +19,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = (props) => {
-  const { links, image, title, description, technologies, onClickTech } = props;
+  const { links, image, title, description, technologies, onClickTech, selectedTechs } = props;
   return (
     <section className="w-full p-4 md:w-1/2 lg:w-1/3">
       <Card
@@ -44,7 +45,11 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
           </div>
         </a>
         <div className="mt-1 p-2">
-          <TechStack techs={technologies} onClickTech={onClickTech} />
+          <TechStack
+            techs={technologies}
+            onClickTech={onClickTech}
+            selectedTechs={selectedTechs}
+          />
         </div>
 
         {links?.length && <LinkList links={links} />}

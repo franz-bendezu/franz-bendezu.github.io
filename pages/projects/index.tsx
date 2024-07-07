@@ -154,6 +154,7 @@ const ProjectsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
               description={project.shortDescription}
               image={project.image}
               technologies={project.technologies}
+              selectedTechs={filterTechs}
               onClickTech={handleClickTech}
             />
           ))

@@ -4,10 +4,16 @@ import { IProjectTechnology } from "../../interfaces/project";
 const TechStackItem: React.FC<{
   tech: IProjectTechnology;
   onClick: () => void;
-}> = ({ tech: tag, onClick }) => {
+  isSelected?: boolean;
+}> = ({ tech: tag, onClick, isSelected }) => {
   return (
     <button
-      className="flex flex-row gap-2 rounded px-2 py-1 text-xs outline outline-1 lg:text-sm"
+      className={
+        "flex flex-row gap-2 rounded px-2 py-1 text-xs outline outline-1 lg:text-sm" +
+        (isSelected
+          ? " bg-blue-500 text-white"
+          : " text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-500")
+      }
       onClick={onClick}
     >
       {tag.logo && (
@@ -26,8 +32,9 @@ const TechStackItem: React.FC<{
 
 const TechStack: React.FC<{
   techs: IProjectTechnology[];
+  selectedTechs?: IProjectTechnology[];
   onClickTech: (tech: IProjectTechnology) => void;
-}> = ({ techs: tags, onClickTech }) => {
+}> = ({ techs: tags, onClickTech, selectedTechs }) => {
   return (
     tags && (
       <div className="mt-2 flex flex-row flex-wrap justify-between gap-2">
@@ -35,6 +42,7 @@ const TechStack: React.FC<{
           <TechStackItem
             key={tag.code}
             tech={tag}
+            isSelected={selectedTechs?.some((t) => t.code === tag.code)}
             onClick={() => onClickTech(tag)}
           />
         ))}
