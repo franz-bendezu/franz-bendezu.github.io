@@ -84,6 +84,7 @@ const ContactPage: NextPage = () => {
           <Button
             type="submit"
             disabled={state.submitting}
+            aria-label="submit"
             className="border-slate-500 uppercase transition-colors duration-300 dark:border-slate-100 dark:text-white"
           >
             {state.submitting && (
