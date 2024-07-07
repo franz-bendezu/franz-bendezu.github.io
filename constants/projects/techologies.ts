@@ -44,6 +44,10 @@ export const PROJECT_TECHNOLOGY_CATEGORY = [
     name: "IoT",
     value: "iot",
   },
+  {
+    name: "Content management system",
+    value: "cms",
+  },
 ] as const satisfies IProjectTechonologyCategory[];
 
 export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
@@ -211,12 +215,47 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
     logo: "/assets/icons/aws.svg",
     color: "#FFD600",
     categoryCodes: ["cloud"],
-  }, 
+  },
   {
     code: "aws-lambda",
     name: "AWS Lambda",
     logo: "/assets/icons/aws.svg",
     color: "#FFD600",
     categoryCodes: ["cloud"],
+  },
+  {
+    code: "bootstrap",
+    name: "Bootstrap",
+    logo: "/assets/icons/bootstrap.svg",
+    color: "#6f2df4",
+    categoryCodes: ["frontend-framework"],
+  },
+  {
+    code: "wordpress",
+    name: "Wordpress",
+    logo: "/assets/icons/wordpress.svg",
+    color: "#3858e9",
+    categoryCodes: ["cms"],
+  },
+  {
+    code: "nodejs",
+    name: "Node",
+    logo: "/assets/icons/nodejs.svg",
+    color: "#3858e9",
+    categoryCodes: ["database"],
+  },
+  {
+    code: "mariadb",
+    name: "Mariadb",
+    logo: "/assets/icons/mariadb.svg",
+    color: "#3858e9",
+    categoryCodes: ["database"],
+  },
+  {
+    code: "mysql",
+    name: "Mysql",
+    logo: "/assets/icons/mysql.svg",
+    color: "#3858e9",
+    categoryCodes: ["database"],
   },
 ];
