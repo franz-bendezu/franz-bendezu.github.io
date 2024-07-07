@@ -18,17 +18,25 @@ export interface IProjectCategory {
   value: ProjectCategoryCodes;
 }
 
+export interface IProjectImage {
+  src: string;
+  alt: string;
+}
+
+export interface IProjectLink {
+  title: string;
+  url: string;
+  type: "github" | "website" | "source" | "download" | "video";
+}
+
 export interface IBaseProject {
   status: "active" | "completed";
   title: string;
   shortDescription: string;
   description?: string;
   tags: string[];
-  image: {
-    src: string;
-    alt: string;
-  };
-  link?: string;
+  image: IProjectImage;
+  links?: IProjectLink[];
   categoryCode: ProjectCategoryCodes;
   technologyCodes: IBaseProjectTechnology["code"][];
 }
