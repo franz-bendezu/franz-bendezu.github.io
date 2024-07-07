@@ -17,7 +17,7 @@ import {
   PROJECT_TECHNOLOGY_CATEGORY,
 } from "../../constants/projects/techologies";
 import { useEffect, useState } from "react";
-import { IProjectTechnology } from "../../interfaces/project";
+import { IProject, IProjectTechnology } from "../../interfaces/project";
 import Image from "next/image";
 
 export const getStaticProps = async (ctx: GetStaticPropsContext) => {
@@ -28,7 +28,7 @@ export const getStaticProps = async (ctx: GetStaticPropsContext) => {
         ? PROJECTS.filter((project) => project.categoryCode === category)
         : PROJECTS
       )
-        .map((project) => ({
+        .map<IProject>((project) => ({
           ...project,
           technologies: PROJECT_TECHNOLOGIES.filter((technology) =>
             project.technologyCodes.includes(technology.code),
