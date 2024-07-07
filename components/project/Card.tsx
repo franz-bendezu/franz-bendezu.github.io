@@ -26,6 +26,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
         <a href={url} aria-label="link to project">
           <div className="relative flex items-end overflow-hidden rounded-xl">
             <Image
+              className="mx-auto"
               src={image.src}
               alt={image.alt}
               width={400}
