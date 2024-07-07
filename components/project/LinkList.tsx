@@ -4,11 +4,12 @@ import {
   FilmIcon,
   GlobeAmericasIcon,
 } from "@heroicons/react/20/solid";
-import { IProjectLink } from "../../interfaces/project";
+import { IProjectLink, ProjectLinkType } from "../../interfaces/project";
 import GitHubIcon from "../icon/github";
 import GitLabIcon from "../icon/gitlab";
+import { FC, SVGProps } from "react";
 
-const LINK_ICONS = {
+const LINK_ICONS: Record<ProjectLinkType, FC<SVGProps<SVGSVGElement>>> = {
   github: GitHubIcon,
   gitlab: GitLabIcon,
   website: GlobeAmericasIcon,
@@ -17,7 +18,7 @@ const LINK_ICONS = {
   video: FilmIcon,
 } as const;
 
-export const LinkListItem: React.FC<{ link: IProjectLink }> = ({ link }) => {
+export const LinkListItem: FC<{ link: IProjectLink }> = ({ link }) => {
   const Icon = LINK_ICONS[link.type];
   return (
     <a
@@ -26,9 +27,7 @@ export const LinkListItem: React.FC<{ link: IProjectLink }> = ({ link }) => {
       aria-label={link.title}
       className="inline-flex items-center justify-center whitespace-nowrap rounded-lg border border-blue-500 bg-blue-500 px-3 py-1.5 text-sm font-medium text-white transition-colors duration-150 hover:bg-blue-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-300 focus-visible:ring-indigo-300 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-900 dark:focus-visible:ring-slate-600"
     >
-      <Icon
-      className="w-5 h-5 mr-1.5"
-      />
+      <Icon className="mr-1.5 h-5 w-5" />
       {link.title}
     </a>
   );

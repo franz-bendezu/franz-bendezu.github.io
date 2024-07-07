@@ -22,11 +22,17 @@ export interface IProjectImage {
   src: string;
   alt: string;
 }
-
+export type ProjectLinkType =
+  | "github"
+  | "website"
+  | "source"
+  | "download"
+  | "video"
+  | "gitlab";
 export interface IProjectLink {
   title: string;
   url: string;
-  type: "github" | "website" | "source" | "download" | "video";
+  type: ProjectLinkType;
 }
 
 export interface IBaseProject {
