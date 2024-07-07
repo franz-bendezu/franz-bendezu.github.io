@@ -4,7 +4,11 @@ import type {
   NextPage,
 } from "next";
 import { PROJECTS, PROJECT_CATEGORIES } from "../../constants/projects";
-import { CodeBracketIcon, ExclamationTriangleIcon } from "@heroicons/react/20/solid";
+import {
+  CodeBracketIcon,
+  ExclamationTriangleIcon,
+  XCircleIcon,
+} from "@heroicons/react/20/solid";
 import ProjectCard from "../../components/project/Card";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -12,6 +16,9 @@ import {
   PROJECT_TECHNOLOGIES,
   PROJECT_TECHNOLOGY_CATEGORY,
 } from "../../constants/projects/techologies";
+import { useEffect, useState } from "react";
+import { IProjectTechnology } from "../../interfaces/project";
+import Image from "next/image";
 
 export const getStaticProps = async (ctx: GetStaticPropsContext) => {
   const category = ctx.params?.category;
@@ -49,8 +56,33 @@ export const getStaticProps = async (ctx: GetStaticPropsContext) => {
 const ProjectsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
   props,
 ) => {
-  const { projects, categories } = props;
+  const { categories } = props;
   const pathname = usePathname();
+  const [projects, setProjects] = useState(props.projects);
+  const [filterTechs, setFilterTech] = useState<IProjectTechnology[]>([]);
+
+  const handleClickTech = (tech: IProjectTechnology) => {
+    if (filterTechs.some((t) => t.code === tech.code)) {
+      setFilterTech(filterTechs.filter((t) => t.code !== tech.code));
+    } else {
+      setFilterTech([...filterTechs, tech]);
+    }
+  };
+
+  useEffect(() => {
+    if (filterTechs.length > 0) {
+      setProjects(
+        props.projects.filter((project) =>
+          project.technologies.some((tech) =>
+            filterTechs.some((filterTech) => filterTech.code === tech.code),
+          ),
+        ),
+      );
+    } else {
+      setProjects(props.projects);
+    }
+  }, [filterTechs, props.projects]);
+
   return (
     <section
       data-testid="projects"
@@ -86,6 +118,32 @@ const ProjectsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
           </Link>
         ))}
       </div>
+      <div className="mt-4 flex flex-row flex-wrap justify-center gap-2">
+        {filterTechs.length > 0 && (
+          <div className="flex flex-row gap-2 items-center justify-center flex-wrap">
+            <span className="text-sm dark:text-white">Filtrado por:</span>
+            {filterTechs.map((tech) => (
+              <button
+                key={tech.code}
+                className="flex flex-row gap-2 rounded px-2 py-1 text-xs outline outline-1 lg:text-sm"
+                onClick={() => handleClickTech(tech)}
+              >
+                {tech.logo && (
+                  <Image
+                    src={tech.logo}
+                    alt={""}
+                    className="h-4 w-4"
+                    width="16"
+                    height="16"
+                  />
+                )}
+                {tech.name}
+                <XCircleIcon className="h-4 w-4" />
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
       <div className="mb-10 flex w-full flex-col flex-wrap items-stretch md:flex-row">
         {projects.length > 0 ? (
           projects.map((project) => (
@@ -96,13 +154,11 @@ const ProjectsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
               description={project.shortDescription}
               image={project.image}
               technologies={project.technologies}
+              onClickTech={handleClickTech}
             />
           ))
         ) : (
           <div className="flex w-full flex-col items-center justify-center gap-4">
-            {
-              // icon for empty state
-            }
             <ExclamationTriangleIcon className="h-12 w-12 text-yellow-500 dark:text-yellow-500" />
             <p className="text-2xl dark:text-white">
               No hay proyectos para mostrar
