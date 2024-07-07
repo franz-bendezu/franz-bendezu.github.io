@@ -1,5 +1,5 @@
 import Image from "next/image";
-import TechStack from "../ui/TagList";
+import TechStack from "./TechStack";
 import Card from "../ui/Card";
 import { IProjectLink, IProjectTechnology } from "../../interfaces/project";
 import { LinkList } from "./LinkList";
