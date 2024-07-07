@@ -27,7 +27,13 @@ export const PROJECTS: IBaseProject[] = [
       src: "/images/comentarios-docentes.png",
       alt: "Plataforma de Comentarios sobre Docentes",
     },
-    link: "URL_DE_TU_PROYECTO",
+    links: [
+      {
+        title: "Ver proyecto",
+        url: "https://conqueprofe.orcebot.com/",
+        type: "website",
+      },
+    ],
     categoryCode: "personal",
     technologyCodes: ["nuxt", "typescript", "graphql", "apollo-server"],
   },
@@ -42,7 +48,13 @@ export const PROJECTS: IBaseProject[] = [
       src: "/images/busuni-tracker.png",
       alt: "BusUni Tracker",
     },
-    link: "https://gitlab.com/horext-app",
+    links:  [
+      {
+        title: "Ver artículo",
+        url: "https://ieeexplore.ieee.org/document/9922172",
+        type: "website",
+      },
+    ],
     categoryCode: "personal",
     technologyCodes: ["iot", "lorawan", "firebase", "vue2", "cloud-functions"],
   },
@@ -56,7 +68,18 @@ export const PROJECTS: IBaseProject[] = [
       src: "/images/horext.png",
       alt: "Horext",
     },
-    link: "https://gitlab.com/horext-app",
+    links: [
+      {
+        title: "Ver código fuente",
+        url: "https://gitlab.com/horext/horext",
+        type: "source",
+      },
+      {
+        title: "Ver demo",
+        url: "https://horext.octatec.io",
+        type: "website",
+      },
+    ],
     categoryCode: "personal",
     technologyCodes: ["nuxt", "spring-boot", "java", "kotlin", "postgresql"],
   },
