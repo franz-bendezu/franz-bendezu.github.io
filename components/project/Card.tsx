@@ -1,5 +1,5 @@
 import Image from "next/image";
-import TagList from "../ui/TagList";
+import TechStack from "../ui/TagList";
 import Card from "../ui/Card";
 import { IProjectTechnology } from "../../interfaces/project";
 
@@ -42,7 +42,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
           </div>
         </a>
         <div className="mt-1 p-2">
-          <TagList tags={technologies} />
+          <TechStack techs={technologies} />
         </div>
       </Card>
     </section>
