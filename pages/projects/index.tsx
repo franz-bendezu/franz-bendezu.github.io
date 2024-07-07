@@ -4,7 +4,7 @@ import type {
   NextPage,
 } from "next";
 import { PROJECTS, PROJECT_CATEGORIES } from "../../constants/projects";
-import { ArrowRightIcon } from "@heroicons/react/20/solid";
+import { ArrowRightIcon, CodeBracketIcon } from "@heroicons/react/20/solid";
 import ProjectCard from "../../components/project/Card";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -44,19 +44,18 @@ const ProjectsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
   return (
     <section
       data-testid="projects"
-      className=" flex flex-col items-center justify-center"
+      className="flex flex-col items-center justify-center gap-4"
     >
-      <h1 className="font-monospace text-3xl dark:text-white lg:text-4xl">
-        Proyectos
+      <h1 className="font-monospace flex flex-row items-center gap-4 text-3xl dark:text-white lg:text-4xl">
+        <CodeBracketIcon className="h-8 w-8" /> Proyectos
       </h1>
-      <span className="mb-5 h-1 w-36 bg-blue-500"></span>
-      <div className="mx-10 flex w-full flex-row flex-wrap items-center  justify-center gap-2">
+      <div className="mx-10 flex w-full flex-row flex-wrap items-center justify-center gap-2">
         <Link
           className={`link ${
             pathname === `/projects`
-              ? "bg-blue-500 text-white  "
+              ? "bg-blue-500 text-white"
               : "text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-500"
-          } rounded px-2 py-1 `}
+          } rounded px-2 py-1`}
           aria-label={`link to all projects`}
           href={`/projects`}
         >
@@ -77,7 +76,7 @@ const ProjectsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
           </Link>
         ))}
       </div>
-      <div className="mb-10 flex w-full flex-col flex-wrap md:flex-row  items-stretch">
+      <div className="mb-10 flex w-full flex-col flex-wrap items-stretch md:flex-row">
         {projects.map((project) => (
           <ProjectCard
             key={project.title}

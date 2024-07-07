@@ -4,7 +4,7 @@ import { useForm, ValidationError } from "@formspree/react";
 import Script from "next/script";
 import Button from "../components/ui/Button";
 import LoaderSpin from "../components/ui/LoaderSpin";
-import { CheckIcon } from "@heroicons/react/20/solid";
+import { ChatBubbleLeftIcon, CheckIcon } from "@heroicons/react/20/solid";
 
 const ContactPage: NextPage = () => {
   const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_SPREE_ID!);
@@ -12,7 +12,7 @@ const ContactPage: NextPage = () => {
   if (state.succeeded) {
     return (
       <div>
-        <CheckIcon className="mx-auto h-12 w-12 bg-green-500 text-white rounded-full p-3" />
+        <CheckIcon className="mx-auto h-12 w-12 rounded-full bg-green-500 p-3 text-white" />
         <h2 className="text-center text-3xl font-semibold">
           Gracias por tu mensaje
         </h2>
@@ -24,8 +24,11 @@ const ContactPage: NextPage = () => {
   }
 
   return (
-    <div className="flex h-full w-full flex-col">
-      <h2 className="text-center text-3xl font-semibold">Contáctame</h2>
+    <div className="flex h-full w-full flex-col items-center justify-center gap-4">
+      <h1 className="font-monospace flex flex-row items-center gap-4 text-3xl dark:text-white lg:text-4xl">
+        <ChatBubbleLeftIcon className="h-8 w-8" />
+        Contáctame
+      </h1>
       <p className="text-center text-lg font-light">
         Estoy interesado en oportunidades de trabajo independiente, proyectos
         increíblemente ambiciosos o grandes. Sin embargo, no dudes en usar el
@@ -37,7 +40,7 @@ const ContactPage: NextPage = () => {
         async
         defer
       ></Script>
-      <form onSubmit={handleSubmit} className="relative mt-6 h-full">
+      <form onSubmit={handleSubmit} className="relative mt-6 h-full w-full">
         <div className="mb-4">
           <label htmlFor="email" className="block font-medium text-gray-700">
             Correo Electrónico
@@ -81,7 +84,7 @@ const ContactPage: NextPage = () => {
           <Button
             type="submit"
             disabled={state.submitting}
-            className=" border-slate-500 uppercase transition-colors duration-300 dark:border-slate-100 dark:text-white"
+            className="border-slate-500 uppercase transition-colors duration-300 dark:border-slate-100 dark:text-white"
           >
             {state.submitting && (
               <LoaderSpin className="me-3 h-4 w-4 fill-slate-100 dark:fill-slate-500" />
