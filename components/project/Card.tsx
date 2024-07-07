@@ -21,7 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
     <section className="w-full p-4 md:w-1/2 lg:w-1/3">
       <Card
         data-testId="card"
-        className="bg-white dark:bg-gray-800 dark:text-white"
+        className="bg-white dark:bg-gray-800 dark:text-white  h-full "
       >
         <a href={url} aria-label="link to project">
           <div className="relative flex items-end overflow-hidden rounded-xl">
