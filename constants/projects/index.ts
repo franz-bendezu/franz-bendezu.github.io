@@ -24,7 +24,7 @@ export const PROJECTS: IBaseProject[] = [
     description: `Durante el período de enero a marzo de 2021, lideré el diseño y desarrollo de una plataforma innovadora que permitió a los estudiantes de la facultad compartir sus opiniones y comentarios sobre los docentes. Utilicé tecnologías modernas como Nuxt.js con Typescript en el frontend y GraphQL con Apollo Server para la consulta de datos. Además, integré el sistema de autenticación de la facultad (UNI-PASSPORT) para garantizar la seguridad y la legitimidad de los comentarios. Una de las características destacadas de esta plataforma fue la implementación de un sistema de conversaciones en hilos, que mejoró significativamente la transparencia y facilitó la retroalimentación sobre los docentes en cada uno de sus cursos.`,
     tags: ["Nuxt.js", "Typescript", "GraphQL", "Apollo Server"],
     image: {
-      src: "/images/comentarios-docentes.jpg",
+      src: "/images/comentarios-docentes.png",
       alt: "Plataforma de Comentarios sobre Docentes",
     },
     link: "URL_DE_TU_PROYECTO",
@@ -39,7 +39,7 @@ export const PROJECTS: IBaseProject[] = [
     description: `Desde enero hasta diciembre de 2020, asumí la responsabilidad de establecer la arquitectura y desarrollar un sistema de localización en tiempo real del bus universitario utilizando tecnologías LoT LoRaWAN. Este proyecto de investigación fue crucial para mejorar la eficiencia del transporte dentro del campus universitario. Implementé Firebase y Vue.js para la aplicación web, mientras que Cloud Functions se utilizó para recibir datos en tiempo real de la red LoRaWAN. Además, utilicé Realtime Database y Firestore para mostrar y almacenar información relevante, como rutas, conductores y trayectos recorridos. La culminación de este proyecto se reflejó en la publicación de un artículo científico con DOI: 10.1109/ISC255366.2022.9922172.`,
     tags: ["LoT LoRaWAN", "Firebase", "Vue.js", "Cloud Functions"],
     image: {
-      src: "/images/busuni-tracker.jpg",
+      src: "/images/busuni-tracker.png",
       alt: "BusUni Tracker",
     },
     link: "https://gitlab.com/horext-app",
@@ -53,7 +53,7 @@ export const PROJECTS: IBaseProject[] = [
     description: `En julio de 2019, llevé a cabo un proyecto independiente denominado Horext, destinado a simplificar la creación de horarios académicos para los estudiantes. Para lograr este objetivo, desarrollé una aplicación utilizando Nuxt.js en el frontend y un API REST en Spring Boot, inicialmente con Java 8 y posteriormente con Kotlin, respaldado por una base de datos PostgreSQL. Además, implementé un robusto sistema de integración y entrega continua (CI/CD) mediante GitLab y gestioné contenedores con Docker para garantizar la escalabilidad y la eficiencia del proyecto. Esta aplicación no solo generaba horarios teniendo en cuenta la carga horaria y eventos paralelos de la universidad, sino que también estaba integrada con Google Calendar para una mejor gestión de los horarios académicos de los estudiantes. Además, este proyecto se encuentra disponible como código abierto.`,
     tags: ["Nuxt.js", "Spring Boot", "Java", "Kotlin", "PostgreSQL"],
     image: {
-      src: "/images/horext.jpg",
+      src: "/images/horext.png",
       alt: "Horext",
     },
     link: "https://gitlab.com/horext-app",
@@ -68,7 +68,7 @@ export const PROJECTS: IBaseProject[] = [
     description: `De julio a diciembre de 2023, desarrollé un módulo de pagos para facilitar el registro de pagos y auditorías con recibos para órdenes de mudanza dentro de la infraestructura existente de la empresa. Implementé funciones para registrar transacciones de pago y asociarlas con las órdenes de mudanza respectivas, asegurando una documentación financiera precisa y rastros de auditoría. Mejoré las capacidades de informes para generar reportes detallados de los registros de pago y recibos asociados, facilitando los procesos de auditoría y análisis financiero.`,
     tags: ["AWS S3", "Java", "MariaDB", "Spring Boot", "Vue.js"],
     image: {
-      src: "/images/payment-module.jpg",
+      src: "/images/payment-module.png",
       alt: "Módulo de Pagos",
     },
     categoryCode: "freelance",
@@ -82,7 +82,7 @@ export const PROJECTS: IBaseProject[] = [
     description: `De julio a diciembre de 2023, migré el backend del sistema de cotizaciones web a una API serverless, mejorando la disponibilidad y reduciendo los costos de servidor. Mejoré la compatibilidad del diseño de correos electrónicos con varios proveedores, lo que resultó en un aumento de la generación de clientes potenciales. Integré análisis para rastrear las vistas de correos electrónicos, proporcionando información valiosa sobre las tasas de apertura y el compromiso.`,
     tags: ["Node.js", "Prisma", "AWS Lambda", "GitHub Actions", "MJML"],
     image: {
-      src: "/images/quotation-system.jpg",
+      src: "/images/quotation-system.png",
       alt: "Sistema de Cotizaciones",
     },
     categoryCode: "freelance",
@@ -110,7 +110,7 @@ export const PROJECTS: IBaseProject[] = [
       "Vue.js",
     ],
     image: {
-      src: "/images/aws-migration.jpg",
+      src: "/images/aws-migration.png",
       alt: "Migración a AWS",
     },
     categoryCode: "freelance",
@@ -141,7 +141,7 @@ export const PROJECTS: IBaseProject[] = [
       "Docker",
     ],
     image: {
-      src: "/images/order-management.jpg",
+      src: "/images/order-management.png",
       alt: "Sistema de Gestión de Cotizaciones y Órdenes",
     },
     categoryCode: "freelance",
