@@ -4,7 +4,7 @@ import type {
   NextPage,
 } from "next";
 import { PROJECTS, PROJECT_CATEGORIES } from "../../constants/projects";
-import { ArrowRightIcon, CodeBracketIcon } from "@heroicons/react/20/solid";
+import { CodeBracketIcon, ExclamationTriangleIcon } from "@heroicons/react/20/solid";
 import ProjectCard from "../../components/project/Card";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -87,16 +87,28 @@ const ProjectsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
         ))}
       </div>
       <div className="mb-10 flex w-full flex-col flex-wrap items-stretch md:flex-row">
-        {projects.map((project) => (
-          <ProjectCard
-            key={project.title}
-            links={project.links}
-            title={project.title}
-            description={project.shortDescription}
-            image={project.image}
-            technologies={project.technologies}
-          />
-        ))}
+        {projects.length > 0 ? (
+          projects.map((project) => (
+            <ProjectCard
+              key={project.title}
+              links={project.links}
+              title={project.title}
+              description={project.shortDescription}
+              image={project.image}
+              technologies={project.technologies}
+            />
+          ))
+        ) : (
+          <div className="flex w-full flex-col items-center justify-center gap-4">
+            {
+              // icon for empty state
+            }
+            <ExclamationTriangleIcon className="h-12 w-12 text-yellow-500 dark:text-yellow-500" />
+            <p className="text-2xl dark:text-white">
+              No hay proyectos para mostrar
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
