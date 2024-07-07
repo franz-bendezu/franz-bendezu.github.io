@@ -32,11 +32,14 @@ export const getStaticProps = async (ctx: GetStaticPropsContext) => {
             ),
           })),
         }))
-        // Sort projects by priority and then by date started
         .sort((a, b) => {
-          return (a.priority || 0) === (b.priority || 0)
-            ? Number(a.start || 0) - Number(b.start || 0)
-            : (b.priority || 0) - (a.priority || 0);
+          if (a.priority && b.priority) {
+            return b.priority - a.priority;
+          }
+          if (a.start && b.start) {
+            return new Date(b.start).getTime() - new Date(a.start).getTime();
+          }
+          return 0;
         }),
       categories: PROJECT_CATEGORIES,
     },
