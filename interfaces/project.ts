@@ -39,6 +39,9 @@ export interface IBaseProject {
   links?: IProjectLink[];
   categoryCode: ProjectCategoryCodes;
   technologyCodes: IBaseProjectTechnology["code"][];
+  priority?: number;
+  start?: string;
+  end?: string;
 }
 
 export interface IProjectTechnology extends IBaseProjectTechnology {
