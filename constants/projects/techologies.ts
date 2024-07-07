@@ -3,7 +3,7 @@ import {
   IProjectTechonologyCategory,
 } from "../../interfaces/project";
 
-export const PROJECT_TECHNOLOGY_CATEGORY = [
+export const PROJECT_TECHNOLOGY_CATEGORY: IProjectTechonologyCategory[] = [
   {
     name: "Cloud",
     value: "cloud",
@@ -48,7 +48,7 @@ export const PROJECT_TECHNOLOGY_CATEGORY = [
     name: "Content management system",
     value: "cms",
   },
-] as const satisfies IProjectTechonologyCategory[];
+];
 
 export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
   {
