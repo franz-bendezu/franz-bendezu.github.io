@@ -75,8 +75,8 @@ export const PROJECTS: IBaseProject[] = [
     links: [
       {
         title: "Código fuente",
-        url: "https://gitlab.com/horext/horext",
-        type: "source",
+        url: "https://gitlab.com/horext-app",
+        type: "gitlab",
       },
       {
         title: "Demo",
