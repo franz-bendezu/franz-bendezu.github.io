@@ -77,7 +77,7 @@ const ProjectsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
           </Link>
         ))}
       </div>
-      <div className="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
+      <div className="mb-10 flex w-full flex-col flex-wrap md:flex-row  items-stretch">
         {projects.map((project) => (
           <ProjectCard
             key={project.title}
