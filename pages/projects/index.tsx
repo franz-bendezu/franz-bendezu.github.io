@@ -98,16 +98,6 @@ const ProjectsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
           />
         ))}
       </div>
-      <a
-        href="https://github.com/"
-        target="_blank"
-        rel="noopener"
-        className="flex flex-row text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-500"
-        aria-label="link to repository"
-      >
-        Ver más en GitHub
-        <ArrowRightIcon className="ml-1 h-6 w-6"></ArrowRightIcon>
-      </a>
     </section>
   );
 };
