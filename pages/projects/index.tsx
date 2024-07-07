@@ -80,7 +80,7 @@ const ProjectsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
         {projects.map((project) => (
           <ProjectCard
             key={project.title}
-            url={project.link}
+            links={project.links}
             title={project.title}
             description={project.shortDescription}
             image={project.image}

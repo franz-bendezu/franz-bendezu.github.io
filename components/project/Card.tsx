@@ -1,10 +1,10 @@
 import Image from "next/image";
 import TechStack from "../ui/TagList";
 import Card from "../ui/Card";
-import { IProjectTechnology } from "../../interfaces/project";
+import { IProjectLink, IProjectTechnology } from "../../interfaces/project";
+import { LinkList } from "./LinkList";
 
 interface ProjectCardProps {
-  url?: string;
   image: {
     src: string;
     alt: string;
@@ -12,18 +12,19 @@ interface ProjectCardProps {
   title?: string;
   description: string;
   technologies: IProjectTechnology[];
+  links?: IProjectLink[];
   children?: HTMLElement | HTMLElement[];
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = (props) => {
-  const { url, image, title, description, technologies } = props;
+  const { links, image, title, description, technologies } = props;
   return (
     <section className="w-full p-4 md:w-1/2 lg:w-1/3">
       <Card
         data-testId="card"
-        className="h-full bg-white dark:bg-gray-800 dark:text-white flex justify-between flex-col"
+        className="flex h-full flex-col justify-between bg-white dark:bg-gray-800 dark:text-white"
       >
-        <a href={url} aria-label="link to project">
+        <a aria-label="link to project">
           <div className="relative flex items-end overflow-hidden rounded-xl">
             <Image
               className="mx-auto"
@@ -44,6 +45,8 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
         <div className="mt-1 p-2">
           <TechStack techs={technologies} />
         </div>
+
+        {links?.length && <LinkList links={links} />}
       </Card>
     </section>
   );
