@@ -2,7 +2,7 @@ import {
   ArrowDownTrayIcon,
   CodeBracketIcon,
   FilmIcon,
-  GlobeAltIcon,
+  GlobeAmericasIcon,
 } from "@heroicons/react/20/solid";
 import { IProjectLink } from "../../interfaces/project";
 import GitHubIcon from "../icon/github";
@@ -11,7 +11,7 @@ import GitLabIcon from "../icon/gitlab";
 const LINK_ICONS = {
   github: GitHubIcon,
   gitlab: GitLabIcon,
-  website: GlobeAltIcon,
+  website: GlobeAmericasIcon,
   source: CodeBracketIcon,
   download: ArrowDownTrayIcon,
   video: FilmIcon,
