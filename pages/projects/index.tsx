@@ -20,17 +20,24 @@ export const getStaticProps = async (ctx: GetStaticPropsContext) => {
       projects: (category
         ? PROJECTS.filter((project) => project.categoryCode === category)
         : PROJECTS
-      ).map((project) => ({
-        ...project,
-        technologies: PROJECT_TECHNOLOGIES.filter((technology) =>
-          project.technologyCodes.includes(technology.code),
-        ).map((technology) => ({
-          ...technology,
-          categories: PROJECT_TECHNOLOGY_CATEGORY.filter((category) =>
-            technology.categoryCodes.includes(category.value),
-          ),
-        })),
-      })),
+      )
+        .map((project) => ({
+          ...project,
+          technologies: PROJECT_TECHNOLOGIES.filter((technology) =>
+            project.technologyCodes.includes(technology.code),
+          ).map((technology) => ({
+            ...technology,
+            categories: PROJECT_TECHNOLOGY_CATEGORY.filter((category) =>
+              technology.categoryCodes.includes(category.value),
+            ),
+          })),
+        }))
+        // Sort projects by priority and then by date started
+        .sort((a, b) => {
+          return (a.priority || 0) === (b.priority || 0)
+            ? Number(a.start || 0) - Number(b.start || 0)
+            : (b.priority || 0) - (a.priority || 0);
+        }),
       categories: PROJECT_CATEGORIES,
     },
   };

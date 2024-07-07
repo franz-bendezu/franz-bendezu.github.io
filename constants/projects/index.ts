@@ -29,13 +29,15 @@ export const PROJECTS: IBaseProject[] = [
     },
     links: [
       {
-        title: "Ver proyecto",
+        title: "Demo",
         url: "https://conqueprofe.orcebot.com/",
         type: "website",
       },
     ],
     categoryCode: "personal",
     technologyCodes: ["nuxt", "typescript", "graphql", "apollo-server"],
+    start: "2021-01",
+    end: "2021-03",
   },
   {
     status: "completed",
@@ -50,13 +52,15 @@ export const PROJECTS: IBaseProject[] = [
     },
     links:  [
       {
-        title: "Ver artículo",
+        title: "Artículo",
         url: "https://ieeexplore.ieee.org/document/9922172",
         type: "website",
       },
     ],
     categoryCode: "personal",
     technologyCodes: ["iot", "lorawan", "firebase", "vue2", "cloud-functions"],
+    start: "2020-01",
+    end: "2020-12",
   },
   {
     status: "completed",
@@ -70,18 +74,19 @@ export const PROJECTS: IBaseProject[] = [
     },
     links: [
       {
-        title: "Ver código fuente",
+        title: "Código fuente",
         url: "https://gitlab.com/horext/horext",
         type: "source",
       },
       {
-        title: "Ver demo",
+        title: "Demo",
         url: "https://horext.octatec.io",
         type: "website",
       },
     ],
     categoryCode: "personal",
     technologyCodes: ["nuxt", "spring-boot", "java", "kotlin", "postgresql"],
+    start: "2019-07",
   },
   {
     status: "completed",
@@ -96,6 +101,8 @@ export const PROJECTS: IBaseProject[] = [
     },
     categoryCode: "freelance",
     technologyCodes: ["aws-s3", "java", "mariadb", "spring-boot", "vue2"],
+    start: "2023-07",
+    end: "2023-12",
   },
   {
     status: "completed",
@@ -117,6 +124,8 @@ export const PROJECTS: IBaseProject[] = [
       "github-actions",
       "mjml",
     ],
+    start: "2023-07",
+    end: "2023-12",
   },
   {
     status: "completed",
@@ -148,6 +157,8 @@ export const PROJECTS: IBaseProject[] = [
       "java",
       "vue2",
     ],
+    start: "2023-07",
+    end: "2023-11",
   },
   {
     status: "completed",
@@ -181,6 +192,8 @@ export const PROJECTS: IBaseProject[] = [
       "nginx",
       "docker",
     ],
+    start: "2021-12",
+    end: "2023-07",
   },
   {
     status: "completed",
@@ -202,5 +215,7 @@ export const PROJECTS: IBaseProject[] = [
       "wordpress",
       "bootstrap",
     ],
+    start: "2021-10",
+    end: "2021-12",
   },
 ];
