@@ -1,6 +1,6 @@
 import { expect, test, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
-import Page from "../contact";
+import Page from "../pages/contact";
 
 vi.mock("@formspree/react", () => ({
   useForm: vi.fn(() => [vi.fn(), vi.fn()]),
@@ -16,3 +16,4 @@ test("Page", () => {
 
   expect(screen.getByRole("button", { name: "submit" })).toBeDefined();
 });
+
