@@ -1,18 +1,13 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, test, vi } from "vitest";
-import ProjectsPage, { getStaticProps } from "../index";
-import { IProject, IProjectCategory } from "../../../interfaces/project";
+import ProjectsPage, { getStaticProps } from "../pages/projects/index";
+import { IProject, IProjectCategory } from "../interfaces/project";
 
 // Mock the next/navigation module
 vi.mock("next/navigation", () => ({
   usePathname: vi.fn(() => "/projects"),
 }));
 
-// Mock the next/image module
-vi.mock("next/image", () => ({
-  __esModule: true,
-  default: (props: any) => <img {...props} />,
-}));
 
 describe("ProjectsPage", () => {
   test("renders project cards", () => {
