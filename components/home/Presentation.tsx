@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import profile from "../../public/profile.png";
@@ -6,7 +7,6 @@ import { ArrowDownTrayIcon } from "@heroicons/react/20/solid";
 import { useTranslations } from "next-intl";
 import Styles from "./styles.module.css";
 import LoaderSpin from "../ui/LoaderSpin";
-import { useRouter } from "next/router";
 
 const HomePresentation: React.FC = () => {
   const t = useTranslations("Home");
@@ -31,7 +31,7 @@ const HomePresentation: React.FC = () => {
           <h1 className="text-md font-semibold">{t("greeting")}</h1>
           <h1 className="mb-2 text-4xl font-semibold">{t("name")}</h1>
           <h2 className="mb-2 text-3xl font-semibold">
-            {t("profession", {
+            {t.rich("profession", {
               highlight: (children) => (
                 <span className="bg-blue-400 px-1 dark:bg-blue-500">
                   {children}
@@ -40,7 +40,7 @@ const HomePresentation: React.FC = () => {
             })}
           </h2>
           <p className="mb-4 text-lg">
-            {t("description", {
+            {t.rich("description", {
               GreenHighlight: (children) => (
                 <span className="bg-green-300 px-1 dark:bg-green-500">
                   {children}

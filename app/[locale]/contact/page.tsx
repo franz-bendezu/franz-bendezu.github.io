@@ -1,9 +1,10 @@
+"use client"
 import { NextPage } from "next";
 import React from "react";
 import { useForm } from "@formspree/react";
 import Script from "next/script";
 import { ChatBubbleLeftIcon } from "@heroicons/react/20/solid";
-import { ContactForm } from "../components/contact/Form";
+import { ContactForm } from "../../../components/contact/Form";
 
 const ContactPage: NextPage = () => {
   const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_SPREE_ID!);

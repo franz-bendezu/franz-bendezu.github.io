@@ -1,6 +1,6 @@
 import React, { ReactNode, forwardRef } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 interface NavLinkProps {
   href: string;
@@ -35,7 +35,7 @@ const NavLink: React.FC<NavLinkProps> = forwardRef(
       activeClass = "text-gray-800 font-bold dark:text-gray-400",
       className = "",
     } = props;
-    const { pathname } = useRouter();
+    const pathname = usePathname();
     const isActive = exact ? pathname === href : pathname.startsWith(href);
     const currentClass = `${className} text-base px-3 py-2 ${
       isActive ? activeClass : "text-gray-600 dark:text-white font-normal"

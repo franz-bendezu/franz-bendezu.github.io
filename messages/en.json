@@ -1,4 +1,14 @@
 {
+  "Navigation": {
+    "index": "Home",
+    "projects": "Projects",
+    "contact": "Contact",
+    "about": "About me",
+    "switchLocale": "{locale}"
+  },
+  "Footer": {
+    "madeWith": "Designed by Franz Bendezu"
+  },
   "Home": {
     "greeting": "Hello, I am",
     "name": "Franz Bendezu Isidro",

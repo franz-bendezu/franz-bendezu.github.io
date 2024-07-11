@@ -1,23 +1,26 @@
+"use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import NavbarDesktop from "./NavbarDesktop";
 import NavbarMobile from "./NavbarMobile";
 import { ROUTES_NAVBAR } from "../../constants/navbar";
 import ThemeSwitch from "../ui/ThemeSwtich";
 import { LanguageIcon } from "@heroicons/react/20/solid";
-import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
+import { LOCALES } from "@/constants/locales";
 
-const Navigation: React.FC = () => {
-  const [routes] = useState(ROUTES_NAVBAR);
+const Navigation: React.FC<{ locale: string }> = ({ locale }) => {
+  const routes = ROUTES_NAVBAR;
   const t = useTranslations("Navigation");
-  const { locale, locales, query, pathname } = useRouter();
-  const otherLocale = locales
-    ?.map((cur) => ({
-      key: cur,
-      value: cur.toUpperCase(),
-    }))
-    .find((cur) => cur.key !== locale);
+  const pathname = usePathname();
+  const otherLocale = LOCALES?.map((cur) => ({
+    key: cur.locale,
+    value: cur.lang.toUpperCase(),
+  })).find((cur) => cur.key !== locale);
+  const otherPath = pathname.startsWith(`/${locale}`)
+    ? pathname.replace(`/${locale}`, `/${otherLocale?.key}`)
+    : `/${otherLocale?.key}${pathname}`;
 
   return (
     <nav className="sticky top-0 z-20 border-b-[1px] border-slate-700/90 bg-white !bg-opacity-30 py-2 backdrop-blur-lg backdrop-filter dark:bg-gray-900 md:py-6">
@@ -35,10 +38,7 @@ const Navigation: React.FC = () => {
           <div className="mr-2 flex items-center">
             <Link
               className="mr-2 flex items-center rounded bg-amber-400/80 px-3 py-2 font-bold text-white hover:bg-amber-400"
-              href={{
-                pathname: pathname,
-                query,
-              }}
+              href={otherPath}
               locale={otherLocale?.key}
             >
               <span className="mr-1">
