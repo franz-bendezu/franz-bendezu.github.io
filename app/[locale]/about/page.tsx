@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+import { Metadata, NextPage } from "next";
 import {
   WORK_EXPERIENCES,
   EDUCATION_EXPERIENCES,
@@ -9,6 +9,12 @@ import {
   BriefcaseIcon,
   BuildingLibraryIcon,
 } from "@heroicons/react/20/solid";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "About",
+  },
+};
 
 const AboutPage: NextPage = () => {
   return (

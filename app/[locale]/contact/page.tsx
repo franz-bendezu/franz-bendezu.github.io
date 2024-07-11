@@ -1,8 +1,14 @@
-import { NextPage } from "next";
+import { Metadata, NextPage } from "next";
 import React from "react";
 import Script from "next/script";
 import { ChatBubbleLeftIcon } from "@heroicons/react/20/solid";
 import { ContactForm } from "../../../components/contact/Form";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Contact",
+  },
+};
 
 const ContactPage: NextPage = () => {
   return (
