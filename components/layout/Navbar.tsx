@@ -11,11 +11,11 @@ import { useTranslations } from "next-intl";
 const Navigation: React.FC = () => {
   const [routes] = useState(ROUTES_NAVBAR);
   const t = useTranslations("Navigation");
-  const { locale, locales, route } = useRouter();
+  const { locale, locales, query, pathname } = useRouter();
   const otherLocale = locales
     ?.map((cur) => ({
       key: cur,
-      value: cur.toUpperCase()
+      value: cur.toUpperCase(),
     }))
     .find((cur) => cur.key !== locale);
 
@@ -35,7 +35,10 @@ const Navigation: React.FC = () => {
           <div className="mr-2 flex items-center">
             <Link
               className="mr-2 flex items-center rounded bg-amber-400/80 px-3 py-2 font-bold text-white hover:bg-amber-400"
-              href={route}
+              href={{
+                pathname: pathname,
+                query,
+              }}
               locale={otherLocale?.key}
             >
               <span className="mr-1">
