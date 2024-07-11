@@ -115,10 +115,7 @@ const ProjectsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
                 : "text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-500"
             } rounded px-2 py-1`}
             aria-label={`link to ${category.name} projects`}
-            href={{
-              pathname: "/projects/c/[category]",
-              query: { category: category.value },
-            }}
+            href={`/projects/c/${category.value}`}
           >
             {category.name}
           </Link>
