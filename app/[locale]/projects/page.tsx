@@ -18,32 +18,31 @@ import { IProject, IProjectTechnology } from "../../../interfaces/project";
 import Image from "next/image";
 
 const getDataByCategory = (category?: string) => {
-  return {
-    projects: (category
+  return (
+    category
       ? [...PROJECTS.filter((project) => project.categoryCode === category)]
       : [...PROJECTS]
-    )
-      .map<IProject>((project) => ({
-        ...project,
-        technologies: PROJECT_TECHNOLOGIES.filter((technology) =>
-          project.technologyCodes.includes(technology.code),
-        ).map((technology) => ({
-          ...technology,
-          categories: PROJECT_TECHNOLOGY_CATEGORY.filter((category) =>
-            technology.categoryCodes.includes(category.value),
-          ),
-        })),
-      }))
-      .sort((a, b) => {
-        if (a.priority && b.priority) {
-          return b.priority - a.priority;
-        }
-        if (a.start && b.start) {
-          return new Date(b.start).getTime() - new Date(a.start).getTime();
-        }
-        return 0;
-      }),
-  };
+  )
+    .map<IProject>((project) => ({
+      ...project,
+      technologies: PROJECT_TECHNOLOGIES.filter((technology) =>
+        project.technologyCodes.includes(technology.code),
+      ).map((technology) => ({
+        ...technology,
+        categories: PROJECT_TECHNOLOGY_CATEGORY.filter((category) =>
+          technology.categoryCodes.includes(category.value),
+        ),
+      })),
+    }))
+    .sort((a, b) => {
+      if (a.priority && b.priority) {
+        return b.priority - a.priority;
+      }
+      if (a.start && b.start) {
+        return new Date(b.start).getTime() - new Date(a.start).getTime();
+      }
+      return 0;
+    });
 };
 
 type Props = {
@@ -52,7 +51,7 @@ type Props = {
 
 export default function ProjectsPage({ params }: Props) {
   const categories = PROJECT_CATEGORIES;
-  const { projects: initialProjects } = getDataByCategory(params.category);
+  const initialProjects = getDataByCategory(params.category);
   const pathname = usePathname();
   const [projects, setProjects] = useState(initialProjects);
   const [filterTechs, setFilterTech] = useState<IProjectTechnology[]>([]);
