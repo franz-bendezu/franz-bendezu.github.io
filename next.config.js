@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-  output: "export",
   reactStrictMode: true,
   images: {
     formats: ["image/avif", "image/webp"],
@@ -13,5 +12,9 @@ module.exports = {
       },
     ],
     unoptimized: true,
+  },
+  i18n: {
+    locales: ["en", "es"],
+    defaultLocale: "en",
   },
 };
