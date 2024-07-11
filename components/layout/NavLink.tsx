@@ -1,5 +1,5 @@
 import React, { ReactNode, forwardRef } from "react";
-import Link from "next/link";
+import Link from 'next/link'
 import { usePathname } from "next/navigation";
 
 interface NavLinkProps {
@@ -8,6 +8,7 @@ interface NavLinkProps {
   activeClass?: string;
   exact?: boolean;
   children: ReactNode;
+  locale?: string;
 }
 
 const DownArrowIcon = () => (
@@ -34,6 +35,7 @@ const NavLink: React.FC<NavLinkProps> = forwardRef(
       children,
       activeClass = "text-gray-800 font-bold dark:text-gray-400",
       className = "",
+      locale = "",
     } = props;
     const pathname = usePathname();
     const isActive = exact ? pathname === href : pathname.startsWith(href);
@@ -42,7 +44,7 @@ const NavLink: React.FC<NavLinkProps> = forwardRef(
     }`;
 
     return (
-      <Link href={href} className={currentClass}>
+      <Link href={href} className={currentClass} locale={locale}>
         {children} {isActive && <DownArrowIcon />}
       </Link>
     );

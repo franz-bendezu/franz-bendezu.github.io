@@ -24,7 +24,7 @@ const Navigation: React.FC<{ locale: string }> = ({ locale }) => {
 
   return (
     <nav className="sticky top-0 z-20 border-b-[1px] border-slate-700/90 bg-white !bg-opacity-30 py-2 backdrop-blur-lg backdrop-filter dark:bg-gray-900 md:py-6">
-      <div className="container mx-auto flex items-center justify-between px-4 ">
+      <div className="container mx-auto flex items-center justify-between px-4">
         <Link
           href="/"
           locale={locale}
@@ -35,7 +35,7 @@ const Navigation: React.FC<{ locale: string }> = ({ locale }) => {
           Franz Bendezu
         </Link>
         <div className="flex items-center">
-          <NavbarDesktop routes={routes} />
+          <NavbarDesktop routes={routes} locale={locale} />
           <div className="mr-2 flex items-center">
             <Link
               className="mr-2 flex items-center rounded bg-amber-400/80 px-3 py-2 font-bold text-white hover:bg-amber-400"
@@ -50,7 +50,7 @@ const Navigation: React.FC<{ locale: string }> = ({ locale }) => {
             <ThemeSwitch></ThemeSwitch>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"></div>
-          <NavbarMobile routes={routes} />
+          <NavbarMobile routes={routes} locale={locale} />
         </div>
       </div>
     </nav>
