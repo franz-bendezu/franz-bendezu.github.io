@@ -18,13 +18,12 @@ export const metadata: Metadata = {
   description: "Franz Bendezu - Software Developer",
 };
 
-export default function RootLayout({
-  children,
-  params: { locale },
-}: {
+type Props = {
   children: React.ReactNode;
   params: { locale: string };
-}) {
+};
+
+export default function RootLayout({ children, params: { locale } }: Props) {
   unstable_setRequestLocale(locale);
   const messages = useMessages();
   return (
