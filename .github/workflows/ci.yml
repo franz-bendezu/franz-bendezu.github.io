@@ -4,8 +4,6 @@ on:
   workflow_dispatch:
   workflow_call:
     secrets:
-      GITHUB_TOKEN:
-        required: true
       NEXT_PUBLIC_SPREE_ID:
         required: true
       NEXT_PUBLIC_RECAPTCHA_ID:
