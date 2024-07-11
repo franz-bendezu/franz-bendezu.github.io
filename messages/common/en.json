@@ -1,9 +1,12 @@
 {
-    "Navigation": {
-      "index": "Home",
-      "projects": "Projects",
-      "contact": "Contact",
-      "about": "About me",
-      "switchLocale": "{locale}"
-    }
+  "Navigation": {
+    "index": "Home",
+    "projects": "Projects",
+    "contact": "Contact",
+    "about": "About me",
+    "switchLocale": "{locale}"
+  },
+  "Footer": {
+    "madeWith": "Designed by Franz Bendezu"
   }
+}
