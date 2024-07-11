@@ -1,21 +1,21 @@
 export const ROUTES_NAVBAR = [
   {
-    title: "Inicio",
+    title: "index",
     path: "/",
     exact: true,
   },
   {
-    title: "Proyectos",
+    title: "projects",
     path: "/projects",
     exact: true,
   },
   {
-    title: "Acerca de mí",
+    title: "about",
     path: "/about",
     exact: true,
   },
   {
-    title: "Contacto",
+    title: "contact",
     path: "/contact",
     exact: true,
   },

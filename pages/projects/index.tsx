@@ -20,7 +20,9 @@ import { useEffect, useState } from "react";
 import { IProject, IProjectTechnology } from "../../interfaces/project";
 import Image from "next/image";
 
-export const getStaticProps = async (ctx: GetStaticPropsContext) => {
+export const getStaticProps = async (
+  ctx: GetStaticPropsContext & { locale: string },
+) => {
   const category = ctx.params?.category;
   return {
     props: {
@@ -49,6 +51,9 @@ export const getStaticProps = async (ctx: GetStaticPropsContext) => {
           return 0;
         }),
       categories: PROJECT_CATEGORIES,
+      messages: {
+        ...require(`../../messages/common/${ctx.locale}.json`),
+      },
     },
   };
 };

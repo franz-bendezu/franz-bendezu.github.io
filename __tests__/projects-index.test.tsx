@@ -43,7 +43,7 @@ describe("ProjectsPage", () => {
       },
     ];
 
-    render(<ProjectsPage projects={projects} categories={[]} />);
+    render(<ProjectsPage projects={projects} categories={[]} messages={{}} />);
 
     expect(screen.getByText("Project 1")).toBeInTheDocument();
     expect(screen.getByText("Short description 1")).toBeInTheDocument();
@@ -52,7 +52,7 @@ describe("ProjectsPage", () => {
   });
 
   test("renders 'No hay proyectos para mostrar' message when there are no projects", () => {
-    render(<ProjectsPage projects={[]} categories={[]} />);
+    render(<ProjectsPage projects={[]} categories={[]} messages={{}} />);
 
     expect(
       screen.getByText("No hay proyectos para mostrar"),
@@ -95,7 +95,7 @@ describe("ProjectsPage", () => {
       },
     ];
 
-    render(<ProjectsPage projects={projects} categories={[]} />);
+    render(<ProjectsPage projects={projects} categories={[]} messages={{}} />);
 
     expect(screen.getByText("Project 1")).toBeInTheDocument();
     expect(screen.getByText("Project 2")).toBeInTheDocument();
@@ -112,7 +112,7 @@ describe("ProjectsPage", () => {
       { value: "demo", name: "Category 2" },
     ];
 
-    render(<ProjectsPage projects={[]} categories={categories} />);
+    render(<ProjectsPage projects={[]} categories={categories} messages={{}} />);
 
     expect(screen.getByText("Todos")).toBeInTheDocument();
     expect(screen.getByText("Category 1")).toBeInTheDocument();
@@ -122,7 +122,9 @@ describe("ProjectsPage", () => {
 
 describe("getStaticProps", () => {
   test("returns projects and categories", async () => {
-    const ctx = {};
+    const ctx = {
+      locale: "en",
+    };
 
     const { props } = await getStaticProps(ctx);
 
