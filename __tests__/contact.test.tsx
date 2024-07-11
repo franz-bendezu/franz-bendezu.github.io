@@ -1,6 +1,6 @@
 import { expect, test, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
-import ContactPage from "@/app/[locale]/contact/page";
+import ContactPage from "../app/[locale]/contact/page";
 
 vi.mock("@formspree/react", () => ({
   useForm: vi.fn(() => [vi.fn(), vi.fn()]),
