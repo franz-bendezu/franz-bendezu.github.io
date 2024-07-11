@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
 import { render, screen } from "@testing-library/react";
-import AboutPage from "@/app/[locale]/about/page";
+import AboutPage from "../app/[locale]/about/page";
 
 test("Page", () => {
   render(<AboutPage />);
