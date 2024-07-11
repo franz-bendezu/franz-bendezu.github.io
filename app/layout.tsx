@@ -6,7 +6,7 @@ type Props = {
   children: ReactNode[];
 };
 export const metadata = {
-  metadataBase: isProd ? 'https://franzbendezu.com' : undefined,
+  metadataBase: isProd ? 'https://franzbendezu.me' : undefined,
 }
 export default function RootLayout({ children}: Props) {
   return  children 
