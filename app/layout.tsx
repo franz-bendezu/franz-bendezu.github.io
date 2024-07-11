@@ -16,6 +16,28 @@ export const metadata: Metadata = {
       en: "/en",
     },
   },
+  keywords: [
+    "Desarollador de Software",
+    "Software Developer",
+    "Vue.js",
+    "React.js",
+    "Node.js",
+    "JavaScript",
+    "TypeScript",
+    "HTML",
+    "CSS",
+    "TailwindCSS",
+    "Next.js",
+    "Nuxt.js",
+    "Express.js",
+    "MongoDB",
+    "MySQL",
+    "PostgreSQL",
+    "Firebase",
+    "AWS",
+    "Azure",
+    "Google Cloud",
+  ],
 };
 export default function RootLayout({ children }: Props) {
   return children;
