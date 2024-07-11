@@ -1,7 +1,7 @@
 import HomePresentation from "../../components/home/Presentation";
 import { unstable_setRequestLocale } from "next-intl/server";
 
-export default function RootPage({
+export default function LocaleRootPage({
   params: { locale },
 }: {
   params: { locale: string };
