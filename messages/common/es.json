@@ -2,8 +2,8 @@
     "Navigation": {
       "index": "Inicio",
       "projects": "Proyectos",
-      "about": "Acerca de mi",
       "contact": "Contacto",
+      "about": "Acerca de mi",
       "switchLocale": "{locale}"
     }
   }
