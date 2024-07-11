@@ -12,26 +12,6 @@ export const size = {
  
 export const contentType = 'image/png'
 
-export function generateImageMetadata() {
-    return [
-      {
-        contentType: 'image/png',
-        id: 'small',
-        size: { width: 300, height: 157 },
-      },
-      {
-        contentType: 'image/png',
-        id: 'medium',
-        size: { width: 600, height: 315 },
-      },
-      {
-        contentType: 'image/png',
-        id: 'large',
-        size: { width: 1200, height: 630 },
-      },
-    ]
-  }
-// Image generation
 export default async function Image() {
   return new ImageResponse(
     (
