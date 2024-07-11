@@ -2,15 +2,15 @@ import { NextPage } from "next";
 import {
   WORK_EXPERIENCES,
   EDUCATION_EXPERIENCES,
-} from "../constants/experiences";
-import Card from "../components/ui/Card";
+} from "../../../constants/experiences";
+import Card from "../../../components/ui/Card";
 import {
   Bars4Icon,
   BriefcaseIcon,
   BuildingLibraryIcon,
 } from "@heroicons/react/20/solid";
 
-const Projects: NextPage = () => {
+const AboutPage: NextPage = () => {
   return (
     <section
       data-testid="projects"
@@ -93,4 +93,4 @@ const Projects: NextPage = () => {
     </section>
   );
 };
-export default Projects;
+export default AboutPage;

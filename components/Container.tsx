@@ -6,9 +6,10 @@ import Footer from "./layout/Footer";
 
 type Props = {
   children: ReactNode;
+  locale: string;
 };
 
-const Container: React.FC<Props> = ({ children, ...customMeta }) => {
+const Container: React.FC<Props> = ({ children, locale, ...customMeta }) => {
   const router = useRouter();
   interface IMeta {
     image: string;
@@ -53,7 +54,7 @@ const Container: React.FC<Props> = ({ children, ...customMeta }) => {
         )}
       </Head>
       <main className="w-full dark:bg-gray-800">
-        <Navbar />
+        <Navbar locale={locale} />
         <div>{children}</div>
         <Footer />
       </main>

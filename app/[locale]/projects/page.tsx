@@ -1,67 +1,60 @@
-import type {
-  GetStaticPropsContext,
-  InferGetStaticPropsType,
-  NextPage,
-} from "next";
-import { PROJECTS, PROJECT_CATEGORIES } from "../../constants/projects";
+"use client";
+
+import { PROJECTS, PROJECT_CATEGORIES } from "../../../constants/projects";
 import {
   CodeBracketIcon,
   ExclamationTriangleIcon,
   XCircleIcon,
 } from "@heroicons/react/20/solid";
-import ProjectCard from "../../components/project/Card";
-import Link from 'next/link'
+import ProjectCard from "../../../components/project/Card";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   PROJECT_TECHNOLOGIES,
   PROJECT_TECHNOLOGY_CATEGORY,
-} from "../../constants/projects/techologies";
+} from "../../../constants/projects/techologies";
 import { useEffect, useState } from "react";
-import { IProject, IProjectTechnology } from "../../interfaces/project";
+import { IProject, IProjectTechnology } from "../../../interfaces/project";
 import Image from "next/image";
 
-export const getStaticProps = async (
-  ctx: GetStaticPropsContext & { locale: string },
-) => {
-  const category = ctx.params?.category;
+const getDataByCategory = (category?: string) => {
   return {
-    props: {
-      projects: (category
-        ? PROJECTS.filter((project) => project.categoryCode === category)
-        : PROJECTS
-      )
-        .map<IProject>((project) => ({
-          ...project,
-          technologies: PROJECT_TECHNOLOGIES.filter((technology) =>
-            project.technologyCodes.includes(technology.code),
-          ).map((technology) => ({
-            ...technology,
-            categories: PROJECT_TECHNOLOGY_CATEGORY.filter((category) =>
-              technology.categoryCodes.includes(category.value),
-            ),
-          })),
-        }))
-        .sort((a, b) => {
-          if (a.priority && b.priority) {
-            return b.priority - a.priority;
-          }
-          if (a.start && b.start) {
-            return new Date(b.start).getTime() - new Date(a.start).getTime();
-          }
-          return 0;
-        }),
-      categories: PROJECT_CATEGORIES,
-      locale: ctx.locale,
-    },
+    projects: (category
+      ? [...PROJECTS.filter((project) => project.categoryCode === category)]
+      : [...PROJECTS]
+    )
+      .map<IProject>((project) => ({
+        ...project,
+        technologies: PROJECT_TECHNOLOGIES.filter((technology) =>
+          project.technologyCodes.includes(technology.code),
+        ).map((technology) => ({
+          ...technology,
+          categories: PROJECT_TECHNOLOGY_CATEGORY.filter((category) =>
+            technology.categoryCodes.includes(category.value),
+          ),
+        })),
+      }))
+      .sort((a, b) => {
+        if (a.priority && b.priority) {
+          return b.priority - a.priority;
+        }
+        if (a.start && b.start) {
+          return new Date(b.start).getTime() - new Date(a.start).getTime();
+        }
+        return 0;
+      }),
   };
 };
 
-const ProjectsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
-  props,
-) => {
-  const { categories } = props;
+type Props = {
+  params: { category?: string };
+};
+
+export default function ProjectsPage({ params }: Props) {
+  const categories = PROJECT_CATEGORIES;
+  const { projects: initialProjects } = getDataByCategory(params.category);
   const pathname = usePathname();
-  const [projects, setProjects] = useState(props.projects);
+  const [projects, setProjects] = useState(initialProjects);
   const [filterTechs, setFilterTech] = useState<IProjectTechnology[]>([]);
 
   const handleClickTech = (tech: IProjectTechnology) => {
@@ -75,16 +68,16 @@ const ProjectsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
   useEffect(() => {
     if (filterTechs.length > 0) {
       setProjects(
-        props.projects.filter((project) =>
+        initialProjects.filter((project) =>
           project.technologies.some((tech) =>
             filterTechs.some((filterTech) => filterTech.code === tech.code),
           ),
         ),
       );
     } else {
-      setProjects(props.projects);
+      setProjects(initialProjects);
     }
-  }, [filterTechs, props.projects]);
+  }, [filterTechs]);
 
   return (
     <section
@@ -172,5 +165,4 @@ const ProjectsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
       </div>
     </section>
   );
-};
-export default ProjectsPage;
+}
