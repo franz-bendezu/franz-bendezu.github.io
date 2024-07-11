@@ -98,15 +98,4 @@ const ContactPage: NextPage = () => {
   );
 };
 
-export function getStaticProps({ locale }: { locale: string }) {
-  return {
-    props: {
-      messages: {
-        ...require(`../messages/common/${locale}.json`),
-      },
-      now: new Date().getTime(),
-    },
-  };
-}
-
 export default ContactPage;

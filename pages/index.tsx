@@ -10,9 +10,7 @@ export function getStaticProps({ locale }: { locale: string }) {
     props: {
       messages: {
         ...require(`../messages/home/${locale}.json`),
-        ...require(`../messages/common/${locale}.json`),
       },
-      now: new Date().getTime(),
     },
   };
 }

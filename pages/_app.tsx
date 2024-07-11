@@ -6,7 +6,11 @@ import Footer from "../components/layout/Footer";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
+  const messages = {
+    ...(pageProps.messages || {}),
+    ...require(`../messages/common/${router.locale}.json`),
+  };
   return (
     <NextIntlProvider
       // To achieve consistent date, time and number formatting
@@ -20,10 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           },
         },
       }}
-      messages={pageProps.messages}
-      // Providing an explicit value for `now` ensures consistent formatting of
-      // relative values regardless of the server or client environment.
-      now={new Date(pageProps.now)}
+      messages={messages}
     >
       <ThemeProvider attribute="class" defaultTheme="light">
         <Head>
