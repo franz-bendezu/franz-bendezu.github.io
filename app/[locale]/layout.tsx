@@ -13,8 +13,11 @@ export function generateStaticParams() {
   return LOCALES;
 }
 export const metadata: Metadata = {
-  title: "Franz Bendezu - Software Developer",
-  description: "Franz Bendezu - Software Developer",
+  title: {
+    template: "%s |  Franz Bendezu - Software Developer",
+    absolute: "Home",
+  },
+  description: "Welcome to my personal website",
 };
 
 type Props = {
@@ -22,7 +25,10 @@ type Props = {
   params: { locale: string };
 };
 
-export default function LocaleRootLayout({ children, params: { locale } }: Props) {
+export default function LocaleRootLayout({
+  children,
+  params: { locale },
+}: Props) {
   unstable_setRequestLocale(locale);
   const messages = useMessages();
   return (
