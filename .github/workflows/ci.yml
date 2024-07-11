@@ -10,7 +10,7 @@ on:
         required: true
 
 jobs:
-  deploy:
+  validate:
     runs-on: ubuntu-latest
     strategy:
       matrix:
