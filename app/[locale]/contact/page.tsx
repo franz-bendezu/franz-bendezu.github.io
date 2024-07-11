@@ -1,14 +1,10 @@
-"use client"
 import { NextPage } from "next";
 import React from "react";
-import { useForm } from "@formspree/react";
 import Script from "next/script";
 import { ChatBubbleLeftIcon } from "@heroicons/react/20/solid";
 import { ContactForm } from "../../../components/contact/Form";
 
 const ContactPage: NextPage = () => {
-  const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_SPREE_ID!);
-
   return (
     <div className="flex h-full w-full flex-col items-center justify-center gap-4">
       <h1 className="font-monospace flex flex-row items-center gap-4 text-3xl dark:text-white lg:text-4xl">
@@ -26,7 +22,7 @@ const ContactPage: NextPage = () => {
         async
         defer
       ></Script>
-      <ContactForm handleSubmit={handleSubmit} state={state} />
+      <ContactForm />
     </div>
   );
 };

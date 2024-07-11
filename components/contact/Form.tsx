@@ -1,18 +1,14 @@
-import { TUseForm, ValidationError } from "@formspree/react";
-import { FC } from "react";
+"use client";
+import { useForm, ValidationError } from "@formspree/react";
 import Button from "../ui/Button";
 import LoaderSpin from "../ui/LoaderSpin";
 import { CheckIcon } from "@heroicons/react/20/solid";
 
 type FieldValues = Record<string, string | number | boolean | null | undefined>;
 
-export const ContactForm = <T extends FieldValues>({
-  handleSubmit,
-  state,
-}: {
-  handleSubmit: TUseForm<T>[1];
-  state: TUseForm<T>[0];
-}) => {
+export const ContactForm = () => {
+  const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_SPREE_ID!);
+
   if (state.succeeded) {
     return (
       <div>
