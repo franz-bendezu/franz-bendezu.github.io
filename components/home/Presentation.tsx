@@ -10,16 +10,15 @@ import { useRouter } from "next/router";
 
 const HomePresentation: React.FC = () => {
   const t = useTranslations("Home");
-  const { locale } = useRouter();
   const [loading, setLoading] = useState(false);
   const handleCVDownload = async () => {
     setLoading(true);
-    const data = await fetch("/cv.pdf");
+    const data = await fetch(t("cvPath").toString());
     const blob = await data.blob();
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "Franz-Bendezu-CV.pdf";
+    a.download = "Franz Bendezu CV.pdf";
     a.click();
     window.URL.revokeObjectURL(url);
     setLoading(false);
