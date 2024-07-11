@@ -9,5 +9,5 @@ jobs:
   ci:
     uses: ./.github/workflows/ci.yml
     secrets:
-      NEXT_PUBLIC_SPREE_ID: ${{ secrets.NEXT_PUBLIC_SPREE_ID }}
-      NEXT_PUBLIC_RECAPTCHA_ID: ${{ secrets.NEXT_PUBLIC_RECAPTCHA_ID }}
+      NEXT_PUBLIC_SPREE_ID: test-spree-id
+      NEXT_PUBLIC_RECAPTCHA_ID: test-recaptcha-id
