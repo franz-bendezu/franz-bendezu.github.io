@@ -41,6 +41,7 @@ export default function RootLayout({
             },
           }}
           messages={messages}
+          locale={locale}
         >
           <ThemeProvider attribute="class" defaultTheme="light">
             <div className="flex min-h-screen flex-col bg-gradient-to-t from-gray-50 to-gray-200 dark:bg-gradient-to-b dark:from-slate-950 dark:to-slate-800">
