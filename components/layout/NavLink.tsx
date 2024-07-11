@@ -37,7 +37,7 @@ const NavLink: React.FC<NavLinkProps> = forwardRef(
     } = props;
     const { pathname } = useRouter();
     const isActive = exact ? pathname === href : pathname.startsWith(href);
-    const currentClass = `${className} text-base px-3 py-2 ${
+    const currentClass = `${className} flex text-base px-3 py-2 items-center ${
       isActive ? activeClass : "text-gray-600 dark:text-white font-normal"
     }`;
 

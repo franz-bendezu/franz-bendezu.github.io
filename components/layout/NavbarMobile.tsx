@@ -3,10 +3,12 @@ import { Menu, Transition } from "@headlessui/react";
 import NavLink from "./NavLink";
 import { Bars4Icon } from "@heroicons/react/20/solid";
 import { IRouteNavbar } from "../../interfaces/routes";
+import { useTranslations } from "next-intl";
 
 const NavbarMobile: React.FC<{
   routes: IRouteNavbar[];
 }> = ({ routes }) => {
+  const t = useTranslations("Navigation");
   return (
     <Menu as={Fragment}>
       <div className="-mr-2 flex items-center md:hidden">
@@ -37,7 +39,7 @@ const NavbarMobile: React.FC<{
                       href={route.path}
                       exact={route.exact}
                     >
-                      {route.title}
+                      {t(route.title)}
                     </NavLink>
                   )}
                 </Menu.Item>
