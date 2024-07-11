@@ -93,4 +93,5 @@ const Projects: NextPage = () => {
     </section>
   );
 };
+
 export default Projects;
