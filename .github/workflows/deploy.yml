@@ -16,6 +16,7 @@ jobs:
 
 
   deploy:
+    needs: ci
     uses: ./.github/workflows/cd.yml
     secrets:
       NEXT_PUBLIC_SPREE_ID: ${{ secrets.NEXT_PUBLIC_SPREE_ID }}
