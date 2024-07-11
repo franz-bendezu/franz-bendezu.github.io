@@ -33,7 +33,6 @@ const Navigation: React.FC = () => {
         <div className="flex items-center">
           <NavbarDesktop routes={routes} />
           <div className="mr-2 flex items-center">
-            <ThemeSwitch></ThemeSwitch>
             <Link
               className="mr-2 flex items-center rounded bg-amber-400/80 px-3 py-2 font-bold text-white hover:bg-amber-400"
               href={route}
@@ -44,6 +43,7 @@ const Navigation: React.FC = () => {
               </span>
               {t("switchLocale", { locale: otherLocale?.value })}
             </Link>
+            <ThemeSwitch></ThemeSwitch>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"></div>
           <NavbarMobile routes={routes} />
