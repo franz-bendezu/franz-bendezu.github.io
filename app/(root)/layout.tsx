@@ -7,7 +7,10 @@ type Props = {
 };
 
 export const metadata: Metadata = {
-  title: "Franz Bendezu - Desarrollador de Software",
+  title: {
+    template: "%s | Franz Bendezu - Desarrollador de Software",
+    absolute: "Inicio",
+  },
   description: "Bienvenido a mi sitio web personal",
 };
 
