@@ -1,0 +1,11 @@
+{
+  "Home": {
+    "greeting": "Hola, soy",
+    "name": "Franz Bendezu Isidro",
+    "profession": "Desarrollador de <highlight>Software</highlight>",
+    "description": "Disfruto crear soluciones que simplifican la vida de las personas, optimizando cada paso del proceso para entregar resultados <GrayHighlight>eficientes</GrayHighlight> y de alta <GreenHighlight>calidad</GreenHighlight>.",
+    "downloadCV": "Descargar CV",
+    "efficient": "eficientes",
+    "highQuality": "alta calidad"
+  }
+}

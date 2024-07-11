@@ -1,0 +1,9 @@
+{
+  "Home": {
+    "greeting": "Hello, I am",
+    "name": "Franz Bendezu Isidro",
+    "profession": "<highlight>Software</highlight> Developer",
+    "description": "I enjoy creating solutions that simplify people's lives, optimizing every step of the process to deliver <GrayHighlight>efficient</GrayHighlight> and <GreenHighlight>high-quality</GreenHighlight> results.",
+    "downloadCV": "Download CV"
+  }
+}
