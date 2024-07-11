@@ -22,7 +22,7 @@ type Props = {
   params: { locale: string };
 };
 
-export default function RootLayout({ children, params: { locale } }: Props) {
+export default function LocaleRootLayout({ children, params: { locale } }: Props) {
   unstable_setRequestLocale(locale);
   const messages = useMessages();
   return (
