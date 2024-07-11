@@ -7,12 +7,13 @@ import { useTranslations } from "next-intl";
 
 const NavbarMobile: React.FC<{
   routes: IRouteNavbar[];
-}> = ({ routes }) => {
+  locale: string;
+}> = ({ routes, locale }) => {
   const t = useTranslations("Navigation");
   return (
     <Menu as={Fragment}>
       <div className="-mr-2 flex items-center md:hidden">
-        <Menu.Button className=" inline-flex items-center justify-center p-2 text-gray-600 focus:outline-none     dark:text-white  ">
+        <Menu.Button className="inline-flex items-center justify-center p-2 text-gray-600 focus:outline-none dark:text-white">
           <span className="sr-only">Open main menu</span>
           <Bars4Icon className="h-6 w-6" aria-hidden="true" />
         </Menu.Button>
@@ -35,9 +36,10 @@ const NavbarMobile: React.FC<{
                   {({ active }) => (
                     <NavLink
                       activeClass="dark:bg-gray-700 font-bold bg-gray-200 dark:hover:text-white"
-                      className="block rounded-md px-3 py-2 text-base font-medium text-gray-600 hover:bg-gray-50                  hover:text-gray-800 dark:text-white dark:hover:text-gray-600"
+                      className="block rounded-md px-3 py-2 text-base font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-800 dark:text-white dark:hover:text-gray-600"
                       href={route.path}
                       exact={route.exact}
+                      locale={locale}
                     >
                       {t(route.title)}
                     </NavLink>

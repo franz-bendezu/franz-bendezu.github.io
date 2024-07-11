@@ -1,7 +1,6 @@
 import { PROJECTS, PROJECT_CATEGORIES } from "../../../constants/projects";
 import { CodeBracketIcon } from "@heroicons/react/20/solid";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Link from "next/link";;
 import {
   PROJECT_TECHNOLOGIES,
   PROJECT_TECHNOLOGY_CATEGORY,
@@ -38,7 +37,7 @@ const getDataByCategory = (category?: string) => {
 };
 
 type Props = {
-  params: { category?: string };
+  params: { category?: string , locale: string};
 };
 
 export default function ProjectsPage({ params }: Props) {
@@ -62,6 +61,7 @@ export default function ProjectsPage({ params }: Props) {
           } rounded px-2 py-1`}
           aria-label={`link to all projects`}
           href={`/projects`}
+          locale={params.locale}
         >
           Todos
         </Link>
@@ -75,6 +75,8 @@ export default function ProjectsPage({ params }: Props) {
             } rounded px-2 py-1`}
             aria-label={`link to ${category.name} projects`}
             href={`/projects/c/${category.value}`}
+            locale={params.locale}
+
           >
             {category.name}
           </Link>
