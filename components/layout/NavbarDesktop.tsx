@@ -2,13 +2,18 @@ import React from "react";
 import NavLink from "./NavLink";
 import { IRouteNavbar } from "../../interfaces/routes";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/router";
+import Link from "next/link";
+import { LanguageIcon } from "@heroicons/react/20/solid";
 
 const NavbarDesktop: React.FC<{
   routes: IRouteNavbar[];
 }> = ({ routes }) => {
   const t = useTranslations("Navigation");
+
+
   return (
-    <div className="hidden md:ml-5 md:block md:space-x-8 md:pr-2 lg:ml-10 lg:pr-4">
+    <div className="hidden md:gap-2 md:flex lg:gap-3">
       {routes.map((route) => (
         <NavLink
           href={route.path}

@@ -4,6 +4,6 @@
       "projects": "Projects",
       "contact": "Contact",
       "about": "About me",
-      "switchLocale": "Switch to {locale, select, de {German} en {English} other {}}"
+      "switchLocale": "{locale}"
     }
   }
