@@ -2,15 +2,15 @@ name: CD Pipeline
 
 on:
   workflow_dispatch:
-  workflow_call:
-    secrets:
-      NEXT_PUBLIC_SPREE_ID:
-        required: true
-      NEXT_PUBLIC_RECAPTCHA_ID:
-        required: true
+    workflow_call:
+      secrets:
+        NEXT_PUBLIC_SPREE_ID:
+          required: true
+        NEXT_PUBLIC_RECAPTCHA_ID:
+          required: true
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,7 +24,7 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-
+        
       - name: Build project
         run: yarn run build
         env:
@@ -33,6 +33,26 @@ jobs:
 
       - name: Add .nojekyll file
         run: touch ./out/.nojekyll
+
+      - name: Archive build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-artifacts
+          path: ./out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: build-artifacts
+          path: ./out
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.6.1
