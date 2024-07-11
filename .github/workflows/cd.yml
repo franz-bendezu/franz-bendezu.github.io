@@ -2,12 +2,12 @@ name: CD Pipeline
 
 on:
   workflow_dispatch:
-    workflow_call:
-      secrets:
-        NEXT_PUBLIC_SPREE_ID:
-          required: true
-        NEXT_PUBLIC_RECAPTCHA_ID:
-          required: true
+  workflow_call:
+    secrets:
+      NEXT_PUBLIC_SPREE_ID:
+        required: true
+      NEXT_PUBLIC_RECAPTCHA_ID:
+        required: true
 
 jobs:
   build:
