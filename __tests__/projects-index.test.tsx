@@ -12,13 +12,12 @@ vi.mock("next/navigation", () => ({
 vi.mock("next/image", () => ({
   __esModule: true,
   // eslint-disable-next-line @next/next/no-img-element
-  default: (props: any) => <img {...props}  alt="mock image" />,
+  default: (props: any) => <img {...props} alt="mock image" />,
 }));
-
 
 describe("ProjectsPage", () => {
   test("renders project cards", () => {
-    const projects:IProject[] = [
+    const projects: IProject[] = [
       {
         title: "Project 1",
         shortDescription: "Short description 1",
@@ -28,7 +27,7 @@ describe("ProjectsPage", () => {
         status: "active",
         tags: [],
         categoryCode: "freelance",
-        technologyCodes: []
+        technologyCodes: [],
       },
       {
         title: "Project 2",
@@ -39,7 +38,7 @@ describe("ProjectsPage", () => {
         status: "active",
         tags: [],
         categoryCode: "freelance",
-        technologyCodes: []
+        technologyCodes: [],
       },
     ];
 
@@ -60,38 +59,44 @@ describe("ProjectsPage", () => {
   });
 
   test("filters projects by technology", () => {
-    const projects:IProject[] = [
+    const projects: IProject[] = [
       {
         title: "Project 1",
         shortDescription: "Short description 1",
         image: { src: "project1.jpg", alt: "Project 1" },
-        technologies: [{
-          code: "tech1", name: "Technology 1",
-          categories: [],
-          color: "",
-          categoryCodes: []
-        }],
+        technologies: [
+          {
+            code: "tech1",
+            name: "Technology 1",
+            categories: [],
+            color: "",
+            categoryCodes: [],
+          },
+        ],
         links: [],
         status: "active",
         tags: [],
         categoryCode: "freelance",
-        technologyCodes: []
+        technologyCodes: [],
       },
       {
         title: "Project 2",
         shortDescription: "Short description 2",
         image: { src: "project2.jpg", alt: "Project 2" },
-        technologies: [{
-          code: "tech2", name: "Technology 2",
-          categories: [],
-          color: "",
-          categoryCodes: []
-        }],
+        technologies: [
+          {
+            code: "tech2",
+            name: "Technology 2",
+            categories: [],
+            color: "",
+            categoryCodes: [],
+          },
+        ],
         links: [],
         status: "active",
         tags: [],
         categoryCode: "freelance",
-        technologyCodes: []
+        technologyCodes: [],
       },
     ];
 
@@ -112,7 +117,9 @@ describe("ProjectsPage", () => {
       { value: "demo", name: "Category 2" },
     ];
 
-    render(<ProjectsPage projects={[]} categories={categories} messages={{}} />);
+    render(
+      <ProjectsPage projects={[]} categories={categories} messages={{}} />,
+    );
 
     expect(screen.getByText("Todos")).toBeInTheDocument();
     expect(screen.getByText("Category 1")).toBeInTheDocument();
