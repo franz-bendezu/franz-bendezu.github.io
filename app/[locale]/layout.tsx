@@ -1,4 +1,3 @@
-import "tailwindcss/tailwind.css";
 import { ThemeProvider } from "next-themes";
 import Footer from "../../components/layout/Footer";
 import Navbar from "../../components/layout/Navbar";
