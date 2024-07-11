@@ -10,7 +10,7 @@ import {
   XCircleIcon,
 } from "@heroicons/react/20/solid";
 import ProjectCard from "../../components/project/Card";
-import Link from "next/link";
+import Link from 'next/link'
 import { usePathname } from "next/navigation";
 import {
   PROJECT_TECHNOLOGIES,
@@ -51,9 +51,7 @@ export const getStaticProps = async (
           return 0;
         }),
       categories: PROJECT_CATEGORIES,
-      messages: {
-        ...require(`../../messages/common/${ctx.locale}.json`),
-      },
+      locale: ctx.locale,
     },
   };
 };
@@ -117,7 +115,10 @@ const ProjectsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
                 : "text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-500"
             } rounded px-2 py-1`}
             aria-label={`link to ${category.name} projects`}
-            href={`/projects/c/${category.value}`}
+            href={{
+              pathname: "/projects/c/[category]",
+              query: { category: category.value },
+            }}
           >
             {category.name}
           </Link>
