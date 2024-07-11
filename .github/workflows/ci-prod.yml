@@ -1,0 +1,13 @@
+name: CI Prod Pipeline
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  ci:
+    uses: ./.github/workflows/ci.yml
+    secrets:
+      NEXT_PUBLIC_SPREE_ID: ${{ secrets.NEXT_PUBLIC_SPREE_ID }}
+      NEXT_PUBLIC_RECAPTCHA_ID: ${{ secrets.NEXT_PUBLIC_RECAPTCHA_ID }}
