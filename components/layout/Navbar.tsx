@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { Fragment, useState } from "react";
+import React, {  useState } from "react";
 import NavbarDesktop from "./NavbarDesktop";
 import NavbarMobile from "./NavbarMobile";
 import { ROUTES_NAVBAR } from "../../constants/navbar";
@@ -7,7 +7,7 @@ import ThemeSwitch from "../ui/ThemeSwtich";
 
 const Navigation: React.FC = () => {
   const [routes] = useState(ROUTES_NAVBAR);
-
+  
   return (
     <nav className="sticky top-0 z-20 border-b-[1px] border-slate-700/90 bg-white !bg-opacity-30 py-2  backdrop-blur-lg backdrop-filter dark:bg-gray-900 md:py-6">
       <div className="container mx-auto flex items-center justify-between px-4 lg:max-w-4xl">
