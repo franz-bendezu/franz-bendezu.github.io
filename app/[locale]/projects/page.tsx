@@ -9,6 +9,7 @@ import { IProject, IProjectTechnology } from "../../../interfaces/project";
 import { ProjectList } from "@/components/project/List";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
+import { DEFAULT_LOCALE } from "@/constants/locales";
 
 const getDataByCategory = (category?: string) => {
   return (
@@ -42,11 +43,12 @@ type Props = {
   params: { category?: string; locale?: string };
 };
 
-export default function ProjectsPage({ params }: Props) {
-  if (params.locale)
-  unstable_setRequestLocale(params.locale);
+export default function ProjectsPage({
+  params: { locale = DEFAULT_LOCALE, category },
+}: Props) {
+  unstable_setRequestLocale(locale);
   const categories = PROJECT_CATEGORIES;
-  const initialProjects = getDataByCategory(params.category);
+  const initialProjects = getDataByCategory(category);
   const t = useTranslations("Projects");
 
   return (
@@ -56,34 +58,34 @@ export default function ProjectsPage({ params }: Props) {
     >
       <h1 className="font-monospace flex flex-row items-center gap-4 text-3xl dark:text-white lg:text-4xl">
         <CodeBracketIcon className="h-8 w-8" />
-        { t('title')}
+        {t("title")}
       </h1>
       <div className="mx-10 flex w-full flex-row flex-wrap items-center justify-center gap-2">
         <Link
           className={`link ${
-            !params.category
+            category === DEFAULT_LOCALE
               ? "bg-blue-500 text-white"
               : "text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-500"
           } rounded px-2 py-1`}
           aria-label={`link to all projects`}
           href={`/projects`}
-          locale={params.locale}
+          locale={locale}
         >
           Todos
         </Link>
-        {categories.map((category) => (
+        {categories.map((item) => (
           <Link
-            key={category.value}
+            key={item.value}
             className={`link ${
-              params.category === category.value
+              category === item.value
                 ? "bg-blue-500 text-white"
                 : "text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-500"
             } rounded px-2 py-1`}
-            aria-label={`link to ${category.name} projects`}
-            href={`/projects/c/${category.value}`}
-            locale={params.locale}
+            aria-label={`link to ${item.name} projects`}
+            href={`/projects/c/${item.value}`}
+            locale={locale}
           >
-            {category.name}
+            {item.name}
           </Link>
         ))}
       </div>

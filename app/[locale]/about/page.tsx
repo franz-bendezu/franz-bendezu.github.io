@@ -11,6 +11,7 @@ import {
 } from "@heroicons/react/20/solid";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
+import { DEFAULT_LOCALE } from "@/constants/locales";
 
 export const metadata: Metadata = {
   title: {
@@ -19,11 +20,13 @@ export const metadata: Metadata = {
 };
 
 type Props = {
-  params: { locale: string };
+  params: { locale?: string };
 };
 
-const AboutPage: NextPage<Props> = ({ params }) => {
-  unstable_setRequestLocale(params.locale);
+const AboutPage: NextPage<Props> = ({
+  params: { locale = DEFAULT_LOCALE },
+}) => {
+  unstable_setRequestLocale(locale);
   const t = useTranslations("About");
   return (
     <section
