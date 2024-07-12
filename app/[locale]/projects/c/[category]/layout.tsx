@@ -1,3 +1,4 @@
+import { DEFAULT_LOCALE } from "@/constants/locales";
 import { PROJECT_CATEGORIES } from "@/constants/projects";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { ReactNode } from "react";
@@ -14,7 +15,10 @@ type Props = {
   params: { locale: string; category?: string };
 };
 
-export default function RootLayout({ children, params }: Props) {
-  unstable_setRequestLocale(params.locale);
+export default function ProjectCategoryLayout({
+  children,
+  params: { locale = DEFAULT_LOCALE },
+}: Props) {
+  unstable_setRequestLocale(locale);
   return <>{children}</>;
 }
