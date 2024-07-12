@@ -1,4 +1,4 @@
-export { generateStaticParams } from "../../../../[locale]/projects/c/[category]/layout";
+export { generateStaticParams } from "@/app/[locale]/projects/c/[category]/layout";
 import { ReactNode } from "react";
 
 type Props = {
