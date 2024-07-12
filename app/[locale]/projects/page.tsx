@@ -1,6 +1,5 @@
 import { PROJECTS, PROJECT_CATEGORIES } from "../../../constants/projects";
 import { CodeBracketIcon } from "@heroicons/react/20/solid";
-import Link from "next/link";
 import {
   PROJECT_TECHNOLOGIES,
   PROJECT_TECHNOLOGY_CATEGORY,
@@ -10,6 +9,7 @@ import { ProjectList } from "@/components/project/List";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { DEFAULT_LOCALE } from "@/constants/locales";
+import { Link } from "@/navigation";
 
 const getDataByCategory = (category?: string) => {
   return (
