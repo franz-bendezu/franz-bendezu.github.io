@@ -9,6 +9,7 @@ import {
   BriefcaseIcon,
   BuildingLibraryIcon,
 } from "@heroicons/react/20/solid";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: {
@@ -16,7 +17,12 @@ export const metadata: Metadata = {
   },
 };
 
-const AboutPage: NextPage = () => {
+type Props = {
+  params: { locale: string };
+};
+
+const AboutPage: NextPage<Props> = ({ params }) => {
+  unstable_setRequestLocale(params.locale);
   return (
     <section
       data-testid="projects"
