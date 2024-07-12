@@ -3,6 +3,7 @@ import React from "react";
 import Script from "next/script";
 import { ChatBubbleLeftIcon } from "@heroicons/react/20/solid";
 import { ContactForm } from "../../../components/contact/Form";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: {
@@ -10,7 +11,12 @@ export const metadata: Metadata = {
   },
 };
 
-const ContactPage: NextPage = () => {
+type Props = {
+  params: { locale: string };
+};
+
+const ContactPage: NextPage<Props> = ({ params }) => {
+  unstable_setRequestLocale(params.locale);
   return (
     <div className="flex h-full w-full flex-col items-center justify-center gap-4">
       <h1 className="font-monospace flex flex-row items-center gap-4 text-3xl dark:text-white lg:text-4xl">

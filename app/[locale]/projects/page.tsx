@@ -1,12 +1,13 @@
 import { PROJECTS, PROJECT_CATEGORIES } from "../../../constants/projects";
 import { CodeBracketIcon } from "@heroicons/react/20/solid";
-import Link from "next/link";;
+import Link from "next/link";
 import {
   PROJECT_TECHNOLOGIES,
   PROJECT_TECHNOLOGY_CATEGORY,
 } from "../../../constants/projects/techologies";
 import { IProject, IProjectTechnology } from "../../../interfaces/project";
 import { ProjectList } from "@/components/project/List";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 const getDataByCategory = (category?: string) => {
   return (
@@ -37,10 +38,11 @@ const getDataByCategory = (category?: string) => {
 };
 
 type Props = {
-  params: { category?: string , locale: string};
+  params: { category?: string; locale: string };
 };
 
 export default function ProjectsPage({ params }: Props) {
+  unstable_setRequestLocale(params.locale);
   const categories = PROJECT_CATEGORIES;
   const initialProjects = getDataByCategory(params.category);
 
@@ -76,7 +78,6 @@ export default function ProjectsPage({ params }: Props) {
             aria-label={`link to ${category.name} projects`}
             href={`/projects/c/${category.value}`}
             locale={params.locale}
-
           >
             {category.name}
           </Link>
