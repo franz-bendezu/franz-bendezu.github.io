@@ -41,7 +41,7 @@ export interface IBaseProject {
   shortDescription: string;
   description?: string;
   tags: string[];
-  image: IProjectImage;
+  image?: IProjectImage;
   links?: IProjectLink[];
   categoryCode: ProjectCategoryCodes;
   technologyCodes: IBaseProjectTechnology["code"][];

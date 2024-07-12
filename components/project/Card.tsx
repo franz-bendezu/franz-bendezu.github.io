@@ -5,7 +5,7 @@ import { IProjectLink, IProjectTechnology } from "../../interfaces/project";
 import { LinkList } from "./LinkList";
 
 interface ProjectCardProps {
-  image: {
+  image?: {
     src: string;
     alt: string;
   };
@@ -19,7 +19,15 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = (props) => {
-  const { links, image, title, description, technologies, onClickTech, selectedTechs } = props;
+  const {
+    links,
+    image,
+    title,
+    description,
+    technologies,
+    onClickTech,
+    selectedTechs,
+  } = props;
   return (
     <section className="w-full p-4 md:w-1/2 lg:w-1/3">
       <Card
@@ -28,14 +36,18 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
       >
         <a aria-label="link to project">
           <div className="relative flex items-end overflow-hidden rounded-xl">
-            <Image
-              className="mx-auto"
-              src={image.src}
-              alt={image.alt}
-              width={400}
-              height={400}
-              loading="eager"
-            />
+            {image ? (
+              <Image
+                className="mx-auto"
+                src={image.src}
+                alt={image.alt}
+                width={400}
+                height={400}
+                loading="eager"
+              />
+            ) : (
+              <div className="h-40 w-full bg-gray-200 dark:bg-gray-700"></div>
+            )}
           </div>
           <div className="mt-1 p-2">
             <h3 className="text-xl text-blue-500 lg:text-2xl">{title}</h3>
