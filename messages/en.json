@@ -16,5 +16,22 @@
     "description": "I enjoy creating solutions that simplify people's lives, optimizing every step of the process to deliver <GrayHighlight>efficient</GrayHighlight> and <GreenHighlight>high-quality</GreenHighlight> results.",
     "downloadCV": "Download CV",
     "cvPath": "/Franz-Bendezu-CV-EN.pdf"
+  },
+  "Projects": {
+    "title": "Projects"
+  },
+  "Contact": {
+    "title": "Contact",
+    "description": "If you have any questions or want to work with me, do not hesitate to contact me.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send"
+    }
+  },
+  "About": {
+    "title": "About me",
+    "description": "I am a software developer with 4 years of experience in the development of web applications, I have a degree in Systems Engineering and I am passionate about technology. "
   }
 }

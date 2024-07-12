@@ -4,6 +4,7 @@ import Script from "next/script";
 import { ChatBubbleLeftIcon } from "@heroicons/react/20/solid";
 import { ContactForm } from "../../../components/contact/Form";
 import { unstable_setRequestLocale } from "next-intl/server";
+import { useTranslations } from "next-intl";
 
 export const metadata: Metadata = {
   title: {
@@ -17,11 +18,12 @@ type Props = {
 
 const ContactPage: NextPage<Props> = ({ params }) => {
   unstable_setRequestLocale(params.locale);
+  const t = useTranslations("Contact");
   return (
     <div className="flex h-full w-full flex-col items-center justify-center gap-4">
       <h1 className="font-monospace flex flex-row items-center gap-4 text-3xl dark:text-white lg:text-4xl">
         <ChatBubbleLeftIcon className="h-8 w-8" />
-        Contáctame
+        {t("title")}
       </h1>
       <p className="text-center text-lg font-light">
         Estoy interesado en oportunidades de trabajo independiente, proyectos
