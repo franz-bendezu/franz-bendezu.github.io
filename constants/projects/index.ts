@@ -95,10 +95,6 @@ export const PROJECTS: IBaseProject[] = [
       "Desarrollo de un módulo de pagos con seguimiento de ingresos y gastos.",
     description: `De julio a diciembre de 2023, desarrollé un módulo de pagos para facilitar el registro de pagos y auditorías con recibos para órdenes de mudanza dentro de la infraestructura existente de la empresa. Implementé funciones para registrar transacciones de pago y asociarlas con las órdenes de mudanza respectivas, asegurando una documentación financiera precisa y rastros de auditoría. Mejoré las capacidades de informes para generar reportes detallados de los registros de pago y recibos asociados, facilitando los procesos de auditoría y análisis financiero.`,
     tags: ["AWS S3", "Java", "MariaDB", "Spring Boot", "Vue.js"],
-    image: {
-      src: "/images/payment-module.png",
-      alt: "Módulo de Pagos",
-    },
     categoryCode: "freelance",
     technologyCodes: ["aws-s3", "java", "mariadb", "spring-boot", "vue2"],
     start: "2023-07",
@@ -111,10 +107,6 @@ export const PROJECTS: IBaseProject[] = [
       "Migración del sistema de cotizaciones web a una API serverless.",
     description: `De julio a diciembre de 2023, migré el backend del sistema de cotizaciones web a una API serverless, mejorando la disponibilidad y reduciendo los costos de servidor. Mejoré la compatibilidad del diseño de correos electrónicos con varios proveedores, lo que resultó en un aumento de la generación de clientes potenciales. Integré análisis para rastrear las vistas de correos electrónicos, proporcionando información valiosa sobre las tasas de apertura y el compromiso.`,
     tags: ["Node.js", "Prisma", "AWS Lambda", "GitHub Actions", "MJML"],
-    image: {
-      src: "/images/quotation-system.png",
-      alt: "Sistema de Cotizaciones",
-    },
     categoryCode: "freelance",
     technologyCodes: [
       "nodejs",
@@ -142,10 +134,6 @@ export const PROJECTS: IBaseProject[] = [
       "Java",
       "Vue.js",
     ],
-    image: {
-      src: "/images/aws-migration.png",
-      alt: "Migración a AWS",
-    },
     categoryCode: "freelance",
     technologyCodes: [
       "aws-amplify",
@@ -176,10 +164,6 @@ export const PROJECTS: IBaseProject[] = [
       "Nginx",
       "Docker",
     ],
-    image: {
-      src: "/images/order-management.png",
-      alt: "Sistema de Gestión de Cotizaciones y Órdenes",
-    },
     categoryCode: "freelance",
     technologyCodes: [
       "spring-boot",
@@ -201,10 +185,6 @@ export const PROJECTS: IBaseProject[] = [
     shortDescription: "Mejora del sistema de cotizaciones web.",
     description: `De octubre a diciembre de 2021, mejoré la interfaz del sistema de cotizaciones web integrando un estilo personalizado para Google Maps y estableciendo una nueva UI/UX para cada paso de la cotización y la plantilla de correo electrónico. Migré un iframe a un plugin de WordPress para un mejor manejo de actualizaciones. Desarrollé funciones para la captura de clientes potenciales y datos de auditoría.`,
     tags: ["React", "JavaScript", "HTML", "CSS", "WordPress"],
-    image: {
-      src: "/images/quotation-enhancement.jpg",
-      alt: "Mejora del Sistema de Cotizaciones Web",
-    },
     categoryCode: "freelance",
     technologyCodes: [
       "react",
