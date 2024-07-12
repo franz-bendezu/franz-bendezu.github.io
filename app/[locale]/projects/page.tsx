@@ -39,10 +39,11 @@ const getDataByCategory = (category?: string) => {
 };
 
 type Props = {
-  params: { category?: string; locale: string };
+  params: { category?: string; locale?: string };
 };
 
 export default function ProjectsPage({ params }: Props) {
+  if (params.locale)
   unstable_setRequestLocale(params.locale);
   const categories = PROJECT_CATEGORIES;
   const initialProjects = getDataByCategory(params.category);
