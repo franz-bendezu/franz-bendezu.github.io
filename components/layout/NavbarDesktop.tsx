@@ -1,7 +1,7 @@
 import React from "react";
 import NavLink from "./NavLink";
-import { IRouteNavbar } from "../../interfaces/routes";
 import { useTranslations } from "next-intl";
+import { IRouteNavbar } from "@/interfaces/routes";
 
 const NavbarDesktop: React.FC<{
   routes: IRouteNavbar[];

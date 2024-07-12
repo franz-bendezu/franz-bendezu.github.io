@@ -2,8 +2,8 @@ import React, { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import NavLink from "./NavLink";
 import { Bars4Icon } from "@heroicons/react/20/solid";
-import { IRouteNavbar } from "../../interfaces/routes";
 import { useTranslations } from "next-intl";
+import { IRouteNavbar } from "@/interfaces/routes";
 
 const NavbarMobile: React.FC<{
   routes: IRouteNavbar[];
