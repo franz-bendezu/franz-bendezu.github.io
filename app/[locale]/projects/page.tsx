@@ -63,7 +63,7 @@ export default function ProjectsPage({
       <div className="mx-10 flex w-full flex-row flex-wrap items-center justify-center gap-2">
         <Link
           className={`link ${
-            category === DEFAULT_LOCALE
+            !category
               ? "bg-blue-500 text-white"
               : "text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-500"
           } rounded px-2 py-1`}
