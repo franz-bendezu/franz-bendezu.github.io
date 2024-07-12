@@ -5,6 +5,7 @@ import { ChatBubbleLeftIcon } from "@heroicons/react/20/solid";
 import { ContactForm } from "../../../components/contact/Form";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
+import { DEFAULT_LOCALE } from "@/constants/locales";
 
 export const metadata: Metadata = {
   title: {
@@ -13,11 +14,13 @@ export const metadata: Metadata = {
 };
 
 type Props = {
-  params: { locale: string };
+  params: { locale?: string };
 };
 
-const ContactPage: NextPage<Props> = ({ params }) => {
-  unstable_setRequestLocale(params.locale);
+const ContactPage: NextPage<Props> = ({
+  params: { locale = DEFAULT_LOCALE },
+}) => {
+  unstable_setRequestLocale(locale);
   const t = useTranslations("Contact");
   return (
     <div className="flex h-full w-full flex-col items-center justify-center gap-4">
