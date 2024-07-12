@@ -10,6 +10,7 @@ import {
   BuildingLibraryIcon,
 } from "@heroicons/react/20/solid";
 import { unstable_setRequestLocale } from "next-intl/server";
+import { useTranslations } from "next-intl";
 
 export const metadata: Metadata = {
   title: {
@@ -23,6 +24,7 @@ type Props = {
 
 const AboutPage: NextPage<Props> = ({ params }) => {
   unstable_setRequestLocale(params.locale);
+  const t = useTranslations("About");
   return (
     <section
       data-testid="projects"
@@ -30,7 +32,7 @@ const AboutPage: NextPage<Props> = ({ params }) => {
     >
       <h1 className="font-monospace flex flex-row items-center gap-4 text-center text-3xl dark:text-white lg:text-4xl">
         <Bars4Icon className="h-8 w-8" />
-        Acerca de mí
+        {t("title")}
       </h1>
       <div className="mt-4 p-4">
         <h2 className="mb-6 flex flex-row items-center gap-3 text-left text-2xl font-semibold lg:text-3xl">

@@ -18,5 +18,22 @@
     "efficient": "eficientes",
     "highQuality": "alta calidad",
     "cvPath": "/Franz-Bendezu-CV-ES.pdf"
+  },
+  "Projects": {
+    "title": "Proyectos"
+  },
+  "Contact": {
+    "title": "Contáctame",
+    "description": "Si tienes alguna pregunta o deseas trabajar conmigo, no dudes en contactarme.",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo",
+      "message": "Mensaje",
+      "send": "Enviar"
+    }
+  },
+  "About": {
+    "title": "Acerca de mi",
+    "description": "Soy un desarrollador de software con 4 años de experiencia en el desarrollo de aplicaciones web, tengo una bachiller en Ingeniería de Sistemas y soy un apasionado de la tecnología."
   }
 }
