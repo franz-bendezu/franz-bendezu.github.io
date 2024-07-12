@@ -1,6 +1,5 @@
 import React, { ReactNode, forwardRef } from "react";
-import { usePathname } from "next/navigation";
-import { Link } from "@/navigation";
+import { Link, usePathname } from "@/navigation";
 
 interface NavLinkProps {
   href: string;
