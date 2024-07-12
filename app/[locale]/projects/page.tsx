@@ -8,6 +8,7 @@ import {
 import { IProject, IProjectTechnology } from "../../../interfaces/project";
 import { ProjectList } from "@/components/project/List";
 import { unstable_setRequestLocale } from "next-intl/server";
+import { useTranslations } from "next-intl";
 
 const getDataByCategory = (category?: string) => {
   return (
@@ -45,6 +46,7 @@ export default function ProjectsPage({ params }: Props) {
   unstable_setRequestLocale(params.locale);
   const categories = PROJECT_CATEGORIES;
   const initialProjects = getDataByCategory(params.category);
+  const t = useTranslations("Projects");
 
   return (
     <section
@@ -52,7 +54,8 @@ export default function ProjectsPage({ params }: Props) {
       className="flex flex-col items-center justify-center gap-4"
     >
       <h1 className="font-monospace flex flex-row items-center gap-4 text-3xl dark:text-white lg:text-4xl">
-        <CodeBracketIcon className="h-8 w-8" /> Proyectos
+        <CodeBracketIcon className="h-8 w-8" />
+        { t('title')}
       </h1>
       <div className="mx-10 flex w-full flex-row flex-wrap items-center justify-center gap-2">
         <Link
