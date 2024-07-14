@@ -36,6 +36,7 @@ export interface IProjectLink {
 }
 
 export interface IBaseProject {
+  code: string;
   status: "active" | "completed";
   title: string;
   shortDescription: string;
