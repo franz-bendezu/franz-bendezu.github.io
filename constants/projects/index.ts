@@ -19,8 +19,7 @@ export const PROJECTS: IBaseProject[] = [
   {
     status: "completed",
     title: "Con qué profe",
-    shortDescription:
-      "Diseño y desarrollo Frontend para una plataforma de comentarios acerca de docentes de la Facultad de Ingeniería Industrial y de Sistemas de la UNI.",
+    shortDescription: "Diseño y desarrollo Frontend para una plataforma de comentarios acerca de docentes de la Facultad de Ingeniería Industrial y de Sistemas de la UNI.",
     description: `Durante el período de enero a marzo de 2021, lideré el diseño y desarrollo de una plataforma innovadora que permitió a los estudiantes de la facultad compartir sus opiniones y comentarios sobre los docentes. Utilicé tecnologías modernas como Nuxt.js con Typescript en el frontend y GraphQL con Apollo Server para la consulta de datos. Además, integré el sistema de autenticación de la facultad (UNI-PASSPORT) para garantizar la seguridad y la legitimidad de los comentarios. Una de las características destacadas de esta plataforma fue la implementación de un sistema de conversaciones en hilos, que mejoró significativamente la transparencia y facilitó la retroalimentación sobre los docentes en cada uno de sus cursos.`,
     tags: ["Nuxt.js", "Typescript", "GraphQL", "Apollo Server"],
     image: {
@@ -38,19 +37,19 @@ export const PROJECTS: IBaseProject[] = [
     technologyCodes: ["nuxt", "typescript", "graphql", "apollo-server"],
     start: "2021-01",
     end: "2021-03",
+    code: "con-que-profe"
   },
   {
     status: "completed",
     title: "BusUni Tracker",
-    shortDescription:
-      "Proyecto de Investigación IOT de localización en tiempo real del bus de la Universidad Nacional de Ingeniería.",
+    shortDescription: "Proyecto de Investigación IOT de localización en tiempo real del bus de la Universidad Nacional de Ingeniería.",
     description: `Desde enero hasta diciembre de 2020, asumí la responsabilidad de establecer la arquitectura y desarrollar un sistema de localización en tiempo real del bus universitario utilizando tecnologías LoT LoRaWAN. Este proyecto de investigación fue crucial para mejorar la eficiencia del transporte dentro del campus universitario. Implementé Firebase y Vue.js para la aplicación web, mientras que Cloud Functions se utilizó para recibir datos en tiempo real de la red LoRaWAN. Además, utilicé Realtime Database y Firestore para mostrar y almacenar información relevante, como rutas, conductores y trayectos recorridos. La culminación de este proyecto se reflejó en la publicación de un artículo científico con DOI: 10.1109/ISC255366.2022.9922172.`,
     tags: ["LoT LoRaWAN", "Firebase", "Vue.js", "Cloud Functions"],
     image: {
       src: "/images/busuni-tracker.png",
       alt: "BusUni Tracker",
     },
-    links:  [
+    links: [
       {
         title: "Artículo",
         url: "https://ieeexplore.ieee.org/document/9922172",
@@ -61,6 +60,7 @@ export const PROJECTS: IBaseProject[] = [
     technologyCodes: ["iot", "lorawan", "firebase", "vue2", "cloud-functions"],
     start: "2020-01",
     end: "2020-12",
+    code: "busuni-tracker"
   },
   {
     status: "completed",
@@ -87,24 +87,24 @@ export const PROJECTS: IBaseProject[] = [
     categoryCode: "personal",
     technologyCodes: ["nuxt", "spring-boot", "java", "kotlin", "postgresql"],
     start: "2019-07",
+    code: "horext"
   },
   {
     status: "completed",
     title: "Movify.pe - Módulo de Pagos con Seguimiento de Ingresos y Gastos",
-    shortDescription:
-      "Desarrollo de un módulo de pagos con seguimiento de ingresos y gastos.",
+    shortDescription: "Desarrollo de un módulo de pagos con seguimiento de ingresos y gastos.",
     description: `De julio a diciembre de 2023, desarrollé un módulo de pagos para facilitar el registro de pagos y auditorías con recibos para órdenes de mudanza dentro de la infraestructura existente de la empresa. Implementé funciones para registrar transacciones de pago y asociarlas con las órdenes de mudanza respectivas, asegurando una documentación financiera precisa y rastros de auditoría. Mejoré las capacidades de informes para generar reportes detallados de los registros de pago y recibos asociados, facilitando los procesos de auditoría y análisis financiero.`,
     tags: ["AWS S3", "Java", "MariaDB", "Spring Boot", "Vue.js"],
     categoryCode: "freelance",
     technologyCodes: ["aws-s3", "java", "mariadb", "spring-boot", "vue2"],
     start: "2023-07",
     end: "2023-12",
+    code: "movify-pe-payment-module"
   },
   {
     status: "completed",
     title: "Movify.pe - Sistema de Cotizaciones Web (Migración)",
-    shortDescription:
-      "Migración del sistema de cotizaciones web a una API serverless.",
+    shortDescription: "Migración del sistema de cotizaciones web a una API serverless.",
     description: `De julio a diciembre de 2023, migré el backend del sistema de cotizaciones web a una API serverless, mejorando la disponibilidad y reduciendo los costos de servidor. Mejoré la compatibilidad del diseño de correos electrónicos con varios proveedores, lo que resultó en un aumento de la generación de clientes potenciales. Integré análisis para rastrear las vistas de correos electrónicos, proporcionando información valiosa sobre las tasas de apertura y el compromiso.`,
     tags: ["Node.js", "Prisma", "AWS Lambda", "GitHub Actions", "MJML"],
     categoryCode: "freelance",
@@ -118,12 +118,12 @@ export const PROJECTS: IBaseProject[] = [
     ],
     start: "2023-07",
     end: "2023-12",
+    code: "movify-pe-quote-system"
   },
   {
     status: "completed",
     title: "Movify.pe - Migración de Infraestructura a AWS",
-    shortDescription:
-      "Migración de infraestructura a AWS para mejorar el despliegue y la disponibilidad.",
+    shortDescription: "Migración de infraestructura a AWS para mejorar el despliegue y la disponibilidad.",
     description: `De julio a noviembre de 2023, lideré la migración de la infraestructura a AWS para mejorar el despliegue, la disponibilidad y la confiabilidad de los servicios clave. Establecí flujos de trabajo de CI/CD para la implementación en servicios de AWS, automatizando las tuberías. Integré con Amazon S3 para el almacenamiento de fotos y videos relacionados con los servicios de mudanza.`,
     tags: [
       "Amplify",
@@ -147,12 +147,12 @@ export const PROJECTS: IBaseProject[] = [
     ],
     start: "2023-07",
     end: "2023-11",
+    code: "movify-pe-aws-migration"
   },
   {
     status: "completed",
     title: "Movify.pe - Sistema de Gestión de Cotizaciones y Órdenes",
-    shortDescription:
-      "Desarrollo de un sistema administrativo para cotizaciones y órdenes de mudanza.",
+    shortDescription: "Desarrollo de un sistema administrativo para cotizaciones y órdenes de mudanza.",
     description: `De diciembre de 2021 a julio de 2023, desarrollé un sistema administrativo para cotizaciones y órdenes para el equipo de ventas y mudanza. Diseñé e implementé la arquitectura cliente-servidor utilizando una API REST y una SPA. Automatizé la generación de PDF para cotizaciones y órdenes de venta. Desarrollé un módulo de informes para medir la eficiencia del equipo de ventas e interconecté con el sistema de cotizaciones web a través de API. Establecí flujos de integración y despliegue continuo mediante GitHub Actions.`,
     tags: [
       "Spring Boot",
@@ -178,6 +178,7 @@ export const PROJECTS: IBaseProject[] = [
     ],
     start: "2021-12",
     end: "2023-07",
+    code: "movify-pe-quote-order-management"
   },
   {
     status: "completed",
@@ -197,5 +198,6 @@ export const PROJECTS: IBaseProject[] = [
     ],
     start: "2021-10",
     end: "2021-12",
+    code: "movify-pe-quote-system-improvement"
   },
 ];
