@@ -444,7 +444,7 @@
     "@formatjs/intl-localematcher" "0.5.4"
     tslib "^2.4.0"
 
-"@formatjs/fast-memoize@2.2.0":
+"@formatjs/fast-memoize@2.2.0", "@formatjs/fast-memoize@^2.2.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@formatjs/fast-memoize/-/fast-memoize-2.2.0.tgz#33bd616d2e486c3e8ef4e68c99648c196887802b"
   integrity sha512-hnk/nY8FyrL5YxwP9e4r9dqeM6cAbo8PeU9UjyXojZMNvVad2Z06FAVHyR3Ecw6fza+0GH7vdJgiKIVXTMbSBA==
@@ -3376,14 +3376,14 @@ negotiator@^0.6.3:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.3.tgz#58e323a72fedc0d6f9cd4d31fe49f51479590ccd"
   integrity sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==
 
-next-intl@^3.16.0:
-  version "3.16.0"
-  resolved "https://registry.yarnpkg.com/next-intl/-/next-intl-3.16.0.tgz#31ff891e3de0b84bea9381da1c039d7a95a4587f"
-  integrity sha512-aBJPhxQCZDkRfSnZg4bFNq0WTHxV3IbAPwy0Iodd+0ZBIrEy3YgydNLzjSLin6LHEhuczgC9V8xlnDpYIXTriQ==
+next-intl@^3.17.1:
+  version "3.17.1"
+  resolved "https://registry.yarnpkg.com/next-intl/-/next-intl-3.17.1.tgz#c36a00586e2353e229b16e9746dd6b97f23179dd"
+  integrity sha512-cRstsLyCZ+yS8sGIwM13xW/EqMulUi0z+J4NcCcwAkmB/OETu6d+xEQfvrQ0ZQ+Fj+qwl9df698Lozyx5kAYhw==
   dependencies:
     "@formatjs/intl-localematcher" "^0.2.32"
     negotiator "^0.6.3"
-    use-intl "^3.16.0"
+    use-intl "^3.17.1"
 
 next-themes@^0.3.0:
   version "0.3.0"
@@ -4598,11 +4598,12 @@ url-parse@^1.5.3:
     querystringify "^2.1.1"
     requires-port "^1.0.0"
 
-use-intl@^3.16.0:
-  version "3.16.0"
-  resolved "https://registry.yarnpkg.com/use-intl/-/use-intl-3.16.0.tgz#2c1ba8a8af16e1d86f613ea17d9615038b0fdb66"
-  integrity sha512-q2RJMjqLTvWh7Usq/42Ku5CAk2TdlobzYbo0b1sGchaM0LEQxFtrSQlbKzcx/HDHD7/uA2Um1QxUsq5OMEB9TQ==
+use-intl@^3.17.1:
+  version "3.17.1"
+  resolved "https://registry.yarnpkg.com/use-intl/-/use-intl-3.17.1.tgz#dc7e92947047773ec3db32579d880aadf2e13fcb"
+  integrity sha512-TxpacwmqjhyAfWnNVJKmQNCRC0/apFhetAD/EByrlakoww+jxGkW7Xh0f0iwr+mSD/V1tMakmyaEbozH+yb0qA==
   dependencies:
+    "@formatjs/fast-memoize" "^2.2.0"
     intl-messageformat "^10.5.14"
 
 util-deprecate@^1.0.2:
