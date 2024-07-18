@@ -384,6 +384,10 @@ export const PROJECTS: IBaseProject[] = [
     start: "2021-12",
     end: "2023-07",
     code: "movify-quote-order-management",
+    image: {
+      src: "/images/movify-quote-order-management/banner.png",
+      alt: "Movify Quote Order Management",
+    },
     projectGoals: [
       {
         title: "Sistema Administrativo",
