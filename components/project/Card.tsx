@@ -41,7 +41,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
           <div className="relative flex items-end overflow-hidden rounded-xl">
             {image ? (
               <Image
-                className="mx-auto"
+                className="mx-auto max-h-40 w-full object-cover object-center"
                 src={image.src}
                 alt={image.alt}
                 width={400}
