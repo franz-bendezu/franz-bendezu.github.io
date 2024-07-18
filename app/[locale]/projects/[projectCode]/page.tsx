@@ -37,7 +37,7 @@ export default function ProjectPage({
     <div className="flex min-h-[100dvh] flex-col gap-8 md:gap-8 lg:gap-16">
       <section className="border-b">
         <div className="grid gap-10 px-4 py-6 md:px-6 md:py-8 lg:grid-cols-2 lg:gap-20 lg:py-12">
-          <div className="space-y-4">
+          <div className="space-y-4 order-2 lg:order-1">
             <div className="inline-block rounded-lg bg-blue-200 px-3 py-1 text-sm dark:bg-slate-700">
               {project.categoryCode}
             </div>
@@ -60,7 +60,7 @@ export default function ProjectPage({
             </div>
           </div>
           {project.image && (
-            <div className="relative">
+            <div className="relative flex items-center justify-center order-1 lg:order-2">
               <Image
                 src={project.image.src}
                 alt={project.image.alt}
