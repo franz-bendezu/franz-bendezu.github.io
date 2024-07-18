@@ -18,7 +18,10 @@
     "cvPath": "/Franz-Bendezu-CV-EN.pdf"
   },
   "Projects": {
-    "title": "Projects"
+    "title": "Projects",
+    "categories": {
+      "all": "All"
+    }
   },
   "Contact": {
     "title": "Contact",

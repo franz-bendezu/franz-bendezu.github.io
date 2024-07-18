@@ -4,7 +4,7 @@ import {
   PROJECT_TECHNOLOGIES,
   PROJECT_TECHNOLOGY_CATEGORY,
 } from "../../../constants/projects/techologies";
-import { IProject, IProjectTechnology } from "../../../interfaces/project";
+import { IProject } from "../../../interfaces/project";
 import { ProjectList } from "@/components/project/List";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
@@ -71,7 +71,7 @@ export default function ProjectsPage({
           href={`/projects`}
           locale={locale}
         >
-          Todos
+          {t("categories.all")}
         </Link>
         {categories.map((item) => (
           <Link
