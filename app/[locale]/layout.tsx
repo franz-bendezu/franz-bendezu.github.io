@@ -25,7 +25,7 @@ type Props = {
   params: { locale: string };
 };
 
-export default function LocaleRootLayout({
+export default function LocaleLayout({
   children,
   params: { locale = DEFAULT_LOCALE },
 }: Props) {
