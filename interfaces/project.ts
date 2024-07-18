@@ -49,6 +49,14 @@ export interface IBaseProject {
   priority?: number;
   start?: string;
   end?: string;
+  projectGoals: {
+    title: string;
+    description: string;
+  }[];
+  keyFeatures: {
+    title: string;
+    description: string;
+  }[];
 }
 
 export interface IProjectTechnology extends IBaseProjectTechnology {
