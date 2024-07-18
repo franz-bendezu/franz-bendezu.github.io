@@ -17,6 +17,12 @@
     "downloadCV": "Download CV",
     "cvPath": "/Franz-Bendezu-CV-EN.pdf"
   },
+  "Project": {
+    "overview": "Project Overview",
+    "technologies": "Technologies Used",
+    "goals": "Project Goals",
+    "features": "Key Features"
+  },
   "Projects": {
     "title": "Projects",
     "categories": {

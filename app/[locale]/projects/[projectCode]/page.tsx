@@ -1,6 +1,9 @@
+import { DEFAULT_LOCALE } from "@/constants/locales";
 import { PROJECTS } from "@/constants/projects";
 import { PROJECT_TECHNOLOGIES } from "@/constants/projects/techologies";
 import { CheckIcon } from "@heroicons/react/16/solid";
+import { useTranslations } from "next-intl";
+import { unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,16 +18,18 @@ export const generateStaticParams = () => {
 type Props = {
   params: {
     projectCode: string;
+    locale?: string;
   };
 };
-export default function ProjectPage({ params }: Props) {
-  const project = PROJECTS.find(
-    (project) => project.code === params.projectCode,
-  );
-  const techs =
-  PROJECT_TECHNOLOGIES.filter((tech) =>
+export default function ProjectPage({
+  params: { locale = DEFAULT_LOCALE, projectCode },
+}: Props) {
+  unstable_setRequestLocale(locale);
+  const project = PROJECTS.find((project) => project.code === projectCode);
+  const techs = PROJECT_TECHNOLOGIES.filter((tech) =>
     project?.technologyCodes.includes(tech.code),
   );
+  const t = useTranslations("Project");
   if (!project) {
     return <div>Project not found</div>;
   }
@@ -63,7 +68,7 @@ export default function ProjectPage({ params }: Props) {
         <div className="space-y-12 px-4 md:px-6">
           <div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-              Project Overview
+              {t("overview")}
             </h2>
             <p className="mt-4 md:text-xl">{project.description}</p>
           </div>
@@ -73,7 +78,7 @@ export default function ProjectPage({ params }: Props) {
         <div className="grid gap-10 px-4 md:px-6 lg:grid-cols-2 lg:gap-20">
           <div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Technologies Used
+              {t("technologies")}
             </h2>
             <div className="mt-6 grid grid-cols-2 gap-4">
               {techs.map((tech) => (
@@ -85,7 +90,7 @@ export default function ProjectPage({ params }: Props) {
                     <Image
                       src={tech.logo}
                       alt={""}
-                      className="h-8 w-8 mx-auto"
+                      className="mx-auto h-8 w-8"
                       width="32"
                       height="32"
                     />
@@ -97,7 +102,7 @@ export default function ProjectPage({ params }: Props) {
           </div>
           <div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Project Goals
+              {t("goals")}
             </h2>
             <ul className="mt-6 space-y-4">
               <li>
@@ -148,7 +153,7 @@ export default function ProjectPage({ params }: Props) {
         <div className="grid gap-10 px-4 md:px-6 lg:grid-cols-2 lg:gap-20">
           <div className="space-y-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Key Features
+              {t("features")}
             </h2>
             <div className="flex flex-col gap-2">
               <div className="flex flex-col gap-1 rounded-lg bg-blue-200 p-6 dark:bg-slate-700">

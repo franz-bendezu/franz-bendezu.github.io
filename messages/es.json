@@ -19,6 +19,12 @@
     "highQuality": "alta calidad",
     "cvPath": "/Franz-Bendezu-CV-ES.pdf"
   },
+  "Project": {
+    "overview": "Descripción del Proyecto",
+    "technologies": "Tecnologías Utilizadas",
+    "goals": "Objetivos del Proyecto",
+    "features": "Funcionalidades Principales"
+  },
   "Projects": {
     "title": "Proyectos",
     "categories": {
