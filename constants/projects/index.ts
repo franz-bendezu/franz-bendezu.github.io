@@ -192,7 +192,7 @@ export const PROJECTS: IBaseProject[] = [
     technologyCodes: ["aws-s3", "java", "mariadb", "spring-boot", "vue2"],
     start: "2023-07",
     end: "2023-12",
-    code: "movify-pe-payment-module",
+    code: "movify-payment-module",
     projectGoals: [
       {
         title: "Automatización de Procesos Financieros",
@@ -247,7 +247,7 @@ export const PROJECTS: IBaseProject[] = [
     ],
     start: "2023-07",
     end: "2023-12",
-    code: "movify-pe-quote-system",
+    code: "movify-quote-system-migration",
     projectGoals: [
       {
         title: "Migración a API Serverless",
@@ -312,7 +312,7 @@ export const PROJECTS: IBaseProject[] = [
     ],
     start: "2023-07",
     end: "2023-11",
-    code: "movify-pe-aws-migration",
+    code: "movify-aws-migration",
     projectGoals: [
       {
         title: "Migración a AWS",
@@ -379,7 +379,7 @@ export const PROJECTS: IBaseProject[] = [
     ],
     start: "2021-12",
     end: "2023-07",
-    code: "movify-pe-quote-order-management",
+    code: "movify-quote-order-management",
     projectGoals: [
       {
         title: "Sistema Administrativo",
@@ -433,7 +433,7 @@ export const PROJECTS: IBaseProject[] = [
     ],
     start: "2021-10",
     end: "2021-12",
-    code: "movify-pe-quote-system-improvement",
+    code: "movify-quote-system-improvement",
     projectGoals: [
       {
         title: "Mejora de la Interfaz de Usuario",
