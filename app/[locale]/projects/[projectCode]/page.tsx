@@ -113,46 +113,17 @@ export default function ProjectPage({
               {t("goals")}
             </h2>
             <ul className="mt-6 space-y-4">
-              <li>
-                <div className="flex flex-row items-start gap-4">
-                  <CheckIcon className="mt-1 h-8 w-8 text-blue-500" />
-                  <div className="flex flex-col gap-1">
-                    <h3 className="text-xl font-bold">Streamline Operations</h3>
-                    <p className="">
-                      Automate and centralize key business processes to improve
-                      efficiency and reduce manual errors.
-                    </p>
+              {project.projectGoals.map((goal) => (
+                <li key={goal.title}>
+                  <div className="flex flex-row items-start gap-4">
+                    <CheckIcon className="mt-1 h-8 w-8 text-blue-500" />
+                    <div className="flex flex-col gap-1">
+                      <h3 className="text-xl font-bold">{goal.title}</h3>
+                      <p className="">{goal.description}</p>
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li>
-                <div className="flex flex-row items-start gap-4">
-                  <CheckIcon className="mt-1 h-8 w-8 text-blue-500" />
-                  <div className="flex flex-col gap-1">
-                    <h3 className="text-xl font-bold">
-                      Enhance Data-Driven Insights
-                    </h3>
-                    <p className="">
-                      Provide real-time analytics and reporting to help our
-                      clients make informed, data-driven decisions.
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className="flex flex-row items-start gap-4">
-                  <CheckIcon className="mt-1 h-8 w-8 text-blue-500" />
-                  <div className="flex flex-col gap-1">
-                    <h3 className="text-xl font-bold">
-                      Improve User Experience
-                    </h3>
-                    <p className="">
-                      Deliver a modern, intuitive, and responsive user interface
-                      that enhances the overall user experience.
-                    </p>
-                  </div>
-                </div>
-              </li>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -164,28 +135,15 @@ export default function ProjectPage({
               {t("features")}
             </h2>
             <div className="flex flex-col gap-2">
-              <div className="flex flex-col gap-1 rounded-lg bg-blue-200 p-6 dark:bg-slate-700">
-                <h3 className="text-xl font-bold">Customizable Dashboards</h3>
-                <p className="">
-                  Users can personalize their dashboards to display the most
-                  relevant data and metrics for their specific needs.
-                </p>
-              </div>
-              <div className="flex flex-col gap-1 rounded-lg bg-blue-200 p-6 dark:bg-slate-700">
-                <h3 className="text-xl font-bold">Automated Workflows</h3>
-                <p className="">
-                  The application includes pre-built workflows to streamline
-                  common business processes, such as order management and
-                  customer onboarding.
-                </p>
-              </div>
-              <div className="flex flex-col gap-1 rounded-lg bg-blue-200 p-6 dark:bg-slate-700">
-                <h3 className="text-xl font-bold">Robust Reporting</h3>
-                <p className="">
-                  Advanced reporting and analytics tools provide comprehensive
-                  insights into key performance indicators and business trends.
-                </p>
-              </div>
+              {project.keyFeatures.map((feature) => (
+                <div
+                  className="flex flex-col gap-1 rounded-lg bg-blue-200 p-6 dark:bg-slate-700"
+                  key={feature.title}
+                >
+                  <h3 className="text-xl font-bold">{feature.title}</h3>
+                  <p className="">{feature.description}</p>
+                </div>
+              ))}
             </div>
           </div>
           <div className="relative">
