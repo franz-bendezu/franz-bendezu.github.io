@@ -15,7 +15,7 @@ import { DEFAULT_LOCALE } from "@/constants/locales";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "About",
+    default: "About",
   },
 };
 

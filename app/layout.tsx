@@ -9,6 +9,11 @@ type Props = {
 
 export const metadata: Metadata = {
   metadataBase: isProd ? new URL("https://franzbendezu.me") : undefined,
+  title: {
+    template: "%s | Franz Bendezu - Desarrollador de Software",
+    default: "Inicio",
+  },
+  category: "website",
   alternates: {
     canonical: "/",
     languages: {

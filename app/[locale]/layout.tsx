@@ -15,7 +15,7 @@ export function generateStaticParams() {
 export const metadata: Metadata = {
   title: {
     template: "%s |  Franz Bendezu - Software Developer",
-    absolute: "Home",
+    default: "Home",
   },
   description: "Welcome to my personal website",
 };
