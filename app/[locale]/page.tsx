@@ -7,5 +7,5 @@ export default function LocaleRootPage({
   params: { locale: string };
 }) {
   unstable_setRequestLocale(locale);
-  return <HomePresentation />;
+  return <HomePresentation locale={locale} />;
 }

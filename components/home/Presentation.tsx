@@ -1,28 +1,17 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import profile from "../../public/profile.png";
-import Button from "../ui/Button";
-import { ArrowDownTrayIcon } from "@heroicons/react/20/solid";
 import { useTranslations } from "next-intl";
 import Styles from "./styles.module.css";
-import LoaderSpin from "../ui/LoaderSpin";
+import { HomePresentationDownload } from "./PresentationDownload";
+import { unstable_setRequestLocale } from "next-intl/server";
+import { DEFAULT_LOCALE } from "@/constants/locales";
 
-const HomePresentation: React.FC = () => {
+const HomePresentation: React.FC<{
+  locale: string;
+}> = ({ locale = DEFAULT_LOCALE }) => {
+  unstable_setRequestLocale(locale);
   const t = useTranslations("Home");
-  const [loading, setLoading] = useState(false);
-  const handleCVDownload = async () => {
-    setLoading(true);
-    const data = await fetch(t("cvPath").toString());
-    const blob = await data.blob();
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "Franz Bendezu CV.pdf";
-    a.click();
-    window.URL.revokeObjectURL(url);
-    setLoading(false);
-  };
 
   return (
     <div className="item-center flex flex-col-reverse gap-3 text-center lg:mx-4 lg:flex lg:flex-row lg:space-x-5 lg:text-left">
@@ -54,17 +43,7 @@ const HomePresentation: React.FC = () => {
             })}
           </p>
         </div>
-        <Button
-          onClick={handleCVDownload}
-          className="border-blue-500 bg-blue-500 text-white hover:bg-blue-600 focus-visible:ring-blue-300 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-900 dark:focus-visible:ring-slate-600"
-        >
-          {loading ? (
-            <LoaderSpin className="me-3 h-4 w-4 fill-slate-100 dark:fill-slate-500" />
-          ) : (
-            <ArrowDownTrayIcon className="mr-2 h-4 w-4 fill-slate-100 dark:fill-slate-500" />
-          )}
-          <span>{t("downloadCV")}</span>
-        </Button>
+        <HomePresentationDownload />
       </div>
       <div className="flex flex-shrink-0 items-center justify-center">
         <div className="relative m-24 flex h-[250px] w-[250px] items-center justify-center">
