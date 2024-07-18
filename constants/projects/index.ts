@@ -20,13 +20,13 @@ export const PROJECTS: IBaseProject[] = [
     status: "completed",
     title: "Con qué profe",
     shortDescription:
-      "Diseño y desarrollo Frontend para una plataforma de comentarios acerca de docentes de la Facultad de Ingeniería Industrial y de Sistemas de la UNI.",
+      "Design and Frontend development for a platform for commenting on teachers at the Faculty of Industrial and Systems Engineering of the UNI.",
     description:
-      "Durante el período de enero a marzo de 2021, lideré el diseño y desarrollo de una plataforma innovadora que permitió a los estudiantes de la facultad compartir sus opiniones y comentarios sobre los docentes. Utilicé tecnologías modernas como Nuxt.js con Typescript en el frontend y GraphQL con Apollo Server para la consulta de datos. Además, integré el sistema de autenticación de la facultad (UNI-PASSPORT) para garantizar la seguridad y la legitimidad de los comentarios. Una de las características destacadas de esta plataforma fue la implementación de un sistema de conversaciones en hilos, que mejoró significativamente la transparencia y facilitó la retroalimentación sobre los docentes en cada uno de sus cursos.",
+      "From January to March 2021, I led the design and development of an innovative platform that allowed students to share their opinions and comments about teachers. I used modern technologies like Nuxt.js with Typescript on the frontend and GraphQL with Apollo Server for data querying. Additionally, I integrated the faculty's authentication system (UNI-PASSPORT) to ensure the security and legitimacy of the comments. One of the standout features of this platform was the implementation of threaded conversations, which significantly improved transparency and facilitated feedback on teachers in each of their courses.",
     tags: ["Nuxt.js", "Typescript", "GraphQL", "Apollo Server"],
     image: {
       src: "/images/comentarios-docentes.png",
-      alt: "Plataforma de Comentarios sobre Docentes",
+      alt: "Teacher Comments Platform",
     },
     links: [
       {
