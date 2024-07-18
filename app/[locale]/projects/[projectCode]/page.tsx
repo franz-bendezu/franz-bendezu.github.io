@@ -34,9 +34,9 @@ export default function ProjectPage({
     return <div>Project not found</div>;
   }
   return (
-    <div className="flex min-h-[100dvh] flex-col">
-      <section className="border-b py-6 md:py-12 lg:py-16">
-        <div className="grid gap-10 px-4 md:px-6 lg:grid-cols-2 lg:gap-20">
+    <div className="flex min-h-[100dvh] flex-col gap-8 md:gap-8 lg:gap-16">
+      <section className="border-b">
+        <div className="grid gap-10 px-4 py-6 md:px-6 md:py-8 lg:grid-cols-2 lg:gap-20 lg:py-12">
           <div className="space-y-4">
             <div className="inline-block rounded-lg bg-blue-200 px-3 py-1 text-sm dark:bg-slate-700">
               {project.categoryCode}
@@ -72,7 +72,7 @@ export default function ProjectPage({
           )}
         </div>
       </section>
-      <section className="py-12 md:py-24 lg:py-32">
+      <section>
         <div className="space-y-12 px-4 md:px-6">
           <div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
@@ -82,7 +82,7 @@ export default function ProjectPage({
           </div>
         </div>
       </section>
-      <section className="py-12 md:py-24 lg:py-32">
+      <section>
         <div className="grid gap-10 px-4 md:px-6 lg:grid-cols-2 lg:gap-20">
           <div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -157,7 +157,7 @@ export default function ProjectPage({
           </div>
         </div>
       </section>
-      <section className="py-12 md:py-24 lg:py-32">
+      <section>
         <div className="grid gap-10 px-4 md:px-6 lg:grid-cols-2 lg:gap-20">
           <div className="space-y-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
