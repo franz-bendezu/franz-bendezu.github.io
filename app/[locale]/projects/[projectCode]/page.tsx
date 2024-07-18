@@ -48,20 +48,28 @@ export default function ProjectPage({
               {project.shortDescription}
             </p>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Link href="#" prefetch={false}>
-                View Live Demo
-              </Link>
+              {project.links?.map((link) => (
+                <a
+                  key={link.url}
+                  href={link.url}
+                  className="inline-block rounded-md bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-600 dark:bg-slate-700 dark:hover:bg-slate-800"
+                >
+                  {link.title}
+                </a>
+              ))}
             </div>
           </div>
-          <div className="relative">
-            <Image
-              src="/placeholder.svg"
-              width="800"
-              height="450"
-              alt="Acme Web App"
-              className="mx-auto aspect-video w-max overflow-hidden rounded-xl object-cover object-center"
-            />
-          </div>
+          {project.image && (
+            <div className="relative">
+              <Image
+                src={project.image.src}
+                alt={project.image.alt}
+                width="800"
+                height="450"
+                className="mx-auto aspect-video w-max overflow-hidden rounded-xl object-cover object-center"
+              />
+            </div>
+          )}
         </div>
       </section>
       <section className="py-12 md:py-24 lg:py-32">
