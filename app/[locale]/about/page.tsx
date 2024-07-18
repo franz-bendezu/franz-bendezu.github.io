@@ -14,9 +14,7 @@ import { useTranslations } from "next-intl";
 import { DEFAULT_LOCALE } from "@/constants/locales";
 
 export const metadata: Metadata = {
-  title: {
-    default: "About",
-  },
+  title: "About",
 };
 
 type Props = {
