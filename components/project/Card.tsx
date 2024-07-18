@@ -38,7 +38,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
         className="flex h-full flex-col justify-between bg-white dark:bg-gray-800 dark:text-white"
       >
         <Link aria-label="link to project" href={`/projects/${code}`}>
-          <div className="relative flex items-end overflow-hidden rounded-xl">
+          <div className="relative flex items-center overflow-hidden rounded-xl h-40 w-full bg-gray-200 dark:bg-gray-700">
             {image ? (
               <Image
                 className="mx-auto max-h-40 w-full object-cover object-center"
@@ -49,7 +49,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
                 loading="eager"
               />
             ) : (
-              <div className="h-40 w-full bg-gray-200 dark:bg-gray-700"></div>
+              <div className="h-40 w-full "></div>
             )}
           </div>
           <div className="mt-1 p-2">
