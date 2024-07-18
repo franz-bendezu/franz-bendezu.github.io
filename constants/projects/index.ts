@@ -433,6 +433,10 @@ export const PROJECTS: IBaseProject[] = [
     ],
     start: "2021-10",
     end: "2021-12",
+    image: {
+      src: "/images/movify-quote-system-migration/banner.png",
+      alt: "Movify Quote System",
+    },
     code: "movify-quote-system-improvement",
     projectGoals: [
       {
