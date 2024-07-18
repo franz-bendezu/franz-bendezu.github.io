@@ -7,10 +7,7 @@ import { HomePresentationDownload } from "./PresentationDownload";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { DEFAULT_LOCALE } from "@/constants/locales";
 
-const HomePresentation: React.FC<{
-  locale: string;
-}> = ({ locale = DEFAULT_LOCALE }) => {
-  unstable_setRequestLocale(locale);
+const HomePresentation: React.FC = () => {
   const t = useTranslations("Home");
 
   return (
