@@ -1,4 +1,4 @@
-import type { IBaseProject } from "../../interfaces/project";
+import type { IBaseProject, IProjectCategory } from "../../interfaces/project";
 export { PROJECT_CATEGORIES } from "./categories";
 
 export const PROJECTS: IBaseProject[] = [
@@ -6,9 +6,9 @@ export const PROJECTS: IBaseProject[] = [
     status: "completed",
     title: "Con qué profe",
     shortDescription:
-      "Design and Frontend development for a platform for commenting on teachers at the Faculty of Industrial and Systems Engineering of the UNI.",
+      "Diseño y desarrollo frontend para una plataforma de comentarios sobre profesores en la Facultad de Ingeniería Industrial y de Sistemas de la UNI.",
     description:
-      "From January to March 2021, I led the design and development of an innovative platform that allowed students to share their opinions and comments about teachers. I used modern technologies like Nuxt.js with Typescript on the frontend and GraphQL with Apollo Server for data querying. Additionally, I integrated the faculty's authentication system (UNI-PASSPORT) to ensure the security and legitimacy of the comments. One of the standout features of this platform was the implementation of threaded conversations, which significantly improved transparency and facilitated feedback on teachers in each of their courses.",
+      "De enero a marzo de 2021, lideré el diseño y desarrollo de una plataforma innovadora que permitía a los estudiantes compartir sus opiniones y comentarios sobre los profesores. Utilicé tecnologías modernas como Nuxt.js con Typescript en el frontend y GraphQL con Apollo Server para consultas de datos. Además, integré el sistema de autenticación de la facultad (UNI-PASSPORT) para asegurar la seguridad y legitimidad de los comentarios. Una de las características destacadas de esta plataforma fue la implementación de conversaciones en hilo, que mejoró significativamente la transparencia y facilitó los comentarios sobre los profesores en cada uno de sus cursos.",
     tags: ["Nuxt.js", "Typescript", "GraphQL", "Apollo Server"],
     image: {
       src: "/images/comentarios-docentes.png",
@@ -28,36 +28,36 @@ export const PROJECTS: IBaseProject[] = [
     code: "con-que-profe",
     projectGoals: [
       {
-        title: "Enhance Student Feedback",
+        title: "Mejorar el Feedback Estudiantil",
         description:
-          "Create a platform for students to provide structured feedback on faculty members.",
+          "Crear una plataforma para que los estudiantes proporcionen feedback estructurado sobre los miembros del cuerpo docente.",
       },
       {
-        title: "Integrate Authentication",
+        title: "Integración de Autenticación",
         description:
-          "Implement UNI-PASSPORT authentication to ensure secure and legitimate feedback.",
+          "Implementar autenticación UNI-PASSPORT para asegurar feedback seguro y legítimo.",
       },
       {
-        title: "Improve Transparency",
+        title: "Mejorar la Transparencia",
         description:
-          "Implement threaded conversations to enhance transparency in feedback discussions.",
+          "Implementar conversaciones en hilo para mejorar la transparencia en las discusiones de feedback.",
       },
     ],
     keyFeatures: [
       {
-        title: "Interactive Feedback",
+        title: "Feedback Interactivo",
         description:
-          "Threaded conversations for detailed and transparent discussions.",
+          "Conversaciones en hilo para discusiones detalladas y transparentes.",
       },
       {
-        title: "Secure Authentication",
+        title: "Autenticación Segura",
         description:
-          "Integration with UNI-PASSPORT for secure user authentication.",
+          "Integración con UNI-PASSPORT para autenticación segura de usuarios.",
       },
       {
-        title: "Personalized User Experience",
+        title: "Experiencia de Usuario Personalizada",
         description:
-          "Customizable user profiles and preferences for enhanced usability.",
+          "Perfiles de usuario personalizables y preferencias para una usabilidad mejorada.",
       },
     ],
   },
@@ -87,34 +87,34 @@ export const PROJECTS: IBaseProject[] = [
     code: "busuni-tracker",
     projectGoals: [
       {
-        title: "Real-Time Tracking",
+        title: "Seguimiento en Tiempo Real",
         description:
-          "Develop a system for real-time tracking of university buses to enhance campus transportation efficiency.",
+          "Desarrollar un sistema para el seguimiento en tiempo real de los buses universitarios para mejorar la eficiencia del transporte en el campus.",
       },
       {
-        title: "Integration with Campus Services",
+        title: "Integración con Servicios del Campus",
         description:
-          "Integrate with campus services for accurate scheduling and route planning.",
+          "Integrar con los servicios del campus para una programación precisa y planificación de rutas.",
       },
       {
-        title: "Research Publication",
+        title: "Publicación de Investigación",
         description:
-          "Contribute to academic research with a published article on LoT LoRaWAN technology.",
+          "Contribuir a la investigación académica con un artículo publicado sobre la tecnología LoT LoRaWAN.",
       },
     ],
     keyFeatures: [
       {
-        title: "Live Bus Tracking",
-        description: "Real-time location updates and route visualization.",
+        title: "Seguimiento en Tiempo Real",
+        description: "Actualizaciones de ubicación en tiempo real y visualización de rutas.",
       },
       {
-        title: "Campus Integration",
+        title: "Integración con el Campus",
         description:
-          "Integration with university services for comprehensive transportation management.",
+          "Integración con servicios universitarios para una gestión integral del transporte.",
       },
       {
-        title: "Academic Contribution",
-        description: "Published research paper on LoT LoRaWAN technology.",
+        title: "Contribución Académica",
+        description: "Artículo de investigación publicado sobre la tecnología LoT LoRaWAN.",
       },
     ],
   },
@@ -147,36 +147,36 @@ export const PROJECTS: IBaseProject[] = [
     code: "horext",
     projectGoals: [
       {
-        title: "Efficient Schedule Management",
+        title: "Gestión Eficiente de Horarios",
         description:
-          "Simplify the creation and management of academic schedules for students.",
+          "Simplificar la creación y gestión de horarios académicos para estudiantes.",
       },
       {
-        title: "Integration with Calendar Tools",
+        title: "Integración con Herramientas de Calendario",
         description:
-          "Integrate with Google Calendar for seamless schedule synchronization.",
+          "Integrar con Google Calendar para sincronización de horarios sin problemas.",
       },
       {
-        title: "Scalability and Open Source",
+        title: "Escalabilidad y Código Abierto",
         description:
-          "Ensure scalability using Docker and contribute to the community as an open-source project.",
+          "Garantizar la escalabilidad mediante Docker y contribuir a la comunidad como un proyecto de código abierto.",
       },
     ],
     keyFeatures: [
       {
-        title: "Calendar Integration",
+        title: "Integración con Calendario",
         description:
-          "Sync schedules with Google Calendar for easy access and management.",
+          "Sincronización de horarios con Google Calendar para una gestión eficiente.",
       },
       {
-        title: "Automated Schedule Generation",
+        title: "Generación Automatizada de Horarios",
         description:
-          "AI-driven schedule generation based on course requirements.",
+          "Generación de horarios basada en la carga horaria y eventos paralelos de la universidad.",
       },
       {
-        title: "Open Source Community",
+        title: "Comunidad de Código Abierto",
         description:
-          "Contributions to open-source community with Docker support and continuous integration.",
+          "Disponibilidad del proyecto como código abierto para contribuciones y mejoras continuas.",
       },
     ],
   },
@@ -195,36 +195,36 @@ export const PROJECTS: IBaseProject[] = [
     code: "movify-pe-payment-module",
     projectGoals: [
       {
-        title: "Financial Efficiency",
+        title: "Automatización de Procesos Financieros",
         description:
-          "Develop modules to streamline financial processes like payments and invoicing.",
+          "Facilitar la gestión de pagos y auditorías con un módulo integrado de ingresos y gastos.",
       },
       {
-        title: "Operational Scalability",
+        title: "Integración con Sistemas Contables",
         description:
-          "Implement AWS migration and serverless solutions for improved service reliability.",
+          "Integrar APIs para la generación de PDF y sincronización con sistemas contables existentes.",
       },
       {
-        title: "Client-Centric Solutions",
+        title: "Mejora de la Transparencia Financiera",
         description:
-          "Enhance client-facing applications for better customer engagement and satisfaction.",
+          "Implementar un sistema para mejorar la transparencia en el manejo de recursos financieros.",
       },
     ],
     keyFeatures: [
       {
-        title: "Financial Module",
+        title: "Gestión de Pagos y Auditorías",
         description:
-          "Payment tracking and invoicing with detailed financial reporting.",
+          "Registro de pagos y auditorías con recibos electrónicos en formato PDF.",
       },
       {
-        title: "AWS Migration",
+        title: "Integración de Sistemas Contables",
         description:
-          "Migration to AWS for enhanced scalability and reliability.",
+          "APIs para la generación de PDF y sincronización con sistemas contables existentes.",
       },
       {
-        title: "Client Management",
+        title: "Mejora de Transparencia",
         description:
-          "Improved client interface with personalized dashboards and customer analytics.",
+          "Sistema que proporciona mayor transparencia en el manejo de los recursos financieros.",
       },
     ],
   },
@@ -250,36 +250,36 @@ export const PROJECTS: IBaseProject[] = [
     code: "movify-pe-quote-system",
     projectGoals: [
       {
-        title: "Migration to Serverless Architecture",
+        title: "Migración a API Serverless",
         description:
-          "Migrate the web quoting system backend to a serverless API.",
+          "Migrar el sistema de cotizaciones web a una API serverless para mejorar la disponibilidad y reducir costos.",
       },
       {
-        title: "Email Design Compatibility",
+        title: "Mejora del Diseño de Correos Electrónicos",
         description:
-          "Enhance email design compatibility across multiple providers.",
+          "Mejorar la compatibilidad y estética de las plantillas de correos electrónicos.",
       },
       {
-        title: "Analytics Integration",
+        title: "Seguimiento de Analíticas",
         description:
-          "Integrate analytics to track email views and engagement rates.",
+          "Integración de herramientas de análisis para monitorear las métricas de compromiso de correo electrónico.",
       },
     ],
     keyFeatures: [
       {
-        title: "Serverless API",
+        title: "Migración a AWS Lambda",
         description:
-          "Backend migration to AWS Lambda for improved scalability and cost efficiency.",
+          "Migración del backend a AWS Lambda para mejorar la disponibilidad y reducir costos.",
       },
       {
-        title: "Email Design Enhancement",
+        title: "Diseño de Correos Electrónicos",
         description:
-          "Improved compatibility and aesthetics of email templates.",
+          "Compatibilidad mejorada con varios proveedores de correo electrónico para aumentar la generación de clientes potenciales.",
       },
       {
-        title: "Analytics Tracking",
+        title: "Seguimiento de Analíticas",
         description:
-          "Integration of analytics tools to monitor email engagement metrics.",
+          "Integración de análisis para rastrear las vistas de correos electrónicos y mejorar las tasas de apertura.",
       },
     ],
   },
@@ -315,36 +315,36 @@ export const PROJECTS: IBaseProject[] = [
     code: "movify-pe-aws-migration",
     projectGoals: [
       {
-        title: "Infrastructure Migration",
+        title: "Migración a AWS",
         description:
-          "Migrate infrastructure to AWS for improved deployment and availability.",
+          "Migrar la infraestructura a AWS para mejorar el despliegue y la disponibilidad de los servicios.",
       },
       {
-        title: "CI/CD Automation",
+        title: "Flujos de CI/CD",
         description:
-          "Establish CI/CD workflows for automated deployment on AWS services.",
+          "Establecer flujos de trabajo de CI/CD automatizados", 
       },
       {
-        title: "Storage Integration",
+        title: "Solución de Almacenamiento",
         description:
-          "Integrate with Amazon S3 for storage of photos and videos related to moving services.",
+          "Buscar soluciones de almacenamientopara fotos y videos",
       },
     ],
     keyFeatures: [
       {
-        title: "AWS Infrastructure",
+        title: "Infraestructura en AWS",
         description:
-          "Migration to AWS Amplify, Amazon RDS, and EC2 for enhanced deployment and scalability.",
+          "Migración a AWS Amplify, Amazon RDS, EC2 y S3 para mejorar la disponibilidad y escalabilidad.",
       },
       {
-        title: "CI/CD Pipelines",
+        title: "Flujos de CI/CD Automatizados",
         description:
-          "Automated deployment workflows using AWS services for improved efficiency.",
+          "Automatización de flujos de CI/CD para implementación continua en servicios de AWS  a través de GitHub Actions.",
       },
       {
-        title: "Storage Solution",
+        title: "Almacenamiento en Amazon S3",
         description:
-          "Integration with Amazon S3 for secure and scalable storage of multimedia assets.",
+          "Integración con Amazon S3 para almacenar fotos y videos relacionados con los servicios de mudanza.",
       },
     ],
   },
@@ -382,35 +382,35 @@ export const PROJECTS: IBaseProject[] = [
     code: "movify-pe-quote-order-management",
     projectGoals: [
       {
-        title: "Administrative System Development",
+        title: "Sistema Administrativo",
         description:
-          "Develop an administrative system for quotes and moving orders.",
+          "Desarrollar un sistema administrativo para cotizaciones y órdenes de mudanza.",
       },
       {
-        title: "PDF Automation",
-        description: "Automate PDF generation for quotes and sales orders.",
+        title: "Generación de PDF",
+        description: "Automatizar la generación de PDF para cotizaciones y órdenes de venta.",
       },
       {
-        title: "Sales Efficiency",
+        title: "Módulo de Informes",
         description:
-          "Develop reporting module to measure sales team efficiency.",
+          "Desarrollar un módulo de informes para medir la eficiencia del equipo de ventas.",
       },
     ],
     keyFeatures: [
       {
-        title: "Client-Server Architecture",
+        title: "Control de acceso",
         description:
-          "Design and implement REST API and SPA for seamless administrative operations.",
+          "Autenticación y autorización de usuarios con roles y permisos personalizados.",
       },
       {
-        title: "PDF Generation",
+        title: "Generación de PDF",
         description:
-          "Automated generation of PDF documents for quotes and sales orders.",
+          "Generación automatizada de documentos PDF para cotizaciones y órdenes de venta.",
       },
       {
-        title: "Integration with Web Quoting System",
+        title: "Integración con Sistema de Cotizaciones Web",
         description:
-          "Interconnect with web quoting system via API for seamless data flow.",
+          "Interconexión con el sistema de cotizaciones web a través de API para un flujo de datos sin problemas.",
       },
     ],
   },
@@ -436,35 +436,36 @@ export const PROJECTS: IBaseProject[] = [
     code: "movify-pe-quote-system-improvement",
     projectGoals: [
       {
-        title: "UI/UX Enhancement",
+        title: "Mejora de la Interfaz de Usuario",
         description:
-          "Improve user interface and experience for web quoting system.",
+          "Integrar un estilo personalizado de Google Maps y mejorar la UI/UX para el proceso de cotización.",
       },
       {
-        title: "WordPress Integration",
+        title: "Mejorar el proceso de actualización",
         description:
-          "Migrate iframe to WordPress plugin for easier updates and maintenance.",
+          "Migrar un iframe a un plugin de WordPress para un mejor manejo de actualizaciones.",
       },
       {
-        title: "Lead Capture and Analytics",
-        description: "Develop features for lead capture and analytics data.",
+        title: "Captura de Clientes Potenciales",
+        description:
+          "Desarrollar funciones para capturar clientes potenciales y datos de auditoría.",
       },
     ],
     keyFeatures: [
       {
-        title: "Custom UI/UX",
+        title: "Estilo Personalizado de Google Maps",
         description:
-          "Integration of custom Google Maps styling and improved UI/UX for quoting process.",
+          "Integración de un estilo personalizado de Google Maps para una mejor experiencia de usuario.",
       },
       {
-        title: "WordPress Plugin Migration",
+        title: "Migración a WordPress",
         description:
-          "Migration of iframe functionality to a WordPress plugin for streamlined management.",
+          "Migración de un iframe a un plugin de WordPress para una mejor gestión de actualizaciones.",
       },
       {
-        title: "Lead Capture",
+        title: "Captura de Clientes Potenciales",
         description:
-          "Development of features to capture leads and audit data for analysis.",
+          "Desarrollo de funciones para capturar clientes potenciales y datos de auditoría.",
       },
     ],
   },
