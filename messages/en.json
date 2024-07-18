@@ -27,7 +27,8 @@
     "title": "Projects",
     "categories": {
       "all": "All"
-    }
+    },
+    "viewProjectLink" : "View Project {title}"
   },
   "Contact": {
     "title": "Contact",

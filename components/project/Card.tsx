@@ -4,6 +4,7 @@ import Card from "../ui/Card";
 import { IProjectLink, IProjectTechnology } from "../../interfaces/project";
 import { LinkList } from "./LinkList";
 import { Link } from "@/navigation";
+import { useTranslations } from "next-intl";
 
 interface ProjectCardProps {
   image?: {
@@ -31,14 +32,19 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
     selectedTechs,
     code,
   } = props;
+  const t = useTranslations("Projects");
   return (
     <section className="w-full p-4 md:w-1/2 lg:w-1/3">
       <Card
         data-testId="card"
         className="flex h-full flex-col justify-between bg-white dark:bg-gray-800 dark:text-white"
       >
-        <Link aria-label="link to project" href={`/projects/${code}`}>
-          <div className="relative flex items-center overflow-hidden rounded-xl h-40 w-full bg-gray-200 dark:bg-gray-700">
+        <Link
+          aria-label="link to project"
+          href={`/projects/${code}`}
+          title={t("viewProjectLink", { title })}
+        >
+          <div className="relative flex h-40 w-full items-center overflow-hidden rounded-xl bg-gray-200 dark:bg-gray-700">
             {image ? (
               <Image
                 className="mx-auto max-h-40 w-full object-cover object-center"
@@ -49,7 +55,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
                 loading="eager"
               />
             ) : (
-              <div className="h-40 w-full "></div>
+              <div className="h-40 w-full"></div>
             )}
           </div>
           <div className="mt-1 p-2">
