@@ -29,7 +29,8 @@
     "title": "Proyectos",
     "categories": {
       "all": "Todos"
-    }
+    },
+    "viewProjectLink" : "Ver Proyecto {title}"
   },
   "Contact": {
     "title": "Contáctame",
