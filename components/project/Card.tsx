@@ -3,6 +3,7 @@ import TechStack from "./TechStack";
 import Card from "../ui/Card";
 import { IProjectLink, IProjectTechnology } from "../../interfaces/project";
 import { LinkList } from "./LinkList";
+import { Link } from "@/navigation";
 
 interface ProjectCardProps {
   image?: {
@@ -15,6 +16,7 @@ interface ProjectCardProps {
   technologies: IProjectTechnology[];
   links?: IProjectLink[];
   children?: HTMLElement | HTMLElement[];
+  code?: string;
   onClickTech: (tech: IProjectTechnology) => void;
 }
 
@@ -27,6 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
     technologies,
     onClickTech,
     selectedTechs,
+    code,
   } = props;
   return (
     <section className="w-full p-4 md:w-1/2 lg:w-1/3">
@@ -34,7 +37,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
         data-testId="card"
         className="flex h-full flex-col justify-between bg-white dark:bg-gray-800 dark:text-white"
       >
-        <a aria-label="link to project">
+        <Link aria-label="link to project" href={`/projects/${code}`}>
           <div className="relative flex items-end overflow-hidden rounded-xl">
             {image ? (
               <Image
@@ -55,7 +58,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
               {description}
             </p>
           </div>
-        </a>
+        </Link>
         <div className="mt-1 p-2">
           <TechStack
             techs={technologies}

@@ -70,6 +70,7 @@ export const ProjectList: React.FC<Props> = ({ projects: initialProjects }) => {
           projects.map((project) => (
             <ProjectCard
               key={project.title}
+              code={project.code}
               links={project.links}
               title={project.title}
               description={project.shortDescription}
