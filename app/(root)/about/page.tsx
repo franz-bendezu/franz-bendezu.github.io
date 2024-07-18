@@ -4,6 +4,6 @@ export { default } from "../../[locale]/about/page";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Acerca de mi",
+    default: "Acerca de mi",
   },
 };

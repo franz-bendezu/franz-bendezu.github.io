@@ -3,8 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Franz Bendezu - Desarrollador de Software",
-    absolute: "Inicio",
+    default: "Inicio",
   },
   description: "Bienvenido a mi sitio web personal",
 };
