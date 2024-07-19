@@ -1,13 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
 import Image from "next/image";
 import profile from "../../public/profile.png";
 import { useTranslations } from "next-intl";
-import Styles from "./styles.module.css";
 import { HomePresentationDownload } from "./PresentationDownload";
-import { unstable_setRequestLocale } from "next-intl/server";
-import { DEFAULT_LOCALE } from "@/constants/locales";
+import { CircularPulse } from "../ui/CircularPulse";
 
-const HomePresentation: React.FC = () => {
+const HomePresentation: FC = () => {
   const t = useTranslations("Home");
 
   return (
@@ -44,35 +42,7 @@ const HomePresentation: React.FC = () => {
       </div>
       <div className="flex flex-shrink-0 items-center justify-center">
         <div className="relative m-24 flex h-[250px] w-[250px] items-center justify-center">
-          <svg
-            className="pointer-events-none absolute inset-0 left-1/2 top-1/2 z-0 block h-auto max-w-[200%] -translate-x-1/2 -translate-y-1/2 transform rounded-full"
-            width="800"
-            height="800"
-            viewBox="0 0 800 800"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g className="fill-slate-500 opacity-75 dark:fill-blue-300">
-              <circle className={Styles.pulse} cx="400" cy="400" r="200" />
-              <circle
-                className={Styles.pulse + " " + Styles["pulse-1"]}
-                cx="400"
-                cy="400"
-                r="200"
-              />
-              <circle
-                className={Styles.pulse + " " + Styles["pulse-2"]}
-                cx="400"
-                cy="400"
-                r="200"
-              />
-              <circle
-                className={Styles.pulse + " " + Styles["pulse-3"]}
-                cx="400"
-                cy="400"
-                r="200"
-              />
-            </g>
-          </svg>
+          <CircularPulse />
           <Image
             src={profile}
             alt="Profile"
