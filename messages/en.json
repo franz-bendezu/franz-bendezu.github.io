@@ -10,6 +10,7 @@
     "madeWith": "Designed by Franz Bendezu"
   },
   "Home": {
+    "title": "Home",
     "greeting": "Hello, I am",
     "name": "Franz Bendezu Isidro",
     "profession": "<highlight>Software</highlight> Developer",
@@ -28,7 +29,7 @@
     "categories": {
       "all": "All"
     },
-    "viewProjectLink" : "View Project {title}"
+    "viewProjectLink": "View Project {title}"
   },
   "Contact": {
     "title": "Contact",
@@ -43,5 +44,12 @@
   "About": {
     "title": "About me",
     "description": "I am a software developer with 4 years of experience in the development of web applications, I have a degree in Systems Engineering and I am passionate about technology. "
+  },
+  "Metadata": {
+    "title": {
+      "default": "Home",
+      "template": "%s |  Franz Bendezu - Software Developer"
+    },
+    "description": "Welcome to my personal website"
   }
 }

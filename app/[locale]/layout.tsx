@@ -2,7 +2,7 @@ import { ThemeProvider } from "next-themes";
 import Footer from "../../components/layout/Footer";
 import Navbar from "../../components/layout/Navbar";
 import { NextIntlClientProvider, useMessages } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { DEFAULT_LOCALE, LOCALES } from "@/constants/locales";
@@ -12,18 +12,24 @@ const inter = Inter({ subsets: ["latin"] });
 export function generateStaticParams() {
   return LOCALES;
 }
-export const metadata: Metadata = {
-  title: {
-    template: "%s |  Franz Bendezu - Software Developer",
-    default: "Home",
-  },
-  description: "Welcome to my personal website",
-};
 
 type Props = {
   children: React.ReactNode;
   params: { locale: string };
 };
+
+export async function generateMetadata({
+  params: { locale = DEFAULT_LOCALE },
+}: Props): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: "Metadata" });
+  return {
+    title: {
+      template: t("title.template"),
+      default: t("title.default"),
+    },
+    description: t("description"),
+  };
+}
 
 export default function LocaleLayout({
   children,
