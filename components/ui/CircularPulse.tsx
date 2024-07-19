@@ -1,12 +1,16 @@
-import { FC } from "react";
+import { FC, SVGProps } from "react";
 import Styles from "./CircularPulse.module.css";
 
-export const CircularPulse: FC = () => {
+export const CircularPulse: FC<SVGProps<SVGSVGElement>> = (
+  props: SVGProps<SVGSVGElement>,
+) => {
   return (
     <svg
-      className="pointer-events-none absolute inset-0 left-1/2 top-1/2 z-0 block h-auto  max-w-[100%] -translate-x-1/2 -translate-y-1/2 transform rounded-full"
-      width="800"
-      height="800"
+      {...props}
+      className={
+        "pointer-events-none absolute inset-0 left-1/2 top-1/2 z-0 block -translate-x-1/2 -translate-y-1/2 transform rounded-full " +
+          props.className ?? ""
+      }
       viewBox="0 0 800 800"
       xmlns="http://www.w3.org/2000/svg"
     >
