@@ -41,13 +41,13 @@ const HomePresentation: FC = () => {
         <HomePresentationDownload />
       </div>
       <div className="flex flex-shrink-0 items-center justify-center">
-        <div className="relative m-24 flex h-[250px] w-[250px] items-center justify-center">
+        <div className="relative flex h-[500px] w-[500px] items-center justify-center">
           <CircularPulse />
           <Image
             src={profile}
             alt="Profile"
             fetchPriority={"high"}
-            className="relative z-10 mx-auto rounded-full object-cover"
+            className="relative z-10 mx-auto max-h-[50%] max-w-[50%] rounded-full object-cover"
             width={250}
             height={250}
             placeholder="blur"

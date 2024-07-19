@@ -4,7 +4,7 @@ import Styles from "./CircularPulse.module.css";
 export const CircularPulse: FC = () => {
   return (
     <svg
-      className="pointer-events-none absolute inset-0 left-1/2 top-1/2 z-0 block h-auto max-w-[200%] -translate-x-1/2 -translate-y-1/2 transform rounded-full"
+      className="pointer-events-none absolute inset-0 left-1/2 top-1/2 z-0 block h-auto  max-w-[100%] -translate-x-1/2 -translate-y-1/2 transform rounded-full"
       width="800"
       height="800"
       viewBox="0 0 800 800"
