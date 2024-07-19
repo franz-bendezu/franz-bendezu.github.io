@@ -10,6 +10,7 @@
     "madeWith": "Diseñado por Franz Bendezu"
   },
   "Home": {
+    "title": "Inicio",
     "greeting": "Hola, soy",
     "name": "Franz Bendezu Isidro",
     "profession": "Desarrollador de <highlight>Software</highlight>",
@@ -30,7 +31,7 @@
     "categories": {
       "all": "Todos"
     },
-    "viewProjectLink" : "Ver Proyecto {title}"
+    "viewProjectLink": "Ver Proyecto {title}"
   },
   "Contact": {
     "title": "Contáctame",
@@ -45,5 +46,12 @@
   "About": {
     "title": "Acerca de mi",
     "description": "Soy un desarrollador de software con 4 años de experiencia en el desarrollo de aplicaciones web, tengo una bachiller en Ingeniería de Sistemas y soy un apasionado de la tecnología."
+  },
+  "Metadata": {
+    "title": {
+      "default": "Inicio",
+      "template": "%s |  Franz Bendezu - Desarrollador de Software"
+    },
+    "description": "Bienvenido a mi sitio web personal"
   }
 }

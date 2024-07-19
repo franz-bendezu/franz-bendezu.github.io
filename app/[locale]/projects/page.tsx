@@ -6,10 +6,11 @@ import {
 } from "../../../constants/projects/techologies";
 import { IProject } from "../../../interfaces/project";
 import { ProjectList } from "@/components/project/List";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { DEFAULT_LOCALE } from "@/constants/locales";
 import { Link } from "@/navigation";
+import { Metadata } from "next";
 
 const getDataByCategory = (category?: string) => {
   return (
@@ -42,6 +43,17 @@ const getDataByCategory = (category?: string) => {
 type Props = {
   params: { category?: string; locale?: string };
 };
+
+
+export async function generateMetadata({
+  params: { locale = DEFAULT_LOCALE },
+}: Props): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: "Projects" });
+  return {
+    title: t("title"),
+  };
+}
+
 
 export default function ProjectsPage({
   params: { locale = DEFAULT_LOCALE, category },

@@ -9,17 +9,22 @@ import {
   BriefcaseIcon,
   BuildingLibraryIcon,
 } from "@heroicons/react/20/solid";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { DEFAULT_LOCALE } from "@/constants/locales";
-
-export const metadata: Metadata = {
-  title: "About",
-};
 
 type Props = {
   params: { locale?: string };
 };
+
+export async function generateMetadata({
+  params: { locale = DEFAULT_LOCALE },
+}: Props): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: "About" });
+  return {
+    title: t("title"),
+  };
+}
 
 const AboutPage: NextPage<Props> = ({
   params: { locale = DEFAULT_LOCALE },

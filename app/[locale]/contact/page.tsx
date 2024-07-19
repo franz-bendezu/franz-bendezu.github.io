@@ -3,17 +3,22 @@ import React from "react";
 import Script from "next/script";
 import { ChatBubbleLeftIcon } from "@heroicons/react/20/solid";
 import { ContactForm } from "../../../components/contact/Form";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { DEFAULT_LOCALE } from "@/constants/locales";
-
-export const metadata: Metadata = {
-  title: "Contact",
-};
 
 type Props = {
   params: { locale?: string };
 };
+
+export async function generateMetadata({
+  params: { locale = DEFAULT_LOCALE },
+}: Props): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: "Contact" });
+  return {
+    title: t("title"),
+  };
+}
 
 const ContactPage: NextPage<Props> = ({
   params: { locale = DEFAULT_LOCALE },
