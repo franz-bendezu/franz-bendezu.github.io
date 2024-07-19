@@ -42,7 +42,11 @@ const HomePresentation: FC = () => {
       </div>
       <div className="flex flex-shrink-0 items-center justify-center">
         <div className="relative flex h-[500px] w-[500px] items-center justify-center">
-          <CircularPulse />
+          <CircularPulse
+            className="h-auto max-w-[100%]"
+            width="500"
+            height="500"
+          />
           <Image
             src={profile}
             alt="Profile"
