@@ -41,9 +41,9 @@ const HomePresentation: FC = () => {
         <HomePresentationDownload />
       </div>
       <div className="flex flex-shrink-0 items-center justify-center">
-        <div className="relative flex h-[500px] w-[500px] items-center justify-center">
+        <div className="relative flex aspect-square h-auto max-h-[500px] w-[500px] max-w-[500px] items-center justify-center">
           <CircularPulse
-            className="h-auto max-w-[100%]"
+            className="aspect-square h-auto max-w-[100%]"
             width="500"
             height="500"
           />
@@ -51,7 +51,7 @@ const HomePresentation: FC = () => {
             src={profile}
             alt="Profile"
             fetchPriority={"high"}
-            className="relative z-10 mx-auto max-h-[50%] max-w-[50%] rounded-full object-cover"
+            className="ma-auto relative z-10 max-h-[50%] max-w-[50%] rounded-full object-cover"
             width={250}
             height={250}
             placeholder="blur"
