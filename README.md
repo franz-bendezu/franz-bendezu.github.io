@@ -1,29 +1,104 @@
-# Portafolio - Franz Bendezu
+# Franz Bendezu - Portfolio
 
-This project use [Tailwind CSS](https://tailwindcss.com/) [(v2.2)](https://blog.tailwindcss.com/tailwindcss-2-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+Welcome to my personal portfolio repository. This project showcases my skills, projects, and experiences using modern web development technologies.
 
-It uses the new [`Just-in-Time Mode`](https://tailwindcss.com/docs/just-in-time-mode) for Tailwind CSS.
+## Table of Contents
 
-## Preview
+- [About](#about)
+- [Technologies](#technologies)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Features](#features)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+## About
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+This portfolio is built using [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/). It is designed to be a fast, responsive, and visually appealing way to present my work and skills.
 
-## Deploy your own
+## Technologies
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+- **Framework:** Next.js
+- **Styling:** Tailwind CSS
+- **Deployment:** Vercel
+- **Version Control:** Git
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+## Setup
 
-## How to use
+To set up the project locally, follow these steps:
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+1. **Clone the repository:**
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+   ```bash
+   git clone https://github.com/franz-bendezu/portfolio.git
+   cd portfolio
+   ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Run the development server:**
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Usage
+
+To build and deploy the project, use the following commands:
+
+- **Build the project:**
+
+  ```bash
+  npm run build
+  # or
+  yarn build
+  ```
+
+- **Start the production server:**
+
+  ```bash
+  npm start
+  # or
+  yarn start
+  ```
+
+## Features
+
+- **Responsive Design:** Optimized for various screen sizes.
+- **Modern UI:** Clean and professional design using Tailwind CSS.
+- **Fast Performance:** Built with Next.js for optimal performance.
+- **Easy Deployment:** Deployable on Vercel with minimal configuration.
+
+## Contributing
+
+Contributions are welcome! If you have any suggestions or improvements, please create an issue or submit a pull request.
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add some feature'`).
+5. Push to the branch (`git push origin feature-branch`).
+6. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+
+## Contact
+
+Feel free to reach out to me connect with me on [LinkedIn](https://www.linkedin.com/in/franz-bendezu/).
+
+---
+
+Thank you for visiting my portfolio repository!
