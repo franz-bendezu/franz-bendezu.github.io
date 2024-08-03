@@ -10,11 +10,13 @@ export const ExperienceCard: FC<Props> = (props) => {
   return (
     <div className="flex md:contents">
       <div className="relative col-start-2 col-end-4 mr-10 md:mx-auto">
-        <div className="flex h-full w-6 items-center justify-center">
+        <div className="flex h-full w-8 items-center justify-center">
           <div className="pointer-events-none h-full w-1 bg-blue-500"></div>
         </div>
-        <div className="absolute top-1/2 -mt-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-700 text-center shadow">
-          <CheckIcon className="h-5 w-5 text-white" />
+        <div className="absolute top-1/2 -mt-4 flex w-full aspect-square items-center justify-center">
+          <div className="h-6 w-6 rounded-full bg-blue-400/75 flex items-center justify-center">
+            <div className="h-4 w-4 rounded-full bg-blue-800"></div>
+          </div>
         </div>
       </div>
       <Card className="col-start-4 col-end-12 my-4 mr-auto w-full bg-white px-4 py-3 dark:bg-gray-800">
