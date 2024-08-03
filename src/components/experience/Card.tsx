@@ -9,7 +9,7 @@ interface Props {
 export const ExperienceCard: FC<Props> = (props) => {
   return (
     <div className="flex md:contents">
-      <div className="relative col-start-1 col-end-3 mr-10 md:mx-auto">
+      <div className="relative col-start-1 col-end-3 mr-2 md:mx-auto">
         <div className="flex h-full w-8 items-center justify-center">
           <div className="pointer-events-none h-full w-1 bg-blue-500"></div>
         </div>
