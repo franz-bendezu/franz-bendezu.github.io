@@ -59,7 +59,9 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
             )}
           </div>
           <div className="mt-1 p-2">
-            <h3 className="text-xl text-blue-500 lg:text-2xl">{title}</h3>
+            <h3 className="text-xl font-semibold text-black dark:text-white lg:text-2xl">
+              {title}
+            </h3>
             <p className="text-sm text-black dark:text-white lg:text-base">
               {description}
             </p>
