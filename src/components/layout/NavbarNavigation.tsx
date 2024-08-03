@@ -1,4 +1,4 @@
-"use client";
+
 import ThemeSwitch from "../ui/ThemeSwtich";
 import NavbarDesktop from "./NavbarDesktop";
 import NavbarMobile from "./NavbarMobile";

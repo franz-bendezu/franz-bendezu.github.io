@@ -1,3 +1,4 @@
+"use client";
 import React, { ReactNode, forwardRef } from "react";
 import { Link, usePathname } from "@/navigation";
 

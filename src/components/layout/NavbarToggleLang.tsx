@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import { LanguageIcon } from "@heroicons/react/20/solid";
