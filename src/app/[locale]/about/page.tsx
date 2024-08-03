@@ -12,7 +12,7 @@ import {
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { DEFAULT_LOCALE } from "@/constants/locales";
-import { WorkExperienceCard } from "@/components/work/Card";
+import { ExperienceWorkCard } from "@/components/experience/WorkCard";
 
 type Props = {
   params: { locale?: string };
@@ -78,7 +78,7 @@ const AboutPage: NextPage<Props> = ({
         <div className="container">
           <div className="flex grid-cols-12 flex-col md:grid">
             {WORK_EXPERIENCES.map((p) => (
-              <WorkExperienceCard key={p.id} {...p} />
+              <ExperienceWorkCard key={p.id} {...p} />
             ))}
           </div>
         </div>

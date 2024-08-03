@@ -5,7 +5,7 @@ import { IWorkExperience } from "@/interfaces/work-experience";
 
 interface Props extends Omit<IWorkExperience, "id"> {}
 
-export const WorkExperienceCard: FC<Props> = (props) => {
+export const ExperienceWorkCard: FC<Props> = (props) => {
   return (
     <div className="flex md:contents">
       <div className="relative col-start-2 col-end-4 mr-10 md:mx-auto">
