@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import Image from "next/image";
-import profile from "../../public/profile.png";
 import { useTranslations } from "next-intl";
 import { HomePresentationDownload } from "./PresentationDownload";
 import { CircularPulse } from "../ui/CircularPulse";
@@ -48,7 +47,8 @@ const HomePresentation: FC = () => {
             height="500"
           />
           <Image
-            src={profile}
+            src={"/profile.png"}
+            blurDataURL="/profile.png"
             alt="Profile"
             fetchPriority={"high"}
             className="ma-auto relative z-10 max-h-[50%] max-w-[50%] rounded-full object-cover"
