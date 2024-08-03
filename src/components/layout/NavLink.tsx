@@ -1,5 +1,5 @@
 "use client";
-import React, { ReactNode, forwardRef } from "react";
+import React, { MouseEvent, ReactNode, forwardRef } from "react";
 import { Link, usePathname } from "@/navigation";
 
 interface NavLinkProps {
@@ -9,6 +9,7 @@ interface NavLinkProps {
   exact?: boolean;
   children: ReactNode;
   locale?: string;
+  onClick?: (event: MouseEvent<HTMLAnchorElement>) => void;
 }
 
 const DownArrowIcon = () => (
@@ -36,6 +37,7 @@ const NavLink: React.FC<NavLinkProps> = forwardRef(
       activeClass = "text-gray-800 font-bold dark:text-gray-400",
       className = "",
       locale = "",
+      onClick,
     } = props;
     const pathname = usePathname();
     const isActive = exact ? pathname === href : pathname.startsWith(href);
@@ -44,7 +46,12 @@ const NavLink: React.FC<NavLinkProps> = forwardRef(
     }`;
 
     return (
-      <Link href={href} className={currentClass} locale={locale}>
+      <Link
+        href={href}
+        className={currentClass}
+        locale={locale}
+        onClick={onClick}
+      >
         {children} {isActive && <DownArrowIcon />}
       </Link>
     );
