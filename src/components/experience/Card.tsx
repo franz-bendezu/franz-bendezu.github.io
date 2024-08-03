@@ -13,7 +13,7 @@ export const ExperienceCard: FC<Props> = (props) => {
         <div className="flex h-full w-8 items-center justify-center">
           <div className="pointer-events-none h-full w-1 bg-blue-500"></div>
         </div>
-        <div className="absolute top-1/2 -mt-4 flex w-full aspect-square items-center justify-center">
+        <div className="absolute top-0 mt-8 flex w-full aspect-square items-center justify-center">
           <div className="h-6 w-6 rounded-full bg-blue-400/75 flex items-center justify-center">
             <div className="h-4 w-4 rounded-full bg-blue-800"></div>
           </div>
