@@ -45,7 +45,7 @@ const AboutPage: NextPage<Props> = ({
         <div className="container">
           <h2 className="mb-6 flex flex-row items-center gap-3 text-left text-2xl font-semibold lg:text-3xl">
             <BuildingLibraryIcon className="h-8 w-8" />
-            Educación
+            {t("education.title")}
           </h2>
           <div className="flex grid-cols-12 flex-col md:grid">
             {EDUCATION_EXPERIENCES.map((p) => (
@@ -55,7 +55,8 @@ const AboutPage: NextPage<Props> = ({
         </div>
         <div className="container">
           <h2 className="mb-6 flex flex-row items-center gap-3 text-left text-2xl font-semibold lg:text-3xl">
-            <BriefcaseIcon className="h-8 w-8" /> Experiencia Laboral
+            <BriefcaseIcon className="h-8 w-8" /> 
+            {t("work.title")}
           </h2>
           <div className="flex grid-cols-12 flex-col md:grid">
             {WORK_EXPERIENCES.map((p) => (
