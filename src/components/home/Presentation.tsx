@@ -5,6 +5,7 @@ import { HomePresentationDownload } from "./PresentationDownload";
 import { CircularPulse } from "../ui/CircularPulse";
 import GitHubIcon from "../icon/github";
 import LinkedInIcon from "../icon/linkedin";
+import GitLabIcon from "../icon/gitlab";
 
 const HomePresentation: FC = () => {
   const t = useTranslations("Home");
@@ -58,6 +59,15 @@ const HomePresentation: FC = () => {
             >
               <GitHubIcon className="h-5 w-5" />
               GitHub
+            </a>
+            <a
+              href="https://gitlab.com/franz-bendezu"
+              className="flex items-center gap-3 rounded-md px-3 py-1 transition-colors hover:bg-gray-300 dark:text-white dark:hover:bg-gray-700"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GitLabIcon className="h-5 w-5" />
+              GitLab
             </a>
           </div>
           <div>
