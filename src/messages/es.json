@@ -30,6 +30,10 @@
       "devops": "DevOps",
       "tools": "Herramientas",
       "testing": "Pruebas"
+    },
+    "lastProjects": {
+      "title": "Mis Últimos Proyectos",
+      "description": "Explore una selección de mis proyectos recientes de desarrollo web, que muestran mis habilidades y creatividad."
     }
   },
   "Project": {
