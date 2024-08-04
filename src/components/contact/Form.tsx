@@ -39,6 +39,19 @@ export const ContactForm = () => {
         <ValidationError prefix="Email" field="email" errors={state.errors} />
       </div>
       <div className="mb-4">
+        <label htmlFor="name" className="block font-medium text-gray-700">
+          Nombre
+        </label>
+        <input
+          id="name"
+          type="text"
+          name="name"
+          required
+          className="focus:ring-primary-500 focus:border-primary-500 w-full rounded-md border border-gray-300 px-4 py-2"
+        />
+        <ValidationError prefix="Nombre" field="name" errors={state.errors} />
+      </div>
+      <div className="mb-4">
         <label htmlFor="message" className="block font-medium text-gray-700">
           Mensaje
         </label>
