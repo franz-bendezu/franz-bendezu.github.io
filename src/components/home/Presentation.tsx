@@ -8,54 +8,56 @@ const HomePresentation: FC = () => {
   const t = useTranslations("Home");
 
   return (
-    <section className="items-center container flex flex-col-reverse gap-3 px-4 py-8 text-center lg:flex lg:flex-row lg:space-x-5 lg:text-left">
-      <div className="lg:mt-12">
-        <div className="mt-6">
-          <h1 className="text-md font-semibold">{t("greeting")}</h1>
-          <h1 className="mb-2 text-4xl font-semibold">{t("name")}</h1>
-          <h2 className="mb-2 text-3xl font-semibold">
-            {t.rich("profession", {
-              highlight: (children) => (
-                <span className="bg-blue-400 px-1 dark:bg-blue-500">
-                  {children}
-                </span>
-              ),
-            })}
-          </h2>
-          <p className="mb-4 text-lg">
-            {t.rich("description", {
-              GreenHighlight: (children) => (
-                <span className="bg-green-300 px-1 dark:bg-green-500">
-                  {children}
-                </span>
-              ),
-              GrayHighlight: (children) => (
-                <span className="bg-gray-300 px-1 dark:bg-gray-500">
-                  {children}
-                </span>
-              ),
-            })}
-          </p>
+    <section id="presentation" className="w-full py-6">
+      <div className="container mx-auto flex flex-col-reverse items-center gap-3 px-4 text-center lg:flex lg:flex-row lg:space-x-5 lg:text-left">
+        <div className="lg:mt-12">
+          <div className="mt-6">
+            <h1 className="text-md font-semibold">{t("greeting")}</h1>
+            <h1 className="mb-2 text-4xl font-semibold">{t("name")}</h1>
+            <h2 className="mb-2 text-3xl font-semibold">
+              {t.rich("profession", {
+                highlight: (children) => (
+                  <span className="bg-blue-400 px-1 dark:bg-blue-500">
+                    {children}
+                  </span>
+                ),
+              })}
+            </h2>
+            <p className="mb-4 text-lg">
+              {t.rich("description", {
+                GreenHighlight: (children) => (
+                  <span className="bg-green-300 px-1 dark:bg-green-500">
+                    {children}
+                  </span>
+                ),
+                GrayHighlight: (children) => (
+                  <span className="bg-gray-300 px-1 dark:bg-gray-500">
+                    {children}
+                  </span>
+                ),
+              })}
+            </p>
+          </div>
+          <HomePresentationDownload />
         </div>
-        <HomePresentationDownload />
-      </div>
-      <div className="flex flex-shrink-0 items-center justify-center">
-        <div className="relative flex aspect-square h-auto max-h-[500px] w-[500px] max-w-[500px] items-center justify-center">
-          <CircularPulse
-            className="aspect-square h-auto max-w-[100%]"
-            width="500"
-            height="500"
-          />
-          <Image
-            src={"/profile.webp"}
-            blurDataURL="/profile.webp"
-            alt="Profile"
-            fetchPriority={"high"}
-            className="ma-auto relative z-10 max-h-[50%] max-w-[50%] rounded-full object-cover"
-            width={250}
-            height={250}
-            placeholder="blur"
-          />
+        <div className="flex flex-shrink-0 items-center justify-center">
+          <div className="relative flex aspect-square h-auto max-h-[500px] w-[500px] max-w-[500px] items-center justify-center">
+            <CircularPulse
+              className="aspect-square h-auto max-w-[100%]"
+              width="500"
+              height="500"
+            />
+            <Image
+              src={"/profile.webp"}
+              blurDataURL="/profile.webp"
+              alt="Profile"
+              fetchPriority={"high"}
+              className="ma-auto relative z-10 max-h-[50%] max-w-[50%] rounded-full object-cover"
+              width={250}
+              height={250}
+              placeholder="blur"
+            />
+          </div>
         </div>
       </div>
     </section>
