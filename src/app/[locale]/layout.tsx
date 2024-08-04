@@ -56,10 +56,8 @@ export default function LocaleLayout({
           <ThemeProvider attribute="class" defaultTheme="light">
             <div className="flex min-h-screen flex-col bg-gradient-to-t from-gray-50 to-gray-200 dark:bg-gradient-to-b dark:from-slate-950 dark:to-slate-800">
               <Navbar locale={locale} />
-              <main className="flex-grow justify-center align-middle">
-                <div className="container mx-auto space-y-14 px-4 py-8 antialiased lg:space-y-24">
-                  {children}
-                </div>
+              <main className="flex-grow space-y-14 align-middle antialiased lg:space-y-24">
+                {children}
               </main>
               <Footer />
             </div>
