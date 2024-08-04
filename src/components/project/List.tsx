@@ -5,8 +5,8 @@ import { IProject, IProjectTechnology } from "@/interfaces/project";
 
 type Props = {
   projects: IProject[];
-  onClickProjectTech: (project: IProject, tech: IProjectTechnology) => void;
-  selectedTechs: IProjectTechnology[];
+  onClickProjectTech?: (project: IProject, tech: IProjectTechnology) => void;
+  selectedTechs?: IProjectTechnology[];
 };
 
 export const ProjectList: FC<Props> = ({
@@ -28,7 +28,7 @@ export const ProjectList: FC<Props> = ({
             technologies={project.technologies}
             selectedTechs={selectedTechs}
             onClickTech={
-                (tech: IProjectTechnology) => handleClickTech(project, tech)
+                (tech: IProjectTechnology) => handleClickTech?.(project, tech)
             }
           />
         ))
