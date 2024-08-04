@@ -2,11 +2,11 @@
 import { IProject, IProjectTechnology } from "@/interfaces/project";
 import {
   XCircleIcon,
-  ExclamationTriangleIcon,
 } from "@heroicons/react/20/solid";
 import React, { useEffect, useState } from "react";
 import ProjectCard from "./Card";
 import Image from "next/image";
+import { ProjectListEmpty } from "./ListEmpty";
 
 type Props = {
   projects: IProject[];
@@ -81,12 +81,7 @@ export const ProjectList: React.FC<Props> = ({ projects: initialProjects }) => {
             />
           ))
         ) : (
-          <div className="flex w-full flex-col items-center justify-center gap-4">
-            <ExclamationTriangleIcon className="h-12 w-12 text-yellow-500 dark:text-yellow-500" />
-            <p className="text-2xl dark:text-white">
-              No hay proyectos para mostrar
-            </p>
-          </div>
+          <ProjectListEmpty />
         )}
       </div>
     </>

@@ -11,6 +11,7 @@ import { useTranslations } from "next-intl";
 import { DEFAULT_LOCALE } from "@/constants/locales";
 import { Link } from "@/navigation";
 import { Metadata } from "next";
+import { ProjectListEmpty } from "@/components/project/ListEmpty";
 
 const getDataByCategory = (category?: string) => {
   return (
@@ -44,7 +45,6 @@ type Props = {
   params: { category?: string; locale?: string };
 };
 
-
 export async function generateMetadata({
   params: { locale = DEFAULT_LOCALE },
 }: Props): Promise<Metadata> {
@@ -53,7 +53,6 @@ export async function generateMetadata({
     title: t("title"),
   };
 }
-
 
 export default function ProjectsPage({
   params: { locale = DEFAULT_LOCALE, category },
@@ -101,7 +100,11 @@ export default function ProjectsPage({
           </Link>
         ))}
       </div>
-      <ProjectList projects={initialProjects} />
+      {initialProjects.length ? (
+        <ProjectList projects={initialProjects} />
+      ) : (
+        <ProjectListEmpty />
+      )}
     </section>
   );
 }
