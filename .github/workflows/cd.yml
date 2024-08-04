@@ -54,10 +54,9 @@ jobs:
           NEXT_PUBLIC_SPREE_ID: ${{ secrets.NEXT_PUBLIC_SPREE_ID }}
           NEXT_PUBLIC_RECAPTCHA_ID: ${{ secrets.NEXT_PUBLIC_RECAPTCHA_ID }}
 
-      - name: Archive build artifacts
-        uses: actions/upload-artifact@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: build-artifacts
           path: ./out
 
   deploy:
