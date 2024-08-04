@@ -16,47 +16,43 @@ export const Skills = () => {
             </p>
           </div>
         </div>
-        <div className="grid items-start gap-6 py-12 lg:grid-cols-2 lg:gap-12">
-          <div className="grid gap-6">
-            <div className="grid gap-1">
-              <h3 className="text-xl font-bold">Front-end</h3>
-              <p className="text-muted-foreground">
-                Vue, Nuxt, Angular, React, Next.js, Tailwind CSS, Vuetify,
-                Bootstrap, Material UI, Angular Material
-              </p>
-            </div>
-            <div className="grid gap-1">
-              <h3 className="text-xl font-bold">Back-end</h3>
-              <p className="text-muted-foreground">
-                Spring Framework, Node.js, Express, Nestjs
-              </p>
-            </div>
-            <div className="grid gap-1">
-              <h3 className="text-xl font-bold">Cloud/ DevOps</h3>
-              <p className="text-muted-foreground">
-                AWS, DigitalOcean, Docker, GitHub Actions, GitLab CI/CD
-              </p>
-            </div>
+        <div className="grid items-start gap-6 py-12 md:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-12">
+          <div className="grid gap-1">
+            <h3 className="text-xl font-bold">Front-end</h3>
+            <p className="text-muted-foreground">
+              Vue, Nuxt, Angular, React, Next.js, Tailwind CSS, Vuetify,
+              Bootstrap, Material UI, Angular Material
+            </p>
           </div>
-          <div className="grid gap-6">
-            <div className="grid gap-1">
-              <h3 className="text-xl font-bold">Databases</h3>
-              <p className="text-muted-foreground">
-                PostgreSQL, MySQL, MariaDB, MongoDB
-              </p>
-            </div>
-            <div className="grid gap-1">
-              <h3 className="text-xl font-bold">Tools</h3>
-              <p className="text-muted-foreground">
-                Git, GitHub, Gitlab, Figma, Jira, Trello, VSCode
-              </p>
-            </div>
-            <div className="grid gap-1">
-              <h3 className="text-xl font-bold">Testing</h3>
-              <p className="text-muted-foreground">
-                Vitest, Jest, Karma, Jasmine, Cypress, Junit, Mockito
-              </p>
-            </div>
+          <div className="grid gap-1">
+            <h3 className="text-xl font-bold">Back-end</h3>
+            <p className="text-muted-foreground">
+              Spring Framework, Node.js, Express, Nestjs
+            </p>
+          </div>
+          <div className="grid gap-1">
+            <h3 className="text-xl font-bold">Cloud/ DevOps</h3>
+            <p className="text-muted-foreground">
+              AWS, DigitalOcean, Docker, GitHub Actions, GitLab CI/CD
+            </p>
+          </div>
+          <div className="grid gap-1">
+            <h3 className="text-xl font-bold">Databases</h3>
+            <p className="text-muted-foreground">
+              PostgreSQL, MySQL, MariaDB, MongoDB
+            </p>
+          </div>
+          <div className="grid gap-1">
+            <h3 className="text-xl font-bold">Tools</h3>
+            <p className="text-muted-foreground">
+              Git, GitHub, Gitlab, Figma, Jira, Trello, VSCode
+            </p>
+          </div>
+          <div className="grid gap-1">
+            <h3 className="text-xl font-bold">Testing</h3>
+            <p className="text-muted-foreground">
+              Vitest, Jest, Karma, Jasmine, Cypress, Junit, Mockito
+            </p>
           </div>
         </div>
       </div>
