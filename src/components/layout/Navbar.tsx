@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { ROUTES_NAVBAR } from "../../constants/navbar";
 import { NavbarNavigation } from "./NavbarNavigation";
+import { CodeBracketIcon, CodeBracketSquareIcon } from "@heroicons/react/20/solid";
 
 const Navigation: React.FC<{ locale: string }> = ({ locale }) => {
   const routes = ROUTES_NAVBAR;
@@ -13,9 +14,10 @@ const Navigation: React.FC<{ locale: string }> = ({ locale }) => {
           href="/"
           locale={locale}
           className={
-            "font-medium uppercase tracking-wider text-gray-900 transition-colors hover:text-sky-500 dark:text-white"
+            "flex gap-2 font-bold uppercase tracking-wider text-gray-900 transition-colors hover:text-blue-500 dark:text-white"
           }
         >
+          <CodeBracketSquareIcon className="h-6 w-6" />
           Franz Bendezu
         </Link>
         <NavbarNavigation locale={locale} routes={routes} />
