@@ -1,18 +1,17 @@
 "use client";
 import { IProject, IProjectTechnology } from "@/interfaces/project";
-import {
-  XCircleIcon,
-} from "@heroicons/react/20/solid";
+import { XCircleIcon } from "@heroicons/react/20/solid";
 import React, { useEffect, useState } from "react";
-import ProjectCard from "./Card";
 import Image from "next/image";
-import { ProjectListEmpty } from "./ListEmpty";
+import { ProjectList } from "./List";
 
 type Props = {
   projects: IProject[];
 };
 
-export const ProjectExplorerList: React.FC<Props> = ({ projects: initialProjects }) => {
+export const ProjectExplorerList: React.FC<Props> = ({
+  projects: initialProjects,
+}) => {
   const [projects, setProjects] = useState(initialProjects);
   const [filterTechs, setFilterTech] = useState<IProjectTechnology[]>([]);
 
@@ -65,25 +64,13 @@ export const ProjectExplorerList: React.FC<Props> = ({ projects: initialProjects
           </div>
         )}
       </div>
-      <div className="mb-10 flex w-full flex-col flex-wrap items-stretch md:flex-row">
-        {projects.length > 0 ? (
-          projects.map((project) => (
-            <ProjectCard
-              key={project.title}
-              code={project.code}
-              links={project.links}
-              title={project.title}
-              description={project.shortDescription}
-              image={project.image}
-              technologies={project.technologies}
-              selectedTechs={filterTechs}
-              onClickTech={handleClickTech}
-            />
-          ))
-        ) : (
-          <ProjectListEmpty />
-        )}
-      </div>
+      <ProjectList
+        projects={projects}
+        onClickProjectTech={(_project: IProject, tech: IProjectTechnology) =>
+          handleClickTech(tech)
+        }
+        selectedTechs={filterTechs}
+      />
     </>
   );
 };
