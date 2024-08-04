@@ -8,7 +8,7 @@ const HomePresentation: FC = () => {
   const t = useTranslations("Home");
 
   return (
-    <div className="item-center flex flex-col-reverse gap-3 text-center lg:mx-4 lg:flex lg:flex-row lg:space-x-5 lg:text-left">
+    <section className="items-center container flex flex-col-reverse gap-3 px-4 py-8 text-center lg:flex lg:flex-row lg:space-x-5 lg:text-left">
       <div className="lg:mt-12">
         <div className="mt-6">
           <h1 className="text-md font-semibold">{t("greeting")}</h1>
@@ -58,7 +58,7 @@ const HomePresentation: FC = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
