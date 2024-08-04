@@ -5,7 +5,7 @@ import {
   PROJECT_TECHNOLOGY_CATEGORY,
 } from "../../../constants/projects/techologies";
 import { IProject } from "../../../interfaces/project";
-import { ProjectList } from "@/components/project/List";
+import { ProjectExplorerList } from "@/components/project/ExplorerList";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { DEFAULT_LOCALE } from "@/constants/locales";
@@ -101,7 +101,7 @@ export default function ProjectsPage({
         ))}
       </div>
       {initialProjects.length ? (
-        <ProjectList projects={initialProjects} />
+        <ProjectExplorerList projects={initialProjects} />
       ) : (
         <ProjectListEmpty />
       )}
