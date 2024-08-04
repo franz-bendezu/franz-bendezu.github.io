@@ -45,6 +45,12 @@
   },
   "About": {
     "title": "Acerca de mi",
+    "education": {
+      "title": "Experiencia Educativa"
+    },
+    "work": {
+      "title": "Experiencia Laboral"
+    },
     "description": "Soy un desarrollador de software con 4 años de experiencia en el desarrollo de aplicaciones web, tengo una bachiller en Ingeniería de Sistemas y soy un apasionado de la tecnología."
   },
   "Metadata": {
