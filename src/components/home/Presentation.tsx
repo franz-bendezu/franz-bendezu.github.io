@@ -3,6 +3,8 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { HomePresentationDownload } from "./PresentationDownload";
 import { CircularPulse } from "../ui/CircularPulse";
+import GitHubIcon from "../icon/github";
+import LinkedInIcon from "../icon/linkedin";
 
 const HomePresentation: FC = () => {
   const t = useTranslations("Home");
@@ -10,11 +12,11 @@ const HomePresentation: FC = () => {
   return (
     <section id="presentation" className="w-full py-6">
       <div className="container mx-auto flex flex-col-reverse items-center gap-3 px-4 text-center lg:flex lg:flex-row lg:space-x-5 lg:text-left">
-        <div className="lg:mt-12">
-          <div className="mt-6">
+        <div className="flex flex-col items-center space-y-4 lg:items-start">
+          <div className="flex flex-col items-center gap-3 lg:items-start">
             <h1 className="text-md font-semibold">{t("greeting")}</h1>
-            <h1 className="mb-2 text-4xl font-semibold">{t("name")}</h1>
-            <h2 className="mb-2 text-3xl font-semibold">
+            <h1 className="text-4xl font-semibold">{t("name")}</h1>
+            <h2 className="text-3xl font-semibold">
               {t.rich("profession", {
                 highlight: (children) => (
                   <span className="bg-blue-400 px-1 dark:bg-blue-500">
@@ -23,7 +25,7 @@ const HomePresentation: FC = () => {
                 ),
               })}
             </h2>
-            <p className="mb-4 text-lg">
+            <p className="text-lg">
               {t.rich("description", {
                 GreenHighlight: (children) => (
                   <span className="bg-green-300 px-1 dark:bg-green-500">
@@ -38,7 +40,29 @@ const HomePresentation: FC = () => {
               })}
             </p>
           </div>
-          <HomePresentationDownload />
+          <div className="flex flex-row gap-2">
+            <a
+              href="https://www.linkedin.com/in/franz-antony-bendezu-isidro/"
+              className="flex items-center gap-3 rounded-md px-3 py-1 transition-colors hover:bg-gray-300 dark:text-white dark:hover:bg-gray-700"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <LinkedInIcon className="h-5 w-5" />
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/franz-bendezu"
+              className="flex items-center gap-3 rounded-md px-3 py-1 transition-colors hover:bg-gray-300 dark:text-white dark:hover:bg-gray-700"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GitHubIcon className="h-5 w-5" />
+              GitHub
+            </a>
+          </div>
+          <div>
+            <HomePresentationDownload />
+          </div>
         </div>
         <div className="flex flex-shrink-0 items-center justify-center">
           <div className="relative flex aspect-square h-auto max-h-[500px] w-[500px] max-w-[500px] items-center justify-center">

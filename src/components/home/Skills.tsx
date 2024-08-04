@@ -16,7 +16,7 @@ export const Skills = () => {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-2 lg:gap-12">
+        <div className="grid items-start gap-6 py-12 lg:grid-cols-2 lg:gap-12">
           <div className="grid gap-6">
             <div className="grid gap-1">
               <h3 className="text-xl font-bold">Front-end</h3>
