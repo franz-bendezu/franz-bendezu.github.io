@@ -11,7 +11,7 @@ export const PROJECTS: IBaseProject[] = [
       "De enero a marzo de 2021, lideré el diseño y desarrollo de una plataforma innovadora que permitía a los estudiantes compartir sus opiniones y comentarios sobre los profesores. Utilicé tecnologías modernas como Nuxt.js con Typescript en el frontend y GraphQL con Apollo Server para consultas de datos. Además, integré el sistema de autenticación de la facultad (UNI-PASSPORT) para asegurar la seguridad y legitimidad de los comentarios. Una de las características destacadas de esta plataforma fue la implementación de conversaciones en hilo, que mejoró significativamente la transparencia y facilitó los comentarios sobre los profesores en cada uno de sus cursos.",
     tags: ["Nuxt.js", "Typescript", "GraphQL", "Apollo Server"],
     image: {
-      src: "/images/comentarios-docentes.png",
+      src: "/images/comentarios-docentes.webp",
       alt: "Teacher Comments Platform",
     },
     links: [
@@ -70,7 +70,7 @@ export const PROJECTS: IBaseProject[] = [
       "Desde enero hasta diciembre de 2020, asumí la responsabilidad de establecer la arquitectura y desarrollar un sistema de localización en tiempo real del bus universitario utilizando tecnologías LoT LoRaWAN. Este proyecto de investigación fue crucial para mejorar la eficiencia del transporte dentro del campus universitario. Implementé Firebase y Vue.js para la aplicación web, mientras que Cloud Functions se utilizó para recibir datos en tiempo real de la red LoRaWAN. Además, utilicé Realtime Database y Firestore para mostrar y almacenar información relevante, como rutas, conductores y trayectos recorridos. La culminación de este proyecto se reflejó en la publicación de un artículo científico con DOI: 10.1109/ISC255366.2022.9922172.",
     tags: ["LoT LoRaWAN", "Firebase", "Vue.js", "Cloud Functions"],
     image: {
-      src: "/images/busuni-tracker.png",
+      src: "/images/busuni-tracker.webp",
       alt: "BusUni Tracker",
     },
     links: [
@@ -128,7 +128,7 @@ export const PROJECTS: IBaseProject[] = [
       "En julio de 2019, llevé a cabo un proyecto independiente denominado Horext, destinado a simplificar la creación de horarios académicos para los estudiantes. Para lograr este objetivo, desarrollé una aplicación utilizando Nuxt.js en el frontend y un API REST en Spring Boot, inicialmente con Java 8 y posteriormente con Kotlin, respaldado por una base de datos PostgreSQL. Además, implementé un robusto sistema de integración y entrega continua (CI/CD) mediante GitLab y gestioné contenedores con Docker para garantizar la escalabilidad y la eficiencia del proyecto. Esta aplicación no solo generaba horarios teniendo en cuenta la carga horaria y eventos paralelos de la universidad, sino que también estaba integrada con Google Calendar para una mejor gestión de los horarios académicos de los estudiantes. Además, este proyecto se encuentra disponible como código abierto.",
     tags: ["Nuxt.js", "Spring Boot", "Java", "Kotlin", "PostgreSQL"],
     image: {
-      src: "/images/horext.png",
+      src: "/images/horext.webp",
       alt: "Horext",
     },
     links: [
@@ -250,7 +250,7 @@ export const PROJECTS: IBaseProject[] = [
     start: "2023-07",
     end: "2023-12",
     image: {
-      src: "/images/movify-quote-system-migration/banner.png",
+      src: "/images/movify-quote-system-migration/banner.webp",
       alt: "Movify Quote System",
     },
     code: "movify-quote-system-migration",
@@ -385,7 +385,7 @@ export const PROJECTS: IBaseProject[] = [
     end: "2023-07",
     code: "movify-quote-order-management",
     image: {
-      src: "/images/movify-quote-order-management/banner.png",
+      src: "/images/movify-quote-order-management/banner.webp",
       alt: "Movify Quote Order Management",
     },
     projectGoals: [
@@ -443,7 +443,7 @@ export const PROJECTS: IBaseProject[] = [
     start: "2021-10",
     end: "2021-12",
     image: {
-      src: "/images/movify-quote-system-improvement/banner.png",
+      src: "/images/movify-quote-system-improvement/banner.webp",
       alt: "Movify Quote System",
     },
     code: "movify-quote-system-improvement",

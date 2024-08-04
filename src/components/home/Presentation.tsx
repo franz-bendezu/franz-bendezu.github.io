@@ -47,8 +47,8 @@ const HomePresentation: FC = () => {
             height="500"
           />
           <Image
-            src={"/profile.png"}
-            blurDataURL="/profile.png"
+            src={"/profile.webp"}
+            blurDataURL="/profile.webp"
             alt="Profile"
             fetchPriority={"high"}
             className="ma-auto relative z-10 max-h-[50%] max-w-[50%] rounded-full object-cover"
