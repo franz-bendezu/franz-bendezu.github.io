@@ -18,7 +18,19 @@
     "downloadCV": "Descargar CV",
     "efficient": "eficientes",
     "highQuality": "alta calidad",
-    "cvPath": "/Franz-Bendezu-CV-ES.pdf"
+    "cvPath": "/Franz-Bendezu-CV-ES.pdf",
+    "skills": {
+      "label": "Mis Habilidades",
+      "title": "Technologías en las que soy experto",
+      "description": " Tengo un conjunto diverso de habilidades en varios dominios del desarrollo de software.",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "databases": "Bases de Datos",
+      "cloud": "Nube",
+      "devops": "DevOps",
+      "tools": "Herramientas",
+      "testing": "Pruebas"
+    }
   },
   "Project": {
     "overview": "Descripción del Proyecto",

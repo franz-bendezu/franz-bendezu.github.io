@@ -16,7 +16,23 @@
     "profession": "<highlight>Software</highlight> Developer",
     "description": "I enjoy creating solutions that simplify people's lives, optimizing every step of the process to deliver <GrayHighlight>efficient</GrayHighlight> and <GreenHighlight>high-quality</GreenHighlight> results.",
     "downloadCV": "Download CV",
-    "cvPath": "/Franz-Bendezu-CV-EN.pdf"
+    "cvPath": "/Franz-Bendezu-CV-EN.pdf",
+    "skills": {
+      "label": "My Skills",
+      "title": "Technologies I proficient in",
+      "description": " I have a diverse set of skills across various domains of software development.",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "databases": "Databases",
+      "cloud": "Cloud",
+      "devops": "DevOps",
+      "tools": "Tools",
+      "testing": "Testing"
+    },
+    "latestProjects": {
+      "title": "Latest Projects",
+      "viewProjectLink": "View Project {title}"
+    }
   },
   "Project": {
     "overview": "Project Overview",
