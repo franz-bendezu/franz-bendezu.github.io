@@ -12,7 +12,7 @@ type Props = {
   projects: IProject[];
 };
 
-export const ProjectList: React.FC<Props> = ({ projects: initialProjects }) => {
+export const ProjectExplorerList: React.FC<Props> = ({ projects: initialProjects }) => {
   const [projects, setProjects] = useState(initialProjects);
   const [filterTechs, setFilterTech] = useState<IProjectTechnology[]>([]);
 
