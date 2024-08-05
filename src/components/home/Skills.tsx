@@ -3,11 +3,11 @@ import { useTranslations } from "next-intl";
 export const Skills = () => {
   const t = useTranslations("Home.skills");
   return (
-    <section id="skills" className="w-full bg-gray-300 py-6">
+    <section id="skills" className="w-full bg-gray-300 py-6 dark:bg-gray-700">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm">
+            <div className="inline-block rounded-lg bg-gray-100 dark:bg-gray-900 px-3 py-1 text-sm">
               {t("label")}
             </div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
