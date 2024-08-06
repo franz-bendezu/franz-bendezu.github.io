@@ -22,6 +22,7 @@ export const NavbarToggleLang: React.FC<{ locale: string }> = ({ locale }) => {
       className="mr-2 flex items-center rounded bg-amber-400/80 px-3 py-2 font-bold text-white hover:bg-amber-400"
       href={otherPath}
       locale={otherLocale?.key}
+      scroll={false}
     >
       <span className="mr-1">
         <LanguageIcon className="h-5 w-5" />
