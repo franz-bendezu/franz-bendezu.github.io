@@ -26,7 +26,7 @@ export const LastProjects: FC<{
         <div className="flex justify-center mt-4">
           <Link
             href="/projects"
-            className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-600"
+            className="bg-slate-500 text-white rounded px-4 py-2 hover:bg-slate-600"
             aria-label="View all projects"
           >
             {t("viewAll")}

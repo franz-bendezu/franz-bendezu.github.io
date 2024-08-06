@@ -75,8 +75,8 @@ export default function ProjectsPage({
         <Link
           className={`link ${
             !category
-              ? "bg-blue-500 text-white"
-              : "text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-500"
+              ? "bg-slate-500 text-white"
+              : "text-black hover:text-slate-500 dark:text-white dark:hover:text-slate-500"
           } rounded px-2 py-1`}
           aria-label={`link to all projects`}
           href={`/projects`}
@@ -89,8 +89,8 @@ export default function ProjectsPage({
             key={item.value}
             className={`link ${
               category === item.value
-                ? "bg-blue-500 text-white"
-                : "text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-500"
+                ? "bg-slate-500 text-white"
+                : "text-black hover:text-slate-500 dark:text-white dark:hover:text-slate-500"
             } rounded px-2 py-1`}
             aria-label={`link to ${item.name} projects`}
             href={`/projects/c/${item.value}`}

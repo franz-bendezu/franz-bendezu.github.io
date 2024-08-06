@@ -14,7 +14,7 @@ const Navigation: React.FC<{ locale: string }> = ({ locale }) => {
           href="/"
           locale={locale}
           className={
-            "flex gap-2 font-bold uppercase tracking-wider text-gray-900 transition-colors hover:text-blue-500 dark:text-white"
+            "flex gap-2 font-bold uppercase tracking-wider text-gray-900 transition-colors hover:text-slate-500 dark:text-white"
           }
         >
           <CodeBracketSquareIcon className="h-6 w-6" />
