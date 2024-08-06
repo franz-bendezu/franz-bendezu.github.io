@@ -3,7 +3,7 @@ import { CodeBracketIcon } from "@heroicons/react/20/solid";
 import {
   PROJECT_TECHNOLOGIES,
   PROJECT_TECHNOLOGY_CATEGORY,
-} from "../../../constants/projects/techologies";
+} from "../../../constants/project-techologies";
 import { IProject } from "../../../interfaces/project";
 import { ProjectExplorerList } from "@/components/project/ExplorerList";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
