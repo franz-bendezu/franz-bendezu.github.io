@@ -18,7 +18,7 @@ interface ProjectCardProps {
   links?: IProjectLink[];
   children?: HTMLElement | HTMLElement[];
   code?: string;
-  onClickTech: (tech: IProjectTechnology) => void;
+  onClickTech?: (tech: IProjectTechnology) => void;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = (props) => {

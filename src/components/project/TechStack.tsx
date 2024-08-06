@@ -3,7 +3,7 @@ import { IProjectTechnology } from "../../interfaces/project";
 
 const TechStackItem: React.FC<{
   tech: IProjectTechnology;
-  onClick: () => void;
+  onClick?: () => void;
   isSelected?: boolean;
 }> = ({ tech: tag, onClick, isSelected }) => {
   return (
@@ -33,7 +33,7 @@ const TechStackItem: React.FC<{
 const TechStack: React.FC<{
   techs: IProjectTechnology[];
   selectedTechs?: IProjectTechnology[];
-  onClickTech: (tech: IProjectTechnology) => void;
+  onClickTech?: (tech: IProjectTechnology) => void;
 }> = ({ techs: tags, onClickTech, selectedTechs }) => {
   return (
     tags && (
@@ -43,7 +43,7 @@ const TechStack: React.FC<{
             key={tag.code}
             tech={tag}
             isSelected={selectedTechs?.some((t) => t.code === tag.code)}
-            onClick={() => onClickTech(tag)}
+            onClick={onClickTech ? () => onClickTech(tag) : undefined}
           />
         ))}
       </div>
