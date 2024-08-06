@@ -15,11 +15,11 @@ export const ExperienceWorkCard: FC<Props> = (props) => {
         {props.company}
       </a>
       <div className="my-2 text-sm uppercase flex items-center gap-2">
-        <div className="rounded-full bg-blue-600/80 px-2 py-1 text-xs font-semibold text-white">
+        <div className="rounded-full bg-slate-600/80 px-2 py-1 text-xs font-semibold text-white">
           {props.start}
         </div>
         -
-        <div className="rounded-full bg-blue-600/80  px-2 py-1 text-xs font-semibold text-white">
+        <div className="rounded-full bg-slate-600/80  px-2 py-1 text-xs font-semibold text-white">
           {props.end}
         </div>
       </div>
