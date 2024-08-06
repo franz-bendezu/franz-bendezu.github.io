@@ -28,7 +28,9 @@ export const ProjectList: FC<Props> = ({
             technologies={project.technologies}
             selectedTechs={selectedTechs}
             onClickTech={
-                (tech: IProjectTechnology) => handleClickTech?.(project, tech)
+              handleClickTech
+                ? (tech: IProjectTechnology) => handleClickTech(project, tech)
+                : undefined
             }
           />
         ))
