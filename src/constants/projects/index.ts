@@ -1,5 +1,5 @@
 import type { IBaseProject, IProjectCategory } from "../../interfaces/project";
-export { PROJECT_CATEGORIES } from "./categories";
+export { PROJECT_CATEGORIES } from "../project-categories";
 
 export const PROJECTS: IBaseProject[] = [
   {

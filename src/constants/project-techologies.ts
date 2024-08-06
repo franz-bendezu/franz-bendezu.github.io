@@ -1,7 +1,7 @@
 import {
   IBaseProjectTechnology,
   IProjectTechonologyCategory,
-} from "../../interfaces/project";
+} from "../interfaces/project";
 
 export const PROJECT_TECHNOLOGY_CATEGORY: IProjectTechonologyCategory[] = [
   {

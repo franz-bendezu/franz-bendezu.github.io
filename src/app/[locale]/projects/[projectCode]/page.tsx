@@ -1,6 +1,6 @@
 import { DEFAULT_LOCALE } from "@/constants/locales";
 import { PROJECTS } from "@/constants/projects";
-import { PROJECT_TECHNOLOGIES } from "@/constants/projects/techologies";
+import { PROJECT_TECHNOLOGIES } from "@/constants/project-techologies";
 import { CheckIcon } from "@heroicons/react/16/solid";
 import { useTranslations } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";
