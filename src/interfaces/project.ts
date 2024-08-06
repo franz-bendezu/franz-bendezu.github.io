@@ -21,6 +21,7 @@ export interface IProjectCategory {
 export interface IProjectImage {
   src: string;
   alt: string;
+  description?: string;
 }
 export type ProjectLinkType =
   | "github"

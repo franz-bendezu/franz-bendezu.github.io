@@ -50,4 +50,31 @@ export const OXIMETRO_PERU: IBaseProject = {
       description: "Desarrollo rápido y eficiente utilizando Vue.js y Firebase.",
     },
   ],
+  images: [
+    {
+      src: "/images/oximetro-peru/about.webp",
+      alt: "Oximetro Perú",
+      description: "Oximetro Perú - Acerca del proyecto.",
+    },
+    {
+      src: "/images/oximetro-peru/home.webp",
+      alt: "Oximetro Perú",
+      description: "Oximetro Perú - Página de inicio.",
+    },
+    {
+      src: "/images/oximetro-peru/home-details.webp",
+      alt: "Oximetro Perú",
+      description: "Oximetro Perú - Página del mapa.",
+    },
+    {
+      src: "/images/oximetro-peru/contact.webp",
+      alt: "Oximetro Perú",
+      description: "Oximetro Perú - Página de contacto.",
+    },
+    {
+      src: "/images/oximetro-peru/team.webp",
+      alt: "Oximetro Perú",
+      description: "Oximetro Perú - Equipo ",
+    }
+  ],
 };
