@@ -11,7 +11,7 @@ import { MOVIFY_QUOTE_SYSTEM_MIGRATION } from "./movify-quote-system-migration";
 import { OXIMETRO_PERU } from "./oximetro-peru";
 import { AGENDALO_APP_ENHANCEMENT } from "./agendalo-app-enhancement ";
 import { AGENDALO_MIGRATION_SSR } from "./agendalo-ssr-migration";
-import { MY_PORTFOLIO } from "./portofolio";
+import { MY_PORTFOLIO } from "./portafolio";
 export { PROJECT_CATEGORIES } from "../project-categories";
 
 export const PROJECTS: IBaseProject[] = [

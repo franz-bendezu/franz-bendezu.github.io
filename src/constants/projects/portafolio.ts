@@ -6,7 +6,7 @@ export const MY_PORTFOLIO: IBaseProject = {
   shortDescription:
     "Portafolio personal que muestra mis proyectos y habilidades.",
   description:
-    "Este es mi portafolio personal donde muestro mis proyectos, habilidades y experiencias. El portafolio está construido utilizando tecnologías web modernas, incluyendo React para el frontend y Node.js para el backend. Cuenta con un diseño responsivo, elementos interactivos y está alojado en una plataforma en la nube para alta disponibilidad.",
+    "Este es mi portafolio personal donde muestro mis proyectos, habilidades y experiencias. El portafolio está diseñado para ser accesible y mostrar mi trabajo de una manera profesional. Incluye una sección de proyectos con descripciones detalladas y enlaces al código fuente, así como una sección de habilidades que destaca mis conocimientos técnicos. El portafolio también es multilingüe, con soporte para inglés y español.",
   tags: ["React", "Node.js", "CSS", "HTML", "JavaScript"],
   banner: {
     src: "/images/portfolio.webp",
@@ -64,6 +64,16 @@ export const MY_PORTFOLIO: IBaseProject = {
     {
       title: "Soporte Multilingüe",
       description: "Soporte para los idiomas inglés y español.",
+    },
+    {
+      title: "SEO Optimizado",
+      description:
+        "Optimización para motores de búsqueda para mejorar la visibilidad del portafolio.",
+    },
+    {
+      title: "Modo Oscuro",
+      description:
+        "Soporte para modo oscuro para mejorar la experiencia de usuario en entornos con poca luz.",
     },
   ],
 };
