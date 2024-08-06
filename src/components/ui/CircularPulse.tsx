@@ -14,7 +14,7 @@ export const CircularPulse: FC<SVGProps<SVGSVGElement>> = (
       viewBox="0 0 800 800"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g className="fill-slate-500 opacity-75 dark:fill-blue-300">
+      <g className="fill-slate-500 opacity-75 dark:fill-slate-300">
         <circle className={Styles.pulse} cx="400" cy="400" r="200" />
         <circle
           className={Styles.pulse + " " + Styles["pulse-1"]}

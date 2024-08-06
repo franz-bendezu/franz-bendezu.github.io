@@ -23,7 +23,7 @@ export const HomePresentationDownload: React.FC = () => {
   return (
     <Button
       onClick={handleCVDownload}
-      className="border-blue-500 bg-blue-600 text-white hover:bg-blue-700 focus-visible:ring-blue-300 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-900 dark:focus-visible:ring-slate-600"
+      className="border-slate-500 bg-slate-600 text-white hover:bg-slate-700 focus-visible:ring-slate-300 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-900 dark:focus-visible:ring-slate-600"
     >
       {loading ? (
         <LoaderSpin className="me-3 h-4 w-4 fill-slate-100 dark:fill-slate-500" />

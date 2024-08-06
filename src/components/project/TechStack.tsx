@@ -11,8 +11,8 @@ const TechStackItem: React.FC<{
       className={
         "flex flex-row gap-2 rounded px-2 py-1 text-xs outline outline-1 lg:text-sm" +
         (isSelected
-          ? " bg-blue-500 text-white"
-          : " text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-500")
+          ? " bg-slate-500 text-white"
+          : " text-black hover:text-slate-500 dark:text-white dark:hover:text-slate-500")
       }
       onClick={onClick}
     >

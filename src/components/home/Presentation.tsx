@@ -12,7 +12,7 @@ const HomePresentation: FC = () => {
 
   return (
     <section id="presentation" className="w-full py-6 relative">
-      <div className="absolute z-1 bg-gradient-to-r from-gray-300 to-gray-200 dark:from-blue-800 dark:to-blue-700" />
+      <div className="absolute z-1 bg-gradient-to-r from-gray-300 to-gray-200 dark:from-slate-800 dark:to-slate-700" />
       <div className="container z-2 mx-auto flex flex-col-reverse items-center gap-3 px-4 text-center lg:flex lg:flex-row lg:space-x-5 lg:text-left">
         <div className="flex flex-col items-center space-y-4 lg:items-start max-w-full ">
           <div className="flex flex-col items-center gap-3 lg:items-start">
@@ -21,7 +21,7 @@ const HomePresentation: FC = () => {
             <h2 className="text-3xl font-semibold">
               {t.rich("profession", {
                 highlight: (children) => (
-                  <span className="bg-blue-400 px-1 dark:bg-blue-500">
+                  <span className="bg-slate-400 px-1 dark:bg-slate-500">
                     {children}
                   </span>
                 ),

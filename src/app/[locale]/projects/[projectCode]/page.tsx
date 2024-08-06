@@ -39,7 +39,7 @@ export default function ProjectPage({
       <section className="border-b">
         <div className="grid gap-10 px-4 py-6 md:px-6 md:py-8 lg:grid-cols-2 lg:gap-20 lg:py-12">
           <div className="order-2 space-y-4 lg:order-1">
-            <div className="inline-block rounded-lg bg-blue-200 px-3 py-1 text-sm dark:bg-slate-700">
+            <div className="inline-block rounded-lg bg-slate-200 px-3 py-1 text-sm dark:bg-slate-700">
               {project.categoryCode}
             </div>
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
@@ -53,7 +53,7 @@ export default function ProjectPage({
                 <a
                   key={link.url}
                   href={link.url}
-                  className="inline-block rounded-md bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-600 dark:bg-slate-700 dark:hover:bg-slate-800"
+                  className="inline-block rounded-md bg-slate-500 px-4 py-2 text-sm font-medium text-white hover:bg-slate-600 dark:bg-slate-700 dark:hover:bg-slate-800"
                 >
                   {link.title}
                 </a>
@@ -93,7 +93,7 @@ export default function ProjectPage({
               {techs.map((tech) => (
                 <div
                   key={tech.code}
-                  className="rounded-lg bg-blue-200 p-4 text-center dark:bg-slate-700"
+                  className="rounded-lg bg-slate-200 p-4 text-center dark:bg-slate-700"
                 >
                   {tech?.logo && (
                     <Image
@@ -117,7 +117,7 @@ export default function ProjectPage({
               {project.projectGoals.map((goal) => (
                 <li key={goal.title}>
                   <div className="flex flex-row items-start gap-4">
-                    <CheckIcon className="mt-1 h-8 w-8 text-blue-500" />
+                    <CheckIcon className="mt-1 h-8 w-8 text-slate-500" />
                     <div className="flex flex-col gap-1">
                       <h3 className="text-xl font-bold">{goal.title}</h3>
                       <p className="">{goal.description}</p>
@@ -138,7 +138,7 @@ export default function ProjectPage({
             <div className="flex flex-col gap-2">
               {project.keyFeatures.map((feature) => (
                 <div
-                  className="flex flex-col gap-1 rounded-lg bg-blue-200 p-6 dark:bg-slate-700"
+                  className="flex flex-col gap-1 rounded-lg bg-slate-200 p-6 dark:bg-slate-700"
                   key={feature.title}
                 >
                   <h3 className="text-xl font-bold">{feature.title}</h3>
@@ -173,7 +173,7 @@ export default function ProjectPage({
                 {project.images?.map(({ src }) => (
                   <Tab
                     key={src}
-                    className="rounded-lg bg-blue-200 p-2 dark:bg-slate-700"
+                    className="rounded-lg bg-slate-200 p-2 dark:bg-slate-700"
                   >
                     <Image
                       className="h-full w-full"
