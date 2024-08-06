@@ -42,7 +42,7 @@ const HomePresentation: FC = () => {
               })}
             </p>
           </div>
-          <div className="flex flex-row gap-2">
+          <div className="flex flex-row gap-2 flex-wrap justify-center lg:justify-start">
             <a
               href="https://www.linkedin.com/in/franz-antony-bendezu-isidro/"
               className="flex items-center gap-3 rounded-md px-3 py-1 transition-colors hover:bg-gray-300 dark:text-white dark:hover:bg-gray-700"
