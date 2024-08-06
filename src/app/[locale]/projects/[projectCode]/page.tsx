@@ -59,11 +59,11 @@ export default function ProjectPage({
               ))}
             </div>
           </div>
-          {project.image && (
+          {project.banner && (
             <div className="relative flex items-center justify-center order-1 lg:order-2">
               <Image
-                src={project.image.src}
-                alt={project.image.alt}
+                src={project.banner.src}
+                alt={project.banner.alt}
                 width="800"
                 height="450"
                 className="mx-auto aspect-video w-max overflow-hidden rounded-xl object-cover object-center"

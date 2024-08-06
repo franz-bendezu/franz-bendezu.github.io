@@ -30,7 +30,7 @@ export const MOVIFY_QUOTE_ORDER_MANAGMENT:IBaseProject  = {
   start: "2021-12",
   end: "2023-07",
   code: "movify-quote-order-management",
-  image: {
+  banner: {
     src: "/images/movify-quote-order-management/banner.webp",
     alt: "Movify Quote Order Management",
   },

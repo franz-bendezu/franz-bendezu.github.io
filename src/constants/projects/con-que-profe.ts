@@ -7,7 +7,7 @@ export const CON_QUE_PROFE: IBaseProject = {
   shortDescription: "Diseño y desarrollo frontend para una plataforma de comentarios sobre profesores en la Facultad de Ingeniería Industrial y de Sistemas de la UNI.",
   description: "De enero a marzo de 2021, lideré el diseño y desarrollo de una plataforma innovadora que permitía a los estudiantes compartir sus opiniones y comentarios sobre los profesores. Utilicé tecnologías modernas como Nuxt.js con Typescript en el frontend y GraphQL con Apollo Server para consultas de datos. Además, integré el sistema de autenticación de la facultad (UNI-PASSPORT) para asegurar la seguridad y legitimidad de los comentarios. Una de las características destacadas de esta plataforma fue la implementación de conversaciones en hilo, que mejoró significativamente la transparencia y facilitó los comentarios sobre los profesores en cada uno de sus cursos.",
   tags: ["Nuxt.js", "Typescript", "GraphQL", "Apollo Server"],
-  image: {
+  banner: {
     src: "/images/comentarios-docentes.webp",
     alt: "Teacher Comments Platform",
   },

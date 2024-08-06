@@ -6,7 +6,7 @@ export const OXIMETRO_PERU: IBaseProject = {
   shortDescription: "Desarrollo del MVP de una aplicación web para ver lugares donde encontrar oxímetros cerca de ti.",
   description: "En agosto de 2020, desarrollé un MVP de una aplicación web denominada Oximetro Perú, que permitía a los usuarios encontrar lugares cercanos donde comprar oxímetros. Utilicé Vue.js para el frontend y Firebase para el backend, lo que permitió una implementación rápida y eficiente. Además, integré Leaflet.js para la visualización de mapas y geolocalización, lo que facilitó a los usuarios encontrar tiendas cercanas. Este proyecto se desarrolló en respuesta a la creciente demanda de oxímetros durante la pandemia de COVID-19 en Perú.",
   tags: ["Vue.js", "Firebase", "Leaflet.js"],
-  image: {
+  banner: {
     src: "/images/oximetro-peru/banner.webp",
     alt: "Oximetro Perú",
   },
