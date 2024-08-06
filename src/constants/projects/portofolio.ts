@@ -25,7 +25,7 @@ export const MY_PORTFOLIO: IBaseProject = {
     },
   ],
   categoryCode: "personal",
-  technologyCodes: ["react", "nodejs", "css", "html", "javascript", " nextjs"],
+  technologyCodes: ["react", "nodejs", "css", "html", "typescript", "nextjs"],
   start: "2023-01",
   code: "mi-portafolio",
   projectGoals: [
