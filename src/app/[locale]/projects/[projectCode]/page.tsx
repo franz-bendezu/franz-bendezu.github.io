@@ -6,8 +6,8 @@ import { unstable_setRequestLocale } from "next-intl/server";
 import { ProjectSummary } from "@/components/project/Summary";
 import { ProjectOverview } from "@/components/project/Overview";
 import { ProjectGoals } from "@/components/project/Goals";
-import { ProjectTechs } from "@/components/project/ProjectTechs";
-import { ProjectFeatures } from "@/components/project/ProjectFeatures";
+import { ProjectTechs } from "@/components/project/Techs";
+import { ProjectFeatures } from "@/components/project/Features";
 
 export const generateStaticParams = () => {
   const params: { projectCode: string }[] = [];
