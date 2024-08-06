@@ -13,7 +13,7 @@ import { Link } from "@/navigation";
 import { Metadata } from "next";
 import { ProjectListEmpty } from "@/components/project/ListEmpty";
 
-const getDataByCategory = (category?: string) => {
+export const getDataByCategory = (category?: string) => {
   return (
     category
       ? [...PROJECTS.filter((project) => project.categoryCode === category)]
