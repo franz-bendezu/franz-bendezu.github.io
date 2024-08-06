@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { ProjectList } from "../project/List";
 import { FC } from "react";
 import { IProject } from "@/interfaces/project";
+import { Link } from "@/navigation";
 
 export const LastProjects: FC<{
   projects: IProject[];
@@ -21,6 +22,16 @@ export const LastProjects: FC<{
           </div>
         </div>
         <ProjectList projects={projects} />
+
+        <div className="flex justify-center mt-4">
+          <Link
+            href="/projects"
+            className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-600"
+            aria-label="View all projects"
+          >
+            {t("viewAll")}
+          </Link>
+        </div>
       </div>
     </section>
   );
