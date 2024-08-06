@@ -18,7 +18,7 @@ export const MOVIFY_QUOTE_SYSTEM_IMPROVEMENT:IBaseProject  = {
   ],
   start: "2021-10",
   end: "2021-12",
-  image: {
+  banner: {
     src: "/images/movify-quote-system-improvement/banner.webp",
     alt: "Movify Quote System",
   },

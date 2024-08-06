@@ -17,7 +17,7 @@ export const MOVIFY_QUOTE_SYSTEM_MIGRATION:IBaseProject  = {
   ],
   start: "2023-07",
   end: "2023-12",
-  image: {
+  banner: {
     src: "/images/movify-quote-system-migration/banner.webp",
     alt: "Movify Quote System",
   },

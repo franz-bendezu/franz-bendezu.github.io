@@ -6,7 +6,7 @@ export const HOREXT: IBaseProject = {
   shortDescription: "Proyecto personal para generar horarios académicos.",
   description: "En julio de 2019, llevé a cabo un proyecto independiente denominado Horext, destinado a simplificar la creación de horarios académicos para los estudiantes. Para lograr este objetivo, desarrollé una aplicación utilizando Nuxt.js en el frontend y un API REST en Spring Boot, inicialmente con Java 8 y posteriormente con Kotlin, respaldado por una base de datos PostgreSQL. Además, implementé un robusto sistema de integración y entrega continua (CI/CD) mediante GitLab y gestioné contenedores con Docker para garantizar la escalabilidad y la eficiencia del proyecto. Esta aplicación no solo generaba horarios teniendo en cuenta la carga horaria y eventos paralelos de la universidad, sino que también estaba integrada con Google Calendar para una mejor gestión de los horarios académicos de los estudiantes. Además, este proyecto se encuentra disponible como código abierto.",
   tags: ["Nuxt.js", "Spring Boot", "Java", "Kotlin", "PostgreSQL"],
-  image: {
+  banner: {
     src: "/images/horext.webp",
     alt: "Horext",
   },
