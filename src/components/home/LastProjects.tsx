@@ -1,7 +1,11 @@
 import { useTranslations } from "next-intl";
 import { ProjectList } from "../project/List";
+import { FC } from "react";
+import { IProject } from "@/interfaces/project";
 
-export default function LastProjects() {
+export const LastProjects: FC<{
+  projects: IProject[];
+}> = ({ projects }) => {
   const t = useTranslations("Home.lastProjects");
   return (
     <section id="projects" className="w-full py-6">
@@ -16,8 +20,8 @@ export default function LastProjects() {
             </p>
           </div>
         </div>
-        <ProjectList projects={[]} />
+        <ProjectList projects={projects} />
       </div>
     </section>
   );
-}
+};
