@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
+import { TabGroup, TabList, Tab, TabPanels, TabPanel } from "@headlessui/react";
 
 export const generateStaticParams = () => {
   const params: { projectCode: string }[] = [];
@@ -37,7 +38,7 @@ export default function ProjectPage({
     <div className="flex min-h-[100dvh] flex-col gap-8 md:gap-8 lg:gap-16">
       <section className="border-b">
         <div className="grid gap-10 px-4 py-6 md:px-6 md:py-8 lg:grid-cols-2 lg:gap-20 lg:py-12">
-          <div className="space-y-4 order-2 lg:order-1">
+          <div className="order-2 space-y-4 lg:order-1">
             <div className="inline-block rounded-lg bg-blue-200 px-3 py-1 text-sm dark:bg-slate-700">
               {project.categoryCode}
             </div>
@@ -60,7 +61,7 @@ export default function ProjectPage({
             </div>
           </div>
           {project.banner && (
-            <div className="relative flex items-center justify-center order-1 lg:order-2">
+            <div className="relative order-1 flex items-center justify-center lg:order-2">
               <Image
                 src={project.banner.src}
                 alt={project.banner.alt}
@@ -146,14 +147,45 @@ export default function ProjectPage({
               ))}
             </div>
           </div>
-          <div className="relative">
-            <Image
-              src="/placeholder.svg"
-              width="800"
-              height="450"
-              alt="Acme Web App Features"
-              className="aspect-video w-max overflow-hidden rounded-xl object-cover object-center"
-            />
+
+          <div className="relative ">
+            <TabGroup className="flex flex-col gap-4">
+              <TabPanels className="mt-3">
+                {project.images?.map(({ src, description }) => (
+                  <TabPanel
+                    key={src}
+                    className="aspect-video rounded-xl p-3 dark:bg-slate-700 bg-gray-200 relative"
+                  >
+                    <Image
+                      src={src}
+                      alt={project.title}
+                      width="800"
+                      height="450"
+                      className="aspect-video  overflow-hidden rounded-xl object-contain object-center"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 p-2 bg-black bg-opacity-50 text-white text-center">
+                      {description}
+                    </div>
+                  </TabPanel>
+                ))}
+              </TabPanels>
+              <TabList className="flex gap-4">
+                {project.images?.map(({ src }) => (
+                  <Tab
+                    key={src}
+                    className="rounded-lg bg-blue-200 p-2 dark:bg-slate-700"
+                  >
+                    <Image
+                      className="h-full w-full"
+                      src={src}
+                      alt={project.title}
+                      width="200"
+                      height="200"
+                    />
+                  </Tab>
+                ))}
+              </TabList>
+            </TabGroup>
           </div>
         </div>
       </section>
