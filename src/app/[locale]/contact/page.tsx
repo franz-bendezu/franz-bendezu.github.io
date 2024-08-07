@@ -26,7 +26,7 @@ const ContactPage: NextPage<Props> = ({
   unstable_setRequestLocale(locale);
   const t = useTranslations("Contact");
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center gap-4">
+    <div className="container flex h-full w-full flex-col items-center justify-center gap-4">
       <h1 className="font-monospace flex flex-row items-center gap-4 text-3xl dark:text-white lg:text-4xl">
         <ChatBubbleLeftIcon className="h-8 w-8" />
         {t("title")}
