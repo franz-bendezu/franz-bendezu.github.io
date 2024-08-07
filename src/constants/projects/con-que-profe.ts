@@ -83,7 +83,7 @@ export const CON_QUE_PROFE: IBaseProject = {
       description: "Envío de un nuevo hilo de comentarios",
     },
     {
-      src: "/images/con-que-profe/teacher-course-reviews.webp",
+      src: "/images/con-que-profe/teacher-course-review.webp",
       alt: "Con qué profe - Comment Thread",
       description: "Calificación de profesores en un curso",
     },
