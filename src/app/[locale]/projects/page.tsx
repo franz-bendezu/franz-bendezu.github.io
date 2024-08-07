@@ -65,7 +65,7 @@ export default function ProjectsPage({
   return (
     <section
       data-testid="projects"
-      className="flex flex-col items-center justify-center gap-4"
+      className="container flex flex-col items-center justify-center gap-4"
     >
       <h1 className="font-monospace flex flex-row items-center gap-4 text-3xl dark:text-white lg:text-4xl">
         <CodeBracketIcon className="h-8 w-8" />

@@ -35,7 +35,7 @@ const AboutPage: NextPage<Props> = ({
   return (
     <section
       data-testid="projects"
-      className="flex flex-col items-center justify-center gap-4"
+      className="container flex flex-col items-center justify-center gap-4"
     >
       <h1 className="font-monospace flex flex-row items-center gap-4 text-center text-3xl dark:text-white lg:text-4xl">
         <Bars4Icon className="h-8 w-8" />
