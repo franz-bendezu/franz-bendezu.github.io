@@ -12,6 +12,7 @@ import { OXIMETRO_PERU } from "./oximetro-peru";
 import { AGENDALO_APP_ENHANCEMENT } from "./agendalo-app-enhancement ";
 import { AGENDALO_MIGRATION_SSR } from "./agendalo-ssr-migration";
 import { MY_PORTFOLIO } from "./portafolio";
+import { MOVIFY_NOTIFICATION_MODULE } from "./movify-notification-module";
 export { PROJECT_CATEGORIES } from "../project-categories";
 
 export const PROJECTS: IBaseProject[] = [
@@ -27,5 +28,6 @@ export const PROJECTS: IBaseProject[] = [
   AIVERSE,
   AGENDALO_APP_ENHANCEMENT,
   AGENDALO_MIGRATION_SSR,
-  MY_PORTFOLIO
+  MY_PORTFOLIO,
+  MOVIFY_NOTIFICATION_MODULE
 ];
