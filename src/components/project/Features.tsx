@@ -54,7 +54,7 @@ export const ProjectFeatures: FC<{ project: IBaseProject }> = ({ project }) => {
                   className="max-h-20 rounded-lg bg-slate-200 p-2 dark:bg-slate-700"
                 >
                   <Image
-                    className="h-full w-full"
+                    className="h-auto w-full"
                     src={src}
                     alt={project.title}
                     width="200"
