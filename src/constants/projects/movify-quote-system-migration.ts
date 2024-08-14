@@ -50,4 +50,16 @@ export const MOVIFY_QUOTE_SYSTEM_MIGRATION:IBaseProject  = {
       description: "Integración de análisis para rastrear las vistas de correos electrónicos y mejorar las tasas de apertura.",
     },
   ],
+  images: [
+    {
+      src: "/images/movify-quote-system-migration/quote-confirmation-email-template.webp",
+      alt: "Plantilla de Correo Electrónico de Confirmación de Cotización",
+      description: "Plantilla de correo electrónico de confirmación de cotización hacia el cliente.",
+    },
+    {
+      src: "/images/movify-quote-system-migration/quote-notification-email-template.webp",
+      alt: "Plantilla de Correo Electrónico de Notificación de Cotización",
+      description: "Plantilla de correo electrónico de notificación de cotización hacia el equipo de ventas.",
+    }
+  ],
 };
