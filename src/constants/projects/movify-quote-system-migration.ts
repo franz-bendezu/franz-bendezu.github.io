@@ -52,6 +52,16 @@ export const MOVIFY_QUOTE_SYSTEM_MIGRATION:IBaseProject  = {
   ],
   images: [
     {
+      src: "/images/movify-quote-system-migration/architecture-overview.webp",
+      alt: "Vista General de la Arquitectura",
+      description: "Vista general de la arquitectura de la migración del sistema de cotizaciones web.",
+    },
+    {
+      src: "/images/movify-quote-system-migration/architecture-system.webp",
+      alt: "Arquitectura del Sistema",
+      description: "Arquitectura del sistema de cotizaciones web migrado a una API serverless.",
+    },
+    {
       src: "/images/movify-quote-system-migration/quote-confirmation-email-template.webp",
       alt: "Plantilla de Correo Electrónico de Confirmación de Cotización",
       description: "Plantilla de correo electrónico de confirmación de cotización hacia el cliente.",
@@ -60,6 +70,6 @@ export const MOVIFY_QUOTE_SYSTEM_MIGRATION:IBaseProject  = {
       src: "/images/movify-quote-system-migration/quote-notification-email-template.webp",
       alt: "Plantilla de Correo Electrónico de Notificación de Cotización",
       description: "Plantilla de correo electrónico de notificación de cotización hacia el equipo de ventas.",
-    }
+    },
   ],
 };
