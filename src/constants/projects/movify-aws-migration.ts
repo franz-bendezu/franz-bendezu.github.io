@@ -56,4 +56,22 @@ export const MOVIFY_AWS_MIGRATION:IBaseProject = {
       description: "Integración con Amazon S3 para almacenar fotos y videos relacionados con los servicios de mudanza.",
     },
   ],
+
+  images: [
+    {
+      src: "/images/movify-aws-migration/architecture-overview.webp",
+      alt: "Arquitectura de la migración de Movify.pe a AWS",
+      description: "Arquitectura de la migración de Movify.pe a AWS",
+    },
+    {
+      src: "/images/movify-aws-migration/architecture-system.webp",
+      alt: "Arquitectura del sistema de Movify.pe en AWS",
+      description: "Arquitectura del sistema de Movify.pe en AWS",
+    },
+    {
+      src: "/images/movify-aws-migration/architecture-backend.webp",
+      alt: "Arquitectura del backend de Movify.pe en AWS",
+      description: "Arquitectura del backend de Movify.pe en AWS",
+    }
+  ],
 };
