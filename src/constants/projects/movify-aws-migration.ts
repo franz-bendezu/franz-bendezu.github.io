@@ -1,10 +1,12 @@
 import { IBaseProject } from "@/interfaces/project";
 
-export const MOVIFY_AWS_MIGRATION:IBaseProject = {
+export const MOVIFY_AWS_MIGRATION: IBaseProject = {
   status: "completed",
   title: "Movify.pe - Migración de Infraestructura a AWS",
-  shortDescription: "Migración de infraestructura a AWS para mejorar el despliegue y la disponibilidad.",
-  description: "De julio a noviembre de 2023, lideré la migración de la infraestructura a AWS para mejorar el despliegue, la disponibilidad y la confiabilidad de los servicios clave. Establecí flujos de trabajo de CI/CD para la implementación en servicios de AWS, automatizando las tuberías. Integré con Amazon S3 para el almacenamiento de fotos y videos relacionados con los servicios de mudanza.",
+  shortDescription:
+    "Migración de infraestructura a AWS para mejorar el despliegue y la disponibilidad.",
+  description:
+    "De julio a noviembre de 2023, lideré la migración de la infraestructura a AWS para mejorar el despliegue, la disponibilidad y la confiabilidad de los servicios clave. Establecí flujos de trabajo de CI/CD para la implementación en servicios de AWS, automatizando las tuberías. Integré con Amazon S3 para el almacenamiento de fotos y videos relacionados con los servicios de mudanza.",
   tags: [
     "Amplify",
     "Amazon RDS",
@@ -31,7 +33,8 @@ export const MOVIFY_AWS_MIGRATION:IBaseProject = {
   projectGoals: [
     {
       title: "Migración a AWS",
-      description: "Migrar la infraestructura a AWS para mejorar el despliegue y la disponibilidad de los servicios.",
+      description:
+        "Migrar la infraestructura a AWS para mejorar el despliegue y la disponibilidad de los servicios.",
     },
     {
       title: "Flujos de CI/CD",
@@ -45,18 +48,24 @@ export const MOVIFY_AWS_MIGRATION:IBaseProject = {
   keyFeatures: [
     {
       title: "Infraestructura en AWS",
-      description: "Migración a AWS Amplify, Amazon RDS, EC2 y S3 para mejorar la disponibilidad y escalabilidad.",
+      description:
+        "Migración a AWS Amplify, Amazon RDS, EC2 y S3 para mejorar la disponibilidad y escalabilidad.",
     },
     {
       title: "Flujos de CI/CD Automatizados",
-      description: "Automatización de flujos de CI/CD para implementación continua en servicios de AWS  a través de GitHub Actions.",
+      description:
+        "Automatización de flujos de CI/CD para implementación continua en servicios de AWS  a través de GitHub Actions.",
     },
     {
       title: "Almacenamiento en Amazon S3",
-      description: "Integración con Amazon S3 para almacenar fotos y videos relacionados con los servicios de mudanza.",
+      description:
+        "Integración con Amazon S3 para almacenar fotos y videos relacionados con los servicios de mudanza.",
     },
   ],
-
+  banner: {
+    src: "/images/movify-aws-migration/architecture-overview.webp",
+    alt: "Movify AWS Migration",
+  },
   images: [
     {
       src: "/images/movify-aws-migration/architecture-overview.webp",
@@ -72,6 +81,6 @@ export const MOVIFY_AWS_MIGRATION:IBaseProject = {
       src: "/images/movify-aws-migration/architecture-backend.webp",
       alt: "Arquitectura del backend de Movify.pe en AWS",
       description: "Arquitectura del backend de Movify.pe en AWS",
-    }
+    },
   ],
 };
