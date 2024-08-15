@@ -55,6 +55,10 @@ export const AGENDALO_MIGRATION_SSR: IBaseProject = {
         "Implementación de pruebas unitarias y de extremo a extremo (E2E) para reducir la tasa de errores.",
     },
   ],
+  banner: {
+    src: "/images/agendalo-migration-ssr/architecture-overview.webp",
+    alt: "Agendalo.io - Migración a SSR",
+  },
   images: [
     {
       src: "/images/agendalo-migration-ssr/architecture-overview.webp",
