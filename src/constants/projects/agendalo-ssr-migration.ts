@@ -30,7 +30,7 @@ export const AGENDALO_MIGRATION_SSR: IBaseProject = {
   ],
   start: "2021-07",
   end: "2021-05",
-  code: "agendalo-migration-ssr",
+  code: "agendalo-ssr-migration",
   projectGoals: [
     {
       title: "Migración a SSR",
@@ -56,17 +56,17 @@ export const AGENDALO_MIGRATION_SSR: IBaseProject = {
     },
   ],
   banner: {
-    src: "/images/agendalo-migration-ssr/architecture-overview.webp",
+    src: "/images/agendalo-ssr-migration/architecture-overview.webp",
     alt: "Agendalo.io - Migración a SSR",
   },
   images: [
     {
-      src: "/images/agendalo-migration-ssr/architecture-overview.webp",
+      src: "/images/agendalo-ssr-migration/architecture-overview.webp",
       alt: "Vista General de la Arquitectura",
       description: "Vista general de la arquitectura de la migración a SSR.",
     },
     {
-      src: "/images/agendalo-migration-ssr/architecture-system.webp",
+      src: "/images/agendalo-ssr-migration/architecture-system.webp",
       alt: "Arquitectura del Sistema",
       description:
         "Arquitectura del sistema migrado a renderizado del lado del servidor ( SSR).",
