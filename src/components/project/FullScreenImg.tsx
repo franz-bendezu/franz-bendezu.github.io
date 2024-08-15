@@ -44,7 +44,7 @@ export const ProjectFullScreeImg: FC<{ src: string; description?: string }> = ({
               <div className="mt-4">
                 <Image
                   src={src}
-                  alt={description}
+                  alt={description || "Image"}
                   width="800"
                   height="800"
                   className="w-full rounded-xl object-contain object-center"
