@@ -3,6 +3,7 @@ import { TabGroup, TabPanels, TabPanel, TabList, Tab } from "@headlessui/react";
 import { useTranslations } from "next-intl";
 import { FC } from "react";
 import Image from "next/image";
+import { ProjectFullScreeImg } from "./FullScreenImg";
 
 export const ProjectFeatures: FC<{ project: IBaseProject }> = ({ project }) => {
   const t = useTranslations("Project");
@@ -34,6 +35,9 @@ export const ProjectFeatures: FC<{ project: IBaseProject }> = ({ project }) => {
                   key={src}
                   className="relative aspect-video rounded-xl bg-gray-200 p-3 dark:bg-slate-700"
                 >
+                  <div className="absolute right-0 top-0 p-2">
+                    <ProjectFullScreeImg src={src} description={description} />
+                  </div>
                   <Image
                     src={src}
                     alt={project.title}
