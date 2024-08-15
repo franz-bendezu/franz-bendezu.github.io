@@ -37,7 +37,7 @@ export const ProjectSummary: FC<{
                 alt={project.banner.alt}
                 width="800"
                 height="450"
-                className="mx-auto aspect-video w-max overflow-hidden rounded-xl object-cover object-center"
+                className="mx-auto aspect-video w-auto h-full overflow-hidden rounded-xl object-contain object-center"
               />
             </div>
           )}
