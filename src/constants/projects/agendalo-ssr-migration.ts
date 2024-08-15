@@ -33,7 +33,7 @@ export const AGENDALO_MIGRATION_SSR: IBaseProject = {
   code: "agendalo-ssr-migration",
   projectGoals: [
     {
-      title: "Migración de la arquitectura",
+      title: "Migración de la arquitectura",  
       description:
         "Migrar la aplicación de una sola página (SPA) a una aplicación con renderizado del lado del servidor (SSR) para mejorar el SEO y la posición de la plataforma.",
     },
@@ -55,19 +55,19 @@ export const AGENDALO_MIGRATION_SSR: IBaseProject = {
         "Migración de la plataforma a una aplicación con renderizado del lado del servidor (SSR) utilizando Nuxt.js. Esto mejora la visibilidad en los motores de búsqueda y la experiencia del usuario final.",
     },
     {
-      title: "Optimización de SEO",
+      title: "SEO Mejorado",
       description:
-        "Mejora de la indexación y el ranking en los motores de búsqueda mediante la implementación de SSR, asegurando que las páginas web sean correctamente indexadas y presentadas a los usuarios en los resultados de búsqueda.",
+        "La mejora de la indexación y el ranking en los motores de búsqueda mediante la implementación de SSR, asegurando que las páginas web sean correctamente indexadas y presentadas a los usuarios en los resultados de búsqueda.",
     },
     {
-      title: "Implementación de Pruebas Automatizadas",
+      title: "Pruebas Automatizadas",
       description:
-        "Desarrollo e integración de un marco de pruebas automatizadas que incluye pruebas unitarias y de extremo a extremo (E2E). Esto garantiza la estabilidad del sistema y permite una detección temprana de errores en los componentes y flujos de la aplicación.",
+        "El esarrollo e integración de un marco de pruebas automatizadas que incluye pruebas unitarias y de extremo a extremo (E2E). Esto garantiza la estabilidad del sistema y permite una detección temprana de errores en los componentes y flujos de la aplicación.",
     },
     {
-      title: "Optimización del Rendimiento",
+      title: "Rendimiento Optimizado",
       description:
-        "Optimización del rendimiento general de la aplicación a través de SSR, asegurando tiempos de carga rápidos y una experiencia de usuario fluida. Esto incluye el ajuste de la infraestructura y la implementación de mejores prácticas para la eficiencia del sistema.",
+        "La optimización del rendimiento general de la aplicación a través de SSR, asegurando tiempos de carga rápidos y una experiencia de usuario fluida. Esto incluye el ajuste de la infraestructura y la implementación de mejores prácticas para la eficiencia del sistema.",
     },
   ],
   banner: {
