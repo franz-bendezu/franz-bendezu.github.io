@@ -24,7 +24,7 @@ export const MOVIFY_QUOTE_SYSTEM_MIGRATION:IBaseProject  = {
   code: "movify-quote-system-migration",
   projectGoals: [
     {
-      title: "Migración a API Serverless",
+      title: "Mejora de la Disponibilidad y Reducción de Costos de la Infraestructura",
       description: "Migrar el sistema de cotizaciones web a una API serverless para mejorar la disponibilidad y reducir costos.",
     },
     {
@@ -32,13 +32,17 @@ export const MOVIFY_QUOTE_SYSTEM_MIGRATION:IBaseProject  = {
       description: "Mejorar la compatibilidad y estética de las plantillas de correos electrónicos.",
     },
     {
-      title: "Seguimiento de Analíticas",
+      title: "Obtener metricas de los correos electrónicos",
       description: "Integración de herramientas de análisis para monitorear las métricas de compromiso de correo electrónico.",
+    },
+    {
+      title: "Ofrecer flexbilidad para la edición de correos electrónicos",
+      description: "Facilitar la edición de correos electrónicos para el equipo de marketing.",
     },
   ],
   keyFeatures: [
     {
-      title: "Migración a AWS Lambda",
+      title: "Migración a una API Serverless",
       description: "Migración del backend a AWS Lambda para mejorar la disponibilidad y reducir costos.",
     },
     {
