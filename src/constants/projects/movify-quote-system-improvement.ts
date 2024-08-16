@@ -26,17 +26,17 @@ export const MOVIFY_QUOTE_SYSTEM_IMPROVEMENT: IBaseProject = {
   code: "movify-quote-system-improvement",
   projectGoals: [
     {
-      title: "Mejora de la Interfaz de Usuario",
+      title: "Mejorar la Interfaz de Usuario",
       description:
         "Integrar un estilo personalizado de Google Maps y mejorar la UI/UX para el proceso de cotización.",
     },
     {
-      title: "Mejorar el proceso de actualización",
+      title: "Mejorar el proceso entrega contínua",
       description:
         "Migrar un iframe a un plugin de WordPress para un mejor manejo de actualizaciones.",
     },
     {
-      title: "Captura de Clientes Potenciales",
+      title: "Facilitar la Captura de Clientes Potenciales",
       description:
         "Desarrollar funciones para capturar clientes potenciales y datos de auditoría.",
     },
@@ -48,7 +48,7 @@ export const MOVIFY_QUOTE_SYSTEM_IMPROVEMENT: IBaseProject = {
         "Integración de un estilo personalizado de Google Maps para una mejor experiencia de usuario.",
     },
     {
-      title: "Migración a WordPress",
+      title: "Fácilidad de mantenimiento y actualización",
       description:
         "Migración de un iframe a un plugin de WordPress para una mejor gestión de actualizaciones.",
     },
