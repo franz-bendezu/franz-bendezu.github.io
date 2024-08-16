@@ -36,30 +36,38 @@ export const MOVIFY_QUOTE_ORDER_MANAGMENT:IBaseProject  = {
   },
   projectGoals: [
     {
-      title: "Sistema Administrativo",
+      title: "Establecer un Sistema Administrativo para Cotizaciones y Órdenes",
       description: "Desarrollar un sistema administrativo para cotizaciones y órdenes de mudanza.",
     },
     {
-      title: "Generación de PDF",
+      title: "Generar PDF's para las Cotizaciones y Órdenes",
       description: "Automatizar la generación de PDF para cotizaciones y órdenes de venta.",
     },
     {
-      title: "Módulo de Informes",
-      description: "Desarrollar un módulo de informes para medir la eficiencia del equipo de ventas.",
+      title: "Establecer un Módulo de reportes",
+      description: "Desarrollar un módulo de reportes para medir la eficiencia del equipo de ventas.",
     },
+    {
+      title: "Integración con Sistema de Cotizaciones Web",
+      description: "Interconectar el sistema de gestión de cotizaciones y órdenes con el sistema de cotizaciones web.",
+    }
   ],
   keyFeatures: [
     {
       title: "Control de acceso",
-      description: "Autenticación y autorización de usuarios con roles y permisos personalizados.",
+      description: "Se estableció la autenticación y autorización de usuarios con roles y permisos personalizados.",
     },
     {
       title: "Generación de PDF",
-      description: "Generación automatizada de documentos PDF para cotizaciones y órdenes de venta.",
+      description: "Se estableció plantillas html y su conversor a PDF para cotizaciones y órdenes de venta.",
     },
     {
-      title: "Integración con Sistema de Cotizaciones Web",
+      title: "Weebhooks para integración con el sistema de cotizaciones web",
       description: "Interconexión con el sistema de cotizaciones web a través de API para un flujo de datos sin problemas.",
     },
+    {
+      title: "Flujos de integración y despliegue continuo",
+      description: "Se establecieron flujos de integración y despliegue continuo mediante GitLab CI/CD.",
+    }
   ],
 };
