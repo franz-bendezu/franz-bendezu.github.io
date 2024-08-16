@@ -35,7 +35,11 @@ export const MOVIFY_NOTIFICATION_MODULE: IBaseProject = {
       description: "Recordatorios, confirmaciones y encuestas adaptadas al tipo de producto y canal de comunicación.",
     },
     {
-      title: "Renderización de Plantillas HTML",
+      title: "Módulo para generar plantillas HTML",
+      description: "Módulo estatico para renderizar plantillas HTML para notificaciones por correo electrónico y documentos PDF.",
+    },
+    { 
+      title: "Módulo para renderizar plantillas HTML",
       description: "Módulo serverless para renderizar plantillas HTML para notificaciones por correo electrónico y documentos PDF.",
     },
     {
