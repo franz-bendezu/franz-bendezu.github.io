@@ -55,7 +55,7 @@ export const ProjectFeatures: FC<{ project: IBaseProject }> = ({ project }) => {
               {project.images?.map(({ src }) => (
                 <Tab
                   key={src}
-                  className="max-h-20 rounded-lg bg-slate-200 p-2 dark:bg-slate-700"
+                  className="max-h-20 rounded-lg bg-slate-200 p-2 data-[hover]:bg-slate-300 data-[selected]:bg-slate-400 data-[selected]:data-[hover]:bg-slate-400 dark:bg-slate-700 data-[hover]:dark:bg-slate-800 data-[selected]:dark:bg-slate-900"
                 >
                   <Image
                     className="h-full w-full object-contain"
