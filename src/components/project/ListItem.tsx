@@ -2,7 +2,7 @@ import Image from "next/image";
 import ProjectListItemTechStack from "./ListItemTechStack";
 import Card from "../ui/Card";
 import { IProjectLink, IProjectTechnology } from "../../interfaces/project";
-import { LinkList } from "./LinkList";
+import { LinkList } from "./ListItemLinkList";
 import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
 
