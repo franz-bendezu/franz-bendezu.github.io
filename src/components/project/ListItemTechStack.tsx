@@ -30,7 +30,7 @@ const TechStackItem: React.FC<{
   );
 };
 
-const TechStack: React.FC<{
+const ProjectListItemTechStack: React.FC<{
   techs: IProjectTechnology[];
   selectedTechs?: IProjectTechnology[];
   onClickTech?: (tech: IProjectTechnology) => void;
@@ -51,4 +51,4 @@ const TechStack: React.FC<{
   );
 };
 
-export default TechStack;
+export default ProjectListItemTechStack;
