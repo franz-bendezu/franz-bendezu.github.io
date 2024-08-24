@@ -53,7 +53,7 @@ export default function ProjectPage({
       <div>
         <div className="grid gap-10 px-4 md:px-6 lg:grid-cols-2 lg:gap-20">
           <ProjectFeatures project={project} />
-          <ProjectImagesCarousel project={project} />
+          {project.images && <ProjectImagesCarousel images={project.images} />}
         </div>
       </div>
     </div>
