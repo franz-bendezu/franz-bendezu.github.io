@@ -8,14 +8,18 @@ import Image from "next/image";
 export const ProjectImagesCarousel: FC<{
   project: IBaseProject;
 }> = ({ project }) => {
-  const [isFullScreen, setIsFullScreen] = useState(false);  
-  const [selectedIndex, setSelectedIndex] = useState(0)
+  const [isFullScreen, setIsFullScreen] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const close = () => setIsFullScreen(false);
   const open = () => setIsFullScreen(true);
 
   const TabsFeatures = (
-    <TabGroup className="flex flex-col gap-4"   selectedIndex={selectedIndex} onChange={setSelectedIndex}>
+    <TabGroup
+      className="flex flex-col gap-4"
+      selectedIndex={selectedIndex}
+      onChange={setSelectedIndex}
+    >
       <TabPanels className="mt-3">
         {project.images?.map(({ src, description }) => (
           <TabPanel
@@ -40,7 +44,7 @@ export const ProjectImagesCarousel: FC<{
         {project.images?.map(({ src }) => (
           <Tab
             key={src}
-            className="max-h-20 rounded-lg bg-slate-200 p-2 data-[hover]:bg-slate-300 data-[selected]:bg-slate-400 data-[selected]:data-[hover]:bg-slate-400 dark:bg-slate-700 data-[hover]:dark:bg-slate-800 data-[selected]:dark:bg-slate-900"
+            className="aspect-video max-h-20 rounded-lg bg-slate-200 p-2 data-[hover]:bg-slate-300 data-[selected]:bg-slate-400 data-[selected]:data-[hover]:bg-slate-400 dark:bg-slate-700 data-[hover]:dark:bg-slate-800 data-[selected]:dark:bg-slate-900"
           >
             <Image
               className="h-full w-full object-contain"
@@ -60,7 +64,7 @@ export const ProjectImagesCarousel: FC<{
       <Modal open={isFullScreen} onClose={close}>
         {TabsFeatures}
       </Modal>
-        {TabsFeatures}
+      {TabsFeatures}
     </>
   );
 };
