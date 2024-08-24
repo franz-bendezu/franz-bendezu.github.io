@@ -60,11 +60,11 @@ export const ProjectImagesCarousel: FC<{
   );
 
   return (
-    <>
+    <section className="relative">
       <Modal open={isFullScreen} onClose={close}>
         {TabsFeatures}
       </Modal>
       {TabsFeatures}
-    </>
+    </section>
   );
 };

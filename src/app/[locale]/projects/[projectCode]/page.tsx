@@ -8,6 +8,7 @@ import { ProjectOverview } from "@/components/project/Overview";
 import { ProjectGoals } from "@/components/project/Goals";
 import { ProjectTechsList } from "@/components/project/TechsList";
 import { ProjectFeatures } from "@/components/project/Features";
+import { ProjectImagesCarousel } from "@/components/project/Images";
 
 export const generateStaticParams = () => {
   const params: { projectCode: string }[] = [];
@@ -49,8 +50,12 @@ export default function ProjectPage({
           <ProjectGoals goals={project.projectGoals} />
         </div>
       </div>
-
-      <ProjectFeatures project={project} />
+      <div>
+        <div className="grid gap-10 px-4 md:px-6 lg:grid-cols-2 lg:gap-20">
+          <ProjectFeatures project={project} />
+          <ProjectImagesCarousel project={project} />
+        </div>
+      </div>
     </div>
   );
 }
