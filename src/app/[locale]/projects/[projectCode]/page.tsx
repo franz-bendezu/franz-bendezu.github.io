@@ -6,7 +6,7 @@ import { unstable_setRequestLocale } from "next-intl/server";
 import { ProjectSummary } from "@/components/project/Summary";
 import { ProjectOverview } from "@/components/project/Overview";
 import { ProjectGoals } from "@/components/project/Goals";
-import { ProjectTechs } from "@/components/project/Techs";
+import { ProjectTechsList } from "@/components/project/TechsList";
 import { ProjectFeatures } from "@/components/project/Features";
 
 export const generateStaticParams = () => {
@@ -45,7 +45,7 @@ export default function ProjectPage({
       )}
       <div>
         <div className="grid gap-10 px-4 md:px-6 lg:grid-cols-2 lg:gap-20">
-          <ProjectTechs techs={techs} />
+          <ProjectTechsList techs={techs} />
           <ProjectGoals goals={project.projectGoals} />
         </div>
       </div>

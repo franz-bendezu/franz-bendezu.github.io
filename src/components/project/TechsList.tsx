@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import { FC } from "react";
 import Image from "next/image";
 
-export const ProjectTechs: FC<{ techs: IBaseProjectTechnology[] }> = ({
+export const ProjectTechsList: FC<{ techs: IBaseProjectTechnology[] }> = ({
     techs,
   }) => {
     const t = useTranslations("Project");
