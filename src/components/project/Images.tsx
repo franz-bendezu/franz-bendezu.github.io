@@ -1,13 +1,13 @@
 "use client";
-import React, { FC, ReactNode, useState } from "react";
+import React, { FC, useState } from "react";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import { Modal } from "../ui/Modal";
-import { IBaseProject } from "@/interfaces/project";
+import { IProjectImage } from "@/interfaces/project";
 import Image from "next/image";
 
 export const ProjectImagesCarousel: FC<{
-  project: IBaseProject;
-}> = ({ project }) => {
+  images: IProjectImage[];
+}> = ({ images }) => {
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -21,7 +21,7 @@ export const ProjectImagesCarousel: FC<{
       onChange={setSelectedIndex}
     >
       <TabPanels className="mt-3">
-        {project.images?.map(({ src, description }) => (
+        {images?.map(({ src, description, alt }) => (
           <TabPanel
             key={src}
             className="relative aspect-video rounded-xl bg-gray-200 p-3 dark:bg-slate-700"
@@ -29,7 +29,7 @@ export const ProjectImagesCarousel: FC<{
           >
             <Image
               src={src}
-              alt={project.title}
+              alt={alt}
               width="800"
               height="450"
               className="aspect-video overflow-hidden rounded-xl object-contain object-center"
@@ -40,8 +40,8 @@ export const ProjectImagesCarousel: FC<{
           </TabPanel>
         ))}
       </TabPanels>
-      <TabList className="flex gap-4 flex-wrap justify-center">
-        {project.images?.map(({ src }) => (
+      <TabList className="flex flex-wrap justify-center gap-4">
+        {images?.map(({ src, alt }) => (
           <Tab
             key={src}
             className="aspect-video max-h-20 rounded-lg bg-slate-200 p-2 data-[hover]:bg-slate-300 data-[selected]:bg-slate-400 data-[selected]:data-[hover]:bg-slate-400 dark:bg-slate-700 data-[hover]:dark:bg-slate-800 data-[selected]:dark:bg-slate-900"
@@ -49,7 +49,7 @@ export const ProjectImagesCarousel: FC<{
             <Image
               className="h-full w-full object-contain"
               src={src}
-              alt={project.title}
+              alt={alt}
               width="200"
               height="200"
             />
