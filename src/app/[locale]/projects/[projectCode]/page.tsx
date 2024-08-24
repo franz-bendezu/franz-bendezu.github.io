@@ -38,7 +38,7 @@ export default function ProjectPage({
     return <div>Project not found</div>;
   }
   return (
-    <div className="flex min-h-[100dvh] flex-col gap-8 md:gap-8 lg:gap-16">
+    <div className="container flex min-h-[100dvh] flex-col gap-8 md:gap-8 lg:gap-16">
       <ProjectSummary project={project} />
 
       {project.description && (
