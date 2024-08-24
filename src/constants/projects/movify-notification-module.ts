@@ -2,7 +2,7 @@ import type { IBaseProject } from "@/interfaces/project";
 
 export const MOVIFY_NOTIFICATION_MODULE: IBaseProject = {
   status: "completed",
-  title: "Notification Module for Moving",
+  title: "Movify.pe - Módulo de Notificaciones",
   shortDescription: "Desarrollo de un módulo de notificaciones para órdenes de mudanza.",
   description: "De enero a julio de 2024, desarrollé un módulo de notificaciones para órdenes de mudanza, incluyendo recordatorios, confirmaciones y encuestas, adaptadas al tipo de producto (detallado, fácil, embalaje) y canal de comunicación. Creé un módulo serverless con AWS Lambda para renderizar plantillas HTML para notificaciones por correo electrónico y documentos PDF, mejorando la personalización y presentación para los clientes. Migré el módulo de generación de PDF a AWS Lambda para procesamiento paralelo, resolviendo problemas de memoria del servidor e integrándolo con el sistema actual para agilizar el envío de confirmaciones. Integré servicios de mensajería de terceros para notificaciones por correo electrónico con plantillas personalizadas basadas en el servicio de mudanza, asegurando una comunicación efectiva con los clientes.",
   tags: ["AWS Lambda", "AWS S3", "Java", "MariaDB", "Spring Boot", "Spring Data", "Spring Cloud", "Cloudformation"],
