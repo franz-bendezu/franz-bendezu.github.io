@@ -1,30 +1,21 @@
 "use client";
-import { FC, useState } from "react";
-import Image from "next/image";
+import { FC, ReactNode } from "react";
 import { Button, Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
 import { DialogBackdrop } from "@headlessui/react";
 
-export const ProjectFullScreeImg: FC<{ src: string; description?: string }> = ({
-  src,
-  description,
-}) => {
-  const [isFullScreen, setIsFullScreen] = useState(false);
-
-  const close = () => setIsFullScreen(false);
-
+export const Modal: FC<{
+  open?: boolean;
+  children: ReactNode;
+  title?: string;
+  onClose(value: boolean): void;
+}> = ({ children, open, onClose, title }) => {
   return (
     <>
-      <button
-        className="rounded-lg bg-black bg-opacity-50 p-2 text-white"
-        onClick={() => setIsFullScreen(!isFullScreen)}
-      >
-        Fullscreen
-      </button>
       <Dialog
-        open={isFullScreen}
+        open={open}
         as="div"
         className="relative z-30 focus:outline-none"
-        onClose={close}
+        onClose={onClose}
       >
         {/* The backdrop, rendered as a fixed sibling to the panel container */}
         <DialogBackdrop className="fixed inset-0 z-10 bg-black/50" />
@@ -39,21 +30,13 @@ export const ProjectFullScreeImg: FC<{ src: string; description?: string }> = ({
                 as="h3"
                 className="text-base/7 font-medium text-white"
               >
-                {description}
+                {title}
               </DialogTitle>
-              <div className="mt-4">
-                <Image
-                  src={src}
-                  alt={description || "Image"}
-                  width="800"
-                  height="800"
-                  className="w-full rounded-xl object-contain object-center"
-                />
-              </div>
+              <div className="mt-4">{children}</div>
               <div className="mt-4 flex justify-center">
                 <Button
                   className="rounded-lg bg-black bg-opacity-50 px-4 py-2 text-white"
-                  onClick={close}
+                  onClick={() => onClose(false)}
                 >
                   Close
                 </Button>
