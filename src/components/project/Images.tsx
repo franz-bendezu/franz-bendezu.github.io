@@ -40,7 +40,7 @@ export const ProjectImagesCarousel: FC<{
           </TabPanel>
         ))}
       </TabPanels>
-      <TabList className="flex gap-4">
+      <TabList className="flex gap-4 flex-wrap justify-center">
         {project.images?.map(({ src }) => (
           <Tab
             key={src}
