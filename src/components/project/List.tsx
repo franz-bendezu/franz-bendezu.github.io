@@ -1,5 +1,5 @@
 import { FC } from "react";
-import ProjectListItemCard from "./ListItemCard";
+import ProjectListItem from "./ListItem";
 import { ProjectListEmpty } from "./ListEmpty";
 import { IProject, IProjectTechnology } from "@/interfaces/project";
 
@@ -18,7 +18,7 @@ export const ProjectList: FC<Props> = ({
     <div className="flex w-full flex-col flex-wrap items-stretch md:flex-row">
       {projects.length > 0 ? (
         projects.map((project) => (
-          <ProjectListItemCard
+          <ProjectListItem
             key={project.title}
             code={project.code}
             links={project.links}
