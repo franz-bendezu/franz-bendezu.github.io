@@ -1,5 +1,5 @@
 import Image from "next/image";
-import TechStack from "./TechStack";
+import ProjectListItemTechStack from "./ListItemTechStack";
 import Card from "../ui/Card";
 import { IProjectLink, IProjectTechnology } from "../../interfaces/project";
 import { LinkList } from "./LinkList";
@@ -68,7 +68,7 @@ const ProjectListItem: React.FC<ProjectCardProps> = (props) => {
           </div>
         </Link>
         <div className="mt-1 p-2">
-          <TechStack
+          <ProjectListItemTechStack
             techs={technologies}
             onClickTech={onClickTech}
             selectedTechs={selectedTechs}
