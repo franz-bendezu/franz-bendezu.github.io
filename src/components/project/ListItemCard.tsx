@@ -21,7 +21,7 @@ interface ProjectCardProps {
   onClickTech?: (tech: IProjectTechnology) => void;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = (props) => {
+const ProjectListItemCard: React.FC<ProjectCardProps> = (props) => {
   const {
     links,
     image,
@@ -80,4 +80,4 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
     </section>
   );
 };
-export default ProjectCard;
+export default ProjectListItemCard;
