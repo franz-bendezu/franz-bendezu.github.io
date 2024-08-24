@@ -18,7 +18,7 @@ const LINK_ICONS: Record<ProjectLinkType, FC<SVGProps<SVGSVGElement>>> = {
   video: FilmIcon,
 } as const;
 
-export const LinkListItem: FC<{ link: IProjectLink }> = ({ link }) => {
+export const ProjectListItemLinkListItem: FC<{ link: IProjectLink }> = ({ link }) => {
   const Icon = LINK_ICONS[link.type];
   return (
     <a
@@ -39,7 +39,7 @@ export const LinkList: React.FC<{ links: IProjectLink[] }> = ({ links }) => {
   return (
     <div className="flex flex-row gap-2 p-2">
       {links.map((link) => (
-        <LinkListItem key={link.url} link={link} />
+        <ProjectListItemLinkListItem key={link.url} link={link} />
       ))}
     </div>
   );
