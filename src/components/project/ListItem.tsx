@@ -50,8 +50,8 @@ const ProjectListItem: React.FC<ProjectCardProps> = (props) => {
                 className="mx-auto max-h-40 w-auto object-cover object-center"
                 src={image.src}
                 alt={image.alt}
-                width={400}
-                height={400}
+                width={256}
+                height={256}
                 loading="eager"
               />
             ) : (
