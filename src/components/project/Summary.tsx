@@ -1,6 +1,6 @@
 import { IBaseProject } from "@/interfaces/project";
 import { FC } from "react";
-import Image from "next/image";
+import Image from "next-image-export-optimizer";
 
 export const ProjectSummary: FC<{
     project: IBaseProject;

@@ -3,7 +3,7 @@ import React, { FC, useState } from "react";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import { Modal } from "../ui/Modal";
 import { IProjectImage } from "@/interfaces/project";
-import Image from "next/image";
+import Image from "next-image-export-optimizer";
 
 export const ProjectImagesCarousel: FC<{
   images: IProjectImage[];
