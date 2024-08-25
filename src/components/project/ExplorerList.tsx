@@ -2,7 +2,7 @@
 import { IProject, IProjectTechnology } from "@/interfaces/project";
 import { XCircleIcon } from "@heroicons/react/20/solid";
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
+import Image from "next-image-export-optimizer";
 import { ProjectList } from "./List";
 
 type Props = {

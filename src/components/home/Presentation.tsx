@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import Image from "next/image";
+import Image from "next-image-export-optimizer";
 import { useTranslations } from "next-intl";
 import { HomePresentationDownload } from "./PresentationDownload";
 import { CircularPulse } from "../ui/CircularPulse";

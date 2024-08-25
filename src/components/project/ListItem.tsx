@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next-image-export-optimizer";
 import ProjectListItemTechStack from "./ListItemTechStack";
 import Card from "../ui/Card";
 import { IProjectLink, IProjectTechnology } from "../../interfaces/project";

@@ -1,7 +1,7 @@
 import { IBaseProjectTechnology } from "@/interfaces/project";
 import { useTranslations } from "next-intl";
 import { FC } from "react";
-import Image from "next/image";
+import Image from "next-image-export-optimizer";
 
 export const ProjectTechsList: FC<{ techs: IBaseProjectTechnology[] }> = ({
     techs,
