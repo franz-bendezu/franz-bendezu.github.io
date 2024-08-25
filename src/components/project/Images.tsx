@@ -50,8 +50,8 @@ export const ProjectImagesCarousel: FC<{
               className="h-full w-full object-contain"
               src={src}
               alt={alt}
-              width="200"
-              height="200"
+              width="96"
+              height="96"
             />
           </Tab>
         ))}
