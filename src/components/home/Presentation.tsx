@@ -88,8 +88,8 @@ const HomePresentation: FC = () => {
               alt="Profile"
               fetchPriority={"high"}
               className="ma-auto relative z-10 max-h-[50%] max-w-[50%] rounded-full object-cover"
-              width={250}
-              height={250}
+              width="256"
+              height="256"
               placeholder="blur"
             />
           </div>
