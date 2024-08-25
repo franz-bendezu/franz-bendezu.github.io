@@ -76,11 +76,11 @@ const HomePresentation: FC = () => {
           </div>
         </div>
         <div className="flex flex-shrink-0 items-center justify-center max-w-full">
-          <div className="relative flex aspect-square h-auto max-h-[500px] w-[500px] max-w-[500px] items-center justify-center">
+          <div className="relative flex aspect-square h-auto max-h-[512px] w-[512px] max-w-[512px] items-center justify-center">
             <CircularPulse
               className="aspect-square h-auto max-w-[100%]"
-              width="500"
-              height="500"
+              width="512"
+              height="512"
             />
             <Image
               src={"/profile.webp"}
