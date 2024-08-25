@@ -30,7 +30,7 @@ export const ProjectImagesCarousel: FC<{
             <Image
               src={src}
               alt={alt}
-              width="800"
+              width="828"
               height="450"
               className="aspect-video overflow-hidden rounded-xl object-contain object-center"
             />

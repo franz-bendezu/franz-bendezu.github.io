@@ -35,7 +35,7 @@ export const ProjectSummary: FC<{
               <Image
                 src={project.banner.src}
                 alt={project.banner.alt}
-                width="800"
+                width="828"
                 height="450"
                 className="mx-auto aspect-video w-auto h-full overflow-hidden rounded-xl object-contain object-center"
               />
