@@ -20,8 +20,8 @@ export const CCAT_ASSEMBLIES: IBaseProject = {
     "spring-security",
     "react",
   ],
-  start: "2023-01",
-  end: "2023-06",
+  start: "2019-11",
+  end: "2019-12",
   code: "ccat-assemblies",
   projectGoals: [
     {
