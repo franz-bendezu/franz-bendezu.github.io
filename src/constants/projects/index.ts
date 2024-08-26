@@ -13,9 +13,11 @@ import { AGENDALO_APP_ENHANCEMENT } from "./agendalo-app-enhancement ";
 import { AGENDALO_MIGRATION_SSR } from "./agendalo-ssr-migration";
 import { MY_PORTFOLIO } from "./portafolio";
 import { MOVIFY_NOTIFICATION_MODULE } from "./movify-notification-module";
+import { CCAT_ELECTORAL_PLATFORM } from "./ccat-electoral-platform";
 export { PROJECT_CATEGORIES } from "../project-categories";
 
 export const PROJECTS: IBaseProject[] = [
+  CCAT_ELECTORAL_PLATFORM,
   CON_QUE_PROFE,
   BUS_UNI_TRACKER,
   OXIMETRO_PERU,
