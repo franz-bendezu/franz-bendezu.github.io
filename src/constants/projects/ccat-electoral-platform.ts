@@ -76,7 +76,7 @@ export const CCAT_ELECTORAL_PLATFORM: IBaseProject = {
         "Interfaz diseñada para ser accesible y fácil de usar desde cualquier dispositivo.",
     },
     {
-      title: "Contenedorización con Docker",
+      title: "Despliegue con contenedores",
       description:
         "Uso de Docker para optimizar el despliegue y la escalabilidad en diferentes entornos.",
     },
