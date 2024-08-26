@@ -33,7 +33,7 @@ export const CCAT_ELECTORAL_PLATFORM: IBaseProject = {
   ],
   start: "2020-09",
   end: "2020-12",
-  code: "ccat-elections-project",
+  code: "ccat-electoral-platform",
   projectGoals: [
     {
       title: "Sistema de Votación en Línea",
