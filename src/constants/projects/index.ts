@@ -14,9 +14,11 @@ import { AGENDALO_MIGRATION_SSR } from "./agendalo-ssr-migration";
 import { MY_PORTFOLIO } from "./portafolio";
 import { MOVIFY_NOTIFICATION_MODULE } from "./movify-notification-module";
 import { CCAT_ELECTORAL_PLATFORM } from "./ccat-electoral-platform";
+import { CCAT_ASSEMBLIES } from "./ccat-assemblies";
 export { PROJECT_CATEGORIES } from "../project-categories";
 
 export const PROJECTS: IBaseProject[] = [
+  CCAT_ASSEMBLIES,
   CCAT_ELECTORAL_PLATFORM,
   CON_QUE_PROFE,
   BUS_UNI_TRACKER,
