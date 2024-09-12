@@ -1624,13 +1624,6 @@ chokidar@^3.5.3:
   optionalDependencies:
     fsevents "~2.3.2"
 
-cli-progress@^3.10.0:
-  version "3.12.0"
-  resolved "https://registry.yarnpkg.com/cli-progress/-/cli-progress-3.12.0.tgz#807ee14b66bcc086258e444ad0f19e7d42577942"
-  integrity sha512-tRkV3HJ1ASwm19THiiLIXLO7Im7wlTuKnvkYaTkyoAPefqjNg7W7DHKUlGRxy9vxDvbyCYQkQozvptuMkGCg8A==
-  dependencies:
-    string-width "^4.2.3"
-
 client-only@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/client-only/-/client-only-0.0.1.tgz#38bba5d403c41ab150bff64a95c85013cf73bca1"
@@ -3402,12 +3395,11 @@ negotiator@^0.6.3:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.3.tgz#58e323a72fedc0d6f9cd4d31fe49f51479590ccd"
   integrity sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==
 
-next-image-export-optimizer@^1.14.1:
-  version "1.14.1"
-  resolved "https://registry.yarnpkg.com/next-image-export-optimizer/-/next-image-export-optimizer-1.14.1.tgz#892ac00ad77c282c93c354eba2b924d283d9a021"
-  integrity sha512-S1IlXANLlWomg5Szfbw65mkpM5wLW7BezoaiBRzhl98gaQfb4DSbHGL+Qy6MoQh39OpNgPMDzIwlWHmH+cUuCQ==
+next-image-export-optimizer@^1.15.0:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/next-image-export-optimizer/-/next-image-export-optimizer-1.15.0.tgz#4c7140b07260a12a6e3e2cc5236f891c631f4b6a"
+  integrity sha512-DeJXVcMAyoZrBJ6h5brCdov/quT7yewG1J4IXuIz6X10MDEv1CyTy9x3oRlNwDqEzCX/I123pInMuErI92BkPQ==
   dependencies:
-    cli-progress "^3.10.0"
     sharp "^0.33.1"
     typescript "^5.2.2"
 
@@ -4168,7 +4160,7 @@ streamsearch@^1.1.0:
     is-fullwidth-code-point "^3.0.0"
     strip-ansi "^6.0.1"
 
-string-width@^4.1.0, string-width@^4.2.3:
+string-width@^4.1.0:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
