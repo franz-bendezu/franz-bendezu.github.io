@@ -3338,10 +3338,10 @@ negotiator@^0.6.3:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.3.tgz#58e323a72fedc0d6f9cd4d31fe49f51479590ccd"
   integrity sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==
 
-next-image-export-optimizer@^1.15.0:
-  version "1.15.0"
-  resolved "https://registry.yarnpkg.com/next-image-export-optimizer/-/next-image-export-optimizer-1.15.0.tgz#4c7140b07260a12a6e3e2cc5236f891c631f4b6a"
-  integrity sha512-DeJXVcMAyoZrBJ6h5brCdov/quT7yewG1J4IXuIz6X10MDEv1CyTy9x3oRlNwDqEzCX/I123pInMuErI92BkPQ==
+next-image-export-optimizer@^1.15.1:
+  version "1.15.1"
+  resolved "https://registry.yarnpkg.com/next-image-export-optimizer/-/next-image-export-optimizer-1.15.1.tgz#0cabc5d573cc71c7560cb9744b97105157eb8c32"
+  integrity sha512-tx20p74EtW/VeIdoxPt9GtgagGJU3DVDXqBa0VgPYB2wiia6axiljiUeg9KoR1FPOduHxbjPPG3FtkKL0XN7Lg==
   dependencies:
     sharp "^0.33.1"
     typescript "^5.2.2"
