@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@formspree/react": "^2.5.1",
-    "@headlessui/react": "^2.1.8",
+    "@headlessui/react": "^2.1.9",
     "@heroicons/react": "^2.1.5",
     "next": "^14.2.13",
     "next-image-export-optimizer": "^1.15.1",
