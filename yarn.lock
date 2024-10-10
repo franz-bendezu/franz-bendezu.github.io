@@ -3322,14 +3322,14 @@ next-image-export-optimizer@^1.15.1:
     sharp "^0.33.1"
     typescript "^5.2.2"
 
-next-intl@^3.20.0:
-  version "3.20.0"
-  resolved "https://registry.yarnpkg.com/next-intl/-/next-intl-3.20.0.tgz#8ff83d8e02c0fdf65bace78eb1db5316f86786bc"
-  integrity sha512-0bCZcc38HfAZk/T+PNNcnJZknC+caS5rBK+WYRd1HsOL5O6puEu2H3kya8oT9s8piHjrTf7P0UHeahOFleOnrw==
+next-intl@^3.21.1:
+  version "3.21.1"
+  resolved "https://registry.yarnpkg.com/next-intl/-/next-intl-3.21.1.tgz#de6ccc048cad1a9d2f908ad526f104dfab797f5c"
+  integrity sha512-hQm4Wgq5i1lfOHAWmXBVl5d2/XAeddcjsrUmjotXEESzPSvW5j2t0Pr8AV8WorTILgqU748aXuenBhz5P78tdw==
   dependencies:
     "@formatjs/intl-localematcher" "^0.5.4"
     negotiator "^0.6.3"
-    use-intl "^3.20.0"
+    use-intl "^3.21.1"
 
 next-themes@^0.3.0:
   version "0.3.0"
@@ -4481,10 +4481,10 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-use-intl@^3.20.0:
-  version "3.20.0"
-  resolved "https://registry.yarnpkg.com/use-intl/-/use-intl-3.20.0.tgz#df847fdb02acf865eb9a71aa3c2ff3456c89bf00"
-  integrity sha512-5WQs6yZVWI9K7vw3134P0bhKNp4mi8NbmqKOCuhD9nQUMTKdmpBXwjk62+axwvEbj4XrZxj4X93mQMLXU5ZsCg==
+use-intl@^3.21.1:
+  version "3.21.1"
+  resolved "https://registry.yarnpkg.com/use-intl/-/use-intl-3.21.1.tgz#c8fc68638357b63b2f3e41d2f14b1d03de4d9f34"
+  integrity sha512-52kYgcydYkG9SX0ZZGt7W6WD2Va01hwe15bDgkXuaTdSxrF9fDu6hHTV5DxIuSmSSf/FEcBo/nodpw3ZhY31Lw==
   dependencies:
     "@formatjs/fast-memoize" "^2.2.0"
     intl-messageformat "^10.5.14"
