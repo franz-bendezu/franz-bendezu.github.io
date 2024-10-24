@@ -1,3 +1,4 @@
+import { use } from "react";
 import { Metadata, NextPage } from "next";
 import {
   WORK_EXPERIENCES,
@@ -15,21 +16,19 @@ import { ExperienceWorkCard } from "@/components/experience/WorkCard";
 import { ExperienceEducationCard } from "@/components/experience/EducationCard";
 
 type Props = {
-  params: { locale?: string };
+  params: Promise<{ locale?: string }>;
 };
 
-export async function generateMetadata({
-  params: { locale = DEFAULT_LOCALE },
-}: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale = DEFAULT_LOCALE } = await params;
   const t = await getTranslations({ locale, namespace: "About" });
   return {
     title: t("title"),
   };
 }
 
-const AboutPage: NextPage<Props> = ({
-  params: { locale = DEFAULT_LOCALE },
-}) => {
+export default function AboutPage({ params }: Props) {
+  const { locale = DEFAULT_LOCALE } = use(params);
   unstable_setRequestLocale(locale);
   const t = useTranslations("About");
   return (
@@ -55,7 +54,7 @@ const AboutPage: NextPage<Props> = ({
         </div>
         <div className="container">
           <h2 className="mb-6 flex flex-row items-center gap-3 text-left text-2xl font-semibold lg:text-3xl">
-            <BriefcaseIcon className="h-8 w-8" /> 
+            <BriefcaseIcon className="h-8 w-8" />
             {t("work.title")}
           </h2>
           <div className="flex grid-cols-12 flex-col md:grid">
@@ -67,5 +66,4 @@ const AboutPage: NextPage<Props> = ({
       </div>
     </section>
   );
-};
-export default AboutPage;
+}
