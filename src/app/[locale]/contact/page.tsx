@@ -1,3 +1,4 @@
+import { use } from "react";
 import { Metadata, NextPage } from "next";
 import React from "react";
 import Script from "next/script";
@@ -8,21 +9,20 @@ import { useTranslations } from "next-intl";
 import { DEFAULT_LOCALE } from "@/constants/locales";
 
 type Props = {
-  params: { locale?: string };
+  params: Promise<{ locale?: string }>;
 };
 
-export async function generateMetadata({
-  params: { locale = DEFAULT_LOCALE },
-}: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale = DEFAULT_LOCALE } = await params;
   const t = await getTranslations({ locale, namespace: "Contact" });
   return {
     title: t("title"),
   };
 }
 
-const ContactPage: NextPage<Props> = ({
-  params: { locale = DEFAULT_LOCALE },
-}) => {
+const ContactPage: NextPage<Props> =
+({ params }: Props)=> {
+  const { locale = DEFAULT_LOCALE } = use(params);
   unstable_setRequestLocale(locale);
   const t = useTranslations("Contact");
   return (

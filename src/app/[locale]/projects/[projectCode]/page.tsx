@@ -1,3 +1,4 @@
+import { use } from "react";
 import { DEFAULT_LOCALE } from "@/constants/locales";
 import { PROJECTS } from "@/constants/projects";
 import { PROJECT_TECHNOLOGIES } from "@/constants/project-techologies";
@@ -19,15 +20,14 @@ export const generateStaticParams = () => {
 };
 
 type Props = {
-  params: {
+  params: Promise<{
     projectCode: string;
     locale?: string;
-  };
+  }>;
 };
 
-export default function ProjectPage({
-  params: { locale = DEFAULT_LOCALE, projectCode },
-}: Props) {
+export default function ProjectPage({ params }: Props) {
+  const { locale = DEFAULT_LOCALE, projectCode } = use(params);
   unstable_setRequestLocale(locale);
   const project = PROJECTS.find((project) => project.code === projectCode);
   const techs = PROJECT_TECHNOLOGIES.filter((tech) =>

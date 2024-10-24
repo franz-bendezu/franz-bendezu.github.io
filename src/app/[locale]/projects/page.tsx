@@ -1,3 +1,4 @@
+import { use } from "react";
 import { PROJECTS, PROJECT_CATEGORIES } from "../../../constants/projects";
 import { CodeBracketIcon } from "@heroicons/react/20/solid";
 import {
@@ -42,12 +43,11 @@ export const getDataByCategory = (category?: string) => {
 };
 
 type Props = {
-  params: { category?: string; locale?: string };
+  params: Promise<{ category?: string; locale?: string }>;
 };
 
-export async function generateMetadata({
-  params: { locale = DEFAULT_LOCALE },
-}: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale = DEFAULT_LOCALE } = await params;
   const t = await getTranslations({ locale, namespace: "Projects" });
   return {
     title: t("title"),
@@ -55,8 +55,9 @@ export async function generateMetadata({
 }
 
 export default function ProjectsPage({
-  params: { locale = DEFAULT_LOCALE, category },
+  params
 }: Props) {
+  const { locale = DEFAULT_LOCALE, category }  = use(params)
   unstable_setRequestLocale(locale);
   const categories = PROJECT_CATEGORIES;
   const initialProjects = getDataByCategory(category);
