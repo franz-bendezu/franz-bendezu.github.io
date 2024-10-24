@@ -1,3 +1,4 @@
+import { use } from "react";
 import { ThemeProvider } from "next-themes";
 import Footer from "../../components/layout/Footer";
 import Navbar from "../../components/layout/Navbar";
@@ -15,12 +16,11 @@ export function generateStaticParams() {
 
 type Props = {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
-export async function generateMetadata({
-  params: { locale = DEFAULT_LOCALE },
-}: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale = DEFAULT_LOCALE } = await params;
   const t = await getTranslations({ locale, namespace: "Metadata" });
   return {
     title: {
@@ -31,10 +31,9 @@ export async function generateMetadata({
   };
 }
 
-export default function LocaleLayout({
-  children,
-  params: { locale = DEFAULT_LOCALE },
-}: Props) {
+export default function LocaleLayout({ children, params }: Props) {
+  const { locale = DEFAULT_LOCALE } = use(params);
+
   unstable_setRequestLocale(locale);
   const messages = useMessages();
   return (
@@ -56,7 +55,7 @@ export default function LocaleLayout({
           <ThemeProvider attribute="class" defaultTheme="light">
             <div className="flex min-h-screen flex-col bg-gradient-to-t from-gray-50 to-gray-200 dark:bg-gradient-to-b dark:from-slate-950 dark:to-slate-800">
               <Navbar locale={locale} />
-              <main className="flex flex-col items-center flex-grow align-middle antialiased">
+              <main className="flex flex-grow flex-col items-center align-middle antialiased">
                 {children}
               </main>
               <Footer />
