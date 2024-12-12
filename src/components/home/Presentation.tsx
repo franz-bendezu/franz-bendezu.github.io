@@ -44,7 +44,7 @@ const HomePresentation: FC = () => {
           </div>
           <div className="flex flex-row flex-wrap justify-center gap-2 lg:justify-start">
             <a
-              href="https://www.linkedin.com/in/franz-bendez/"
+              href="https://www.linkedin.com/in/franz-bendezu"
               className="flex items-center gap-3 rounded-md px-3 py-1 transition-colors hover:bg-gray-300 dark:text-white dark:hover:bg-gray-700"
               target="_blank"
               rel="noreferrer"
