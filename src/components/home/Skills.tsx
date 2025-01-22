@@ -52,15 +52,15 @@ export const Skills = () => {
             </p>
           </div>
           <div className="grid gap-1">
-            <h3 className="text-xl font-bold">{ t("tools") }</h3>
-            <p className="text-muted-foreground">
-              Git, GitHub, Gitlab, Figma, Jira, Trello, VSCode
-            </p>
-          </div>
-          <div className="grid gap-1">
             <h3 className="text-xl font-bold">{ t("testing") }</h3>
             <p className="text-muted-foreground">
               Vitest, Jest, Karma, Jasmine, Cypress, Junit, Mockito
+            </p>
+          </div>
+          <div className="grid gap-1">
+            <h3 className="text-xl font-bold">{ t("tools") }</h3>
+            <p className="text-muted-foreground">
+              Git, GitHub, Gitlab, Figma, Jira, Trello, VSCode
             </p>
           </div>
         </div>
