@@ -91,3 +91,66 @@ export const EDUCATION_EXPERIENCES = [
     link: "https://www.uni.edu.pe/",
   },
 ];
+
+export const COURSE_CERTIFICATIONS = [
+  {
+    id: 1,
+    name: "Curso Profesional de DevOps",
+    url: "https://platzi.com/p/franz.bendezu/curso/1431-devops/diploma/detalle/",
+    date: "Noviembre 2023",
+  },
+  {
+    id: 2,
+    name: "Curso Profesional de Next.js",
+    url: "https://platzi.com/p/franz.bendezu/curso/2707-profesional-nextjs/diploma/detalle/",
+    date: "Noviembre 2023",
+  },
+  {
+    id: 3,
+    name: "Microsoft Certified: Azure Fundamentals",
+    url: "https://credly.com/badges/108c4e3d-6a95-432c-8f82-53ff7dea4bb3",
+    date: "Mayo 2023",
+  },
+  {
+    id: 4,
+    name: "CyberOps Associate",
+    url: "https://credly.com/badges/4312c90f-a2b4-4ad8-bbb3-e7b873f86695",
+    date: "Enero 2022",
+  },
+  {
+    id: 5,
+    name: "Curso Profesional de Arquitectura de Software",
+    url: "https://platzi.com/p/franz.bendezu/curso/1248-pro-arquitectura/diploma/detalle/",
+    date: "Octubre 2021",
+  },
+  {
+    id: 6,
+    name: "Curso Profesional de Scrum",
+    url: "https://platzi.com/p/franz.bendezu/course/1750-scrum/diploma/detalle/",
+    date: "Agosto 2021",
+  },
+  {
+    id: 7,
+    name: "Curso Profesional de Git y GitHub",
+    url: "https://platzi.com/p/franz.bendezu/curso/1557-course/diploma/detalle/",
+    date: "Agosto 2021",
+  },
+  {
+    id: 8,
+    name: "Programa Especializado - Google IT Automation with Python",
+    url: "https://coursera.org/verify/professional-cert/EBQHHJ5LNUT5",
+    date: "Junio 2020 - Julio 2020",
+  },
+  {
+    id: 9,
+    name: "Programa Especializado - Excel Skills for Business",
+    url: "https://coursera.org/verify/specialization/Z88TCESL582W",
+    date: "Agosto 2020 - Septiembre 2020",
+  },
+  {
+    id: 10,
+    name: "Programa Especializado - Google IT Support",
+    url: "https://coursera.org/verify/professional-cert/AN72XYKRCANN",
+    date: "Septiembre 2020 - Octubre 2020",
+  },
+];
