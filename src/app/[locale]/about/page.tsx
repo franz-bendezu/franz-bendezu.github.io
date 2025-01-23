@@ -69,9 +69,7 @@ export default function AboutPage({ params }: Props) {
             <BuildingLibraryIcon className="h-8 w-8" />
             {t("courseCertifications.title")}
           </h2>
-          <div className="flex grid-cols-12 flex-col md:grid">
-            <Certifications/>
-          </div>
+          <Certifications/>
         </div>
       </div>
     </section>
