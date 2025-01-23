@@ -43,23 +43,23 @@ export default function AboutPage({ params }: Props) {
       <div className="mt-4 flex flex-col gap-4 p-4">
         <div className="container">
           <h2 className="mb-6 flex flex-row items-center gap-3 text-left text-2xl font-semibold lg:text-3xl">
-            <BuildingLibraryIcon className="h-8 w-8" />
-            {t("education.title")}
-          </h2>
-          <div className="flex grid-cols-12 flex-col md:grid">
-            {EDUCATION_EXPERIENCES.map((p) => (
-              <ExperienceEducationCard key={p.id} {...p} />
-            ))}
-          </div>
-        </div>
-        <div className="container">
-          <h2 className="mb-6 flex flex-row items-center gap-3 text-left text-2xl font-semibold lg:text-3xl">
             <BriefcaseIcon className="h-8 w-8" />
             {t("work.title")}
           </h2>
           <div className="flex grid-cols-12 flex-col md:grid">
             {WORK_EXPERIENCES.map((p) => (
               <ExperienceWorkCard key={p.id} {...p} />
+            ))}
+          </div>
+        </div>
+        <div className="container">
+          <h2 className="mb-6 flex flex-row items-center gap-3 text-left text-2xl font-semibold lg:text-3xl">
+            <BuildingLibraryIcon className="h-8 w-8" />
+            {t("education.title")}
+          </h2>
+          <div className="flex grid-cols-12 flex-col md:grid">
+            {EDUCATION_EXPERIENCES.map((p) => (
+              <ExperienceEducationCard key={p.id} {...p} />
             ))}
           </div>
         </div>
