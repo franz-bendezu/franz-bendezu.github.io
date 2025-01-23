@@ -17,7 +17,7 @@ import { CCAT_ELECTORAL_PLATFORM } from "./ccat-electoral-platform";
 import { CCAT_ASSEMBLIES } from "./ccat-assemblies";
 export { PROJECT_CATEGORIES } from "../project-categories";
 
-export const PROJECTS: IBaseProject[] = [
+export const PROJECTS = [
   {
     ...CCAT_ASSEMBLIES,
     position: 14,
@@ -82,4 +82,4 @@ export const PROJECTS: IBaseProject[] = [
     ...MOVIFY_NOTIFICATION_MODULE,
     position: 16,
   },
-];
+] satisfies IBaseProject[];
