@@ -66,4 +66,5 @@ export interface IProjectTechnology extends IBaseProjectTechnology {
 }
 export interface IProject extends IBaseProject {
   technologies: IProjectTechnology[];
+  position: number;
 }
