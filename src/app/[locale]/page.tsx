@@ -1,25 +1,15 @@
-import { use } from "react";
-import { DEFAULT_LOCALE } from "@/constants/locales";
-import HomePresentation from "../../components/home/Presentation";
-import { unstable_setRequestLocale } from "next-intl/server";
-import { Skills } from "@/components/home/Skills";
+import { PROJECTS } from "@/constants/projects";
 import { LastProjects } from "@/components/home/LastProjects";
-import { getDataByCategory } from "./projects/page";
 
-export default function LocaleRootPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale = DEFAULT_LOCALE } = use(params);
+const HomePage = () => {
+  // Sort projects by position and take the top 3
+  const topProjects = PROJECTS.sort((a, b) => a.position - b.position).slice(0, 3);
 
-  unstable_setRequestLocale(locale);
-  const projects = getDataByCategory().slice(0, 6);
   return (
-    <>
-      <HomePresentation />
-      <Skills></Skills>
-      <LastProjects projects={projects}></LastProjects>
-    </>
+    <div>
+      <LastProjects projects={topProjects} />
+    </div>
   );
-}
+};
+
+export default HomePage;
