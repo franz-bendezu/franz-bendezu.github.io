@@ -20,15 +20,15 @@ export { PROJECT_CATEGORIES } from "../project-categories";
 export const PROJECTS: IBaseProject[] = [
   {
     ...CCAT_ASSEMBLIES,
-    position: 1,
+    position: 14,
   },
   {
     ...CCAT_ELECTORAL_PLATFORM,
-    position: 2,
+    position: 10,
   },
   {
     ...CON_QUE_PROFE,
-    position: 3,
+    position: 6,
   },
   {
     ...BUS_UNI_TRACKER,
@@ -40,7 +40,7 @@ export const PROJECTS: IBaseProject[] = [
   },
   {
     ...HOREXT,
-    position: 6,
+    position: 3,
   },
   {
     ...MOVIFY_PAYMENT_MODULE,
@@ -56,7 +56,7 @@ export const PROJECTS: IBaseProject[] = [
   },
   {
     ...MOVIFY_QUOTE_ORDER_MANAGMENT,
-    position: 10,
+    position: 2,
   },
   {
     ...MOVIFY_QUOTE_SYSTEM_IMPROVEMENT,
@@ -72,7 +72,7 @@ export const PROJECTS: IBaseProject[] = [
   },
   {
     ...AGENDALO_MIGRATION_SSR,
-    position: 14,
+    position: 1,
   },
   {
     ...MY_PORTFOLIO,
