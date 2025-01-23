@@ -82,4 +82,4 @@ export const PROJECTS = [
     ...MOVIFY_NOTIFICATION_MODULE,
     position: 16,
   },
-] satisfies IBaseProject[];
+] as const;
