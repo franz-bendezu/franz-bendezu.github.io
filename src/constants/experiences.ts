@@ -47,13 +47,13 @@ export const WORK_EXPERIENCES = [
       "Optimicé los procesos de desarrollo con metodologías ágiles y prácticas SCRUM",
       "Creé bibliotecas internas reutilizables para simplificar el desarrollo en múltiples proyectos",
     ],
-  },
+  },  
   {
-    id: 4,
+    id: 5,
     company: "Gestión y Sistemas SAC",
     location: "Lima, Perú",
     position: "Analista de Desarrollo Junior",
-    start: "Diciembre 2020",
+    start: "Agosto 2021",
     end: "Octubre 2022",
     tasks: [
       "Realicé desarrollo frontend utilizando Angular y gestioné repositorios con Azure DevOps",
@@ -61,6 +61,21 @@ export const WORK_EXPERIENCES = [
       "Contribuí al desarrollo de paneles administrativos para la gestión interna de parámetros en Banco Falabella",
       "Implementé un portal de proveedores para The Leaf Company (ACS) y una aplicación de planificación de actividades",
       "Colaboré estrechamente con equipos en Perú y Chile bajo metodología SCRUM",
+    ],
+  },
+  {
+    id: 5,
+    company: "Banco Ripley Perú",
+    location: "Lima, Perú",
+    position: "Frontend Developer",
+    start: "Agosto 2021",
+    end: "Octubre 2022",
+    tasks: [
+      "Participé en el desarrollo frontend de la app de banca online multiplataforma y la plataforma de pagos",
+      "Colaboré estrechamente con equipos de pagos en Perú y Chile bajo la metodología SCRUM",
+      "Utilicé Angular e Ionic para el desarrollo de interfaces de usuario intuitivas",
+      "Implementé widgets de autorización de transacciones e integré pasarelas de pago",
+      "Realicé análisis de incidentes para implementar mejoras y nuevas características, trabajando en colaboración con el equipo de experiencia de usuario (UX)",
     ],
   },
 ];
