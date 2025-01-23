@@ -14,6 +14,7 @@ import { useTranslations } from "next-intl";
 import { DEFAULT_LOCALE } from "@/constants/locales";
 import { ExperienceWorkCard } from "@/components/experience/WorkCard";
 import { ExperienceEducationCard } from "@/components/experience/EducationCard";
+import Certifications from "@/components/about/Certifications";
 
 type Props = {
   params: Promise<{ locale?: string }>;
@@ -61,6 +62,15 @@ export default function AboutPage({ params }: Props) {
             {EDUCATION_EXPERIENCES.map((p) => (
               <ExperienceEducationCard key={p.id} {...p} />
             ))}
+          </div>
+        </div>
+        <div className="container">
+          <h2 className="mb-6 flex flex-row items-center gap-3 text-left text-2xl font-semibold lg:text-3xl">
+            <BuildingLibraryIcon className="h-8 w-8" />
+            {t("courseCertifications.title")}
+          </h2>
+          <div className="flex grid-cols-12 flex-col md:grid">
+            <Certifications/>
           </div>
         </div>
       </div>
