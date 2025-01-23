@@ -66,6 +66,9 @@
     "work": {
       "title": "Work Experience"
     },
+    "courseCertifications" {
+      "title": "Cursos y Certificaciones"
+    },
     "description": "I am a software developer with 4 years of experience in the development of web applications, I have a degree in Systems Engineering and I am passionate about technology. "
   },
   "Metadata": {
