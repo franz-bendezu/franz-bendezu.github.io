@@ -18,20 +18,68 @@ import { CCAT_ASSEMBLIES } from "./ccat-assemblies";
 export { PROJECT_CATEGORIES } from "../project-categories";
 
 export const PROJECTS: IBaseProject[] = [
-  CCAT_ASSEMBLIES,
-  CCAT_ELECTORAL_PLATFORM,
-  CON_QUE_PROFE,
-  BUS_UNI_TRACKER,
-  OXIMETRO_PERU,
-  HOREXT,
-  MOVIFY_PAYMENT_MODULE,
-  MOVIFY_QUOTE_SYSTEM_MIGRATION,
-  MOVIFY_AWS_MIGRATION,
-  MOVIFY_QUOTE_ORDER_MANAGMENT,
-  MOVIFY_QUOTE_SYSTEM_IMPROVEMENT,
-  AIVERSE,
-  AGENDALO_APP_ENHANCEMENT,
-  AGENDALO_MIGRATION_SSR,
-  MY_PORTFOLIO,
-  MOVIFY_NOTIFICATION_MODULE
+  {
+    ...CCAT_ASSEMBLIES,
+    position: 14,
+  },
+  {
+    ...CCAT_ELECTORAL_PLATFORM,
+    position: 10,
+  },
+  {
+    ...CON_QUE_PROFE,
+    position: 6,
+  },
+  {
+    ...BUS_UNI_TRACKER,
+    position: 4,
+  },
+  {
+    ...OXIMETRO_PERU,
+    position: 5,
+  },
+  {
+    ...HOREXT,
+    position: 3,
+  },
+  {
+    ...MOVIFY_PAYMENT_MODULE,
+    position: 7,
+  },
+  {
+    ...MOVIFY_QUOTE_SYSTEM_MIGRATION,
+    position: 8,
+  },
+  {
+    ...MOVIFY_AWS_MIGRATION,
+    position: 9,
+  },
+  {
+    ...MOVIFY_QUOTE_ORDER_MANAGMENT,
+    position: 2,
+  },
+  {
+    ...MOVIFY_QUOTE_SYSTEM_IMPROVEMENT,
+    position: 11,
+  },
+  {
+    ...AIVERSE,
+    position: 12,
+  },
+  {
+    ...AGENDALO_APP_ENHANCEMENT,
+    position: 13,
+  },
+  {
+    ...AGENDALO_MIGRATION_SSR,
+    position: 1,
+  },
+  {
+    ...MY_PORTFOLIO,
+    position: 15,
+  },
+  {
+    ...MOVIFY_NOTIFICATION_MODULE,
+    position: 16,
+  },
 ];
