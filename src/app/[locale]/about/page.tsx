@@ -32,6 +32,26 @@ export default function AboutPage({ params }: Props) {
   const { locale = DEFAULT_LOCALE } = use(params);
   unstable_setRequestLocale(locale);
   const t = useTranslations("About");
+
+  const translatedWorkExperiences = WORK_EXPERIENCES.map((experience) => ({
+    ...experience,
+    company: t(`work.experiences.${experience.id}.company`),
+    location: t(`work.experiences.${experience.id}.location`),
+    position: t(`work.experiences.${experience.id}.position`),
+    start: t(`work.experiences.${experience.id}.start`),
+    end: t(`work.experiences.${experience.id}.end`),
+    tasks: experience.tasks.map((task, index) => t(`work.experiences.${experience.id}.tasks.${index}`)),
+  }));
+
+  const translatedEducationExperiences = EDUCATION_EXPERIENCES.map((experience) => ({
+    ...experience,
+    institution: t(`education.experiences.${experience.id}.institution`),
+    location: t(`education.experiences.${experience.id}.location`),
+    degree: t(`education.experiences.${experience.id}.degree`),
+    start: t(`education.experiences.${experience.id}.start`),
+    end: t(`education.experiences.${experience.id}.end`),
+  }));
+
   return (
     <section
       data-testid="projects"
@@ -48,7 +68,7 @@ export default function AboutPage({ params }: Props) {
             {t("work.title")}
           </h2>
           <div className="flex grid-cols-12 flex-col md:grid">
-            {WORK_EXPERIENCES.map((p) => (
+            {translatedWorkExperiences.map((p) => (
               <ExperienceWorkCard key={p.id} {...p} />
             ))}
           </div>
@@ -59,7 +79,7 @@ export default function AboutPage({ params }: Props) {
             {t("education.title")}
           </h2>
           <div className="flex grid-cols-12 flex-col md:grid">
-            {EDUCATION_EXPERIENCES.map((p) => (
+            {translatedEducationExperiences.map((p) => (
               <ExperienceEducationCard key={p.id} {...p} />
             ))}
           </div>
