@@ -1,9 +1,36 @@
+import { use } from "react";
+import { Metadata, NextPage } from "next";
+import {
+  WORK_EXPERIENCES,
+  EDUCATION_EXPERIENCES,
+} from "../../../constants/experiences";
+import {
+  Bars4Icon,
+  BriefcaseIcon,
+  BuildingLibraryIcon,
+} from "@heroicons/react/20/solid";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
-import { WORK_EXPERIENCES, EDUCATION_EXPERIENCES } from "@/constants/experiences";
+import { DEFAULT_LOCALE } from "@/constants/locales";
 import { ExperienceWorkCard } from "@/components/experience/WorkCard";
 import { ExperienceEducationCard } from "@/components/experience/EducationCard";
+import Certifications from "@/components/about/Certifications";
 
-export default function AboutPage() {
+type Props = {
+  params: Promise<{ locale?: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale = DEFAULT_LOCALE } = await params;
+  const t = await getTranslations({ locale, namespace: "About" });
+  return {
+    title: t("title"),
+  };
+}
+
+export default function AboutPage({ params }: Props) {
+  const { locale = DEFAULT_LOCALE } = use(params);
+  unstable_setRequestLocale(locale);
   const t = useTranslations("About");
 
   const translatedWorkExperiences = WORK_EXPERIENCES.map((experience) => ({
@@ -26,20 +53,45 @@ export default function AboutPage() {
   }));
 
   return (
-    <div>
-      <h1>{t("title")}</h1>
-      <section>
-        <h2>{t("work.title")}</h2>
-        {translatedWorkExperiences.map((experience) => (
-          <ExperienceWorkCard key={experience.id} {...experience} />
-        ))}
-      </section>
-      <section>
-        <h2>{t("education.title")}</h2>
-        {translatedEducationExperiences.map((experience) => (
-          <ExperienceEducationCard key={experience.id} {...experience} />
-        ))}
-      </section>
-    </div>
+    <section
+      data-testid="projects"
+      className="container flex flex-col items-center justify-center gap-4"
+    >
+      <h1 className="font-monospace flex flex-row items-center gap-4 text-center text-3xl dark:text-white lg:text-4xl">
+        <Bars4Icon className="h-8 w-8" />
+        {t("title")}
+      </h1>
+      <div className="mt-4 flex flex-col gap-4 p-4">
+        <div className="container">
+          <h2 className="mb-6 flex flex-row items-center gap-3 text-left text-2xl font-semibold lg:text-3xl">
+            <BriefcaseIcon className="h-8 w-8" />
+            {t("work.title")}
+          </h2>
+          <div className="flex grid-cols-12 flex-col md:grid">
+            {translatedWorkExperiences.map((p) => (
+              <ExperienceWorkCard key={p.id} {...p} />
+            ))}
+          </div>
+        </div>
+        <div className="container">
+          <h2 className="mb-6 flex flex-row items-center gap-3 text-left text-2xl font-semibold lg:text-3xl">
+            <BuildingLibraryIcon className="h-8 w-8" />
+            {t("education.title")}
+          </h2>
+          <div className="flex grid-cols-12 flex-col md:grid">
+            {translatedEducationExperiences.map((p) => (
+              <ExperienceEducationCard key={p.id} {...p} />
+            ))}
+          </div>
+        </div>
+        <div className="container">
+          <h2 className="mb-6 flex flex-row items-center gap-3 text-left text-2xl font-semibold lg:text-3xl">
+            <BuildingLibraryIcon className="h-8 w-8" />
+            {t("courseCertifications.title")}
+          </h2>
+          <Certifications/>
+        </div>
+      </div>
+    </section>
   );
 }
