@@ -61,25 +61,21 @@
   "About": {
     "title": "About me",
     "education": {
-      "title": "Education Experience"
+      "title": "Education Experience",
+      "experiences": {
+      "1": {
+        "institution": "National University of Engineering",
+        "location": "Lima, Peru",
+        "degree": "Systems Engineering",
+        "start": "2018",
+        "end": "2023",
+        "link": "https://www.uni.edu.pe/"
+      }
+      }
     },
     "work": {
-      "title": "Work Experience"
-    },
-    "courseCertifications": {
-      "title": "Courses and Certifications"
-    },
-    "description": "I am a software developer with 4 years of experience in the development of web applications, I have a degree in Systems Engineering and I am passionate about technology. "
-  },
-  "Metadata": {
-    "title": {
-      "default": "Home",
-      "template": "%s |  Franz Bendezu - Software Developer"
-    },
-    "description": "Welcome to my personal website"
-  },
-  "work": {
-    "experiences": {
+      "title": "Work Experience",
+      "experiences": {
       "1": {
         "company": "Indra",
         "location": "Lima, Peru",
@@ -155,17 +151,17 @@
         ]
       }
     }
+    },
+    "courseCertifications": {
+      "title": "Courses and Certifications"
+    },
+    "description": "I am a software developer with 4 years of experience in the development of web applications, I have a degree in Systems Engineering and I am passionate about technology. "
   },
-  "education": {
-    "experiences": {
-      "1": {
-        "institution": "National University of Engineering",
-        "location": "Lima, Peru",
-        "degree": "Systems Engineering",
-        "start": "2018",
-        "end": "2023",
-        "link": "https://www.uni.edu.pe/"
-      }
-    }
+  "Metadata": {
+    "title": {
+      "default": "Home",
+      "template": "%s |  Franz Bendezu - Software Developer"
+    },
+    "description": "Welcome to my personal website"
   }
 }
