@@ -63,25 +63,21 @@
   "About": {
     "title": "Acerca de mi",
     "education": {
-      "title": "Experiencia Educativa"
+      "title": "Experiencia Educativa",
+      "experiences": {
+      "1": {
+        "institution": "Universidad Nacional de Ingeniería",
+        "location": "Lima, Perú",
+        "degree": "Ingeniería de Sistemas",
+        "start": "2018",
+        "end": "2023",
+        "link": "https://www.uni.edu.pe/"
+      }
+    }
     },
     "work": {
-      "title": "Experiencia Laboral"
-    },
-    "courseCertifications": {
-      "title": "Cursos y Certificaciones"
-    },
-    "description": "Soy un desarrollador de software con 4 años de experiencia en el desarrollo de aplicaciones web, tengo una bachiller en Ingeniería de Sistemas y soy un apasionado de la tecnología."
-  },
-  "Metadata": {
-    "title": {
-      "default": "Inicio",
-      "template": "%s |  Franz Bendezu - Desarrollador de Software"
-    },
-    "description": "Bienvenido a mi sitio web personal"
-  },
-  "work": {
-    "experiences": {
+      "title": "Experiencia Laboral",
+      "experiences": {
       "1": {
         "company": "Indra",
         "location": "Lima, Perú",
@@ -157,17 +153,17 @@
         ]
       }
     }
+    },
+    "courseCertifications": {
+      "title": "Cursos y Certificaciones"
+    },
+    "description": "Soy un desarrollador de software con 4 años de experiencia en el desarrollo de aplicaciones web, tengo una bachiller en Ingeniería de Sistemas y soy un apasionado de la tecnología."
   },
-  "education": {
-    "experiences": {
-      "1": {
-        "institution": "Universidad Nacional de Ingeniería",
-        "location": "Lima, Perú",
-        "degree": "Ingeniería de Sistemas",
-        "start": "2018",
-        "end": "2023",
-        "link": "https://www.uni.edu.pe/"
-      }
-    }
+  "Metadata": {
+    "title": {
+      "default": "Inicio",
+      "template": "%s |  Franz Bendezu - Desarrollador de Software"
+    },
+    "description": "Bienvenido a mi sitio web personal"
   }
 }
