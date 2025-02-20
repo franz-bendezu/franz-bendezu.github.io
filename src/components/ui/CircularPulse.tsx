@@ -9,7 +9,7 @@ export const CircularPulse: FC<SVGProps<SVGSVGElement>> = (
       {...props}
       className={
         "pointer-events-none absolute inset-0 left-1/2 top-1/2 z-0 block -translate-x-1/2 -translate-y-1/2 transform rounded-full " +
-          props.className ?? ""
+          props.className
       }
       viewBox="0 0 800 800"
       xmlns="http://www.w3.org/2000/svg"
