@@ -1,3 +1,4 @@
+import Footer from "./globals.css";
 import { ReactNode } from "react";
 import { Metadata } from "next";
 const isProd = process.env.NODE_ENV === "production";
