@@ -2,13 +2,13 @@ import type { IBaseProject } from "@/interfaces/project";
 
 export const BUS_UNI_TRACKER: IBaseProject = {
   status: "completed",
-  title: "BusUni Tracker",
+  title: "Bus UNI Tracker",
   shortDescription: "Proyecto de Investigación IOT de localización en tiempo real del bus de la Universidad Nacional de Ingeniería.",
   description: "Desde enero hasta diciembre de 2020, asumí la responsabilidad de establecer la arquitectura y desarrollar un sistema de localización en tiempo real del bus universitario utilizando tecnologías LoT LoRaWAN. Este proyecto de investigación fue crucial para mejorar la eficiencia del transporte dentro del campus universitario. Implementé Firebase y Vue.js para la aplicación web, mientras que Cloud Functions se utilizó para recibir datos en tiempo real de la red LoRaWAN. Además, utilicé Realtime Database y Firestore para mostrar y almacenar información relevante, como rutas, conductores y trayectos recorridos. La culminación de este proyecto se reflejó en la publicación de un artículo científico con DOI: 10.1109/ISC255366.2022.9922172.",
   tags: ["LoT LoRaWAN", "Firebase", "Vue.js", "Cloud Functions"],
   banner: {
-    src: "/images/busuni-tracker.webp",
-    alt: "BusUni Tracker",
+    src: "/images/bus-uni-tracker.webp",
+    alt: "bus-uni Tracker",
   },
   links: [
     {
@@ -21,7 +21,7 @@ export const BUS_UNI_TRACKER: IBaseProject = {
   technologyCodes: ["iot", "lorawan", "firebase", "vue2", "cloud-functions"],
   start: "2020-01",
   end: "2020-12",
-  code: "busuni-tracker",
+  code: "bus-uni-tracker",
   projectGoals: [
     {
       title: "Seguimiento en Tiempo Real",
@@ -59,27 +59,27 @@ export const BUS_UNI_TRACKER: IBaseProject = {
     }
   ],
   images: [{
-    src: "/images/busuni-tracker/app-home.webp",
+    src: "/images/bus-uni-tracker/app-home.webp",
     alt: "Pantalla Principal",
     description: "Vista principal de la aplicación mostrando el mapa y la ubicación en tiempo real del bus universitario."
   },
   {
-    src: "/images/busuni-tracker/app-view-buss-route.webp",
+    src: "/images/bus-uni-tracker/app-view-buss-route.webp",
     alt: "Vista de Ruta del Bus",
     description: "Interfaz detallada que muestra la ruta actual del bus, incluyendo paradas y trayecto en el mapa del campus."
   },
   {
-    src: "/images/busuni-tracker/app-edit-route.webp",
+    src: "/images/bus-uni-tracker/app-edit-route.webp",
     alt: "Edición de Ruta",
     description: "Panel de administración para crear y modificar las rutas del bus, permitiendo definir paradas y trayectos."
   },
   {
-    src: "/images/busuni-tracker/app-edit-busses.webp",
+    src: "/images/bus-uni-tracker/app-edit-busses.webp",
     alt: "Gestión de Buses",
     description: "Interfaz para la gestión de la flota de buses, incluyendo registro y asignación de dispositivos IoT."
   },
   {
-    src: "/images/busuni-tracker/app-edit-drivers.webp",
+    src: "/images/bus-uni-tracker/app-edit-drivers.webp",
     alt: "Gestión de Conductores",
     description: "Panel para el registro y gestión de conductores, incluyendo asignación de rutas y horarios."
   }]
