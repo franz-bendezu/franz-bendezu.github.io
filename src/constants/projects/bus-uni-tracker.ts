@@ -50,4 +50,29 @@ export const BUS_UNI_TRACKER: IBaseProject = {
       description: "Artículo de investigación publicado sobre la tecnología LoT LoRaWAN.",
     },
   ],
+  images: [{
+    src: "/images/busuni-tracker/app-home.webp",
+    alt: "Pantalla Principal",
+    description: "Vista principal de la aplicación mostrando el mapa y la ubicación en tiempo real del bus universitario."
+  },
+  {
+    src: "/images/busuni-tracker/app-view-buss-route.webp",
+    alt: "Vista de Ruta del Bus",
+    description: "Interfaz detallada que muestra la ruta actual del bus, incluyendo paradas y trayecto en el mapa del campus."
+  },
+  {
+    src: "/images/busuni-tracker/app-edit-route.webp",
+    alt: "Edición de Ruta",
+    description: "Panel de administración para crear y modificar las rutas del bus, permitiendo definir paradas y trayectos."
+  },
+  {
+    src: "/images/busuni-tracker/app-edit-busses.webp",
+    alt: "Gestión de Buses",
+    description: "Interfaz para la gestión de la flota de buses, incluyendo registro y asignación de dispositivos IoT."
+  },
+  {
+    src: "/images/busuni-tracker/app-edit-drivers.webp",
+    alt: "Gestión de Conductores",
+    description: "Panel para el registro y gestión de conductores, incluyendo asignación de rutas y horarios."
+  }]
 };
