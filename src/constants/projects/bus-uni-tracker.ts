@@ -17,7 +17,7 @@ export const BUS_UNI_TRACKER: IBaseProject = {
       type: "website",
     },
   ],
-  categoryCode: "personal",
+  categoryCode: "freelance",
   technologyCodes: ["iot", "lorawan", "firebase", "vue2", "cloud-functions"],
   start: "2020-01",
   end: "2020-12",
@@ -36,19 +36,27 @@ export const BUS_UNI_TRACKER: IBaseProject = {
       description: "Contribuir a la investigación académica con un artículo publicado sobre la tecnología LoT LoRaWAN.",
     },
   ],
-  keyFeatures: [
+  keyFeatures:  [
     {
       title: "Seguimiento en Tiempo Real",
-      description: "Actualizaciones de ubicación en tiempo real y visualización de rutas.",
+      description: "Visualización en mapa de la ubicación actual del bus y sus rutas en tiempo real.",
     },
     {
-      title: "Integración con el Campus",
-      description: "Integración con servicios universitarios para una gestión integral del transporte.",
+      title: "Gestión de Rutas",
+      description: "Panel administrativo para crear y modificar rutas del bus, definiendo paradas y trayectos específicos.",
     },
     {
-      title: "Contribución Académica",
-      description: "Artículo de investigación publicado sobre la tecnología LoT LoRaWAN.",
+      title: "Administración de Flota",
+      description: "Sistema de gestión para registro de buses y asignación de dispositivos IoT.",
     },
+    {
+      title: "Gestión de Personal",
+      description: "Control de conductores con asignación de rutas y programación de horarios.",
+    },
+    {
+      title: "Integración IoT",
+      description: "Implementación de tecnología LoT LoRaWAN para transmisión de datos en tiempo real.",
+    }
   ],
   images: [{
     src: "/images/busuni-tracker/app-home.webp",
