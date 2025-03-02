@@ -19,7 +19,7 @@ export const CON_QUE_PROFE: IBaseProject = {
       type: "website",
     },
   ],
-  categoryCode: "personal",
+  categoryCode: "freelance",
   technologyCodes: [
     "nuxt",
     "typescript",
