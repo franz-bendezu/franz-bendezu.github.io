@@ -9,7 +9,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@formspree/react": "^2.5.3",
+    "@formspree/react": "^2.5.4",
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/postcss": "^4.0.9",
