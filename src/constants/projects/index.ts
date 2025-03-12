@@ -9,7 +9,7 @@ import { MOVIFY_QUOTE_ORDER_MANAGMENT, MOVIFY_QUOTE_ORDER_MANAGEMENT_EN } from "
 import { MOVIFY_QUOTE_SYSTEM_IMPROVEMENT, MOVIFY_QUOTE_SYSTEM_IMPROVEMENT_EN } from "./movify-quote-system-improvement";
 import { MOVIFY_QUOTE_SYSTEM_MIGRATION, MOVIFY_QUOTE_SYSTEM_MIGRATION_EN } from "./movify-quote-system-migration";
 import { OXIMETRO_PERU, OXIMETRO_PERU_EN } from "./oximetro-peru";
-import { AGENDALO_APP_ENHANCEMENT } from "./agendalo-app-enhancement ";
+import { AGENDALO_APP_ENHANCEMENT, AGENDALO_APP_ENHANCEMENT_EN } from "./agendalo-app-enhancement";
 import { AGENDALO_MIGRATION_SSR } from "./agendalo-ssr-migration";
 import { MY_PORTFOLIO, MY_PORTFOLIO_EN } from "./portafolio";
 import { MOVIFY_NOTIFICATION_MODULE } from "./movify-notification-module";
@@ -88,6 +88,10 @@ export const PROJECTS = [
   },
   {
     ...AGENDALO_APP_ENHANCEMENT,
+    position: 13,
+  },
+  {
+    ...AGENDALO_APP_ENHANCEMENT_EN,
     position: 13,
   },
   {
