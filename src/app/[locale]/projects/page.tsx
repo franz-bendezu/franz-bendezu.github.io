@@ -17,8 +17,8 @@ import { ProjectListEmpty } from "@/components/project/ListEmpty";
 export const getDataByCategory = (lang:string, category?: string) => {
   return (
     category
-      ? [...PROJECTS.filter((project) => project.categoryCode === category)]
-      : [...PROJECTS]
+      ? [...PROJECTS.filter((project) => project.categoryCode === category && project.lang === lang)]
+      : [...PROJECTS..filter((project) => project.lang === lang)]
   )
     .map<IProject>((project) => ({
       ...project,
@@ -27,7 +27,7 @@ export const getDataByCategory = (lang:string, category?: string) => {
       ).map((technology) => ({
         ...technology,
         categories: PROJECT_TECHNOLOGY_CATEGORY.filter((category) =>
-          technology.categoryCodes.includes(category.value) && project.lang === lang,
+          technology.categoryCodes.includes(category.value),
         ),
       })),
     }))
