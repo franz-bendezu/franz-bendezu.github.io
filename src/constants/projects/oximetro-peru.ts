@@ -78,3 +78,82 @@ export const OXIMETRO_PERU: IBaseProject = {
     }
   ],
 };
+
+export const OXIMETRO_PERU_EN: IBaseProject = {
+  status: "completed",
+  title: "Oximeter Peru",
+  shortDescription: "Development of the MVP of a web application to find places to buy oximeters near you.",
+  description: "In August 2020, I developed an MVP of a web application called Oximeter Peru, which allowed users to find nearby places to buy oximeters. I used Vue.js for the frontend and Firebase for the backend, enabling quick and efficient implementation. Additionally, I integrated Leaflet.js for map visualization and geolocation, making it easier for users to find nearby stores. This project was developed in response to the growing demand for oximeters during the COVID-19 pandemic in Peru.",
+  tags: ["Vue.js", "Firebase", "Leaflet.js"],
+  banner: {
+    src: "/images/oximetro-peru/banner.webp",
+    alt: "Oximeter Peru",
+  },
+  links: [
+    {
+      title: "Demo",
+      url: "https://oximetro-peru.web.app/",
+      type: "website",
+    },
+  ],
+  categoryCode: "freelance",
+  technologyCodes: ["vue2", "firebase", "leaflet"],
+  start: "2020-05",
+  code: "oximetro-peru",
+  end: "2020-06",
+  projectGoals: [
+    {
+      title: "Oximeter Location",
+      description: "Develop an application to find nearby places to rent oximeters for COVID-19 detection.",
+    },
+    {
+      title: "Pandemic Response",
+      description: "Respond to the growing demand for oximeters during the COVID-19 pandemic in Peru.",
+    },
+    {
+      title: "Rapid and Efficient Development",
+      description: "Use modern technologies for rapid and efficient MVP development.",
+    },
+  ],
+  keyFeatures: [
+    {
+      title: "Store Location",
+      description: "Visualization of nearby stores where you can rent oximeters for COVID-19 detection.",
+    },
+    {
+      title: "Geolocation",
+      description: "Integration of Leaflet.js for map visualization and geolocation.",
+    },
+    {
+      title: "Agile Development",
+      description: "Rapid and efficient development using Vue.js and Firebase.",
+    },
+  ],
+  images: [
+    {
+      src: "/images/oximetro-peru/about.webp",
+      alt: "Oximeter Peru",
+      description: "Oximeter Peru - About the project.",
+    },
+    {
+      src: "/images/oximetro-peru/home.webp",
+      alt: "Oximeter Peru",
+      description: "Oximeter Peru - Home page.",
+    },
+    {
+      src: "/images/oximetro-peru/home-details.webp",
+      alt: "Oximeter Peru",
+      description: "Oximeter Peru - Map page.",
+    },
+    {
+      src: "/images/oximetro-peru/contact.webp",
+      alt: "Oximeter Peru",
+      description: "Oximeter Peru - Contact page.",
+    },
+    {
+      src: "/images/oximetro-peru/team.webp",
+      alt: "Oximeter Peru",
+      description: "Oximeter Peru - Team",
+    }
+  ],
+};

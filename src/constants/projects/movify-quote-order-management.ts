@@ -71,3 +71,75 @@ export const MOVIFY_QUOTE_ORDER_MANAGMENT:IBaseProject  = {
     }
   ],
 };
+
+export const MOVIFY_QUOTE_ORDER_MANAGEMENT_EN: IBaseProject = {
+  status: "completed",
+  title: "Movify.pe - Quote and Order Management System",
+  shortDescription: "Development of an administrative system for quotes and moving orders.",
+  description: "From December 2021 to July 2023, I developed an administrative system for quotes and orders for the sales and moving team. I designed and implemented the client-server architecture using a REST API and a SPA. I automated the generation of PDFs for quotes and sales orders. I developed a reporting module to measure the efficiency of the sales team and interconnected with the web quoting system through an API. I established continuous integration and deployment flows using GitHub Actions.",
+  tags: [
+    "Spring Boot",
+    "JPA Hibernate",
+    "Java",
+    "TypeScript",
+    "Vue.js",
+    "Vuetify",
+    "Nginx",
+    "Docker",
+  ],
+  categoryCode: "freelance",
+  technologyCodes: [
+    "spring-boot",
+    "jpa-hibernate",
+    "java",
+    "typescript",
+    "mariadb",
+    "vue2",
+    "vuetify",
+    "nginx",
+    "docker",
+  ],
+  start: "2021-12",
+  end: "2023-07",
+  code: "movify-quote-order-management",
+  banner: {
+    src: "/images/movify-quote-order-management/banner.webp",
+    alt: "Movify Quote Order Management",
+  },
+  projectGoals: [
+    {
+      title: "Establish an Administrative System for Quotes and Orders",
+      description: "Develop an administrative system for quotes and moving orders.",
+    },
+    {
+      title: "Generate PDFs for Quotes and Orders",
+      description: "Automate the generation of PDFs for quotes and sales orders.",
+    },
+    {
+      title: "Establish a Reporting Module",
+      description: "Develop a reporting module to measure the efficiency of the sales team.",
+    },
+    {
+      title: "Integration with Web Quoting System",
+      description: "Interconnect the quote and order management system with the web quoting system.",
+    }
+  ],
+  keyFeatures: [
+    {
+      title: "Access Control",
+      description: "User authentication and authorization with custom roles and permissions.",
+    },
+    {
+      title: "PDF Generation",
+      description: "HTML templates and their conversion to PDF for quotes and sales orders.",
+    },
+    {
+      title: "Webhooks for Integration with Web Quoting System",
+      description: "Interconnection with the web quoting system through an API for seamless data flow.",
+    },
+    {
+      title: "Continuous Integration and Deployment Flows",
+      description: "Continuous integration and deployment flows established using GitHub Actions.",
+    }
+  ],
+};
