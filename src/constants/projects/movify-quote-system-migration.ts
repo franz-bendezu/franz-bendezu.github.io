@@ -3,6 +3,7 @@ import { IBaseProject } from "@/interfaces/project";
 export const MOVIFY_QUOTE_SYSTEM_MIGRATION:IBaseProject  = {
   status: "completed",
   title: "Movify.pe - Sistema de Cotizaciones Web (Migración)",
+  lang: "es",
   shortDescription: "Migración del sistema de cotizaciones web a una API serverless.",
   description: "De julio a diciembre de 2023, migré el backend del sistema de cotizaciones web a una API serverless, mejorando la disponibilidad y reduciendo los costos de servidor. Mejoré la compatibilidad del diseño de correos electrónicos con varios proveedores, lo que resultó en un aumento de la generación de clientes potenciales. Integré análisis para rastrear las vistas de correos electrónicos, proporcionando información valiosa sobre las tasas de apertura y el compromiso.",
   tags: ["Node.js", "Prisma", "AWS Lambda", "GitHub Actions", "MJML"],
@@ -81,6 +82,7 @@ export const MOVIFY_QUOTE_SYSTEM_MIGRATION:IBaseProject  = {
 export const MOVIFY_QUOTE_SYSTEM_MIGRATION_EN: IBaseProject = {
   status: "completed",
   title: "Movify.pe - Web Quoting System (Migration)",
+  lang: "en",
   shortDescription: "Migration of the web quoting system to a serverless API.",
   description: "From July to December 2023, I migrated the backend of the web quoting system to a serverless API, improving availability and reducing server costs. I improved the compatibility of email designs with various providers, resulting in an increase in lead generation. I integrated analytics to track email views, providing valuable insights into open rates and engagement.",
   tags: ["Node.js", "Prisma", "AWS Lambda", "GitHub Actions", "MJML"],
