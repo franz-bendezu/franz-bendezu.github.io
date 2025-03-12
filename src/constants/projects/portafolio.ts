@@ -82,7 +82,7 @@ export const MY_PORTFOLIO: IBaseProject = {
 export const MY_PORTFOLIO_EN: IBaseProject = {
   status: "active",
   title: "My Portfolio",
-  lang: "en"
+  lang: "en",
   shortDescription: "Personal portfolio showcasing my projects and skills.",
   description: "This is my personal portfolio where I showcase my projects, skills, and experiences. The portfolio is designed to be accessible and to display my work in a professional manner. It includes a projects section with detailed descriptions and links to the source code, as well as a skills section that highlights my technical knowledge. The portfolio is also multilingual, with support for English and Spanish.",
   tags: ["React", "Node.js", "CSS", "HTML", "JavaScript"],
