@@ -60,7 +60,7 @@ export default function ProjectsPage({
   const { locale = DEFAULT_LOCALE, category }  = use(params)
   unstable_setRequestLocale(locale);
   const categories = PROJECT_CATEGORIES;
-  const initialProjects = getDataByCategory(category, locale);
+  const initialProjects = getDataByCategory(locale, category);
   const t = useTranslations("Projects");
 
   return (
