@@ -29,9 +29,9 @@ type Props = {
 export default function ProjectPage({ params }: Props) {
   const { locale = DEFAULT_LOCALE, projectCode } = use(params);
   unstable_setRequestLocale(locale);
-  const project = PROJECTS.find((project) => project.code === projectCode);
+  const project = PROJECTS.find((project) => project.code === projectCode && project.lang === locale);
   const techs = PROJECT_TECHNOLOGIES.filter((tech) =>
-    project?.technologyCodes.includes(tech.code) && project.lang === locale,
+    project?.technologyCodes.includes(tech.code),
   );
   const t = useTranslations("Project");
   if (!project) {
