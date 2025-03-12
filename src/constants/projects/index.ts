@@ -1,7 +1,7 @@
 import type { IBaseProject } from "../../interfaces/project";
 import { AIVERSE } from "./aiverse-app";
 import { BUS_UNI_TRACKER } from "./bus-uni-tracker";
-import { CON_QUE_PROFE } from "./con-que-profe";
+import { CON_QUE_PROFE, CON_QUE_PROFE_EN } from "./con-que-profe";
 import { HOREXT } from "./horext";
 import { MOVIFY_PAYMENT_MODULE, MOVIFY_PAYMENT_MODULE_EN } from "./movify-payment-module";
 import { MOVIFY_AWS_MIGRATION } from "./movify-aws-migration";
@@ -28,6 +28,10 @@ export const PROJECTS = [
   },
   {
     ...CON_QUE_PROFE,
+    position: 6,
+  },
+  {
+    ...CON_QUE_PROFE_EN,
     position: 6,
   },
   {
