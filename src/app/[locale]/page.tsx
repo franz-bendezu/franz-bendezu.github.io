@@ -14,7 +14,7 @@ export default function LocaleRootPage({
   const { locale = DEFAULT_LOCALE } = use(params);
 
   unstable_setRequestLocale(locale);
-  const projects = getDataByCategory().sort((a, b) => a.position - b.position).slice(0, 3);
+  const projects = getDataByCategory(locale).sort((a, b) => a.position - b.position).slice(0, 3);
   return (
     <>
       <HomePresentation />
