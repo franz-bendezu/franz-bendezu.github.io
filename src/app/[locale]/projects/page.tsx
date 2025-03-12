@@ -14,7 +14,7 @@ import { Link } from "@/navigation";
 import { Metadata } from "next";
 import { ProjectListEmpty } from "@/components/project/ListEmpty";
 
-export const getDataByCategory = (category?: string) => {
+export const getDataByCategory = (lang:string, category?: string) => {
   return (
     category
       ? [...PROJECTS.filter((project) => project.categoryCode === category)]
@@ -27,7 +27,7 @@ export const getDataByCategory = (category?: string) => {
       ).map((technology) => ({
         ...technology,
         categories: PROJECT_TECHNOLOGY_CATEGORY.filter((category) =>
-          technology.categoryCodes.includes(category.value),
+          technology.categoryCodes.includes(category.value) && project.lang === lang,
         ),
       })),
     }))
@@ -60,7 +60,7 @@ export default function ProjectsPage({
   const { locale = DEFAULT_LOCALE, category }  = use(params)
   unstable_setRequestLocale(locale);
   const categories = PROJECT_CATEGORIES;
-  const initialProjects = getDataByCategory(category);
+  const initialProjects = getDataByCategory(locale, category);
   const t = useTranslations("Projects");
 
   return (

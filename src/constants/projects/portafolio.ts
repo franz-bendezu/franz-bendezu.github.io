@@ -2,6 +2,7 @@ import type { IBaseProject } from "@/interfaces/project";
 
 export const MY_PORTFOLIO: IBaseProject = {
   status: "active",
+  lang: "es",
   title: "Mi Portafolio",
   shortDescription:
     "Portafolio personal que muestra mis proyectos y habilidades.",
@@ -74,6 +75,75 @@ export const MY_PORTFOLIO: IBaseProject = {
       title: "Modo Oscuro",
       description:
         "Soporte para modo oscuro para mejorar la experiencia de usuario en entornos con poca luz.",
+    },
+  ],
+};
+
+export const MY_PORTFOLIO_EN: IBaseProject = {
+  status: "active",
+  title: "My Portfolio",
+  lang: "en",
+  shortDescription: "Personal portfolio showcasing my projects and skills.",
+  description: "This is my personal portfolio where I showcase my projects, skills, and experiences. The portfolio is designed to be accessible and to display my work in a professional manner. It includes a projects section with detailed descriptions and links to the source code, as well as a skills section that highlights my technical knowledge. The portfolio is also multilingual, with support for English and Spanish.",
+  tags: ["React", "Node.js", "CSS", "HTML", "JavaScript"],
+  banner: {
+    src: "/images/portfolio.webp",
+    alt: "My Portfolio",
+  },
+  links: [
+    {
+      title: "Repository",
+      url: "https://github.com/franz-bendezu/franz-bendezu.github.io",
+      type: "github",
+    },
+    {
+      title: "Demo",
+      url: "https://franzbendezu.me",
+      type: "website",
+    },
+  ],
+  categoryCode: "personal",
+  technologyCodes: ["react", "nodejs", "css", "html", "typescript", "nextjs"],
+  start: "2023-01",
+  code: "my-portfolio",
+  projectGoals: [
+    {
+      title: "Showcase Projects and Skills",
+      description: "Showcase my personal projects and technical skills in a professional manner.",
+    },
+    {
+      title: "Responsive Design",
+      description: "Ensure the portfolio is accessible and looks good on all devices.",
+    },
+    {
+      title: "Multilingual Content",
+      description: "Ensure the portfolio content is available in both English and Spanish.",
+    },
+  ],
+  keyFeatures: [
+    {
+      title: "Project Showcase",
+      description: "Highlight my personal projects with detailed descriptions and links to the source code.",
+    },
+    {
+      title: "Responsive Design",
+      description: "Ensure the portfolio is accessible and looks good on all devices.",
+    },
+    {
+      title: "Interactive Elements",
+      description: "Include interactive elements to engage visitors and provide a better user experience.",
+    },
+    {
+      title: "Multilingual Support",
+      description: "Support for both English and Spanish languages.",
+    },
+    {
+      title: "SEO Optimized",
+      description: "Optimization for search engines to improve the portfolio's visibility.",
+    },
+    {
+      title: "Dark Mode",
+      description: "Support for dark mode to enhance user experience in low-light environments.",
     },
   ],
 };

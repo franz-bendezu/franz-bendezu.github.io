@@ -31,6 +31,7 @@ export const AGENDALO_MIGRATION_SSR: IBaseProject = {
   start: "2021-07",
   end: "2021-05",
   code: "agendalo-ssr-migration",
+  lang: "es",
   projectGoals: [
     {
       title: "Migración de la arquitectura",  
@@ -85,6 +86,96 @@ export const AGENDALO_MIGRATION_SSR: IBaseProject = {
       alt: "Arquitectura del Sistema",
       description:
         "Arquitectura del sistema migrado a renderizado del lado del servidor ( SSR).",
+    },
+  ],
+};
+
+export const AGENDALO_MIGRATION_SSR_EN: IBaseProject = {
+  status: "completed",
+  title: "Agendalo.io - SSR Migration",
+  shortDescription:
+    "Migration of the frontend platform to server-side rendering (SSR) to improve SEO and platform ranking.",
+  description:
+    "From July to May 2021, I was responsible for migrating the platform's frontend. I transformed a single-page application (SPA) into a server-side rendered (SSR) application using Node, improving SEO for users and the platform's ranking by 100%. I implemented unit tests for new interface components and end-to-end (E2E) tests for current flows, reducing the error rate.",
+  tags: [
+    "Vue",
+    "Webpack",
+    "Typescript",
+    "Nuxt",
+    "Node",
+    "Javascript",
+    "Cypress",
+    "Jest",
+  ],
+  categoryCode: "freelance",
+  technologyCodes: [
+    "vue",
+    "webpack",
+    "typescript",
+    "nuxt",
+    "node",
+    "javascript",
+    "cypress",
+    "jest",
+  ],
+  start: "2021-07",
+  end: "2021-05",
+  code: "agendalo-ssr-migration",
+  lang: "en",
+  projectGoals: [
+    {
+      title: "Architecture Migration",  
+      description:
+        "Migrate the single-page application (SPA) to a server-side rendered (SSR) application to improve SEO and platform ranking.",
+    },
+    {
+      title: "Performance Optimization",
+      description:
+        "Improve the efficiency and load time of the application to provide a smoother and faster user experience.",
+    },
+    {
+      title: "Error Prevention in Migrations",
+      description:
+        "Ensure a smooth transition to the new architecture through extensive testing and quality controls.",
+    },
+  ],
+  keyFeatures: [
+    {
+      title: "Server-Side Rendering (SSR)",
+      description:
+        "Migration of the platform to a server-side rendered (SSR) application using Nuxt.js. This improves visibility in search engines and the end-user experience.",
+    },
+    {
+      title: "Improved SEO",
+      description:
+        "Improved indexing and ranking in search engines through the implementation of SSR, ensuring that web pages are correctly indexed and presented to users in search results.",
+    },
+    {
+      title: "Automated Testing",
+      description:
+        "Development and integration of an automated testing framework that includes unit tests and end-to-end (E2E) tests. This ensures system stability and allows early detection of errors in application components and flows.",
+    },
+    {
+      title: "Optimized Performance",
+      description:
+        "Optimization of the overall performance of the application through SSR, ensuring fast load times and a smooth user experience. This includes infrastructure tuning and the implementation of best practices for system efficiency.",
+    },
+  ],
+  banner: {
+    src: "/images/agendalo-ssr-migration/architecture-overview.webp",
+    alt: "Agendalo.io - SSR Migration",
+  },
+  images: [
+    {
+      src: "/images/agendalo-ssr-migration/architecture-overview.webp",
+      alt: "Architecture Overview",
+      description: "Overview of the architecture of the SSR migration.",
+    },
+    {
+      src: "/images/agendalo-ssr-migration/architecture-system.webp",
+      alt: "System Architecture",
+      description:
+        "System architecture migrated to server-side rendering (SSR).",
     },
   ],
 };

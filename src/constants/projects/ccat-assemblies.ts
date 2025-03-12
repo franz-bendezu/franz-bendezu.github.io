@@ -23,6 +23,7 @@ export const CCAT_ASSEMBLIES: IBaseProject = {
   start: "2019-11",
   end: "2019-12",
   code: "ccat-assemblies",
+  lang: "es",
   projectGoals: [
     {
       title: "Registro de Asistencia",
@@ -75,6 +76,86 @@ export const CCAT_ASSEMBLIES: IBaseProject = {
       title: "Interfaz Reactiva",
       description:
         "Interfaz de usuario interactiva y eficiente desarrollada con React, mejorando la experiencia del usuario.",
+    },
+  ],
+};
+
+export const CCAT_ASSEMBLIES_EN: IBaseProject = {
+  status: "completed",
+  title: "CCAT Assembly Registration System",
+  shortDescription:
+    "Development of a system to register attendance and votes in CCAT assemblies, with public results.",
+  description:
+    "I developed a system to manage CCAT assemblies using Spring Boot, Spring JPA, Spring Security, and React. The system allows for the registration of member attendance and the recording of votes for important decisions. The voting results are recorded publicly, ensuring transparency in the process. I implemented robust security to protect data and system integrity, and used React for an interactive and efficient user interface.",
+  tags: [
+    "Spring Boot",
+    "Spring JPA",
+    "Spring Security",
+    "React",
+  ],
+  categoryCode: "personal",
+  technologyCodes: [
+    "spring-boot",
+    "spring-jpa",
+    "spring-security",
+    "react",
+  ],
+  start: "2019-11",
+  end: "2019-12",
+  code: "ccat-assemblies",
+  lang: "en",
+  projectGoals: [
+    {
+      title: "Attendance Registration",
+      description:
+        "Implement functionality to register member attendance at CCAT assemblies.",
+    },
+    {
+      title: "Vote Management",
+      description:
+        "Develop a system to record votes on decisions made during assemblies.",
+    },
+    {
+      title: "Result Transparency",
+      description:
+        "Ensure that voting results are recorded and displayed publicly to guarantee transparency.",
+    },
+    {
+      title: "System Security",
+      description:
+        "Integrate Spring Security to protect data and ensure system integrity.",
+    },
+    {
+      title: "Interactive User Interface",
+      description:
+        "Create an intuitive and efficient user interface using React to facilitate system interaction.",
+    },
+  ],
+  keyFeatures: [
+    {
+      title: "Attendance Registration",
+      description:
+        "Functionality to register and manage member attendance at CCAT assemblies.",
+    },
+    {
+      title: "Vote Management",
+      description:
+        "System to record and manage votes on assembly decisions, with public results.",
+    },
+    {
+      title: "Public Results",
+      description:
+        "Public display of voting results to ensure process transparency.",
+    },
+    {
+      title: "Robust Security",
+      description:
+        "Implementation of Spring Security to protect data and system integrity.",
+    },
+    {
+      title: "Reactive Interface",
+      description:
+        "Interactive and efficient user interface developed with React, enhancing user experience.",
     },
   ],
 };

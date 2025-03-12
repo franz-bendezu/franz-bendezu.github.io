@@ -18,6 +18,7 @@ export const AIVERSE:IBaseProject  = {
   start: "2023-01",
   end: "2023-10",
   code: "aiverse-app",
+  lang: "es",
   projectGoals: [
     {
       title: "Generación de Publicaciones Impulsada por IA",
@@ -44,6 +45,55 @@ export const AIVERSE:IBaseProject  = {
     {
       title: "Almacenamiento Descentralizado",
       description: "Almacenar archivos de manera descentralizada utilizando IPFS a través de Infura.",
+    },
+  ],
+};
+
+export const AIVERSE_EN: IBaseProject = {
+  status: "completed",
+  title: "Aiverse",
+  shortDescription: "Web application for generating social media posts and image processing powered by AI.",
+  description: "The 'Aiverse' aimed to use AI to generate social media posts and process images. The project used Vue.js for the frontend, AWS Lambda for serverless backend functions, and Docker for containerization. The application also integrated with IPFS via Infura for decentralized file storage. The CI/CD pipeline was managed using GitLab CI, ensuring automatic and smooth deployments.",
+  tags: ["Vue.js", "AWS Lambda", "Docker", "IPFS", "GitLab CI"],
+  links: [
+    {
+      title: "GitHub Repository",
+      url: "https://github.com/franz-bendezu/aiverse",
+      type: "github",
+    },
+  ],
+  categoryCode: "demo",
+  technologyCodes: ["vue3", "aws-lambda", "docker", "ipfs", "gitlab-ci"],
+  start: "2023-01",
+  end: "2023-10",
+  code: "aiverse-app",
+  lang: "en",
+  projectGoals: [
+    {
+      title: "AI-Powered Post Generation",
+      description: "Develop an AI-powered system to generate social media posts and process images.",
+    },
+    {
+      title: "Serverless Architecture",
+      description: "Implement a serverless architecture using AWS Lambda for scalable backend functions.",
+    },
+    {
+      title: "Decentralized Storage",
+      description: "Integrate with IPFS via Infura for decentralized file storage.",
+    },
+  ],
+  keyFeatures: [
+    {
+      title: "AI-Powered Post Generation",
+      description: "Generate social media posts and process images using AI.",
+    },
+    {
+      title: "Serverless Backend",
+      description: "Scalable backend functions deployed using AWS Lambda.",
+    },
+    {
+      title: "Decentralized Storage",
+      description: "Store files in a decentralized manner using IPFS via Infura.",
     },
   ],
 };

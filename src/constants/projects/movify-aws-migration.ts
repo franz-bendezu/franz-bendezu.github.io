@@ -3,6 +3,7 @@ import { IBaseProject } from "@/interfaces/project";
 export const MOVIFY_AWS_MIGRATION: IBaseProject = {
   status: "completed",
   title: "Movify.pe - Migración de Infraestructura a AWS",
+  lang:"es",
   shortDescription:
     "Migración de infraestructura a AWS para mejorar el despliegue y la disponibilidad.",
   description:
@@ -84,3 +85,90 @@ export const MOVIFY_AWS_MIGRATION: IBaseProject = {
     },
   ],
 };
+
+export const MOVIFY_AWS_MIGRATION_EN: IBaseProject = {
+  status: "completed",
+  title: "Movify.pe - Infrastructure Migration to AWS",
+  lang: "en",
+  shortDescription:
+    "Infrastructure migration to AWS to improve deployment and availability.",
+  description:
+    "From July to November 2023, I led the infrastructure migration to AWS to enhance deployment, availability, and service reliability. I established CI/CD workflows for deployment on AWS services, automating pipelines. I integrated Amazon S3 for storing photos and videos related to moving services.",
+  tags: [
+    "Amplify",
+    "Amazon RDS",
+    "EC2",
+    "S3",
+    "Spring Framework",
+    "Java",
+    "Vue.js",
+  ],
+  categoryCode: "freelance",
+  technologyCodes: [
+    "aws-amplify",
+    "amazon-rds",
+    "mariadb",
+    "aws-ec2",
+    "aws-s3",
+    "spring-framework",
+    "java",
+    "vue2",
+  ],
+  start: "2023-07",
+  end: "2023-11",
+  code: "movify-aws-migration",
+  projectGoals: [
+    {
+      title: "Migration to AWS",
+      description:
+        "Migrate the infrastructure to AWS to improve deployment and service availability.",
+    },
+    {
+      title: "CI/CD Workflows",
+      description: "Establish automated CI/CD workflows.",
+    },
+    {
+      title: "Storage Solution",
+      description: "Find storage solutions for photos and videos.",
+    },
+  ],
+  keyFeatures: [
+    {
+      title: "AWS Infrastructure",
+      description:
+        "Migration to AWS Amplify, Amazon RDS, EC2, and S3 to enhance availability and scalability.",
+    },
+    {
+      title: "Automated CI/CD Workflows",
+      description:
+        "CI/CD automation for continuous deployment on AWS services using GitHub Actions.",
+    },
+    {
+      title: "Storage on Amazon S3",
+      description:
+        "Integration with Amazon S3 to store photos and videos related to moving services.",
+    },
+  ],
+  banner: {
+    src: "/images/movify-aws-migration/architecture-overview.webp",
+    alt: "Movify AWS Migration",
+  },
+  images: [
+    {
+      src: "/images/movify-aws-migration/architecture-overview.webp",
+      alt: "Architecture of Movify.pe migration to AWS",
+      description: "Architecture of Movify.pe migration to AWS",
+    },
+    {
+      src: "/images/movify-aws-migration/architecture-system.webp",
+      alt: "System architecture of Movify.pe on AWS",
+      description: "System architecture of Movify.pe on AWS",
+    },
+    {
+      src: "/images/movify-aws-migration/architecture-backend.webp",
+      alt: "Backend architecture of Movify.pe on AWS",
+      description: "Backend architecture of Movify.pe on AWS",
+    },
+  ],
+};
+

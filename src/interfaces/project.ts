@@ -59,6 +59,7 @@ export interface IBaseProject {
     description: string;
   }[];
   images?: IProjectImage[];
+  lang: string; // Added lang field
 }
 
 export interface IProjectTechnology extends IBaseProjectTechnology {

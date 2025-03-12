@@ -32,6 +32,7 @@ export const CON_QUE_PROFE: IBaseProject = {
   start: "2021-01",
   end: "2021-03",
   code: "con-que-profe",
+  lang: "es",
   projectGoals: [
     {
       title: "Mejorar el Feedback Estudiantil",
@@ -107,6 +108,118 @@ export const CON_QUE_PROFE: IBaseProject = {
       src: "/images/con-que-profe/teacher-course-profile.webp",
       alt: "Con qué profe - Teacher Course Profile",
       description: "Perfil de un profesor en un curso",
+    },
+  ],
+};
+
+export const CON_QUE_PROFE_EN: IBaseProject = {
+  status: "completed",
+  title: "Which Professor",
+  shortDescription:
+    "Frontend design and development for a platform for comments on professors at the Faculty of Industrial and Systems Engineering at UNI.",
+  description:
+    "From January to March 2021, I led the design and development of an innovative platform that allowed students to share their opinions and comments about professors. I used modern technologies such as Nuxt.js with Typescript on the frontend and GraphQL with Apollo Server for data queries. Additionally, I integrated the faculty's authentication system (UNI-PASSPORT) to ensure the security and legitimacy of the comments. One of the standout features of this platform was the implementation of threaded conversations, which significantly improved transparency and facilitated comments on professors in each of their courses.",
+  tags: ["Nuxt.js", "Typescript", "GraphQL", "Apollo Server"],
+  banner: {
+    src: "/images/con-que-profe/banner.webp",
+    alt: "Teacher Comments Platform",
+  },
+  links: [
+    {
+      title: "Demo",
+      url: "https://conqueprofe.orcebot.com/",
+      type: "website",
+    },
+  ],
+  categoryCode: "freelance",
+  technologyCodes: [
+    "nuxt",
+    "typescript",
+    "graphql",
+    "apollo-server",
+    "nodejs",
+    "vuetify",
+    "vue2",
+  ],
+  start: "2021-01",
+  end: "2021-03",
+  code: "con-que-profe",
+  lang: "en",
+  projectGoals: [
+    {
+      title: "Improve Student Feedback",
+      description:
+        "Create a platform for students to provide structured feedback on faculty members.",
+    },
+    {
+      title: "Authentication Integration",
+      description:
+        "Implement UNI-PASSPORT authentication to ensure secure and legitimate feedback.",
+    },
+    {
+      title: "Improve Transparency",
+      description:
+        "Implement threaded conversations to improve transparency in feedback discussions.",
+    },
+  ],
+  keyFeatures: [
+    {
+      title: "Interactive Feedback",
+      description:
+        "Threaded conversations for detailed and transparent discussions.",
+    },
+    {
+      title: "Secure Authentication",
+      description:
+        "Integration with UNI-PASSPORT for secure user authentication.",
+    },
+    {
+      title: "Personalized User Experience",
+      description:
+        "Customizable user profiles and preferences for enhanced usability.",
+    },
+  ],
+  images: [
+    {
+      src: "/images/con-que-profe/home.webp",
+      alt: "Which Professor - Home",
+      description: "Home page of Which Professor",
+    },
+    {
+      src: "/images/con-que-profe/landing.webp",
+      alt: "Which Professor - Landing",
+      description: "Landing page of Which Professor",
+    },
+    {
+      src: "/images/con-que-profe/send-thread.webp",
+      alt: "Which Professor - Send Thread",
+      description: "Sending a new comment thread",
+    },
+    {
+      src: "/images/con-que-profe/teacher-course-review.webp",
+      alt: "Which Professor - Comment Thread",
+      description: "Rating of professors in a course",
+    },
+    {
+      src: "/images/con-que-profe/thread.webp",
+      alt: "Which Professor - Thread",
+      description: "Comment thread of a professor",
+    },
+
+    {
+      src: "/images/con-que-profe/threads.webp",
+      alt: "Which Professor - Threads",
+      description: "Comment threads of professors",
+    },
+    {
+      src: "/images/con-que-profe/user-profile.webp",
+      alt: "Which Professor - User Profile",
+      description: "Custom user profile",
+    },
+    {
+      src: "/images/con-que-profe/teacher-course-profile.webp",
+      alt: "Which Professor - Teacher Course Profile",
+      description: "Profile of a professor in a course",
     },
   ],
 };

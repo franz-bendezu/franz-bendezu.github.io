@@ -31,7 +31,7 @@ export default function ProjectPage({ params }: Props) {
   unstable_setRequestLocale(locale);
   const project = PROJECTS.find((project) => project.code === projectCode);
   const techs = PROJECT_TECHNOLOGIES.filter((tech) =>
-    project?.technologyCodes.includes(tech.code),
+    project?.technologyCodes.includes(tech.code) && project.lang === locale,
   );
   const t = useTranslations("Project");
   if (!project) {

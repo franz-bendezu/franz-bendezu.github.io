@@ -22,6 +22,7 @@ export const BUS_UNI_TRACKER: IBaseProject = {
   start: "2020-01",
   end: "2020-12",
   code: "bus-uni-tracker",
+  lang: "es",
   projectGoals: [
     {
       title: "Seguimiento en Tiempo Real",
@@ -82,5 +83,91 @@ export const BUS_UNI_TRACKER: IBaseProject = {
     src: "/images/bus-uni-tracker/app-edit-drivers.webp",
     alt: "Gestión de Conductores",
     description: "Panel para el registro y gestión de conductores, incluyendo asignación de rutas y horarios."
+  }]
+};
+
+export const BUS_UNI_TRACKER_EN: IBaseProject = {
+  status: "completed",
+  title: "Bus UNI Tracker",
+  shortDescription: "IOT Research Project for real-time tracking of the bus at the National University of Engineering.",
+  description: "From January to December 2020, I took on the responsibility of establishing the architecture and developing a real-time tracking system for the university bus using LoT LoRaWAN technologies. This research project was crucial to improving transportation efficiency within the university campus. I implemented Firebase and Vue.js for the web application, while Cloud Functions were used to receive real-time data from the LoRaWAN network. Additionally, I used Realtime Database and Firestore to display and store relevant information, such as routes, drivers, and traveled routes. The culmination of this project was reflected in the publication of a scientific article with DOI: 10.1109/ISC255366.2022.9922172.",
+  tags: ["LoT LoRaWAN", "Firebase", "Vue.js", "Cloud Functions"],
+  banner: {
+    src: "/images/bus-uni-tracker/banner.webp",
+    alt: "bus-uni Tracker",
+  },
+  links: [
+    {
+      title: "Article",
+      url: "https://ieeexplore.ieee.org/document/9922172",
+      type: "website",
+    },
+  ],
+  categoryCode: "freelance",
+  technologyCodes: ["iot", "lorawan", "firebase", "vue2", "cloud-functions"],
+  start: "2020-01",
+  end: "2020-12",
+  code: "bus-uni-tracker",
+  lang: "en",
+  projectGoals: [
+    {
+      title: "Real-Time Tracking",
+      description: "Develop a system for real-time tracking of university buses to improve transportation efficiency on campus.",
+    },
+    {
+      title: "Integration with Campus Services",
+      description: "Integrate with campus services for precise scheduling and route planning.",
+    },
+    {
+      title: "Research Publication",
+      description: "Contribute to academic research with a published article on LoT LoRaWAN technology.",
+    },
+  ],
+  keyFeatures:  [
+    {
+      title: "Real-Time Tracking",
+      description: "Map visualization of the current location of the bus and its routes in real-time.",
+    },
+    {
+      title: "Route Management",
+      description: "Administrative panel to create and modify bus routes, defining specific stops and routes.",
+    },
+    {
+      title: "Fleet Management",
+      description: "Management system for bus registration and IoT device assignment.",
+    },
+    {
+      title: "Personnel Management",
+      description: "Driver control with route assignment and schedule planning.",
+    },
+    {
+      title: "IoT Integration",
+      description: "Implementation of LoT LoRaWAN technology for real-time data transmission.",
+    }
+  ],
+  images: [{
+    src: "/images/bus-uni-tracker/app-home.webp",
+    alt: "Main Screen",
+    description: "Main view of the application showing the map and real-time location of the university bus."
+  },
+  {
+    src: "/images/bus-uni-tracker/app-view-buss-route.webp",
+    alt: "Bus Route View",
+    description: "Detailed interface showing the current bus route, including stops and route on the campus map."
+  },
+  {
+    src: "/images/bus-uni-tracker/app-edit-route.webp",
+    alt: "Route Editing",
+    description: "Administration panel to create and modify bus routes, allowing the definition of stops and routes."
+  },
+  {
+    src: "/images/bus-uni-tracker/app-edit-busses.webp",
+    alt: "Bus Management",
+    description: "Interface for managing the bus fleet, including registration and assignment of IoT devices."
+  },
+  {
+    src: "/images/bus-uni-tracker/app-edit-drivers.webp",
+    alt: "Driver Management",
+    description: "Panel for driver registration and management, including route assignment and schedules."
   }]
 };

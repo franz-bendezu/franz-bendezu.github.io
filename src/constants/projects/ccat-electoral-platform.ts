@@ -34,6 +34,7 @@ export const CCAT_ELECTORAL_PLATFORM: IBaseProject = {
   start: "2020-09",
   end: "2020-12",
   code: "ccat-electoral-platform",
+  lang: "es",
   projectGoals: [
     {
       title: "Sistema de Votación en Línea",
@@ -89,6 +90,100 @@ export const CCAT_ELECTORAL_PLATFORM: IBaseProject = {
       title: "Gestión Eficiente de Datos",
       description:
         "Manejo de datos utilizando Google Blob Storage y Firebase, con soluciones de respaldo efectivas.",
+    },
+  ],
+};
+
+export const CCAT_ELECTORAL_PLATFORM_EN: IBaseProject = {
+  status: "completed",
+  title:
+    "CCAT Elections, Centro Cultural Avanzada Tecnológica - National University of Engineering",
+  shortDescription:
+    "Development and implementation of an online voting system to ensure secure, anonymous, and reliable voting processes.",
+  description:
+    "From September to December 2020, I collaborated with the CCAT elections team to develop and implement an online voting system. I designed a responsive and user-friendly interface, managed backend services for user authentication, vote counting, and report generation. I ensured system security by integrating secure authentication and login protocols. Additionally, I optimized deployment and scalability through containerization, and managed data storage with effective backup solutions.",
+  tags: [
+    "Java",
+    "Spring Boot",
+    "PostgreSQL",
+    "Docker",
+    "GitLab",
+    "Google Blob Storage",
+    "Firebase",
+    "Keycloak",
+    "Oauth2",
+  ],
+  categoryCode: "personal",
+  technologyCodes: [
+    "java",
+    "spring-boot",
+    "postgresql",
+    "docker",
+    "gitlab",
+    "google-blob-storage",
+    "firebase",
+    "keycloak",
+    "oauth2",
+  ],
+  start: "2020-09",
+  end: "2020-12",
+  code: "ccat-electoral-platform",
+  lang: "en",
+  projectGoals: [
+    {
+      title: "Online Voting System",
+      description:
+        "Develop and implement an online voting system that ensures secure, anonymous, and reliable processes.",
+    },
+    {
+      title: "User Interface",
+      description: "Design a responsive and user-friendly interface.",
+    },
+    {
+      title: "Backend Management",
+      description:
+        "Manage backend services for user authentication, vote counting, and report generation.",
+    },
+    {
+      title: "System Security",
+      description: "Integrate secure authentication and login protocols.",
+    },
+    {
+      title: "Scalability and Deployment",
+      description:
+        "Optimize scalability and deployment through containerization.",
+    },
+    {
+      title: "Data Management",
+      description:
+        "Manage data storage with effective backup solutions.",
+    },
+  ],
+  keyFeatures: [
+    {
+      title: "Secure Voting System",
+      description:
+        "Online voting system that ensures anonymous and reliable voting processes.",
+    },
+    {
+      title: "Responsive User Interface",
+      description:
+        "Interface designed to be accessible and user-friendly from any device.",
+    },
+    {
+      title: "Containerized Deployment",
+      description:
+        "Use of Docker to optimize deployment and scalability across different environments.",
+    },
+    {
+      title: "Integrated Security",
+      description:
+        "Integration of secure authentication and login protocols with Keycloak and Oauth2.",
+    },
+    {
+      title: "Efficient Data Management",
+      description:
+        "Handling data using Google Blob Storage and Firebase, with effective backup solutions.",
     },
   ],
 };
