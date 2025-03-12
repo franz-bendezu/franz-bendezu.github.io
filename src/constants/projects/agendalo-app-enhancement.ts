@@ -3,7 +3,6 @@ import { IBaseProject } from "@/interfaces/project";
 export const AGENDALO_APP_ENHANCEMENT: IBaseProject = {
   status: "completed",
   title: "Agendalo.io - Mejora de la Aplicación",
-  lang: "es",
   shortDescription: "Mejoras en el MVP frontend para optimizar la experiencia del usuario y la estabilidad de la aplicación.",
   description: "De abril a mayo de 2021, fui responsable de mejorar el MVP frontend. Mejoré la experiencia del usuario simplificando los procesos de reserva y configurando opciones de servicio más claras. También mejoré la estabilidad general del frontend para asegurar una navegación fluida e ininterrumpida entre vistas.",
   tags: [
@@ -67,7 +66,6 @@ export const AGENDALO_APP_ENHANCEMENT_EN: IBaseProject = {
   start: "2021-04",
   end: "2021-05",
   code: "agendalo-app-enhancement",
-  lang: "en",
   projectGoals: [
     {
       title: "MVP Improvement",
