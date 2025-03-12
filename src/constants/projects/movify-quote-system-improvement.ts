@@ -4,6 +4,7 @@ export const MOVIFY_QUOTE_SYSTEM_IMPROVEMENT: IBaseProject = {
   status: "completed",
   title: "Movify.pe - Mejora del Sistema de Cotizaciones Web",
   shortDescription: "Mejora del sistema de cotizaciones web.",
+  lang: "es",
   description:
     "De octubre a diciembre de 2021, mejoré la interfaz del sistema de cotizaciones web integrando un estilo personalizado para Google Maps y estableciendo una nueva UI/UX para cada paso de la cotización y la plantilla de correo electrónico. Migré un iframe a un plugin de WordPress para un mejor manejo de actualizaciones. Desarrollé funciones para la captura de clientes potenciales y datos de auditoría.",
   tags: ["React", "JavaScript", "HTML", "CSS", "WordPress"],
@@ -91,6 +92,7 @@ export const MOVIFY_QUOTE_SYSTEM_IMPROVEMENT: IBaseProject = {
 export const MOVIFY_QUOTE_SYSTEM_IMPROVEMENT_EN: IBaseProject = {
   status: "completed",
   title: "Movify.pe - Web Quoting System Improvement",
+  lang: "en",
   shortDescription: "Improvement of the web quoting system.",
   description:
     "From October to December 2021, I improved the interface of the web quoting system by integrating a custom style for Google Maps and establishing a new UI/UX for each step of the quote and email template. I migrated an iframe to a WordPress plugin for better update management. I developed functions for capturing leads and audit data.",
