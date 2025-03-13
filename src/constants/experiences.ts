@@ -49,7 +49,7 @@ export const WORK_EXPERIENCES = [
     ],
   },  
   {
-    id: 5,
+    id: 4,
     company: "Gestión y Sistemas SAC",
     location: "Lima, Perú",
     position: "Analista de Desarrollo Junior",
@@ -78,7 +78,7 @@ export const WORK_EXPERIENCES = [
       "Realicé análisis de incidentes para implementar mejoras y nuevas características, trabajando en colaboración con el equipo de experiencia de usuario (UX)",
     ],
   },
-];
+] as const;
 
 export const EDUCATION_EXPERIENCES = [
   {
@@ -90,7 +90,7 @@ export const EDUCATION_EXPERIENCES = [
     end: "2023",
     link: "https://www.uni.edu.pe/",
   },
-];
+] as const;
 
 export const COURSE_CERTIFICATIONS = [
   {
@@ -153,4 +153,4 @@ export const COURSE_CERTIFICATIONS = [
     url: "https://coursera.org/verify/professional-cert/AN72XYKRCANN",
     date: "Septiembre 2020 - Octubre 2020",
   },
-];
+] as const;
