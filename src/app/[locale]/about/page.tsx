@@ -10,14 +10,14 @@ import {
   BuildingLibraryIcon,
 } from "@heroicons/react/20/solid";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { useTranslations } from "next-intl";
+import { Locale, useTranslations } from "next-intl";
 import { ExperienceWorkCard } from "@/components/experience/WorkCard";
 import { ExperienceEducationCard } from "@/components/experience/EducationCard";
 import Certifications from "@/components/about/Certifications";
 import { routing } from "../../../../i18n/routing";
 
 type Props = {
-  params: Promise<{ locale?: string }>;
+  params: Promise<{ locale?: Locale }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
