@@ -5,12 +5,12 @@ import Script from "next/script";
 import { ChatBubbleLeftIcon } from "@heroicons/react/20/solid";
 import { ContactForm } from "../../../components/contact/Form";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { useTranslations } from "next-intl";
+import { Locale, useTranslations } from "next-intl";
 import { DEFAULT_LOCALE } from "@/constants/locales";
 import { routing } from "../../../../i18n/routing";
 
 type Props = {
-  params: Promise<{ locale?: string }>;
+  params: Promise<{ locale?: Locale }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

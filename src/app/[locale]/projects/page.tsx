@@ -8,7 +8,7 @@ import {
 import { IProject } from "../../../interfaces/project";
 import { ProjectExplorerList } from "@/components/project/ExplorerList";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { useTranslations } from "next-intl";
+import { Locale, useTranslations } from "next-intl";
 import { Link } from "../../../../i18n/navigation";
 import { Metadata } from "next";
 import { ProjectListEmpty } from "@/components/project/ListEmpty";
@@ -43,7 +43,7 @@ export const getDataByCategory = (lang:string, category?: string) => {
 };
 
 type Props = {
-  params: Promise<{ category?: string; locale?: string }>;
+  params: Promise<{ category?: string; locale?: Locale }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

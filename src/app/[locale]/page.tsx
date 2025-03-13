@@ -5,11 +5,12 @@ import { setRequestLocale } from "next-intl/server";
 import { Skills } from "@/components/home/Skills";
 import { LastProjects } from "@/components/home/LastProjects";
 import { getDataByCategory } from "./projects/page";
+import { Locale } from "next-intl";
 
 export default function LocaleRootPage({
   params,
 }: {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: Locale }>;
 }) {
   const { locale = DEFAULT_LOCALE } = use(params);
   setRequestLocale(locale);

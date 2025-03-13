@@ -10,6 +10,7 @@ import { ProjectTechsList } from "@/components/project/TechsList";
 import { ProjectFeatures } from "@/components/project/Features";
 import { ProjectImagesCarousel } from "@/components/project/Images";
 import { routing } from "../../../../../i18n/routing";
+import { Locale } from "next-intl";
 
 export const generateStaticParams = () => {
   const params: { projectCode: string }[] = [];
@@ -22,7 +23,7 @@ export const generateStaticParams = () => {
 type Props = {
   params: Promise<{
     projectCode: string;
-    locale?: string;
+    locale?: Locale;
   }>;
 };
 
