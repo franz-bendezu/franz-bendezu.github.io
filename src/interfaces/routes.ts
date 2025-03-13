@@ -1,5 +1,5 @@
 export interface IRouteNavbar {
-  title: string;
+  title: 'index' | 'projects' | 'about' | 'contact';
   path: string;
   exact: boolean;
 }
