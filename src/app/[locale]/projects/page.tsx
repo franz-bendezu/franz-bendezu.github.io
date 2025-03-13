@@ -7,12 +7,12 @@ import {
 } from "../../../constants/project-techologies";
 import { IProject } from "../../../interfaces/project";
 import { ProjectExplorerList } from "@/components/project/ExplorerList";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
-import { useTranslations } from "next-intl";
-import { DEFAULT_LOCALE } from "@/constants/locales";
-import { Link } from "@/navigation";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Locale, useTranslations } from "next-intl";
+import { Link } from "../../../../i18n/navigation";
 import { Metadata } from "next";
 import { ProjectListEmpty } from "@/components/project/ListEmpty";
+import { routing } from "../../../../i18n/routing";
 
 export const getDataByCategory = (lang:string, category?: string) => {
   return (
@@ -43,11 +43,11 @@ export const getDataByCategory = (lang:string, category?: string) => {
 };
 
 type Props = {
-  params: Promise<{ category?: string; locale?: string }>;
+  params: Promise<{ category?: string; locale?: Locale }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale = DEFAULT_LOCALE } = await params;
+  const { locale = routing.defaultLocale } = await params;
   const t = await getTranslations({ locale, namespace: "Projects" });
   return {
     title: t("title"),
@@ -57,8 +57,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function ProjectsPage({
   params
 }: Props) {
-  const { locale = DEFAULT_LOCALE, category }  = use(params)
-  unstable_setRequestLocale(locale);
+  const { locale = routing.defaultLocale, category }  = use(params)
+  setRequestLocale(locale);
   const categories = PROJECT_CATEGORIES;
   const initialProjects = getDataByCategory(locale, category);
   const t = useTranslations("Projects");

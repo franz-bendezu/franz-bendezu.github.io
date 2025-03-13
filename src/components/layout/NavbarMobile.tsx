@@ -9,12 +9,12 @@ import {
 } from "@headlessui/react";
 import NavLink from "./NavLink";
 import { Bars4Icon, XMarkIcon } from "@heroicons/react/20/solid";
-import { useTranslations } from "next-intl";
+import { Locale, useTranslations } from "next-intl";
 import { IRouteNavbar } from "@/interfaces/routes";
 
 const NavbarMobile: React.FC<{
   routes: IRouteNavbar[];
-  locale: string;
+  locale: Locale;
 }> = ({ routes, locale }) => {
   const t = useTranslations("Navigation");
   return (

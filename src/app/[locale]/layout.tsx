@@ -1,26 +1,26 @@
-import { use } from "react";
 import { ThemeProvider } from "next-themes";
 import Footer from "../../components/layout/Footer";
 import Navbar from "../../components/layout/Navbar";
-import { NextIntlClientProvider, useMessages } from "next-intl";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { hasLocale, Locale, NextIntlClientProvider } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { DEFAULT_LOCALE, LOCALES } from "@/constants/locales";
+import { routing } from "../../../i18n/routing";
+import { notFound } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export function generateStaticParams() {
-  return LOCALES;
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 type Props = {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: Locale }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale = DEFAULT_LOCALE } = await params;
+  const { locale = routing.defaultLocale } = await params;
   const t = await getTranslations({ locale, namespace: "Metadata" });
   return {
     title: {
@@ -31,11 +31,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function LocaleLayout({ children, params }: Props) {
-  const { locale = DEFAULT_LOCALE } = use(params);
-
-  unstable_setRequestLocale(locale);
-  const messages = useMessages();
+export default async function LocaleLayout({ children, params }: Props) {
+  const { locale = routing.defaultLocale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+  setRequestLocale(locale);
   return (
     <html lang={locale}>
       <body className={inter.className}>
@@ -49,8 +50,6 @@ export default function LocaleLayout({ children, params }: Props) {
               },
             },
           }}
-          messages={messages}
-          locale={locale}
         >
           <ThemeProvider attribute="class" defaultTheme="light">
             <div className="flex min-h-screen flex-col bg-gradient-to-t from-gray-50 to-gray-200 dark:bg-gradient-to-b dark:from-slate-950 dark:to-slate-800">

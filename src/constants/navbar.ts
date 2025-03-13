@@ -1,3 +1,5 @@
+import { IRouteNavbar } from "@/interfaces/routes";
+
 export const ROUTES_NAVBAR = [
   {
     title: "index",
@@ -19,4 +21,4 @@ export const ROUTES_NAVBAR = [
     path: "/contact",
     exact: true,
   },
-];
+] satisfies IRouteNavbar[];

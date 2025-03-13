@@ -4,12 +4,13 @@ import React from "react";
 import Script from "next/script";
 import { ChatBubbleLeftIcon } from "@heroicons/react/20/solid";
 import { ContactForm } from "../../../components/contact/Form";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
-import { useTranslations } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Locale, useTranslations } from "next-intl";
 import { DEFAULT_LOCALE } from "@/constants/locales";
+import { routing } from "../../../../i18n/routing";
 
 type Props = {
-  params: Promise<{ locale?: string }>;
+  params: Promise<{ locale?: Locale }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -22,8 +23,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const ContactPage: NextPage<Props> =
 ({ params }: Props)=> {
-  const { locale = DEFAULT_LOCALE } = use(params);
-  unstable_setRequestLocale(locale);
+  const { locale = routing.defaultLocale } = use(params);
+  setRequestLocale(locale);
   const t = useTranslations("Contact");
   return (
     <div className="container flex h-full w-full flex-col items-center justify-center gap-4">
