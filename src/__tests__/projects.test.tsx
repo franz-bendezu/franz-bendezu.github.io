@@ -3,9 +3,21 @@ import { render, screen } from "@testing-library/react";
 import ProjectsPage from "../app/[locale]/projects/page";
 import { NextIntlClientProvider } from "next-intl";
 import { act } from "react";
+import { createNavigation } from "next-intl/navigation";
 
 vi.mock("next-intl/server", () => ({
   setRequestLocale: vi.fn(),
+}));
+
+vi.mock("next-intl/navigation", () => ({
+  createNavigation: vi.fn(
+    () => ({
+      Link: vi.fn(),
+      redirect: vi.fn(),
+      usePathname: vi.fn(),
+      useRouter: vi.fn(),
+    }),
+  ),
 }));
 
 test("ProjectsPage", async () => {
