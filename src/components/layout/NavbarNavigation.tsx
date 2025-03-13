@@ -4,14 +4,11 @@ import ThemeSwitch from "../ui/ThemeSwtich";
 import NavbarDesktop from "./NavbarDesktop";
 import NavbarMobile from "./NavbarMobile";
 import { NavbarToggleLang } from "./NavbarToggleLang";
+import { IRouteNavbar } from "@/interfaces/routes";
 
 export const NavbarNavigation: React.FC<{
   locale: Locale;
-  routes: {
-    title: string;
-    path: string;
-    exact: boolean;
-  }[];
+  routes: IRouteNavbar[];
 }> = ({ locale, routes }) => {
   return (
     <div className="flex items-center">

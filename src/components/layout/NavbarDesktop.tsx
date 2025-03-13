@@ -2,10 +2,11 @@ import React from "react";
 import NavLink from "./NavLink";
 import { useTranslations } from "next-intl";
 import { IRouteNavbar } from "@/interfaces/routes";
+import { Locale } from "next-intl";
 
 const NavbarDesktop: React.FC<{
   routes: IRouteNavbar[];
-  locale: string;
+  locale: Locale;
 }> = ({ routes, locale }) => {
   const t = useTranslations("Navigation");
   return (
