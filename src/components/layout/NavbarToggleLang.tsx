@@ -2,12 +2,12 @@
 import Link from "next/link";
 import React from "react";
 import { LanguageIcon } from "@heroicons/react/20/solid";
-import { useTranslations } from "next-intl";
+import { Locale, useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { LOCALES } from "@/constants/locales";
 import { routing } from "../../../i18n/routing";
 
-export const NavbarToggleLang: React.FC<{ locale: string }> = ({ locale }) => {
+export const NavbarToggleLang: React.FC<{ locale: Locale }> = ({ locale }) => {
   const t = useTranslations("Navigation");
   const pathname = usePathname();
   const otherLocale = LOCALES.map((cur) => ({
