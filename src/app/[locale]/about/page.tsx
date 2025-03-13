@@ -11,17 +11,17 @@ import {
 } from "@heroicons/react/20/solid";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
-import { DEFAULT_LOCALE } from "@/constants/locales";
 import { ExperienceWorkCard } from "@/components/experience/WorkCard";
 import { ExperienceEducationCard } from "@/components/experience/EducationCard";
 import Certifications from "@/components/about/Certifications";
+import { routing } from "../../../../i18n/routing";
 
 type Props = {
   params: Promise<{ locale?: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale = DEFAULT_LOCALE } = await params;
+  const { locale = routing.defaultLocale } = await params;
   const t = await getTranslations({ locale, namespace: "About" });
   return {
     title: t("title"),
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function AboutPage({ params }: Props) {
-  const { locale = DEFAULT_LOCALE } = use(params);
+  const { locale = routing.defaultLocale } = use(params);
   setRequestLocale(locale);
   const t = useTranslations("About");
 
