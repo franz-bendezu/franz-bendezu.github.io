@@ -1,11 +1,10 @@
 import { ThemeProvider } from "next-themes";
 import Footer from "../../components/layout/Footer";
 import Navbar from "../../components/layout/Navbar";
-import { hasLocale, NextIntlClientProvider, useMessages } from "next-intl";
+import { hasLocale, Locale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { LOCALES } from "@/constants/locales";
 import { routing } from "../../../i18n/routing";
 import { notFound } from "next/navigation";
 
@@ -17,7 +16,7 @@ export function generateStaticParams() {
 
 type Props = {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: Locale }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

@@ -1,11 +1,12 @@
 
+import { Locale } from "next-intl";
 import ThemeSwitch from "../ui/ThemeSwtich";
 import NavbarDesktop from "./NavbarDesktop";
 import NavbarMobile from "./NavbarMobile";
 import { NavbarToggleLang } from "./NavbarToggleLang";
 
 export const NavbarNavigation: React.FC<{
-  locale: string;
+  locale: Locale;
   routes: {
     title: string;
     path: string;
