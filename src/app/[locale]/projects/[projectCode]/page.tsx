@@ -1,15 +1,16 @@
 import { use } from "react";
-import { DEFAULT_LOCALE } from "@/constants/locales";
 import { PROJECTS } from "@/constants/projects";
 import { PROJECT_TECHNOLOGIES } from "@/constants/project-techologies";
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { ProjectSummary } from "@/components/project/Summary";
 import { ProjectOverview } from "@/components/project/Overview";
 import { ProjectGoals } from "@/components/project/Goals";
 import { ProjectTechsList } from "@/components/project/TechsList";
 import { ProjectFeatures } from "@/components/project/Features";
 import { ProjectImagesCarousel } from "@/components/project/Images";
+import { routing } from "../../../../../i18n/routing";
+import { Locale } from "next-intl";
 
 export const generateStaticParams = () => {
   const params: { projectCode: string }[] = [];
@@ -22,13 +23,13 @@ export const generateStaticParams = () => {
 type Props = {
   params: Promise<{
     projectCode: string;
-    locale?: string;
+    locale?: Locale;
   }>;
 };
 
 export default function ProjectPage({ params }: Props) {
-  const { locale = DEFAULT_LOCALE, projectCode } = use(params);
-  unstable_setRequestLocale(locale);
+  const { locale = routing.defaultLocale, projectCode } = use(params);
+  setRequestLocale(locale);
   const project = PROJECTS.find((project) => project.code === projectCode && project.lang === locale);
   const techs = PROJECT_TECHNOLOGIES.filter((tech) =>
     project?.technologyCodes.includes(tech.code),

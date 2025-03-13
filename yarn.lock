@@ -994,6 +994,11 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.10.4.tgz#427d5549943a9c6fce808e39ea64dbe60d4047f1"
   integrity sha512-WJgX9nzTqknM393q1QJDJmoW28kUfEnybeTfVNcNAPnIx210RXm2DiXiHzfNPJNIUUb1tJnz/l4QGtJ30PgWmA==
 
+"@schummar/icu-type-parser@1.21.5":
+  version "1.21.5"
+  resolved "https://registry.yarnpkg.com/@schummar/icu-type-parser/-/icu-type-parser-1.21.5.tgz#75989085bbbf80ee325874a0137437bde77e9baf"
+  integrity sha512-bXHSaW5jRTmke9Vd0h5P7BtWZG9Znqb8gSDxZnxaGSJnGwPLDPfS+3g0BKzeWqzgZPsIVZkM7m2tbo18cm5HBw==
+
 "@stripe/react-stripe-js@^1.7.1":
   version "1.16.5"
   resolved "https://registry.yarnpkg.com/@stripe/react-stripe-js/-/react-stripe-js-1.16.5.tgz#51cf862b50ca91ae6193c77a5bec889e81047f10"
@@ -3636,14 +3641,14 @@ next-image-export-optimizer@^1.18.0:
     sharp "^0.33.1"
     typescript "^5.2.2"
 
-next-intl@^3.26.5:
-  version "3.26.5"
-  resolved "https://registry.yarnpkg.com/next-intl/-/next-intl-3.26.5.tgz#5f4fc987df05ba80c7cb380f4bcff789ffde74b7"
-  integrity sha512-EQlCIfY0jOhRldiFxwSXG+ImwkQtDEfQeSOEQp6ieAGSLWGlgjdb/Ck/O7wMfC430ZHGeUKVKax8KGusTPKCgg==
+next-intl@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/next-intl/-/next-intl-4.0.1.tgz#eec1005cfa7b7f89c450306d9a62ad82a70c1457"
+  integrity sha512-6lqw8vv3GsjQ13lxEfgjBj7GW6kdmotiqRzDH4gQ18CGhvCwbJoj1kc5szViZH0iQZ0g8GJUque2xt7WOwqT9Q==
   dependencies:
     "@formatjs/intl-localematcher" "^0.5.4"
     negotiator "^1.0.0"
-    use-intl "^3.26.5"
+    use-intl "^4.0.1"
 
 next-themes@^0.4.6:
   version "0.4.6"
@@ -4730,12 +4735,13 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-use-intl@^3.26.5:
-  version "3.26.5"
-  resolved "https://registry.yarnpkg.com/use-intl/-/use-intl-3.26.5.tgz#25ceda122ba1e4cee6d55d674a20a71cc0ab2559"
-  integrity sha512-OdsJnC/znPvHCHLQH/duvQNXnP1w0hPfS+tkSi3mAbfjYBGh4JnyfdwkQBfIVf7t8gs9eSX/CntxUMvtKdG2MQ==
+use-intl@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/use-intl/-/use-intl-4.0.1.tgz#487c1eab140aec70cc7ef6c70d825fdb0e0c1979"
+  integrity sha512-UdwGqRI6M0asJK3E0+GtwJI8zrwr2yRQLtcHALMlDwUUTlGZNSCLtr2G/E4aoDfXiODbSBQwQFNco0iItp1mIA==
   dependencies:
     "@formatjs/fast-memoize" "^2.2.0"
+    "@schummar/icu-type-parser" "1.21.5"
     intl-messageformat "^10.5.14"
 
 vite-node@3.0.8:

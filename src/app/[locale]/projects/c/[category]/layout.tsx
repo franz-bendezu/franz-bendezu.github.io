@@ -1,8 +1,8 @@
-import { use } from "react";
-import { DEFAULT_LOCALE } from "@/constants/locales";
 import { PROJECT_CATEGORIES } from "@/constants/projects";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { ReactNode } from "react";
+import { routing } from "../../../../../../i18n/routing";
+import { Locale } from "next-intl";
 export const generateStaticParams = () => {
   const params: { category: string }[] = [];
   for (const category of PROJECT_CATEGORIES) {
@@ -13,14 +13,14 @@ export const generateStaticParams = () => {
 
 type Props = {
   children: ReactNode;
-  params:Promise< { locale: string; category?: string }>;
+  params:Promise< { locale: Locale; category?: string }>;
 };
 
-export default function ProjectCategoryLayout({
+export default async function ProjectCategoryLayout({
   children,
   params,
 }: Props) {
-  const { locale = DEFAULT_LOCALE}  = use(params)
-  unstable_setRequestLocale(locale);
+  const { locale = routing.defaultLocale}  = await params
+  setRequestLocale(locale);
   return <>{children}</>;
 }
