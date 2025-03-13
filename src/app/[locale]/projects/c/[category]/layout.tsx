@@ -1,4 +1,3 @@
-import { use } from "react";
 import { PROJECT_CATEGORIES } from "@/constants/projects";
 import { setRequestLocale } from "next-intl/server";
 import { ReactNode } from "react";
