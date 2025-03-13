@@ -3,7 +3,7 @@ import ProjectListItemTechStack from "./ListItemTechStack";
 import Card from "../ui/Card";
 import { IProjectLink, IProjectTechnology } from "../../interfaces/project";
 import { LinkList } from "./ListItemLinkList";
-import { Link } from "@/navigation";
+import { Link } from "../../../i18n/navigation";
 import { useTranslations } from "next-intl";
 
 interface ProjectCardProps {
@@ -11,7 +11,7 @@ interface ProjectCardProps {
     src: string;
     alt: string;
   };
-  title?: string;
+  title: string;
   description: string;
   selectedTechs?: IProjectTechnology[];
   technologies: IProjectTechnology[];

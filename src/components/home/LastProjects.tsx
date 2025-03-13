@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import { ProjectList } from "../project/List";
 import { FC } from "react";
 import { IProject } from "@/interfaces/project";
-import { Link } from "@/navigation";
+import { Link } from "../../../i18n/navigation";
 
 export const LastProjects: FC<{
   projects: IProject[];

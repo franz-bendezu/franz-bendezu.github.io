@@ -7,10 +7,10 @@ import {
 } from "../../../constants/project-techologies";
 import { IProject } from "../../../interfaces/project";
 import { ProjectExplorerList } from "@/components/project/ExplorerList";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { DEFAULT_LOCALE } from "@/constants/locales";
-import { Link } from "@/navigation";
+import { Link } from "../../../../i18n/navigation";
 import { Metadata } from "next";
 import { ProjectListEmpty } from "@/components/project/ListEmpty";
 
@@ -58,7 +58,7 @@ export default function ProjectsPage({
   params
 }: Props) {
   const { locale = DEFAULT_LOCALE, category }  = use(params)
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const categories = PROJECT_CATEGORIES;
   const initialProjects = getDataByCategory(locale, category);
   const t = useTranslations("Projects");

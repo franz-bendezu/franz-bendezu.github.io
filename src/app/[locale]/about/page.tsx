@@ -9,7 +9,7 @@ import {
   BriefcaseIcon,
   BuildingLibraryIcon,
 } from "@heroicons/react/20/solid";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { DEFAULT_LOCALE } from "@/constants/locales";
 import { ExperienceWorkCard } from "@/components/experience/WorkCard";
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default function AboutPage({ params }: Props) {
   const { locale = DEFAULT_LOCALE } = use(params);
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const t = useTranslations("About");
 
   const translatedWorkExperiences = WORK_EXPERIENCES.map((experience) => ({
