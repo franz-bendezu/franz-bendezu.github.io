@@ -10,7 +10,7 @@ vi.mock("@formspree/react", () => ({
 }));
 
 vi.mock("next-intl/server", () => ({
-  unstable_setRequestLocale: vi.fn(),
+  setRequestLocale: vi.fn(),
 }));
 
 test("Page", async () => {

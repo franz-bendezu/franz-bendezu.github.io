@@ -1,7 +1,7 @@
 import { use } from "react";
 import { DEFAULT_LOCALE } from "@/constants/locales";
 import { PROJECT_CATEGORIES } from "@/constants/projects";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { ReactNode } from "react";
 export const generateStaticParams = () => {
   const params: { category: string }[] = [];
@@ -21,6 +21,6 @@ export default function ProjectCategoryLayout({
   params,
 }: Props) {
   const { locale = DEFAULT_LOCALE}  = use(params)
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   return <>{children}</>;
 }

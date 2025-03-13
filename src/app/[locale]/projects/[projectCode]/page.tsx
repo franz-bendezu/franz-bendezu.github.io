@@ -3,7 +3,7 @@ import { DEFAULT_LOCALE } from "@/constants/locales";
 import { PROJECTS } from "@/constants/projects";
 import { PROJECT_TECHNOLOGIES } from "@/constants/project-techologies";
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { ProjectSummary } from "@/components/project/Summary";
 import { ProjectOverview } from "@/components/project/Overview";
 import { ProjectGoals } from "@/components/project/Goals";
@@ -28,7 +28,7 @@ type Props = {
 
 export default function ProjectPage({ params }: Props) {
   const { locale = DEFAULT_LOCALE, projectCode } = use(params);
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const project = PROJECTS.find((project) => project.code === projectCode && project.lang === locale);
   const techs = PROJECT_TECHNOLOGIES.filter((tech) =>
     project?.technologyCodes.includes(tech.code),

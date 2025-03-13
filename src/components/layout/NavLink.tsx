@@ -1,6 +1,6 @@
 "use client";
 import React, { MouseEvent, ReactNode, forwardRef } from "react";
-import { Link, usePathname } from "@/navigation";
+import { Link, usePathname } from "../../../i18n/navigation";
 import { DownArrowIcon } from "../icon/DownIcon";
 
 interface NavLinkProps {

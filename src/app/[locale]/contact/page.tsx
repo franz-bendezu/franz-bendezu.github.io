@@ -4,7 +4,7 @@ import React from "react";
 import Script from "next/script";
 import { ChatBubbleLeftIcon } from "@heroicons/react/20/solid";
 import { ContactForm } from "../../../components/contact/Form";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { DEFAULT_LOCALE } from "@/constants/locales";
 
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const ContactPage: NextPage<Props> =
 ({ params }: Props)=> {
   const { locale = DEFAULT_LOCALE } = use(params);
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const t = useTranslations("Contact");
   return (
     <div className="container flex h-full w-full flex-col items-center justify-center gap-4">
