@@ -5,14 +5,14 @@ import { hasLocale, NextIntlClientProvider, useMessages } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { DEFAULT_LOCALE, LOCALES } from "@/constants/locales";
+import { LOCALES } from "@/constants/locales";
 import { routing } from "../../../i18n/routing";
 import { notFound } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export function generateStaticParams() {
-  return LOCALES;
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 type Props = {
@@ -21,7 +21,7 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale = DEFAULT_LOCALE } = await params;
+  const { locale = routing.defaultLocale } = await params;
   const t = await getTranslations({ locale, namespace: "Metadata" });
   return {
     title: {
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function LocaleLayout({ children, params }: Props) {
-  const { locale = DEFAULT_LOCALE } = await params;
+  const { locale = routing.defaultLocale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }

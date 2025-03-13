@@ -7,6 +7,7 @@ import { ContactForm } from "../../../components/contact/Form";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { DEFAULT_LOCALE } from "@/constants/locales";
+import { routing } from "../../../../i18n/routing";
 
 type Props = {
   params: Promise<{ locale?: string }>;
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const ContactPage: NextPage<Props> =
 ({ params }: Props)=> {
-  const { locale = DEFAULT_LOCALE } = use(params);
+  const { locale = routing.defaultLocale } = use(params);
   setRequestLocale(locale);
   const t = useTranslations("Contact");
   return (
