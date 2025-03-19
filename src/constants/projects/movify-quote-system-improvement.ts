@@ -10,7 +10,7 @@ export const MOVIFY_QUOTE_SYSTEM_IMPROVEMENT: IBaseProject = {
   tags: ["React", "JavaScript", "HTML", "CSS", "WordPress"],
   categoryCode: "freelance",
   technologyCodes: [
-    "react",
+    "vue",
     "javascript",
     "mariadb",
     "html",
