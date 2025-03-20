@@ -59,12 +59,12 @@ export const MOVIFY_PAYMENT_MODULE: IBaseProject = {
       description: "Página para gestionar los gastos, donde se pueden crear, eliminar y actualizar registros. Incluye filtros dinámicos y opciones para descargar reportes en formatos PDF y Excel.",
     },
     {
-      src: "/images/movify-payment-module/expenses-edit.webp",
+      src: "/images/movify-payment-module/expense-edit.webp",
       alt: "Edición de Gasto",
       description: "Modal para editar un gasto, permitiendo modificar todos los campos y adjuntar archivos de recibos como comprobantes.",
     },
     {
-      src: "/images/movify-payment-module/expenses-edit-add-document.webp",
+      src: "/images/movify-payment-module/expense-edit-add-document.webp",
       alt: "Edición de Gasto con Documento",
       description: "Modal de edición de gastos mostrando la funcionalidad para subir documentos de respaldo como recibos o facturas.",
     },
@@ -131,12 +131,12 @@ export const MOVIFY_PAYMENT_MODULE_EN: IBaseProject = {
       description: "Expense management interface where users can create, delete, and update expense records. Features dynamic filtering options and functionality to export reports in PDF and Excel formats.",
     },
     {
-      src: "/images/movify-payment-module/expenses-edit.webp",
+      src: "/images/movify-payment-module/expense-edit.webp",
       alt: "Expense Editing Modal",
       description: "Modal for editing expense entries, allowing users to modify fields and upload receipt documents as supporting evidence.",
     },
     {
-      src: "/images/movify-payment-module/expenses-edit-add-document.webp",
+      src: "/images/movify-payment-module/expense-edit-add-document.webp",
       alt: "Expense Editing with Document Upload",
       description: "Expense editing interface showcasing the functionality to attach supporting documents such as receipts or invoices.",
     },
