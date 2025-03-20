@@ -35,6 +35,78 @@ export const MOVIFY_QUOTE_ORDER_MANAGMENT:IBaseProject  = {
     src: "/images/movify-quote-order-management/banner.webp",
     alt: "Movify Quote Order Management",
   },
+  images: [
+    {
+      src: "/images/movify-quote-order-management/costs-dashboard.webp",
+      alt: "Movify costs dashboard",
+      description: "Dashboard view showing cost management interface with a table of different cost types including distance-based costs for owned and third-party vehicles, and personnel costs for different services."
+    },
+    {
+      src: "/images/movify-quote-order-management/objects-dashboard.webp",
+      alt: "Movify objects dashboard",
+      description: "Objects management dashboard displaying a categorized list of movable items with their specifications including carriers required and space usage."
+    },
+    {
+      src: "/images/movify-quote-order-management/quotations-dashboard.webp",
+      alt: "Movify quotations dashboard",
+      description: "Quotations management interface showing client information, contact details, channel information, creation date, and action buttons for each quotation."
+    },
+    {
+      src: "/images/movify-quote-order-management/main-dashboard.webp",
+      alt: "Movify main dashboard",
+      description: "Main dashboard with graphical analytics showing daily and monthly metrics along with statistics about how far in advance customers book moving services."
+    },
+    {
+      src: "/images/movify-quote-order-management/customer-info-quotation.webp",
+      alt: "Customer information in quotation",
+      description: "Quotation screen showing customer information fields including name, email, phone, and personal details for a moving service with 2 spaces and using a Taxi Cargo 1 vehicle."
+    },
+    {
+      src: "/images/movify-quote-order-management/location-map-quotation.webp",
+      alt: "Location map in quotation",
+      description: "Map interface for selecting origin and destination locations for the moving service, displaying an interactive map with address fields for both locations."
+    },
+    {
+      src: "/images/movify-quote-order-management/service-options-quotation.webp",
+      alt: "Service options in quotation",
+      description: "Service options selection screen showing different service packages including Easy service (150), Detailed service (190), and Total Protection (190) with additional fields for estimated moving dates."
+    },
+    {
+      src: "/images/movify-quote-order-management/remove-product-quotation.webp",
+      alt: "Remove product confirmation in quotation",
+      description: "Dialog box asking for confirmation to remove a product from the quotation, with cancel and remove options."
+    },
+    {
+      src: "/images/movify-quote-order-management/service-orders.webp",
+      alt: "Service orders management",
+      description: "Service orders management interface showing a list of orders with customer information, moving dates, prices, payment methods, and action buttons."
+    },
+    {
+      src: "/images/movify-quote-order-management/analytics-dashboard.webp",
+      alt: "Analytics dashboard",
+      description: "Comprehensive analytics dashboard with multiple graphs showing orders, income, service types, and performance metrics over time with filtering options by date."
+    },
+    {
+      src: "/images/movify-quote-order-management/user-management.webp",
+      alt: "User management interface",
+      description: "User management screen displaying a list of system users with their email addresses and assigned roles, with action buttons for each user."
+    },
+    {
+      src: "/images/movify-quote-order-management/edit-service-order.webp",
+      alt: "Edit service order screen",
+      description: "Interface for editing an existing service order, showing available service options, pricing information, and customer details."
+    },
+    {
+      src: "/images/movify-quote-order-management/goals-dashboard.webp",
+      alt: "Goals dashboard",
+      description: "Dashboard showing business objectives and performance metrics with comparative graphs for orders, quotations, income and achievement of targets."
+    },
+    {
+      src: "/images/movify-quote-order-management/rates-management.webp",
+      alt: "Rates management screen",
+      description: "Rates management interface displaying a pricing table for different service types based on vehicle size, distance, and number of floors, with action buttons for each rate."
+    }
+  ],
   projectGoals: [
     {
       title: "Establecer un Sistema Administrativo para Cotizaciones y Órdenes",
@@ -108,6 +180,78 @@ export const MOVIFY_QUOTE_ORDER_MANAGEMENT_EN: IBaseProject = {
     src: "/images/movify-quote-order-management/banner.webp",
     alt: "Movify Quote Order Management",
   },
+  images: [
+    {
+      src: "/images/movify-quote-order-management/costs-dashboard.webp",
+      alt: "Movify costs dashboard",
+      description: "Dashboard view showing cost management interface with a table of different cost types including distance-based costs for owned and third-party vehicles, and personnel costs for different services."
+    },
+    {
+      src: "/images/movify-quote-order-management/objects-dashboard.webp",
+      alt: "Movify objects dashboard",
+      description: "Objects management dashboard displaying a categorized list of movable items with their specifications including carriers required and space usage."
+    },
+    {
+      src: "/images/movify-quote-order-management/quotations-dashboard.webp",
+      alt: "Movify quotations dashboard",
+      description: "Quotations management interface showing client information, contact details, channel information, creation date, and action buttons for each quotation."
+    },
+    {
+      src: "/images/movify-quote-order-management/main-dashboard.webp",
+      alt: "Movify main dashboard",
+      description: "Main dashboard with graphical analytics showing daily and monthly metrics along with statistics about how far in advance customers book moving services."
+    },
+    {
+      src: "/images/movify-quote-order-management/customer-info-quotation.webp",
+      alt: "Customer information in quotation",
+      description: "Quotation screen showing customer information fields including name, email, phone, and personal details for a moving service with 2 spaces and using a Taxi Cargo 1 vehicle."
+    },
+    {
+      src: "/images/movify-quote-order-management/location-map-quotation.webp",
+      alt: "Location map in quotation",
+      description: "Map interface for selecting origin and destination locations for the moving service, displaying an interactive map with address fields for both locations."
+    },
+    {
+      src: "/images/movify-quote-order-management/service-options-quotation.webp",
+      alt: "Service options in quotation",
+      description: "Service options selection screen showing different service packages including Easy service (150), Detailed service (190), and Total Protection (190) with additional fields for estimated moving dates."
+    },
+    {
+      src: "/images/movify-quote-order-management/remove-product-quotation.webp",
+      alt: "Remove product confirmation in quotation",
+      description: "Dialog box asking for confirmation to remove a product from the quotation, with cancel and remove options."
+    },
+    {
+      src: "/images/movify-quote-order-management/service-orders.webp",
+      alt: "Service orders management",
+      description: "Service orders management interface showing a list of orders with customer information, moving dates, prices, payment methods, and action buttons."
+    },
+    {
+      src: "/images/movify-quote-order-management/analytics-dashboard.webp",
+      alt: "Analytics dashboard",
+      description: "Comprehensive analytics dashboard with multiple graphs showing orders, income, service types, and performance metrics over time with filtering options by date."
+    },
+    {
+      src: "/images/movify-quote-order-management/user-management.webp",
+      alt: "User management interface",
+      description: "User management screen displaying a list of system users with their email addresses and assigned roles, with action buttons for each user."
+    },
+    {
+      src: "/images/movify-quote-order-management/edit-service-order.webp",
+      alt: "Edit service order screen",
+      description: "Interface for editing an existing service order, showing available service options, pricing information, and customer details."
+    },
+    {
+      src: "/images/movify-quote-order-management/goals-dashboard.webp",
+      alt: "Goals dashboard",
+      description: "Dashboard showing business objectives and performance metrics with comparative graphs for orders, quotations, income and achievement of targets."
+    },
+    {
+      src: "/images/movify-quote-order-management/rates-management.webp",
+      alt: "Rates management screen",
+      description: "Rates management interface displaying a pricing table for different service types based on vehicle size, distance, and number of floors, with action buttons for each rate."
+    }
+  ],
   projectGoals: [
     {
       title: "Establish an Administrative System for Quotes and Orders",
