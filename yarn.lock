@@ -560,15 +560,15 @@
     "@stripe/react-stripe-js" "^3.1.1"
     "@stripe/stripe-js" "^5.7.0"
 
-"@headlessui/react@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-2.2.0.tgz#a8e32f0899862849a1ce1615fa280e7891431ab7"
-  integrity sha512-RzCEg+LXsuI7mHiSomsu/gBJSjpupm6A1qIZ5sWjd7JhARNlMiSA4kKfJpCKwU9tE+zMRterhhrP74PvfJrpXQ==
+"@headlessui/react@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-2.2.1.tgz#f694e669b741db97d9fab8de095e8bc3942404fb"
+  integrity sha512-daiUqVLae8CKVjEVT19P/izW0aGK0GNhMSAeMlrDebKmoVZHcRRwbxzgtnEadUVDXyBsWo9/UH4KHeniO+0tMg==
   dependencies:
     "@floating-ui/react" "^0.26.16"
     "@react-aria/focus" "^3.17.1"
     "@react-aria/interactions" "^3.21.3"
-    "@tanstack/react-virtual" "^3.8.1"
+    "@tanstack/react-virtual" "^3.11.1"
 
 "@heroicons/react@^2.2.0":
   version "2.2.0"
@@ -1121,17 +1121,17 @@
     postcss "^8.4.41"
     tailwindcss "4.1.2"
 
-"@tanstack/react-virtual@^3.8.1":
-  version "3.8.2"
-  resolved "https://registry.yarnpkg.com/@tanstack/react-virtual/-/react-virtual-3.8.2.tgz#0901ac7a8ab0ffe06f15e8317f0f56e1523b6580"
-  integrity sha512-g78+DA29K0ByAfDkuibfLQqDshf8Aha/zcyEZ+huAX/yS/TWj/CUiEY4IJfDrFacdxIFmsLm0u4VtsLSKTngRw==
+"@tanstack/react-virtual@^3.11.1":
+  version "3.13.6"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-virtual/-/react-virtual-3.13.6.tgz#30243c8c3166673caf66bfbf5352e1b314a3a4cd"
+  integrity sha512-WT7nWs8ximoQ0CDx/ngoFP7HbQF9Q2wQe4nh2NB+u2486eX3nZRE40P9g6ccCVq7ZfTSH5gFOuCoVH5DLNS/aA==
   dependencies:
-    "@tanstack/virtual-core" "3.8.2"
+    "@tanstack/virtual-core" "3.13.6"
 
-"@tanstack/virtual-core@3.8.2":
-  version "3.8.2"
-  resolved "https://registry.yarnpkg.com/@tanstack/virtual-core/-/virtual-core-3.8.2.tgz#e4413c2eb822d80666cfeb8a5354427c7458579f"
-  integrity sha512-ffpN6kTaPGwQPoWMcBAHbdv2ZCpj1SugldoYAcY0C4xH+Pej1KCOEUisNeEgbUnXOp8Y/4q6wGPu2tFHthOIQw==
+"@tanstack/virtual-core@3.13.6":
+  version "3.13.6"
+  resolved "https://registry.yarnpkg.com/@tanstack/virtual-core/-/virtual-core-3.13.6.tgz#329f962f1596b3280736c266a982897ed2112157"
+  integrity sha512-cnQUeWnhNP8tJ4WsGcYiX24Gjkc9ALstLbHcBj1t3E7EimN6n6kHH+DPV4PpDnuw00NApQp+ViojMj1GRdwYQg==
 
 "@testing-library/dom@^10.4.0":
   version "10.4.0"
