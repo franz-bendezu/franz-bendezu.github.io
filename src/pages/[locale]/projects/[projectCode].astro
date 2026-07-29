@@ -2,12 +2,15 @@
 import ProjectPage from "@/views/ProjectPage.astro";
 import { getProjects } from "@/lib/projects";
 import { LOCALES, type Locale } from "@/lib/i18n";
-export function getStaticPaths() {
-  return LOCALES.flatMap((locale) =>
-    getProjects(locale).map(({ code: projectCode }) => ({
-      params: { locale, projectCode },
-    })),
+export async function getStaticPaths() {
+  const projectsByLocale = await Promise.all(
+    LOCALES.map(async (locale) =>
+      (await getProjects(locale)).map(({ code: projectCode }) => ({
+        params: { locale, projectCode },
+      })),
+    ),
   );
+  return projectsByLocale.flat();
 }
 const locale = Astro.params.locale as Locale;
 const projectCode = Astro.params.projectCode!;
