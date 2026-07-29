@@ -1,13 +1,18 @@
-import Image from "next-image-export-optimizer";
-import { IProjectTechnology } from "../../interfaces/project";
+import type { IProjectTechnology } from "@/interfaces/project";
 
-const TechStackItem: React.FC<{
+function TechStackItem({
+  tech,
+  onClick,
+  isSelected,
+}: {
   tech: IProjectTechnology;
   onClick?: () => void;
   isSelected?: boolean;
-}> = ({ tech: tag, onClick, isSelected }) => {
+}) {
   return (
     <button
+      type="button"
+      aria-pressed={isSelected}
       className={
         "flex flex-row gap-2 rounded px-2 py-1 text-xs outline outline-1 lg:text-sm" +
         (isSelected
@@ -16,39 +21,41 @@ const TechStackItem: React.FC<{
       }
       onClick={onClick}
     >
-      {tag.logo && (
-        <Image
-          src={tag.logo}
-          alt={""}
+      {tech.logo && (
+        <img
+          src={tech.logo}
+          alt=""
           className="h-4 w-4"
           width="16"
           height="16"
         />
       )}
-      {tag.name}
+      {tech.name}
     </button>
   );
-};
+}
 
-const ProjectListItemTechStack: React.FC<{
+export default function ProjectListItemTechStack({
+  techs,
+  selectedTechs,
+  onClickTech,
+}: {
   techs: IProjectTechnology[];
   selectedTechs?: IProjectTechnology[];
   onClickTech?: (tech: IProjectTechnology) => void;
-}> = ({ techs: tags, onClickTech, selectedTechs }) => {
+}) {
   return (
-    tags && (
-      <div className="mt-2 flex flex-row flex-wrap justify-between gap-2">
-        {tags.map((tag) => (
-          <TechStackItem
-            key={tag.code}
-            tech={tag}
-            isSelected={selectedTechs?.some((t) => t.code === tag.code)}
-            onClick={onClickTech ? () => onClickTech(tag) : undefined}
-          />
-        ))}
-      </div>
-    )
+    <div className="mt-2 flex flex-row flex-wrap justify-between gap-2">
+      {techs.map((tech) => (
+        <TechStackItem
+          key={tech.code}
+          tech={tech}
+          isSelected={selectedTechs?.some(
+            (selected) => selected.code === tech.code,
+          )}
+          onClick={onClickTech ? () => onClickTech(tech) : undefined}
+        />
+      ))}
+    </div>
   );
-};
-
-export default ProjectListItemTechStack;
+}

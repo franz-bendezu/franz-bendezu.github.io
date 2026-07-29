@@ -1,0 +1,23 @@
+---
+import NavbarDesktop from "./NavbarDesktop.astro";
+import NavbarMobile from "./NavbarMobile.astro";
+import NavbarToggleLang from "./NavbarToggleLang.astro";
+import ThemeSwitch from "@/components/ui/ThemeSwitch.astro";
+import type { Locale } from "@/lib/i18n";
+interface Props {
+  locale: Locale;
+  currentPath: string;
+  prefixEnglish: boolean;
+  otherLocale: Locale;
+  languagePath: string;
+}
+const { locale, currentPath, prefixEnglish, otherLocale, languagePath } = Astro.props;
+---
+<div class="flex items-center">
+  <NavbarDesktop locale={locale} currentPath={currentPath} prefixEnglish={prefixEnglish}/>
+  <div class="mr-2 flex items-center">
+    <NavbarToggleLang otherLocale={otherLocale} href={languagePath} label={otherLocale.toUpperCase()}/>
+    <ThemeSwitch locale={locale}/>
+  </div>
+  <NavbarMobile locale={locale} currentPath={currentPath} prefixEnglish={prefixEnglish}/>
+</div>

@@ -1,0 +1,62 @@
+---
+import { translate, type Locale } from "@/lib/i18n";
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const skills = [
+  [
+    "frontend",
+    "Vue, Nuxt, Angular, React, Next.js, Tailwind CSS, Vuetify, Bootstrap, Material UI, Angular Material",
+  ],
+  ["backend", "Spring Framework, Node.js, Express, Nestjs"],
+  [
+    "cloud",
+    "AWS: S3, EC2, RDS, Lambda, API Gateway, CloudFront, Route 53, DigitalOcean",
+  ],
+  ["devops", "AWS, Docker, GitHub Actions, GitLab CI/CD"],
+  ["databases", "PostgreSQL, MySQL, MariaDB, MongoDB"],
+  ["testing", "Vitest, Jest, Karma, Jasmine, Cypress, Junit, Mockito"],
+  ["tools", "Git, GitHub, Gitlab, Figma, Jira, Trello, VSCode"],
+];
+---
+
+<section id="skills" class="w-full bg-gray-300 py-6 dark:bg-gray-700">
+  <div class="container mx-auto px-4">
+    <div
+      class="flex flex-col items-center justify-center space-y-4 text-center"
+    >
+      <div class="space-y-2">
+        <div
+          class="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-900"
+        >
+          {translate(locale, "Home.skills.label")}
+        </div>
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">
+          {translate(locale, "Home.skills.title")}
+        </h2>
+        <p
+          class="text-muted-foreground max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+        >
+          {translate(locale, "Home.skills.description")}
+        </p>
+      </div>
+    </div>
+    <div
+      class="grid items-start gap-6 py-12 md:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-12"
+    >
+      {
+        skills.map(([key, value]) => (
+          <div class="grid gap-1">
+            <>
+              <h3 class="text-xl font-bold">
+                {translate(locale, `Home.skills.${key}`)}
+              </h3>
+              <p class="text-muted-foreground">{value}</p>
+            </>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

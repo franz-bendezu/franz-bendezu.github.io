@@ -1,72 +1,68 @@
-import Image from "next-image-export-optimizer";
+import type {
+  IProjectImage,
+  IProjectLink,
+  IProjectTechnology,
+} from "@/interfaces/project";
+import Card from "@/components/ui/Card";
 import ProjectListItemTechStack from "./ListItemTechStack";
-import Card from "../ui/Card";
-import { IProjectLink, IProjectTechnology } from "../../interfaces/project";
 import { LinkList } from "./ListItemLinkList";
-import { Link } from "../../../i18n/navigation";
-import { useTranslations } from "next-intl";
 
-interface ProjectCardProps {
-  image?: {
-    src: string;
-    alt: string;
-  };
+interface Props {
+  image?: IProjectImage;
   title: string;
   description: string;
   selectedTechs?: IProjectTechnology[];
   technologies: IProjectTechnology[];
   links?: IProjectLink[];
-  children?: HTMLElement | HTMLElement[];
-  code?: string;
+  code: string;
+  projectBasePath: string;
+  viewProjectLabel: string;
   onClickTech?: (tech: IProjectTechnology) => void;
 }
 
-const ProjectListItem: React.FC<ProjectCardProps> = (props) => {
-  const {
-    links,
-    image,
-    title,
-    description,
-    technologies,
-    onClickTech,
-    selectedTechs,
-    code,
-  } = props;
-  const t = useTranslations("Projects");
+export default function ProjectListItem({
+  links,
+  image,
+  title,
+  description,
+  technologies,
+  onClickTech,
+  selectedTechs,
+  code,
+  projectBasePath,
+  viewProjectLabel,
+}: Props) {
+  const label = viewProjectLabel.replace("{title}", title);
   return (
     <section className="w-full p-4 md:w-1/2 lg:w-1/3">
       <Card
-        data-testId="card"
+        dataTestId="card"
         className="flex h-full flex-col justify-between bg-white dark:bg-gray-800 dark:text-white"
       >
-        <Link
-          aria-label="link to project"
-          href={`/projects/${code}`}
-          title={t("viewProjectLink", { title })}
-        >
+        <a href={`${projectBasePath}/${code}`} aria-label={label} title={label}>
           <div className="relative flex h-40 w-full items-center overflow-hidden rounded-xl bg-gray-200 dark:bg-gray-700">
             {image ? (
-              <Image
+              <img
                 className="mx-auto max-h-40 w-auto object-cover object-center"
                 src={image.src}
                 alt={image.alt}
-                width={256}
-                height={256}
-                loading="eager"
+                width="256"
+                height="256"
+                loading="lazy"
               />
             ) : (
-              <div className="h-40 w-full"></div>
+              <div className="h-40 w-full" />
             )}
           </div>
           <div className="mt-1 p-2">
-            <h3 className="text-xl font-semibold text-black dark:text-white lg:text-2xl">
+            <h2 className="text-xl font-semibold text-black lg:text-2xl dark:text-white">
               {title}
-            </h3>
-            <p className="text-sm text-black dark:text-white lg:text-base">
+            </h2>
+            <p className="text-sm text-black lg:text-base dark:text-white">
               {description}
             </p>
           </div>
-        </Link>
+        </a>
         <div className="mt-1 p-2">
           <ProjectListItemTechStack
             techs={technologies}
@@ -74,10 +70,8 @@ const ProjectListItem: React.FC<ProjectCardProps> = (props) => {
             selectedTechs={selectedTechs}
           />
         </div>
-
-        {links?.length && <LinkList links={links} />}
+        {!!links?.length && <LinkList links={links} />}
       </Card>
     </section>
   );
-};
-export default ProjectListItem;
+}

@@ -1,0 +1,73 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { ProjectImagesCarousel } from "@/components/project/Images";
+import ProjectSummary from "@/components/project/Summary.astro";
+import ProjectOverview from "@/components/project/Overview.astro";
+import ProjectGoals from "@/components/project/Goals.astro";
+import ProjectFeatures from "@/components/project/Features.astro";
+import ProjectTechsList from "@/components/project/TechsList.astro";
+import { PROJECT_TECHNOLOGIES } from "@/constants/project-techologies";
+import { getProject, getProjects } from "@/lib/projects";
+import type { Locale } from "@/lib/i18n";
+
+interface Props {
+  locale: Locale;
+  code: string;
+  prefixEnglish?: boolean;
+}
+const { locale, code } = Astro.props;
+const project = getProject(locale, code);
+if (!project) return Astro.redirect("/404");
+const englishProject =
+  locale === "en"
+    ? project
+    : getProjects("en").find((item) => item.position === project.position);
+const spanishProject =
+  locale === "es"
+    ? project
+    : getProjects("es").find((item) => item.position === project.position);
+const localePaths = {
+  en: `/projects/${englishProject?.code ?? code}`,
+  es: `/projects/${spanishProject?.code ?? code}`,
+};
+const techs = PROJECT_TECHNOLOGIES.filter((tech) =>
+  project.technologyCodes.includes(tech.code),
+);
+const path = `/projects/${code}`;
+const closeLabel = locale === "es" ? "Cerrar" : "Close";
+---
+
+<BaseLayout
+  locale={locale}
+  path={path}
+  localePaths={localePaths}
+  title={project.title}
+  description={project.shortDescription}
+>
+  <article class="container flex min-h-[100dvh] flex-col gap-8 px-4 lg:gap-16">
+    <ProjectSummary project={project} />
+    {
+      project.description && (
+        <ProjectOverview description={project.description} locale={locale} />
+      )
+    }
+
+    <div class="grid gap-10 md:px-6 lg:grid-cols-2 lg:gap-20">
+      <ProjectTechsList techs={techs} locale={locale} />
+      <ProjectGoals goals={project.projectGoals} locale={locale} />
+    </div>
+
+    <div class="grid gap-10 pb-8 md:px-6 lg:grid-cols-2 lg:gap-20">
+      <ProjectFeatures project={project} locale={locale} />
+      {
+        project.images && (
+          <ProjectImagesCarousel
+            client:visible
+            images={[...project.images]}
+            closeLabel={closeLabel}
+          />
+        )
+      }
+    </div>
+  </article>
+</BaseLayout>

@@ -1,104 +1,56 @@
-# Franz Bendezu - Portfolio
+# Franz Bendezu — Portfolio
 
-Welcome to my personal portfolio repository. This project showcases my skills, projects, and experiences using modern web development technologies.
+A bilingual portfolio built with Astro, React islands, Tailwind CSS, and typed
+TypeScript content. The statically generated production site is deployed to
+GitHub Pages at [franzbendezu.me](https://franzbendezu.me).
 
-## Table of Contents
+## Requirements
 
-- [About](#about)
-- [Technologies](#technologies)
-- [Setup](#setup)
-- [Usage](#usage)
-- [Features](#features)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+- Node.js 22.12 or newer
+- Yarn 1.x
 
-## About
+## Local development
 
-This portfolio is built using [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/). It is designed to be a fast, responsive, and visually appealing way to present my work and skills.
+```bash
+yarn install --frozen-lockfile
+yarn dev
+```
 
-## Technologies
+The development server is available at `http://localhost:4321`.
 
-- **Framework:** Next.js
-- **Styling:** Tailwind CSS
-- **Deployment:** Vercel
-- **Version Control:** Git
+## Validation
 
-## Setup
+```bash
+yarn run check
+yarn test:unit
+yarn build
+yarn playwright install chromium
+yarn test:e2e
+```
 
-To set up the project locally, follow these steps:
+`yarn test` runs the unit tests, production build, and browser tests together.
 
-1. **Clone the repository:**
+## Environment variables
 
-   ```bash
-   git clone https://github.com/franz-bendezu/portfolio.git
-   cd portfolio
-   ```
+Create `.env.local` when testing the contact form locally:
 
-2. **Install dependencies:**
+```dotenv
+PUBLIC_FORMSPREE_ID=your-form-id
+PUBLIC_RECAPTCHA_SITE_KEY=your-recaptcha-site-key
+```
 
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
+Both values are intentionally exposed to the browser. GitHub Actions maps the
+existing `NEXT_PUBLIC_SPREE_ID` and `NEXT_PUBLIC_RECAPTCHA_ID` repository
+secrets to these Astro variable names.
 
-3. **Run the development server:**
+## Routes
 
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
+English is canonical without a prefix. Compatibility pages remain available
+under `/en`, and Spanish pages use `/es`. Project and category pages are
+generated from the typed data in `src/constants`.
 
-   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment
 
-## Usage
-
-To build and deploy the project, use the following commands:
-
-- **Build the project:**
-
-  ```bash
-  npm run build
-  # or
-  yarn build
-  ```
-
-- **Start the production server:**
-
-  ```bash
-  npm start
-  # or
-  yarn start
-  ```
-
-## Features
-
-- **Responsive Design:** Optimized for various screen sizes.
-- **Modern UI:** Clean and professional design using Tailwind CSS.
-- **Fast Performance:** Built with Next.js for optimal performance.
-- **Easy Deployment:** Deployable on Vercel with minimal configuration.
-
-## Contributing
-
-Contributions are welcome! If you have any suggestions or improvements, please create an issue or submit a pull request.
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes.
-4. Commit your changes (`git commit -m 'Add some feature'`).
-5. Push to the branch (`git push origin feature-branch`).
-6. Open a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
-
-## Contact
-
-Feel free to reach out to me connect with me on [LinkedIn](https://www.linkedin.com/in/franz-bendezu/).
-
----
-
-Thank you for visiting my portfolio repository!
+Pushes to `main` run type checks, unit tests, a production build, and Playwright
+tests before uploading `dist` to GitHub Pages. The custom domain declaration is
+stored in `public/CNAME`.

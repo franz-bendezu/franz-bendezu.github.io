@@ -1,0 +1,24 @@
+---
+import Card from "@/components/ui/Card.astro";
+---
+
+<div class="flex md:contents">
+  <div class="relative col-start-1 col-end-3 mr-2 md:mx-auto">
+    <div class="flex h-full w-8 items-center justify-center">
+      <div class="pointer-events-none h-full w-1 bg-slate-500"></div>
+    </div>
+    <div
+      class="absolute top-0 mt-8 flex aspect-square w-full items-center justify-center"
+    >
+      <div
+        class="flex h-6 w-6 items-center justify-center rounded-full bg-slate-400/75"
+      >
+        <div class="h-4 w-4 rounded-full bg-slate-800"></div>
+      </div>
+    </div>
+  </div>
+  <Card
+    class="col-start-3 col-end-12 my-4 mr-auto w-full bg-white px-4 py-3 dark:bg-gray-800"
+    ><slot /></Card
+  >
+</div>

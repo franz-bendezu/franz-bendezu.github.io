@@ -176,7 +176,6 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
   },
   {
     code: "sass",
-    logo: "/assets/icons/sass.svg",
     name: "SASS",
     color: "#CC6699",
     categoryCodes: ["frontend-framework"],

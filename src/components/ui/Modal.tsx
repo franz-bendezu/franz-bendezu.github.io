@@ -7,14 +7,15 @@ export const Modal: FC<{
   open?: boolean;
   children: ReactNode;
   title?: string;
+  closeLabel?: string;
   onClose(value: boolean): void;
-}> = ({ children, open, onClose, title }) => {
+}> = ({ children, open, onClose, title, closeLabel = "Close" }) => {
   return (
     <>
       <Dialog
         open={open}
         as="div"
-        className="relative z-30 focus:outline-none"
+        className="fixed inset-0 z-30 focus:outline-none"
         onClose={onClose}
       >
         {/* The backdrop, rendered as a fixed sibling to the panel container */}
@@ -24,7 +25,7 @@ export const Modal: FC<{
           <div className="flex min-h-full items-center justify-center p-4">
             <DialogPanel
               transition
-              className="data-[closed]:transform-[scale(95%)] w-full max-w-5xl rounded-xl bg-white/50 p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:opacity-0 dark:bg-black/50"
+              className="w-full max-w-5xl rounded-xl bg-white/50 p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0 dark:bg-black/50"
             >
               <DialogTitle
                 as="h3"
@@ -35,10 +36,10 @@ export const Modal: FC<{
               <div className="mt-4">{children}</div>
               <div className="mt-4 flex justify-center">
                 <Button
-                  className="rounded-lg bg-black bg-opacity-50 px-4 py-2 text-white"
+                  className="bg-opacity-50 rounded-lg bg-black px-4 py-2 text-white"
                   onClick={() => onClose(false)}
                 >
-                  Close
+                  {closeLabel}
                 </Button>
               </div>
             </DialogPanel>

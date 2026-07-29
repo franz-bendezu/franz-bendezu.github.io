@@ -1,0 +1,58 @@
+---
+import type { IProject } from "@/interfaces/project";
+import Card from "@/components/ui/Card.astro";
+import LinkList from "@/components/project/LinkList.astro";
+import TechStack from "@/components/project/TechStack.astro";
+import { localizedPath, translate, type Locale } from "@/lib/i18n";
+
+interface Props {
+  project: IProject;
+  locale: Locale;
+  prefixEnglish?: boolean;
+}
+const { project, locale, prefixEnglish = false } = Astro.props;
+---
+
+<section class="w-full p-4 md:w-1/2 lg:w-1/3">
+  <Card
+    class="flex h-full flex-col justify-between bg-white dark:bg-gray-800 dark:text-white"
+  >
+    <a
+      aria-label={translate(locale, "Projects.viewProjectLink", {
+        title: project.title,
+      })}
+      href={localizedPath(locale, `/projects/${project.code}`, prefixEnglish)}
+    >
+      <div
+        class="relative flex h-40 w-full items-center overflow-hidden rounded-xl bg-gray-200 dark:bg-gray-700"
+      >
+        {
+          project.banner ? (
+            <img
+              class="mx-auto max-h-40 w-auto object-cover object-center"
+              src={project.banner.src}
+              alt={project.banner.alt}
+              width="256"
+              height="256"
+              loading="lazy"
+            />
+          ) : (
+            <div class="h-40 w-full" />
+          )
+        }
+      </div>
+      <div class="mt-1 p-2">
+        <h3
+          class="text-xl font-semibold text-black lg:text-2xl dark:text-white"
+        >
+          {project.title}
+        </h3>
+        <p class="text-sm text-black lg:text-base dark:text-white">
+          {project.shortDescription}
+        </p>
+      </div>
+    </a>
+    <div class="mt-1 p-2"><TechStack techs={project.technologies} /></div>
+    {project.links?.length && <LinkList links={project.links} />}
+  </Card>
+</section>
