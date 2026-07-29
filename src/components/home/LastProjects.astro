@@ -1,0 +1,49 @@
+---
+import ProjectCard from "@/components/astro/ProjectCard.astro";
+import type { IProject } from "@/interfaces/project";
+import { localizedPath, translate, type Locale } from "@/lib/i18n";
+interface Props {
+  projects: IProject[];
+  locale: Locale;
+  prefixEnglish?: boolean;
+}
+const { projects, locale, prefixEnglish = false } = Astro.props;
+---
+
+<section id="projects" class="w-full py-6">
+  <div class="container mx-auto px-4">
+    <div
+      class="flex flex-col items-center justify-center space-y-4 text-center"
+    >
+      <div class="space-y-2">
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">
+          {translate(locale, "Home.lastProjects.title")}
+        </h2>
+        <p
+          class="text-muted-foreground max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+        >
+          {translate(locale, "Home.lastProjects.description")}
+        </p>
+      </div>
+    </div>
+    <div class="flex w-full flex-col flex-wrap items-stretch md:flex-row">
+      {
+        projects.map((project) => (
+          <ProjectCard
+            project={project}
+            locale={locale}
+            prefixEnglish={prefixEnglish}
+          />
+        ))
+      }
+    </div>
+    <div class="mt-4 flex justify-center">
+      <a
+        href={localizedPath(locale, "/projects", prefixEnglish)}
+        class="rounded bg-slate-500 px-4 py-2 text-white hover:bg-slate-600"
+        aria-label={translate(locale, "Home.lastProjects.viewAll")}
+        >{translate(locale, "Home.lastProjects.viewAll")}</a
+      >
+    </div>
+  </div>
+</section>

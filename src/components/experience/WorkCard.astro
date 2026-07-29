@@ -1,0 +1,43 @@
+---
+import ExperienceCard from "./Card.astro";
+interface Props {
+  company: string;
+  position: string;
+  start: string;
+  end: string;
+  link?: string;
+  tasks: readonly string[];
+}
+const props = Astro.props;
+---
+
+<ExperienceCard>
+  <h3 class="mb-1 text-lg font-semibold">{props.position}</h3>
+  {
+    props.link ? (
+      <a href={props.link} class="pb-2 font-semibold text-primary">
+        {props.company}
+      </a>
+    ) : (
+      <span class="pb-2 font-semibold text-foreground">{props.company}</span>
+    )
+  }
+  <div class="my-2 flex items-center gap-2 text-sm uppercase">
+    <div
+      class="rounded-full bg-slate-600/80 px-2 py-1 text-xs font-semibold text-white"
+    >
+      {props.start}
+    </div>
+    -
+    <div
+      class="rounded-full bg-slate-600/80 px-2 py-1 text-xs font-semibold text-white"
+    >
+      {props.end}
+    </div>
+  </div>
+  <div class="pl-3 text-justify leading-tight">
+    <ul class="prose list-disc text-sm dark:prose-invert">
+      {props.tasks.map((task) => <li>{task}</li>)}
+    </ul>
+  </div>
+</ExperienceCard>

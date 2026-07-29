@@ -1,95 +1,120 @@
-"use client";
 import { useForm, ValidationError } from "@formspree/react";
-import Button from "../ui/Button";
-import LoaderSpin from "../ui/LoaderSpin";
-import { CheckIcon } from "@heroicons/react/20/solid";
+import Button from "@/components/ui/Button";
+import LoaderSpin from "@/components/ui/LoaderSpin";
 
-type FieldValues = Record<string, string | number | boolean | null | undefined>;
+export interface ContactFormLabels {
+  name: string;
+  email: string;
+  message: string;
+  send: string;
+  successTitle: string;
+  successDescription: string;
+  error: string;
+  recaptcha: string;
+}
 
-export const ContactForm = () => {
-  const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_SPREE_ID!);
+interface Props {
+  formId: string;
+  recaptchaSiteKey?: string;
+  labels: ContactFormLabels;
+}
+
+export function ContactForm({ formId, recaptchaSiteKey, labels }: Props) {
+  const [state, handleSubmit] = useForm(formId);
 
   if (state.succeeded) {
     return (
-      <div>
-        <CheckIcon className="mx-auto h-12 w-12 rounded-full bg-green-500 p-3 text-white" />
-        <h2 className="text-center text-3xl font-semibold">
-          Gracias por tu mensaje
-        </h2>
-        <p className="text-center text-lg font-light">
-          Me pondré en contacto contigo lo antes posible.
-        </p>
+      <div role="status" className="py-8 text-center">
+        <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-green-500 text-2xl text-white">
+          ✓
+        </div>
+        <h2 className="text-3xl font-semibold">{labels.successTitle}</h2>
+        <p className="text-lg font-light">{labels.successDescription}</p>
       </div>
     );
   }
 
   return (
     <form onSubmit={handleSubmit} className="relative mt-6 h-full w-full">
+      {state.errors && (
+        <p className="mb-4 text-red-700 dark:text-red-300" role="alert">
+          {labels.error}
+        </p>
+      )}
       <div className="mb-4">
-        <label htmlFor="email" className="block font-medium text-gray-700">
-          Correo Electrónico
+        <label htmlFor="email" className="block font-medium">
+          {labels.email}
         </label>
         <input
           id="email"
           type="email"
           name="email"
           required
-          className="focus:ring-primary-500 focus:border-primary-500 w-full rounded-md border border-gray-300 px-4 py-2"
+          className="w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-black"
         />
-        <ValidationError prefix="Email" field="email" errors={state.errors} />
+        <ValidationError
+          prefix={labels.email}
+          field="email"
+          errors={state.errors}
+        />
       </div>
       <div className="mb-4">
-        <label htmlFor="name" className="block font-medium text-gray-700">
-          Nombre
+        <label htmlFor="name" className="block font-medium">
+          {labels.name}
         </label>
         <input
           id="name"
           type="text"
           name="name"
           required
-          className="focus:ring-primary-500 focus:border-primary-500 w-full rounded-md border border-gray-300 px-4 py-2"
+          className="w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-black"
         />
-        <ValidationError prefix="Nombre" field="name" errors={state.errors} />
+        <ValidationError
+          prefix={labels.name}
+          field="name"
+          errors={state.errors}
+        />
       </div>
       <div className="mb-4">
-        <label htmlFor="message" className="block font-medium text-gray-700">
-          Mensaje
+        <label htmlFor="message" className="block font-medium">
+          {labels.message}
         </label>
         <textarea
           id="message"
           name="message"
           required
-          className="focus:ring-primary-500 focus:border-primary-500 w-full rounded-md border border-gray-300 px-4 py-2"
+          className="w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-black"
           rows={5}
         />
         <ValidationError
-          prefix="Mensaje"
+          prefix={labels.message}
           field="message"
           errors={state.errors}
         />
       </div>
-      <div
-        className="g-recaptcha"
-        data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_ID!}
-      ></div>
-      <ValidationError
-        prefix="Recaptcha"
-        field="recaptcha"
-        errors={state.errors}
-      />
-      <div className="align-center mt-4 flex justify-center">
+      {recaptchaSiteKey && (
+        <>
+          <div className="g-recaptcha" data-sitekey={recaptchaSiteKey}></div>
+          <ValidationError
+            prefix={labels.recaptcha}
+            field="recaptcha"
+            errors={state.errors}
+          />
+        </>
+      )}
+      <div className="mt-4 flex justify-center">
         <Button
           type="submit"
-          disabled={state.submitting}
+          disabled={state.submitting || !formId}
           aria-label="submit"
-          className="border-slate-500 uppercase transition-colors duration-300 dark:border-slate-100 dark:text-white"
+          className="border-slate-500 px-4 py-2 uppercase disabled:cursor-not-allowed disabled:opacity-60 dark:border-slate-100"
         >
           {state.submitting && (
-            <LoaderSpin className="me-3 h-4 w-4 fill-slate-100 dark:fill-slate-500" />
+            <LoaderSpin className="mr-2 h-4 w-4 fill-slate-500" />
           )}
-          Enviar mensaje
+          {labels.send}
         </Button>
       </div>
     </form>
   );
-};
+}

@@ -1,0 +1,28 @@
+---
+import DownIcon from "@/components/icon/DownIcon.astro";
+interface Props {
+  href: string;
+  active: boolean;
+  class?: string;
+  activeClass?: string;
+}
+const {
+  href,
+  active,
+  class: className = "",
+  activeClass = "text-gray-800 font-bold dark:text-gray-400",
+} = Astro.props;
+---
+
+<a
+  {href}
+  aria-current={active ? "page" : undefined}
+  class:list={[
+    className,
+    "px-3 py-2 text-base",
+    active ? activeClass : "font-normal text-gray-600 dark:text-white",
+  ]}
+>
+  <slot />
+  {active && <DownIcon />}
+</a>

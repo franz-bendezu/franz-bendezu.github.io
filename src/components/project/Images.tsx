@@ -1,13 +1,14 @@
 "use client";
-import React, { FC, useState } from "react";
+import { useState } from "react";
+import type { FC } from "react";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import { Modal } from "../ui/Modal";
 import { IProjectImage } from "@/interfaces/project";
-import Image from "next-image-export-optimizer";
 
 export const ProjectImagesCarousel: FC<{
   images: IProjectImage[];
-}> = ({ images }) => {
+  closeLabel?: string;
+}> = ({ images, closeLabel = "Close" }) => {
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -27,14 +28,14 @@ export const ProjectImagesCarousel: FC<{
             className="relative aspect-video rounded-xl bg-gray-200 p-3 dark:bg-slate-700"
             onClick={open}
           >
-            <Image
+            <img
               src={src}
               alt={alt}
               width="828"
               height="450"
               className="aspect-video overflow-hidden rounded-xl object-contain object-center"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2 text-center text-white">
+            <div className="bg-opacity-50 absolute right-0 bottom-0 left-0 bg-black p-2 text-center text-white">
               {description}
             </div>
           </TabPanel>
@@ -46,7 +47,7 @@ export const ProjectImagesCarousel: FC<{
             key={src}
             className="aspect-video max-h-20 rounded-lg bg-slate-200 p-2 data-[hover]:bg-slate-300 data-[selected]:bg-slate-400 data-[selected]:data-[hover]:bg-slate-400 dark:bg-slate-700 data-[hover]:dark:bg-slate-800 data-[selected]:dark:bg-slate-900"
           >
-            <Image
+            <img
               className="h-full w-full object-contain"
               src={src}
               alt={alt}
@@ -61,7 +62,7 @@ export const ProjectImagesCarousel: FC<{
 
   return (
     <section className="relative">
-      <Modal open={isFullScreen} onClose={close}>
+      <Modal open={isFullScreen} onClose={close} closeLabel={closeLabel}>
         {TabsFeatures}
       </Modal>
       {TabsFeatures}

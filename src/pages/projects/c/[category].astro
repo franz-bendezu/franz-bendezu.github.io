@@ -1,0 +1,14 @@
+---
+import ProjectsPage from "@/views/ProjectsPage.astro";
+import { PROJECT_CATEGORIES } from "@/constants/projects";
+import type { ProjectCategoryCodes } from "@/interfaces/project";
+
+export function getStaticPaths() {
+  return PROJECT_CATEGORIES.map((category) => ({
+    params: { category: category.value },
+  }));
+}
+const category = Astro.params.category as ProjectCategoryCodes;
+---
+
+<ProjectsPage locale="en" category={category} />

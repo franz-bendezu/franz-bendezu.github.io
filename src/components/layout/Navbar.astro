@@ -1,0 +1,43 @@
+---
+import { CodeBracketSquareIcon } from "@heroicons/react/20/solid";
+import NavbarNavigation from "./NavbarNavigation.astro";
+import { localizedPath, stripLocale, type Locale } from "@/lib/i18n";
+interface Props {
+  locale: Locale;
+  path: string;
+  pathname: string;
+  languagePath?: string;
+}
+const {
+  locale,
+  path,
+  pathname,
+  languagePath: alternateLanguagePath,
+} = Astro.props;
+const prefixEnglish = pathname === "/en" || pathname.startsWith("/en/");
+const currentPath = stripLocale(pathname);
+const otherLocale: Locale = locale === "en" ? "es" : "en";
+const languagePath = localizedPath(otherLocale, alternateLanguagePath ?? path);
+const homePath = localizedPath(locale, "/", prefixEnglish);
+---
+
+<nav
+  class="sticky top-0 z-20 border-b border-slate-700/90 bg-white/70 py-2 backdrop-blur-lg md:py-6 dark:bg-gray-900/70"
+>
+  <div class="container mx-auto flex items-center justify-between px-4">
+    <a
+      href={homePath}
+      class="flex gap-2 font-bold tracking-wider text-gray-900 uppercase transition-colors hover:text-slate-500 dark:text-white"
+    >
+      <CodeBracketSquareIcon className="h-6 w-6" aria-hidden="true" />
+      Franz Bendezu
+    </a>
+    <NavbarNavigation
+      locale={locale}
+      currentPath={currentPath}
+      prefixEnglish={prefixEnglish}
+      otherLocale={otherLocale}
+      languagePath={languagePath}
+    />
+  </div>
+</nav>

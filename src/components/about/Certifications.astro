@@ -1,0 +1,30 @@
+---
+import Card from "@/components/ui/Card.astro";
+import { COURSE_CERTIFICATIONS } from "@/constants/experiences";
+import type { Locale } from "@/lib/i18n";
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+---
+
+<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+  {
+    COURSE_CERTIFICATIONS.map((certification) => (
+      <Card class="bg-white p-4 dark:bg-gray-800">
+        <h3 class="text-lg font-semibold">{certification.name}</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          {certification.date}
+        </p>
+        <a
+          href={certification.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-primary hover:underline"
+        >
+          {locale === "es" ? "Ver certificación" : "View certification"}
+        </a>
+      </Card>
+    ))
+  }
+</div>

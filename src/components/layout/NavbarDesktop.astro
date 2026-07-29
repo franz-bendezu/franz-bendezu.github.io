@@ -1,0 +1,30 @@
+---
+import NavLink from "./NavLink.astro";
+import { ROUTES_NAVBAR } from "@/constants/navbar";
+import { localizedPath, translate, type Locale } from "@/lib/i18n";
+interface Props {
+  locale: Locale;
+  currentPath: string;
+  prefixEnglish: boolean;
+}
+const { locale, currentPath, prefixEnglish } = Astro.props;
+---
+
+<div class="hidden md:mx-2 md:block md:space-x-4 lg:mx-3">
+  {
+    ROUTES_NAVBAR.map((route) => {
+      const active = route.exact
+        ? currentPath === route.path
+        : currentPath.startsWith(route.path);
+      return (
+        <NavLink
+          href={localizedPath(locale, route.path, prefixEnglish)}
+          active={active}
+          activeClass="rounded-md bg-gray-300 font-bold dark:bg-gray-800 dark:text-white"
+        >
+          {translate(locale, `Navigation.${route.title}`)}
+        </NavLink>
+      );
+    })
+  }
+</div>
