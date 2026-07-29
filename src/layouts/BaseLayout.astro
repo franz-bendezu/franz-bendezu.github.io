@@ -1,0 +1,138 @@
+---
+import "@fontsource-variable/inter";
+import "@/styles/global.css";
+import Navbar from "@/components/layout/Navbar.astro";
+import Footer from "@/components/layout/Footer.astro";
+import {
+  alternatePaths,
+  canonicalPath,
+  translate,
+  type Locale,
+} from "@/lib/i18n";
+
+interface Props {
+  locale: Locale;
+  path?: string;
+  title?: string;
+  description?: string;
+  image?: string;
+  localePaths?: { en: string; es: string };
+}
+
+const {
+  locale,
+  path = "/",
+  title,
+  description = translate(locale, "Metadata.description"),
+  image = "/opengraph-image.png",
+  localePaths,
+} = Astro.props;
+const defaultTitle = translate(locale, "Metadata.title.default");
+const template = translate(locale, "Metadata.title.template");
+const pageTitle = title
+  ? template.replace("%s", title)
+  : template.replace("%s", defaultTitle);
+const canonical = new URL(
+  canonicalPath(locale, localePaths?.[locale] ?? path),
+  Astro.site,
+);
+const alternates = localePaths
+  ? {
+      en: canonicalPath("en", localePaths.en),
+      es: canonicalPath("es", localePaths.es),
+      "x-default": canonicalPath("en", localePaths.en),
+    }
+  : alternatePaths(path);
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="Software Developer, TypeScript, JavaScript, React, Astro, Node.js, Java, Spring, AWS"
+    />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="canonical" href={canonical} />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href={new URL(alternates.en, Astro.site)}
+    />
+    <link
+      rel="alternate"
+      hreflang="es"
+      href={new URL(alternates.es, Astro.site)}
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={new URL(alternates["x-default"], Astro.site)}
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Franz Bendezu" />
+    <meta property="og:locale" content={locale === "es" ? "es_PE" : "en_US"} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.site)} />
+    <title>{pageTitle}</title>
+    <script is:inline>
+      (() => {
+        const saved = localStorage.getItem("theme");
+        const dark =
+          saved === "dark" ||
+          (!saved && matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.classList.toggle("dark", dark);
+      })();
+    </script>
+  </head>
+  <body class="font-sans text-gray-900 dark:text-white">
+    <div
+      class="flex min-h-screen flex-col bg-gradient-to-t from-gray-50 to-gray-200 dark:bg-gradient-to-b dark:from-slate-950 dark:to-slate-800"
+    >
+      <Navbar
+        locale={locale}
+        path={path}
+        pathname={Astro.url.pathname}
+        languagePath={localePaths?.[locale === "en" ? "es" : "en"]}
+      />
+      <main
+        class="flex flex-grow flex-col items-center align-middle antialiased"
+      >
+        <slot />
+      </main>
+      <Footer locale={locale} />
+    </div>
+    <script>
+      const themeButton = document.querySelector<HTMLButtonElement>(
+        "[data-theme-toggle]",
+      );
+      const updateThemeIcon = () => {
+        const dark = document.documentElement.classList.contains("dark");
+        document
+          .querySelector("[data-theme-moon]")
+          ?.classList.toggle("hidden", dark);
+        document
+          .querySelector("[data-theme-sun]")
+          ?.classList.toggle("hidden", !dark);
+        themeButton?.setAttribute("aria-pressed", String(dark));
+      };
+      updateThemeIcon();
+      themeButton?.addEventListener("click", () => {
+        const dark = !document.documentElement.classList.contains("dark");
+        document.documentElement.classList.toggle("dark", dark);
+        localStorage.setItem("theme", dark ? "dark" : "light");
+        updateThemeIcon();
+      });
+    </script>
+  </body>
+</html>

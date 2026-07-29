@@ -1,0 +1,56 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { ContactForm } from "@/components/contact/Form";
+import { translate, type Locale } from "@/lib/i18n";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const labels = {
+  name: translate(locale, "Contact.form.name"),
+  email: translate(locale, "Contact.form.email"),
+  message: translate(locale, "Contact.form.message"),
+  send: translate(locale, "Contact.form.send"),
+  successTitle: translate(locale, "Contact.form.successTitle"),
+  successDescription: translate(locale, "Contact.form.successDescription"),
+  error: translate(locale, "Contact.form.error"),
+  recaptcha: translate(locale, "Contact.form.recaptcha"),
+};
+const formId = import.meta.env.PUBLIC_FORMSPREE_ID ?? "test";
+const recaptchaSiteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
+---
+
+<BaseLayout
+  locale={locale}
+  path="/contact"
+  title={translate(locale, "Contact.title")}
+  description={translate(locale, "Contact.description")}
+>
+  <section
+    class="container flex h-full w-full flex-col items-center justify-center gap-4 px-4"
+  >
+    <h1 class="text-3xl lg:text-4xl">
+      ☵ {translate(locale, "Contact.title")}
+    </h1>
+    <p class="max-w-3xl text-center text-lg font-light">
+      {translate(locale, "Contact.intro")}
+    </p>
+    {
+      recaptchaSiteKey && (
+        <script
+          is:inline
+          src="https://www.google.com/recaptcha/api.js"
+          async
+          defer
+        />
+      )
+    }
+    <ContactForm
+      client:load
+      formId={formId}
+      recaptchaSiteKey={recaptchaSiteKey}
+      labels={labels}
+    />
+  </section>
+</BaseLayout>

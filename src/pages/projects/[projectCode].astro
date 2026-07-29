@@ -1,0 +1,13 @@
+---
+import ProjectPage from "@/views/ProjectPage.astro";
+import { getProjects } from "@/lib/projects";
+
+export function getStaticPaths() {
+  return getProjects("en").map(({ code: projectCode }) => ({
+    params: { projectCode },
+  }));
+}
+const projectCode = Astro.params.projectCode!;
+---
+
+<ProjectPage locale="en" code={projectCode} />

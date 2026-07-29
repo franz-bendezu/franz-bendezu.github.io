@@ -1,0 +1,24 @@
+---
+import ExperienceCard from "./Card.astro";
+interface Props {
+  degree: string;
+  institution: string;
+  location: string;
+  link?: string;
+}
+const props = Astro.props;
+---
+
+<ExperienceCard>
+  <h3 class="mb-1 text-lg font-semibold">{props.degree}</h3>
+  {
+    props.link ? (
+      <a href={props.link} class="font-semibold text-primary">
+        {props.institution}
+      </a>
+    ) : (
+      <span class="font-semibold text-foreground">{props.institution}</span>
+    )
+  }
+  <div class="mb-4 text-sm uppercase">{props.location}</div>
+</ExperienceCard>

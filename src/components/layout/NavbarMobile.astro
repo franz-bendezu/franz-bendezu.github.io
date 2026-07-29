@@ -1,0 +1,41 @@
+---
+import { Bars4Icon } from "@heroicons/react/20/solid";
+import NavLink from "./NavLink.astro";
+import { ROUTES_NAVBAR } from "@/constants/navbar";
+import { localizedPath, translate, type Locale } from "@/lib/i18n";
+
+interface Props {
+  locale: Locale;
+  currentPath: string;
+  prefixEnglish: boolean;
+}
+
+const { locale, currentPath, prefixEnglish } = Astro.props;
+---
+
+<details class="relative md:hidden">
+  <summary
+    class="inline-flex cursor-pointer list-none items-center justify-center p-2 text-gray-600 focus:outline-none dark:text-white"
+    aria-label={locale === "es" ? "Abrir menú principal" : "Open main menu"}
+  >
+    <span class="sr-only">{locale === "es" ? "Abrir menú principal" : "Open main menu"}</span>
+    <Bars4Icon className="h-6 w-6" aria-hidden="true" />
+  </summary>
+  <div class="absolute right-0 top-10 z-30 min-w-48 origin-top-right transform overflow-hidden rounded-lg bg-white p-2 shadow-md ring-1 ring-black/10 transition dark:bg-gray-800">
+    <div class="space-y-1">
+      {ROUTES_NAVBAR.map((route) => {
+        const active = route.exact ? currentPath === route.path : currentPath.startsWith(route.path);
+        return (
+          <NavLink
+            href={localizedPath(locale, route.path, prefixEnglish)}
+            active={active}
+            class="block rounded-md font-medium hover:bg-gray-50 hover:text-gray-800 dark:hover:text-gray-600"
+            activeClass="rounded-md bg-gray-200 font-bold dark:bg-gray-700 dark:hover:text-white"
+          >
+            {translate(locale, `Navigation.${route.title}`)}
+          </NavLink>
+        );
+      })}
+    </div>
+  </div>
+</details>

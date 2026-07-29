@@ -1,0 +1,32 @@
+---
+import {
+  ArrowDownTrayIcon,
+  CodeBracketIcon,
+  FilmIcon,
+  GlobeAmericasIcon,
+} from "@heroicons/react/20/solid";
+import GitHubIcon from "@/components/icon/GitHub.astro";
+import GitLabIcon from "@/components/icon/GitLab.astro";
+import type { ProjectLinkType } from "@/interfaces/project";
+
+interface Props {
+  type: ProjectLinkType;
+  class?: string;
+}
+
+const { type, class: className } = Astro.props;
+const HeroIcon = {
+  website: GlobeAmericasIcon,
+  source: CodeBracketIcon,
+  download: ArrowDownTrayIcon,
+  video: FilmIcon,
+}[type as Exclude<ProjectLinkType, "github" | "gitlab">];
+---
+
+{type === "github" ? (
+  <GitHubIcon class={className} />
+) : type === "gitlab" ? (
+  <GitLabIcon class={className} />
+) : (
+  <HeroIcon className={className} aria-hidden="true" />
+)}

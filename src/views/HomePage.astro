@@ -1,0 +1,27 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Presentation from "@/components/home/Presentation.astro";
+import Skills from "@/components/home/Skills.astro";
+import LastProjects from "@/components/home/LastProjects.astro";
+import { getProjects } from "@/lib/projects";
+import type { Locale } from "@/lib/i18n";
+
+interface Props {
+  locale: Locale;
+  prefixEnglish?: boolean;
+}
+const { locale, prefixEnglish = false } = Astro.props;
+const projects = getProjects(locale)
+  .sort((a, b) => a.position - b.position)
+  .slice(0, 3);
+---
+
+<BaseLayout locale={locale} path="/">
+  <Presentation locale={locale} />
+  <Skills locale={locale} />
+  <LastProjects
+    projects={projects}
+    locale={locale}
+    prefixEnglish={prefixEnglish}
+  />
+</BaseLayout>

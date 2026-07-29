@@ -1,0 +1,29 @@
+---
+import { MoonIcon, SunIcon } from "@heroicons/react/20/solid";
+import type { Locale } from "@/lib/i18n";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<button
+  data-theme-toggle
+  aria-label={locale === "es" ? "Cambiar tema" : "Toggle color theme"}
+  aria-pressed="false"
+  type="button"
+  class="mr-1 h-8 w-8 rounded p-1"
+>
+  <MoonIcon
+    data-theme-moon
+    className="text-gray-900"
+    aria-hidden="true"
+  />
+  <SunIcon
+    data-theme-sun
+    className="hidden text-yellow-500"
+    aria-hidden="true"
+  />
+</button>

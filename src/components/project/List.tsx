@@ -1,25 +1,30 @@
-import { FC } from "react";
+import type { IProject, IProjectTechnology } from "@/interfaces/project";
 import ProjectListItem from "./ListItem";
 import { ProjectListEmpty } from "./ListEmpty";
-import { IProject, IProjectTechnology } from "@/interfaces/project";
 
-type Props = {
+interface Props {
   projects: IProject[];
-  onClickProjectTech?: (project: IProject, tech: IProjectTechnology) => void;
+  projectBasePath: string;
+  emptyLabel: string;
+  viewProjectLabel: string;
   selectedTechs?: IProjectTechnology[];
-};
+  onClickProjectTech?: (project: IProject, tech: IProjectTechnology) => void;
+}
 
-export const ProjectList: FC<Props> = ({
+export function ProjectList({
   projects,
+  projectBasePath,
+  emptyLabel,
+  viewProjectLabel,
   selectedTechs,
-  onClickProjectTech: handleClickTech,
-}) => {
+  onClickProjectTech,
+}: Props) {
   return (
     <div className="flex w-full flex-col flex-wrap items-stretch md:flex-row">
-      {projects.length > 0 ? (
+      {projects.length ? (
         projects.map((project) => (
           <ProjectListItem
-            key={project.title}
+            key={project.code}
             code={project.code}
             links={project.links}
             title={project.title}
@@ -27,16 +32,18 @@ export const ProjectList: FC<Props> = ({
             image={project.banner}
             technologies={project.technologies}
             selectedTechs={selectedTechs}
+            projectBasePath={projectBasePath}
+            viewProjectLabel={viewProjectLabel}
             onClickTech={
-              handleClickTech
-                ? (tech: IProjectTechnology) => handleClickTech(project, tech)
+              onClickProjectTech
+                ? (tech) => onClickProjectTech(project, tech)
                 : undefined
             }
           />
         ))
       ) : (
-        <ProjectListEmpty />
+        <ProjectListEmpty label={emptyLabel} />
       )}
     </div>
   );
-};
+}

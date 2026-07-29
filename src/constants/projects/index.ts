@@ -1,4 +1,3 @@
-import type { IBaseProject } from "../../interfaces/project";
 import { AIVERSE, AIVERSE_EN } from "./aiverse-app";
 import { BUS_UNI_TRACKER, BUS_UNI_TRACKER_EN } from "./bus-uni-tracker";
 import { CON_QUE_PROFE, CON_QUE_PROFE_EN } from "./con-que-profe";
