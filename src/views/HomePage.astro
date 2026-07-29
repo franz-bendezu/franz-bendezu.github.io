@@ -11,7 +11,7 @@ interface Props {
   prefixEnglish?: boolean;
 }
 const { locale, prefixEnglish = false } = Astro.props;
-const projects = getProjects(locale)
+const projects = (await getProjects(locale))
   .sort((a, b) => a.position - b.position)
   .slice(0, 3);
 ---

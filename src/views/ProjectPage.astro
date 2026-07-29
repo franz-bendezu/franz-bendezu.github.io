@@ -7,7 +7,7 @@ import ProjectGoals from "@/components/project/Goals.astro";
 import ProjectFeatures from "@/components/project/Features.astro";
 import ProjectTechsList from "@/components/project/TechsList.astro";
 import { PROJECT_TECHNOLOGIES } from "@/constants/project-techologies";
-import { getProject, getProjects } from "@/lib/projects";
+import { getProjects } from "@/lib/projects";
 import type { Locale } from "@/lib/i18n";
 
 interface Props {
@@ -16,16 +16,25 @@ interface Props {
   prefixEnglish?: boolean;
 }
 const { locale, code } = Astro.props;
-const project = getProject(locale, code);
+const [englishProjects, spanishProjects] = await Promise.all([
+  getProjects("en"),
+  getProjects("es"),
+]);
+const localizedProjects = locale === "en" ? englishProjects : spanishProjects;
+const project = localizedProjects.find((item) => item.code === code);
 if (!project) return Astro.redirect("/404");
 const englishProject =
   locale === "en"
     ? project
-    : getProjects("en").find((item) => item.position === project.position);
+    : englishProjects.find(
+        (item) => item.translationKey === project.translationKey,
+      );
 const spanishProject =
   locale === "es"
     ? project
-    : getProjects("es").find((item) => item.position === project.position);
+    : spanishProjects.find(
+        (item) => item.translationKey === project.translationKey,
+      );
 const localePaths = {
   en: `/projects/${englishProject?.code ?? code}`,
   es: `/projects/${spanishProject?.code ?? code}`,

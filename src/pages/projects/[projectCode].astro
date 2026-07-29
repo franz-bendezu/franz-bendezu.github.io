@@ -2,8 +2,8 @@
 import ProjectPage from "@/views/ProjectPage.astro";
 import { getProjects } from "@/lib/projects";
 
-export function getStaticPaths() {
-  return getProjects("en").map(({ code: projectCode }) => ({
+export async function getStaticPaths() {
+  return (await getProjects("en")).map(({ code: projectCode }) => ({
     params: { projectCode },
   }));
 }

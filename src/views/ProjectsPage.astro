@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { ProjectExplorerList } from "@/components/project/ExplorerList";
-import { PROJECT_CATEGORIES } from "@/constants/projects";
+import { PROJECT_CATEGORIES } from "@/constants/project-categories";
 import { getProjects } from "@/lib/projects";
 import { localizedPath, translate, type Locale } from "@/lib/i18n";
 import type { ProjectCategoryCodes } from "@/interfaces/project";
@@ -13,7 +13,7 @@ interface Props {
 }
 const { locale, category, prefixEnglish = false } = Astro.props;
 const path = category ? `/projects/c/${category}` : "/projects";
-const projects = getProjects(locale, category);
+const projects = await getProjects(locale, category);
 const projectBasePath = localizedPath(locale, "/projects", prefixEnglish);
 const labels = {
   filteredBy: translate(locale, "Projects.filteredBy"),
