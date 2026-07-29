@@ -46,16 +46,23 @@
     "categories": {
       "all": "All"
     },
-    "viewProjectLink": "View Project {title}"
+    "viewProjectLink": "View Project {title}",
+    "filteredBy": "Filtered by:",
+    "empty": "No projects found"
   },
   "Contact": {
     "title": "Contact",
     "description": "If you have any questions or want to work with me, do not hesitate to contact me.",
+    "intro": "I am interested in freelance opportunities and ambitious projects. You can also use the form for any other request or question.",
     "form": {
       "name": "Name",
       "email": "Email",
       "message": "Message",
-      "send": "Send"
+      "send": "Send message",
+      "successTitle": "Thank you for your message",
+      "successDescription": "I will get back to you as soon as possible.",
+      "error": "The message could not be sent. Please review the form and try again.",
+      "recaptcha": "Please complete the reCAPTCHA challenge."
     }
   },
   "About": {
@@ -63,94 +70,94 @@
     "education": {
       "title": "Education Experience",
       "experiences": {
-      "1": {
-        "institution": "National University of Engineering",
-        "location": "Lima, Peru",
-        "degree": "Systems Engineering",
-        "start": "2018",
-        "end": "2023",
-        "link": "https://www.uni.edu.pe/"
-      }
+        "1": {
+          "institution": "National University of Engineering",
+          "location": "Lima, Peru",
+          "degree": "Systems Engineering",
+          "start": "2018",
+          "end": "2023",
+          "link": "https://www.uni.edu.pe/"
+        }
       }
     },
     "work": {
       "title": "Work Experience",
       "experiences": {
-      "1": {
-        "company": "Indra",
-        "location": "Lima, Peru",
-        "position": "Backend Developer AWS Senior",
-        "start": "September 2024",
-        "end": "Present",
-        "tasks": [
-          "Developed microservices in Java using Spring Flux and Reactive for legacy systems",
-          "Implemented microservices with TypeScript, Node.js, and Serverless Framework for orchestration of legacy systems",
-          "Managed databases like PostgreSQL, DynamoDB, and legacy databases like IBM Informix",
-          "Integrated microservices with AWS services such as Lambda, API Gateway, DynamoDB, PostgresRDS, SSM, Step Functions, and EKS"
-        ]
-      },
-      "2": {
-        "company": "Agendalo.io",
-        "location": "Lima, Peru",
-        "position": "Software Engineer Semi Senior",
-        "start": "August 2022",
-        "end": "July 2024",
-        "link": "https://agendalo.io/",
-        "tasks": [
-          "Led frontend development using Nuxt.js and supported backend projects",
-          "Migrated a single-page application (SPA) to server-side rendering (SSR) to improve SEO",
-          "Implemented CI/CD pipelines with containers, reducing delivery times by 20%",
-          "Developed OAuth2 authentication for integration with Google and Microsoft",
-          "Established payment gateways with Mercado Pago, Niubiz, and Stripe",
-          "Developed an administrative panel for resource management and user issue resolution via the WhatsApp API",
-          "Collaborated with the CTO to create internal libraries and migrate main applications to a monorepo"
-        ]
-      },
-      "3": {
-        "company": "Freelancer",
-        "location": "Remote",
-        "position": "Software Developer",
-        "start": "July 2019",
-        "end": "January 2024",
-        "tasks": [
-          "Developed and maintained client projects, specializing in frontend and backend technologies",
-          "Worked with technology stacks such as Java, Kotlin, JavaScript, TypeScript, Python, Vue.js, React, Angular, Spring Boot, and Node.js",
-          "Implemented REST APIs, GraphQL, and OAuth2 authentication protocols",
-          "Leveraged AWS services like S3, EC2, and Lambda for scalable solutions",
-          "Configured CI/CD pipelines using Docker, GitHub Actions, and GitLab",
-          "Optimized development processes with agile methodologies and SCRUM practices",
-          "Created reusable internal libraries to simplify development across multiple projects"
-        ]
-      },
-      "4": {
-        "company": "Gestión y Sistemas SAC",
-        "location": "Lima, Peru",
-        "position": "Junior Development Analyst",
-        "start": "August 2021",
-        "end": "October 2022",
-        "tasks": [
-          "Performed frontend development using Angular and managed repositories with Azure DevOps",
-          "Developed administrative panels for internal commission management at Banco Ripley",
-          "Contributed to the development of administrative panels for internal parameter management at Banco Falabella",
-          "Implemented a supplier portal for The Leaf Company (ACS) and an activity planning application",
-          "Collaborated closely with teams in Peru and Chile under SCRUM methodology"
-        ]
-      },
-      "5": {
-        "company": "Banco Ripley Peru",
-        "location": "Lima, Peru",
-        "position": "Frontend Developer",
-        "start": "August 2021",
-        "end": "October 2022",
-        "tasks": [
-          "Participated in frontend development of the cross-platform online banking app and payment platform",
-          "Collaborated closely with payment teams in Peru and Chile under SCRUM methodology",
-          "Used Angular and Ionic for developing intuitive user interfaces",
-          "Implemented transaction authorization widgets and integrated payment gateways",
-          "Performed incident analysis to implement improvements and new features, working in collaboration with the user experience (UX) team"
-        ]
+        "1": {
+          "company": "Indra",
+          "location": "Lima, Peru",
+          "position": "Backend Developer AWS Senior",
+          "start": "September 2024",
+          "end": "Present",
+          "tasks": [
+            "Developed microservices in Java using Spring Flux and Reactive for legacy systems",
+            "Implemented microservices with TypeScript, Node.js, and Serverless Framework for orchestration of legacy systems",
+            "Managed databases like PostgreSQL, DynamoDB, and legacy databases like IBM Informix",
+            "Integrated microservices with AWS services such as Lambda, API Gateway, DynamoDB, PostgresRDS, SSM, Step Functions, and EKS"
+          ]
+        },
+        "2": {
+          "company": "Agendalo.io",
+          "location": "Lima, Peru",
+          "position": "Software Engineer Semi Senior",
+          "start": "August 2022",
+          "end": "July 2024",
+          "link": "https://agendalo.io/",
+          "tasks": [
+            "Led frontend development using Nuxt.js and supported backend projects",
+            "Migrated a single-page application (SPA) to server-side rendering (SSR) to improve SEO",
+            "Implemented CI/CD pipelines with containers, reducing delivery times by 20%",
+            "Developed OAuth2 authentication for integration with Google and Microsoft",
+            "Established payment gateways with Mercado Pago, Niubiz, and Stripe",
+            "Developed an administrative panel for resource management and user issue resolution via the WhatsApp API",
+            "Collaborated with the CTO to create internal libraries and migrate main applications to a monorepo"
+          ]
+        },
+        "3": {
+          "company": "Freelancer",
+          "location": "Remote",
+          "position": "Software Developer",
+          "start": "July 2019",
+          "end": "January 2024",
+          "tasks": [
+            "Developed and maintained client projects, specializing in frontend and backend technologies",
+            "Worked with technology stacks such as Java, Kotlin, JavaScript, TypeScript, Python, Vue.js, React, Angular, Spring Boot, and Node.js",
+            "Implemented REST APIs, GraphQL, and OAuth2 authentication protocols",
+            "Leveraged AWS services like S3, EC2, and Lambda for scalable solutions",
+            "Configured CI/CD pipelines using Docker, GitHub Actions, and GitLab",
+            "Optimized development processes with agile methodologies and SCRUM practices",
+            "Created reusable internal libraries to simplify development across multiple projects"
+          ]
+        },
+        "4": {
+          "company": "Gestión y Sistemas SAC",
+          "location": "Lima, Peru",
+          "position": "Junior Development Analyst",
+          "start": "August 2021",
+          "end": "October 2022",
+          "tasks": [
+            "Performed frontend development using Angular and managed repositories with Azure DevOps",
+            "Developed administrative panels for internal commission management at Banco Ripley",
+            "Contributed to the development of administrative panels for internal parameter management at Banco Falabella",
+            "Implemented a supplier portal for The Leaf Company (ACS) and an activity planning application",
+            "Collaborated closely with teams in Peru and Chile under SCRUM methodology"
+          ]
+        },
+        "5": {
+          "company": "Banco Ripley Peru",
+          "location": "Lima, Peru",
+          "position": "Frontend Developer",
+          "start": "August 2021",
+          "end": "October 2022",
+          "tasks": [
+            "Participated in frontend development of the cross-platform online banking app and payment platform",
+            "Collaborated closely with payment teams in Peru and Chile under SCRUM methodology",
+            "Used Angular and Ionic for developing intuitive user interfaces",
+            "Implemented transaction authorization widgets and integrated payment gateways",
+            "Performed incident analysis to implement improvements and new features, working in collaboration with the user experience (UX) team"
+          ]
+        }
       }
-    }
     },
     "courseCertifications": {
       "title": "Courses and Certifications"

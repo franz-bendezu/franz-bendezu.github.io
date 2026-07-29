@@ -1,22 +1,23 @@
-interface CardProps {
-  className?: string;
-  children?: React.ReactNode;
+import type { HTMLAttributes, ReactNode } from "react";
+
+interface CardProps extends HTMLAttributes<HTMLElement> {
+  children?: ReactNode;
   dataTestId?: string;
 }
 
-const Card: React.FC<CardProps> = (props) => {
-  const { className, children } = props;
+export default function Card({
+  className = "",
+  children,
+  dataTestId,
+  ...props
+}: CardProps) {
   return (
     <article
-      data-testid={props.dataTestId}
-      className={
-        className +
-        ` rounded-xl p-3 shadow-lg transition-all duration-100 ease-in-out hover:scale-105
-        hover:transform hover:shadow-xl `
-      }
+      {...props}
+      data-testid={dataTestId}
+      className={`${className} rounded-xl p-3 shadow-lg transition-all duration-100 ease-in-out hover:scale-105 hover:transform hover:shadow-xl`}
     >
       {children}
     </article>
   );
-};
-export default Card;
+}

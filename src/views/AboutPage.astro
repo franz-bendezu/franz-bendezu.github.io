@@ -1,0 +1,106 @@
+---
+import {
+  AcademicCapIcon,
+  Bars4Icon,
+  BriefcaseIcon,
+  BuildingLibraryIcon,
+} from "@heroicons/react/20/solid";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Certifications from "@/components/about/Certifications.astro";
+import EducationCard from "@/components/experience/EducationCard.astro";
+import WorkCard from "@/components/experience/WorkCard.astro";
+import {
+  WORK_EXPERIENCES,
+  EDUCATION_EXPERIENCES,
+} from "@/constants/experiences";
+import { translate, type Locale } from "@/lib/i18n";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const work = WORK_EXPERIENCES.map((experience) => ({
+  ...experience,
+  company: translate(locale, `About.work.experiences.${experience.id}.company`),
+  location: translate(
+    locale,
+    `About.work.experiences.${experience.id}.location`,
+  ),
+  position: translate(
+    locale,
+    `About.work.experiences.${experience.id}.position`,
+  ),
+  start: translate(locale, `About.work.experiences.${experience.id}.start`),
+  end: translate(locale, `About.work.experiences.${experience.id}.end`),
+  tasks: experience.tasks.map((_, index) =>
+    translate(locale, `About.work.experiences.${experience.id}.tasks.${index}`),
+  ),
+}));
+const education = EDUCATION_EXPERIENCES.map((experience) => ({
+  ...experience,
+  institution: translate(
+    locale,
+    `About.education.experiences.${experience.id}.institution`,
+  ),
+  location: translate(
+    locale,
+    `About.education.experiences.${experience.id}.location`,
+  ),
+  degree: translate(
+    locale,
+    `About.education.experiences.${experience.id}.degree`,
+  ),
+}));
+---
+
+<BaseLayout
+  locale={locale}
+  path="/about"
+  title={translate(locale, "About.title")}
+  description={translate(locale, "About.description")}
+>
+  <section
+    data-testid="projects"
+    class="container flex flex-col items-center justify-center gap-4"
+  >
+    <h1
+      class="font-monospace flex flex-row items-center gap-4 text-center text-3xl dark:text-white lg:text-4xl"
+    >
+      <Bars4Icon className="h-8 w-8" aria-hidden="true" />
+      {translate(locale, "About.title")}
+    </h1>
+    <div class="mt-4 flex flex-col gap-4 p-4">
+      <div class="container">
+        <h2
+          class="mb-6 flex flex-row items-center gap-3 text-left text-2xl font-semibold lg:text-3xl"
+        >
+          <BriefcaseIcon className="h-8 w-8" aria-hidden="true" />
+          {translate(locale, "About.work.title")}
+        </h2>
+        <div class="flex grid-cols-12 flex-col md:grid">
+          {work.map((experience) => <WorkCard {...experience} />)}
+        </div>
+      </div>
+      <div class="container">
+        <h2
+          class="mb-6 flex flex-row items-center gap-3 text-left text-2xl font-semibold lg:text-3xl"
+        >
+          <BuildingLibraryIcon className="h-8 w-8" aria-hidden="true" />
+          {translate(locale, "About.education.title")}
+        </h2>
+        <div class="flex grid-cols-12 flex-col md:grid">
+          {education.map((experience) => <EducationCard {...experience} />)}
+        </div>
+      </div>
+      <div class="container">
+        <h2
+          class="mb-6 flex flex-row items-center gap-3 text-left text-2xl font-semibold lg:text-3xl"
+        >
+          <AcademicCapIcon className="h-8 w-8" aria-hidden="true" />
+          {translate(locale, "About.courseCertifications.title")}
+        </h2>
+        <Certifications locale={locale} />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

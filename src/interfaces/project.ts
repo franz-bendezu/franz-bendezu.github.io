@@ -24,12 +24,7 @@ export interface IProjectImage {
   description?: string;
 }
 export type ProjectLinkType =
-  | "github"
-  | "website"
-  | "source"
-  | "download"
-  | "video"
-  | "gitlab";
+  "github" | "website" | "source" | "download" | "video" | "gitlab";
 export interface IProjectLink {
   title: string;
   url: string;

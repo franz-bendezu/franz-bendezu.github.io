@@ -8,12 +8,14 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
+# framework output
+/.astro/
+/dist/
 
 # production
 /build
+/playwright-report/
+/test-results/
 
 # misc
 .DS_Store

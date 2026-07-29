@@ -1,0 +1,24 @@
+---
+import { LanguageIcon } from "@heroicons/react/20/solid";
+import type { Locale } from "@/lib/i18n";
+
+interface Props {
+  otherLocale: Locale;
+  href: string;
+  label: string;
+}
+
+const { otherLocale, href, label } = Astro.props;
+---
+
+<a
+  data-language-switch
+  class="mr-2 flex items-center rounded bg-amber-400/80 px-3 py-2 font-bold text-white hover:bg-amber-400"
+  {href}
+  hreflang={otherLocale}
+>
+  <span class="mr-1">
+    <LanguageIcon className="h-5 w-5" aria-hidden="true" />
+  </span>
+  {label}
+</a>

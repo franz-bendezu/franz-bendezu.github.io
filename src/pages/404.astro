@@ -1,0 +1,23 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  locale="en"
+  path="/404"
+  title="Page not found"
+  description="The requested page could not be found."
+>
+  <section
+    class="container flex flex-grow flex-col items-center justify-center gap-4 px-4 py-24 text-center"
+  >
+    <p class="text-7xl font-bold">404</p>
+    <h1 class="text-3xl font-semibold">
+      Page not found · Página no encontrada
+    </h1>
+    <p>The requested page does not exist. · La página solicitada no existe.</p>
+    <a href="/" class="rounded bg-slate-500 px-4 py-2 text-white"
+      >Return home · Volver al inicio</a
+    >
+  </section>
+</BaseLayout>

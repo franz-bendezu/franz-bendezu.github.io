@@ -1,0 +1,77 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { ProjectExplorerList } from "@/components/project/ExplorerList";
+import { PROJECT_CATEGORIES } from "@/constants/projects";
+import { getProjects } from "@/lib/projects";
+import { localizedPath, translate, type Locale } from "@/lib/i18n";
+import type { ProjectCategoryCodes } from "@/interfaces/project";
+
+interface Props {
+  locale: Locale;
+  category?: ProjectCategoryCodes;
+  prefixEnglish?: boolean;
+}
+const { locale, category, prefixEnglish = false } = Astro.props;
+const path = category ? `/projects/c/${category}` : "/projects";
+const projects = getProjects(locale, category);
+const projectBasePath = localizedPath(locale, "/projects", prefixEnglish);
+const labels = {
+  filteredBy: translate(locale, "Projects.filteredBy"),
+  empty: translate(locale, "Projects.empty"),
+  viewProject: translate(locale, "Projects.viewProjectLink", {
+    title: "{title}",
+  }),
+};
+const title = category
+  ? `${PROJECT_CATEGORIES.find((item) => item.value === category)?.name} · ${translate(locale, "Projects.title")}`
+  : translate(locale, "Projects.title");
+---
+
+<BaseLayout locale={locale} path={path} title={title}>
+  <section
+    data-testid="projects"
+    class="container flex flex-col items-center justify-center gap-4 px-4"
+  >
+    <h1 class="flex flex-row items-center gap-4 text-3xl lg:text-4xl">
+      <span aria-hidden="true">&lt;/&gt;</span>{
+        translate(locale, "Projects.title")
+      }
+    </h1>
+    <div class="mx-10 flex w-full flex-wrap items-center justify-center gap-2">
+      <a
+        class:list={[
+          "rounded px-2 py-1",
+          !category ? "bg-slate-500 text-white" : "hover:text-slate-500",
+        ]}
+        href={localizedPath(locale, "/projects", prefixEnglish)}
+      >
+        {translate(locale, "Projects.categories.all")}
+      </a>
+      {
+        PROJECT_CATEGORIES.map((item) => (
+          <a
+            class:list={[
+              "rounded px-2 py-1",
+              category === item.value
+                ? "bg-slate-500 text-white"
+                : "hover:text-slate-500",
+            ]}
+            href={localizedPath(
+              locale,
+              `/projects/c/${item.value}`,
+              prefixEnglish,
+            )}
+          >
+            {item.name}
+          </a>
+        ))
+      }
+    </div>
+    <ProjectExplorerList
+      client:visible
+      projects={projects}
+      projectBasePath={projectBasePath}
+      labels={labels}
+    />
+  </section>
+</BaseLayout>

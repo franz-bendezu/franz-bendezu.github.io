@@ -1,0 +1,17 @@
+---
+interface Props {
+  class?: string;
+  dataTestId?: string;
+}
+const { class: className = "", dataTestId } = Astro.props;
+---
+
+<article
+  data-testid={dataTestId}
+  class:list={[
+    className,
+    "rounded-xl p-3 shadow-lg transition-all duration-100 ease-in-out hover:scale-105 hover:transform hover:shadow-xl",
+  ]}
+>
+  <slot />
+</article>
