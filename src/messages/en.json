@@ -72,8 +72,8 @@
     "filteredBy": "Filtered by:",
     "empty": "No projects found",
     "intro": "Selected case studies and a broader archive of platforms, migrations, and product experiments.",
-    "featured": "Featured case studies",
-    "archive": "Project archive",
+    "featured": "Featured projects",
+    "archive": "Project history",
     "filterTech": "Filter by technology",
     "clearFilters": "Clear filters",
     "resultCount": "{count} projects"

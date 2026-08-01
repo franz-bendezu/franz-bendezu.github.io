@@ -74,8 +74,8 @@
     "filteredBy": "Filtrado por:",
     "empty": "No se encontraron proyectos",
     "intro": "Casos de estudio seleccionados y un archivo de plataformas, migraciones y experimentos de producto.",
-    "featured": "Casos de estudio destacados",
-    "archive": "Archivo de proyectos",
+    "featured": "Proyectos destacados",
+    "archive": "Historial de proyectos",
     "filterTech": "Filtrar por tecnología",
     "clearFilters": "Limpiar filtros",
     "resultCount": "{count} proyectos"
