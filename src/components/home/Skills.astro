@@ -13,10 +13,8 @@ interface Props {
 }
 const { locale, prefixEnglish = false } = Astro.props;
 const skills = await getSkills(locale);
-const find = (name: string) =>
-  skills
-    .find((skill) => skill.name.toLowerCase().includes(name))
-    ?.items.slice(0, 5) ?? [];
+const find = (code: string) =>
+  skills.find((skill) => skill.id === code)?.items.slice(0, 5) ?? [];
 const capabilities = [
   {
     title: "Backend systems",
