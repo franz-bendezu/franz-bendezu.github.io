@@ -1,5 +1,5 @@
-import { defineCollection } from "astro:content";
-import { glob } from "astro/loaders";
+import { defineCollection, reference } from "astro:content";
+import { file, glob } from "astro/loaders";
 import { z } from "astro/zod";
 
 const localeSchema = z.enum(["en", "es"]);
@@ -14,6 +14,7 @@ const projectLinkTypeSchema = z.enum([
   "video",
 ]);
 const datedValueSchema = z.string().regex(/^\d{4}-\d{2}$/);
+const yearSchema = z.string().regex(/^\d{4}$/);
 const nonEmptyUniqueStrings = z
   .array(z.string().min(1))
   .refine((values) => new Set(values).size === values.length, {
@@ -97,5 +98,139 @@ const projects = defineCollection({
     .strict(),
 });
 
-export const collections = { projects };
+const workExperiences = defineCollection({
+  loader: file("./src/content/work-experiences.json"),
+  schema: z
+    .object({
+      position: z.number().int().positive(),
+      start: datedValueSchema,
+      end: datedValueSchema.optional(),
+      url: z.url().optional(),
+      locales: localizedValues(
+        z
+          .object({
+            company: z.string().min(1),
+            location: z.string().min(1),
+            role: z.string().min(1),
+            startLabel: z.string().min(1),
+            endLabel: z.string().min(1),
+            tasks: z.array(z.string().min(1)).min(1),
+          })
+          .strict(),
+      ),
+    })
+    .strict(),
+});
+
+const education = defineCollection({
+  loader: file("./src/content/education.json"),
+  schema: z
+    .object({
+      position: z.number().int().positive(),
+      start: yearSchema,
+      end: yearSchema,
+      url: z.url().optional(),
+      locales: localizedValues(
+        z
+          .object({
+            institution: z.string().min(1),
+            location: z.string().min(1),
+            degree: z.string().min(1),
+          })
+          .strict(),
+      ),
+    })
+    .strict(),
+});
+
+const certifications = defineCollection({
+  loader: file("./src/content/certifications.json"),
+  schema: z
+    .object({
+      position: z.number().int().positive(),
+      startedAt: datedValueSchema.optional(),
+      issuedAt: datedValueSchema,
+      url: z.url(),
+      locales: localizedValues(
+        z
+          .object({
+            name: z.string().min(1),
+          })
+          .strict(),
+      ),
+    })
+    .strict(),
+});
+
+const skills = defineCollection({
+  loader: file("./src/content/skills.json"),
+  schema: z
+    .object({
+      position: z.number().int().positive(),
+      items: nonEmptyUniqueStrings,
+      locales: localizedValues(z.object({ name: z.string().min(1) }).strict()),
+    })
+    .strict(),
+});
+
+const profiles = defineCollection({
+  loader: file("./src/content/profiles.json"),
+  schema: z
+    .object({
+      email: z.email(),
+      website: z.url(),
+      portrait: z.string().startsWith("/"),
+      socialLinks: z.array(
+        z.object({ label: z.string().min(1), url: z.url() }).strict(),
+      ),
+      locales: localizedValues(
+        z
+          .object({
+            name: z.string().min(1),
+            headline: z.string().min(1),
+            location: z.string().min(1),
+            summary: z.string().min(1),
+          })
+          .strict(),
+      ),
+    })
+    .strict(),
+});
+
+const resumes = defineCollection({
+  loader: file("./src/content/resumes.json"),
+  schema: z
+    .object({
+      profile: reference("profiles"),
+      workExperiences: z.array(reference("workExperiences")).min(1),
+      education: z.array(reference("education")).min(1),
+      certifications: z.array(reference("certifications")),
+      skills: z.array(reference("skills")).min(1),
+      projects: z.array(reference("projects")),
+      locales: localizedValues(
+        z
+          .object({
+            summary: z.string().min(1),
+            experience: z.string().min(1),
+            education: z.string().min(1),
+            certifications: z.string().min(1),
+            skills: z.string().min(1),
+            projects: z.string().min(1),
+            present: z.string().min(1),
+          })
+          .strict(),
+      ),
+    })
+    .strict(),
+});
+
+export const collections = {
+  projects,
+  workExperiences,
+  education,
+  certifications,
+  skills,
+  profiles,
+  resumes,
+};
 export { categorySchema, localeSchema, statusSchema };

@@ -1,0 +1,53 @@
+{
+  "default": {
+    "profile": "franz",
+    "workExperiences": ["work-1", "work-2", "work-3", "work-4", "work-5"],
+    "education": ["education-1"],
+    "certifications": [
+      "professional-devops",
+      "professional-nextjs",
+      "azure-fundamentals",
+      "cyberops-associate",
+      "software-architecture",
+      "professional-scrum",
+      "git-github",
+      "google-it-automation-python",
+      "excel-skills-business",
+      "google-it-support"
+    ],
+    "skills": [
+      "frontend",
+      "backend",
+      "cloud",
+      "devops",
+      "databases",
+      "testing",
+      "tools"
+    ],
+    "projects": [
+      "movify-aws-migration",
+      "agendalo-ssr-migration",
+      "my-portfolio"
+    ],
+    "locales": {
+      "en": {
+        "summary": "Professional Summary",
+        "experience": "Professional Experience",
+        "education": "Education",
+        "certifications": "Courses and Certifications",
+        "skills": "Technical Skills",
+        "projects": "Selected Projects",
+        "present": "Present"
+      },
+      "es": {
+        "summary": "Resumen Profesional",
+        "experience": "Experiencia Profesional",
+        "education": "Educación",
+        "certifications": "Cursos y Certificaciones",
+        "skills": "Habilidades Técnicas",
+        "projects": "Proyectos Seleccionados",
+        "present": "Presente"
+      }
+    }
+  }
+}

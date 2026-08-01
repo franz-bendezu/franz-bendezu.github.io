@@ -1,24 +1,11 @@
 ---
 import { translate, type Locale } from "@/lib/i18n";
+import { getSkills } from "@/lib/profile-content";
 interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
-const skills = [
-  [
-    "frontend",
-    "Vue, Nuxt, Angular, React, Next.js, Tailwind CSS, Vuetify, Bootstrap, Material UI, Angular Material",
-  ],
-  ["backend", "Spring Framework, Node.js, Express, Nestjs"],
-  [
-    "cloud",
-    "AWS: S3, EC2, RDS, Lambda, API Gateway, CloudFront, Route 53, DigitalOcean",
-  ],
-  ["devops", "AWS, Docker, GitHub Actions, GitLab CI/CD"],
-  ["databases", "PostgreSQL, MySQL, MariaDB, MongoDB"],
-  ["testing", "Vitest, Jest, Karma, Jasmine, Cypress, Junit, Mockito"],
-  ["tools", "Git, GitHub, Gitlab, Figma, Jira, Trello, VSCode"],
-];
+const skills = await getSkills(locale);
 ---
 
 <section id="skills" class="w-full bg-gray-300 py-6 dark:bg-gray-700">
@@ -46,13 +33,11 @@ const skills = [
       class="grid items-start gap-6 py-12 md:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-12"
     >
       {
-        skills.map(([key, value]) => (
+        skills.map((skill) => (
           <div class="grid gap-1">
             <>
-              <h3 class="text-xl font-bold">
-                {translate(locale, `Home.skills.${key}`)}
-              </h3>
-              <p class="text-muted-foreground">{value}</p>
+              <h3 class="text-xl font-bold">{skill.name}</h3>
+              <p class="text-muted-foreground">{skill.items.join(", ")}</p>
             </>
           </div>
         ))

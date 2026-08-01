@@ -1,0 +1,135 @@
+{
+  "professional-devops": {
+    "position": 1,
+    "issuedAt": "2023-11",
+    "url": "https://platzi.com/p/franz.bendezu/curso/1431-devops/diploma/detalle/",
+    "locales": {
+      "en": {
+        "name": "Professional DevOps Course"
+      },
+      "es": {
+        "name": "Curso Profesional de DevOps"
+      }
+    }
+  },
+  "professional-nextjs": {
+    "position": 2,
+    "issuedAt": "2023-11",
+    "url": "https://platzi.com/p/franz.bendezu/curso/2707-profesional-nextjs/diploma/detalle/",
+    "locales": {
+      "en": {
+        "name": "Professional Next.js Course"
+      },
+      "es": {
+        "name": "Curso Profesional de Next.js"
+      }
+    }
+  },
+  "azure-fundamentals": {
+    "position": 3,
+    "issuedAt": "2023-05",
+    "url": "https://credly.com/badges/108c4e3d-6a95-432c-8f82-53ff7dea4bb3",
+    "locales": {
+      "en": {
+        "name": "Microsoft Certified: Azure Fundamentals"
+      },
+      "es": {
+        "name": "Microsoft Certified: Azure Fundamentals"
+      }
+    }
+  },
+  "cyberops-associate": {
+    "position": 4,
+    "issuedAt": "2022-01",
+    "url": "https://credly.com/badges/4312c90f-a2b4-4ad8-bbb3-e7b873f86695",
+    "locales": {
+      "en": {
+        "name": "CyberOps Associate"
+      },
+      "es": {
+        "name": "CyberOps Associate"
+      }
+    }
+  },
+  "software-architecture": {
+    "position": 5,
+    "issuedAt": "2021-10",
+    "url": "https://platzi.com/p/franz.bendezu/curso/1248-pro-arquitectura/diploma/detalle/",
+    "locales": {
+      "en": {
+        "name": "Professional Software Architecture Course"
+      },
+      "es": {
+        "name": "Curso Profesional de Arquitectura de Software"
+      }
+    }
+  },
+  "professional-scrum": {
+    "position": 6,
+    "issuedAt": "2021-08",
+    "url": "https://platzi.com/p/franz.bendezu/course/1750-scrum/diploma/detalle/",
+    "locales": {
+      "en": {
+        "name": "Professional Scrum Course"
+      },
+      "es": {
+        "name": "Curso Profesional de Scrum"
+      }
+    }
+  },
+  "git-github": {
+    "position": 7,
+    "issuedAt": "2021-08",
+    "url": "https://platzi.com/p/franz.bendezu/curso/1557-course/diploma/detalle/",
+    "locales": {
+      "en": {
+        "name": "Professional Git and GitHub Course"
+      },
+      "es": {
+        "name": "Curso Profesional de Git y GitHub"
+      }
+    }
+  },
+  "google-it-automation-python": {
+    "position": 8,
+    "startedAt": "2020-06",
+    "issuedAt": "2020-07",
+    "url": "https://coursera.org/verify/professional-cert/EBQHHJ5LNUT5",
+    "locales": {
+      "en": {
+        "name": "Google IT Automation with Python Specialization"
+      },
+      "es": {
+        "name": "Programa Especializado - Google IT Automation with Python"
+      }
+    }
+  },
+  "excel-skills-business": {
+    "position": 9,
+    "startedAt": "2020-08",
+    "issuedAt": "2020-09",
+    "url": "https://coursera.org/verify/specialization/Z88TCESL582W",
+    "locales": {
+      "en": {
+        "name": "Excel Skills for Business Specialization"
+      },
+      "es": {
+        "name": "Programa Especializado - Excel Skills for Business"
+      }
+    }
+  },
+  "google-it-support": {
+    "position": 10,
+    "startedAt": "2020-09",
+    "issuedAt": "2020-10",
+    "url": "https://coursera.org/verify/professional-cert/AN72XYKRCANN",
+    "locales": {
+      "en": {
+        "name": "Google IT Support Professional Certificate"
+      },
+      "es": {
+        "name": "Programa Especializado - Google IT Support"
+      }
+    }
+  }
+}
