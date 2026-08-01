@@ -20,6 +20,11 @@ export interface IProjectCategory {
 
 export interface IProjectImage {
   src: string;
+  source?: ImageMetadata;
+  srcSet?: string;
+  sizes?: string;
+  width: number;
+  height: number;
   alt: string;
   description?: string;
 }
@@ -70,3 +75,4 @@ export interface IProject extends IBaseProject {
   position: number;
   translationKey: string;
 }
+import type { ImageMetadata } from "astro";

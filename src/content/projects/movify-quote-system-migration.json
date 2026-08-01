@@ -14,7 +14,7 @@
   "start": "2023-07",
   "end": "2023-12",
   "banner": {
-    "src": "/images/movify-quote-system-migration/banner.webp",
+    "src": "../../assets/images/movify-quote-system-migration/banner.webp",
     "locales": {
       "en": {
         "alt": "Movify Quote System"
@@ -26,7 +26,7 @@
   },
   "images": [
     {
-      "src": "/images/movify-quote-system-migration/architecture-overview.webp",
+      "src": "../../assets/images/movify-quote-system-migration/architecture-overview.webp",
       "locales": {
         "en": {
           "alt": "Architecture Overview",
@@ -39,7 +39,7 @@
       }
     },
     {
-      "src": "/images/movify-quote-system-migration/architecture-system.webp",
+      "src": "../../assets/images/movify-quote-system-migration/architecture-system.webp",
       "locales": {
         "en": {
           "alt": "System Architecture",
@@ -52,7 +52,7 @@
       }
     },
     {
-      "src": "/images/movify-quote-system-migration/quote-confirmation-email-template.webp",
+      "src": "../../assets/images/movify-quote-system-migration/quote-confirmation-email-template.webp",
       "locales": {
         "en": {
           "alt": "Quote Confirmation Email Template",
@@ -65,7 +65,7 @@
       }
     },
     {
-      "src": "/images/movify-quote-system-migration/quote-notification-email-template.webp",
+      "src": "../../assets/images/movify-quote-system-migration/quote-notification-email-template.webp",
       "locales": {
         "en": {
           "alt": "Quote Notification Email Template",

@@ -4,6 +4,7 @@ import ProjectCard from "@/components/project/ProjectCard";
 import { ProjectExplorerList } from "@/components/project/ExplorerList";
 import { PROJECT_CATEGORIES } from "@/constants/project-categories";
 import { getProjects } from "@/lib/projects";
+import { optimizeProjectBanners } from "@/lib/project-images";
 import { localizedPath, translate, type Locale } from "@/lib/i18n";
 import type { ProjectCategoryCodes } from "@/interfaces/project";
 interface Props {
@@ -14,14 +15,18 @@ interface Props {
 const { locale, category, prefixEnglish = false } = Astro.props;
 const path = category ? `/projects/c/${category}` : "/projects";
 const projects = await getProjects(locale, category);
-const featured = category
+const rawFeatured = category
   ? []
   : projects
       .filter((project) => project.featured)
       .sort((a, b) => a.position - b.position);
-const archive = category
+const rawArchive = category
   ? projects
   : projects.filter((project) => !project.featured);
+const [featured, archive] = await Promise.all([
+  optimizeProjectBanners(rawFeatured),
+  optimizeProjectBanners(rawArchive),
+]);
 const projectBasePath = localizedPath(locale, "/projects", prefixEnglish);
 const labels = {
   filteredBy: translate(locale, "Projects.filteredBy"),

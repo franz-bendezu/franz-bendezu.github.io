@@ -7,7 +7,7 @@
   "start": "2020-01",
   "end": "2020-12",
   "banner": {
-    "src": "/images/bus-uni-tracker/banner.webp",
+    "src": "../../assets/images/bus-uni-tracker/banner.webp",
     "locales": {
       "en": {
         "alt": "bus-uni Tracker"
@@ -33,7 +33,7 @@
   ],
   "images": [
     {
-      "src": "/images/bus-uni-tracker/app-home.webp",
+      "src": "../../assets/images/bus-uni-tracker/app-home.webp",
       "locales": {
         "en": {
           "alt": "Main Screen",
@@ -46,7 +46,7 @@
       }
     },
     {
-      "src": "/images/bus-uni-tracker/app-view-buss-route.webp",
+      "src": "../../assets/images/bus-uni-tracker/app-view-buss-route.webp",
       "locales": {
         "en": {
           "alt": "Bus Route View",
@@ -59,7 +59,7 @@
       }
     },
     {
-      "src": "/images/bus-uni-tracker/app-edit-route.webp",
+      "src": "../../assets/images/bus-uni-tracker/app-edit-route.webp",
       "locales": {
         "en": {
           "alt": "Route Editing",
@@ -72,7 +72,7 @@
       }
     },
     {
-      "src": "/images/bus-uni-tracker/app-edit-busses.webp",
+      "src": "../../assets/images/bus-uni-tracker/app-edit-busses.webp",
       "locales": {
         "en": {
           "alt": "Bus Management",
@@ -85,7 +85,7 @@
       }
     },
     {
-      "src": "/images/bus-uni-tracker/app-edit-drivers.webp",
+      "src": "../../assets/images/bus-uni-tracker/app-edit-drivers.webp",
       "locales": {
         "en": {
           "alt": "Driver Management",

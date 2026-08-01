@@ -76,52 +76,53 @@ const projects = defineCollection({
     pattern: "*.json",
     base: "./src/content/projects",
   }),
-  schema: z
-    .object({
-      position: z.number().int().positive(),
-      status: statusSchema,
-      tags: nonEmptyUniqueStrings,
-      categoryCode: categorySchema,
-      technologyCodes: technologyCodesSchema,
-      priority: z.number().optional(),
-      featured: z.boolean().optional(),
-      start: datedValueSchema.optional(),
-      end: datedValueSchema.optional(),
-      banner: z
-        .object({
-          src: z.string().startsWith("/"),
-          locales: localizedValues(localizedImageSchema),
-        })
-        .strict()
-        .optional(),
-      links: z
-        .array(
-          z
-            .object({
-              type: projectLinkTypeSchema,
-              url: z.url(),
-              locales: localizedValues(localizedLinkSchema),
-            })
-            .strict(),
-        )
-        .optional(),
-      images: z
-        .array(
-          z
-            .object({
-              src: z.string().startsWith("/"),
-              locales: localizedValues(localizedImageSchema),
-            })
-            .strict(),
-        )
-        .optional(),
-      locales: localizedValues(localizedProjectSchema),
-    })
-    .strict()
-    .refine(({ start, end }) => !start || !end || start <= end, {
-      message: "Project end date must not be earlier than its start date",
-      path: ["end"],
-    }),
+  schema: ({ image }) =>
+    z
+      .object({
+        position: z.number().int().positive(),
+        status: statusSchema,
+        tags: nonEmptyUniqueStrings,
+        categoryCode: categorySchema,
+        technologyCodes: technologyCodesSchema,
+        priority: z.number().optional(),
+        featured: z.boolean().optional(),
+        start: datedValueSchema.optional(),
+        end: datedValueSchema.optional(),
+        banner: z
+          .object({
+            src: image(),
+            locales: localizedValues(localizedImageSchema),
+          })
+          .strict()
+          .optional(),
+        links: z
+          .array(
+            z
+              .object({
+                type: projectLinkTypeSchema,
+                url: z.url(),
+                locales: localizedValues(localizedLinkSchema),
+              })
+              .strict(),
+          )
+          .optional(),
+        images: z
+          .array(
+            z
+              .object({
+                src: image(),
+                locales: localizedValues(localizedImageSchema),
+              })
+              .strict(),
+          )
+          .optional(),
+        locales: localizedValues(localizedProjectSchema),
+      })
+      .strict()
+      .refine(({ start, end }) => !start || !end || start <= end, {
+        message: "Project end date must not be earlier than its start date",
+        path: ["end"],
+      }),
 });
 
 const workExperiences = defineCollection({
@@ -202,27 +203,28 @@ const skills = defineCollection({
 
 const profiles = defineCollection({
   loader: file("./src/content/profiles.json"),
-  schema: z
-    .object({
-      email: z.email(),
-      phone: z.string().min(1).optional(),
-      website: z.url(),
-      portrait: z.string().startsWith("/"),
-      socialLinks: z.array(
-        z.object({ label: z.string().min(1), url: z.url() }).strict(),
-      ),
-      locales: localizedValues(
-        z
-          .object({
-            name: z.string().min(1),
-            headline: z.string().min(1),
-            location: z.string().min(1),
-            summary: z.string().min(1),
-          })
-          .strict(),
-      ),
-    })
-    .strict(),
+  schema: ({ image }) =>
+    z
+      .object({
+        email: z.email(),
+        phone: z.string().min(1).optional(),
+        website: z.url(),
+        portrait: image(),
+        socialLinks: z.array(
+          z.object({ label: z.string().min(1), url: z.url() }).strict(),
+        ),
+        locales: localizedValues(
+          z
+            .object({
+              name: z.string().min(1),
+              headline: z.string().min(1),
+              location: z.string().min(1),
+              summary: z.string().min(1),
+            })
+            .strict(),
+        ),
+      })
+      .strict(),
 });
 
 const resumes = defineCollection({

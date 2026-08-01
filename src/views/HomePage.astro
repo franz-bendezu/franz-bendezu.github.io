@@ -5,15 +5,18 @@ import Skills from "@/components/home/Skills.astro";
 import LastProjects from "@/components/home/LastProjects.astro";
 import ButtonLink from "@/components/ui/ButtonLink.astro";
 import { getProjects } from "@/lib/projects";
+import { optimizeProjectBanners } from "@/lib/project-images";
 import { localizedPath, translate, type Locale } from "@/lib/i18n";
 interface Props {
   locale: Locale;
   prefixEnglish?: boolean;
 }
 const { locale, prefixEnglish = false } = Astro.props;
-const projects = (await getProjects(locale))
-  .filter((project) => project.featured)
-  .sort((a, b) => a.position - b.position);
+const projects = await optimizeProjectBanners(
+  (await getProjects(locale))
+    .filter((project) => project.featured)
+    .sort((a, b) => a.position - b.position),
+);
 ---
 
 <BaseLayout locale={locale} path="/">

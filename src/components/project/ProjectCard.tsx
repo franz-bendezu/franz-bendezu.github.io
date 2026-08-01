@@ -29,9 +29,11 @@ function ProjectImage({ project }: { project: IProject }) {
         <img
           className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-[1.02]"
           src={project.banner.src}
+          srcSet={project.banner.srcSet}
+          sizes={project.banner.sizes}
           alt={project.banner.alt}
-          width="640"
-          height="360"
+          width={project.banner.width}
+          height={project.banner.height}
           loading="lazy"
         />
       ) : (

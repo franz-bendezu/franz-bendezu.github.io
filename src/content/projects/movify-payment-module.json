@@ -7,7 +7,7 @@
   "start": "2024-07",
   "end": "2024-12",
   "banner": {
-    "src": "/images/movify-payment-module/expense-page.webp",
+    "src": "../../assets/images/movify-payment-module/expense-page.webp",
     "locales": {
       "en": {
         "alt": "Expense Management Page"
@@ -19,7 +19,7 @@
   },
   "images": [
     {
-      "src": "/images/movify-payment-module/expense-page.webp",
+      "src": "../../assets/images/movify-payment-module/expense-page.webp",
       "locales": {
         "en": {
           "alt": "Expense Management Page",
@@ -32,7 +32,7 @@
       }
     },
     {
-      "src": "/images/movify-payment-module/expense-edit.webp",
+      "src": "../../assets/images/movify-payment-module/expense-edit.webp",
       "locales": {
         "en": {
           "alt": "Expense Editing Modal",
@@ -45,7 +45,7 @@
       }
     },
     {
-      "src": "/images/movify-payment-module/expense-edit-add-document.webp",
+      "src": "../../assets/images/movify-payment-module/expense-edit-add-document.webp",
       "locales": {
         "en": {
           "alt": "Expense Editing with Document Upload",
@@ -58,7 +58,7 @@
       }
     },
     {
-      "src": "/images/movify-payment-module/expense-report.webp",
+      "src": "../../assets/images/movify-payment-module/expense-report.webp",
       "locales": {
         "en": {
           "alt": "Expense Report View",

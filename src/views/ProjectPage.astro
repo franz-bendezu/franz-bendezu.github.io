@@ -6,6 +6,10 @@ import LinkIcon from "@/components/project/LinkIcon.astro";
 import ButtonLink from "@/components/ui/ButtonLink.astro";
 import cardStyles from "@/components/ui/Card.module.css";
 import { getProjects } from "@/lib/projects";
+import {
+  optimizeProjectBanner,
+  optimizeProjectGallery,
+} from "@/lib/project-images";
 import { localizedPath, translate, type Locale } from "@/lib/i18n";
 interface Props {
   locale: Locale;
@@ -20,8 +24,10 @@ const [englishProjects, spanishProjects] = await Promise.all([
 const localizedProjects = (
   locale === "en" ? englishProjects : spanishProjects
 ).sort((a, b) => a.position - b.position);
-const project = localizedProjects.find((item) => item.code === code);
-if (!project) return Astro.redirect("/404");
+const baseProject = localizedProjects.find((item) => item.code === code);
+if (!baseProject) return Astro.redirect("/404");
+const project = await optimizeProjectBanner(baseProject);
+const projectImages = await optimizeProjectGallery(project.images);
 const englishProject =
   locale === "en"
     ? project
@@ -135,9 +141,11 @@ const closeLabel = locale === "es" ? "Cerrar" : "Close";
             project.banner ? (
               <img
                 src={project.banner.src}
+                srcset={project.banner.srcSet}
+                sizes="(min-width: 1024px) 40vw, 100vw"
                 alt={project.banner.alt}
-                width="828"
-                height="450"
+                width={project.banner.width}
+                height={project.banner.height}
                 class="h-full w-full object-contain"
                 fetchpriority="high"
               />
@@ -279,7 +287,7 @@ const closeLabel = locale === "es" ? "Cerrar" : "Close";
     </section>
 
     {
-      project.images?.length && (
+      projectImages?.length && (
         <section class="border-y border-divider bg-surface-muted py-16">
           <div class="mx-auto w-full max-w-[75rem] px-5 sm:px-8">
             <>
@@ -293,7 +301,7 @@ const closeLabel = locale === "es" ? "Cerrar" : "Close";
               </h2>
               <ProjectImagesCarousel
                 client:load
-                images={[...project.images]}
+                images={projectImages}
                 closeLabel={closeLabel}
               />
             </>

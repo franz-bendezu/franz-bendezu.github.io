@@ -6,6 +6,8 @@ import LinkedInIcon from "@/components/icon/LinkedIn.astro";
 import PresentationDownload from "./PresentationDownload.astro";
 import { localizedPath, translate, type Locale } from "@/lib/i18n";
 import { getExperienceYears } from "@/lib/profile-content";
+import { Image } from "astro:assets";
+import profileImage from "@/assets/images/profile.webp";
 interface Props {
   locale: Locale;
   prefixEnglish?: boolean;
@@ -84,15 +86,17 @@ const description = translate(locale, "Home.description")
           width="512"
           height="512"
         />
-        <img
-          src="/images/profile.webp"
+        <Image
+          src={profileImage}
           alt={locale === "es"
             ? "Retrato de Franz Bendezu"
             : "Portrait of Franz Bendezu"}
+          widths={[160, 256, 352]}
+          sizes="(min-width: 1024px) 183px, (min-width: 640px) 133px, 108px"
+          format="webp"
+          quality={80}
           fetchpriority="high"
           class="relative z-10 aspect-square w-[52%] rounded-full object-cover ring-4 ring-surface-raised"
-          width="256"
-          height="256"
         />
       </div>
     </div>
