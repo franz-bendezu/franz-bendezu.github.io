@@ -79,6 +79,15 @@
           "title": "Efficient Data Management",
           "description": "Handling data using Google Blob Storage and Firebase, with effective backup solutions."
         }
+      ],
+      "challenge": "From September to December 2020, I collaborated with the CCAT elections team to develop and implement an online voting system. I designed a responsive and user-friendly interface, managed backend services for user authentication, vote counting, and report generation. I ensured system security by integrating secure authentication and login protocols. Additionally, I optimized deployment and scalability through containerization, and managed data storage with effective backup solutions.",
+      "approach": "Develop and implement an online voting system that ensures secure, anonymous, and reliable processes. Design a responsive and user-friendly interface. Manage backend services for user authentication, vote counting, and report generation. Integrate secure authentication and login protocols. Optimize scalability and deployment through containerization. Manage data storage with effective backup solutions.",
+      "outcomes": [
+        "Secure Voting System",
+        "Responsive User Interface",
+        "Containerized Deployment",
+        "Integrated Security",
+        "Efficient Data Management"
       ]
     },
     "es": {
@@ -133,6 +142,15 @@
           "title": "Gestión Eficiente de Datos",
           "description": "Manejo de datos utilizando Google Blob Storage y Firebase, con soluciones de respaldo efectivas."
         }
+      ],
+      "challenge": "De septiembre a diciembre de 2020, colaboré con el equipo de elecciones del CCAT para desarrollar e implementar un sistema de votación en línea. Diseñé una interfaz receptiva y fácil de usar, gestioné servicios de backend para la autenticación de usuarios, conteo de votos, y generación de reportes. Aseguré la seguridad del sistema integrando protocolos de autenticación y login seguros. Además, optimicé el despliegue y la escalabilidad mediante la contenedorización, y gestioné el almacenamiento de datos con soluciones de respaldo efectivas.",
+      "approach": "Desarrollar e implementar un sistema de votación en línea que garantice procesos seguros, anónimos y confiables. Diseñar una interfaz de usuario receptiva y fácil de usar. Administrar servicios de backend para la autenticación de usuarios, conteo de votos y generación de reportes. Integrar protocolos de autenticación y login seguros. Optimizar la escalabilidad y el despliegue mediante la contenedorización. Administrar el almacenamiento de datos con soluciones de respaldo efectivas.",
+      "outcomes": [
+        "Sistema de Votación Seguro",
+        "Interfaz de Usuario Receptiva",
+        "Despliegue con contenedores",
+        "Seguridad Integrada",
+        "Gestión Eficiente de Datos"
       ]
     }
   }

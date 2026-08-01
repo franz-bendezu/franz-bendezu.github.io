@@ -55,6 +55,15 @@
           "title": "Reactive Interface",
           "description": "Interactive and efficient user interface developed with React, enhancing user experience."
         }
+      ],
+      "challenge": "I developed a system to manage CCAT assemblies using Spring Boot, Spring JPA, Spring Security, and React. The system allows for the registration of member attendance and the recording of votes for important decisions. The voting results are recorded publicly, ensuring transparency in the process. I implemented robust security to protect data and system integrity, and used React for an interactive and efficient user interface.",
+      "approach": "Implement functionality to register member attendance at CCAT assemblies. Develop a system to record votes on decisions made during assemblies. Ensure that voting results are recorded and displayed publicly to guarantee transparency. Integrate Spring Security to protect data and ensure system integrity. Create an intuitive and efficient user interface using React to facilitate system interaction.",
+      "outcomes": [
+        "Attendance Registration",
+        "Vote Management",
+        "Public Results",
+        "Robust Security",
+        "Reactive Interface"
       ]
     },
     "es": {
@@ -105,6 +114,15 @@
           "title": "Interfaz Reactiva",
           "description": "Interfaz de usuario interactiva y eficiente desarrollada con React, mejorando la experiencia del usuario."
         }
+      ],
+      "challenge": "Desarrollé un sistema para gestionar las asambleas del CCAT usando Spring Boot, Spring JPA, Spring Security y React. El sistema permite registrar la asistencia de los miembros y registrar los votos para decisiones importantes. Los resultados de las votaciones se registran de forma pública, asegurando transparencia en el proceso. Implementé seguridad robusta para proteger los datos y la integridad del sistema, y utilicé React para una interfaz de usuario interactiva y eficiente.",
+      "approach": "Implementar una funcionalidad para registrar la asistencia de los miembros en las asambleas del CCAT. Desarrollar un sistema para registrar los votos en las decisiones tomadas durante las asambleas. Asegurar que los resultados de las votaciones se registren y se muestren de forma pública para garantizar la transparencia. Integrar Spring Security para proteger los datos y asegurar la integridad del sistema. Crear una interfaz de usuario intuitiva y eficiente usando React para facilitar la interacción con el sistema.",
+      "outcomes": [
+        "Registro de Asistencia",
+        "Gestión de Votos",
+        "Resultados Públicos",
+        "Seguridad Robusta",
+        "Interfaz Reactiva"
       ]
     }
   }

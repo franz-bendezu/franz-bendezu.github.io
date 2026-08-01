@@ -108,6 +108,13 @@
           "title": "Storage on Amazon S3",
           "description": "Integration with Amazon S3 to store photos and videos related to moving services."
         }
+      ],
+      "challenge": "From July to November 2023, I led the infrastructure migration to AWS to enhance deployment, availability, and service reliability. I established CI/CD workflows for deployment on AWS services, automating pipelines. I integrated Amazon S3 for storing photos and videos related to moving services.",
+      "approach": "Migrate the infrastructure to AWS to improve deployment and service availability. Establish automated CI/CD workflows. Find storage solutions for photos and videos.",
+      "outcomes": [
+        "AWS Infrastructure",
+        "Automated CI/CD Workflows",
+        "Storage on Amazon S3"
       ]
     },
     "es": {
@@ -142,6 +149,13 @@
           "title": "Almacenamiento en Amazon S3",
           "description": "Integración con Amazon S3 para almacenar fotos y videos relacionados con los servicios de mudanza."
         }
+      ],
+      "challenge": "De julio a noviembre de 2023, lideré la migración de la infraestructura a AWS para mejorar el despliegue, la disponibilidad y la confiabilidad de los servicios clave. Establecí flujos de CI/CD para desplegar en servicios de AWS y automaticé los pipelines. Integré Amazon S3 para almacenar fotos y videos relacionados con los servicios de mudanza.",
+      "approach": "Migrar la infraestructura a AWS para mejorar el despliegue y la disponibilidad de los servicios. Establecer flujos de trabajo de CI/CD automatizados Buscar soluciones de almacenamientopara fotos y videos",
+      "outcomes": [
+        "Infraestructura en AWS",
+        "Flujos de CI/CD Automatizados",
+        "Almacenamiento en Amazon S3"
       ]
     }
   }

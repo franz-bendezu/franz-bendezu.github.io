@@ -69,6 +69,15 @@
           "title": "Messaging Service Integration",
           "description": "Third-party messaging services for email notifications with customized templates."
         }
+      ],
+      "challenge": "From January to July 2024, I developed a notification module for moving orders, including reminders, confirmations, and surveys, tailored to the product type (detailed, easy, packing) and communication channel. I created a serverless module with AWS Lambda to render HTML templates for email notifications and PDF documents, improving customization and presentation for customers. I migrated the PDF generation module to AWS Lambda for parallel processing, solving server memory issues and integrating it with the current system to streamline confirmation sending. I integrated third-party messaging services for email notifications with customized templates based on the moving service, ensuring effective customer communication.",
+      "approach": "Develop a notification module for moving orders, including reminders, confirmations, and surveys. Create a serverless module to render HTML templates for email notifications and PDF documents. Migrate the PDF generation module to AWS Lambda for parallel processing and resolve server memory issues. Integrate third-party messaging services for email notifications with customized templates.",
+      "outcomes": [
+        "Notification Module",
+        "Static Module for HTML Template Generation",
+        "Serverless Module for HTML Template Rendering",
+        "Parallel Processing with AWS Lambda",
+        "Messaging Service Integration"
       ]
     },
     "es": {
@@ -115,6 +124,15 @@
           "title": "Integración de Servicios de Mensajería",
           "description": "Servicios de mensajería de terceros para notificaciones por correo electrónico con plantillas personalizadas."
         }
+      ],
+      "challenge": "De enero a julio de 2024, desarrollé un módulo de notificaciones para órdenes de mudanza, incluyendo recordatorios, confirmaciones y encuestas, adaptadas al tipo de producto (detallado, fácil, embalaje) y canal de comunicación. Creé un módulo serverless con AWS Lambda para renderizar plantillas HTML para notificaciones por correo electrónico y documentos PDF, mejorando la personalización y presentación para los clientes. Migré el módulo de generación de PDF a AWS Lambda para procesamiento paralelo, resolviendo problemas de memoria del servidor e integrándolo con el sistema actual para agilizar el envío de confirmaciones. Integré servicios de mensajería de terceros para notificaciones por correo electrónico con plantillas personalizadas basadas en el servicio de mudanza, asegurando una comunicación efectiva con los clientes.",
+      "approach": "Desarrollar un módulo de notificaciones para órdenes de mudanza, incluyendo recordatorios, confirmaciones y encuestas. Crear un módulo serverless para renderizar plantillas HTML para notificaciones por correo electrónico y documentos PDF. Migrar el módulo de generación de PDF a AWS Lambda para procesamiento paralelo y resolver problemas de memoria del servidor. Integrar servicios de mensajería de terceros para notificaciones por correo electrónico con plantillas personalizadas.",
+      "outcomes": [
+        "Módulo de Notificaciones",
+        "Módulo para generar plantillas HTML",
+        "Módulo para renderizar plantillas HTML",
+        "Procesamiento Paralelo con AWS Lambda",
+        "Integración de Servicios de Mensajería"
       ]
     }
   }

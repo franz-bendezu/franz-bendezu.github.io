@@ -131,7 +131,10 @@
           "title": "Agile Development",
           "description": "Rapid and efficient development using Vue.js and Firebase."
         }
-      ]
+      ],
+      "challenge": "From May to June 2020, I developed an MVP of a web application called Oximeter Peru, which allowed users to find nearby places to buy oximeters. I used Vue.js for the frontend and Firebase for the backend, enabling quick and efficient implementation. Additionally, I integrated Leaflet.js for map visualization and geolocation, making it easier for users to find nearby stores. This project was developed in response to the growing demand for oximeters during the COVID-19 pandemic in Peru.",
+      "approach": "Develop an application to find nearby places that sell oximeters. Respond to the growing demand for oximeters during the COVID-19 pandemic in Peru. Use modern technologies for rapid and efficient MVP development.",
+      "outcomes": ["Store Location", "Geolocation", "Agile Development"]
     },
     "es": {
       "code": "oximetro-peru",
@@ -165,6 +168,13 @@
           "title": "Desarrollo Ágil",
           "description": "Desarrollo rápido y eficiente utilizando Vue.js y Firebase."
         }
+      ],
+      "challenge": "De mayo a junio de 2020, desarrollé un MVP de una aplicación web denominada Oxímetro Perú, que permitía a los usuarios encontrar lugares cercanos donde comprar oxímetros. Utilicé Vue.js para el frontend y Firebase para el backend, lo que permitió una implementación rápida y eficiente. Además, integré Leaflet.js para la visualización de mapas y geolocalización, lo que facilitó a los usuarios encontrar tiendas cercanas. Este proyecto se desarrolló en respuesta a la creciente demanda de oxímetros durante la pandemia de COVID-19 en Perú.",
+      "approach": "Desarrollar una aplicación para encontrar lugares cercanos donde comprar oxímetros. Responder a la creciente demanda de oxímetros durante la pandemia de COVID-19 en Perú. Utilizar tecnologías modernas para un desarrollo rápido y eficiente del MVP.",
+      "outcomes": [
+        "Localización de Tiendas",
+        "Geolocalización",
+        "Desarrollo Ágil"
       ]
     }
   }
