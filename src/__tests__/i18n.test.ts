@@ -36,4 +36,9 @@ describe("i18n routing", () => {
     );
     expect(translate("en", "Missing.key")).toBe("Missing.key");
   });
+
+  it("resolves the About eyebrow in both locales", () => {
+    expect(translate("en", "About.eyebrow")).toBe("Profile");
+    expect(translate("es", "About.eyebrow")).toBe("Perfil");
+  });
 });
