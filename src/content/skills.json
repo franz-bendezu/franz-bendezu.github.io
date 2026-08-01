@@ -1,18 +1,18 @@
 {
   "frontend": {
     "position": 1,
-    "items": [
-      "Vue",
-      "Nuxt",
-      "Angular",
-      "React",
-      "Next.js",
-      "Astro",
-      "Tailwind CSS",
-      "Vuetify",
-      "Bootstrap",
-      "Material UI",
-      "Angular Material"
+    "technologyCodes": [
+      "vue",
+      "nuxt",
+      "angular",
+      "react",
+      "nextjs",
+      "astro",
+      "tailwindcss",
+      "vuetify",
+      "bootstrap",
+      "material-ui",
+      "angular-material"
     ],
     "locales": {
       "en": {
@@ -25,7 +25,13 @@
   },
   "backend": {
     "position": 2,
-    "items": ["Spring Framework", "Node.js", "Express", "NestJS", "GraphQL"],
+    "technologyCodes": [
+      "spring-framework",
+      "nodejs",
+      "express",
+      "nestjs",
+      "graphql"
+    ],
     "locales": {
       "en": {
         "name": "Backend"
@@ -37,15 +43,15 @@
   },
   "cloud": {
     "position": 3,
-    "items": [
-      "AWS S3",
-      "EC2",
-      "RDS",
-      "Lambda",
-      "API Gateway",
-      "CloudFront",
-      "Route 53",
-      "DigitalOcean"
+    "technologyCodes": [
+      "aws-s3",
+      "aws-ec2",
+      "amazon-rds",
+      "aws-lambda",
+      "aws-api-gateway",
+      "cloudfront",
+      "route53",
+      "digitalocean"
     ],
     "locales": {
       "en": {
@@ -58,12 +64,12 @@
   },
   "devops": {
     "position": 4,
-    "items": [
-      "AWS",
-      "Docker",
-      "GitHub Actions",
-      "GitLab CI/CD",
-      "Azure DevOps"
+    "technologyCodes": [
+      "aws",
+      "docker",
+      "github-actions",
+      "gitlab-ci",
+      "azure-devops"
     ],
     "locales": {
       "en": {
@@ -76,7 +82,13 @@
   },
   "databases": {
     "position": 5,
-    "items": ["PostgreSQL", "MySQL", "MariaDB", "MongoDB", "DynamoDB"],
+    "technologyCodes": [
+      "postgresql",
+      "mysql",
+      "mariadb",
+      "mongodb",
+      "dynamodb"
+    ],
     "locales": {
       "en": {
         "name": "Databases"
@@ -88,14 +100,14 @@
   },
   "testing": {
     "position": 6,
-    "items": [
-      "Vitest",
-      "Jest",
-      "Karma",
-      "Jasmine",
-      "Cypress",
-      "JUnit",
-      "Mockito"
+    "technologyCodes": [
+      "vitest",
+      "jest",
+      "karma",
+      "jasmine",
+      "cypress",
+      "junit",
+      "mockito"
     ],
     "locales": {
       "en": {
@@ -108,7 +120,15 @@
   },
   "tools": {
     "position": 7,
-    "items": ["Git", "GitHub", "GitLab", "Figma", "Jira", "Trello", "VS Code"],
+    "technologyCodes": [
+      "git",
+      "github",
+      "gitlab",
+      "figma",
+      "jira",
+      "trello",
+      "vscode"
+    ],
     "locales": {
       "en": {
         "name": "Tools"
