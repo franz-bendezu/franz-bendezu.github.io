@@ -48,8 +48,15 @@ export async function optimizeProjectBanner(
   };
 }
 
-export function optimizeProjectBanners(projects: IProject[]) {
-  return Promise.all(projects.map(optimizeProjectBanner));
+export async function optimizeProjectBanners(projects: IProject[]) {
+  const optimizedProjects = await Promise.all(
+    projects.map(optimizeProjectBanner),
+  );
+
+  return optimizedProjects.map((project) => {
+    const { images: _images, ...cardProject } = project;
+    return cardProject;
+  });
 }
 
 export async function optimizeProjectGallery(
