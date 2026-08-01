@@ -43,8 +43,13 @@ export interface IBaseProject {
   categoryCode: ProjectCategoryCodes;
   technologyCodes: IBaseProjectTechnology["code"][];
   priority?: number;
+  featured?: boolean;
   start?: string;
   end?: string;
+  role?: string;
+  challenge?: string;
+  approach?: string;
+  outcomes?: string[];
   projectGoals: {
     title: string;
     description: string;

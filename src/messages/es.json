@@ -19,22 +19,51 @@
     "efficient": "eficientes",
     "highQuality": "alta calidad",
     "cvPath": "/Franz-Bendezu-CV-ES.pdf",
+    "viewWork": "Ver proyectos destacados",
+    "available": "Disponible para equipos ambiciosos y proyectos de consultoría",
+    "proof": {
+      "experience": "Años construyendo software",
+      "focus": "Experiencia full-stack",
+      "delivery": "Entrega de principio a fin",
+      "lifecycle": "Analizar → Diseñar → Planificar → Desarrollar → Desplegar"
+    },
     "skills": {
       "label": "Mis Habilidades",
       "title": "Tecnologías con las que trabajo",
-      "description": "Tengo un conjunto diverso de habilidades en varias áreas del desarrollo de software."
+      "description": "Tengo un conjunto diverso de habilidades en varias áreas del desarrollo de software.",
+      "backend": "APIs confiables, flujos de negocio, integraciones y servicios distribuidos.",
+      "cloud": "Infraestructura productiva, pipelines, observabilidad y migraciones en AWS.",
+      "frontend": "Interfaces rápidas y accesibles, además de plataformas web con SSR.",
+      "evidence": "Ver trabajo relacionado"
     },
     "lastProjects": {
+      "label": "Trabajo seleccionado",
       "title": "Mis Últimos Proyectos",
       "viewAll": "Ver todos los proyectos",
-      "description": "Explora una selección de proyectos de software recientes que demuestran mis habilidades técnicas y mi enfoque para resolver problemas."
+      "description": "Explora una selección de proyectos de software recientes que demuestran mis habilidades técnicas y mi enfoque para resolver problemas.",
+      "caseStudy": "Leer caso de estudio",
+      "impact": "Impacto"
+    },
+    "cta": {
+      "label": "Iniciemos una conversación",
+      "title": "¿Necesitas un ingeniero que conecte arquitectura y entrega?",
+      "description": "Trabajo con equipos y clientes en sistemas backend, plataformas cloud y aplicaciones web complejas.",
+      "button": "Conversemos sobre tu proyecto"
     }
   },
   "Project": {
     "overview": "Descripción del Proyecto",
     "technologies": "Tecnologías Utilizadas",
     "goals": "Objetivos del Proyecto",
-    "features": "Funcionalidades Principales"
+    "features": "Funcionalidades Principales",
+    "challenge": "Desafío",
+    "approach": "Enfoque",
+    "impact": "Impacto",
+    "role": "Rol",
+    "period": "Periodo",
+    "previous": "Proyecto anterior",
+    "next": "Proyecto siguiente",
+    "cta": "¿Tienes un desafío similar? Conversemos."
   },
   "Projects": {
     "title": "Proyectos",
@@ -43,12 +72,21 @@
     },
     "viewProjectLink": "Ver Proyecto {title}",
     "filteredBy": "Filtrado por:",
-    "empty": "No se encontraron proyectos"
+    "empty": "No se encontraron proyectos",
+    "intro": "Casos de estudio seleccionados y un archivo de plataformas, migraciones y experimentos de producto.",
+    "featured": "Casos de estudio destacados",
+    "archive": "Archivo de proyectos",
+    "filterTech": "Filtrar por tecnología",
+    "clearFilters": "Limpiar filtros",
+    "resultCount": "{count} proyectos"
   },
   "Contact": {
     "title": "Contáctame",
     "description": "Si tienes alguna pregunta o deseas trabajar conmigo, no dudes en contactarme.",
     "intro": "Estoy interesado en oportunidades de trabajo independiente y proyectos ambiciosos. También puedes usar el formulario para cualquier otra solicitud o pregunta.",
+    "availability": "Actualmente abierto a conversaciones seleccionadas",
+    "emailLabel": "¿Prefieres el correo?",
+    "response": "Normalmente respondo en dos días hábiles.",
     "form": {
       "name": "Nombre",
       "email": "Correo",
@@ -71,7 +109,16 @@
     "courseCertifications": {
       "title": "Cursos y Certificaciones"
     },
-    "description": "Soy desarrollador de software e ingeniero de sistemas con más de {years} años de experiencia en el diseño y desarrollo de soluciones de software."
+    "description": "Soy desarrollador de software e ingeniero de sistemas con más de {years} años de experiencia en el diseño y desarrollo de soluciones de software.",
+    "eyebrow": "Perfil",
+    "introTitle": "Convierto requisitos complejos en sistemas que los equipos pueden operar con confianza.",
+    "recent": "Experiencia reciente",
+    "earlier": "Experiencia anterior",
+    "metrics": {
+      "years": "Años de experiencia",
+      "roles": "Roles profesionales",
+      "focus": "Experiencia full-stack"
+    }
   },
   "Metadata": {
     "title": {

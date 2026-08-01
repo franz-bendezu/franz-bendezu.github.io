@@ -17,22 +17,51 @@
     "description": "I enjoy creating solutions that simplify people's lives, optimizing every step of the process to deliver <GrayHighlight>efficient</GrayHighlight> and <GreenHighlight>high-quality</GreenHighlight> results.",
     "downloadCV": "Download CV",
     "cvPath": "/Franz-Bendezu-CV-EN.pdf",
+    "viewWork": "View selected work",
+    "available": "Available for ambitious teams and consulting engagements",
+    "proof": {
+      "experience": "Years building software",
+      "focus": "Full-stack experience",
+      "delivery": "End-to-end delivery",
+      "lifecycle": "Analyze → Design → Plan → Develop → Deploy"
+    },
     "skills": {
       "label": "My Skills",
       "title": "Technologies I work with",
-      "description": "I have a diverse set of skills across several areas of software development."
+      "description": "I have a diverse set of skills across several areas of software development.",
+      "backend": "Reliable APIs, business workflows, integrations, and distributed services.",
+      "cloud": "Production infrastructure, delivery pipelines, observability, and AWS migrations.",
+      "frontend": "Fast, accessible product interfaces and server-rendered web platforms.",
+      "evidence": "See related work"
     },
     "lastProjects": {
+      "label": "Selected work",
       "title": "My Latest Projects",
       "viewAll": "View All Projects",
-      "description": "Explore a selection of recent software projects that demonstrate my technical skills and problem-solving approach."
+      "description": "Explore a selection of recent software projects that demonstrate my technical skills and problem-solving approach.",
+      "caseStudy": "Read case study",
+      "impact": "Impact"
+    },
+    "cta": {
+      "label": "Start a conversation",
+      "title": "Need an engineer who can connect architecture and delivery?",
+      "description": "I work with product teams and clients on backend systems, cloud platforms, and complex web applications.",
+      "button": "Discuss a project"
     }
   },
   "Project": {
     "overview": "Project Overview",
     "technologies": "Technologies Used",
     "goals": "Project Goals",
-    "features": "Key Features"
+    "features": "Key Features",
+    "challenge": "Challenge",
+    "approach": "Approach",
+    "impact": "Impact",
+    "role": "Role",
+    "period": "Period",
+    "previous": "Previous project",
+    "next": "Next project",
+    "cta": "Have a similar challenge? Let's talk."
   },
   "Projects": {
     "title": "Projects",
@@ -41,12 +70,21 @@
     },
     "viewProjectLink": "View Project {title}",
     "filteredBy": "Filtered by:",
-    "empty": "No projects found"
+    "empty": "No projects found",
+    "intro": "Selected case studies and a broader archive of platforms, migrations, and product experiments.",
+    "featured": "Featured case studies",
+    "archive": "Project archive",
+    "filterTech": "Filter by technology",
+    "clearFilters": "Clear filters",
+    "resultCount": "{count} projects"
   },
   "Contact": {
     "title": "Contact",
     "description": "If you have any questions or want to work with me, do not hesitate to contact me.",
     "intro": "I am interested in freelance opportunities and ambitious projects. You can also use the form for any other request or question.",
+    "availability": "Currently open to selected conversations",
+    "emailLabel": "Prefer email?",
+    "response": "I usually reply within two business days.",
     "form": {
       "name": "Name",
       "email": "Email",
@@ -69,7 +107,16 @@
     "courseCertifications": {
       "title": "Courses and Certifications"
     },
-    "description": "I am a software developer and systems engineer with over {years} years of experience designing and building software solutions."
+    "description": "I am a software developer and systems engineer with over {years} years of experience designing and building software solutions.",
+    "eyebrow": "Profile",
+    "introTitle": "I turn complex requirements into systems teams can operate with confidence.",
+    "recent": "Recent experience",
+    "earlier": "Earlier experience",
+    "metrics": {
+      "years": "Years of experience",
+      "roles": "Professional roles",
+      "focus": "Full-stack experience"
+    }
   },
   "Metadata": {
     "title": {

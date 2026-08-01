@@ -1,5 +1,6 @@
 {
   "position": 1,
+  "featured": true,
   "status": "completed",
   "tags": [
     "Vue",
@@ -68,6 +69,14 @@
       "code": "agendalo-ssr-migration",
       "title": "Agendalo.io - SSR Migration",
       "shortDescription": "Migration of the frontend platform to server-side rendering (SSR) to improve SEO and platform ranking.",
+      "role": "Frontend engineer · Architecture and delivery",
+      "challenge": "The platform relied on a single-page application that limited search visibility and made a safe architectural migration difficult.",
+      "approach": "I migrated the frontend to Nuxt SSR, introduced unit and end-to-end coverage, and preserved the platform's critical user flows throughout the transition.",
+      "outcomes": [
+        "Improved platform ranking by 100%",
+        "Introduced unit and end-to-end test coverage",
+        "Completed the SPA-to-SSR architecture migration"
+      ],
       "description": "From July 2021 to May 2022, I was responsible for migrating the platform's frontend. I transformed a single-page application (SPA) into a server-side rendered (SSR) application using Node, improving SEO for users and the platform's ranking by 100%. I implemented unit tests for new interface components and end-to-end (E2E) tests for current flows, reducing the error rate.",
       "projectGoals": [
         {
@@ -106,6 +115,14 @@
       "code": "agendalo-ssr-migration",
       "title": "Agendalo.io - Migración a SSR",
       "shortDescription": "Migración de la plataforma frontend a renderizado del lado del servidor (SSR) para mejorar el SEO y la posición de la plataforma.",
+      "role": "Ingeniero frontend · Arquitectura y entrega",
+      "challenge": "La plataforma dependía de una aplicación de una sola página que limitaba la visibilidad en buscadores y hacía compleja una migración arquitectónica segura.",
+      "approach": "Migré el frontend a Nuxt SSR, incorporé cobertura unitaria y end-to-end, y preservé los flujos críticos de la plataforma durante la transición.",
+      "outcomes": [
+        "Mejora del 100% en la posición de la plataforma",
+        "Incorporación de pruebas unitarias y end-to-end",
+        "Migración completa de SPA a arquitectura SSR"
+      ],
       "description": "De julio de 2021 a mayo de 2022, fui responsable de la migración del frontend de la plataforma. Transformé una aplicación de una sola página (SPA) en una aplicación con renderizado del lado del servidor (SSR) usando Node, mejorando el SEO para los usuarios y la posición de la plataforma en un 100%. Implementé pruebas unitarias para los nuevos componentes de la interfaz y pruebas de extremo a extremo (E2E) para los flujos actuales, reduciendo la tasa de errores.",
       "projectGoals": [
         {

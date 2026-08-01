@@ -43,6 +43,10 @@ const localizedProjectSchema = z
     title: z.string().min(1),
     shortDescription: z.string().min(1),
     description: z.string().min(1).optional(),
+    role: z.string().min(1).optional(),
+    challenge: z.string().min(1).optional(),
+    approach: z.string().min(1).optional(),
+    outcomes: z.array(z.string().min(1)).optional(),
     projectGoals: z.array(localizedTextSchema),
     keyFeatures: z.array(localizedTextSchema),
   })
@@ -63,6 +67,7 @@ const projects = defineCollection({
       categoryCode: categorySchema,
       technologyCodes: nonEmptyUniqueStrings,
       priority: z.number().optional(),
+      featured: z.boolean().optional(),
       start: datedValueSchema.optional(),
       end: datedValueSchema.optional(),
       banner: z
