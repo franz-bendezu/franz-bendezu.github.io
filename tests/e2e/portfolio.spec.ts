@@ -103,7 +103,7 @@ test("renders bilingual CV pages and serves generated PDFs", async ({
         name: locale === "es" ? "Resumen Profesional" : "Professional Summary",
       }),
     ).toBeVisible();
-    await expect(page.locator(".experience")).toHaveCount(5);
+    await expect(page.locator(".experience")).toHaveCount(7);
     await expect(page.locator(".certification")).toHaveCount(10);
     await expect(page.locator(".project a").first()).toHaveAttribute(
       "href",

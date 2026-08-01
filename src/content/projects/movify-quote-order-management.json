@@ -267,7 +267,7 @@
       "code": "movify-quote-order-management",
       "title": "Movify.pe - Sistema de Gestión de Cotizaciones y Órdenes",
       "shortDescription": "Desarrollo de un sistema administrativo para cotizaciones y órdenes de mudanza.",
-      "description": "De diciembre de 2021 a julio de 2023, desarrollé un sistema administrativo para cotizaciones y órdenes para el equipo de ventas y mudanza. Diseñé e implementé la arquitectura cliente-servidor utilizando una API REST y una SPA. Automatizé la generación de PDF para cotizaciones y órdenes de venta. Desarrollé un módulo de informes para medir la eficiencia del equipo de ventas e interconecté con el sistema de cotizaciones web a través de API. Establecí flujos de integración y despliegue continuo mediante GitHub Actions.",
+      "description": "De diciembre de 2021 a julio de 2023, desarrollé un sistema administrativo para cotizaciones y órdenes para el equipo de ventas y mudanza. Diseñé e implementé la arquitectura cliente-servidor utilizando una API REST y una SPA. Automaticé la generación de archivos PDF para cotizaciones y órdenes de venta. Desarrollé un módulo de informes para medir la eficiencia del equipo de ventas e interconecté el sistema con la plataforma web de cotizaciones mediante una API. Establecí flujos de integración y despliegue continuo con GitHub Actions.",
       "projectGoals": [
         {
           "title": "Establecer un Sistema Administrativo para Cotizaciones y Órdenes",

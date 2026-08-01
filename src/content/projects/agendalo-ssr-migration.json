@@ -4,10 +4,10 @@
   "tags": [
     "Vue",
     "Webpack",
-    "Typescript",
+    "TypeScript",
     "Nuxt",
     "Node",
-    "Javascript",
+    "JavaScript",
     "Cypress",
     "Jest"
   ],
@@ -23,7 +23,7 @@
     "jest"
   ],
   "start": "2021-07",
-  "end": "2021-05",
+  "end": "2022-05",
   "banner": {
     "src": "/images/agendalo-ssr-migration/architecture-overview.webp",
     "locales": {
@@ -58,7 +58,7 @@
         },
         "es": {
           "alt": "Arquitectura del Sistema",
-          "description": "Arquitectura del sistema migrado a renderizado del lado del servidor ( SSR)."
+          "description": "Arquitectura del sistema migrado a renderizado del lado del servidor (SSR)."
         }
       }
     }
@@ -68,7 +68,7 @@
       "code": "agendalo-ssr-migration",
       "title": "Agendalo.io - SSR Migration",
       "shortDescription": "Migration of the frontend platform to server-side rendering (SSR) to improve SEO and platform ranking.",
-      "description": "From July to May 2021, I was responsible for migrating the platform's frontend. I transformed a single-page application (SPA) into a server-side rendered (SSR) application using Node, improving SEO for users and the platform's ranking by 100%. I implemented unit tests for new interface components and end-to-end (E2E) tests for current flows, reducing the error rate.",
+      "description": "From July 2021 to May 2022, I was responsible for migrating the platform's frontend. I transformed a single-page application (SPA) into a server-side rendered (SSR) application using Node, improving SEO for users and the platform's ranking by 100%. I implemented unit tests for new interface components and end-to-end (E2E) tests for current flows, reducing the error rate.",
       "projectGoals": [
         {
           "title": "Architecture Migration",
@@ -106,7 +106,7 @@
       "code": "agendalo-ssr-migration",
       "title": "Agendalo.io - Migración a SSR",
       "shortDescription": "Migración de la plataforma frontend a renderizado del lado del servidor (SSR) para mejorar el SEO y la posición de la plataforma.",
-      "description": "De julio a mayo de 2021, fui responsable de la migración del frontend de la plataforma. Transformé una aplicación de una sola página (SPA) en una aplicación con renderizado del lado del servidor (SSR) usando Node, mejorando el SEO para los usuarios y la posición de la plataforma en un 100%. Implementé pruebas unitarias para los nuevos componentes de la interfaz y pruebas de extremo a extremo (E2E) para los flujos actuales, reduciendo la tasa de errores.",
+      "description": "De julio de 2021 a mayo de 2022, fui responsable de la migración del frontend de la plataforma. Transformé una aplicación de una sola página (SPA) en una aplicación con renderizado del lado del servidor (SSR) usando Node, mejorando el SEO para los usuarios y la posición de la plataforma en un 100%. Implementé pruebas unitarias para los nuevos componentes de la interfaz y pruebas de extremo a extremo (E2E) para los flujos actuales, reduciendo la tasa de errores.",
       "projectGoals": [
         {
           "title": "Migración de la arquitectura",
@@ -132,7 +132,7 @@
         },
         {
           "title": "Pruebas Automatizadas",
-          "description": "El esarrollo e integración de un marco de pruebas automatizadas que incluye pruebas unitarias y de extremo a extremo (E2E). Esto garantiza la estabilidad del sistema y permite una detección temprana de errores en los componentes y flujos de la aplicación."
+          "description": "El desarrollo y la integración de un marco de pruebas automatizadas que incluye pruebas unitarias y de extremo a extremo (E2E). Esto garantiza la estabilidad del sistema y permite detectar errores de forma temprana en los componentes y flujos de la aplicación."
         },
         {
           "title": "Rendimiento Optimizado",

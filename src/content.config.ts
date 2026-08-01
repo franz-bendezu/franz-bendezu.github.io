@@ -95,7 +95,11 @@ const projects = defineCollection({
         .optional(),
       locales: localizedValues(localizedProjectSchema),
     })
-    .strict(),
+    .strict()
+    .refine(({ start, end }) => !start || !end || start <= end, {
+      message: "Project end date must not be earlier than its start date",
+      path: ["end"],
+    }),
 });
 
 const workExperiences = defineCollection({

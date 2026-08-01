@@ -3,7 +3,7 @@
     "index": "Inicio",
     "projects": "Proyectos",
     "contact": "Contacto",
-    "about": "Acerca de mi",
+    "about": "Acerca de mí",
     "switchLocale": "{locale}"
   },
   "Footer": {
@@ -21,13 +21,13 @@
     "cvPath": "/Franz-Bendezu-CV-ES.pdf",
     "skills": {
       "label": "Mis Habilidades",
-      "title": "Technologías en las que soy experto",
-      "description": " Tengo un conjunto diverso de habilidades en varios dominios del desarrollo de software."
+      "title": "Tecnologías con las que trabajo",
+      "description": "Tengo un conjunto diverso de habilidades en varias áreas del desarrollo de software."
     },
     "lastProjects": {
       "title": "Mis Últimos Proyectos",
-      "viewAll": "Ver Todos los Proyectos",
-      "description": "Explore una selección de mis proyectos recientes de desarrollo web, que muestran mis habilidades y creatividad."
+      "viewAll": "Ver todos los proyectos",
+      "description": "Explora una selección de proyectos de software recientes que demuestran mis habilidades técnicas y mi enfoque para resolver problemas."
     }
   },
   "Project": {
@@ -61,9 +61,9 @@
     }
   },
   "About": {
-    "title": "Acerca de mi",
+    "title": "Acerca de mí",
     "education": {
-      "title": "Experiencia Educativa"
+      "title": "Formación académica"
     },
     "work": {
       "title": "Experiencia Laboral"
@@ -71,7 +71,7 @@
     "courseCertifications": {
       "title": "Cursos y Certificaciones"
     },
-    "description": "Soy un desarrollador de software con 4 años de experiencia en el desarrollo de aplicaciones web, tengo una bachiller en Ingeniería de Sistemas y soy un apasionado de la tecnología."
+    "description": "Soy desarrollador de software e ingeniero de sistemas con más de {years} años de experiencia en el diseño y desarrollo de soluciones de software."
   },
   "Metadata": {
     "title": {

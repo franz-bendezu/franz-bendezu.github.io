@@ -10,7 +10,11 @@ import Certifications from "@/components/about/Certifications.astro";
 import EducationCard from "@/components/experience/EducationCard.astro";
 import WorkCard from "@/components/experience/WorkCard.astro";
 import { translate, type Locale } from "@/lib/i18n";
-import { getEducation, getWorkExperiences } from "@/lib/profile-content";
+import {
+  getEducation,
+  getExperienceYears,
+  getWorkExperiences,
+} from "@/lib/profile-content";
 
 interface Props {
   locale: Locale;
@@ -20,13 +24,14 @@ const [work, education] = await Promise.all([
   getWorkExperiences(locale),
   getEducation(locale),
 ]);
+const years = getExperienceYears();
 ---
 
 <BaseLayout
   locale={locale}
   path="/about"
   title={translate(locale, "About.title")}
-  description={translate(locale, "About.description")}
+  description={translate(locale, "About.description", { years })}
 >
   <section
     data-testid="projects"
