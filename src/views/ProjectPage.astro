@@ -3,6 +3,8 @@ import { CheckIcon } from "@heroicons/react/20/solid";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { ProjectImagesCarousel } from "@/components/project/Images";
 import LinkIcon from "@/components/project/LinkIcon.astro";
+import ButtonLink from "@/components/ui/ButtonLink.astro";
+import cardStyles from "@/components/ui/Card.module.css";
 import { getProjects } from "@/lib/projects";
 import { localizedPath, translate, type Locale } from "@/lib/i18n";
 interface Props {
@@ -121,22 +123,20 @@ const outcomes = project.outcomes?.length
             project.links?.length && (
               <div class="mt-6 flex flex-wrap gap-2">
                 {project.links.map((link) => (
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex min-h-11 items-center justify-center gap-2 rounded-[0.65rem] border border-divider bg-transparent px-4 py-2.5 text-sm font-bold text-content hover:-translate-y-0.5 hover:border-accent hover:text-accent-strong text-sm"
-                  >
+                  <ButtonLink href={link.url} external variant="secondary">
                     <LinkIcon type={link.type} class="h-4 w-4" />
                     {link.title}
-                  </a>
+                  </ButtonLink>
                 ))}
               </div>
             )
           }
         </div>
         <div
-          class="rounded-2xl border border-divider bg-surface-raised shadow-editorial aspect-video overflow-hidden bg-surface-muted"
+          class:list={[
+            cardStyles.base,
+            "aspect-video overflow-hidden bg-surface-muted",
+          ]}
         >
           {
             project.banner ? (
@@ -220,7 +220,12 @@ const outcomes = project.outcomes?.length
           </p><div class="mt-5 flex flex-wrap gap-3">
             {
               project.technologies.map((tech) => (
-                <span class="rounded-2xl border border-divider bg-surface-raised shadow-editorial flex items-center gap-2 px-3 py-2 font-mono text-xs">
+                <span
+                  class:list={[
+                    cardStyles.base,
+                    "flex items-center gap-2 px-3 py-2 font-mono text-xs",
+                  ]}
+                >
                   {tech.logo && (
                     <img
                       src={tech.logo}
@@ -292,7 +297,7 @@ const outcomes = project.outcomes?.length
               `/projects/${previous.code}`,
               prefixEnglish,
             )}
-            class="rounded-2xl border border-divider bg-surface-raised shadow-editorial p-5 hover:border-accent"
+            class:list={[cardStyles.base, "p-5 hover:border-accent"]}
           >
             <>
               <span class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase">
@@ -313,7 +318,7 @@ const outcomes = project.outcomes?.length
               `/projects/${next.code}`,
               prefixEnglish,
             )}
-            class="rounded-2xl border border-divider bg-surface-raised shadow-editorial p-5 text-right hover:border-accent"
+            class:list={[cardStyles.base, "p-5 text-right hover:border-accent"]}
           >
             <>
               <span class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase">

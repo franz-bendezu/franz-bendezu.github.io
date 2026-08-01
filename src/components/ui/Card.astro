@@ -1,16 +1,28 @@
 ---
-interface Props {
+import type { CardVariant } from "./Card";
+import type { HTMLAttributes } from "astro/types";
+import styles from "./Card.module.css";
+
+interface Props extends HTMLAttributes<"article"> {
   class?: string;
   dataTestId?: string;
+  variant?: CardVariant;
 }
-const { class: className = "", dataTestId } = Astro.props;
+const {
+  class: className = "",
+  dataTestId,
+  variant = "default",
+  ...attributes
+} = Astro.props;
 ---
 
 <article
+  {...attributes}
   data-testid={dataTestId}
   class:list={[
+    styles.base,
+    variant !== "default" && styles[variant],
     className,
-    "rounded-xl p-3 transition-all duration-200 ease-out",
   ]}
 >
   <slot />

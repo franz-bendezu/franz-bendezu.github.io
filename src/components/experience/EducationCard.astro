@@ -1,4 +1,6 @@
 ---
+import Card from "@/components/ui/Card.astro";
+
 interface Props {
   degree: string;
   institution: string;
@@ -8,9 +10,7 @@ interface Props {
 const props = Astro.props;
 ---
 
-<article
-  class="rounded-2xl border border-divider bg-surface-raised shadow-editorial p-5 shadow-none"
->
+<Card variant="flat" class="p-5">
   <h3 class="font-bold">{props.degree}</h3>{
     props.link ? (
       <a
@@ -25,4 +25,4 @@ const props = Astro.props;
   }<p class="mt-1 font-mono text-xs uppercase text-content-muted">
     {props.location}
   </p>
-</article>
+</Card>

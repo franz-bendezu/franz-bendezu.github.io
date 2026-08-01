@@ -109,7 +109,7 @@ export function ContactForm({ formId, recaptchaSiteKey, labels }: Props) {
           type="submit"
           disabled={state.submitting || !formId}
           aria-label="submit"
-          className="border-accent bg-accent inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-[0.65rem] border px-4 py-2.5 text-sm font-bold text-white hover:-translate-y-0.5 hover:bg-[color-mix(in_srgb,var(--color-accent)_82%,black)] disabled:cursor-not-allowed disabled:opacity-60"
+          fullWidth
         >
           {state.submitting && (
             <LoaderSpin className="mr-2 h-4 w-4 fill-slate-500" />

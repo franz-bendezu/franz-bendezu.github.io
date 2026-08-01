@@ -1,4 +1,6 @@
 ---
+import Card from "@/components/ui/Card.astro";
+
 interface Props {
   company: string;
   position: string;
@@ -11,11 +13,9 @@ interface Props {
 const props = Astro.props;
 ---
 
-<article
-  class:list={[
-    "rounded-2xl border border-divider bg-surface-raised shadow-editorial border-l-4 border-l-accent p-5 sm:p-6",
-    props.compact && "shadow-none",
-  ]}
+<Card
+  variant="accent"
+  class:list={["p-5 sm:p-6", props.compact && "shadow-none"]}
 >
   <div
     class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
@@ -53,4 +53,4 @@ const props = Astro.props;
       </ul>
     )
   }
-</article>
+</Card>

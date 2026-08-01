@@ -3,6 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Certifications from "@/components/about/Certifications.astro";
 import EducationCard from "@/components/experience/EducationCard.astro";
 import WorkCard from "@/components/experience/WorkCard.astro";
+import cardStyles from "@/components/ui/Card.module.css";
 import { translate, type Locale } from "@/lib/i18n";
 import {
   getEducation,
@@ -95,7 +96,7 @@ const earlier = work.slice(3);
       </div>
       {
         earlier.length > 0 && (
-          <details class="rounded-2xl border border-divider bg-surface-raised shadow-editorial mt-6 overflow-hidden">
+          <details class:list={[cardStyles.base, "mt-6 overflow-hidden"]}>
             <>
               <summary class="cursor-pointer px-5 py-4 font-bold hover:text-accent-strong">
                 {translate(locale, "About.earlier")}{" "}
