@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import type { IProject, IProjectTechnology } from "@/interfaces/project";
 import { ProjectList } from "./List";
+import Card from "@/components/ui/Card";
 
 export interface ProjectExplorerLabels {
   filteredBy: string;
@@ -50,7 +51,7 @@ export function ProjectExplorerList({
 
   return (
     <div data-project-explorer className="mt-6 w-full">
-      <div className="border-divider bg-surface-raised shadow-editorial rounded-2xl border p-4 sm:p-5">
+      <Card className="p-4 sm:p-5">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <p className="text-content-muted font-mono text-xs font-bold tracking-widest uppercase">
             {labels.filterTech ?? "Filter by technology"}
@@ -101,14 +102,12 @@ export function ProjectExplorerList({
             </button>
           </div>
         )}
-      </div>
+      </Card>
       <ProjectList
         projects={projects}
         projectBasePath={projectBasePath}
         emptyLabel={labels.empty}
         viewProjectLabel={labels.viewProject}
-        selectedTechs={selectedTechs}
-        onClickProjectTech={(_, tech) => toggleTech(tech)}
       />
     </div>
   );

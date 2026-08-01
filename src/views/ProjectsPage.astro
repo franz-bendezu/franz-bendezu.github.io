@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import ProjectCard from "@/components/astro/ProjectCard.astro";
+import ProjectCard from "@/components/project/ProjectCard";
 import { ProjectExplorerList } from "@/components/project/ExplorerList";
 import { PROJECT_CATEGORIES } from "@/constants/project-categories";
 import { getProjects } from "@/lib/projects";
@@ -103,8 +103,19 @@ const title = category
               {featured.map((project) => (
                 <ProjectCard
                   project={project}
-                  locale={locale}
-                  prefixEnglish={prefixEnglish}
+                  href={localizedPath(
+                    locale,
+                    `/projects/${project.code}`,
+                    prefixEnglish,
+                  )}
+                  labels={{
+                    viewProject: translate(locale, "Projects.viewProjectLink", {
+                      title: project.title,
+                    }),
+                    impact: translate(locale, "Home.lastProjects.impact"),
+                    caseStudy: translate(locale, "Home.lastProjects.caseStudy"),
+                  }}
+                  variant="featured"
                 />
               ))}
             </div>
