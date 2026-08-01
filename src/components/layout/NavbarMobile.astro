@@ -13,29 +13,37 @@ interface Props {
 const { locale, currentPath, prefixEnglish } = Astro.props;
 ---
 
-<details class="relative md:hidden">
+<details class="group relative md:hidden">
   <summary
-    class="inline-flex cursor-pointer list-none items-center justify-center p-2 text-gray-600 focus:outline-none dark:text-white"
+    class="inline-flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-md text-content marker:hidden hover:bg-surface-muted"
     aria-label={locale === "es" ? "Abrir menú principal" : "Open main menu"}
   >
-    <span class="sr-only">{locale === "es" ? "Abrir menú principal" : "Open main menu"}</span>
+    <span class="sr-only"
+      >{locale === "es" ? "Abrir menú principal" : "Open main menu"}</span
+    >
     <Bars4Icon className="h-6 w-6" aria-hidden="true" />
   </summary>
-  <div class="absolute right-0 top-10 z-30 min-w-48 origin-top-right transform overflow-hidden rounded-lg bg-white p-2 shadow-md ring-1 ring-black/10 transition dark:bg-gray-800">
+  <div
+    class="rounded-2xl border border-divider bg-surface-raised shadow-editorial absolute right-0 top-12 z-30 min-w-56 origin-top-right p-2"
+  >
     <div class="space-y-1">
-      {ROUTES_NAVBAR.map((route) => {
-        const active = route.exact ? currentPath === route.path : currentPath.startsWith(route.path);
-        return (
-          <NavLink
-            href={localizedPath(locale, route.path, prefixEnglish)}
-            active={active}
-            class="block rounded-md font-medium hover:bg-gray-50 hover:text-gray-800 dark:hover:text-gray-600"
-            activeClass="rounded-md bg-gray-200 font-bold dark:bg-gray-700 dark:hover:text-white"
-          >
-            {translate(locale, `Navigation.${route.title}`)}
-          </NavLink>
-        );
-      })}
+      {
+        ROUTES_NAVBAR.map((route) => {
+          const active = route.exact
+            ? currentPath === route.path
+            : currentPath.startsWith(route.path);
+          return (
+            <NavLink
+              href={localizedPath(locale, route.path, prefixEnglish)}
+              active={active}
+              class="block rounded-md font-medium hover:bg-surface-muted"
+              activeClass="rounded-md bg-accent-soft font-bold text-accent-strong"
+            >
+              {translate(locale, `Navigation.${route.title}`)}
+            </NavLink>
+          );
+        })
+      }
     </div>
   </div>
 </details>

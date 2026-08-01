@@ -10,7 +10,7 @@ interface Props {
 const { locale, currentPath, prefixEnglish } = Astro.props;
 ---
 
-<div class="hidden md:mx-2 md:block md:space-x-4 lg:mx-3">
+<div class="hidden items-center md:mx-2 md:flex md:gap-1 lg:mx-3">
   {
     ROUTES_NAVBAR.map((route) => {
       const active = route.exact
@@ -20,7 +20,7 @@ const { locale, currentPath, prefixEnglish } = Astro.props;
         <NavLink
           href={localizedPath(locale, route.path, prefixEnglish)}
           active={active}
-          activeClass="rounded-md bg-gray-300 font-bold dark:bg-gray-800 dark:text-white"
+          activeClass="text-accent-strong font-bold"
         >
           {translate(locale, `Navigation.${route.title}`)}
         </NavLink>

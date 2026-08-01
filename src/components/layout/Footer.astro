@@ -1,40 +1,44 @@
 ---
-import TwitterIcon from "@/components/icon/Twitter.astro";
 import GitHubIcon from "@/components/icon/GitHub.astro";
 import LinkedInIcon from "@/components/icon/LinkedIn.astro";
-import { translate, type Locale } from "@/lib/i18n";
+import { localizedPath, translate, type Locale } from "@/lib/i18n";
 interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
-const linkClass =
-  "flex items-center gap-3 transition-colors hover:text-yellow-500";
+const year = new Date().getUTCFullYear();
 ---
 
-<footer class="px-6 py-10 text-gray-800 dark:text-white">
-  <div class="container mx-auto">
-    <div class="flex flex-col items-center justify-between lg:flex-row">
-      <p class="mb-6 lg:mb-0">{translate(locale, "Footer.madeWith")}</p>
-      <div class="flex flex-wrap space-x-4 font-medium">
-        <a
-          href="https://twitter.com/franz_bendezu"
-          class={linkClass}
-          target="_blank"
-          rel="noreferrer"><TwitterIcon class="h-5 w-5" />Twitter</a
-        >
-        <a
-          href="https://www.linkedin.com/in/franz-antony-bendezu-isidro/"
-          class={linkClass}
-          target="_blank"
-          rel="noreferrer"><LinkedInIcon class="h-5 w-5" />LinkedIn</a
-        >
-        <a
-          href="https://github.com/franz-bendezu"
-          class={linkClass}
-          target="_blank"
-          rel="noreferrer"><GitHubIcon class="h-5 w-5" />GitHub</a
-        >
-      </div>
+<footer class="mt-auto border-t border-divider px-6 py-8">
+  <div
+    class="max-w-[75rem] w-full mx-auto flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between"
+  >
+    <div>
+      <p class="font-semibold">Franz Bendezu</p>
+      <p class="text-sm text-content-muted">
+        {translate(locale, "Footer.madeWith")} · {year}
+      </p>
+    </div>
+    <div class="flex items-center gap-2">
+      <a
+        href={localizedPath(locale, "/contact")}
+        class="inline-flex min-h-11 items-center justify-center gap-2 rounded-[0.65rem] border border-divider bg-transparent px-4 py-2.5 text-sm font-bold text-content hover:-translate-y-0.5 hover:border-accent hover:text-accent-strong text-sm"
+        >{translate(locale, "Navigation.contact")}</a
+      >
+      <a
+        href="https://www.linkedin.com/in/franz-antony-bendezu-isidro/"
+        class="rounded-md p-2 hover:text-accent-strong"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="LinkedIn"><LinkedInIcon class="h-5 w-5" /></a
+      >
+      <a
+        href="https://github.com/franz-bendezu"
+        class="rounded-md p-2 hover:text-accent-strong"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="GitHub"><GitHubIcon class="h-5 w-5" /></a
+      >
     </div>
   </div>
 </footer>

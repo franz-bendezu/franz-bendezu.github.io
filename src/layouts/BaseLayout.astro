@@ -95,19 +95,15 @@ const alternates = localePaths
       })();
     </script>
   </head>
-  <body class="font-sans text-gray-900 dark:text-white">
-    <div
-      class="flex min-h-screen flex-col bg-gradient-to-t from-gray-50 to-gray-200 dark:bg-gradient-to-b dark:from-slate-950 dark:to-slate-800"
-    >
+  <body class="font-sans antialiased">
+    <div class="flex min-h-screen flex-col bg-surface text-content">
       <Navbar
         locale={locale}
         path={path}
         pathname={Astro.url.pathname}
         languagePath={localePaths?.[locale === "en" ? "es" : "en"]}
       />
-      <main
-        class="flex flex-grow flex-col items-center align-middle antialiased"
-      >
+      <main class="flex flex-grow flex-col items-center align-middle">
         <slot />
       </main>
       <Footer locale={locale} />

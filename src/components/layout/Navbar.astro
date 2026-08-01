@@ -22,15 +22,22 @@ const homePath = localizedPath(locale, "/", prefixEnglish);
 ---
 
 <nav
-  class="sticky top-0 z-20 border-b border-slate-700/90 bg-white/70 py-2 backdrop-blur-lg md:py-6 dark:bg-gray-900/70"
+  class="sticky top-0 z-40 border-b border-divider bg-surface/90 py-3 backdrop-blur-xl"
 >
-  <div class="container mx-auto flex items-center justify-between px-4">
+  <div
+    class="max-w-[75rem] w-full mx-auto flex items-center justify-between px-4"
+  >
     <a
       href={homePath}
-      class="flex gap-2 font-bold tracking-wider text-gray-900 uppercase transition-colors hover:text-slate-500 dark:text-white"
+      class="flex items-center gap-2 font-bold tracking-[0.1em] uppercase hover:text-accent-strong"
     >
-      <CodeBracketSquareIcon className="h-6 w-6" aria-hidden="true" />
-      Franz Bendezu
+      <CodeBracketSquareIcon
+        className="h-5 w-5 text-accent"
+        aria-hidden="true"
+      />
+      <span class="hidden sm:inline">Franz Bendezu</span><span class="sm:hidden"
+        >FB</span
+      >
     </a>
     <NavbarNavigation
       locale={locale}
