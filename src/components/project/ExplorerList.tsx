@@ -6,8 +6,10 @@ export interface ProjectExplorerLabels {
   filteredBy: string;
   empty: string;
   viewProject: string;
+  filterTech?: string;
+  clearFilters?: string;
+  resultCount?: string;
 }
-
 interface Props {
   projects: IProject[];
   projectBasePath: string;
@@ -27,7 +29,8 @@ export function ProjectExplorerList({
         .filter(
           (tech, index, all) =>
             all.findIndex((item) => item.code === tech.code) === index,
-        ),
+        )
+        .sort((a, b) => a.name.localeCompare(b.name)),
     [initialProjects],
   );
   const selectedTechs = technologies.filter((tech) =>
@@ -38,27 +41,35 @@ export function ProjectExplorerList({
         project.technologies.some((tech) => selectedCodes.includes(tech.code)),
       )
     : initialProjects;
-
-  const toggleTech = (tech: IProjectTechnology) => {
+  const toggleTech = (tech: IProjectTechnology) =>
     setSelectedCodes((current) =>
       current.includes(tech.code)
         ? current.filter((code) => code !== tech.code)
         : [...current, tech.code],
     );
-  };
 
   return (
-    <div data-project-explorer className="w-full">
-      {!!selectedTechs.length && (
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
-          <span className="text-sm dark:text-white">{labels.filteredBy}</span>
-          {selectedTechs.map((tech) => (
+    <div data-project-explorer className="mt-6 w-full">
+      <div className="border-divider bg-surface-raised shadow-editorial rounded-2xl border p-4 sm:p-5">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <p className="text-content-muted font-mono text-xs font-bold tracking-widest uppercase">
+            {labels.filterTech ?? "Filter by technology"}
+          </p>
+          <p aria-live="polite" className="text-content-muted text-sm">
+            {(labels.resultCount ?? "{count} projects").replace(
+              "{count}",
+              String(projects.length),
+            )}
+          </p>
+        </div>
+        <div className="mt-4 flex max-h-28 flex-wrap gap-2 overflow-y-auto pb-1">
+          {technologies.map((tech) => (
             <button
               key={tech.code}
               type="button"
-              className="flex items-center gap-2 rounded bg-slate-500 px-2 py-1 text-xs text-white outline outline-1 lg:text-sm"
+              aria-pressed={selectedCodes.includes(tech.code)}
+              className="border-divider hover:border-accent aria-pressed:border-accent aria-pressed:bg-accent-soft aria-pressed:text-accent-strong flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold"
               onClick={() => toggleTech(tech)}
-              aria-pressed="true"
             >
               {tech.logo && (
                 <img
@@ -69,11 +80,28 @@ export function ProjectExplorerList({
                   height="16"
                 />
               )}
-              {tech.name} <span aria-hidden="true">×</span>
+              {tech.name}
             </button>
           ))}
         </div>
-      )}
+        {!!selectedTechs.length && (
+          <div className="border-divider mt-4 flex flex-wrap items-center gap-3 border-t pt-4">
+            <span className="text-content-muted text-sm">
+              {labels.filteredBy}
+            </span>
+            <span className="text-sm font-semibold">
+              {selectedTechs.map((tech) => tech.name).join(", ")}
+            </span>
+            <button
+              type="button"
+              onClick={() => setSelectedCodes([])}
+              className="text-accent-strong ml-auto text-sm font-bold hover:underline"
+            >
+              {labels.clearFilters ?? "Clear filters"}
+            </button>
+          </div>
+        )}
+      </div>
       <ProjectList
         projects={projects}
         projectBasePath={projectBasePath}

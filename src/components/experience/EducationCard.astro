@@ -1,5 +1,4 @@
 ---
-import ExperienceCard from "./Card.astro";
 interface Props {
   degree: string;
   institution: string;
@@ -9,16 +8,21 @@ interface Props {
 const props = Astro.props;
 ---
 
-<ExperienceCard>
-  <h3 class="mb-1 text-lg font-semibold">{props.degree}</h3>
-  {
+<article
+  class="rounded-2xl border border-divider bg-surface-raised shadow-editorial p-5 shadow-none"
+>
+  <h3 class="font-bold">{props.degree}</h3>{
     props.link ? (
-      <a href={props.link} class="font-semibold text-primary">
+      <a
+        href={props.link}
+        class="mt-2 inline-block text-sm font-semibold text-accent-strong"
+      >
         {props.institution}
       </a>
     ) : (
-      <span class="font-semibold text-foreground">{props.institution}</span>
+      <p class="mt-2 text-sm font-semibold">{props.institution}</p>
     )
-  }
-  <div class="mb-4 text-sm uppercase">{props.location}</div>
-</ExperienceCard>
+  }<p class="mt-1 font-mono text-xs uppercase text-content-muted">
+    {props.location}
+  </p>
+</article>

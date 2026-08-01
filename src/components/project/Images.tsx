@@ -25,7 +25,7 @@ export const ProjectImagesCarousel: FC<{
         {images?.map(({ src, description, alt }) => (
           <TabPanel
             key={src}
-            className="relative aspect-video rounded-xl bg-gray-200 p-3 dark:bg-slate-700"
+            className="border-divider bg-surface-raised shadow-editorial relative aspect-video cursor-zoom-in overflow-hidden rounded-2xl border p-3"
             onClick={open}
           >
             <img
@@ -33,9 +33,9 @@ export const ProjectImagesCarousel: FC<{
               alt={alt}
               width="828"
               height="450"
-              className="aspect-video overflow-hidden rounded-xl object-contain object-center"
+              className="h-full w-full rounded-lg object-contain object-center"
             />
-            <div className="bg-opacity-50 absolute right-0 bottom-0 left-0 bg-black p-2 text-center text-white">
+            <div className="absolute right-3 bottom-3 left-3 rounded-b-lg bg-black/75 p-2 text-center text-sm text-white">
               {description}
             </div>
           </TabPanel>
@@ -45,7 +45,7 @@ export const ProjectImagesCarousel: FC<{
         {images?.map(({ src, alt }) => (
           <Tab
             key={src}
-            className="aspect-video max-h-20 rounded-lg bg-slate-200 p-2 data-[hover]:bg-slate-300 data-[selected]:bg-slate-400 data-[selected]:data-[hover]:bg-slate-400 dark:bg-slate-700 data-[hover]:dark:bg-slate-800 data-[selected]:dark:bg-slate-900"
+            className="border-divider bg-surface-raised data-[hover]:border-accent data-[selected]:border-accent data-[selected]:bg-accent-soft aspect-video max-h-20 rounded-lg border p-2"
           >
             <img
               className="h-full w-full object-contain"

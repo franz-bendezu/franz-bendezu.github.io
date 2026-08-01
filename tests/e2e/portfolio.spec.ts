@@ -57,6 +57,56 @@ test("filters projects and opens a project gallery", async ({ page }) => {
   }
 });
 
+test("presents featured case studies and resets archive filters", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await expect(page.locator('[data-featured-project="true"]')).toHaveCount(3);
+  await expect(
+    page.getByRole("link", { name: "View selected work" }),
+  ).toHaveAttribute("href", "/projects");
+
+  await page.goto("/projects");
+  await expect(page.locator('[data-featured-project="true"]')).toHaveCount(3);
+  const explorer = page.locator("[data-project-explorer]");
+  await explorer.getByRole("button", { name: "Java", exact: true }).click();
+  await expect(
+    explorer.getByRole("button", { name: "Clear filters" }),
+  ).toBeVisible();
+  await explorer.getByRole("button", { name: "Clear filters" }).click();
+  await expect(explorer.getByText("13 projects")).toBeVisible();
+});
+
+test("supports case-study navigation and reduced motion", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/projects/agendalo-ssr-migration");
+  await expect(page.getByRole("heading", { name: "Challenge" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Approach" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Impact" })).toBeVisible();
+  await expect(page.getByText("Next project")).toBeVisible();
+  const animationDuration = await page
+    .locator("body")
+    .evaluate((element) => getComputedStyle(element).animationDuration);
+  expect(["0s", "0.00001s", "1e-05s"]).toContain(animationDuration);
+});
+
+test("keeps redesigned pages within responsive viewports", async ({ page }) => {
+  for (const width of [375, 768, 1280, 1536]) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const path of ["/", "/projects", "/about", "/contact"]) {
+      await page.goto(path);
+      const dimensions = await page.evaluate(() => ({
+        documentWidth: document.documentElement.scrollWidth,
+        viewportWidth: document.documentElement.clientWidth,
+      }));
+      expect(
+        dimensions.documentWidth,
+        `${path} should not overflow at ${width}px`,
+      ).toBeLessThanOrEqual(dimensions.viewportWidth);
+    }
+  }
+});
+
 test("supports the mobile menu and keyboard-closeable gallery", async ({
   page,
 }) => {

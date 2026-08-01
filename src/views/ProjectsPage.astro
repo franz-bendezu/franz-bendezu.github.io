@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import ProjectCard from "@/components/astro/ProjectCard.astro";
 import { ProjectExplorerList } from "@/components/project/ExplorerList";
 import { PROJECT_CATEGORIES } from "@/constants/project-categories";
 import { getProjects } from "@/lib/projects";
 import { localizedPath, translate, type Locale } from "@/lib/i18n";
 import type { ProjectCategoryCodes } from "@/interfaces/project";
-
 interface Props {
   locale: Locale;
   category?: ProjectCategoryCodes;
@@ -14,6 +14,14 @@ interface Props {
 const { locale, category, prefixEnglish = false } = Astro.props;
 const path = category ? `/projects/c/${category}` : "/projects";
 const projects = await getProjects(locale, category);
+const featured = category
+  ? []
+  : projects
+      .filter((project) => project.featured)
+      .sort((a, b) => a.position - b.position);
+const archive = category
+  ? projects
+  : projects.filter((project) => !project.featured);
 const projectBasePath = localizedPath(locale, "/projects", prefixEnglish);
 const labels = {
   filteredBy: translate(locale, "Projects.filteredBy"),
@@ -21,6 +29,9 @@ const labels = {
   viewProject: translate(locale, "Projects.viewProjectLink", {
     title: "{title}",
   }),
+  filterTech: translate(locale, "Projects.filterTech"),
+  clearFilters: translate(locale, "Projects.clearFilters"),
+  resultCount: translate(locale, "Projects.resultCount", { count: "{count}" }),
 };
 const title = category
   ? `${PROJECT_CATEGORIES.find((item) => item.value === category)?.name} · ${translate(locale, "Projects.title")}`
@@ -30,31 +41,45 @@ const title = category
 <BaseLayout locale={locale} path={path} title={title}>
   <section
     data-testid="projects"
-    class="container flex flex-col items-center justify-center gap-4 px-4"
+    class="mx-auto w-full max-w-[75rem] px-5 sm:px-8 py-12 sm:py-16"
   >
-    <h1 class="flex flex-row items-center gap-4 text-3xl lg:text-4xl">
-      <span aria-hidden="true">&lt;/&gt;</span>{
-        translate(locale, "Projects.title")
-      }
-    </h1>
-    <div class="mx-10 flex w-full flex-wrap items-center justify-center gap-2">
+    <div class="max-w-3xl">
+      <p
+        class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
+      >
+        {locale === "es" ? "Portafolio" : "Portfolio"}
+      </p>
+      <h1 class="mt-4 text-5xl font-bold tracking-[-0.045em] sm:text-7xl">
+        {translate(locale, "Projects.title")}<span class="text-accent">.</span>
+      </h1>
+      <p class="mt-5 text-lg leading-relaxed text-content-muted">
+        {translate(locale, "Projects.intro")}
+      </p>
+    </div>
+    <nav
+      aria-label={locale === "es"
+        ? "Categorías de proyecto"
+        : "Project categories"}
+      class="mt-10 flex flex-wrap gap-2 border-b border-divider pb-5"
+    >
       <a
         class:list={[
-          "rounded px-2 py-1",
-          !category ? "bg-slate-500 text-white" : "hover:text-slate-500",
+          "rounded-full border px-4 py-2 text-sm font-semibold",
+          !category
+            ? "border-accent bg-accent-soft text-accent-strong"
+            : "border-divider hover:border-accent",
         ]}
         href={localizedPath(locale, "/projects", prefixEnglish)}
+        >{translate(locale, "Projects.categories.all")}</a
       >
-        {translate(locale, "Projects.categories.all")}
-      </a>
       {
         PROJECT_CATEGORIES.map((item) => (
           <a
             class:list={[
-              "rounded px-2 py-1",
+              "rounded-full border px-4 py-2 text-sm font-semibold",
               category === item.value
-                ? "bg-slate-500 text-white"
-                : "hover:text-slate-500",
+                ? "border-accent bg-accent-soft text-accent-strong"
+                : "border-divider hover:border-accent",
             ]}
             href={localizedPath(
               locale,
@@ -66,12 +91,37 @@ const title = category
           </a>
         ))
       }
-    </div>
-    <ProjectExplorerList
-      client:visible
-      projects={projects}
-      projectBasePath={projectBasePath}
-      labels={labels}
-    />
+    </nav>
+    {
+      featured.length > 0 && (
+        <section class="mt-14">
+          <>
+            <p class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase">
+              {translate(locale, "Projects.featured")}
+            </p>
+            <div class="mt-6 grid gap-5 lg:grid-cols-3">
+              {featured.map((project) => (
+                <ProjectCard
+                  project={project}
+                  locale={locale}
+                  prefixEnglish={prefixEnglish}
+                />
+              ))}
+            </div>
+          </>
+        </section>
+      )
+    }
+    <section class="mt-16">
+      <h2 class="text-3xl font-bold tracking-tight">
+        {category ? title : translate(locale, "Projects.archive")}
+      </h2>
+      <ProjectExplorerList
+        client:load
+        projects={archive}
+        projectBasePath={projectBasePath}
+        labels={labels}
+      />
+    </section>
   </section>
 </BaseLayout>

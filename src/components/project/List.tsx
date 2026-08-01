@@ -1,7 +1,6 @@
 import type { IProject, IProjectTechnology } from "@/interfaces/project";
 import ProjectListItem from "./ListItem";
 import { ProjectListEmpty } from "./ListEmpty";
-
 interface Props {
   projects: IProject[];
   projectBasePath: string;
@@ -10,7 +9,6 @@ interface Props {
   selectedTechs?: IProjectTechnology[];
   onClickProjectTech?: (project: IProject, tech: IProjectTechnology) => void;
 }
-
 export function ProjectList({
   projects,
   projectBasePath,
@@ -20,17 +18,12 @@ export function ProjectList({
   onClickProjectTech,
 }: Props) {
   return (
-    <div className="flex w-full flex-col flex-wrap items-stretch md:flex-row">
+    <div className="mt-6 grid w-full gap-5 md:grid-cols-2 lg:grid-cols-3">
       {projects.length ? (
         projects.map((project) => (
           <ProjectListItem
             key={project.code}
-            code={project.code}
-            links={project.links}
-            title={project.title}
-            description={project.shortDescription}
-            image={project.banner}
-            technologies={project.technologies}
+            project={project}
             selectedTechs={selectedTechs}
             projectBasePath={projectBasePath}
             viewProjectLabel={viewProjectLabel}

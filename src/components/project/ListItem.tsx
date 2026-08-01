@@ -1,77 +1,80 @@
-import type {
-  IProjectImage,
-  IProjectLink,
-  IProjectTechnology,
-} from "@/interfaces/project";
-import Card from "@/components/ui/Card";
+import type { IProject, IProjectTechnology } from "@/interfaces/project";
 import ProjectListItemTechStack from "./ListItemTechStack";
-import { LinkList } from "./ListItemLinkList";
-
 interface Props {
-  image?: IProjectImage;
-  title: string;
-  description: string;
+  project: IProject;
   selectedTechs?: IProjectTechnology[];
-  technologies: IProjectTechnology[];
-  links?: IProjectLink[];
-  code: string;
   projectBasePath: string;
   viewProjectLabel: string;
   onClickTech?: (tech: IProjectTechnology) => void;
 }
-
 export default function ProjectListItem({
-  links,
-  image,
-  title,
-  description,
-  technologies,
-  onClickTech,
+  project,
   selectedTechs,
-  code,
   projectBasePath,
   viewProjectLabel,
+  onClickTech,
 }: Props) {
-  const label = viewProjectLabel.replace("{title}", title);
+  const label = viewProjectLabel.replace("{title}", project.title);
+  const initials = project.title
+    .split(/\s+/)
+    .slice(0, 2)
+    .map((word) => word[0])
+    .join("");
+  const period = [project.start?.slice(0, 4), project.end?.slice(0, 4)]
+    .filter(Boolean)
+    .join("–");
   return (
-    <section className="w-full p-4 md:w-1/2 lg:w-1/3">
-      <Card
-        dataTestId="card"
-        className="flex h-full flex-col justify-between bg-white dark:bg-gray-800 dark:text-white"
+    <article
+      data-testid="card"
+      className="border-divider bg-surface-raised shadow-editorial group hover:border-accent flex min-w-0 flex-col overflow-hidden rounded-2xl border hover:-translate-y-1"
+    >
+      <a
+        href={`${projectBasePath}/${project.code}`}
+        aria-label={label}
+        title={label}
+        className="block"
       >
-        <a href={`${projectBasePath}/${code}`} aria-label={label} title={label}>
-          <div className="relative flex h-40 w-full items-center overflow-hidden rounded-xl bg-gray-200 dark:bg-gray-700">
-            {image ? (
-              <img
-                className="mx-auto max-h-40 w-auto object-cover object-center"
-                src={image.src}
-                alt={image.alt}
-                width="256"
-                height="256"
-                loading="lazy"
-              />
-            ) : (
-              <div className="h-40 w-full" />
-            )}
-          </div>
-          <div className="mt-1 p-2">
-            <h2 className="text-xl font-semibold text-black lg:text-2xl dark:text-white">
-              {title}
-            </h2>
-            <p className="text-sm text-black lg:text-base dark:text-white">
-              {description}
-            </p>
-          </div>
-        </a>
-        <div className="mt-1 p-2">
-          <ProjectListItemTechStack
-            techs={technologies}
-            onClickTech={onClickTech}
-            selectedTechs={selectedTechs}
-          />
+        <div className="border-divider bg-surface-muted aspect-video overflow-hidden border-b">
+          {project.banner ? (
+            <img
+              className="h-full w-full object-cover transition-transform group-hover:scale-[1.02]"
+              src={project.banner.src}
+              alt={project.banner.alt}
+              width="640"
+              height="360"
+              loading="lazy"
+            />
+          ) : (
+            <div className="text-accent-strong flex h-full items-center justify-center font-mono text-4xl font-bold">
+              {initials}
+            </div>
+          )}
         </div>
-        {!!links?.length && <LinkList links={links} />}
-      </Card>
-    </section>
+        <div className="p-5 pb-2">
+          <div className="text-content-muted flex justify-between gap-3 font-mono text-[0.68rem] tracking-wider uppercase">
+            <span>{project.categoryCode}</span>
+            <span>{period}</span>
+          </div>
+          <h2 className="mt-3 text-xl leading-tight font-bold">
+            {project.title}
+          </h2>
+          {project.role && (
+            <p className="text-accent-strong mt-2 text-xs font-semibold">
+              {project.role}
+            </p>
+          )}
+          <p className="text-content-muted mt-3 line-clamp-3 text-sm leading-relaxed">
+            {project.shortDescription}
+          </p>
+        </div>
+      </a>
+      <div className="mt-auto p-5 pt-4">
+        <ProjectListItemTechStack
+          techs={project.technologies.slice(0, 3)}
+          onClickTech={onClickTech}
+          selectedTechs={selectedTechs}
+        />
+      </div>
+    </article>
   );
 }
