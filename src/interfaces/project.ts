@@ -1,3 +1,5 @@
+import type { ImageMetadata } from "astro";
+
 export type ProjectCategoryCodes = "freelance" | "personal" | "demo";
 
 export interface IProjectTechonologyCategory {
@@ -75,4 +77,3 @@ export interface IProject extends IBaseProject {
   position: number;
   translationKey: string;
 }
-import type { ImageMetadata } from "astro";
