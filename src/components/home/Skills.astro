@@ -6,6 +6,7 @@ import {
 } from "@heroicons/react/20/solid";
 import { localizedPath, translate, type Locale } from "@/lib/i18n";
 import { getSkills } from "@/lib/profile-content";
+import Card from "@/components/ui/Card.astro";
 interface Props {
   locale: Locale;
   prefixEnglish?: boolean;
@@ -59,8 +60,9 @@ const capabilities = [
     <div class="mt-10 grid gap-4 lg:grid-cols-3">
       {
         capabilities.map(({ title, description, items, icon: Icon }, index) => (
-          <article
-            class="rounded-2xl border border-divider bg-surface-raised shadow-editorial group p-6 hover:-translate-y-1"
+          <Card
+            variant="interactive"
+            class="group p-6"
             style={`animation-delay:${index * 80}ms`}
           >
             <Icon className="h-7 w-7 text-accent" aria-hidden="true" />
@@ -80,7 +82,7 @@ const capabilities = [
               {translate(locale, "Home.skills.evidence")}{" "}
               <span aria-hidden="true">→</span>
             </a>
-          </article>
+          </Card>
         ))
       }
     </div>

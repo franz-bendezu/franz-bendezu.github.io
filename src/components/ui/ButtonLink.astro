@@ -1,0 +1,42 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import type { ButtonVariant } from "./Button";
+import styles from "./Button.module.css";
+
+interface Props extends HTMLAttributes<"a"> {
+  href: string;
+  variant?: ButtonVariant;
+  fullWidth?: boolean;
+  disabled?: boolean;
+  external?: boolean;
+}
+
+const {
+  href,
+  variant = "primary",
+  fullWidth = false,
+  disabled = false,
+  external = false,
+  target,
+  rel,
+  class: className = "",
+  ...attributes
+} = Astro.props;
+---
+
+<a
+  href={disabled ? undefined : href}
+  target={external ? (target ?? "_blank") : target}
+  rel={external ? (rel ?? "noreferrer") : rel}
+  aria-disabled={disabled ? "true" : undefined}
+  tabindex={disabled ? -1 : undefined}
+  class:list={[
+    styles.base,
+    styles[variant],
+    fullWidth && styles.fullWidth,
+    className,
+  ]}
+  {...attributes}
+>
+  <slot />
+</a>

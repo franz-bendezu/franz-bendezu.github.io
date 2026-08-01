@@ -1,0 +1,17 @@
+@reference "../../styles/global.css";
+
+.base {
+  @apply border-divider bg-surface-raised shadow-editorial rounded-2xl border;
+}
+
+.interactive {
+  @apply hover:border-accent hover:-translate-y-1;
+}
+
+.flat {
+  @apply shadow-none;
+}
+
+.accent {
+  @apply border-l-accent border-l-4;
+}

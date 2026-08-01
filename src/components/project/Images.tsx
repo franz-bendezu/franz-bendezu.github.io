@@ -4,6 +4,7 @@ import type { FC } from "react";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import { Modal } from "../ui/Modal";
 import { IProjectImage } from "@/interfaces/project";
+import cardStyles from "@/components/ui/Card.module.css";
 
 export const ProjectImagesCarousel: FC<{
   images: IProjectImage[];
@@ -25,7 +26,7 @@ export const ProjectImagesCarousel: FC<{
         {images?.map(({ src, description, alt }) => (
           <TabPanel
             key={src}
-            className="border-divider bg-surface-raised shadow-editorial relative aspect-video cursor-zoom-in overflow-hidden rounded-2xl border p-3"
+            className={`${cardStyles.base} relative aspect-video cursor-zoom-in overflow-hidden p-3`}
             onClick={open}
           >
             <img

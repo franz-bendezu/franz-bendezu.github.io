@@ -1,5 +1,6 @@
 ---
 import CircularPulse from "@/components/ui/CircularPulse.astro";
+import ButtonLink from "@/components/ui/ButtonLink.astro";
 import GitHubIcon from "@/components/icon/GitHub.astro";
 import LinkedInIcon from "@/components/icon/LinkedIn.astro";
 import PresentationDownload from "./PresentationDownload.astro";
@@ -44,13 +45,10 @@ const description = translate(locale, "Home.description")
         set:html={description}
       />
       <div class="mt-8 flex flex-wrap gap-3">
-        <a
-          href={localizedPath(locale, "/projects", prefixEnglish)}
-          class="inline-flex min-h-11 items-center justify-center gap-2 rounded-[0.65rem] border border-accent bg-accent px-4 py-2.5 text-sm font-bold text-white hover:-translate-y-0.5 hover:bg-[color-mix(in_srgb,var(--color-accent)_82%,black)]"
-        >
+        <ButtonLink href={localizedPath(locale, "/projects", prefixEnglish)}>
           {translate(locale, "Home.viewWork")}
           <span aria-hidden="true">↗</span>
-        </a>
+        </ButtonLink>
         <PresentationDownload locale={locale} />
       </div>
       <div

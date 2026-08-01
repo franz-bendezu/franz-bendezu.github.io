@@ -3,6 +3,7 @@ import { Bars4Icon } from "@heroicons/react/20/solid";
 import NavLink from "./NavLink.astro";
 import { ROUTES_NAVBAR } from "@/constants/navbar";
 import { localizedPath, translate, type Locale } from "@/lib/i18n";
+import cardStyles from "@/components/ui/Card.module.css";
 
 interface Props {
   locale: Locale;
@@ -24,7 +25,10 @@ const { locale, currentPath, prefixEnglish } = Astro.props;
     <Bars4Icon className="h-6 w-6" aria-hidden="true" />
   </summary>
   <div
-    class="rounded-2xl border border-divider bg-surface-raised shadow-editorial absolute right-0 top-12 z-30 min-w-56 origin-top-right p-2"
+    class:list={[
+      cardStyles.base,
+      "absolute right-0 top-12 z-30 min-w-56 origin-top-right p-2",
+    ]}
   >
     <div class="space-y-1">
       {

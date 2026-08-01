@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { ContactForm } from "@/components/contact/Form";
+import ButtonLink from "@/components/ui/ButtonLink.astro";
+import Card from "@/components/ui/Card.astro";
 import { translate, type Locale } from "@/lib/i18n";
 import { getProfile } from "@/lib/profile-content";
 interface Props {
@@ -57,21 +59,14 @@ const recaptchaSiteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
         <div class="mt-6 flex flex-wrap gap-3">
           {
             profile.socialLinks.map((link) => (
-              <a
-                href={link.url}
-                target="_blank"
-                rel="noreferrer"
-                class="inline-flex min-h-11 items-center justify-center gap-2 rounded-[0.65rem] border border-divider bg-transparent px-4 py-2.5 text-sm font-bold text-content hover:-translate-y-0.5 hover:border-accent hover:text-accent-strong text-sm"
-              >
+              <ButtonLink href={link.url} external variant="secondary">
                 {link.label} ↗
-              </a>
+              </ButtonLink>
             ))
           }
         </div>
       </div>
-      <div
-        class="rounded-2xl border border-divider bg-surface-raised shadow-editorial p-5 sm:p-8"
-      >
+      <Card class="p-5 sm:p-8">
         {
           recaptchaSiteKey && (
             <script
@@ -88,7 +83,7 @@ const recaptchaSiteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
           recaptchaSiteKey={recaptchaSiteKey}
           labels={labels}
         />
-      </div>
+      </Card>
     </div>
   </section>
 </BaseLayout>
