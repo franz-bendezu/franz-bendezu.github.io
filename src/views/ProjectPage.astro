@@ -292,7 +292,7 @@ const closeLabel = locale === "es" ? "Cerrar" : "Close";
                   : "The system in context"}
               </h2>
               <ProjectImagesCarousel
-                client:visible
+                client:load
                 images={[...project.images]}
                 closeLabel={closeLabel}
               />
