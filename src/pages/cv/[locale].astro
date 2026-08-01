@@ -1,0 +1,12 @@
+---
+import ResumePage from "@/views/ResumePage.astro";
+import { LOCALES, type Locale } from "@/lib/i18n";
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const locale = Astro.params.locale as Locale;
+---
+
+<ResumePage locale={locale} />
