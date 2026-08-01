@@ -90,6 +90,34 @@ test("validates the localized contact form", async ({ page }) => {
   await expect(page.getByLabel("Correo")).toBeVisible();
 });
 
+test("renders bilingual CV pages and serves generated PDFs", async ({
+  page,
+  request,
+}) => {
+  for (const locale of ["en", "es"]) {
+    await page.goto(`/cv/${locale}/`);
+    await expect(page.locator(`[data-resume="${locale}"]`)).toBeVisible();
+    await expect(page.locator("[data-resume] img")).toHaveCount(0);
+    await expect(
+      page.getByRole("heading", {
+        name: locale === "es" ? "Resumen Profesional" : "Professional Summary",
+      }),
+    ).toBeVisible();
+    await expect(page.locator(".experience")).toHaveCount(5);
+    await expect(page.locator(".certification")).toHaveCount(10);
+    await expect(page.locator(".project a").first()).toHaveAttribute(
+      "href",
+      locale === "es" ? /\/es\/projects\// : /\.me\/projects\//,
+    );
+  }
+
+  for (const locale of ["EN", "ES"]) {
+    const response = await request.get(`/Franz-Bendezu-CV-${locale}.pdf`);
+    expect(response.status()).toBe(200);
+    expect(response.headers()["content-type"]).toContain("application/pdf");
+  }
+});
+
 test("internal links and rendered assets resolve", async ({
   page,
   request,

@@ -6,12 +6,12 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   reporter: process.env.CI ? "github" : "list",
   use: {
-    baseURL: "http://127.0.0.1:4321",
+    baseURL: "http://127.0.0.1:4325",
     trace: "on-first-retry",
   },
   webServer: {
-    command: "yarn preview --host 127.0.0.1 --port 4321",
-    url: "http://127.0.0.1:4321",
+    command: "yarn preview --host 127.0.0.1 --port 4325",
+    url: "http://127.0.0.1:4325",
     reuseExistingServer: !process.env.CI,
   },
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],

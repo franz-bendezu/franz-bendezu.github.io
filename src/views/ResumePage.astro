@@ -1,0 +1,314 @@
+---
+import ResumeLayout from "@/layouts/ResumeLayout.astro";
+import type { Locale } from "@/lib/i18n";
+import { getResume } from "@/lib/profile-content";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const resume = await getResume(locale);
+const { profile, labels } = resume;
+const linkText = (url: string) =>
+  url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+---
+
+<ResumeLayout locale={locale} title={`${profile.name} · ${profile.headline}`}>
+  <main class="resume" data-resume={locale}>
+    <header class="identity">
+      <h1>{profile.name}</h1>
+      <p class="headline">{profile.headline}</p>
+      <address class="contact">
+        <span>{profile.location}</span>
+        <a href={`mailto:${profile.email}`}>{profile.email}</a>
+        <a href={profile.website}>{linkText(profile.website)}</a>
+        {
+          profile.socialLinks.map((link) => (
+            <a href={link.url}>{linkText(link.url)}</a>
+          ))
+        }
+      </address>
+    </header>
+
+    <section class="summary" aria-labelledby="summary-heading">
+      <h2 id="summary-heading">{labels.summary}</h2>
+      <p>{profile.summary}</p>
+    </section>
+
+    <section aria-labelledby="skills-heading">
+      <h2 id="skills-heading">{labels.skills}</h2>
+      <dl class="skills-list">
+        {
+          resume.skills.map((skill) => (
+            <div>
+              <dt>{skill.name}</dt>
+              <dd>{skill.items.join(", ")}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </section>
+
+    <section aria-labelledby="experience-heading">
+      <h2 id="experience-heading">{labels.experience}</h2>
+      <div class="entry-list">
+        {
+          resume.workExperiences.map((experience) => (
+            <article class="experience">
+              <div class="entry-heading">
+                <div>
+                  <h3>{experience.role}</h3>
+                  <p class="organization">
+                    {experience.link ? (
+                      <a href={experience.link}>{experience.company}</a>
+                    ) : (
+                      experience.company
+                    )}
+                    {` — ${experience.location}`}
+                  </p>
+                </div>
+                <p class="date">
+                  {experience.startLabel} – {experience.endLabel}
+                </p>
+              </div>
+              <ul>
+                {experience.tasks.map((task) => (
+                  <li>{task}</li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section aria-labelledby="projects-heading">
+      <h2 id="projects-heading">{labels.projects}</h2>
+      <div class="entry-list">
+        {
+          resume.projects.map((project) => (
+            <article class="project">
+              <h3>
+                <a
+                  href={`${profile.website}${locale === "es" ? "/es" : ""}/projects/${project.code}`}
+                >
+                  {project.title}
+                </a>
+              </h3>
+              <p>{project.shortDescription}</p>
+              <p class="keywords">
+                <strong>
+                  {locale === "es" ? "Tecnologías" : "Technologies"}:
+                </strong>
+                {` ${project.tags.slice(0, 7).join(", ")}`}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section aria-labelledby="education-heading">
+      <h2 id="education-heading">{labels.education}</h2>
+      <div class="entry-list">
+        {
+          resume.education.map((education) => (
+            <article class="education">
+              <div class="entry-heading">
+                <div>
+                  <h3>{education.degree}</h3>
+                  <p class="organization">
+                    {education.link ? (
+                      <a href={education.link}>{education.institution}</a>
+                    ) : (
+                      education.institution
+                    )}
+                    {` — ${education.location}`}
+                  </p>
+                </div>
+                <p class="date">
+                  {education.start} – {education.end}
+                </p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section aria-labelledby="certifications-heading">
+      <h2 id="certifications-heading">{labels.certifications}</h2>
+      <div class="entry-list certifications-list">
+        {
+          resume.certifications.map((certification) => (
+            <article class="certification">
+              <h3>
+                <a href={certification.url}>{certification.name}</a>
+              </h3>
+              <p class="date">{certification.date}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+</ResumeLayout>
+
+<style>
+  .resume {
+    width: min(100%, 210mm);
+    margin: 10mm auto;
+    background: #fff;
+    padding: 14mm 16mm;
+    box-shadow: 0 8px 32px rgb(15 23 42 / 14%);
+    color: #111827;
+    font-size: 10pt;
+    line-height: 1.42;
+  }
+
+  .identity {
+    border-bottom: 1px solid #111827;
+    padding-bottom: 4mm;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 22pt;
+    line-height: 1.1;
+  }
+
+  .headline {
+    margin: 1.5mm 0 2.5mm;
+    font-size: 11pt;
+    font-weight: 600;
+  }
+
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1mm 4mm;
+    font-size: 9pt;
+    font-style: normal;
+  }
+
+  .contact a {
+    text-decoration: underline;
+  }
+
+  section {
+    margin-top: 5mm;
+  }
+
+  h2 {
+    margin: 0 0 2.5mm;
+    border-bottom: 1px solid #374151;
+    padding-bottom: 1mm;
+    font-size: 12pt;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.3;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .summary p {
+    white-space: pre-line;
+  }
+
+  .skills-list {
+    margin: 0;
+  }
+
+  .skills-list div {
+    display: block;
+    margin-top: 1mm;
+  }
+
+  .skills-list dt,
+  .skills-list dd {
+    display: inline;
+    margin: 0;
+  }
+
+  .skills-list dt {
+    font-weight: 700;
+  }
+
+  .skills-list dt::after {
+    content: ": ";
+  }
+
+  .entry-list {
+    display: block;
+  }
+
+  .entry-list article {
+    break-inside: avoid;
+  }
+
+  .entry-list article + article {
+    margin-top: 4mm;
+  }
+
+  .entry-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 5mm;
+  }
+
+  .organization {
+    margin-top: 0.5mm;
+    font-size: 9.5pt;
+    font-weight: 600;
+  }
+
+  .date {
+    flex: none;
+    color: #374151;
+    font-size: 9pt;
+    white-space: nowrap;
+  }
+
+  ul {
+    margin: 1.5mm 0 0;
+    padding-left: 5mm;
+  }
+
+  li + li {
+    margin-top: 0.7mm;
+  }
+
+  .project p {
+    margin-top: 1mm;
+  }
+
+  .keywords {
+    font-size: 9pt;
+  }
+
+  .certifications-list article {
+    display: flex;
+    justify-content: space-between;
+    gap: 5mm;
+  }
+
+  .certifications-list article + article {
+    margin-top: 1.8mm;
+  }
+
+  @media print {
+    .resume {
+      width: auto;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+    }
+  }
+</style>

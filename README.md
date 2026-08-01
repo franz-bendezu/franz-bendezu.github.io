@@ -23,12 +23,14 @@ The development server is available at `http://localhost:4321`.
 ```bash
 yarn run check
 yarn test:unit
-yarn build
 yarn playwright install chromium
+yarn build
 yarn test:e2e
 ```
 
 `yarn test` runs the unit tests, production build, and browser tests together.
+The production build uses Astro static file endpoints and Playwright to generate
+the typed English and Spanish CV PDFs directly in `dist`.
 
 ## Environment variables
 
@@ -47,7 +49,7 @@ secrets to these Astro variable names.
 
 English is canonical without a prefix. Compatibility pages remain available
 under `/en`, and Spanish pages use `/es`. Project and category pages are
-generated from the typed data in `src/constants`.
+generated from the typed Astro collections in `src/content`.
 
 ## Deployment
 
