@@ -9,48 +9,17 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Certifications from "@/components/about/Certifications.astro";
 import EducationCard from "@/components/experience/EducationCard.astro";
 import WorkCard from "@/components/experience/WorkCard.astro";
-import {
-  WORK_EXPERIENCES,
-  EDUCATION_EXPERIENCES,
-} from "@/constants/experiences";
 import { translate, type Locale } from "@/lib/i18n";
+import { getEducation, getWorkExperiences } from "@/lib/profile-content";
 
 interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
-const work = WORK_EXPERIENCES.map((experience) => ({
-  ...experience,
-  company: translate(locale, `About.work.experiences.${experience.id}.company`),
-  location: translate(
-    locale,
-    `About.work.experiences.${experience.id}.location`,
-  ),
-  position: translate(
-    locale,
-    `About.work.experiences.${experience.id}.position`,
-  ),
-  start: translate(locale, `About.work.experiences.${experience.id}.start`),
-  end: translate(locale, `About.work.experiences.${experience.id}.end`),
-  tasks: experience.tasks.map((_, index) =>
-    translate(locale, `About.work.experiences.${experience.id}.tasks.${index}`),
-  ),
-}));
-const education = EDUCATION_EXPERIENCES.map((experience) => ({
-  ...experience,
-  institution: translate(
-    locale,
-    `About.education.experiences.${experience.id}.institution`,
-  ),
-  location: translate(
-    locale,
-    `About.education.experiences.${experience.id}.location`,
-  ),
-  degree: translate(
-    locale,
-    `About.education.experiences.${experience.id}.degree`,
-  ),
-}));
+const [work, education] = await Promise.all([
+  getWorkExperiences(locale),
+  getEducation(locale),
+]);
 ---
 
 <BaseLayout
@@ -78,7 +47,16 @@ const education = EDUCATION_EXPERIENCES.map((experience) => ({
           {translate(locale, "About.work.title")}
         </h2>
         <div class="flex grid-cols-12 flex-col md:grid">
-          {work.map((experience) => <WorkCard {...experience} />)}
+          {
+            work.map((experience) => (
+              <WorkCard
+                {...experience}
+                position={experience.role}
+                start={experience.startLabel}
+                end={experience.endLabel}
+              />
+            ))
+          }
         </div>
       </div>
       <div class="container">

@@ -1,0 +1,183 @@
+{
+  "work-1": {
+    "position": 1,
+    "start": "2024-09",
+    "locales": {
+      "en": {
+        "company": "Indra",
+        "location": "Lima, Peru",
+        "role": "Backend Developer AWS Senior",
+        "startLabel": "September 2024",
+        "endLabel": "Present",
+        "tasks": [
+          "Developed microservices in Java using Spring Flux and Reactive for legacy systems",
+          "Implemented microservices with TypeScript, Node.js, and Serverless Framework for orchestration of legacy systems",
+          "Managed databases like PostgreSQL, DynamoDB, and legacy databases like IBM Informix",
+          "Integrated microservices with AWS services such as Lambda, API Gateway, DynamoDB, PostgresRDS, SSM, Step Functions, and EKS"
+        ]
+      },
+      "es": {
+        "company": "Indra",
+        "location": "Lima, Perú",
+        "role": "Backend Developer AWS Senior",
+        "startLabel": "Septiembre 2024",
+        "endLabel": "Presente",
+        "tasks": [
+          "Desarrollé microservicios en Java utilizando Spring Flux y Reactive para sistemas heredados",
+          "Implementé microservicios con TypeScript, Node.js y Serverless Framework para la orquestación de sistemas heredados",
+          "Gestioné bases de datos como PostgreSQL, DynamoDB y bases heredadas como IBM Informix",
+          "Integré microservicios con servicios de AWS como Lambda, API Gateway, DynamoDB, PostgresRDS, SSM, Step Functions y EKS"
+        ]
+      }
+    }
+  },
+  "work-2": {
+    "position": 2,
+    "start": "2022-08",
+    "end": "2024-07",
+    "url": "https://agendalo.io/",
+    "locales": {
+      "en": {
+        "company": "Agendalo.io",
+        "location": "Lima, Peru",
+        "role": "Software Engineer Semi Senior",
+        "startLabel": "August 2022",
+        "endLabel": "July 2024",
+        "tasks": [
+          "Led frontend development using Nuxt.js and supported backend projects",
+          "Migrated a single-page application (SPA) to server-side rendering (SSR) to improve SEO",
+          "Implemented CI/CD pipelines with containers, reducing delivery times by 20%",
+          "Developed OAuth2 authentication for integration with Google and Microsoft",
+          "Established payment gateways with Mercado Pago, Niubiz, and Stripe",
+          "Developed an administrative panel for resource management and user issue resolution via the WhatsApp API",
+          "Collaborated with the CTO to create internal libraries and migrate main applications to a monorepo"
+        ]
+      },
+      "es": {
+        "company": "Agendalo.io",
+        "location": "Lima, Perú",
+        "role": "Software Engineer Semi Senior",
+        "startLabel": "Agosto 2022",
+        "endLabel": "Julio 2024",
+        "tasks": [
+          "Lideré el desarrollo frontend utilizando Nuxt.js y apoyé en proyectos backend",
+          "Migré una aplicación de una sola página (SPA) a renderización del lado del servidor (SSR) para mejorar el SEO",
+          "Implementé pipelines CI/CD con contenedores, reduciendo los tiempos de entrega en un 20%",
+          "Desarrollé autenticación OAuth2 para integración con Google y Microsoft",
+          "Establecí pasarelas de pago con Mercado Pago, Niubiz y Stripe",
+          "Desarrollé un panel administrativo para la gestión de recursos y resolución de problemas de usuarios mediante la API de WhatsApp",
+          "Colaboré con el CTO para crear bibliotecas internas y migrar aplicaciones principales a un monorepo"
+        ]
+      }
+    }
+  },
+  "work-3": {
+    "position": 3,
+    "start": "2019-07",
+    "end": "2024-01",
+    "locales": {
+      "en": {
+        "company": "Freelancer",
+        "location": "Remote",
+        "role": "Software Developer",
+        "startLabel": "July 2019",
+        "endLabel": "January 2024",
+        "tasks": [
+          "Developed and maintained client projects, specializing in frontend and backend technologies",
+          "Worked with technology stacks such as Java, Kotlin, JavaScript, TypeScript, Python, Vue.js, React, Angular, Spring Boot, and Node.js",
+          "Implemented REST APIs, GraphQL, and OAuth2 authentication protocols",
+          "Leveraged AWS services like S3, EC2, and Lambda for scalable solutions",
+          "Configured CI/CD pipelines using Docker, GitHub Actions, and GitLab",
+          "Optimized development processes with agile methodologies and SCRUM practices",
+          "Created reusable internal libraries to simplify development across multiple projects"
+        ]
+      },
+      "es": {
+        "company": "Freelancer",
+        "location": "Remoto",
+        "role": "Desarrollador de Software",
+        "startLabel": "Julio 2019",
+        "endLabel": "Enero 2024",
+        "tasks": [
+          "Desarrollé y mantuve proyectos de clientes, especializándome en tecnologías frontend y backend",
+          "Trabajé con stacks tecnológicos como Java, Kotlin, JavaScript, TypeScript, Python, Vue.js, React, Angular, Spring Boot y Node.js",
+          "Implementé APIs REST, GraphQL y protocolos de autenticación OAuth2",
+          "Aproveché servicios de AWS como S3, EC2 y Lambda para soluciones escalables",
+          "Configuré pipelines CI/CD utilizando Docker, GitHub Actions y GitLab",
+          "Optimicé los procesos de desarrollo con metodologías ágiles y prácticas SCRUM",
+          "Creé bibliotecas internas reutilizables para simplificar el desarrollo en múltiples proyectos"
+        ]
+      }
+    }
+  },
+  "work-4": {
+    "position": 4,
+    "start": "2021-08",
+    "end": "2022-10",
+    "locales": {
+      "en": {
+        "company": "Gestión y Sistemas SAC",
+        "location": "Lima, Peru",
+        "role": "Junior Development Analyst",
+        "startLabel": "August 2021",
+        "endLabel": "October 2022",
+        "tasks": [
+          "Performed frontend development using Angular and managed repositories with Azure DevOps",
+          "Developed administrative panels for internal commission management at Banco Ripley",
+          "Contributed to the development of administrative panels for internal parameter management at Banco Falabella",
+          "Implemented a supplier portal for The Leaf Company (ACS) and an activity planning application",
+          "Collaborated closely with teams in Peru and Chile under SCRUM methodology"
+        ]
+      },
+      "es": {
+        "company": "Gestión y Sistemas SAC",
+        "location": "Lima, Perú",
+        "role": "Analista de Desarrollo Junior",
+        "startLabel": "Agosto 2021",
+        "endLabel": "Octubre 2022",
+        "tasks": [
+          "Realicé desarrollo frontend utilizando Angular y gestioné repositorios con Azure DevOps",
+          "Desarrollé paneles administrativos para la gestión interna de comisiones en Banco Ripley",
+          "Contribuí al desarrollo de paneles administrativos para la gestión interna de parámetros en Banco Falabella",
+          "Implementé un portal de proveedores para The Leaf Company (ACS) y una aplicación de planificación de actividades",
+          "Colaboré estrechamente con equipos en Perú y Chile bajo metodología SCRUM"
+        ]
+      }
+    }
+  },
+  "work-5": {
+    "position": 5,
+    "start": "2021-08",
+    "end": "2022-10",
+    "locales": {
+      "en": {
+        "company": "Banco Ripley Peru",
+        "location": "Lima, Peru",
+        "role": "Frontend Developer",
+        "startLabel": "August 2021",
+        "endLabel": "October 2022",
+        "tasks": [
+          "Participated in frontend development of the cross-platform online banking app and payment platform",
+          "Collaborated closely with payment teams in Peru and Chile under SCRUM methodology",
+          "Used Angular and Ionic for developing intuitive user interfaces",
+          "Implemented transaction authorization widgets and integrated payment gateways",
+          "Performed incident analysis to implement improvements and new features, working in collaboration with the user experience (UX) team"
+        ]
+      },
+      "es": {
+        "company": "Banco Ripley Perú",
+        "location": "Lima, Perú",
+        "role": "Frontend Developer",
+        "startLabel": "Agosto 2021",
+        "endLabel": "Octubre 2022",
+        "tasks": [
+          "Participé en el desarrollo frontend de la app de banca online multiplataforma y la plataforma de pagos",
+          "Colaboré estrechamente con equipos de pagos en Perú y Chile bajo la metodología SCRUM",
+          "Utilicé Angular e Ionic para el desarrollo de interfaces de usuario intuitivas",
+          "Implementé widgets de autorización de transacciones e integré pasarelas de pago",
+          "Realicé análisis de incidentes para implementar mejoras y nuevas características, trabajando en colaboración con el equipo de experiencia de usuario (UX)"
+        ]
+      }
+    }
+  }
+}

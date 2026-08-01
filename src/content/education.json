@@ -1,0 +1,20 @@
+{
+  "education-1": {
+    "position": 1,
+    "start": "2018",
+    "end": "2023",
+    "url": "https://www.uni.edu.pe/",
+    "locales": {
+      "en": {
+        "institution": "National University of Engineering",
+        "location": "Lima, Peru",
+        "degree": "Systems Engineering"
+      },
+      "es": {
+        "institution": "Universidad Nacional de Ingeniería",
+        "location": "Lima, Perú",
+        "degree": "Ingeniería de Sistemas"
+      }
+    }
+  }
+}

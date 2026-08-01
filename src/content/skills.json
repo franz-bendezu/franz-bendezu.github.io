@@ -1,0 +1,115 @@
+{
+  "frontend": {
+    "position": 1,
+    "items": [
+      "Vue",
+      "Nuxt",
+      "Angular",
+      "React",
+      "Next.js",
+      "Astro",
+      "Tailwind CSS",
+      "Vuetify",
+      "Bootstrap",
+      "Material UI",
+      "Angular Material"
+    ],
+    "locales": {
+      "en": {
+        "name": "Frontend"
+      },
+      "es": {
+        "name": "Frontend"
+      }
+    }
+  },
+  "backend": {
+    "position": 2,
+    "items": ["Spring Framework", "Node.js", "Express", "NestJS"],
+    "locales": {
+      "en": {
+        "name": "Backend"
+      },
+      "es": {
+        "name": "Backend"
+      }
+    }
+  },
+  "cloud": {
+    "position": 3,
+    "items": [
+      "AWS S3",
+      "EC2",
+      "RDS",
+      "Lambda",
+      "API Gateway",
+      "CloudFront",
+      "Route 53",
+      "DigitalOcean"
+    ],
+    "locales": {
+      "en": {
+        "name": "Cloud"
+      },
+      "es": {
+        "name": "Nube"
+      }
+    }
+  },
+  "devops": {
+    "position": 4,
+    "items": ["AWS", "Docker", "GitHub Actions", "GitLab CI/CD"],
+    "locales": {
+      "en": {
+        "name": "DevOps"
+      },
+      "es": {
+        "name": "DevOps"
+      }
+    }
+  },
+  "databases": {
+    "position": 5,
+    "items": ["PostgreSQL", "MySQL", "MariaDB", "MongoDB", "DynamoDB"],
+    "locales": {
+      "en": {
+        "name": "Databases"
+      },
+      "es": {
+        "name": "Bases de datos"
+      }
+    }
+  },
+  "testing": {
+    "position": 6,
+    "items": [
+      "Vitest",
+      "Jest",
+      "Karma",
+      "Jasmine",
+      "Cypress",
+      "JUnit",
+      "Mockito"
+    ],
+    "locales": {
+      "en": {
+        "name": "Testing"
+      },
+      "es": {
+        "name": "Pruebas"
+      }
+    }
+  },
+  "tools": {
+    "position": 7,
+    "items": ["Git", "GitHub", "GitLab", "Figma", "Jira", "Trello", "VS Code"],
+    "locales": {
+      "en": {
+        "name": "Tools"
+      },
+      "es": {
+        "name": "Herramientas"
+      }
+    }
+  }
+}
