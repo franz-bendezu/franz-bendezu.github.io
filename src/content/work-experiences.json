@@ -1,7 +1,13 @@
 {
   "thoughtworks": {
     "position": 1,
-    "technologyCodes": [],
+    "technologyCodes": [
+      "nodejs",
+      "express",
+      "react",
+      "material-ui",
+      "backstage"
+    ],
     "start": "2025-09",
     "url": "https://www.thoughtworks.com/",
     "locales": {
@@ -25,7 +31,7 @@
   },
   "devsu": {
     "position": 2,
-    "technologyCodes": [],
+    "technologyCodes": ["nestjs", "azure-devops", "kafka", "redis", "eda"],
     "start": "2025-04",
     "end": "2025-09",
     "url": "https://devsu.com/",
