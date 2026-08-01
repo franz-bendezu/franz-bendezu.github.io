@@ -371,6 +371,48 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
     categoryCodes: ["frontend-framework"],
   },
   {
+    code: "nestjs",
+    name: "NestJS",
+    color: "#E0234E",
+    categoryCodes: ["backend-framework"],
+  },
+  {
+    code: "kafka",
+    name: "Apache Kafka",
+    color: "#231F20",
+    categoryCodes: ["backend-framework"],
+  },
+  {
+    code: "redis",
+    name: "Redis",
+    color: "#DC382D",
+    categoryCodes: ["database"],
+  },
+  {
+    code: "eda",
+    name: "Event-Driven Architecture",
+    color: "#007E9B",
+    categoryCodes: ["backend-framework"],
+  },
+  {
+    code: "express",
+    name: "Express",
+    color: "#000000",
+    categoryCodes: ["backend-framework"],
+  },
+  {
+    code: "material-ui",
+    name: "Material UI",
+    color: "#007FFF",
+    categoryCodes: ["frontend-framework"],
+  },
+  {
+    code: "backstage",
+    name: "Backstage",
+    color: "#9BF0E1",
+    categoryCodes: ["fullstack-framework"],
+  },
+  {
     code: "mariadb",
     name: "Mariadb",
     logo: "/assets/icons/mariadb.svg",
