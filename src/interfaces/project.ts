@@ -47,9 +47,9 @@ export interface IBaseProject {
   start?: string;
   end?: string;
   role?: string;
-  challenge?: string;
-  approach?: string;
-  outcomes?: string[];
+  challenge: string;
+  approach: string;
+  outcomes: string[];
   projectGoals: {
     title: string;
     description: string;

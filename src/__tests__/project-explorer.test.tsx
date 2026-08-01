@@ -36,11 +36,21 @@ function project(
     status: "active",
     title,
     shortDescription: `${title} description`,
+    challenge: `${title} challenge`,
+    approach: `${title} approach`,
+    outcomes: [`${title} outcome`],
     tags: [],
     categoryCode: "personal",
     technologyCodes: technologies.map(({ code }) => code),
-    projectGoals: [],
-    keyFeatures: [],
+    projectGoals: [
+      { title: `${title} goal`, description: `${title} goal description` },
+    ],
+    keyFeatures: [
+      {
+        title: `${title} feature`,
+        description: `${title} feature description`,
+      },
+    ],
     lang: "en",
     technologies,
   };

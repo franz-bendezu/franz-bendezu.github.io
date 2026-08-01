@@ -125,7 +125,7 @@ export default function ProjectCard({
           <p className="text-content-muted mt-3 line-clamp-3 text-sm leading-relaxed">
             {project.shortDescription}
           </p>
-          {featured && project.outcomes?.[0] && (
+          {featured && project.outcomes[0] && (
             <div className="border-accent mt-5 border-l-2 pl-3">
               {labels.impact && (
                 <span className="text-accent-strong font-mono text-xs font-bold tracking-[0.12em] uppercase">

@@ -44,11 +44,11 @@ const localizedProjectSchema = z
     shortDescription: z.string().min(1),
     description: z.string().min(1).optional(),
     role: z.string().min(1).optional(),
-    challenge: z.string().min(1).optional(),
-    approach: z.string().min(1).optional(),
-    outcomes: z.array(z.string().min(1)).optional(),
-    projectGoals: z.array(localizedTextSchema),
-    keyFeatures: z.array(localizedTextSchema),
+    challenge: z.string().min(1),
+    approach: z.string().min(1),
+    outcomes: z.array(z.string().min(1)).min(1),
+    projectGoals: z.array(localizedTextSchema).min(1),
+    keyFeatures: z.array(localizedTextSchema).min(1),
   })
   .strict();
 const localizedValues = <T extends z.ZodType>(schema: T) =>

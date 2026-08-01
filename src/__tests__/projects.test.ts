@@ -39,6 +39,16 @@ describe("project data", () => {
     expect(
       englishProjects.every(({ start, end }) => !start || !end || start <= end),
     ).toBe(true);
+    expect(
+      [...englishProjects, ...spanishProjects].every(
+        ({ challenge, approach, outcomes, projectGoals, keyFeatures }) =>
+          challenge.length > 0 &&
+          approach.length > 0 &&
+          outcomes.length > 0 &&
+          projectGoals.length > 0 &&
+          keyFeatures.length > 0,
+      ),
+    ).toBe(true);
 
     const englishPortfolio = await getProject("en", "my-portfolio");
     const spanishPortfolio = await getProject("es", "mi-portafolio");
