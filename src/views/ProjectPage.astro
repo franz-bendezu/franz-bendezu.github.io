@@ -1,26 +1,23 @@
 ---
+import { CheckIcon } from "@heroicons/react/20/solid";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { ProjectImagesCarousel } from "@/components/project/Images";
-import ProjectSummary from "@/components/project/Summary.astro";
-import ProjectOverview from "@/components/project/Overview.astro";
-import ProjectGoals from "@/components/project/Goals.astro";
-import ProjectFeatures from "@/components/project/Features.astro";
-import ProjectTechsList from "@/components/project/TechsList.astro";
-import { PROJECT_TECHNOLOGIES } from "@/constants/project-techologies";
+import LinkIcon from "@/components/project/LinkIcon.astro";
 import { getProjects } from "@/lib/projects";
-import type { Locale } from "@/lib/i18n";
-
+import { localizedPath, translate, type Locale } from "@/lib/i18n";
 interface Props {
   locale: Locale;
   code: string;
   prefixEnglish?: boolean;
 }
-const { locale, code } = Astro.props;
+const { locale, code, prefixEnglish = false } = Astro.props;
 const [englishProjects, spanishProjects] = await Promise.all([
   getProjects("en"),
   getProjects("es"),
 ]);
-const localizedProjects = locale === "en" ? englishProjects : spanishProjects;
+const localizedProjects = (
+  locale === "en" ? englishProjects : spanishProjects
+).sort((a, b) => a.position - b.position);
 const project = localizedProjects.find((item) => item.code === code);
 if (!project) return Astro.redirect("/404");
 const englishProject =
@@ -39,11 +36,25 @@ const localePaths = {
   en: `/projects/${englishProject?.code ?? code}`,
   es: `/projects/${spanishProject?.code ?? code}`,
 };
-const techs = PROJECT_TECHNOLOGIES.filter((tech) =>
-  project.technologyCodes.includes(tech.code),
+const currentIndex = localizedProjects.findIndex(
+  (item) => item.translationKey === project.translationKey,
 );
+const previous =
+  currentIndex > 0 ? localizedProjects[currentIndex - 1] : undefined;
+const next =
+  currentIndex < localizedProjects.length - 1
+    ? localizedProjects[currentIndex + 1]
+    : undefined;
+const period = [project.start, project.end].filter(Boolean).join(" — ");
 const path = `/projects/${code}`;
 const closeLabel = locale === "es" ? "Cerrar" : "Close";
+const challenge = project.challenge ?? project.description;
+const approach =
+  project.approach ??
+  project.projectGoals.map((goal) => goal.description).join(" ");
+const outcomes = project.outcomes?.length
+  ? project.outcomes
+  : project.keyFeatures.map((feature) => feature.title);
 ---
 
 <BaseLayout
@@ -53,30 +64,275 @@ const closeLabel = locale === "es" ? "Cerrar" : "Close";
   title={project.title}
   description={project.shortDescription}
 >
-  <article class="container flex min-h-[100dvh] flex-col gap-8 px-4 lg:gap-16">
-    <ProjectSummary project={project} />
+  <article class="w-full">
+    <header
+      class="mx-auto w-full max-w-[75rem] px-5 sm:px-8 py-12 sm:py-16 lg:py-20"
+    >
+      <a
+        href={localizedPath(locale, "/projects", prefixEnglish)}
+        class="inline-flex items-center gap-2 text-sm font-bold text-accent-strong"
+        >← {translate(locale, "Projects.title")}</a
+      >
+      <div
+        class="mt-8 grid items-center gap-10 lg:grid-cols-[1fr_0.9fr] lg:gap-16"
+      >
+        <div>
+          <p
+            class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
+          >
+            {project.categoryCode} · {project.status}
+          </p>
+          <h1
+            class="mt-4 text-4xl font-bold leading-[1.02] tracking-[-0.045em] sm:text-6xl"
+          >
+            {project.title}
+          </h1>
+          <p class="mt-5 max-w-2xl text-lg leading-relaxed text-content-muted">
+            {project.shortDescription}
+          </p>
+          <dl
+            class="mt-8 grid gap-4 border-y border-divider py-5 sm:grid-cols-2"
+          >
+            <div>
+              <dt
+                class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
+              >
+                {translate(locale, "Project.role")}
+              </dt><dd class="mt-2 font-semibold">
+                {
+                  project.role ??
+                    (locale === "es"
+                      ? "Ingeniería de software"
+                      : "Software engineering")
+                }
+              </dd>
+            </div>
+            <div>
+              <dt
+                class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
+              >
+                {translate(locale, "Project.period")}
+              </dt><dd class="mt-2 font-mono text-sm">
+                {period || "—"}
+              </dd>
+            </div>
+          </dl>
+          {
+            project.links?.length && (
+              <div class="mt-6 flex flex-wrap gap-2">
+                {project.links.map((link) => (
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex min-h-11 items-center justify-center gap-2 rounded-[0.65rem] border border-divider bg-transparent px-4 py-2.5 text-sm font-bold text-content hover:-translate-y-0.5 hover:border-accent hover:text-accent-strong text-sm"
+                  >
+                    <LinkIcon type={link.type} class="h-4 w-4" />
+                    {link.title}
+                  </a>
+                ))}
+              </div>
+            )
+          }
+        </div>
+        <div
+          class="rounded-2xl border border-divider bg-surface-raised shadow-editorial aspect-video overflow-hidden bg-surface-muted"
+        >
+          {
+            project.banner ? (
+              <img
+                src={project.banner.src}
+                alt={project.banner.alt}
+                width="828"
+                height="450"
+                class="h-full w-full object-contain"
+                fetchpriority="high"
+              />
+            ) : (
+              <div class="flex h-full items-center justify-center font-mono text-5xl text-accent-strong">
+                {project.title.slice(0, 2)}
+              </div>
+            )
+          }
+        </div>
+      </div>
+    </header>
+
+    <section class="border-y border-divider bg-surface-muted py-16 sm:py-20">
+      <div
+        class="mx-auto w-full max-w-[75rem] px-5 sm:px-8 grid gap-10 lg:grid-cols-2 lg:gap-20"
+      >
+        <div>
+          <p
+            class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
+          >
+            01
+          </p><h2 class="mt-3 text-3xl font-bold">
+            {translate(locale, "Project.challenge")}
+          </h2><p class="mt-5 text-lg leading-relaxed text-content-muted">
+            {challenge}
+          </p>
+        </div>
+        <div>
+          <p
+            class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
+          >
+            02
+          </p><h2 class="mt-3 text-3xl font-bold">
+            {translate(locale, "Project.approach")}
+          </h2><p class="mt-5 text-lg leading-relaxed text-content-muted">
+            {approach}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto w-full max-w-[75rem] px-5 sm:px-8 py-16 sm:py-24">
+      <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+        <div>
+          <p
+            class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
+          >
+            03
+          </p><h2 class="mt-3 text-3xl font-bold">
+            {translate(locale, "Project.impact")}
+          </h2><ul class="mt-6 space-y-4">
+            {
+              outcomes.map((outcome) => (
+                <li class="flex gap-3 border-b border-divider pb-4">
+                  <>
+                    <CheckIcon
+                      className="mt-0.5 h-5 w-5 shrink-0 text-accent"
+                      aria-hidden="true"
+                    />
+                    <span class="font-semibold">{outcome}</span>
+                  </>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div>
+          <p
+            class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
+          >
+            {translate(locale, "Project.technologies")}
+          </p><div class="mt-5 flex flex-wrap gap-3">
+            {
+              project.technologies.map((tech) => (
+                <span class="rounded-2xl border border-divider bg-surface-raised shadow-editorial flex items-center gap-2 px-3 py-2 font-mono text-xs">
+                  {tech.logo && (
+                    <img
+                      src={tech.logo}
+                      alt=""
+                      class="h-5 w-5"
+                      width="20"
+                      height="20"
+                      loading="lazy"
+                    />
+                  )}
+                  {tech.name}
+                </span>
+              ))
+            }
+          </div>
+          {
+            project.keyFeatures.length > 0 && (
+              <div class="mt-10 grid gap-4 sm:grid-cols-2">
+                {project.keyFeatures.map((feature) => (
+                  <article class="border-t-2 border-accent pt-4">
+                    <h3 class="font-bold">{feature.title}</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-content-muted">
+                      {feature.description}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            )
+          }
+        </div>
+      </div>
+    </section>
+
     {
-      project.description && (
-        <ProjectOverview description={project.description} locale={locale} />
+      project.images?.length && (
+        <section class="border-y border-divider bg-surface-muted py-16">
+          <div class="mx-auto w-full max-w-[75rem] px-5 sm:px-8">
+            <>
+              <p class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase">
+                {locale === "es" ? "Galería" : "Gallery"}
+              </p>
+              <h2 class="mt-3 mb-8 text-3xl font-bold">
+                {locale === "es"
+                  ? "El sistema en contexto"
+                  : "The system in context"}
+              </h2>
+              <ProjectImagesCarousel
+                client:visible
+                images={[...project.images]}
+                closeLabel={closeLabel}
+              />
+            </>
+          </div>
+        </section>
       )
     }
 
-    <div class="grid gap-10 md:px-6 lg:grid-cols-2 lg:gap-20">
-      <ProjectTechsList techs={techs} locale={locale} />
-      <ProjectGoals goals={project.projectGoals} locale={locale} />
-    </div>
-
-    <div class="grid gap-10 pb-8 md:px-6 lg:grid-cols-2 lg:gap-20">
-      <ProjectFeatures project={project} locale={locale} />
+    <nav
+      aria-label={locale === "es"
+        ? "Navegación entre proyectos"
+        : "Project navigation"}
+      class="mx-auto w-full max-w-[75rem] px-5 sm:px-8 grid gap-4 py-12 sm:grid-cols-2"
+    >
       {
-        project.images && (
-          <ProjectImagesCarousel
-            client:visible
-            images={[...project.images]}
-            closeLabel={closeLabel}
-          />
+        previous ? (
+          <a
+            href={localizedPath(
+              locale,
+              `/projects/${previous.code}`,
+              prefixEnglish,
+            )}
+            class="rounded-2xl border border-divider bg-surface-raised shadow-editorial p-5 hover:border-accent"
+          >
+            <>
+              <span class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase">
+                ← {translate(locale, "Project.previous")}
+              </span>
+              <strong class="mt-2 block">{previous.title}</strong>
+            </>
+          </a>
+        ) : (
+          <span />
         )
       }
-    </div>
+      {
+        next && (
+          <a
+            href={localizedPath(
+              locale,
+              `/projects/${next.code}`,
+              prefixEnglish,
+            )}
+            class="rounded-2xl border border-divider bg-surface-raised shadow-editorial p-5 text-right hover:border-accent"
+          >
+            <>
+              <span class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase">
+                {translate(locale, "Project.next")} →
+              </span>
+              <strong class="mt-2 block">{next.title}</strong>
+            </>
+          </a>
+        )
+      }
+    </nav>
+    <section class="mx-auto w-full max-w-[75rem] px-5 sm:px-8 pb-16">
+      <a
+        href={localizedPath(locale, "/contact", prefixEnglish)}
+        class="flex rounded-2xl bg-content p-8 text-2xl font-bold text-surface hover:-translate-y-1 sm:items-center sm:justify-between dark:bg-surface-raised dark:text-content"
+        ><span>{translate(locale, "Project.cta")}</span><span aria-hidden="true"
+          >↗</span
+        ></a
+      >
+    </section>
   </article>
 </BaseLayout>

@@ -1,10 +1,4 @@
 ---
-import {
-  AcademicCapIcon,
-  Bars4Icon,
-  BriefcaseIcon,
-  BuildingLibraryIcon,
-} from "@heroicons/react/20/solid";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Certifications from "@/components/about/Certifications.astro";
 import EducationCard from "@/components/experience/EducationCard.astro";
@@ -13,18 +7,21 @@ import { translate, type Locale } from "@/lib/i18n";
 import {
   getEducation,
   getExperienceYears,
+  getProfile,
   getWorkExperiences,
 } from "@/lib/profile-content";
-
 interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
-const [work, education] = await Promise.all([
+const [work, education, profile] = await Promise.all([
   getWorkExperiences(locale),
   getEducation(locale),
+  getProfile(locale),
 ]);
 const years = getExperienceYears();
+const recent = work.slice(0, 3);
+const earlier = work.slice(3);
 ---
 
 <BaseLayout
@@ -33,56 +30,118 @@ const years = getExperienceYears();
   title={translate(locale, "About.title")}
   description={translate(locale, "About.description", { years })}
 >
-  <section
-    data-testid="projects"
-    class="container flex flex-col items-center justify-center gap-4"
-  >
-    <h1
-      class="font-monospace flex flex-row items-center gap-4 text-center text-3xl dark:text-white lg:text-4xl"
-    >
-      <Bars4Icon className="h-8 w-8" aria-hidden="true" />
-      {translate(locale, "About.title")}
-    </h1>
-    <div class="mt-4 flex flex-col gap-4 p-4">
-      <div class="container">
-        <h2
-          class="mb-6 flex flex-row items-center gap-3 text-left text-2xl font-semibold lg:text-3xl"
+  <section class="mx-auto w-full max-w-[75rem] px-5 sm:px-8 py-12 sm:py-16">
+    <div class="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+      <div>
+        <p
+          class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
         >
-          <BriefcaseIcon className="h-8 w-8" aria-hidden="true" />
-          {translate(locale, "About.work.title")}
-        </h2>
-        <div class="flex grid-cols-12 flex-col md:grid">
           {
-            work.map((experience) => (
-              <WorkCard
-                {...experience}
-                position={experience.role}
-                start={experience.startLabel}
-                end={experience.endLabel}
-              />
-            ))
+            translate(
+              locale,
+              "About.font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase",
+            )
           }
-        </div>
-      </div>
-      <div class="container">
-        <h2
-          class="mb-6 flex flex-row items-center gap-3 text-left text-2xl font-semibold lg:text-3xl"
+        </p><h1
+          class="mt-4 max-w-4xl text-4xl font-bold leading-tight tracking-[-0.04em] sm:text-6xl"
         >
-          <BuildingLibraryIcon className="h-8 w-8" aria-hidden="true" />
+          {translate(locale, "About.introTitle")}
+        </h1>
+      </div>
+      <p class="text-lg leading-relaxed text-content-muted">
+        {profile.summary}
+      </p>
+    </div>
+    <dl class="mt-12 grid border-y border-divider sm:grid-cols-3">
+      <div class="py-6 sm:pr-6">
+        <dt class="text-sm text-content-muted">
+          {translate(locale, "About.metrics.years")}
+        </dt><dd class="mt-2 font-mono text-3xl font-bold text-accent-strong">
+          {years}+
+        </dd>
+      </div>
+      <div
+        class="border-t border-divider py-6 sm:border-t-0 sm:border-l sm:px-6"
+      >
+        <dt class="text-sm text-content-muted">
+          {translate(locale, "About.metrics.roles")}
+        </dt><dd class="mt-2 font-mono text-3xl font-bold">{work.length}</dd>
+      </div>
+      <div
+        class="border-t border-divider py-6 sm:border-t-0 sm:border-l sm:pl-6"
+      >
+        <dt class="text-sm text-content-muted">
+          {translate(locale, "About.metrics.focus")}
+        </dt><dd class="mt-2 font-mono text-xl font-bold">Java · AWS · Node</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="border-y border-divider bg-surface-muted py-16">
+    <div class="mx-auto w-full max-w-[75rem] px-5 sm:px-8">
+      <p
+        class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
+      >
+        {translate(locale, "About.work.title")}
+      </p><h2 class="mt-3 text-3xl font-bold sm:text-4xl">
+        {translate(locale, "About.recent")}
+      </h2><div class="mt-8 grid gap-5">
+        {
+          recent.map((experience) => (
+            <WorkCard
+              {...experience}
+              position={experience.role}
+              start={experience.startLabel}
+              end={experience.endLabel}
+              tasks={experience.tasks.slice(0, 3)}
+            />
+          ))
+        }
+      </div>
+      {
+        earlier.length > 0 && (
+          <details class="rounded-2xl border border-divider bg-surface-raised shadow-editorial mt-6 overflow-hidden">
+            <>
+              <summary class="cursor-pointer px-5 py-4 font-bold hover:text-accent-strong">
+                {translate(locale, "About.earlier")}{" "}
+                <span class="text-content-muted">({earlier.length})</span>
+              </summary>
+              <div class="grid gap-4 border-t border-divider p-5">
+                {earlier.map((experience) => (
+                  <WorkCard
+                    {...experience}
+                    position={experience.role}
+                    start={experience.startLabel}
+                    end={experience.endLabel}
+                    tasks={experience.tasks.slice(0, 3)}
+                    compact
+                  />
+                ))}
+              </div>
+            </>
+          </details>
+        )
+      }
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-[75rem] px-5 sm:px-8 py-16 sm:py-24">
+    <div class="grid gap-14 lg:grid-cols-2">
+      <div>
+        <p
+          class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
+        >
           {translate(locale, "About.education.title")}
-        </h2>
-        <div class="flex grid-cols-12 flex-col md:grid">
-          {education.map((experience) => <EducationCard {...experience} />)}
+        </p><div class="mt-6 grid gap-4">
+          {education.map((item) => <EducationCard {...item} />)}
         </div>
       </div>
-      <div class="container">
-        <h2
-          class="mb-6 flex flex-row items-center gap-3 text-left text-2xl font-semibold lg:text-3xl"
+      <div>
+        <p
+          class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
         >
-          <AcademicCapIcon className="h-8 w-8" aria-hidden="true" />
           {translate(locale, "About.courseCertifications.title")}
-        </h2>
-        <Certifications locale={locale} />
+        </p><div class="mt-6"><Certifications locale={locale} /></div>
       </div>
     </div>
   </section>

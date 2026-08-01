@@ -35,14 +35,14 @@ export function ContactForm({ formId, recaptchaSiteKey, labels }: Props) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="relative mt-6 h-full w-full">
+    <form onSubmit={handleSubmit} className="relative w-full">
       {state.errors && (
         <p className="mb-4 text-red-700 dark:text-red-300" role="alert">
           {labels.error}
         </p>
       )}
-      <div className="mb-4">
-        <label htmlFor="email" className="block font-medium">
+      <div className="mb-5">
+        <label htmlFor="email" className="mb-2 block text-sm font-bold">
           {labels.email}
         </label>
         <input
@@ -50,7 +50,8 @@ export function ContactForm({ formId, recaptchaSiteKey, labels }: Props) {
           type="email"
           name="email"
           required
-          className="w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-black"
+          autoComplete="email"
+          className="border-divider bg-surface text-content focus:border-accent min-h-12 w-full rounded-lg border px-4 py-3"
         />
         <ValidationError
           prefix={labels.email}
@@ -58,8 +59,8 @@ export function ContactForm({ formId, recaptchaSiteKey, labels }: Props) {
           errors={state.errors}
         />
       </div>
-      <div className="mb-4">
-        <label htmlFor="name" className="block font-medium">
+      <div className="mb-5">
+        <label htmlFor="name" className="mb-2 block text-sm font-bold">
           {labels.name}
         </label>
         <input
@@ -67,7 +68,8 @@ export function ContactForm({ formId, recaptchaSiteKey, labels }: Props) {
           type="text"
           name="name"
           required
-          className="w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-black"
+          autoComplete="name"
+          className="border-divider bg-surface text-content focus:border-accent min-h-12 w-full rounded-lg border px-4 py-3"
         />
         <ValidationError
           prefix={labels.name}
@@ -75,15 +77,15 @@ export function ContactForm({ formId, recaptchaSiteKey, labels }: Props) {
           errors={state.errors}
         />
       </div>
-      <div className="mb-4">
-        <label htmlFor="message" className="block font-medium">
+      <div className="mb-5">
+        <label htmlFor="message" className="mb-2 block text-sm font-bold">
           {labels.message}
         </label>
         <textarea
           id="message"
           name="message"
           required
-          className="w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-black"
+          className="border-divider bg-surface text-content focus:border-accent w-full rounded-lg border px-4 py-3"
           rows={5}
         />
         <ValidationError
@@ -102,12 +104,12 @@ export function ContactForm({ formId, recaptchaSiteKey, labels }: Props) {
           />
         </>
       )}
-      <div className="mt-4 flex justify-center">
+      <div className="mt-6 flex">
         <Button
           type="submit"
           disabled={state.submitting || !formId}
           aria-label="submit"
-          className="border-slate-500 px-4 py-2 uppercase disabled:cursor-not-allowed disabled:opacity-60 dark:border-slate-100"
+          className="border-accent bg-accent inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-[0.65rem] border px-4 py-2.5 text-sm font-bold text-white hover:-translate-y-0.5 hover:bg-[color-mix(in_srgb,var(--color-accent)_82%,black)] disabled:cursor-not-allowed disabled:opacity-60"
         >
           {state.submitting && (
             <LoaderSpin className="mr-2 h-4 w-4 fill-slate-500" />

@@ -23,10 +23,12 @@ const HeroIcon = {
 }[type as Exclude<ProjectLinkType, "github" | "gitlab">];
 ---
 
-{type === "github" ? (
-  <GitHubIcon class={className} />
-) : type === "gitlab" ? (
-  <GitLabIcon class={className} />
-) : (
-  <HeroIcon className={className} aria-hidden="true" />
-)}
+{
+  type === "github" ? (
+    <GitHubIcon class={className} />
+  ) : type === "gitlab" ? (
+    <GitLabIcon class={className} />
+  ) : (
+    <HeroIcon className={className} aria-hidden="true" />
+  )
+}
