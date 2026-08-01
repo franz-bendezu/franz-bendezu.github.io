@@ -7,6 +7,16 @@ import {
 import type { Locale } from "./i18n";
 import { getProjects } from "./projects";
 
+export const CAREER_START = "2021-08";
+
+export function getExperienceYears(referenceDate = new Date()) {
+  const [startYear, startMonth] = CAREER_START.split("-").map(Number);
+  const currentYear = referenceDate.getUTCFullYear();
+  const currentMonth = referenceDate.getUTCMonth() + 1;
+
+  return currentYear - startYear - (currentMonth < startMonth ? 1 : 0);
+}
+
 function byPosition<T extends { position: number }>(a: T, b: T) {
   return a.position - b.position;
 }
@@ -77,6 +87,8 @@ function localizeSkill(entry: CollectionEntry<"skills">, locale: Locale) {
 }
 
 function localizeProfile(entry: CollectionEntry<"profiles">, locale: Locale) {
+  const years = getExperienceYears();
+
   return {
     id: entry.id,
     email: entry.data.email,
@@ -85,6 +97,10 @@ function localizeProfile(entry: CollectionEntry<"profiles">, locale: Locale) {
     portrait: entry.data.portrait,
     socialLinks: entry.data.socialLinks.map((link) => ({ ...link })),
     ...entry.data.locales[locale],
+    summary: entry.data.locales[locale].summary.replaceAll(
+      "{years}",
+      String(years),
+    ),
   };
 }
 

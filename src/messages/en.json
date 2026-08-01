@@ -19,13 +19,13 @@
     "cvPath": "/Franz-Bendezu-CV-EN.pdf",
     "skills": {
       "label": "My Skills",
-      "title": "Technologies I proficient in",
-      "description": " I have a diverse set of skills across various domains of software development."
+      "title": "Technologies I work with",
+      "description": "I have a diverse set of skills across several areas of software development."
     },
     "lastProjects": {
       "title": "My Latest Projects",
       "viewAll": "View All Projects",
-      "description": "Explore a selection of my recent web development projects, showcasing my skills and creativity."
+      "description": "Explore a selection of recent software projects that demonstrate my technical skills and problem-solving approach."
     }
   },
   "Project": {
@@ -61,7 +61,7 @@
   "About": {
     "title": "About me",
     "education": {
-      "title": "Education Experience"
+      "title": "Education"
     },
     "work": {
       "title": "Work Experience"
@@ -69,7 +69,7 @@
     "courseCertifications": {
       "title": "Courses and Certifications"
     },
-    "description": "I am a software developer with 4 years of experience in the development of web applications, I have a degree in Systems Engineering and I am passionate about technology. "
+    "description": "I am a software developer and systems engineer with over {years} years of experience designing and building software solutions."
   },
   "Metadata": {
     "title": {

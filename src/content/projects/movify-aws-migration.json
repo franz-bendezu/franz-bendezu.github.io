@@ -114,7 +114,7 @@
       "code": "movify-aws-migration",
       "title": "Movify.pe - Migración de Infraestructura a AWS",
       "shortDescription": "Migración de infraestructura a AWS para mejorar el despliegue y la disponibilidad.",
-      "description": "De julio a noviembre de 2023, lideré la migración de la infraestructura a AWS para mejorar el despliegue, la disponibilidad y la confiabilidad de los servicios clave. Establecí flujos de trabajo de CI/CD para la implementación en servicios de AWS, automatizando las tuberías. Integré con Amazon S3 para el almacenamiento de fotos y videos relacionados con los servicios de mudanza.",
+      "description": "De julio a noviembre de 2023, lideré la migración de la infraestructura a AWS para mejorar el despliegue, la disponibilidad y la confiabilidad de los servicios clave. Establecí flujos de CI/CD para desplegar en servicios de AWS y automaticé los pipelines. Integré Amazon S3 para almacenar fotos y videos relacionados con los servicios de mudanza.",
       "projectGoals": [
         {
           "title": "Migración a AWS",

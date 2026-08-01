@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   getCertifications,
+  getExperienceYears,
   getResume,
   getSkills,
   getWorkExperiences,
@@ -31,11 +32,16 @@ describe("shared profile content", () => {
       getResume("en"),
       getResume("es"),
     ]);
+    const experienceYears = getExperienceYears();
 
     expect(englishResume.profile.email).toBe("fbendezui@uni.pe");
-    expect(spanishResume.profile.summary).toContain("6 años de experiencia");
+    expect(spanishResume.profile.summary).toContain(
+      `más de ${experienceYears} años de experiencia`,
+    );
     expect(spanishResume.profile.summary.split("\n\n")).toHaveLength(3);
-    expect(englishResume.profile.summary).toContain("6 years of experience");
+    expect(englishResume.profile.summary).toContain(
+      `over ${experienceYears} years of experience`,
+    );
     expect(englishResume.education).toHaveLength(3);
     expect(englishResume.education[0].institution).toBe(
       "Hanyang Cyber University",
@@ -51,5 +57,10 @@ describe("shared profile content", () => {
     expect(spanishResume.labels.certifications).toBe(
       "Cursos y Certificaciones",
     );
+  });
+
+  it("calculates completed career years from August 2021", () => {
+    expect(getExperienceYears(new Date("2026-07-31T00:00:00Z"))).toBe(4);
+    expect(getExperienceYears(new Date("2026-08-01T00:00:00Z"))).toBe(5);
   });
 });

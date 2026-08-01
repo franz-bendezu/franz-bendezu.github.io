@@ -36,6 +36,9 @@ describe("project data", () => {
     ).toEqual(
       englishProjects.map(({ translationKey }) => translationKey).sort(),
     );
+    expect(
+      englishProjects.every(({ start, end }) => !start || !end || start <= end),
+    ).toBe(true);
 
     const englishPortfolio = await getProject("en", "my-portfolio");
     const spanishPortfolio = await getProject("es", "mi-portafolio");

@@ -61,7 +61,7 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
   {
     code: "typescript",
     logo: "/assets/icons/typescript.svg",
-    name: "Typescript",
+    name: "TypeScript",
     color: "#3178C6",
     categoryCodes: ["programming-language"],
   },
@@ -108,7 +108,7 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
   },
   {
     code: "iot",
-    name: "LoT",
+    name: "IoT",
     color: "#FFD600",
     categoryCodes: ["devops"],
   },
@@ -163,7 +163,7 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
   {
     code: "javascript",
     logo: "/assets/icons/javascript.svg",
-    name: "Javascript",
+    name: "JavaScript",
     color: "#F7DF1E",
     categoryCodes: ["programming-language"],
   },

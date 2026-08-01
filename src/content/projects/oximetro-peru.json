@@ -13,7 +13,7 @@
         "alt": "Oximeter Peru"
       },
       "es": {
-        "alt": "Oximetro Perú"
+        "alt": "Oxímetro Perú"
       }
     }
   },
@@ -40,8 +40,8 @@
           "description": "Oximeter Peru - About the project."
         },
         "es": {
-          "alt": "Oximetro Perú",
-          "description": "Oximetro Perú - Acerca del proyecto."
+          "alt": "Oxímetro Perú",
+          "description": "Oxímetro Perú - Acerca del proyecto."
         }
       }
     },
@@ -53,8 +53,8 @@
           "description": "Oximeter Peru - Home page."
         },
         "es": {
-          "alt": "Oximetro Perú",
-          "description": "Oximetro Perú - Página de inicio."
+          "alt": "Oxímetro Perú",
+          "description": "Oxímetro Perú - Página de inicio."
         }
       }
     },
@@ -66,8 +66,8 @@
           "description": "Oximeter Peru - Map page."
         },
         "es": {
-          "alt": "Oximetro Perú",
-          "description": "Oximetro Perú - Página del mapa."
+          "alt": "Oxímetro Perú",
+          "description": "Oxímetro Perú - Página del mapa."
         }
       }
     },
@@ -79,8 +79,8 @@
           "description": "Oximeter Peru - Contact page."
         },
         "es": {
-          "alt": "Oximetro Perú",
-          "description": "Oximetro Perú - Página de contacto."
+          "alt": "Oxímetro Perú",
+          "description": "Oxímetro Perú - Página de contacto."
         }
       }
     },
@@ -92,8 +92,8 @@
           "description": "Oximeter Peru - Team"
         },
         "es": {
-          "alt": "Oximetro Perú",
-          "description": "Oximetro Perú - Equipo "
+          "alt": "Oxímetro Perú",
+          "description": "Oxímetro Perú - Equipo"
         }
       }
     }
@@ -103,11 +103,11 @@
       "code": "oximetro-peru",
       "title": "Oximeter Peru",
       "shortDescription": "Development of the MVP of a web application to find places to buy oximeters near you.",
-      "description": "In August 2020, I developed an MVP of a web application called Oximeter Peru, which allowed users to find nearby places to buy oximeters. I used Vue.js for the frontend and Firebase for the backend, enabling quick and efficient implementation. Additionally, I integrated Leaflet.js for map visualization and geolocation, making it easier for users to find nearby stores. This project was developed in response to the growing demand for oximeters during the COVID-19 pandemic in Peru.",
+      "description": "From May to June 2020, I developed an MVP of a web application called Oximeter Peru, which allowed users to find nearby places to buy oximeters. I used Vue.js for the frontend and Firebase for the backend, enabling quick and efficient implementation. Additionally, I integrated Leaflet.js for map visualization and geolocation, making it easier for users to find nearby stores. This project was developed in response to the growing demand for oximeters during the COVID-19 pandemic in Peru.",
       "projectGoals": [
         {
           "title": "Oximeter Location",
-          "description": "Develop an application to find nearby places to rent oximeters for COVID-19 detection."
+          "description": "Develop an application to find nearby places that sell oximeters."
         },
         {
           "title": "Pandemic Response",
@@ -121,7 +121,7 @@
       "keyFeatures": [
         {
           "title": "Store Location",
-          "description": "Visualization of nearby stores where you can rent oximeters for COVID-19 detection."
+          "description": "Visualization of nearby stores where users can buy oximeters."
         },
         {
           "title": "Geolocation",
@@ -135,13 +135,13 @@
     },
     "es": {
       "code": "oximetro-peru",
-      "title": "Oximetro Perú",
+      "title": "Oxímetro Perú",
       "shortDescription": "Desarrollo del MVP de una aplicación web para ver lugares donde encontrar oxímetros cerca de ti.",
-      "description": "En agosto de 2020, desarrollé un MVP de una aplicación web denominada Oximetro Perú, que permitía a los usuarios encontrar lugares cercanos donde comprar oxímetros. Utilicé Vue.js para el frontend y Firebase para el backend, lo que permitió una implementación rápida y eficiente. Además, integré Leaflet.js para la visualización de mapas y geolocalización, lo que facilitó a los usuarios encontrar tiendas cercanas. Este proyecto se desarrolló en respuesta a la creciente demanda de oxímetros durante la pandemia de COVID-19 en Perú.",
+      "description": "De mayo a junio de 2020, desarrollé un MVP de una aplicación web denominada Oxímetro Perú, que permitía a los usuarios encontrar lugares cercanos donde comprar oxímetros. Utilicé Vue.js para el frontend y Firebase para el backend, lo que permitió una implementación rápida y eficiente. Además, integré Leaflet.js para la visualización de mapas y geolocalización, lo que facilitó a los usuarios encontrar tiendas cercanas. Este proyecto se desarrolló en respuesta a la creciente demanda de oxímetros durante la pandemia de COVID-19 en Perú.",
       "projectGoals": [
         {
           "title": "Localización de Oxímetros",
-          "description": "Desarrollar una aplicación para encontrar lugares cercanos donde alquilar oxímetros para la detección de COVID-19."
+          "description": "Desarrollar una aplicación para encontrar lugares cercanos donde comprar oxímetros."
         },
         {
           "title": "Respuesta a la Pandemia",
@@ -155,7 +155,7 @@
       "keyFeatures": [
         {
           "title": "Localización de Tiendas",
-          "description": "Visualización de tiendas cercanas donde alquilar oxímetros para la detección de COVID-19."
+          "description": "Visualización de tiendas cercanas donde los usuarios pueden comprar oxímetros."
         },
         {
           "title": "Geolocalización",
