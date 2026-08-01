@@ -10,7 +10,7 @@ export default defineConfig({
     trace: "on-first-retry",
   },
   webServer: {
-    command: "yarn preview --host 127.0.0.1 --port 4325",
+    command: "pnpm preview --host 127.0.0.1 --port 4325",
     url: "http://127.0.0.1:4325",
     reuseExistingServer: !process.env.CI,
   },
