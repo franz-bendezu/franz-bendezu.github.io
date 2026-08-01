@@ -21,6 +21,7 @@ const linkText = (url: string) =>
       <p class="headline">{profile.headline}</p>
       <address class="contact">
         <span>{profile.location}</span>
+        {profile.phone && <a href={`tel:${profile.phone}`}>{profile.phone}</a>}
         <a href={`mailto:${profile.email}`}>{profile.email}</a>
         <a href={profile.website}>{linkText(profile.website)}</a>
         {
@@ -72,11 +73,13 @@ const linkText = (url: string) =>
                   {experience.startLabel} – {experience.endLabel}
                 </p>
               </div>
-              <ul>
-                {experience.tasks.map((task) => (
-                  <li>{task}</li>
-                ))}
-              </ul>
+              {experience.tasks.length > 0 && (
+                <ul>
+                  {experience.tasks.map((task) => (
+                    <li>{task}</li>
+                  ))}
+                </ul>
+              )}
             </article>
           ))
         }
@@ -128,7 +131,9 @@ const linkText = (url: string) =>
                   </p>
                 </div>
                 <p class="date">
-                  {education.start} – {education.end}
+                  {education.end
+                    ? `${education.start} – ${education.end}`
+                    : education.start}
                 </p>
               </div>
             </article>

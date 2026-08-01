@@ -25,7 +25,7 @@
   },
   "backend": {
     "position": 2,
-    "items": ["Spring Framework", "Node.js", "Express", "NestJS"],
+    "items": ["Spring Framework", "Node.js", "Express", "NestJS", "GraphQL"],
     "locales": {
       "en": {
         "name": "Backend"
@@ -58,7 +58,13 @@
   },
   "devops": {
     "position": 4,
-    "items": ["AWS", "Docker", "GitHub Actions", "GitLab CI/CD"],
+    "items": [
+      "AWS",
+      "Docker",
+      "GitHub Actions",
+      "GitLab CI/CD",
+      "Azure DevOps"
+    ],
     "locales": {
       "en": {
         "name": "DevOps"

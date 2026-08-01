@@ -35,9 +35,15 @@ const props = Astro.props;
       {props.end}
     </div>
   </div>
-  <div class="pl-3 text-justify leading-tight">
-    <ul class="prose list-disc text-sm dark:prose-invert">
-      {props.tasks.map((task) => <li>{task}</li>)}
-    </ul>
-  </div>
+  {
+    props.tasks.length > 0 && (
+      <div class="pl-3 text-justify leading-tight">
+        <ul class="prose list-disc text-sm dark:prose-invert">
+          {props.tasks.map((task) => (
+            <li>{task}</li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
 </ExperienceCard>

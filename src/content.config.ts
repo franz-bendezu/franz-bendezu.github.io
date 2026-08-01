@@ -114,7 +114,7 @@ const workExperiences = defineCollection({
             role: z.string().min(1),
             startLabel: z.string().min(1),
             endLabel: z.string().min(1),
-            tasks: z.array(z.string().min(1)).min(1),
+            tasks: z.array(z.string().min(1)),
           })
           .strict(),
       ),
@@ -128,7 +128,7 @@ const education = defineCollection({
     .object({
       position: z.number().int().positive(),
       start: yearSchema,
-      end: yearSchema,
+      end: yearSchema.optional(),
       url: z.url().optional(),
       locales: localizedValues(
         z
@@ -178,6 +178,7 @@ const profiles = defineCollection({
   schema: z
     .object({
       email: z.email(),
+      phone: z.string().min(1).optional(),
       website: z.url(),
       portrait: z.string().startsWith("/"),
       socialLinks: z.array(
