@@ -1,5 +1,6 @@
 {
   "position": 3,
+  "featured": true,
   "status": "completed",
   "tags": ["Nuxt.js", "Spring Boot", "Java", "Kotlin", "PostgreSQL"],
   "categoryCode": "personal",
@@ -47,6 +48,14 @@
       "code": "horext",
       "title": "Horext",
       "shortDescription": "Personal project to generate academic schedules.",
+      "role": "Creator · Full-stack engineer",
+      "challenge": "Students needed a simpler way to assemble viable schedules from academic workload and parallel course options.",
+      "approach": "I built an open-source Nuxt and Spring Boot application, added Google Calendar integration, and established containerized CI/CD.",
+      "outcomes": [
+        "Automated academic schedule generation",
+        "Integrated schedules with Google Calendar",
+        "Published the platform as open source"
+      ],
       "description": "In July 2019, I carried out an independent project called Horext, aimed at simplifying the creation of academic schedules for students. To achieve this goal, I developed an application using Nuxt.js on the frontend and a REST API in Spring Boot, initially with Java 8 and later with Kotlin, backed by a PostgreSQL database. Additionally, I implemented a robust continuous integration and delivery (CI/CD) system using GitLab and managed containers with Docker to ensure the scalability and efficiency of the project. This application not only generated schedules considering the university's workload and parallel events but was also integrated with Google Calendar for better management of students' academic schedules. Furthermore, this project is available as open source.",
       "projectGoals": [
         {
@@ -81,6 +90,14 @@
       "code": "horext",
       "title": "Horext",
       "shortDescription": "Proyecto personal para generar horarios académicos.",
+      "role": "Creador · Ingeniero full-stack",
+      "challenge": "Los estudiantes necesitaban una forma más simple de crear horarios viables a partir de la carga académica y los cursos paralelos.",
+      "approach": "Construí una aplicación open source con Nuxt y Spring Boot, añadí integración con Google Calendar y establecí CI/CD con contenedores.",
+      "outcomes": [
+        "Generación automatizada de horarios académicos",
+        "Integración de horarios con Google Calendar",
+        "Publicación de la plataforma como código abierto"
+      ],
       "description": "En julio de 2019, llevé a cabo un proyecto independiente denominado Horext, destinado a simplificar la creación de horarios académicos para los estudiantes. Para lograr este objetivo, desarrollé una aplicación utilizando Nuxt.js en el frontend y una API REST en Spring Boot, inicialmente con Java 8 y posteriormente con Kotlin, respaldada por una base de datos PostgreSQL. Además, implementé un sistema robusto de integración y entrega continua (CI/CD) mediante GitLab y gestioné contenedores con Docker para garantizar la escalabilidad y la eficiencia del proyecto. Esta aplicación no solo generaba horarios teniendo en cuenta la carga horaria y los eventos paralelos de la universidad, sino que también se integraba con Google Calendar para mejorar la gestión de los horarios académicos de los estudiantes. El proyecto está disponible como código abierto.",
       "projectGoals": [
         {

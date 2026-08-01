@@ -22,6 +22,7 @@ function localizeProject(
     categoryCode: data.categoryCode,
     technologyCodes: [...data.technologyCodes],
     ...(data.priority !== undefined && { priority: data.priority }),
+    ...(data.featured !== undefined && { featured: data.featured }),
     ...(data.start && { start: data.start }),
     ...(data.end && { end: data.end }),
     ...(data.banner && {
@@ -47,6 +48,10 @@ function localizeProject(
     title: localized.title,
     shortDescription: localized.shortDescription,
     ...(localized.description && { description: localized.description }),
+    ...(localized.role && { role: localized.role }),
+    ...(localized.challenge && { challenge: localized.challenge }),
+    ...(localized.approach && { approach: localized.approach }),
+    ...(localized.outcomes && { outcomes: [...localized.outcomes] }),
     projectGoals: localized.projectGoals.map((goal) => ({ ...goal })),
     keyFeatures: localized.keyFeatures.map((feature) => ({ ...feature })),
     lang: locale,
