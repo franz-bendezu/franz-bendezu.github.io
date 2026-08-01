@@ -6,6 +6,7 @@ import {
 } from "astro:content";
 import type { Locale } from "./i18n";
 import { getProjects } from "./projects";
+import { PROJECT_TECHNOLOGIES } from "@/constants/project-techologies";
 
 export const CAREER_START = "2021-08";
 
@@ -36,6 +37,9 @@ function localizeWorkExperience(
     startDate: entry.data.start,
     endDate: entry.data.end,
     link: entry.data.url,
+    technologies: PROJECT_TECHNOLOGIES.filter((technology) =>
+      entry.data.technologyCodes.includes(technology.code),
+    ),
     ...entry.data.locales[locale],
   };
 }
