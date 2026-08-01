@@ -115,6 +115,13 @@
           "title": "Analytics Tracking",
           "description": "Integration of analytics to track email views and improve open rates."
         }
+      ],
+      "challenge": "From July to December 2023, I migrated the backend of the web quoting system to a serverless API, improving availability and reducing server costs. I improved the compatibility of email designs with various providers, resulting in an increase in lead generation. I integrated analytics to track email views, providing valuable insights into open rates and engagement.",
+      "approach": "Migrate the web quoting system to a serverless API to improve availability and reduce costs. Enhance the compatibility and aesthetics of email templates. Integrate analytics tools to monitor email engagement metrics. Facilitate email editing for the marketing team.",
+      "outcomes": [
+        "Migration to a Serverless API",
+        "Email Design",
+        "Analytics Tracking"
       ]
     },
     "es": {
@@ -153,6 +160,13 @@
           "title": "Seguimiento de Analíticas",
           "description": "Integración de análisis para rastrear las vistas de correos electrónicos y mejorar las tasas de apertura."
         }
+      ],
+      "challenge": "De julio a diciembre de 2023, migré el backend del sistema de cotizaciones web a una API serverless, mejorando la disponibilidad y reduciendo los costos de servidor. Mejoré la compatibilidad del diseño de correos electrónicos con varios proveedores, lo que resultó en un aumento de la generación de clientes potenciales. Integré análisis para rastrear las vistas de correos electrónicos, proporcionando información valiosa sobre las tasas de apertura y el compromiso.",
+      "approach": "Migrar el sistema de cotizaciones web a una API serverless para mejorar la disponibilidad y reducir costos. Mejorar la compatibilidad y estética de las plantillas de correos electrónicos. Integración de herramientas de análisis para monitorear las métricas de compromiso de correo electrónico. Facilitar la edición de correos electrónicos para el equipo de marketing.",
+      "outcomes": [
+        "Migración a una API Serverless",
+        "Diseño de Correos Electrónicos",
+        "Seguimiento de Analíticas"
       ]
     }
   }

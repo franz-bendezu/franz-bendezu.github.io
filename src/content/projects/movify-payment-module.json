@@ -112,6 +112,14 @@
           "title": "Intuitive and Responsive Interface",
           "description": "Modern design with interactive modals that optimize workflow and reduce the learning curve for new users."
         }
+      ],
+      "challenge": "From July to December 2024, I developed a comprehensive payment module to streamline the registration of payments and financial audits for moving orders within the company's existing infrastructure. I implemented functionality to record payment transactions and associate them with specific moving orders, ensuring accurate financial documentation and reliable audit trails. The system includes enhanced reporting capabilities to generate detailed financial reports with associated receipts, facilitating audit processes and financial analysis.",
+      "approach": "Streamline payment management and audits with an integrated income and expense module that reduces administrative processing time. Develop APIs for PDF/Excel report generation and synchronization with existing accounting systems for a coherent financial workflow. Implement a detailed record-keeping system with document attachments to ensure transparency and traceability for each transaction. Create a dynamic filtering system to generate customized reports that facilitate analysis and decision-making.",
+      "outcomes": [
+        "Comprehensive Expense Management System",
+        "Financial Documentation Storage",
+        "Advanced Data Export",
+        "Intuitive and Responsive Interface"
       ]
     },
     "es": {
@@ -154,6 +162,14 @@
           "title": "Interfaz Intuitiva y Responsive",
           "description": "Diseño moderno con modales interactivos que optimizan el flujo de trabajo y reducen la curva de aprendizaje para nuevos usuarios."
         }
+      ],
+      "challenge": "De julio a diciembre de 2024, desarrollé un módulo de pagos para facilitar el registro de pagos y auditorías con recibos para órdenes de mudanza dentro de la infraestructura existente de la empresa. Implementé funciones para registrar transacciones de pago y asociarlas con las órdenes de mudanza respectivas, asegurando una documentación financiera precisa y rastros de auditoría. Mejoré las capacidades de informes para generar reportes detallados de los registros de pago y recibos asociados, facilitando los procesos de auditoría y análisis financiero.",
+      "approach": "Facilitar la gestión de pagos y auditorías con un módulo integrado de ingresos y gastos que reduce el tiempo de procesamiento administrativo. Desarrollar APIs para la generación de reportes PDF/Excel y sincronización con sistemas contables existentes para un flujo financiero coherente. Implementar un sistema de registro detallado con adjuntos documentales para asegurar transparencia y trazabilidad en cada transacción. Crear un sistema de filtrado dinámico para generar reportes personalizados que faciliten el análisis y la toma de decisiones.",
+      "outcomes": [
+        "Sistema Integral de Gestión de Gastos",
+        "Almacenamiento de Documentación Financiera",
+        "Exportación Avanzada de Datos",
+        "Interfaz Intuitiva y Responsive"
       ]
     }
   }

@@ -139,6 +139,15 @@
           "title": "IoT Integration",
           "description": "Implementation of IoT and LoRaWAN technology for real-time data transmission."
         }
+      ],
+      "challenge": "From January to December 2020, I took on the responsibility of establishing the architecture and developing a real-time tracking system for the university bus using IoT and LoRaWAN technologies. This research project was crucial to improving transportation efficiency within the university campus. I implemented Firebase and Vue.js for the web application, while Cloud Functions were used to receive real-time data from the LoRaWAN network. Additionally, I used Realtime Database and Firestore to display and store relevant information, such as routes, drivers, and traveled routes. The culmination of this project was reflected in the publication of a scientific article with DOI: 10.1109/ISC255366.2022.9922172.",
+      "approach": "Develop a system for real-time tracking of university buses to improve transportation efficiency on campus. Integrate with campus services for precise scheduling and route planning. Contribute to academic research with a published article on IoT and LoRaWAN technology.",
+      "outcomes": [
+        "Real-Time Tracking",
+        "Route Management",
+        "Fleet Management",
+        "Personnel Management",
+        "IoT Integration"
       ]
     },
     "es": {
@@ -181,6 +190,15 @@
           "title": "Integración IoT",
           "description": "Implementación de tecnologías IoT y LoRaWAN para la transmisión de datos en tiempo real."
         }
+      ],
+      "challenge": "De enero a diciembre de 2020, asumí la responsabilidad de establecer la arquitectura y desarrollar un sistema de localización en tiempo real para el bus universitario utilizando tecnologías IoT y LoRaWAN. Este proyecto de investigación fue crucial para mejorar la eficiencia del transporte dentro del campus universitario. Implementé Firebase y Vue.js para la aplicación web, mientras que Cloud Functions se utilizó para recibir datos en tiempo real de la red LoRaWAN. Además, utilicé Realtime Database y Firestore para mostrar y almacenar información relevante, como rutas, conductores y trayectos recorridos. La culminación de este proyecto se reflejó en la publicación de un artículo científico con DOI: 10.1109/ISC255366.2022.9922172.",
+      "approach": "Desarrollar un sistema para el seguimiento en tiempo real de los buses universitarios para mejorar la eficiencia del transporte en el campus. Integrar con los servicios del campus para una programación precisa y planificación de rutas. Contribuir a la investigación académica con un artículo publicado sobre las tecnologías IoT y LoRaWAN.",
+      "outcomes": [
+        "Seguimiento en Tiempo Real",
+        "Gestión de Rutas",
+        "Administración de Flota",
+        "Gestión de Personal",
+        "Integración IoT"
       ]
     }
   }

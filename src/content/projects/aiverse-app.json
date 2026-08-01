@@ -53,6 +53,13 @@
           "title": "Decentralized Storage",
           "description": "Store files in a decentralized manner using IPFS via Infura."
         }
+      ],
+      "challenge": "The 'Aiverse' aimed to use AI to generate social media posts and process images. The project used Vue.js for the frontend, AWS Lambda for serverless backend functions, and Docker for containerization. The application also integrated with IPFS via Infura for decentralized file storage. The CI/CD pipeline was managed using GitLab CI, ensuring automatic and smooth deployments.",
+      "approach": "Develop an AI-powered system to generate social media posts and process images. Implement a serverless architecture using AWS Lambda for scalable backend functions. Integrate with IPFS via Infura for decentralized file storage.",
+      "outcomes": [
+        "AI-Powered Post Generation",
+        "Serverless Backend",
+        "Decentralized Storage"
       ]
     },
     "es": {
@@ -87,6 +94,13 @@
           "title": "Almacenamiento Descentralizado",
           "description": "Almacenar archivos de manera descentralizada utilizando IPFS a través de Infura."
         }
+      ],
+      "challenge": "El 'Aiverse' tuvo el objetivo de utilizar IA para generar publicaciones en redes sociales y procesar imágenes. El proyecto utilizó Vue.js para el frontend, AWS Lambda para funciones backend sin servidor y Docker para la contenedorización. La aplicación también se integró con IPFS a través de Infura para el almacenamiento descentralizado de archivos. El pipeline de CI/CD se gestionó utilizando GitLab CI, asegurando despliegues automáticos y fluidos.",
+      "approach": "Desarrollar un sistema impulsado por IA para generar publicaciones en redes sociales y procesar imágenes. Implementar una arquitectura sin servidor utilizando AWS Lambda para funciones backend escalables. Integrar con IPFS a través de Infura para el almacenamiento descentralizado de archivos.",
+      "outcomes": [
+        "Generación de Publicaciones Impulsada por IA",
+        "Backend Sin Servidor",
+        "Almacenamiento Descentralizado"
       ]
     }
   }

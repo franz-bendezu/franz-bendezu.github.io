@@ -87,6 +87,16 @@
           "title": "Dark Mode",
           "description": "Support for dark mode to enhance user experience in low-light environments."
         }
+      ],
+      "challenge": "This is my personal portfolio where I showcase my projects, skills, and experiences. The portfolio is designed to be accessible and to display my work in a professional manner. It includes a projects section with detailed descriptions and links to the source code, as well as a skills section that highlights my technical knowledge. The portfolio is also multilingual, with support for English and Spanish.",
+      "approach": "Showcase my personal projects and technical skills in a professional manner. Ensure the portfolio is accessible and looks good on all devices. Ensure the portfolio content is available in both English and Spanish.",
+      "outcomes": [
+        "Project Showcase",
+        "Responsive Design",
+        "Interactive Elements",
+        "Multilingual Support",
+        "SEO Optimized",
+        "Dark Mode"
       ]
     },
     "es": {
@@ -133,6 +143,16 @@
           "title": "Modo Oscuro",
           "description": "Soporte para modo oscuro para mejorar la experiencia de usuario en entornos con poca luz."
         }
+      ],
+      "challenge": "Este es mi portafolio personal donde muestro mis proyectos, habilidades y experiencias. El portafolio está diseñado para ser accesible y mostrar mi trabajo de una manera profesional. Incluye una sección de proyectos con descripciones detalladas y enlaces al código fuente, así como una sección de habilidades que destaca mis conocimientos técnicos. El portafolio también es multilingüe, con soporte para inglés y español.",
+      "approach": "Mostrar mis proyectos personales y habilidades técnicas de manera profesional. Asegurar que el portafolio sea accesible y se vea bien en todos los dispositivos. Asegurar que el contenido del portafolio esté disponible en inglés y español.",
+      "outcomes": [
+        "Muestra de Proyectos",
+        "Diseño Responsivo",
+        "Elementos Interactivos",
+        "Soporte Multilingüe",
+        "SEO Optimizado",
+        "Modo Oscuro"
       ]
     }
   }
