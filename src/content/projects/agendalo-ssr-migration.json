@@ -26,7 +26,7 @@
   "start": "2021-07",
   "end": "2022-05",
   "banner": {
-    "src": "/images/agendalo-ssr-migration/architecture-overview.webp",
+    "src": "../../assets/images/agendalo-ssr-migration/architecture-overview.webp",
     "locales": {
       "en": {
         "alt": "Agendalo.io - SSR Migration"
@@ -38,7 +38,7 @@
   },
   "images": [
     {
-      "src": "/images/agendalo-ssr-migration/architecture-overview.webp",
+      "src": "../../assets/images/agendalo-ssr-migration/architecture-overview.webp",
       "locales": {
         "en": {
           "alt": "Architecture Overview",
@@ -51,7 +51,7 @@
       }
     },
     {
-      "src": "/images/agendalo-ssr-migration/architecture-system.webp",
+      "src": "../../assets/images/agendalo-ssr-migration/architecture-system.webp",
       "locales": {
         "en": {
           "alt": "System Architecture",

@@ -7,7 +7,7 @@
   "technologyCodes": ["nuxt", "spring-boot", "java", "kotlin", "postgresql"],
   "start": "2019-07",
   "banner": {
-    "src": "/images/horext.webp",
+    "src": "../../assets/images/horext.webp",
     "locales": {
       "en": {
         "alt": "Horext"

@@ -2,7 +2,7 @@
   "franz": {
     "email": "fbendezui@uni.pe",
     "website": "https://franzbendezu.me",
-    "portrait": "/images/profile.webp",
+    "portrait": "../assets/images/profile.webp",
     "socialLinks": [
       {
         "label": "LinkedIn",

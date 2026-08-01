@@ -24,7 +24,7 @@
   "start": "2023-07",
   "end": "2023-11",
   "banner": {
-    "src": "/images/movify-aws-migration/architecture-overview.webp",
+    "src": "../../assets/images/movify-aws-migration/architecture-overview.webp",
     "locales": {
       "en": {
         "alt": "Movify AWS Migration"
@@ -36,7 +36,7 @@
   },
   "images": [
     {
-      "src": "/images/movify-aws-migration/architecture-overview.webp",
+      "src": "../../assets/images/movify-aws-migration/architecture-overview.webp",
       "locales": {
         "en": {
           "alt": "Architecture of Movify.pe migration to AWS",
@@ -49,7 +49,7 @@
       }
     },
     {
-      "src": "/images/movify-aws-migration/architecture-system.webp",
+      "src": "../../assets/images/movify-aws-migration/architecture-system.webp",
       "locales": {
         "en": {
           "alt": "System architecture of Movify.pe on AWS",
@@ -62,7 +62,7 @@
       }
     },
     {
-      "src": "/images/movify-aws-migration/architecture-backend.webp",
+      "src": "../../assets/images/movify-aws-migration/architecture-backend.webp",
       "locales": {
         "en": {
           "alt": "Backend architecture of Movify.pe on AWS",

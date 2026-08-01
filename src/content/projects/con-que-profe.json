@@ -15,7 +15,7 @@
   "start": "2021-01",
   "end": "2021-03",
   "banner": {
-    "src": "/images/con-que-profe/banner.webp",
+    "src": "../../assets/images/con-que-profe/banner.webp",
     "locales": {
       "en": {
         "alt": "Teacher Comments Platform"
@@ -41,7 +41,7 @@
   ],
   "images": [
     {
-      "src": "/images/con-que-profe/home.webp",
+      "src": "../../assets/images/con-que-profe/home.webp",
       "locales": {
         "en": {
           "alt": "Which Professor - Home",
@@ -54,7 +54,7 @@
       }
     },
     {
-      "src": "/images/con-que-profe/landing.webp",
+      "src": "../../assets/images/con-que-profe/landing.webp",
       "locales": {
         "en": {
           "alt": "Which Professor - Landing",
@@ -67,7 +67,7 @@
       }
     },
     {
-      "src": "/images/con-que-profe/send-thread.webp",
+      "src": "../../assets/images/con-que-profe/send-thread.webp",
       "locales": {
         "en": {
           "alt": "Which Professor - Send Thread",
@@ -80,7 +80,7 @@
       }
     },
     {
-      "src": "/images/con-que-profe/teacher-course-review.webp",
+      "src": "../../assets/images/con-que-profe/teacher-course-review.webp",
       "locales": {
         "en": {
           "alt": "Which Professor - Comment Thread",
@@ -93,7 +93,7 @@
       }
     },
     {
-      "src": "/images/con-que-profe/thread.webp",
+      "src": "../../assets/images/con-que-profe/thread.webp",
       "locales": {
         "en": {
           "alt": "Which Professor - Thread",
@@ -106,7 +106,7 @@
       }
     },
     {
-      "src": "/images/con-que-profe/threads.webp",
+      "src": "../../assets/images/con-que-profe/threads.webp",
       "locales": {
         "en": {
           "alt": "Which Professor - Threads",
@@ -119,7 +119,7 @@
       }
     },
     {
-      "src": "/images/con-que-profe/user-profile.webp",
+      "src": "../../assets/images/con-que-profe/user-profile.webp",
       "locales": {
         "en": {
           "alt": "Which Professor - User Profile",
@@ -132,7 +132,7 @@
       }
     },
     {
-      "src": "/images/con-que-profe/teacher-course-profile.webp",
+      "src": "../../assets/images/con-que-profe/teacher-course-profile.webp",
       "locales": {
         "en": {
           "alt": "Which Professor - Teacher Course Profile",

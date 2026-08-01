@@ -15,7 +15,7 @@
   "start": "2021-10",
   "end": "2021-12",
   "banner": {
-    "src": "/images/movify-quote-system-improvement/banner.webp",
+    "src": "../../assets/images/movify-quote-system-improvement/banner.webp",
     "locales": {
       "en": {
         "alt": "Movify Quote System"
@@ -27,7 +27,7 @@
   },
   "images": [
     {
-      "src": "/images/movify-quote-system-improvement/step-1.webp",
+      "src": "../../assets/images/movify-quote-system-improvement/step-1.webp",
       "locales": {
         "en": {
           "alt": "Step 1",
@@ -40,7 +40,7 @@
       }
     },
     {
-      "src": "/images/movify-quote-system-improvement/step-2.webp",
+      "src": "../../assets/images/movify-quote-system-improvement/step-2.webp",
       "locales": {
         "en": {
           "alt": "Step 2",
@@ -53,7 +53,7 @@
       }
     },
     {
-      "src": "/images/movify-quote-system-improvement/step-3.webp",
+      "src": "../../assets/images/movify-quote-system-improvement/step-3.webp",
       "locales": {
         "en": {
           "alt": "Step 3",
@@ -66,7 +66,7 @@
       }
     },
     {
-      "src": "/images/movify-quote-system-improvement/step-4.webp",
+      "src": "../../assets/images/movify-quote-system-improvement/step-4.webp",
       "locales": {
         "en": {
           "alt": "Step 4",
@@ -79,7 +79,7 @@
       }
     },
     {
-      "src": "/images/movify-quote-system-improvement/step-5.webp",
+      "src": "../../assets/images/movify-quote-system-improvement/step-5.webp",
       "locales": {
         "en": {
           "alt": "Step 5",

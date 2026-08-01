@@ -6,7 +6,7 @@
   "technologyCodes": ["react", "nodejs", "css", "html", "typescript", "nextjs"],
   "start": "2023-01",
   "banner": {
-    "src": "/images/portfolio.webp",
+    "src": "../../assets/images/portfolio.webp",
     "locales": {
       "en": {
         "alt": "My Portfolio"

@@ -27,7 +27,10 @@ function localizeProject(
     ...(data.end && { end: data.end }),
     ...(data.banner && {
       banner: {
-        src: data.banner.src,
+        src: data.banner.src.src,
+        source: data.banner.src,
+        width: data.banner.src.width,
+        height: data.banner.src.height,
         ...data.banner.locales[locale],
       },
     }),
@@ -40,7 +43,10 @@ function localizeProject(
     }),
     ...(data.images && {
       images: data.images.map((image) => ({
-        src: image.src,
+        src: image.src.src,
+        source: image.src,
+        width: image.src.width,
+        height: image.src.height,
         ...image.locales[locale],
       })),
     }),

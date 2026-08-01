@@ -27,7 +27,7 @@
   "start": "2021-12",
   "end": "2023-07",
   "banner": {
-    "src": "/images/movify-quote-order-management/banner.webp",
+    "src": "../../assets/images/movify-quote-order-management/banner.webp",
     "locales": {
       "en": {
         "alt": "Movify Quote Order Management"
@@ -39,7 +39,7 @@
   },
   "images": [
     {
-      "src": "/images/movify-quote-order-management/costs-dashboard.webp",
+      "src": "../../assets/images/movify-quote-order-management/costs-dashboard.webp",
       "locales": {
         "en": {
           "alt": "Movify costs dashboard",
@@ -52,7 +52,7 @@
       }
     },
     {
-      "src": "/images/movify-quote-order-management/objects-dashboard.webp",
+      "src": "../../assets/images/movify-quote-order-management/objects-dashboard.webp",
       "locales": {
         "en": {
           "alt": "Movify objects dashboard",
@@ -65,7 +65,7 @@
       }
     },
     {
-      "src": "/images/movify-quote-order-management/quotations-dashboard.webp",
+      "src": "../../assets/images/movify-quote-order-management/quotations-dashboard.webp",
       "locales": {
         "en": {
           "alt": "Movify quotations dashboard",
@@ -78,7 +78,7 @@
       }
     },
     {
-      "src": "/images/movify-quote-order-management/main-dashboard.webp",
+      "src": "../../assets/images/movify-quote-order-management/main-dashboard.webp",
       "locales": {
         "en": {
           "alt": "Movify main dashboard",
@@ -91,7 +91,7 @@
       }
     },
     {
-      "src": "/images/movify-quote-order-management/customer-info-quotation.webp",
+      "src": "../../assets/images/movify-quote-order-management/customer-info-quotation.webp",
       "locales": {
         "en": {
           "alt": "Customer information in quotation",
@@ -104,7 +104,7 @@
       }
     },
     {
-      "src": "/images/movify-quote-order-management/location-map-quotation.webp",
+      "src": "../../assets/images/movify-quote-order-management/location-map-quotation.webp",
       "locales": {
         "en": {
           "alt": "Location map in quotation",
@@ -117,7 +117,7 @@
       }
     },
     {
-      "src": "/images/movify-quote-order-management/service-options-quotation.webp",
+      "src": "../../assets/images/movify-quote-order-management/service-options-quotation.webp",
       "locales": {
         "en": {
           "alt": "Service options in quotation",
@@ -130,7 +130,7 @@
       }
     },
     {
-      "src": "/images/movify-quote-order-management/remove-product-quotation.webp",
+      "src": "../../assets/images/movify-quote-order-management/remove-product-quotation.webp",
       "locales": {
         "en": {
           "alt": "Remove product confirmation in quotation",
@@ -143,7 +143,7 @@
       }
     },
     {
-      "src": "/images/movify-quote-order-management/service-orders.webp",
+      "src": "../../assets/images/movify-quote-order-management/service-orders.webp",
       "locales": {
         "en": {
           "alt": "Service orders management",
@@ -156,7 +156,7 @@
       }
     },
     {
-      "src": "/images/movify-quote-order-management/analytics-dashboard.webp",
+      "src": "../../assets/images/movify-quote-order-management/analytics-dashboard.webp",
       "locales": {
         "en": {
           "alt": "Analytics dashboard",
@@ -169,7 +169,7 @@
       }
     },
     {
-      "src": "/images/movify-quote-order-management/user-management.webp",
+      "src": "../../assets/images/movify-quote-order-management/user-management.webp",
       "locales": {
         "en": {
           "alt": "User management interface",
@@ -182,7 +182,7 @@
       }
     },
     {
-      "src": "/images/movify-quote-order-management/edit-service-order.webp",
+      "src": "../../assets/images/movify-quote-order-management/edit-service-order.webp",
       "locales": {
         "en": {
           "alt": "Edit service order screen",
@@ -195,7 +195,7 @@
       }
     },
     {
-      "src": "/images/movify-quote-order-management/goals-dashboard.webp",
+      "src": "../../assets/images/movify-quote-order-management/goals-dashboard.webp",
       "locales": {
         "en": {
           "alt": "Goals dashboard",
@@ -208,7 +208,7 @@
       }
     },
     {
-      "src": "/images/movify-quote-order-management/rates-management.webp",
+      "src": "../../assets/images/movify-quote-order-management/rates-management.webp",
       "locales": {
         "en": {
           "alt": "Rates management screen",
