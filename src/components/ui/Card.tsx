@@ -15,7 +15,7 @@ export default function Card({
     <article
       {...props}
       data-testid={dataTestId}
-      className={`${className} rounded-xl p-3 shadow-lg transition-all duration-100 ease-in-out hover:scale-105 hover:transform hover:shadow-xl`}
+      className={`${className} rounded-xl p-3 transition-all duration-200 ease-out`}
     >
       {children}
     </article>

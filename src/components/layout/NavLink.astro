@@ -1,5 +1,4 @@
 ---
-import DownIcon from "@/components/icon/DownIcon.astro";
 interface Props {
   href: string;
   active: boolean;
@@ -10,7 +9,7 @@ const {
   href,
   active,
   class: className = "",
-  activeClass = "text-gray-800 font-bold dark:text-gray-400",
+  activeClass = "text-accent-strong font-bold",
 } = Astro.props;
 ---
 
@@ -19,10 +18,17 @@ const {
   aria-current={active ? "page" : undefined}
   class:list={[
     className,
-    "px-3 py-2 text-base",
-    active ? activeClass : "font-normal text-gray-600 dark:text-white",
+    "relative rounded-md px-3 py-2 text-sm",
+    active ? activeClass : "font-medium text-content-muted hover:text-content",
   ]}
 >
   <slot />
-  {active && <DownIcon />}
+  {
+    active && (
+      <span
+        class="absolute inset-x-3 -bottom-0.5 h-0.5 bg-accent"
+        aria-hidden="true"
+      />
+    )
+  }
 </a>

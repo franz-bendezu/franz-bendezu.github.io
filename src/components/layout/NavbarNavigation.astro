@@ -11,13 +11,27 @@ interface Props {
   otherLocale: Locale;
   languagePath: string;
 }
-const { locale, currentPath, prefixEnglish, otherLocale, languagePath } = Astro.props;
+const { locale, currentPath, prefixEnglish, otherLocale, languagePath } =
+  Astro.props;
 ---
-<div class="flex items-center">
-  <NavbarDesktop locale={locale} currentPath={currentPath} prefixEnglish={prefixEnglish}/>
-  <div class="mr-2 flex items-center">
-    <NavbarToggleLang otherLocale={otherLocale} href={languagePath} label={otherLocale.toUpperCase()}/>
-    <ThemeSwitch locale={locale}/>
+
+<div class="flex items-center gap-1">
+  <NavbarDesktop
+    locale={locale}
+    currentPath={currentPath}
+    prefixEnglish={prefixEnglish}
+  />
+  <div class="flex items-center gap-1">
+    <NavbarToggleLang
+      otherLocale={otherLocale}
+      href={languagePath}
+      label={otherLocale.toUpperCase()}
+    />
+    <ThemeSwitch locale={locale} />
   </div>
-  <NavbarMobile locale={locale} currentPath={currentPath} prefixEnglish={prefixEnglish}/>
+  <NavbarMobile
+    locale={locale}
+    currentPath={currentPath}
+    prefixEnglish={prefixEnglish}
+  />
 </div>
