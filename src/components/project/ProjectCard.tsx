@@ -55,11 +55,9 @@ function TechnologyList({
       {project.technologies.slice(0, 3).map((tech) => (
         <span
           key={tech.code}
-          className={`border-divider flex items-center rounded-full border py-1 font-mono text-[0.68rem] ${
-            featured ? "px-2" : "gap-1.5 px-2.5"
-          }`}
+          className={`border-divider flex items-center gap-1.5 rounded-full border py-1 font-mono text-[0.68rem] ${featured ? "px-2" : "px-2.5"}`}
         >
-          {!featured && tech.logo && (
+          {tech.logo && (
             <img
               src={tech.logo}
               alt=""
