@@ -25,20 +25,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6
 
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Set up Node.js 22.x
         uses: actions/setup-node@v5
         with:
           node-version: 22.x
-          cache: yarn
+          cache: pnpm
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Install Playwright
-        run: yarn playwright install --with-deps chromium
+        run: pnpm exec playwright install --with-deps chromium
 
       - name: Build project
-        run: yarn build
+        run: pnpm build
         env:
           PUBLIC_FORMSPREE_ID: ${{ secrets.NEXT_PUBLIC_SPREE_ID }}
           PUBLIC_RECAPTCHA_SITE_KEY: ${{ secrets.NEXT_PUBLIC_RECAPTCHA_ID }}

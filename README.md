@@ -7,13 +7,13 @@ GitHub Pages at [franzbendezu.me](https://franzbendezu.me).
 ## Requirements
 
 - Node.js 22.12 or newer
-- Yarn 1.x
+- pnpm 10.x
 
 ## Local development
 
 ```bash
-yarn install --frozen-lockfile
-yarn dev
+pnpm install --frozen-lockfile
+pnpm dev
 ```
 
 The development server is available at `http://localhost:4321`.
@@ -21,14 +21,13 @@ The development server is available at `http://localhost:4321`.
 ## Validation
 
 ```bash
-yarn run check
-yarn test:unit
-yarn playwright install chromium
-yarn build
-yarn test:e2e
+pnpm check
+pnpm exec playwright install chromium
+pnpm build
+pnpm test:e2e
 ```
 
-`yarn test` runs the unit tests, production build, and browser tests together.
+`pnpm test` runs the unit tests, production build, and browser tests together.
 The production build uses Astro static file endpoints and Playwright to generate
 the typed English and Spanish CV PDFs directly in `dist`.
 
