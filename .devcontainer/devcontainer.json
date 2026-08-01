@@ -10,7 +10,8 @@
         "bradlc.vscode-tailwindcss",
         "esbenp.prettier-vscode",
         "dbaeumer.vscode-eslint",
-        "vitest.explorer"
+        "vitest.explorer",
+        "donjayamanne.git-extension-pack"
       ]
     }
   }
