@@ -16,9 +16,11 @@ describe("shared profile content", () => {
         getCertifications("en"),
       ]);
 
-    expect(englishWork).toHaveLength(5);
-    expect(spanishWork[0].startLabel).toBe("Septiembre 2024");
-    expect(englishWork[0].startLabel).toBe("September 2024");
+    expect(englishWork).toHaveLength(7);
+    expect(englishWork[0].company).toBe("Thoughtworks");
+    expect(spanishWork[0].startLabel).toBe("Septiembre 2025");
+    expect(englishWork[1].company).toBe("Devsu");
+    expect(englishWork[2].endLabel).toBe("April 2025");
     expect(englishSkills).toHaveLength(7);
     expect(englishCertifications).toHaveLength(10);
     expect(englishCertifications[0].date).toBe("November 2023");
@@ -31,12 +33,12 @@ describe("shared profile content", () => {
     ]);
 
     expect(englishResume.profile.email).toBe("fbendezui@uni.pe");
-    expect(spanishResume.profile.summary).toContain(
-      "más de 5 años de experiencia",
-    );
+    expect(spanishResume.profile.summary).toContain("6 años de experiencia");
     expect(spanishResume.profile.summary.split("\n\n")).toHaveLength(3);
-    expect(englishResume.profile.summary).toContain(
-      "more than 5 years of experience",
+    expect(englishResume.profile.summary).toContain("6 years of experience");
+    expect(englishResume.education).toHaveLength(3);
+    expect(englishResume.education[0].institution).toBe(
+      "Hanyang Cyber University",
     );
     expect(
       englishResume.projects.map(({ translationKey }) => translationKey),

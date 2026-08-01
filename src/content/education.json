@@ -1,6 +1,23 @@
 {
-  "education-1": {
+  "hanyang-cyber-university": {
     "position": 1,
+    "start": "2024",
+    "url": "https://www.hycu.ac.kr/",
+    "locales": {
+      "en": {
+        "institution": "Hanyang Cyber University",
+        "location": "Seoul, South Korea",
+        "degree": "Dual Degree Program in Artificial Intelligence"
+      },
+      "es": {
+        "institution": "Hanyang Cyber University",
+        "location": "Seúl, Corea del Sur",
+        "degree": "Programa de doble titulación en Inteligencia Artificial"
+      }
+    }
+  },
+  "education-1": {
+    "position": 2,
     "start": "2018",
     "end": "2023",
     "url": "https://www.uni.edu.pe/",
@@ -14,6 +31,23 @@
         "institution": "Universidad Nacional de Ingeniería",
         "location": "Lima, Perú",
         "degree": "Ingeniería de Sistemas"
+      }
+    }
+  },
+  "icpna": {
+    "position": 3,
+    "start": "2023",
+    "url": "https://www.icpna.edu.pe/",
+    "locales": {
+      "en": {
+        "institution": "ICPNA",
+        "location": "Lima, Peru",
+        "degree": "English Language Studies"
+      },
+      "es": {
+        "institution": "ICPNA",
+        "location": "Lima, Perú",
+        "degree": "Estudios de idioma inglés"
       }
     }
   }

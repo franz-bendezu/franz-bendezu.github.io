@@ -80,6 +80,7 @@ function localizeProfile(entry: CollectionEntry<"profiles">, locale: Locale) {
   return {
     id: entry.id,
     email: entry.data.email,
+    phone: entry.data.phone,
     website: entry.data.website,
     portrait: entry.data.portrait,
     socialLinks: entry.data.socialLinks.map((link) => ({ ...link })),

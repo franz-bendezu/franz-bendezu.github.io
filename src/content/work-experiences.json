@@ -1,14 +1,74 @@
 {
-  "work-1": {
+  "thoughtworks": {
     "position": 1,
+    "start": "2025-09",
+    "url": "https://www.thoughtworks.com/",
+    "locales": {
+      "en": {
+        "company": "Thoughtworks",
+        "location": "Lima, Peru",
+        "role": "Developer Consultant",
+        "startLabel": "September 2025",
+        "endLabel": "Present",
+        "tasks": []
+      },
+      "es": {
+        "company": "Thoughtworks",
+        "location": "Lima, Perú",
+        "role": "Developer Consultant",
+        "startLabel": "Septiembre 2025",
+        "endLabel": "Presente",
+        "tasks": []
+      }
+    }
+  },
+  "devsu": {
+    "position": 2,
+    "start": "2025-04",
+    "end": "2025-09",
+    "url": "https://devsu.com/",
+    "locales": {
+      "en": {
+        "company": "Devsu",
+        "location": "Remote",
+        "role": "Backend Developer",
+        "startLabel": "April 2025",
+        "endLabel": "September 2025",
+        "tasks": [
+          "Developed containerized microservices for Deuna's CNBS team in Ecuador",
+          "Applied modular or hexagonal architecture according to project requirements",
+          "Established microservice communication contracts and exposed services for external consumption",
+          "Processed incoming data through webhooks and administered queue and cache systems",
+          "Managed configurations for core banking systems and payment products"
+        ]
+      },
+      "es": {
+        "company": "Devsu",
+        "location": "Remoto",
+        "role": "Desarrollador Backend",
+        "startLabel": "Abril 2025",
+        "endLabel": "Septiembre 2025",
+        "tasks": [
+          "Desarrollé microservicios en contenedores para el equipo CNBS de Deuna en Ecuador",
+          "Apliqué arquitectura modular o hexagonal según los requerimientos del proyecto",
+          "Establecí contratos de comunicación entre microservicios y expuse servicios para consumo externo",
+          "Procesé datos entrantes mediante webhooks y administré sistemas de colas y caché",
+          "Gestioné configuraciones de sistemas core bancarios y productos de pago"
+        ]
+      }
+    }
+  },
+  "work-1": {
+    "position": 3,
     "start": "2024-09",
+    "end": "2025-04",
     "locales": {
       "en": {
         "company": "Indra",
         "location": "Lima, Peru",
         "role": "Backend Developer AWS Senior",
         "startLabel": "September 2024",
-        "endLabel": "Present",
+        "endLabel": "April 2025",
         "tasks": [
           "Developed microservices in Java using Spring Flux and Reactive for legacy systems",
           "Implemented microservices with TypeScript, Node.js, and Serverless Framework for orchestration of legacy systems",
@@ -21,7 +81,7 @@
         "location": "Lima, Perú",
         "role": "Backend Developer AWS Senior",
         "startLabel": "Septiembre 2024",
-        "endLabel": "Presente",
+        "endLabel": "Abril 2025",
         "tasks": [
           "Desarrollé microservicios en Java utilizando Spring Flux y Reactive para sistemas heredados",
           "Implementé microservicios con TypeScript, Node.js y Serverless Framework para la orquestación de sistemas heredados",
@@ -32,9 +92,9 @@
     }
   },
   "work-2": {
-    "position": 2,
+    "position": 4,
     "start": "2022-08",
-    "end": "2024-07",
+    "end": "2024-09",
     "url": "https://agendalo.io/",
     "locales": {
       "en": {
@@ -42,7 +102,7 @@
         "location": "Lima, Peru",
         "role": "Software Engineer Semi Senior",
         "startLabel": "August 2022",
-        "endLabel": "July 2024",
+        "endLabel": "September 2024",
         "tasks": [
           "Led frontend development using Nuxt.js and supported backend projects",
           "Migrated a single-page application (SPA) to server-side rendering (SSR) to improve SEO",
@@ -58,7 +118,7 @@
         "location": "Lima, Perú",
         "role": "Software Engineer Semi Senior",
         "startLabel": "Agosto 2022",
-        "endLabel": "Julio 2024",
+        "endLabel": "Septiembre 2024",
         "tasks": [
           "Lideré el desarrollo frontend utilizando Nuxt.js y apoyé en proyectos backend",
           "Migré una aplicación de una sola página (SPA) a renderización del lado del servidor (SSR) para mejorar el SEO",
@@ -72,7 +132,7 @@
     }
   },
   "work-3": {
-    "position": 3,
+    "position": 5,
     "start": "2019-07",
     "end": "2024-01",
     "locales": {
@@ -111,7 +171,7 @@
     }
   },
   "work-4": {
-    "position": 4,
+    "position": 6,
     "start": "2021-08",
     "end": "2022-10",
     "locales": {
@@ -146,7 +206,7 @@
     }
   },
   "work-5": {
-    "position": 5,
+    "position": 7,
     "start": "2021-08",
     "end": "2022-10",
     "locales": {

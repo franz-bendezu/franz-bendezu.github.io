@@ -6,7 +6,7 @@
     "socialLinks": [
       {
         "label": "LinkedIn",
-        "url": "https://www.linkedin.com/in/franz-antony-bendezu-isidro/"
+        "url": "https://www.linkedin.com/in/franz-bendezu/"
       },
       {
         "label": "GitHub",
@@ -22,13 +22,13 @@
         "name": "Franz Antony Bendezu Isidro",
         "headline": "Software Developer and Systems Engineer",
         "location": "Lima, Peru",
-        "summary": "Bachelor's degree in Systems Engineering from the National University of Engineering with more than 5 years of experience in solution design and development, as well as software architecture.\n\nExpert in developing APIs with Spring Framework (Java/Kotlin) and Node.js (TypeScript), and building interfaces with Vue.js, Angular, or React. Experienced in AWS cloud services and implementing CI/CD using Docker with GitHub Actions and GitLab.\n\nI use an agile approach to manage projects flexibly and efficiently, with a passion for technology and a willingness to tackle challenges creatively and innovatively. I am constantly learning and enthusiastic about sharing my knowledge."
+        "summary": "Bachelor's degree in Systems Engineering from the National University of Engineering with 6 years of experience in solution design and development, as well as software architecture.\n\nExpert in developing APIs with Spring Framework (Java/Kotlin) and Node.js (TypeScript), and building interfaces with Vue.js, Angular, or React. Experienced in AWS cloud services and implementing CI/CD using Docker with GitHub Actions and GitLab.\n\nI use an agile approach to manage projects flexibly and efficiently, with a passion for technology and a willingness to tackle challenges creatively and innovatively. I am constantly learning and enthusiastic about sharing my knowledge."
       },
       "es": {
         "name": "Franz Antony Bendezu Isidro",
         "headline": "Desarrollador de Software e Ingeniero de Sistemas",
         "location": "Lima, Perú",
-        "summary": "Bachiller en Ingeniería de Sistemas en la Universidad Nacional de Ingeniería con más de 5 años de experiencia en diseño y desarrollo de soluciones, así como en arquitectura de software.\n\nExperto en desarrollar APIs con Spring Framework (Java/Kotlin) y Node.js (TypeScript), y crear interfaces con Vue.js, Angular o React. Experiencia en servicios en la nube de AWS e implementación de CI/CD utilizando Docker con GitHub Actions y GitLab.\n\nUtilizo un enfoque ágil para gestionar proyectos de manera flexible y eficiente, con pasión por la tecnología y voluntad de abordar desafíos de manera creativa e innovadora. Estoy en constante aprendizaje y con entusiasmo por compartir mis conocimientos."
+        "summary": "Bachiller en Ingeniería de Sistemas en la Universidad Nacional de Ingeniería con 6 años de experiencia en diseño y desarrollo de soluciones, así como en arquitectura de software.\n\nExperto en desarrollar APIs con Spring Framework (Java/Kotlin) y Node.js (TypeScript), y crear interfaces con Vue.js, Angular o React. Experiencia en servicios en la nube de AWS e implementación de CI/CD utilizando Docker con GitHub Actions y GitLab.\n\nUtilizo un enfoque ágil para gestionar proyectos de manera flexible y eficiente, con pasión por la tecnología y voluntad de abordar desafíos de manera creativa e innovadora. Estoy en constante aprendizaje y con entusiasmo por compartir mis conocimientos."
       }
     }
   }
