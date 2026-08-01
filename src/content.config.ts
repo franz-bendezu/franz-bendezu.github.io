@@ -112,6 +112,7 @@ const workExperiences = defineCollection({
   schema: z
     .object({
       position: z.number().int().positive(),
+      technologyCodes: nonEmptyUniqueStrings,
       start: datedValueSchema,
       end: datedValueSchema.optional(),
       url: z.url().optional(),

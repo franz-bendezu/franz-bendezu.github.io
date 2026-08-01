@@ -8,6 +8,10 @@ interface Props {
   end: string;
   link?: string;
   tasks: readonly string[];
+  technologies: readonly {
+    code: string;
+    name: string;
+  }[];
   compact?: boolean;
 }
 const props = Astro.props;
@@ -51,6 +55,17 @@ const props = Astro.props;
           </li>
         ))}
       </ul>
+    )
+  }
+  {
+    props.technologies.length > 0 && (
+      <div class="mt-5 flex flex-wrap gap-2">
+        {props.technologies.slice(0, 5).map((technology) => (
+          <span class="rounded-full border border-divider px-2.5 py-1 font-mono text-[0.68rem]">
+            {technology.name}
+          </span>
+        ))}
+      </div>
     )
   }
 </Card>

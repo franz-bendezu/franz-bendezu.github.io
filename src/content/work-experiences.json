@@ -1,6 +1,7 @@
 {
   "thoughtworks": {
     "position": 1,
+    "technologyCodes": [],
     "start": "2025-09",
     "url": "https://www.thoughtworks.com/",
     "locales": {
@@ -24,6 +25,7 @@
   },
   "devsu": {
     "position": 2,
+    "technologyCodes": [],
     "start": "2025-04",
     "end": "2025-09",
     "url": "https://devsu.com/",
@@ -60,6 +62,21 @@
   },
   "work-1": {
     "position": 3,
+    "technologyCodes": [
+      "java",
+      "spring-webflux",
+      "typescript",
+      "nodejs",
+      "serverless-framework",
+      "postgresql",
+      "dynamodb",
+      "aws-lambda",
+      "aws-api-gateway",
+      "amazon-rds",
+      "aws-ssm",
+      "aws-step-functions",
+      "aws-eks"
+    ],
     "start": "2024-09",
     "end": "2025-04",
     "locales": {
@@ -93,6 +110,14 @@
   },
   "work-2": {
     "position": 4,
+    "technologyCodes": [
+      "nuxt",
+      "oauth2",
+      "mercado-pago",
+      "niubiz",
+      "stripe",
+      "whatsapp-api"
+    ],
     "start": "2022-08",
     "end": "2024-09",
     "url": "https://agendalo.io/",
@@ -133,6 +158,26 @@
   },
   "work-3": {
     "position": 5,
+    "technologyCodes": [
+      "java",
+      "kotlin",
+      "javascript",
+      "typescript",
+      "python",
+      "vue",
+      "react",
+      "angular",
+      "spring-boot",
+      "nodejs",
+      "graphql",
+      "oauth2",
+      "aws-s3",
+      "aws-ec2",
+      "aws-lambda",
+      "docker",
+      "github-actions",
+      "gitlab-ci"
+    ],
     "start": "2019-07",
     "end": "2024-01",
     "locales": {
@@ -172,6 +217,7 @@
   },
   "work-4": {
     "position": 6,
+    "technologyCodes": ["angular", "azure-devops"],
     "start": "2021-08",
     "end": "2022-10",
     "locales": {
@@ -207,6 +253,7 @@
   },
   "work-5": {
     "position": 7,
+    "technologyCodes": ["angular", "ionic"],
     "start": "2021-08",
     "end": "2022-10",
     "locales": {
