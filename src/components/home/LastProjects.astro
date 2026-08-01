@@ -1,5 +1,6 @@
 ---
-import ProjectCard from "@/components/astro/ProjectCard.astro";
+import ProjectCard from "@/components/project/ProjectCard";
+import ButtonLink from "@/components/ui/ButtonLink.astro";
 import type { IProject } from "@/interfaces/project";
 import { localizedPath, translate, type Locale } from "@/lib/i18n";
 interface Props {
@@ -28,10 +29,11 @@ const { projects, locale, prefixEnglish = false } = Astro.props;
           {translate(locale, "Home.lastProjects.description")}
         </p>
       </div>
-      <a
+      <ButtonLink
         href={localizedPath(locale, "/projects", prefixEnglish)}
-        class="inline-flex min-h-11 items-center justify-center gap-2 rounded-[0.65rem] border border-divider bg-transparent px-4 py-2.5 text-sm font-bold text-content hover:-translate-y-0.5 hover:border-accent hover:text-accent-strong shrink-0"
-        >{translate(locale, "Home.lastProjects.viewAll")}</a
+        variant="secondary"
+        class="shrink-0"
+        >{translate(locale, "Home.lastProjects.viewAll")}</ButtonLink
       >
     </div>
     <div class="mt-10 grid gap-5 lg:grid-cols-3">
@@ -39,8 +41,19 @@ const { projects, locale, prefixEnglish = false } = Astro.props;
         projects.map((project) => (
           <ProjectCard
             project={project}
-            locale={locale}
-            prefixEnglish={prefixEnglish}
+            href={localizedPath(
+              locale,
+              `/projects/${project.code}`,
+              prefixEnglish,
+            )}
+            labels={{
+              viewProject: translate(locale, "Projects.viewProjectLink", {
+                title: project.title,
+              }),
+              impact: translate(locale, "Home.lastProjects.impact"),
+              caseStudy: translate(locale, "Home.lastProjects.caseStudy"),
+            }}
+            variant="featured"
           />
         ))
       }
