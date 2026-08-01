@@ -52,9 +52,32 @@ test("filters projects and opens a project gallery", async ({ page }) => {
   await projectLink.click();
   const galleryButton = page.locator('[role="tab"]').first();
   if (await galleryButton.count()) {
-    await galleryButton.click();
-    await expect(galleryButton).toHaveAttribute("aria-selected", "true");
+    const galleryTabs = page.locator('[role="tab"]');
+    const targetTab = galleryTabs.nth(1);
+    await targetTab.click();
+    await expect(targetTab).toHaveAttribute("aria-selected", "true");
   }
+});
+
+test("changes the large-gallery preview from its thumbnails", async ({
+  page,
+}) => {
+  await page.goto("/projects/movify-quote-order-management");
+  const gallery = page.locator("astro-island").filter({
+    has: page.getByRole("tablist"),
+  });
+  const tabs = gallery.getByRole("tab");
+  const targetTab = tabs.nth(7);
+  const targetAlt = await targetTab.locator("img").getAttribute("alt");
+
+  await targetTab.click();
+
+  await expect(targetTab).toHaveAttribute("aria-selected", "true");
+  await expect(tabs.first()).toHaveAttribute("aria-selected", "false");
+  await expect(
+    gallery.getByRole("tabpanel").getByRole("img", { name: targetAlt ?? "" }),
+  ).toBeVisible();
+  await expect(gallery.getByRole("tabpanel")).toBeInViewport();
 });
 
 test("presents featured case studies and resets archive filters", async ({
@@ -123,6 +146,10 @@ test("supports the mobile menu and keyboard-closeable gallery", async ({
   await expect(
     panel.locator("xpath=ancestor::astro-island"),
   ).not.toHaveAttribute("ssr", "");
+  await panel.click();
+  await expect(page.getByRole("dialog")).toBeVisible();
+  await page.getByRole("button", { name: "Close" }).click();
+  await expect(page.getByRole("dialog")).toBeHidden();
   await panel.click();
   await expect(page.getByRole("dialog")).toBeVisible();
   await page.keyboard.press("Escape");
