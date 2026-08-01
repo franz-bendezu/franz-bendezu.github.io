@@ -6,7 +6,8 @@
       "express",
       "react",
       "material-ui",
-      "backstage"
+      "backstage",
+      "postgresql"
     ],
     "start": "2025-09",
     "url": "https://www.thoughtworks.com/",
@@ -31,7 +32,14 @@
   },
   "devsu": {
     "position": 2,
-    "technologyCodes": ["nestjs", "azure-devops", "kafka", "redis", "eda"],
+    "technologyCodes": [
+      "nestjs",
+      "azure-devops",
+      "kafka",
+      "redis",
+      "eda",
+      "postgresql"
+    ],
     "start": "2025-04",
     "end": "2025-09",
     "url": "https://devsu.com/",
