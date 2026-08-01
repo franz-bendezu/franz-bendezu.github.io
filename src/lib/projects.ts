@@ -55,14 +55,16 @@ function localizeProject(
     projectGoals: localized.projectGoals.map((goal) => ({ ...goal })),
     keyFeatures: localized.keyFeatures.map((feature) => ({ ...feature })),
     lang: locale,
-    technologies: PROJECT_TECHNOLOGIES.filter((technology) =>
-      data.technologyCodes.includes(technology.code),
-    ).map((technology) => ({
-      ...technology,
-      categories: PROJECT_TECHNOLOGY_CATEGORY.filter((category) =>
-        technology.categoryCodes.includes(category.value),
-      ),
-    })),
+    technologies: data.technologyCodes
+      .map((code) =>
+        PROJECT_TECHNOLOGIES.find((technology) => technology.code === code)!,
+      )
+      .map((technology) => ({
+        ...technology,
+        categories: PROJECT_TECHNOLOGY_CATEGORY.filter((category) =>
+          technology.categoryCodes.includes(category.value),
+        ),
+      })),
   };
 }
 

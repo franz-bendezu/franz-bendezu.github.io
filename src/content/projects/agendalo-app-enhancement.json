@@ -3,7 +3,7 @@
   "status": "completed",
   "tags": ["Vue", "Webpack", "JavaScript", "Node"],
   "categoryCode": "freelance",
-  "technologyCodes": ["vue", "webpack", "javascript", "node"],
+  "technologyCodes": ["vue", "webpack", "javascript", "nodejs"],
   "start": "2021-04",
   "end": "2021-05",
   "locales": {

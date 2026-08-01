@@ -21,8 +21,28 @@ describe("shared profile content", () => {
     expect(englishWork[0].company).toBe("Thoughtworks");
     expect(spanishWork[0].startLabel).toBe("Septiembre 2025");
     expect(englishWork[1].company).toBe("Devsu");
+    expect(
+      englishWork[1].technologies.map((technology) => technology.name),
+    ).toEqual([
+      "NestJS",
+      "Azure DevOps",
+      "Apache Kafka",
+      "Redis",
+      "Event-Driven Architecture",
+      "PostgreSQL",
+    ]);
     expect(englishWork[2].endLabel).toBe("April 2025");
     expect(englishSkills).toHaveLength(7);
+    expect(englishSkills.find(({ id }) => id === "cloud")?.items).toEqual([
+      "Amazon S3",
+      "Amazon EC2",
+      "Amazon RDS",
+      "AWS Lambda",
+      "API Gateway",
+      "Amazon CloudFront",
+      "Amazon Route 53",
+      "DigitalOcean",
+    ]);
     expect(englishCertifications).toHaveLength(10);
     expect(englishCertifications[0].date).toBe("November 2023");
   });

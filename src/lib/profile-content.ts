@@ -37,8 +37,8 @@ function localizeWorkExperience(
     startDate: entry.data.start,
     endDate: entry.data.end,
     link: entry.data.url,
-    technologies: PROJECT_TECHNOLOGIES.filter((technology) =>
-      entry.data.technologyCodes.includes(technology.code),
+    technologies: entry.data.technologyCodes.map((code) =>
+      PROJECT_TECHNOLOGIES.find((technology) => technology.code === code)!,
     ),
     ...entry.data.locales[locale],
   };
@@ -82,10 +82,16 @@ function localizeCertification(
 }
 
 function localizeSkill(entry: CollectionEntry<"skills">, locale: Locale) {
+  const technologies = entry.data.technologyCodes.map((code) =>
+    PROJECT_TECHNOLOGIES.find((technology) => technology.code === code)!,
+  );
+
   return {
     id: entry.id,
     position: entry.data.position,
-    items: [...entry.data.items],
+    technologyCodes: [...entry.data.technologyCodes],
+    technologies,
+    items: technologies.map((technology) => technology.name),
     ...entry.data.locales[locale],
   };
 }

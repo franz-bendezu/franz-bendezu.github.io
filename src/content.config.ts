@@ -1,6 +1,7 @@
 import { defineCollection, reference } from "astro:content";
 import { file, glob } from "astro/loaders";
 import { z } from "astro/zod";
+import { PROJECT_TECHNOLOGIES } from "./constants/project-techologies";
 
 const localeSchema = z.enum(["en", "es"]);
 const categorySchema = z.enum(["freelance", "personal", "demo"]);
@@ -20,6 +21,22 @@ const nonEmptyUniqueStrings = z
   .refine((values) => new Set(values).size === values.length, {
     message: "Values must be unique",
   });
+const technologyCodesSchema = nonEmptyUniqueStrings.superRefine(
+  (codes, context) => {
+    const knownCodes = new Set(
+      PROJECT_TECHNOLOGIES.map((technology) => technology.code),
+    );
+    codes.forEach((code, index) => {
+      if (!knownCodes.has(code)) {
+        context.addIssue({
+          code: "custom",
+          message: `Unknown technology code: ${code}`,
+          path: [index],
+        });
+      }
+    });
+  },
+);
 const localizedTextSchema = z
   .object({
     title: z.string().min(1),
@@ -65,7 +82,7 @@ const projects = defineCollection({
       status: statusSchema,
       tags: nonEmptyUniqueStrings,
       categoryCode: categorySchema,
-      technologyCodes: nonEmptyUniqueStrings,
+      technologyCodes: technologyCodesSchema,
       priority: z.number().optional(),
       featured: z.boolean().optional(),
       start: datedValueSchema.optional(),
@@ -112,7 +129,7 @@ const workExperiences = defineCollection({
   schema: z
     .object({
       position: z.number().int().positive(),
-      technologyCodes: nonEmptyUniqueStrings,
+      technologyCodes: technologyCodesSchema,
       start: datedValueSchema,
       end: datedValueSchema.optional(),
       url: z.url().optional(),
@@ -177,7 +194,7 @@ const skills = defineCollection({
   schema: z
     .object({
       position: z.number().int().positive(),
-      items: nonEmptyUniqueStrings,
+      technologyCodes: technologyCodesSchema,
       locales: localizedValues(z.object({ name: z.string().min(1) }).strict()),
     })
     .strict(),
