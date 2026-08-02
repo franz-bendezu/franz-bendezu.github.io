@@ -7,6 +7,34 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://franzbendezu.me",
   output: "static",
+  security: {
+    csp: {
+      directives: [
+        "default-src 'self'",
+        "base-uri 'self'",
+        "object-src 'none'",
+        "form-action 'self' https://formspree.io",
+        "img-src 'self' data: https://www.google.com https://www.gstatic.com",
+        "connect-src 'self' https://cloud.umami.is https://formspree.io https://www.google.com",
+        "frame-src 'self' https://www.google.com https://recaptcha.google.com",
+        "worker-src 'self' blob:",
+        "require-trusted-types-for 'script'",
+        "trusted-types default goog#html",
+        "upgrade-insecure-requests",
+      ],
+      scriptDirective: {
+        resources: [
+          "'self'",
+          "https://cloud.umami.is",
+          "https://www.google.com",
+          "https://www.gstatic.com",
+        ],
+      },
+      styleDirective: {
+        resources: ["'self'"],
+      },
+    },
+  },
   build: {
     // The shared stylesheet is small enough that a separate request costs more
     // than the bytes saved by caching it independently.

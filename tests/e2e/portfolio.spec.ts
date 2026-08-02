@@ -128,6 +128,30 @@ test("publishes canonical URLs in robots and sitemap", async ({ request }) => {
   expect(contents).not.toContain("/cv/");
 });
 
+test("enforces a restrictive CSP and Trusted Types", async ({ page }) => {
+  await page.goto("/");
+
+  const policy = await page
+    .locator('meta[http-equiv="content-security-policy"]')
+    .getAttribute("content");
+  expect(policy).toContain("default-src 'self'");
+  expect(policy).toContain("object-src 'none'");
+  expect(policy).toContain("require-trusted-types-for 'script'");
+  expect(policy).toContain("trusted-types default goog#html");
+  expect(policy).not.toContain("script-src 'unsafe-inline'");
+
+  const trustedTypesEnforced = await page.evaluate(() => {
+    const element = document.createElement("div");
+    try {
+      element.innerHTML = "<span>untrusted</span>";
+      return false;
+    } catch {
+      return true;
+    }
+  });
+  expect(trustedTypesEnforced).toBe(true);
+});
+
 test("renders parseable structured data and indexing controls", async ({
   page,
 }) => {
