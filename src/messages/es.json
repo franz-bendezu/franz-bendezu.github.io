@@ -161,7 +161,7 @@
   "Metadata": {
     "title": {
       "default": "Inicio",
-      "template": "%s | Franz Bendezu"
+      "template": "%s | Franz Bendezu · Desarrollador Full Stack"
     },
     "description": "Desarrollo de MVPs, productos SaaS, herramientas internas y landing pages para equipos de producto con Java, Node.js, AWS, Vue y React."
   }
