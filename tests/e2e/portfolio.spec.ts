@@ -25,6 +25,126 @@ test("serves all locale URL families with canonical metadata", async ({
   );
 });
 
+test("serves localized service routes with consolidated canonicals", async ({
+  page,
+}) => {
+  const slugs = [
+    "mvp-development",
+    "saas-product-development",
+    "internal-tools",
+    "landing-page-development",
+  ] as const;
+  const routes = slugs.flatMap((slug) => [
+    [`/services/${slug}`, `https://franzbendezu.me/services/${slug}`],
+    [`/en/services/${slug}`, `https://franzbendezu.me/services/${slug}`],
+    [`/es/services/${slug}`, `https://franzbendezu.me/es/services/${slug}`],
+  ]);
+  for (const [path, canonical] of routes) {
+    await page.goto(path);
+    await expect(page.locator("h1")).toHaveCount(1);
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+      "href",
+      canonical,
+    );
+    await expect(page.locator('meta[name="description"]')).toHaveAttribute(
+      "content",
+      /.+/,
+    );
+  }
+  await page.goto("/en/services/mvp-development");
+  await expect(page.locator('link[hreflang="es"]')).toHaveAttribute(
+    "href",
+    "https://franzbendezu.me/es/services/mvp-development",
+  );
+});
+
+test("gives every submitted page unique metadata and one primary heading", async ({
+  request,
+}) => {
+  const sitemapIndex = await request.get("/sitemap-index.xml");
+  const sitemapName = (await sitemapIndex.text()).match(
+    /https:\/\/franzbendezu\.me\/(sitemap-[^<]+\.xml)/,
+  )?.[1];
+  expect(sitemapName).toBeTruthy();
+  const sitemap = await request.get(`/${sitemapName}`);
+  const locations = [
+    ...(await sitemap.text()).matchAll(/<loc>([^<]+)<\/loc>/g),
+  ].map(([, location]) => new URL(location).pathname);
+  const titles = new Set<string>();
+  const descriptions = new Set<string>();
+  for (const path of locations) {
+    const response = await request.get(path);
+    const html = await response.text();
+    const title = html.match(/<title>([^<]+)<\/title>/)?.[1];
+    const description = html.match(
+      /<meta name="description" content="([^"]+)"/,
+    )?.[1];
+    expect(title, `${path} should have a title`).toBeTruthy();
+    expect(description, `${path} should have a description`).toBeTruthy();
+    expect(titles.has(title!), `${path} should have a unique title`).toBe(
+      false,
+    );
+    expect(
+      descriptions.has(description!),
+      `${path} should have a unique description`,
+    ).toBe(false);
+    expect(
+      (html.match(/<h1[ >]/g) ?? []).length,
+      `${path} should have one H1`,
+    ).toBe(1);
+    titles.add(title!);
+    descriptions.add(description!);
+  }
+});
+
+test("publishes canonical URLs in robots and sitemap", async ({ request }) => {
+  const robots = await request.get("/robots.txt");
+  expect(robots.status()).toBe(200);
+  expect(await robots.text()).toContain(
+    "Sitemap: https://franzbendezu.me/sitemap-index.xml",
+  );
+  const sitemapIndex = await request.get("/sitemap-index.xml");
+  expect(sitemapIndex.status()).toBe(200);
+  const sitemapName = (await sitemapIndex.text()).match(
+    /https:\/\/franzbendezu\.me\/(sitemap-[^<]+\.xml)/,
+  )?.[1];
+  expect(sitemapName).toBeTruthy();
+  const sitemap = await request.get(`/${sitemapName}`);
+  const contents = await sitemap.text();
+  expect(contents).toContain(
+    "https://franzbendezu.me/services/mvp-development",
+  );
+  expect(contents).toContain(
+    "https://franzbendezu.me/es/services/mvp-development",
+  );
+  expect(contents).not.toContain("https://franzbendezu.me/en/");
+  expect(contents).not.toContain("/projects/c/");
+  expect(contents).not.toContain("/cv/");
+});
+
+test("renders parseable structured data and indexing controls", async ({
+  page,
+}) => {
+  for (const path of [
+    "/",
+    "/about",
+    "/services/mvp-development",
+    "/projects/agendalo-ssr-migration",
+  ]) {
+    await page.goto(path);
+    const blocks = await page
+      .locator('script[type="application/ld+json"]')
+      .allTextContents();
+    expect(blocks.length, `${path} should contain JSON-LD`).toBeGreaterThan(0);
+    for (const block of blocks) expect(() => JSON.parse(block)).not.toThrow();
+  }
+  await page.goto("/projects/c/freelance");
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
+    "content",
+    "noindex,follow",
+  );
+});
+
 test("switches locale while preserving the page", async ({ page }) => {
   await page.goto("/projects");
   await page.locator("[data-language-switch]").click();
@@ -116,7 +236,14 @@ test("supports case-study navigation and reduced motion", async ({ page }) => {
 test("keeps redesigned pages within responsive viewports", async ({ page }) => {
   for (const width of [375, 768, 1280, 1536]) {
     await page.setViewportSize({ width, height: 900 });
-    for (const path of ["/", "/projects", "/about", "/contact"]) {
+    for (const path of [
+      "/",
+      "/services",
+      "/services/mvp-development",
+      "/projects",
+      "/about",
+      "/contact",
+    ]) {
       await page.goto(path);
       const dimensions = await page.evaluate(() => ({
         documentWidth: document.documentElement.scrollWidth,
@@ -164,7 +291,7 @@ test("validates the localized contact form", async ({ page }) => {
     false,
   );
   await page.goto("/es/contact");
-  await expect(page.getByLabel("Correo")).toBeVisible();
+  await expect(page.getByLabel("Correo de trabajo")).toBeVisible();
 });
 
 test("renders bilingual CV pages and serves generated PDFs", async ({
@@ -205,7 +332,10 @@ test("internal links and rendered assets resolve", async ({
     "/projects",
     "/about",
     "/contact",
+    "/services",
+    "/services/mvp-development",
     "/es/",
+    "/es/services",
     "/es/projects",
   ]) {
     await page.goto(path);

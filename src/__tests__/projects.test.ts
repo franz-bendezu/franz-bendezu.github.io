@@ -51,7 +51,7 @@ describe("project data", () => {
     ).toBe(true);
 
     const englishPortfolio = await getProject("en", "my-portfolio");
-    const spanishPortfolio = await getProject("es", "mi-portafolio");
+    const spanishPortfolio = await getProject("es", "my-portfolio");
     expect(englishPortfolio?.translationKey).toBe(
       spanishPortfolio?.translationKey,
     );
