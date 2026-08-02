@@ -17,6 +17,16 @@ type TranslationKeyOf<T> = {
 }[keyof T & string];
 
 export type TranslationKey = TranslationKeyOf<typeof en>;
+type TranslationValues = Record<string, string | number>;
+type Translator = (key: TranslationKey, values?: TranslationValues) => string;
+
+const flattenedDictionaries = Object.fromEntries(
+  LOCALES.map((locale) => [locale, flattenDictionary(dictionaries[locale])]),
+) as Record<Locale, Record<TranslationKey, string>>;
+
+const translators = Object.fromEntries(
+  LOCALES.map((locale) => [locale, createTranslator(locale)]),
+) as Record<Locale, Translator>;
 
 export function isLocale(value: string | undefined): value is Locale {
   return LOCALES.includes(value as Locale);
@@ -26,40 +36,44 @@ export function getMessages(locale: Locale) {
   return dictionaries[locale];
 }
 
-function resolveTranslation(
-  locale: Locale,
-  key: string,
-  values: Record<string, string | number> = {},
-): string {
-  const localized = getTranslation(dictionaries[locale], key);
-  const fallback = getTranslation(dictionaries[DEFAULT_LOCALE], key);
-  const message = localized ?? fallback;
-  if (!message) return key;
-
-  return Object.entries(values).reduce(
-    (text, [name, value]) => text.replaceAll(`{${name}}`, String(value)),
-    message,
-  );
-}
-
-function getTranslation(dictionary: unknown, key: string): string | undefined {
-  let current = dictionary;
-  for (const segment of key.split(".")) {
-    if (!current || typeof current !== "object" || !(segment in current)) {
-      return undefined;
+function flattenDictionary(
+  dictionary: Record<string, unknown>,
+  prefix = "",
+  flattened: Record<string, string> = {},
+): Record<string, string> {
+  for (const [key, value] of Object.entries(dictionary)) {
+    const translationKey = prefix ? `${prefix}.${key}` : key;
+    if (typeof value === "string") {
+      flattened[translationKey] = value;
+    } else if (value && typeof value === "object") {
+      flattenDictionary(
+        value as Record<string, unknown>,
+        translationKey,
+        flattened,
+      );
     }
-    current = (current as Record<string, unknown>)[segment];
   }
-  return typeof current === "string" ? current : undefined;
+  return flattened;
 }
 
-export function useTranslations(locale: Locale) {
-  return function t(
-    key: TranslationKey,
-    values: Record<string, string | number> = {},
-  ): string {
-    return resolveTranslation(locale, key, values);
+function createTranslator(locale: Locale): Translator {
+  const localizedUI = flattenedDictionaries[locale];
+  const fallbackUI = flattenedDictionaries[DEFAULT_LOCALE];
+
+  return (key, values = {}) => {
+    const message = localizedUI[key] ?? fallbackUI[key] ?? key;
+    const entries = Object.entries(values);
+    if (entries.length === 0) return message;
+
+    return entries.reduce(
+      (text, [name, value]) => text.replaceAll(`{${name}}`, String(value)),
+      message,
+    );
   };
+}
+
+export function useTranslations(locale: Locale): Translator {
+  return translators[locale];
 }
 
 export function normalizePath(path = "/"): string {
