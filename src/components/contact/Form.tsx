@@ -29,10 +29,9 @@ interface Props {
 
 declare global {
   interface Window {
-    plausible?: (
-      event: string,
-      options?: { props?: Record<string, string> },
-    ) => void;
+    umami?: {
+      track: (event: string, data?: Record<string, string>) => void;
+    };
   }
 }
 
@@ -82,8 +81,9 @@ export function ContactForm({
   useEffect(() => {
     if (!state.succeeded || trackedSuccess.current) return;
     trackedSuccess.current = true;
-    window.plausible?.("Lead Form Submitted", {
-      props: { locale, service: selectedService || "unsure" },
+    window.umami?.track("Lead Form Submitted", {
+      locale,
+      service: selectedService || "unsure",
     });
   }, [locale, selectedService, state.succeeded]);
 

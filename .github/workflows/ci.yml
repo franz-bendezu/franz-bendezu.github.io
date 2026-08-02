@@ -45,7 +45,7 @@ jobs:
         env:
           PUBLIC_FORMSPREE_ID: ${{ secrets.NEXT_PUBLIC_SPREE_ID }}
           PUBLIC_RECAPTCHA_SITE_KEY: ${{ secrets.NEXT_PUBLIC_RECAPTCHA_ID }}
-          PUBLIC_PLAUSIBLE_SCRIPT_SRC: ${{ secrets.PUBLIC_PLAUSIBLE_SCRIPT_SRC }}
+          PUBLIC_UMAMI_WEBSITE_ID: ${{ secrets.PUBLIC_UMAMI_WEBSITE_ID }}
 
       - name: Run browser tests
         run: pnpm test:e2e
