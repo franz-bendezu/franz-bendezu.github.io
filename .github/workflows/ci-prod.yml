@@ -14,3 +14,4 @@ jobs:
     secrets:
       NEXT_PUBLIC_SPREE_ID: test-spree-id
       NEXT_PUBLIC_RECAPTCHA_ID: test-recaptcha-id
+      PUBLIC_UMAMI_WEBSITE_ID: test-umami-website-id

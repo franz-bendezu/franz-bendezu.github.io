@@ -4,6 +4,9 @@ on:
   workflow_dispatch:
   workflow_call:
     secrets:
+      PUBLIC_UMAMI_WEBSITE_ID:
+        description: Public Umami website identifier embedded at build time
+        required: true
       NEXT_PUBLIC_SPREE_ID:
         required: true
       NEXT_PUBLIC_RECAPTCHA_ID:
