@@ -19,6 +19,9 @@ const extractStyle = (source: string) => {
 };
 
 const resumeStyles = `
+  :root {
+    --font-inter: "Inter Variable", Inter, Arial, sans-serif;
+  }
   @font-face {
     font-family: "Inter Variable";
     font-style: normal;
