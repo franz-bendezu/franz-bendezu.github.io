@@ -46,6 +46,7 @@ describe("i18n routing", () => {
   it("creates a locale-bound UI translator", () => {
     const t = useTranslations("es");
 
+    expect(useTranslations("es")).toBe(t);
     expect(t("Navigation.openMenu")).toBe("Abrir menú principal");
     expect(t("Projects.viewProjectLink", { title: "Demo" })).toBe(
       "Ver Proyecto Demo",
