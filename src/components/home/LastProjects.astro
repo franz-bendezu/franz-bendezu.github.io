@@ -6,9 +6,8 @@ import { localizedPath, translate, type Locale } from "@/lib/i18n";
 interface Props {
   projects: IProject[];
   locale: Locale;
-  prefixEnglish?: boolean;
 }
-const { projects, locale, prefixEnglish = false } = Astro.props;
+const { projects, locale } = Astro.props;
 ---
 
 <section id="projects" class="py-16 sm:py-24">
@@ -30,7 +29,7 @@ const { projects, locale, prefixEnglish = false } = Astro.props;
         </p>
       </div>
       <ButtonLink
-        href={localizedPath(locale, "/projects", prefixEnglish)}
+        href={localizedPath(locale, "/projects")}
         variant="secondary"
         class="shrink-0"
         >{translate(locale, "Home.lastProjects.viewAll")}</ButtonLink
@@ -41,11 +40,7 @@ const { projects, locale, prefixEnglish = false } = Astro.props;
         projects.map((project) => (
           <ProjectCard
             project={project}
-            href={localizedPath(
-              locale,
-              `/projects/${project.code}`,
-              prefixEnglish,
-            )}
+            href={localizedPath(locale, `/projects/${project.code}`)}
             labels={{
               viewProject: translate(locale, "Projects.viewProjectLink", {
                 title: project.title,

@@ -1,5 +1,6 @@
 import en from "@/messages/en.json";
 import es from "@/messages/es.json";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 export const LOCALES = ["en", "es"] as const;
 export type Locale = (typeof LOCALES)[number];
@@ -39,18 +40,14 @@ export function normalizePath(path = "/"): string {
   return normalized.length > 1 ? normalized.replace(/\/$/, "") : normalized;
 }
 
-export function localizedPath(
-  locale: Locale,
-  path = "/",
-  prefixEnglish = false,
-): string {
+export function localizedPath(locale: Locale, path = "/"): string {
   const normalized = normalizePath(path);
-  if (locale === "en" && !prefixEnglish) return normalized;
-  return normalizePath(`/${locale}${normalized}`);
+  const route = normalized === "/" ? undefined : normalized.slice(1);
+  return normalizePath(getRelativeLocaleUrl(locale, route));
 }
 
 export function canonicalPath(locale: Locale, path = "/"): string {
-  return localizedPath(locale, path, false);
+  return localizedPath(locale, path);
 }
 
 export function alternatePaths(path = "/") {

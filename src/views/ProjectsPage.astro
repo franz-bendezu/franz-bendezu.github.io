@@ -10,9 +10,8 @@ import type { ProjectCategoryCodes } from "@/interfaces/project";
 interface Props {
   locale: Locale;
   category?: ProjectCategoryCodes;
-  prefixEnglish?: boolean;
 }
-const { locale, category, prefixEnglish = false } = Astro.props;
+const { locale, category } = Astro.props;
 const path = category ? `/projects/c/${category}` : "/projects";
 const projects = await getProjects(locale, category);
 const rawFeatured = category
@@ -27,7 +26,7 @@ const [featured, archive] = await Promise.all([
   optimizeProjectBanners(rawFeatured),
   optimizeProjectBanners(rawArchive),
 ]);
-const projectBasePath = localizedPath(locale, "/projects", prefixEnglish);
+const projectBasePath = localizedPath(locale, "/projects");
 const labels = {
   filteredBy: translate(locale, "Projects.filteredBy"),
   empty: translate(locale, "Projects.empty"),
@@ -80,7 +79,7 @@ const title = category
             ? "border-accent bg-accent-soft text-accent-strong"
             : "border-divider hover:border-accent",
         ]}
-        href={localizedPath(locale, "/projects", prefixEnglish)}
+        href={localizedPath(locale, "/projects")}
         >{translate(locale, "Projects.categories.all")}</a
       >
       {
@@ -92,11 +91,7 @@ const title = category
                 ? "border-accent bg-accent-soft text-accent-strong"
                 : "border-divider hover:border-accent",
             ]}
-            href={localizedPath(
-              locale,
-              `/projects/c/${item.value}`,
-              prefixEnglish,
-            )}
+            href={localizedPath(locale, `/projects/c/${item.value}`)}
           >
             {item.name}
           </a>
@@ -114,11 +109,7 @@ const title = category
               {featured.map((project) => (
                 <ProjectCard
                   project={project}
-                  href={localizedPath(
-                    locale,
-                    `/projects/${project.code}`,
-                    prefixEnglish,
-                  )}
+                  href={localizedPath(locale, `/projects/${project.code}`)}
                   labels={{
                     viewProject: translate(locale, "Projects.viewProjectLink", {
                       title: project.title,

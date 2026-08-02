@@ -5,9 +5,8 @@ import { localizedPath, translate, type Locale } from "@/lib/i18n";
 interface Props {
   locale: Locale;
   currentPath: string;
-  prefixEnglish: boolean;
 }
-const { locale, currentPath, prefixEnglish } = Astro.props;
+const { locale, currentPath } = Astro.props;
 ---
 
 <div class="hidden items-center md:mx-2 md:flex md:gap-1 lg:mx-3">
@@ -19,7 +18,7 @@ const { locale, currentPath, prefixEnglish } = Astro.props;
         : currentPath.startsWith(path);
       return (
         <NavLink
-          href={localizedPath(locale, path, prefixEnglish)}
+          href={localizedPath(locale, path)}
           active={active}
           activeClass="text-accent-strong font-bold"
         >

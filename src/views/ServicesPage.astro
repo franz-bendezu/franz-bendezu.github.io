@@ -10,9 +10,8 @@ import { personSchema, SITE_URL } from "@/lib/seo";
 
 interface Props {
   locale: Locale;
-  prefixEnglish?: boolean;
 }
-const { locale, prefixEnglish = false } = Astro.props;
+const { locale } = Astro.props;
 const services = await getServices(locale);
 const profile = await getProfile(locale);
 const path = "/services";
@@ -73,11 +72,7 @@ const structuredData = {
               {service.description}
             </p>
             <a
-              href={localizedPath(
-                locale,
-                `${path}/${service.slug}`,
-                prefixEnglish,
-              )}
+              href={localizedPath(locale, `${path}/${service.slug}`)}
               class="mt-8 inline-flex items-center gap-2 font-bold text-accent-strong"
             >
               {translate(locale, "Services.viewService")}
@@ -96,10 +91,7 @@ const structuredData = {
       <p class="mt-3 max-w-2xl opacity-75">
         {translate(locale, "Services.ctaDescription")}
       </p>
-      <ButtonLink
-        href={localizedPath(locale, "/contact", prefixEnglish)}
-        class="mt-6"
-      >
+      <ButtonLink href={localizedPath(locale, "/contact")} class="mt-6">
         {translate(locale, "Services.ctaButton")}
         <span aria-hidden="true">↗</span>
       </ButtonLink>

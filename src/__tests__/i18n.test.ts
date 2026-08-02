@@ -9,17 +9,17 @@ import {
 } from "@/lib/i18n";
 
 describe("i18n routing", () => {
-  it("keeps canonical English unprefixed and Spanish prefixed", () => {
-    expect(canonicalPath("en", "/projects")).toBe("/projects");
+  it("uses Astro's locale prefixes for canonical routes", () => {
+    expect(canonicalPath("en", "/projects")).toBe("/en/projects");
     expect(canonicalPath("es", "/projects")).toBe("/es/projects");
-    expect(localizedPath("en", "/projects", true)).toBe("/en/projects");
+    expect(localizedPath("en", "/projects")).toBe("/en/projects");
   });
 
   it("builds language alternatives", () => {
     expect(alternatePaths("/about")).toEqual({
-      en: "/about",
+      en: "/en/about",
       es: "/es/about",
-      "x-default": "/about",
+      "x-default": "/en/about",
     });
   });
 

@@ -1,6 +1,6 @@
 ---
 import ResumeLayout from "@/layouts/ResumeLayout.astro";
-import type { Locale } from "@/lib/i18n";
+import { localizedPath, type Locale } from "@/lib/i18n";
 import { getResume } from "@/lib/profile-content";
 
 interface Props {
@@ -94,7 +94,7 @@ const linkText = (url: string) =>
             <article class="project">
               <h3>
                 <a
-                  href={`${profile.website}${locale === "es" ? "/es" : ""}/projects/${project.code}`}
+                  href={`${profile.website}${localizedPath(locale, `/projects/${project.code}`)}`}
                 >
                   {project.title}
                 </a>

@@ -8,11 +8,10 @@ interface Props {
   pathname: string;
 }
 const { locale, path, pathname } = Astro.props;
-const prefixEnglish = pathname === "/en" || pathname.startsWith("/en/");
 const currentPath = stripLocale(pathname);
 const otherLocale: Locale = locale === "en" ? "es" : "en";
 const languagePath = localizedPath(otherLocale, path);
-const homePath = localizedPath(locale, "/", prefixEnglish);
+const homePath = localizedPath(locale, "/");
 ---
 
 <nav
@@ -36,7 +35,6 @@ const homePath = localizedPath(locale, "/", prefixEnglish);
     <NavbarNavigation
       locale={locale}
       currentPath={currentPath}
-      prefixEnglish={prefixEnglish}
       otherLocale={otherLocale}
       languagePath={languagePath}
     />

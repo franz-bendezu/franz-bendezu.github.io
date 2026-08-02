@@ -12,9 +12,8 @@ import { getProfile } from "@/lib/profile-content";
 import { personSchema, SITE_URL } from "@/lib/seo";
 interface Props {
   locale: Locale;
-  prefixEnglish?: boolean;
 }
-const { locale, prefixEnglish = false } = Astro.props;
+const { locale } = Astro.props;
 const projects = await optimizeProjectBanners(
   (await getProjects(locale))
     .filter((project) => project.featured)
@@ -59,14 +58,10 @@ const structuredData = [
   description={description}
   structuredData={structuredData}
 >
-  <Presentation locale={locale} prefixEnglish={prefixEnglish} />
-  <Services locale={locale} prefixEnglish={prefixEnglish} />
-  <Skills locale={locale} prefixEnglish={prefixEnglish} />
-  <LastProjects
-    projects={projects}
-    locale={locale}
-    prefixEnglish={prefixEnglish}
-  />
+  <Presentation locale={locale} />
+  <Services locale={locale} />
+  <Skills locale={locale} />
+  <LastProjects projects={projects} locale={locale} />
   <section class="mx-auto w-full max-w-[75rem] px-5 sm:px-8 pb-16 sm:pb-24">
     <div
       class="overflow-hidden rounded-2xl bg-content px-6 py-10 text-surface sm:px-10 sm:py-14 dark:bg-surface-raised dark:text-content"
@@ -84,7 +79,7 @@ const structuredData = [
             {translate(locale, "Home.cta.description")}
           </p>
         </div>
-        <ButtonLink href={localizedPath(locale, "/contact", prefixEnglish)}
+        <ButtonLink href={localizedPath(locale, "/contact")}
           >{translate(locale, "Home.cta.button")}
           <span aria-hidden="true">↗</span></ButtonLink
         >

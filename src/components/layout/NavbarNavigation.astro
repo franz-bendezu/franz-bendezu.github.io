@@ -7,20 +7,14 @@ import type { Locale } from "@/lib/i18n";
 interface Props {
   locale: Locale;
   currentPath: string;
-  prefixEnglish: boolean;
   otherLocale: Locale;
   languagePath: string;
 }
-const { locale, currentPath, prefixEnglish, otherLocale, languagePath } =
-  Astro.props;
+const { locale, currentPath, otherLocale, languagePath } = Astro.props;
 ---
 
 <div class="flex items-center gap-1">
-  <NavbarDesktop
-    locale={locale}
-    currentPath={currentPath}
-    prefixEnglish={prefixEnglish}
-  />
+  <NavbarDesktop locale={locale} currentPath={currentPath} />
   <div class="flex items-center gap-1">
     <NavbarToggleLang
       otherLocale={otherLocale}
@@ -29,9 +23,5 @@ const { locale, currentPath, prefixEnglish, otherLocale, languagePath } =
     />
     <ThemeSwitch locale={locale} />
   </div>
-  <NavbarMobile
-    locale={locale}
-    currentPath={currentPath}
-    prefixEnglish={prefixEnglish}
-  />
+  <NavbarMobile locale={locale} currentPath={currentPath} />
 </div>
