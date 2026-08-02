@@ -58,11 +58,10 @@ const capabilities = [
     </div>
     <div class="mt-10 grid gap-4 lg:grid-cols-3">
       {
-        capabilities.map(({ title, description, items, icon: Icon }, index) => (
+        capabilities.map(({ title, description, items, icon: Icon }) => (
           <Card
             variant="interactive"
             class="group p-6"
-            style={`animation-delay:${index * 80}ms`}
           >
             <Icon className="h-7 w-7 text-accent" aria-hidden="true" />
             <h3 class="mt-8 text-2xl font-bold">{title}</h3>

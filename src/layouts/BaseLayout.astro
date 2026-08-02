@@ -51,6 +51,25 @@ const umamiEnabled = import.meta.env.PROD && umamiWebsiteId;
 <!doctype html>
 <html lang={locale}>
   <head>
+    <script is:inline>
+      if (window.trustedTypes && !window.trustedTypes.defaultPolicy) {
+        window.trustedTypes.createPolicy("default", {
+          createScriptURL(value) {
+            const url = new URL(value, window.location.href);
+            const allowedOrigins = new Set([
+              window.location.origin,
+              "https://cloud.umami.is",
+              "https://www.google.com",
+              "https://www.gstatic.com",
+            ]);
+            if (!allowedOrigins.has(url.origin)) {
+              throw new TypeError(`Blocked script URL: ${url.origin}`);
+            }
+            return url.href;
+          },
+        });
+      }
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
