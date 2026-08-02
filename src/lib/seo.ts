@@ -1,4 +1,4 @@
-import type { Locale } from "@/lib/i18n";
+import { LOCALES, type Locale } from "@/lib/i18n";
 import type { ProfileContent } from "@/lib/profile-content";
 
 export const SITE_URL = "https://franzbendezu.me";
@@ -15,7 +15,7 @@ export function personSchema(profile: ProfileContent, locale: Locale) {
       "@type": "Place",
       name: profile.location,
     },
-    knowsLanguage: locale === "es" ? ["es", "en"] : ["en", "es"],
+    knowsLanguage: [locale, ...LOCALES.filter((item) => item !== locale)],
     sameAs: profile.socialLinks.map((link) => link.url),
   };
 }

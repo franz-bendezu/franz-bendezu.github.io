@@ -5,13 +5,19 @@ import { ProjectExplorerList } from "@/components/project/ExplorerList";
 import { PROJECT_CATEGORIES } from "@/constants/project-categories";
 import { getProjects } from "@/lib/projects";
 import { optimizeProjectBanners } from "@/lib/project-images";
-import { localizedPath, translate, type Locale } from "@/lib/i18n";
+import {
+  localizedPath,
+  translate,
+  useTranslations,
+  type Locale,
+} from "@/lib/i18n";
 import type { ProjectCategoryCodes } from "@/interfaces/project";
 interface Props {
   locale: Locale;
   category?: ProjectCategoryCodes;
 }
 const { locale, category } = Astro.props;
+const t = useTranslations(locale);
 const path = category ? `/projects/c/${category}` : "/projects";
 const projects = await getProjects(locale, category);
 const rawFeatured = category
@@ -57,7 +63,7 @@ const title = category
       <p
         class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
       >
-        {locale === "es" ? "Portafolio" : "Portfolio"}
+        {t("Projects.eyebrow")}
       </p>
       <h1 class="mt-4 text-5xl font-bold tracking-[-0.045em] sm:text-7xl">
         {translate(locale, "Projects.title")}<span class="text-accent">.</span>
@@ -67,9 +73,7 @@ const title = category
       </p>
     </div>
     <nav
-      aria-label={locale === "es"
-        ? "Categorías de proyecto"
-        : "Project categories"}
+      aria-label={t("Projects.categoriesLabel")}
       class="mt-10 flex flex-wrap gap-2 border-b border-divider pb-5"
     >
       <a

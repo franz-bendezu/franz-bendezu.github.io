@@ -8,7 +8,12 @@ import { getService } from "@/lib/services";
 import { getProjects } from "@/lib/projects";
 import { optimizeProjectBanners } from "@/lib/project-images";
 import { PROJECT_TECHNOLOGIES } from "@/constants/project-techologies";
-import { localizedPath, translate, type Locale } from "@/lib/i18n";
+import {
+  localizedPath,
+  translate,
+  useTranslations,
+  type Locale,
+} from "@/lib/i18n";
 import { breadcrumbSchema, SITE_URL } from "@/lib/seo";
 
 interface Props {
@@ -16,6 +21,7 @@ interface Props {
   slug: string;
 }
 const { locale, slug } = Astro.props;
+const t = useTranslations(locale);
 const service = await getService(locale, slug);
 if (!service) return Astro.redirect("/404");
 const basePath = "/services";
@@ -51,7 +57,7 @@ const structuredData = [
   },
   breadcrumbSchema([
     {
-      name: locale === "es" ? "Inicio" : "Home",
+      name: t("Navigation.index"),
       url: `${SITE_URL}${localizedPath(locale, "/")}`,
     },
     { name: translate(locale, "Navigation.services"), url: servicesUrl },

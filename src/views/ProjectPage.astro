@@ -10,13 +10,19 @@ import {
   optimizeProjectBanner,
   optimizeProjectGallery,
 } from "@/lib/project-images";
-import { localizedPath, translate, type Locale } from "@/lib/i18n";
+import {
+  localizedPath,
+  translate,
+  useTranslations,
+  type Locale,
+} from "@/lib/i18n";
 import { breadcrumbSchema, SITE_URL } from "@/lib/seo";
 interface Props {
   locale: Locale;
   code: string;
 }
 const { locale, code } = Astro.props;
+const t = useTranslations(locale);
 const localizedProjects = (await getProjects(locale)).sort(
   (a, b) => a.position - b.position,
 );
@@ -35,7 +41,7 @@ const next =
     : undefined;
 const period = [project.start, project.end].filter(Boolean).join(" — ");
 const path = `/projects/${code}`;
-const closeLabel = locale === "es" ? "Cerrar" : "Close";
+const closeLabel = t("Project.closeGallery");
 const canonicalUrl = `${SITE_URL}${localizedPath(locale, path)}`;
 const projectsUrl = `${SITE_URL}${localizedPath(locale, "/projects")}`;
 const structuredData = [
@@ -58,7 +64,7 @@ const structuredData = [
   },
   breadcrumbSchema([
     {
-      name: locale === "es" ? "Inicio" : "Home",
+      name: t("Navigation.index"),
       url: `${SITE_URL}${localizedPath(locale, "/")}`,
     },
     { name: translate(locale, "Projects.title"), url: projectsUrl },
@@ -110,12 +116,7 @@ const structuredData = [
               >
                 {translate(locale, "Project.role")}
               </dt><dd class="mt-2 font-semibold">
-                {
-                  project.role ??
-                    (locale === "es"
-                      ? "Ingeniería de software"
-                      : "Software engineering")
-                }
+                {project.role ?? t("Project.defaultRole")}
               </dd>
             </div>
             <div>
@@ -302,12 +303,10 @@ const structuredData = [
           <div class="mx-auto w-full max-w-[75rem] px-5 sm:px-8">
             <>
               <p class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase">
-                {locale === "es" ? "Galería" : "Gallery"}
+                {t("Project.gallery")}
               </p>
               <h2 class="mt-3 mb-8 text-3xl font-bold">
-                {locale === "es"
-                  ? "El sistema en contexto"
-                  : "The system in context"}
+                {t("Project.galleryTitle")}
               </h2>
               <ProjectImagesCarousel
                 client:idle
@@ -321,9 +320,7 @@ const structuredData = [
     }
 
     <nav
-      aria-label={locale === "es"
-        ? "Navegación entre proyectos"
-        : "Project navigation"}
+      aria-label={t("Project.navigationLabel")}
       class="mx-auto w-full max-w-[75rem] px-5 sm:px-8 grid gap-4 py-12 sm:grid-cols-2"
     >
       {

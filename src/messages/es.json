@@ -5,13 +5,21 @@
     "projects": "Proyectos",
     "contact": "Contacto",
     "about": "Acerca de mí",
-    "switchLocale": "{locale}"
+    "switchLocale": "{locale}",
+    "openMenu": "Abrir menú principal"
+  },
+  "Accessibility": {
+    "toggleTheme": "Cambiar tema",
+    "viewCertification": "Ver certificación"
   },
   "Footer": {
     "madeWith": "Diseñado por Franz Bendezu"
   },
   "Home": {
     "title": "Inicio",
+    "metaTitle": "Desarrollador de software e ingeniero de sistemas",
+    "profilePageName": "Franz Bendezu — Desarrollador de software e ingeniero de sistemas",
+    "profileImageAlt": "Retrato de Franz Bendezu",
     "greeting": "Hola, soy",
     "name": "Franz Bendezu Isidro",
     "profession": "Desarrollador de <highlight>Software</highlight> e <highlight>Ingeniero</highlight> de Sistemas",
@@ -82,10 +90,17 @@
     "period": "Periodo",
     "previous": "Proyecto anterior",
     "next": "Proyecto siguiente",
-    "cta": "¿Tienes un desafío similar? Conversemos."
+    "cta": "¿Tienes un desafío similar? Conversemos.",
+    "defaultRole": "Ingeniería de software",
+    "gallery": "Galería",
+    "galleryTitle": "El sistema en contexto",
+    "closeGallery": "Cerrar",
+    "navigationLabel": "Navegación entre proyectos"
   },
   "Projects": {
     "title": "Proyectos",
+    "eyebrow": "Portafolio",
+    "categoriesLabel": "Categorías de proyecto",
     "categories": {
       "all": "Todos"
     },
@@ -163,6 +178,10 @@
       "default": "Inicio",
       "template": "%s | Franz Bendezu · Desarrollador Full Stack"
     },
-    "description": "Desarrollo de MVPs, productos SaaS, herramientas internas y landing pages para equipos de producto con Java, Node.js, AWS, Vue y React."
+    "description": "Desarrollo de MVPs, productos SaaS, herramientas internas y landing pages para equipos de producto con Java, Node.js, AWS, Vue y React.",
+    "ogLocale": "es_PE"
+  },
+  "Resume": {
+    "technologies": "Tecnologías"
   }
 }

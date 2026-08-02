@@ -8,6 +8,16 @@ export const DEFAULT_LOCALE: Locale = "en";
 
 const dictionaries = { en, es } as const;
 
+type TranslationKeyOf<T> = {
+  [Key in keyof T & string]: T[Key] extends string
+    ? Key
+    : T[Key] extends Record<string, unknown>
+      ? `${Key}.${TranslationKeyOf<T[Key]>}`
+      : never;
+}[keyof T & string];
+
+export type TranslationKey = TranslationKeyOf<typeof en>;
+
 export function isLocale(value: string | undefined): value is Locale {
   return LOCALES.includes(value as Locale);
 }
@@ -21,18 +31,35 @@ export function translate(
   key: string,
   values: Record<string, string | number> = {},
 ): string {
-  let current: unknown = dictionaries[locale];
+  const localized = getTranslation(dictionaries[locale], key);
+  const fallback = getTranslation(dictionaries[DEFAULT_LOCALE], key);
+  const message = localized ?? fallback;
+  if (!message) return key;
+
+  return Object.entries(values).reduce(
+    (text, [name, value]) => text.replaceAll(`{${name}}`, String(value)),
+    message,
+  );
+}
+
+function getTranslation(dictionary: unknown, key: string): string | undefined {
+  let current = dictionary;
   for (const segment of key.split(".")) {
     if (!current || typeof current !== "object" || !(segment in current)) {
-      return key;
+      return undefined;
     }
     current = (current as Record<string, unknown>)[segment];
   }
-  if (typeof current !== "string") return key;
-  return Object.entries(values).reduce(
-    (text, [name, value]) => text.replaceAll(`{${name}}`, String(value)),
-    current,
-  );
+  return typeof current === "string" ? current : undefined;
+}
+
+export function useTranslations(locale: Locale) {
+  return function t(
+    key: TranslationKey,
+    values: Record<string, string | number> = {},
+  ): string {
+    return translate(locale, key, values);
+  };
 }
 
 export function normalizePath(path = "/"): string {
