@@ -45,7 +45,8 @@ These values are intentionally exposed to the browser. GitHub Actions maps the
 existing `NEXT_PUBLIC_SPREE_ID` and `NEXT_PUBLIC_RECAPTCHA_ID` repository
 secrets to these Astro variable names. Umami is optional and is loaded through
 Partytown's web worker only in production when `PUBLIC_UMAMI_WEBSITE_ID` is set.
-Configure the public website ID as a GitHub Actions repository variable. The
+Configure the public website ID as the `PUBLIC_UMAMI_WEBSITE_ID` GitHub Actions
+repository secret. The
 official Umami tracker URL is hardcoded in the layout so deployments cannot
 substitute an arbitrary script.
 
