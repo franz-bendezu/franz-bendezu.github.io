@@ -1,8 +1,11 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme inline {
+  --font-sans: var(--font-inter);
+}
+
 @theme {
-  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", "Cascadia Code", monospace;
 
   --color-surface: #f5f3ec;
@@ -14,6 +17,7 @@
   --color-accent: #007e9b;
   --color-accent-strong: #005f76;
   --color-accent-soft: #d6f5fa;
+  --color-accent-on-dark: #9debf7;
 
   --shadow-editorial: 0 18px 45px -30px rgb(16 33 45 / 0.45);
 }
@@ -29,6 +33,7 @@
     --color-divider: #294150;
     --color-accent-strong: #7ce8f8;
     --color-accent-soft: #103746;
+    --color-accent-on-dark: #7ce8f8;
     --shadow-editorial: 0 18px 45px -30px rgb(0 0 0 / 0.75);
   }
 

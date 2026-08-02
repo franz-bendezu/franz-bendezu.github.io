@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import react from "@astrojs/react";
 import partytown from "@astrojs/partytown";
 import tailwindcss from "@tailwindcss/vite";
@@ -7,6 +7,23 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://franzbendezu.me",
   output: "static",
+  build: {
+    // The shared stylesheet is small enough that a separate request costs more
+    // than the bytes saved by caching it independently.
+    inlineStylesheets: "always",
+  },
+  fonts: [
+    {
+      provider: fontProviders.fontsource(),
+      name: "Inter",
+      cssVariable: "--font-inter",
+      weights: ["100 900"],
+      styles: ["normal"],
+      subsets: ["latin"],
+      formats: ["woff2"],
+      fallbacks: ["system-ui", "sans-serif"],
+    },
+  ],
   prefetch: {
     defaultStrategy: "hover",
   },

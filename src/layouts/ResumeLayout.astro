@@ -1,5 +1,5 @@
 ---
-import "@fontsource-variable/inter";
+import { Font } from "astro:assets";
 import type { Locale } from "@/lib/i18n";
 
 interface Props {
@@ -17,6 +17,7 @@ const { locale, title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="noindex" />
+    <Font cssVariable="--font-inter" preload />
     <title>{title}</title>
   </head>
   <body>
@@ -40,7 +41,7 @@ const { locale, title } = Astro.props;
     min-height: 100%;
     background: #e2e8f0;
     color: #172033;
-    font-family: "Inter Variable", Inter, Arial, sans-serif;
+    font-family: var(--font-inter);
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
