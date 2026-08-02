@@ -38,15 +38,16 @@ Create `.env.local` when testing the contact form locally:
 ```dotenv
 PUBLIC_FORMSPREE_ID=your-form-id
 PUBLIC_RECAPTCHA_SITE_KEY=your-recaptcha-site-key
-PUBLIC_PLAUSIBLE_SCRIPT_SRC=your-site-specific-plausible-script-url
+PUBLIC_UMAMI_WEBSITE_ID=your-umami-website-id
 ```
 
 These values are intentionally exposed to the browser. GitHub Actions maps the
 existing `NEXT_PUBLIC_SPREE_ID` and `NEXT_PUBLIC_RECAPTCHA_ID` repository
-secrets to these Astro variable names. Plausible is optional and is loaded only
-in production when `PUBLIC_PLAUSIBLE_SCRIPT_SRC` is set. Configure that value as
-a GitHub Actions repository variable using the site-specific script URL shown in
-Plausible's installation settings.
+secrets to these Astro variable names. Umami is optional and is loaded through
+Partytown's web worker only in production when `PUBLIC_UMAMI_WEBSITE_ID` is set.
+Configure the public website ID as a GitHub Actions repository variable. The
+official Umami tracker URL is hardcoded in the layout so deployments cannot
+substitute an arbitrary script.
 
 ## Routes
 
@@ -61,10 +62,10 @@ included in the generated sitemap.
 ## Search rollout
 
 After deployment, verify `franzbendezu.me` in Google Search Console through DNS
-and submit `https://franzbendezu.me/sitemap-index.xml`. In Plausible, enable
-outbound-link and file-download measurements and add `Lead Form Submitted` as a
-custom event goal. The event includes only locale and selected service; contact
-details and project descriptions are never sent to analytics.
+and submit `https://franzbendezu.me/sitemap-index.xml`. In Umami, verify the
+`Lead Form Submitted` event after a successful test inquiry. The event includes
+only locale and selected service; contact details and project descriptions are
+never sent to analytics.
 
 ## Deployment
 

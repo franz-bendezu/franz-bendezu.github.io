@@ -67,8 +67,8 @@ describe("contact form island", () => {
   it("tracks one successful inquiry without personal form data", async () => {
     let formState = { succeeded: false, submitting: false, errors: null };
     useFormMock.mockImplementation(() => [formState, vi.fn()]);
-    const plausible = vi.fn();
-    window.plausible = plausible;
+    const track = vi.fn();
+    window.umami = { track };
     const { rerender } = render(
       <ContactForm formId="test" labels={labels} locale="en" />,
     );
@@ -79,13 +79,14 @@ describe("contact form island", () => {
     rerender(<ContactForm formId="test" labels={labels} locale="en" />);
     rerender(<ContactForm formId="test" labels={labels} locale="en" />);
 
-    await waitFor(() => expect(plausible).toHaveBeenCalledTimes(1));
-    expect(plausible).toHaveBeenCalledWith("Lead Form Submitted", {
-      props: { locale: "en", service: "mvp-development" },
+    await waitFor(() => expect(track).toHaveBeenCalledTimes(1));
+    expect(track).toHaveBeenCalledWith("Lead Form Submitted", {
+      locale: "en",
+      service: "mvp-development",
     });
-    expect(JSON.stringify(plausible.mock.calls)).not.toMatch(
+    expect(JSON.stringify(track.mock.calls)).not.toMatch(
       /name|email|company|message/i,
     );
-    delete window.plausible;
+    delete window.umami;
   });
 });

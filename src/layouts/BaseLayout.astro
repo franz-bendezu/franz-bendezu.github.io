@@ -41,7 +41,9 @@ const structuredDataItems = structuredData
     ? structuredData
     : [structuredData]
   : [];
-const plausibleScriptSrc = import.meta.env.PUBLIC_PLAUSIBLE_SCRIPT_SRC;
+const UMAMI_SCRIPT_SRC = "https://cloud.umami.is/script.js";
+const umamiWebsiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID;
+const umamiEnabled = import.meta.env.PROD && umamiWebsiteId;
 ---
 
 <!doctype html>
@@ -92,8 +94,16 @@ const plausibleScriptSrc = import.meta.env.PUBLIC_PLAUSIBLE_SCRIPT_SRC;
       ))
     }
     {
-      import.meta.env.PROD && plausibleScriptSrc && (
-        <script is:inline defer src={plausibleScriptSrc} />
+      umamiEnabled && (
+        <script
+          is:inline
+          type="text/partytown"
+          src={UMAMI_SCRIPT_SRC}
+          data-website-id={umamiWebsiteId}
+          data-domains={Astro.site?.hostname}
+          data-do-not-track="true"
+          data-exclude-search="true"
+        />
       )
     }
     <script is:inline>

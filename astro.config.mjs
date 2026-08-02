@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
+import partytown from "@astrojs/partytown";
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 
@@ -19,6 +20,11 @@ export default defineConfig({
   },
   integrations: [
     react(),
+    partytown({
+      config: {
+        forward: ["umami.track"],
+      },
+    }),
     sitemap({
       i18n: {
         defaultLocale: "en",
