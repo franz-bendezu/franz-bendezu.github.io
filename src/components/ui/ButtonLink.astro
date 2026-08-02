@@ -26,6 +26,7 @@ const {
 
 <a
   href={disabled ? undefined : href}
+  data-astro-prefetch={!external && !disabled ? true : undefined}
   target={external ? (target ?? "_blank") : target}
   rel={external ? (rel ?? "noreferrer") : rel}
   aria-disabled={disabled ? "true" : undefined}
