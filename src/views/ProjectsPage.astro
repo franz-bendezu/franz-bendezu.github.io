@@ -43,7 +43,13 @@ const title = category
   : translate(locale, "Projects.title");
 ---
 
-<BaseLayout locale={locale} path={path} title={title}>
+<BaseLayout
+  locale={locale}
+  path={path}
+  title={title}
+  description={translate(locale, "Projects.metaDescription")}
+  robots={category ? "noindex,follow" : undefined}
+>
   <section
     data-testid="projects"
     class="mx-auto w-full max-w-[75rem] px-5 sm:px-8 py-12 sm:py-16"

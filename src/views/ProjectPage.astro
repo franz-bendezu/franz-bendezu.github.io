@@ -11,39 +11,20 @@ import {
   optimizeProjectGallery,
 } from "@/lib/project-images";
 import { localizedPath, translate, type Locale } from "@/lib/i18n";
+import { breadcrumbSchema, SITE_URL } from "@/lib/seo";
 interface Props {
   locale: Locale;
   code: string;
   prefixEnglish?: boolean;
 }
 const { locale, code, prefixEnglish = false } = Astro.props;
-const [englishProjects, spanishProjects] = await Promise.all([
-  getProjects("en"),
-  getProjects("es"),
-]);
-const localizedProjects = (
-  locale === "en" ? englishProjects : spanishProjects
-).sort((a, b) => a.position - b.position);
+const localizedProjects = (await getProjects(locale)).sort(
+  (a, b) => a.position - b.position,
+);
 const baseProject = localizedProjects.find((item) => item.code === code);
 if (!baseProject) return Astro.redirect("/404");
 const project = await optimizeProjectBanner(baseProject);
 const projectImages = await optimizeProjectGallery(project.images);
-const englishProject =
-  locale === "en"
-    ? project
-    : englishProjects.find(
-        (item) => item.translationKey === project.translationKey,
-      );
-const spanishProject =
-  locale === "es"
-    ? project
-    : spanishProjects.find(
-        (item) => item.translationKey === project.translationKey,
-      );
-const localePaths = {
-  en: `/projects/${englishProject?.code ?? code}`,
-  es: `/projects/${spanishProject?.code ?? code}`,
-};
 const currentIndex = localizedProjects.findIndex(
   (item) => item.translationKey === project.translationKey,
 );
@@ -56,14 +37,44 @@ const next =
 const period = [project.start, project.end].filter(Boolean).join(" — ");
 const path = `/projects/${code}`;
 const closeLabel = locale === "es" ? "Cerrar" : "Close";
+const canonicalUrl = `${SITE_URL}${localizedPath(locale, path)}`;
+const projectsUrl = `${SITE_URL}${localizedPath(locale, "/projects")}`;
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": `${canonicalUrl}#case-study`,
+    url: canonicalUrl,
+    name: project.title,
+    description: project.shortDescription,
+    inLanguage: locale,
+    creator: {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: "Franz Antony Bendezu Isidro",
+    },
+    ...(project.banner && { image: `${SITE_URL}${project.banner.src}` }),
+    keywords: project.tags,
+    dateCreated: project.start,
+  },
+  breadcrumbSchema([
+    {
+      name: locale === "es" ? "Inicio" : "Home",
+      url: `${SITE_URL}${localizedPath(locale, "/")}`,
+    },
+    { name: translate(locale, "Projects.title"), url: projectsUrl },
+    { name: project.title, url: canonicalUrl },
+  ]),
+];
 ---
 
 <BaseLayout
   locale={locale}
   path={path}
-  localePaths={localePaths}
   title={project.title}
   description={project.shortDescription}
+  image={project.banner?.src}
+  structuredData={structuredData}
 >
   <article class="w-full">
     <header

@@ -6,18 +6,12 @@ interface Props {
   locale: Locale;
   path: string;
   pathname: string;
-  languagePath?: string;
 }
-const {
-  locale,
-  path,
-  pathname,
-  languagePath: alternateLanguagePath,
-} = Astro.props;
+const { locale, path, pathname } = Astro.props;
 const prefixEnglish = pathname === "/en" || pathname.startsWith("/en/");
 const currentPath = stripLocale(pathname);
 const otherLocale: Locale = locale === "en" ? "es" : "en";
-const languagePath = localizedPath(otherLocale, alternateLanguagePath ?? path);
+const languagePath = localizedPath(otherLocale, path);
 const homePath = localizedPath(locale, "/", prefixEnglish);
 ---
 

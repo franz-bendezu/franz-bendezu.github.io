@@ -1,6 +1,7 @@
 {
   "Navigation": {
     "index": "Inicio",
+    "services": "Servicios",
     "projects": "Proyectos",
     "contact": "Contacto",
     "about": "Acerca de mí",
@@ -20,6 +21,7 @@
     "highQuality": "alta calidad",
     "cvPath": "/Franz-Bendezu-CV-ES.pdf",
     "viewWork": "Ver proyectos destacados",
+    "viewServices": "Explorar servicios",
     "available": "Abierto a proyectos, colaboraciones y nuevas oportunidades",
     "proof": {
       "experience": "Años construyendo software",
@@ -51,6 +53,23 @@
       "button": "Conversemos sobre tu proyecto"
     }
   },
+  "Services": {
+    "title": "Servicios de software a medida",
+    "eyebrow": "Cómo puedo ayudarte",
+    "description": "Ingeniería de producto enfocada para equipos que necesitan lanzar, automatizar operaciones o evolucionar una plataforma existente.",
+    "viewService": "Explorar servicio",
+    "audience": "Para quién es",
+    "problems": "Problemas que podemos resolver",
+    "outcomes": "Resultados para el negocio",
+    "deliverables": "Qué recibirás",
+    "process": "Cómo trabajaremos",
+    "technology": "Tecnología de soporte",
+    "evidence": "Trabajo relacionado",
+    "faq": "Preguntas frecuentes",
+    "ctaTitle": "¿Tienes un producto o proceso que necesita un siguiente paso confiable?",
+    "ctaDescription": "Comparte la situación actual, el resultado esperado y el plazo. Te responderé con el siguiente paso más útil.",
+    "ctaButton": "Iniciar una consulta"
+  },
   "Project": {
     "overview": "Descripción del Proyecto",
     "technologies": "Tecnologías Utilizadas",
@@ -78,20 +97,39 @@
     "archive": "Historial de proyectos",
     "filterTech": "Filtrar por tecnología",
     "clearFilters": "Limpiar filtros",
-    "resultCount": "{count} proyectos"
+    "resultCount": "{count} proyectos",
+    "metaDescription": "Explora casos de software a medida sobre productos SaaS, MVPs, herramientas internas, migraciones a AWS y entrega de producto."
   },
   "Contact": {
     "title": "Contáctame",
-    "description": "Si tienes alguna pregunta o deseas trabajar conmigo, no dudes en contactarme.",
-    "intro": "Estoy interesado en oportunidades de trabajo independiente y proyectos ambiciosos. También puedes usar el formulario para cualquier otra solicitud o pregunta.",
+    "description": "Conversemos sobre tu MVP, producto SaaS, herramienta interna o landing page y recibe un siguiente paso práctico para el proyecto.",
+    "intro": "Cuéntame qué estás construyendo, qué está frenando al equipo y qué resultado necesitas. Te responderé con el siguiente paso más útil.",
     "availability": "Actualmente abierto a conversaciones seleccionadas",
     "emailLabel": "¿Prefieres el correo?",
     "response": "Normalmente respondo en dos días hábiles.",
     "form": {
       "name": "Nombre",
-      "email": "Correo",
-      "message": "Mensaje",
-      "send": "Enviar mensaje",
+      "email": "Correo de trabajo",
+      "company": "Empresa (opcional)",
+      "service": "¿Qué necesitas?",
+      "timeline": "Plazo (opcional)",
+      "message": "Resumen del proyecto",
+      "send": "Enviar consulta",
+      "services": {
+        "placeholder": "Selecciona un servicio",
+        "mvp-development": "Desarrollo de MVP",
+        "saas-product-development": "Desarrollo de producto SaaS",
+        "internal-tools": "Herramientas internas y automatización",
+        "landing-page-development": "Desarrollo de landing page",
+        "unsure": "Aún no estoy seguro"
+      },
+      "timelines": {
+        "placeholder": "Selecciona un plazo",
+        "under-one-month": "Menos de un mes",
+        "one-to-three-months": "De uno a tres meses",
+        "over-three-months": "Más de tres meses",
+        "exploring": "Estoy evaluando opciones"
+      },
       "successTitle": "Gracias por tu mensaje",
       "successDescription": "Me pondré en contacto contigo lo antes posible.",
       "error": "No se pudo enviar el mensaje. Revisa el formulario e inténtalo de nuevo.",
@@ -123,8 +161,8 @@
   "Metadata": {
     "title": {
       "default": "Inicio",
-      "template": "%s |  Franz Bendezu - Desarrollador de Software"
+      "template": "%s | Franz Bendezu - Software a medida"
     },
-    "description": "Bienvenido a mi sitio web personal"
+    "description": "Desarrollo de MVPs, productos SaaS, herramientas internas y landing pages para equipos de producto con Java, Node.js, AWS, Vue y React."
   }
 }

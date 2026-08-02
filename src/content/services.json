@@ -1,0 +1,540 @@
+{
+  "mvp-development": {
+    "position": 1,
+    "slug": "mvp-development",
+    "technologyCodes": [
+      "typescript",
+      "nodejs",
+      "react",
+      "nextjs",
+      "postgresql",
+      "aws"
+    ],
+    "relatedProjects": [
+      "aiverse-app",
+      "oximetro-peru",
+      "agendalo-app-enhancement"
+    ],
+    "locales": {
+      "en": {
+        "title": "MVP Development",
+        "navTitle": "Launch an MVP",
+        "metaTitle": "MVP Development for Product Teams",
+        "metaDescription": "Turn a validated product idea into a reliable MVP with focused scope, production-ready foundations, and a clear path to iteration.",
+        "eyebrow": "From product idea to first release",
+        "description": "I help product teams shape, build, and launch focused MVPs that test the right assumptions without creating a disposable technical foundation.",
+        "audience": "For founders and product teams with a validated problem, defined users, and a need to reach the market with a dependable first version.",
+        "problems": [
+          {
+            "title": "Scope is difficult to control",
+            "description": "Turn a broad product vision into a release centered on the workflows that prove value."
+          },
+          {
+            "title": "Early choices can limit growth",
+            "description": "Choose an architecture that supports iteration without over-engineering the first release."
+          }
+        ],
+        "outcomes": [
+          "A testable product in users' hands",
+          "A prioritized path for the next iterations",
+          "Maintainable foundations for continued development"
+        ],
+        "deliverables": [
+          "Product and technical discovery",
+          "Prioritized MVP scope",
+          "UX-aligned application implementation",
+          "Deployment, monitoring, and handoff"
+        ],
+        "process": [
+          {
+            "title": "Discovery",
+            "description": "Align users, business assumptions, constraints, and the release goal."
+          },
+          {
+            "title": "Design",
+            "description": "Define critical flows, solution boundaries, architecture, and delivery plan."
+          },
+          {
+            "title": "Implementation",
+            "description": "Build in reviewable increments with automated quality checks."
+          },
+          {
+            "title": "Launch",
+            "description": "Deploy, validate the production experience, and prepare the next iteration."
+          }
+        ],
+        "faqs": [
+          {
+            "title": "Can you work with an existing design?",
+            "description": "Yes. I can implement an existing product design or collaborate on the flows and technical constraints before development."
+          },
+          {
+            "title": "What happens after launch?",
+            "description": "The handoff includes documented foundations and a prioritized next-step plan; ongoing iteration can be scoped separately."
+          }
+        ]
+      },
+      "es": {
+        "title": "Desarrollo de MVP",
+        "navTitle": "Lanzar un MVP",
+        "metaTitle": "Desarrollo de MVP para equipos de producto",
+        "metaDescription": "Convierte una idea validada en un MVP confiable, con alcance enfocado, bases listas para producción y una ruta clara de iteración.",
+        "eyebrow": "De la idea de producto al primer lanzamiento",
+        "description": "Ayudo a equipos de producto a definir, construir y lanzar MVPs enfocados que validan los supuestos correctos sin crear una base técnica desechable.",
+        "audience": "Para fundadores y equipos con un problema validado, usuarios definidos y la necesidad de llegar al mercado con una primera versión confiable.",
+        "problems": [
+          {
+            "title": "Es difícil controlar el alcance",
+            "description": "Convertimos una visión amplia en un lanzamiento centrado en los flujos que demuestran valor."
+          },
+          {
+            "title": "Las primeras decisiones pueden limitar el crecimiento",
+            "description": "Elegimos una arquitectura que permite iterar sin sobredimensionar la primera versión."
+          }
+        ],
+        "outcomes": [
+          "Un producto comprobable en manos de usuarios",
+          "Una ruta priorizada para las siguientes iteraciones",
+          "Bases mantenibles para continuar el desarrollo"
+        ],
+        "deliverables": [
+          "Descubrimiento de producto y técnico",
+          "Alcance priorizado del MVP",
+          "Implementación alineada con la experiencia de usuario",
+          "Despliegue, monitoreo y transferencia"
+        ],
+        "process": [
+          {
+            "title": "Descubrimiento",
+            "description": "Alineamos usuarios, supuestos de negocio, restricciones y objetivo del lanzamiento."
+          },
+          {
+            "title": "Diseño",
+            "description": "Definimos flujos críticos, límites, arquitectura y plan de entrega."
+          },
+          {
+            "title": "Implementación",
+            "description": "Construimos en incrementos revisables con controles automáticos de calidad."
+          },
+          {
+            "title": "Lanzamiento",
+            "description": "Desplegamos, validamos la experiencia productiva y preparamos la siguiente iteración."
+          }
+        ],
+        "faqs": [
+          {
+            "title": "¿Puedes trabajar con un diseño existente?",
+            "description": "Sí. Puedo implementar un diseño existente o colaborar en los flujos y restricciones técnicas antes del desarrollo."
+          },
+          {
+            "title": "¿Qué ocurre después del lanzamiento?",
+            "description": "La transferencia incluye bases documentadas y próximos pasos priorizados; la evolución continua puede definirse por separado."
+          }
+        ]
+      }
+    }
+  },
+  "saas-product-development": {
+    "position": 2,
+    "slug": "saas-product-development",
+    "technologyCodes": [
+      "java",
+      "spring-framework",
+      "typescript",
+      "nodejs",
+      "vue2",
+      "postgresql",
+      "aws"
+    ],
+    "relatedProjects": [
+      "movify-quote-order-management",
+      "agendalo-ssr-migration",
+      "notification-module"
+    ],
+    "locales": {
+      "en": {
+        "title": "SaaS Product Development",
+        "navTitle": "Build a SaaS product",
+        "metaTitle": "SaaS Product Development and Engineering",
+        "metaDescription": "Build and evolve dependable SaaS platforms with clear business workflows, maintainable architecture, and production delivery practices.",
+        "eyebrow": "Reliable product engineering",
+        "description": "I build and evolve SaaS products that connect customer experiences, business rules, integrations, and operational delivery.",
+        "audience": "For product teams launching a SaaS platform or improving an existing product whose workflows and architecture have become difficult to evolve.",
+        "problems": [
+          {
+            "title": "Product complexity is slowing delivery",
+            "description": "Clarify domain boundaries and turn interconnected requirements into maintainable workflows."
+          },
+          {
+            "title": "The platform needs dependable delivery",
+            "description": "Introduce testing, deployment automation, and production practices appropriate to the product."
+          }
+        ],
+        "outcomes": [
+          "Clearer and more maintainable product workflows",
+          "A platform prepared for continued feature delivery",
+          "More dependable releases and operational visibility"
+        ],
+        "deliverables": [
+          "Domain and architecture assessment",
+          "Frontend and backend product development",
+          "Third-party and cloud integrations",
+          "Automated testing and delivery workflows"
+        ],
+        "process": [
+          {
+            "title": "Discovery",
+            "description": "Map product goals, domain workflows, users, and current technical constraints."
+          },
+          {
+            "title": "Design",
+            "description": "Define product increments, system boundaries, data flows, and integration contracts."
+          },
+          {
+            "title": "Implementation",
+            "description": "Deliver end-to-end functionality with tests and frequent product review."
+          },
+          {
+            "title": "Launch",
+            "description": "Release safely, observe the system, and document the path for continued delivery."
+          }
+        ],
+        "faqs": [
+          {
+            "title": "Can you join an existing product team?",
+            "description": "Yes. I can own a defined product stream while working with existing design, engineering, and product practices."
+          },
+          {
+            "title": "Do you work on existing SaaS platforms?",
+            "description": "Yes. The engagement can start with a focused assessment and an incremental modernization or feature plan."
+          }
+        ]
+      },
+      "es": {
+        "title": "Desarrollo de productos SaaS",
+        "navTitle": "Construir un producto SaaS",
+        "metaTitle": "Desarrollo e ingeniería de productos SaaS",
+        "metaDescription": "Construye y evoluciona plataformas SaaS confiables con flujos de negocio claros, arquitectura mantenible y prácticas de entrega productiva.",
+        "eyebrow": "Ingeniería de producto confiable",
+        "description": "Construyo y evoluciono productos SaaS que conectan la experiencia del cliente, reglas de negocio, integraciones y operación.",
+        "audience": "Para equipos que lanzan una plataforma SaaS o mejoran un producto cuyos flujos y arquitectura se han vuelto difíciles de evolucionar.",
+        "problems": [
+          {
+            "title": "La complejidad frena la entrega",
+            "description": "Aclaramos los límites del dominio y convertimos requisitos conectados en flujos mantenibles."
+          },
+          {
+            "title": "La plataforma necesita entregas confiables",
+            "description": "Incorporamos pruebas, automatización y prácticas productivas apropiadas para el producto."
+          }
+        ],
+        "outcomes": [
+          "Flujos de producto más claros y mantenibles",
+          "Una plataforma preparada para entregar nuevas funcionalidades",
+          "Lanzamientos más confiables y con visibilidad operativa"
+        ],
+        "deliverables": [
+          "Evaluación del dominio y arquitectura",
+          "Desarrollo frontend y backend",
+          "Integraciones externas y cloud",
+          "Pruebas y flujos de entrega automatizados"
+        ],
+        "process": [
+          {
+            "title": "Descubrimiento",
+            "description": "Mapeamos objetivos, flujos, usuarios y restricciones técnicas actuales."
+          },
+          {
+            "title": "Diseño",
+            "description": "Definimos incrementos, límites del sistema, datos y contratos de integración."
+          },
+          {
+            "title": "Implementación",
+            "description": "Entregamos funcionalidad de extremo a extremo con pruebas y revisiones frecuentes."
+          },
+          {
+            "title": "Lanzamiento",
+            "description": "Liberamos con seguridad, observamos el sistema y documentamos la continuidad."
+          }
+        ],
+        "faqs": [
+          {
+            "title": "¿Puedes integrarte a un equipo existente?",
+            "description": "Sí. Puedo liderar un frente definido colaborando con las prácticas actuales de diseño, ingeniería y producto."
+          },
+          {
+            "title": "¿Trabajas sobre plataformas SaaS existentes?",
+            "description": "Sí. Podemos iniciar con una evaluación enfocada y un plan incremental de modernización o funcionalidades."
+          }
+        ]
+      }
+    }
+  },
+  "internal-tools": {
+    "position": 3,
+    "slug": "internal-tools",
+    "technologyCodes": [
+      "java",
+      "spring-framework",
+      "typescript",
+      "vue2",
+      "react",
+      "postgresql",
+      "aws"
+    ],
+    "relatedProjects": [
+      "movify-payment-module",
+      "movify-quote-order-management",
+      "ccat-assemblies"
+    ],
+    "locales": {
+      "en": {
+        "title": "Internal Tools & Workflow Automation",
+        "navTitle": "Automate operations",
+        "metaTitle": "Internal Tools and Workflow Automation",
+        "metaDescription": "Replace fragmented spreadsheets and manual handoffs with custom internal tools built around the way your team operates.",
+        "eyebrow": "Software shaped around your operations",
+        "description": "I turn repetitive operational processes into focused internal systems that connect information, decisions, documents, and team actions.",
+        "audience": "For teams managing important workflows through spreadsheets, disconnected tools, repeated data entry, or manual document generation.",
+        "problems": [
+          {
+            "title": "Information is fragmented",
+            "description": "Create one dependable workflow instead of reconciling data across disconnected tools."
+          },
+          {
+            "title": "Manual handoffs create delays",
+            "description": "Automate repeatable steps while preserving the controls and exceptions the team needs."
+          }
+        ],
+        "outcomes": [
+          "A shared operational source of truth",
+          "Less repetitive work and fewer manual handoffs",
+          "Workflows that are easier to follow and improve"
+        ],
+        "deliverables": [
+          "Workflow and requirements mapping",
+          "Role-based operational interface",
+          "Business rules, documents, and integrations",
+          "Deployment, training, and handoff"
+        ],
+        "process": [
+          {
+            "title": "Discovery",
+            "description": "Observe the current process, exceptions, responsibilities, and information flow."
+          },
+          {
+            "title": "Design",
+            "description": "Model the target workflow, permissions, data, and automation boundaries."
+          },
+          {
+            "title": "Implementation",
+            "description": "Build the highest-value flow first and validate it with real operating scenarios."
+          },
+          {
+            "title": "Launch",
+            "description": "Migrate the agreed data, onboard users, and stabilize the new workflow."
+          }
+        ],
+        "faqs": [
+          {
+            "title": "Can the tool integrate with our existing systems?",
+            "description": "Yes. Integrations are assessed during discovery and designed around the available APIs, data formats, and security constraints."
+          },
+          {
+            "title": "Can we automate the process in stages?",
+            "description": "Yes. A staged rollout is often the safest way to validate the workflow and reduce operational disruption."
+          }
+        ]
+      },
+      "es": {
+        "title": "Herramientas internas y automatización",
+        "navTitle": "Automatizar operaciones",
+        "metaTitle": "Herramientas internas y automatización de procesos",
+        "metaDescription": "Reemplaza hojas de cálculo dispersas y coordinaciones manuales con herramientas internas adaptadas a la operación de tu equipo.",
+        "eyebrow": "Software adaptado a tus operaciones",
+        "description": "Convierto procesos operativos repetitivos en sistemas internos que conectan información, decisiones, documentos y acciones del equipo.",
+        "audience": "Para equipos que gestionan flujos importantes con hojas de cálculo, herramientas desconectadas, ingreso repetido de datos o documentos manuales.",
+        "problems": [
+          {
+            "title": "La información está fragmentada",
+            "description": "Creamos un flujo confiable en lugar de conciliar datos entre herramientas desconectadas."
+          },
+          {
+            "title": "Las coordinaciones manuales generan demoras",
+            "description": "Automatizamos pasos repetibles conservando los controles y excepciones necesarios."
+          }
+        ],
+        "outcomes": [
+          "Una fuente compartida y confiable para la operación",
+          "Menos trabajo repetitivo y coordinaciones manuales",
+          "Flujos más fáciles de seguir y mejorar"
+        ],
+        "deliverables": [
+          "Mapeo de procesos y requisitos",
+          "Interfaz operativa basada en roles",
+          "Reglas de negocio, documentos e integraciones",
+          "Despliegue, capacitación y transferencia"
+        ],
+        "process": [
+          {
+            "title": "Descubrimiento",
+            "description": "Observamos el proceso actual, excepciones, responsables y flujo de información."
+          },
+          {
+            "title": "Diseño",
+            "description": "Modelamos el flujo objetivo, permisos, datos y límites de automatización."
+          },
+          {
+            "title": "Implementación",
+            "description": "Construimos primero el flujo de mayor valor y lo validamos con escenarios reales."
+          },
+          {
+            "title": "Lanzamiento",
+            "description": "Migramos los datos acordados, incorporamos usuarios y estabilizamos el flujo."
+          }
+        ],
+        "faqs": [
+          {
+            "title": "¿Puede integrarse con nuestros sistemas?",
+            "description": "Sí. Evaluamos integraciones según las APIs, formatos de datos y restricciones de seguridad disponibles."
+          },
+          {
+            "title": "¿Podemos automatizar el proceso por etapas?",
+            "description": "Sí. Un lanzamiento gradual suele ser la forma más segura de validar el flujo y reducir interrupciones."
+          }
+        ]
+      }
+    }
+  },
+  "landing-page-development": {
+    "position": 4,
+    "slug": "landing-page-development",
+    "technologyCodes": [
+      "typescript",
+      "react",
+      "nextjs",
+      "vue2",
+      "nuxt",
+      "tailwindcss"
+    ],
+    "relatedProjects": ["oximetro-peru", "con-que-profe", "my-portfolio"],
+    "locales": {
+      "en": {
+        "title": "Landing Page Development",
+        "navTitle": "Launch a landing page",
+        "metaTitle": "Conversion-Focused Landing Page Development",
+        "metaDescription": "Launch a fast, accessible, conversion-focused landing page with clear messaging, responsive implementation, SEO foundations, and analytics.",
+        "eyebrow": "A focused path from interest to action",
+        "description": "I design and build fast landing pages that make the offer clear, establish credibility, and give visitors an obvious next step.",
+        "audience": "For product teams launching an offer, validating demand, supporting a campaign, or replacing a slow and unclear marketing page.",
+        "problems": [
+          {
+            "title": "The offer is difficult to understand",
+            "description": "Build a clear information hierarchy around the audience, problem, proof, and action."
+          },
+          {
+            "title": "The page is slow or hard to measure",
+            "description": "Ship a responsive implementation with SEO basics and privacy-conscious analytics."
+          }
+        ],
+        "outcomes": [
+          "A clearer path to the primary conversion",
+          "A fast and accessible experience across devices",
+          "A measurable foundation for future iteration"
+        ],
+        "deliverables": [
+          "Message and page-structure workshop",
+          "Responsive landing-page implementation",
+          "SEO, accessibility, and performance foundations",
+          "Form integration and analytics setup"
+        ],
+        "process": [
+          {
+            "title": "Discovery",
+            "description": "Align the audience, offer, proof, campaign context, and conversion goal."
+          },
+          {
+            "title": "Design",
+            "description": "Create the content hierarchy, interaction direction, and responsive layout."
+          },
+          {
+            "title": "Implementation",
+            "description": "Build the page with accessible components, metadata, and integrations."
+          },
+          {
+            "title": "Launch",
+            "description": "Validate devices, forms, analytics, indexing controls, and production delivery."
+          }
+        ],
+        "faqs": [
+          {
+            "title": "Can you work from our brand and copy?",
+            "description": "Yes. Existing brand assets and copy can be used, or the engagement can include structuring the message from supplied product information."
+          },
+          {
+            "title": "Can the page connect to our CRM or email platform?",
+            "description": "Yes, when the platform provides a suitable form, API, or supported integration."
+          }
+        ]
+      },
+      "es": {
+        "title": "Desarrollo de landing pages",
+        "navTitle": "Lanzar una landing page",
+        "metaTitle": "Desarrollo de landing pages orientadas a conversión",
+        "metaDescription": "Lanza una landing page rápida, accesible y enfocada en conversión con mensaje claro, SEO técnico y analítica.",
+        "eyebrow": "Un camino claro desde el interés hasta la acción",
+        "description": "Diseño y construyo landing pages rápidas que comunican la oferta, generan confianza y ofrecen al visitante un siguiente paso claro.",
+        "audience": "Para equipos que lanzan una oferta, validan demanda, ejecutan una campaña o reemplazan una página lenta y poco clara.",
+        "problems": [
+          {
+            "title": "La oferta es difícil de entender",
+            "description": "Creamos una jerarquía clara alrededor de la audiencia, el problema, la evidencia y la acción."
+          },
+          {
+            "title": "La página es lenta o difícil de medir",
+            "description": "Entregamos una implementación responsive con fundamentos SEO y analítica respetuosa de la privacidad."
+          }
+        ],
+        "outcomes": [
+          "Un camino más claro hacia la conversión principal",
+          "Una experiencia rápida y accesible en distintos dispositivos",
+          "Una base medible para continuar iterando"
+        ],
+        "deliverables": [
+          "Sesión de mensaje y estructura",
+          "Implementación responsive",
+          "Fundamentos de SEO, accesibilidad y rendimiento",
+          "Integración de formulario y analítica"
+        ],
+        "process": [
+          {
+            "title": "Descubrimiento",
+            "description": "Alineamos audiencia, oferta, evidencia, contexto y objetivo de conversión."
+          },
+          {
+            "title": "Diseño",
+            "description": "Creamos la jerarquía de contenido, dirección de interacción y layout responsive."
+          },
+          {
+            "title": "Implementación",
+            "description": "Construimos con componentes accesibles, metadata e integraciones."
+          },
+          {
+            "title": "Lanzamiento",
+            "description": "Validamos dispositivos, formularios, analítica, indexación y entrega productiva."
+          }
+        ],
+        "faqs": [
+          {
+            "title": "¿Puedes trabajar con nuestra marca y contenido?",
+            "description": "Sí. Puedo utilizar los recursos existentes o estructurar el mensaje a partir de la información de producto suministrada."
+          },
+          {
+            "title": "¿Puede conectarse con nuestro CRM o plataforma de email?",
+            "description": "Sí, cuando la plataforma ofrece un formulario, API o integración compatible."
+          }
+        ]
+      }
+    }
+  }
+}

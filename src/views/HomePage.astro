@@ -3,10 +3,13 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Presentation from "@/components/home/Presentation.astro";
 import Skills from "@/components/home/Skills.astro";
 import LastProjects from "@/components/home/LastProjects.astro";
+import Services from "@/components/home/Services.astro";
 import ButtonLink from "@/components/ui/ButtonLink.astro";
 import { getProjects } from "@/lib/projects";
 import { optimizeProjectBanners } from "@/lib/project-images";
 import { localizedPath, translate, type Locale } from "@/lib/i18n";
+import { getProfile } from "@/lib/profile-content";
+import { personSchema, SITE_URL } from "@/lib/seo";
 interface Props {
   locale: Locale;
   prefixEnglish?: boolean;
@@ -17,10 +20,47 @@ const projects = await optimizeProjectBanners(
     .filter((project) => project.featured)
     .sort((a, b) => a.position - b.position),
 );
+const profile = await getProfile(locale);
+const canonicalUrl = `${SITE_URL}${localizedPath(locale, "/")}`;
+const description = translate(locale, "Metadata.description");
+const person = personSchema(profile, locale);
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
+    url: SITE_URL,
+    name: "Franz Bendezu",
+    inLanguage: ["en", "es"],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `${canonicalUrl}#profile-page`,
+    url: canonicalUrl,
+    name:
+      locale === "es"
+        ? "Franz Bendezu — Software a medida"
+        : "Franz Bendezu — Custom software",
+    description,
+    inLanguage: locale,
+    mainEntity: person,
+  },
+  { "@context": "https://schema.org", ...person },
+];
 ---
 
-<BaseLayout locale={locale} path="/">
+<BaseLayout
+  locale={locale}
+  path="/"
+  title={locale === "es"
+    ? "Software a medida para equipos de producto"
+    : "Custom Software for Product Teams"}
+  description={description}
+  structuredData={structuredData}
+>
   <Presentation locale={locale} prefixEnglish={prefixEnglish} />
+  <Services locale={locale} prefixEnglish={prefixEnglish} />
   <Skills locale={locale} prefixEnglish={prefixEnglish} />
   <LastProjects
     projects={projects}

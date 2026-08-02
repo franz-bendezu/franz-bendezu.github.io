@@ -73,7 +73,7 @@
       "challenge": "The platform relied on a single-page application that limited search visibility and made a safe architectural migration difficult.",
       "approach": "I migrated the frontend to Nuxt SSR, introduced unit and end-to-end coverage, and preserved the platform's critical user flows throughout the transition.",
       "outcomes": [
-        "Improved platform ranking by 100%",
+        "Improved the platform's search visibility after the SSR migration",
         "Introduced unit and end-to-end test coverage",
         "Completed the SPA-to-SSR architecture migration"
       ],
@@ -119,7 +119,7 @@
       "challenge": "La plataforma dependía de una aplicación de una sola página que limitaba la visibilidad en buscadores y hacía compleja una migración arquitectónica segura.",
       "approach": "Migré el frontend a Nuxt SSR, incorporé cobertura unitaria y end-to-end, y preservé los flujos críticos de la plataforma durante la transición.",
       "outcomes": [
-        "Mejora del 100% en la posición de la plataforma",
+        "Mejora de la visibilidad en buscadores después de la migración a SSR",
         "Incorporación de pruebas unitarias y end-to-end",
         "Migración completa de SPA a arquitectura SSR"
       ],

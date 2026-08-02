@@ -1,0 +1,272 @@
+---
+import { CheckIcon } from "@heroicons/react/20/solid";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Card from "@/components/ui/Card.astro";
+import ButtonLink from "@/components/ui/ButtonLink.astro";
+import ProjectCard from "@/components/project/ProjectCard";
+import { getService } from "@/lib/services";
+import { getProjects } from "@/lib/projects";
+import { optimizeProjectBanners } from "@/lib/project-images";
+import { PROJECT_TECHNOLOGIES } from "@/constants/project-techologies";
+import { localizedPath, translate, type Locale } from "@/lib/i18n";
+import { breadcrumbSchema, SITE_URL } from "@/lib/seo";
+
+interface Props {
+  locale: Locale;
+  slug: string;
+  prefixEnglish?: boolean;
+}
+const { locale, slug, prefixEnglish = false } = Astro.props;
+const service = await getService(locale, slug);
+if (!service) return Astro.redirect("/404");
+const basePath = "/services";
+const canonicalPath = `${basePath}/${service.slug}`;
+const projects = await optimizeProjectBanners(
+  (await getProjects(locale)).filter((project) =>
+    service.relatedProjects.includes(project.translationKey),
+  ),
+);
+const technologies = service.technologyCodes
+  .map((code) =>
+    PROJECT_TECHNOLOGIES.find((technology) => technology.code === code),
+  )
+  .filter(Boolean);
+const serviceUrl = `${SITE_URL}${localizedPath(locale, canonicalPath)}`;
+const servicesUrl = `${SITE_URL}${localizedPath(locale, basePath)}`;
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${serviceUrl}#service`,
+    name: service.title,
+    description: service.metaDescription,
+    url: serviceUrl,
+    inLanguage: locale,
+    provider: {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: "Franz Antony Bendezu Isidro",
+    },
+    audience: { "@type": "Audience", audienceType: service.audience },
+    serviceType: service.title,
+  },
+  breadcrumbSchema([
+    {
+      name: locale === "es" ? "Inicio" : "Home",
+      url: `${SITE_URL}${localizedPath(locale, "/")}`,
+    },
+    { name: translate(locale, "Navigation.services"), url: servicesUrl },
+    { name: service.title, url: serviceUrl },
+  ]),
+];
+---
+
+<BaseLayout
+  locale={locale}
+  path={canonicalPath}
+  title={service.metaTitle}
+  description={service.metaDescription}
+  structuredData={structuredData}
+>
+  <article class="w-full">
+    <header class="mx-auto w-full max-w-[75rem] px-5 py-12 sm:px-8 sm:py-20">
+      <a
+        href={localizedPath(locale, basePath, prefixEnglish)}
+        class="text-sm font-bold text-accent-strong"
+      >
+        ← {translate(locale, "Navigation.services")}
+      </a>
+      <div
+        class="mt-10 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end lg:gap-16"
+      >
+        <div>
+          <p
+            class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
+          >
+            {service.eyebrow}
+          </p>
+          <h1
+            class="mt-4 text-5xl font-bold leading-[1.02] tracking-[-0.045em] sm:text-7xl"
+          >
+            {service.title}
+          </h1>
+          <p class="mt-6 max-w-3xl text-xl leading-relaxed text-content-muted">
+            {service.description}
+          </p>
+        </div>
+        <Card class="p-6">
+          <p
+            class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
+          >
+            {translate(locale, "Services.audience")}
+          </p>
+          <p class="mt-4 leading-relaxed text-content-muted">
+            {service.audience}
+          </p>
+        </Card>
+      </div>
+    </header>
+
+    <section class="border-y border-divider bg-surface-muted py-16 sm:py-20">
+      <div
+        class="mx-auto grid w-full max-w-[75rem] gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20"
+      >
+        <div>
+          <h2 class="text-3xl font-bold">
+            {translate(locale, "Services.problems")}
+          </h2>
+          <div class="mt-7 grid gap-5">
+            {
+              service.problems.map((problem) => (
+                <div class="border-l-2 border-accent pl-4">
+                  <>
+                    <h3 class="font-bold">{problem.title}</h3>
+                    <p class="mt-2 text-content-muted">{problem.description}</p>
+                  </>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold">
+            {translate(locale, "Services.outcomes")}
+          </h2>
+          <ul class="mt-7 space-y-4">
+            {
+              service.outcomes.map((outcome) => (
+                <li class="flex gap-3">
+                  <>
+                    <CheckIcon
+                      className="mt-0.5 h-5 w-5 shrink-0 text-accent"
+                      aria-hidden="true"
+                    />
+                    <span class="font-semibold">{outcome}</span>
+                  </>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto w-full max-w-[75rem] px-5 py-16 sm:px-8 sm:py-24">
+      <div class="grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+        <div>
+          <h2 class="text-3xl font-bold">
+            {translate(locale, "Services.deliverables")}
+          </h2>
+          <ul class="mt-6 divide-y divide-divider border-y border-divider">
+            {
+              service.deliverables.map((item) => (
+                <li class="py-4 font-semibold">{item}</li>
+              ))
+            }
+          </ul>
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold">
+            {translate(locale, "Services.process")}
+          </h2>
+          <ol class="mt-6 grid gap-4 sm:grid-cols-2">
+            {
+              service.process.map((step, index) => (
+                <Card class="p-5">
+                  <>
+                    <span class="font-mono text-sm font-bold text-accent-strong">
+                      0{index + 1}
+                    </span>
+                    <h3 class="mt-4 text-xl font-bold">{step.title}</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-content-muted">
+                      {step.description}
+                    </p>
+                  </>
+                </Card>
+              ))
+            }
+          </ol>
+        </div>
+      </div>
+      <div class="mt-16 border-t border-divider pt-10">
+        <h2 class="text-2xl font-bold">
+          {translate(locale, "Services.technology")}
+        </h2>
+        <div class="mt-5 flex flex-wrap gap-2">
+          {
+            technologies.map((technology) => (
+              <span class="rounded-full border border-divider px-3 py-2 font-mono text-xs">
+                {technology?.name}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-divider bg-surface-muted py-16 sm:py-20">
+      <div class="mx-auto w-full max-w-[75rem] px-5 sm:px-8">
+        <h2 class="text-3xl font-bold">
+          {translate(locale, "Services.evidence")}
+        </h2>
+        <div class="mt-8 grid gap-5 lg:grid-cols-3">
+          {
+            projects.map((project) => (
+              <ProjectCard
+                project={project}
+                href={localizedPath(
+                  locale,
+                  `/projects/${project.code}`,
+                  prefixEnglish,
+                )}
+                labels={{
+                  viewProject: translate(locale, "Projects.viewProjectLink", {
+                    title: project.title,
+                  }),
+                  impact: translate(locale, "Home.lastProjects.impact"),
+                  caseStudy: translate(locale, "Home.lastProjects.caseStudy"),
+                }}
+                variant="featured"
+              />
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto w-full max-w-[75rem] px-5 py-16 sm:px-8 sm:py-24">
+      <h2 class="text-3xl font-bold">{translate(locale, "Services.faq")}</h2>
+      <div class="mt-7 grid gap-4 lg:grid-cols-2">
+        {
+          service.faqs.map((faq) => (
+            <details class="rounded-xl border border-divider p-5">
+              <>
+                <summary class="cursor-pointer font-bold">{faq.title}</summary>
+                <p class="mt-3 leading-relaxed text-content-muted">
+                  {faq.description}
+                </p>
+              </>
+            </details>
+          ))
+        }
+      </div>
+      <div
+        class="mt-16 rounded-2xl bg-content px-6 py-10 text-surface sm:px-10 dark:bg-surface-raised dark:text-content"
+      >
+        <h2 class="text-3xl font-bold">
+          {translate(locale, "Services.ctaTitle")}
+        </h2>
+        <p class="mt-3 max-w-2xl opacity-75">
+          {translate(locale, "Services.ctaDescription")}
+        </p>
+        <ButtonLink
+          href={`${localizedPath(locale, "/contact", prefixEnglish)}?service=${service.code}`}
+          class="mt-6"
+        >
+          {translate(locale, "Services.ctaButton")}
+          <span aria-hidden="true">↗</span>
+        </ButtonLink>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

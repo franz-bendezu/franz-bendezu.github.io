@@ -13,12 +13,13 @@ const { locale, currentPath, prefixEnglish } = Astro.props;
 <div class="hidden items-center md:mx-2 md:flex md:gap-1 lg:mx-3">
   {
     ROUTES_NAVBAR.map((route) => {
+      const { path } = route;
       const active = route.exact
-        ? currentPath === route.path
-        : currentPath.startsWith(route.path);
+        ? currentPath === path
+        : currentPath.startsWith(path);
       return (
         <NavLink
-          href={localizedPath(locale, route.path, prefixEnglish)}
+          href={localizedPath(locale, path, prefixEnglish)}
           active={active}
           activeClass="text-accent-strong font-bold"
         >
