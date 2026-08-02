@@ -9,9 +9,8 @@ import { getSkills } from "@/lib/profile-content";
 import Card from "@/components/ui/Card.astro";
 interface Props {
   locale: Locale;
-  prefixEnglish?: boolean;
 }
-const { locale, prefixEnglish = false } = Astro.props;
+const { locale } = Astro.props;
 const skills = await getSkills(locale);
 const find = (code: string) =>
   skills.find((skill) => skill.id === code)?.items.slice(0, 5) ?? [];
@@ -74,7 +73,7 @@ const capabilities = [
               ))}
             </div>
             <a
-              href={localizedPath(locale, "/projects", prefixEnglish)}
+              href={localizedPath(locale, "/projects")}
               class="mt-7 inline-flex items-center gap-2 text-sm font-bold text-accent-strong"
             >
               {translate(locale, "Home.skills.evidence")}{" "}

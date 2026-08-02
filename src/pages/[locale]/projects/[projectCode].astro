@@ -16,8 +16,4 @@ const locale = Astro.params.locale as Locale;
 const projectCode = Astro.params.projectCode!;
 ---
 
-<ProjectPage
-  locale={locale}
-  code={projectCode}
-  prefixEnglish={locale === "en"}
-/>
+<ProjectPage locale={locale} code={projectCode} />

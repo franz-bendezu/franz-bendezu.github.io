@@ -17,7 +17,7 @@ test("serves all locale URL families with canonical metadata", async ({
   await page.goto("/en/projects");
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     "href",
-    "https://franzbendezu.me/projects",
+    "https://franzbendezu.me/en/projects",
   );
   await expect(page.locator('link[hreflang="es"]')).toHaveAttribute(
     "href",
@@ -35,8 +35,8 @@ test("serves localized service routes with consolidated canonicals", async ({
     "landing-page-development",
   ] as const;
   const routes = slugs.flatMap((slug) => [
-    [`/services/${slug}`, `https://franzbendezu.me/services/${slug}`],
-    [`/en/services/${slug}`, `https://franzbendezu.me/services/${slug}`],
+    [`/services/${slug}`, `https://franzbendezu.me/en/services/${slug}`],
+    [`/en/services/${slug}`, `https://franzbendezu.me/en/services/${slug}`],
     [`/es/services/${slug}`, `https://franzbendezu.me/es/services/${slug}`],
   ]);
   for (const [path, canonical] of routes) {
@@ -112,12 +112,12 @@ test("publishes canonical URLs in robots and sitemap", async ({ request }) => {
   const sitemap = await request.get(`/${sitemapName}`);
   const contents = await sitemap.text();
   expect(contents).toContain(
-    "https://franzbendezu.me/services/mvp-development",
+    "https://franzbendezu.me/en/services/mvp-development",
   );
   expect(contents).toContain(
     "https://franzbendezu.me/es/services/mvp-development",
   );
-  expect(contents).not.toContain("https://franzbendezu.me/en/");
+  expect(contents).not.toContain("https://franzbendezu.me/services/");
   expect(contents).not.toContain("/projects/c/");
   expect(contents).not.toContain("/cv/");
 });
@@ -207,7 +207,7 @@ test("presents featured case studies and resets archive filters", async ({
   await expect(page.locator('[data-featured-project="true"]')).toHaveCount(3);
   await expect(
     page.getByRole("link", { name: "View selected work" }),
-  ).toHaveAttribute("href", "/projects");
+  ).toHaveAttribute("href", "/en/projects");
 
   await page.goto("/projects");
   await expect(page.locator('[data-featured-project="true"]')).toHaveCount(3);
@@ -311,7 +311,7 @@ test("renders bilingual CV pages and serves generated PDFs", async ({
     await expect(page.locator(".certification")).toHaveCount(10);
     await expect(page.locator(".project a").first()).toHaveAttribute(
       "href",
-      locale === "es" ? /\/es\/projects\// : /\.me\/projects\//,
+      locale === "es" ? /\/es\/projects\// : /\/en\/projects\//,
     );
   }
 

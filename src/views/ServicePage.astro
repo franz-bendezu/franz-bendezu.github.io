@@ -14,9 +14,8 @@ import { breadcrumbSchema, SITE_URL } from "@/lib/seo";
 interface Props {
   locale: Locale;
   slug: string;
-  prefixEnglish?: boolean;
 }
-const { locale, slug, prefixEnglish = false } = Astro.props;
+const { locale, slug } = Astro.props;
 const service = await getService(locale, slug);
 if (!service) return Astro.redirect("/404");
 const basePath = "/services";
@@ -71,7 +70,7 @@ const structuredData = [
   <article class="w-full">
     <header class="mx-auto w-full max-w-[75rem] px-5 py-12 sm:px-8 sm:py-20">
       <a
-        href={localizedPath(locale, basePath, prefixEnglish)}
+        href={localizedPath(locale, basePath)}
         class="text-sm font-bold text-accent-strong"
       >
         ← {translate(locale, "Navigation.services")}
@@ -214,11 +213,7 @@ const structuredData = [
             projects.map((project) => (
               <ProjectCard
                 project={project}
-                href={localizedPath(
-                  locale,
-                  `/projects/${project.code}`,
-                  prefixEnglish,
-                )}
+                href={localizedPath(locale, `/projects/${project.code}`)}
                 labels={{
                   viewProject: translate(locale, "Projects.viewProjectLink", {
                     title: project.title,
@@ -260,7 +255,7 @@ const structuredData = [
           {translate(locale, "Services.ctaDescription")}
         </p>
         <ButtonLink
-          href={`${localizedPath(locale, "/contact", prefixEnglish)}?service=${service.code}`}
+          href={`${localizedPath(locale, "/contact")}?service=${service.code}`}
           class="mt-6"
         >
           {translate(locale, "Services.ctaButton")}

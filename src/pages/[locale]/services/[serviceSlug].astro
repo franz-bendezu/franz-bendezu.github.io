@@ -17,8 +17,4 @@ const locale = Astro.params.locale as Locale;
 const serviceSlug = Astro.params.serviceSlug!;
 ---
 
-<ServicePage
-  locale={locale}
-  slug={serviceSlug}
-  prefixEnglish={locale === "en"}
-/>
+<ServicePage locale={locale} slug={serviceSlug} />

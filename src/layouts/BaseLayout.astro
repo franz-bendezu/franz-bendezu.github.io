@@ -111,11 +111,7 @@ const plausibleScriptSrc = import.meta.env.PUBLIC_PLAUSIBLE_SCRIPT_SRC;
       <main class="flex flex-grow flex-col items-center align-middle">
         <slot />
       </main>
-      <Footer
-        locale={locale}
-        prefixEnglish={Astro.url.pathname === "/en" ||
-          Astro.url.pathname.startsWith("/en/")}
-      />
+      <Footer locale={locale} />
     </div>
     <script>
       const themeButton = document.querySelector<HTMLButtonElement>(

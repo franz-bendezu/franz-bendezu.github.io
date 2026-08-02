@@ -10,9 +10,8 @@ import { Image } from "astro:assets";
 import profileImage from "@/assets/images/profile.webp";
 interface Props {
   locale: Locale;
-  prefixEnglish?: boolean;
 }
-const { locale, prefixEnglish = false } = Astro.props;
+const { locale } = Astro.props;
 const years = getExperienceYears();
 const profession = translate(locale, "Home.profession")
   .replaceAll("<highlight>", '<span class="text-accent-strong">')
@@ -47,12 +46,12 @@ const description = translate(locale, "Home.description")
         set:html={description}
       />
       <div class="mt-8 flex flex-wrap gap-3">
-        <ButtonLink href={localizedPath(locale, "/services", prefixEnglish)}>
+        <ButtonLink href={localizedPath(locale, "/services")}>
           {translate(locale, "Home.viewServices")}
           <span aria-hidden="true">↗</span>
         </ButtonLink>
         <ButtonLink
-          href={localizedPath(locale, "/projects", prefixEnglish)}
+          href={localizedPath(locale, "/projects")}
           variant="secondary"
         >
           {translate(locale, "Home.viewWork")}

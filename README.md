@@ -50,11 +50,12 @@ Plausible's installation settings.
 
 ## Routes
 
-English is canonical without a prefix. Compatibility pages remain available
-under `/en`, and Spanish pages use `/es`. Page paths and slugs stay identical
-between languages, so services use `/services`, `/en/services`, and
-`/es/services`. Project, service, and category pages are generated from typed
-Astro collections in `src/content`. Only canonical English and Spanish pages are
+Astro's native i18n routing generates canonical English pages under `/en` and
+Spanish pages under `/es`. Root English pages remain accessible as duplicates,
+but their links and canonical metadata point to `/en`. Page paths and slugs stay
+identical between languages, so services use `/en/services` and `/es/services`.
+Project, service, and category pages are generated from typed Astro collections
+through the dynamic `[locale]` route tree. Only `/en` and `/es` pages are
 included in the generated sitemap.
 
 ## Search rollout

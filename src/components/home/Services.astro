@@ -6,9 +6,8 @@ import { localizedPath, translate, type Locale } from "@/lib/i18n";
 
 interface Props {
   locale: Locale;
-  prefixEnglish?: boolean;
 }
-const { locale, prefixEnglish = false } = Astro.props;
+const { locale } = Astro.props;
 const services = await getServices(locale);
 const basePath = "/services";
 ---
@@ -40,11 +39,7 @@ const basePath = "/services";
               {service.description}
             </p>
             <a
-              href={localizedPath(
-                locale,
-                `${basePath}/${service.slug}`,
-                prefixEnglish,
-              )}
+              href={localizedPath(locale, `${basePath}/${service.slug}`)}
               class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-accent-strong"
             >
               {translate(locale, "Services.viewService")}

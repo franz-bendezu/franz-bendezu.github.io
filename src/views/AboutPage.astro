@@ -4,7 +4,7 @@ import Certifications from "@/components/about/Certifications.astro";
 import EducationCard from "@/components/experience/EducationCard.astro";
 import WorkCard from "@/components/experience/WorkCard.astro";
 import cardStyles from "@/components/ui/Card.module.css";
-import { translate, type Locale } from "@/lib/i18n";
+import { localizedPath, translate, type Locale } from "@/lib/i18n";
 import {
   getEducation,
   getExperienceYears,
@@ -25,7 +25,7 @@ const years = getExperienceYears();
 const recent = work.slice(0, 3);
 const earlier = work.slice(3);
 const person = personSchema(profile, locale);
-const aboutUrl = `${SITE_URL}${locale === "es" ? "/es/about" : "/about"}`;
+const aboutUrl = `${SITE_URL}${localizedPath(locale, "/about")}`;
 const structuredData = [
   {
     "@context": "https://schema.org",

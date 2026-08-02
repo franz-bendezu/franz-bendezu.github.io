@@ -8,10 +8,9 @@ import cardStyles from "@/components/ui/Card.module.css";
 interface Props {
   locale: Locale;
   currentPath: string;
-  prefixEnglish: boolean;
 }
 
-const { locale, currentPath, prefixEnglish } = Astro.props;
+const { locale, currentPath } = Astro.props;
 ---
 
 <details class="group relative md:hidden">
@@ -39,7 +38,7 @@ const { locale, currentPath, prefixEnglish } = Astro.props;
             : currentPath.startsWith(path);
           return (
             <NavLink
-              href={localizedPath(locale, path, prefixEnglish)}
+              href={localizedPath(locale, path)}
               active={active}
               class="block rounded-md font-medium hover:bg-surface-muted"
               activeClass="rounded-md bg-accent-soft font-bold text-accent-strong"
