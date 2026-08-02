@@ -4,13 +4,14 @@ import {
   CodeBracketIcon,
   ServerStackIcon,
 } from "@heroicons/react/20/solid";
-import { localizedPath, useTranslations, type Locale } from "@/lib/i18n";
+import { useLocalizedPath, useTranslations, type Locale } from "@/lib/i18n";
 import { getSkills } from "@/lib/profile-content";
 import Card from "@/components/ui/Card.astro";
 interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
+const localizePath = useLocalizedPath(locale);
 const t = useTranslations(locale);
 const skills = await getSkills(locale);
 const find = (code: string) =>
@@ -74,7 +75,7 @@ const capabilities = [
               ))}
             </div>
             <a
-              href={localizedPath(locale, "/projects")}
+              href={localizePath("/projects")}
               class="mt-7 inline-flex items-center gap-2 text-sm font-bold text-accent-strong"
             >
               {t("Home.skills.evidence")} <span aria-hidden="true">→</span>

@@ -7,13 +7,14 @@ import Services from "@/components/home/Services.astro";
 import ButtonLink from "@/components/ui/ButtonLink.astro";
 import { getProjects } from "@/lib/projects";
 import { optimizeProjectBanners } from "@/lib/project-images";
-import { localizedPath, useTranslations, type Locale } from "@/lib/i18n";
+import { useLocalizedPath, useTranslations, type Locale } from "@/lib/i18n";
 import { getProfile } from "@/lib/profile-content";
 import { personSchema, SITE_URL } from "@/lib/seo";
 interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
+const localizePath = useLocalizedPath(locale);
 const t = useTranslations(locale);
 const projects = await optimizeProjectBanners(
   (await getProjects(locale))
@@ -21,7 +22,7 @@ const projects = await optimizeProjectBanners(
     .sort((a, b) => a.position - b.position),
 );
 const profile = await getProfile(locale);
-const canonicalUrl = `${SITE_URL}${localizedPath(locale, "/")}`;
+const canonicalUrl = `${SITE_URL}${localizePath("/")}`;
 const description = t("Metadata.description");
 const person = personSchema(profile, locale);
 const structuredData = [
@@ -75,7 +76,7 @@ const structuredData = [
             {t("Home.cta.description")}
           </p>
         </div>
-        <ButtonLink href={localizedPath(locale, "/contact")}
+        <ButtonLink href={localizePath("/contact")}
           >{t("Home.cta.button")}
           <span aria-hidden="true">↗</span></ButtonLink
         >

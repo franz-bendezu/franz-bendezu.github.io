@@ -4,7 +4,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Card from "@/components/ui/Card.astro";
 import ButtonLink from "@/components/ui/ButtonLink.astro";
 import { getServices } from "@/lib/services";
-import { localizedPath, useTranslations, type Locale } from "@/lib/i18n";
+import { useLocalizedPath, useTranslations, type Locale } from "@/lib/i18n";
 import { getProfile } from "@/lib/profile-content";
 import { personSchema, SITE_URL } from "@/lib/seo";
 
@@ -12,6 +12,7 @@ interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
+const localizePath = useLocalizedPath(locale);
 const t = useTranslations(locale);
 const services = await getServices(locale);
 const profile = await getProfile(locale);
@@ -20,8 +21,8 @@ const description = t("Services.description");
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "@id": `${SITE_URL}${localizedPath(locale, path)}#page`,
-  url: `${SITE_URL}${localizedPath(locale, path)}`,
+  "@id": `${SITE_URL}${localizePath(path)}#page`,
+  url: `${SITE_URL}${localizePath(path)}`,
   name: t("Services.title"),
   description,
   inLanguage: locale,
@@ -30,7 +31,7 @@ const structuredData = {
     itemListElement: services.map((service, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      url: `${SITE_URL}${localizedPath(locale, `${path}/${service.slug}`)}`,
+      url: `${SITE_URL}${localizePath(`${path}/${service.slug}`)}`,
       name: service.title,
     })),
   },
@@ -73,7 +74,7 @@ const structuredData = {
               {service.description}
             </p>
             <a
-              href={localizedPath(locale, `${path}/${service.slug}`)}
+              href={localizePath(`${path}/${service.slug}`)}
               class="mt-8 inline-flex items-center gap-2 font-bold text-accent-strong"
             >
               {t("Services.viewService")}
@@ -92,7 +93,7 @@ const structuredData = {
       <p class="mt-3 max-w-2xl opacity-75">
         {t("Services.ctaDescription")}
       </p>
-      <ButtonLink href={localizedPath(locale, "/contact")} class="mt-6">
+      <ButtonLink href={localizePath("/contact")} class="mt-6">
         {t("Services.ctaButton")}
         <span aria-hidden="true">↗</span>
       </ButtonLink>

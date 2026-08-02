@@ -4,7 +4,7 @@ import ButtonLink from "@/components/ui/ButtonLink.astro";
 import GitHubIcon from "@/components/icon/GitHub.astro";
 import LinkedInIcon from "@/components/icon/LinkedIn.astro";
 import PresentationDownload from "./PresentationDownload.astro";
-import { localizedPath, useTranslations, type Locale } from "@/lib/i18n";
+import { useLocalizedPath, useTranslations, type Locale } from "@/lib/i18n";
 import { getExperienceYears } from "@/lib/profile-content";
 import { Image } from "astro:assets";
 import profileImage from "@/assets/images/profile.webp";
@@ -12,6 +12,7 @@ interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
+const localizePath = useLocalizedPath(locale);
 const t = useTranslations(locale);
 const years = getExperienceYears();
 const profession = t("Home.profession")
@@ -47,14 +48,11 @@ const description = t("Home.description")
         set:html={description}
       />
       <div class="mt-8 flex flex-wrap gap-3">
-        <ButtonLink href={localizedPath(locale, "/services")}>
+        <ButtonLink href={localizePath("/services")}>
           {t("Home.viewServices")}
           <span aria-hidden="true">↗</span>
         </ButtonLink>
-        <ButtonLink
-          href={localizedPath(locale, "/projects")}
-          variant="secondary"
-        >
+        <ButtonLink href={localizePath("/projects")} variant="secondary">
           {t("Home.viewWork")}
         </ButtonLink>
         <PresentationDownload locale={locale} />

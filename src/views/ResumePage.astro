@@ -1,6 +1,6 @@
 ---
 import ResumeLayout from "@/layouts/ResumeLayout.astro";
-import { localizedPath, useTranslations, type Locale } from "@/lib/i18n";
+import { useLocalizedPath, useTranslations, type Locale } from "@/lib/i18n";
 import { getResume } from "@/lib/profile-content";
 
 interface Props {
@@ -8,6 +8,7 @@ interface Props {
 }
 
 const { locale } = Astro.props;
+const localizePath = useLocalizedPath(locale);
 const t = useTranslations(locale);
 const resume = await getResume(locale);
 const { profile, labels } = resume;
@@ -95,7 +96,7 @@ const linkText = (url: string) =>
             <article class="project">
               <h3>
                 <a
-                  href={`${profile.website}${localizedPath(locale, `/projects/${project.code}`)}`}
+                  href={`${profile.website}${localizePath(`/projects/${project.code}`)}`}
                 >
                   {project.title}
                 </a>
