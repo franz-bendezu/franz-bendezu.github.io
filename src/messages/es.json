@@ -161,7 +161,7 @@
   "Metadata": {
     "title": {
       "default": "Inicio",
-      "template": "%s | Franz Bendezu - Software a medida"
+      "template": "%s | Franz Bendezu"
     },
     "description": "Desarrollo de MVPs, productos SaaS, herramientas internas y landing pages para equipos de producto con Java, Node.js, AWS, Vue y React."
   }
