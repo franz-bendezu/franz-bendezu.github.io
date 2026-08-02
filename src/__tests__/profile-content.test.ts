@@ -73,7 +73,7 @@ describe("shared profile content", () => {
       "agendalo-ssr-migration",
       "my-portfolio",
     ]);
-    expect(spanishResume.projects.at(-1)?.code).toBe("mi-portafolio");
+    expect(spanishResume.projects.at(-1)?.code).toBe("my-portfolio");
     expect(spanishResume.labels.certifications).toBe(
       "Cursos y Certificaciones",
     );
