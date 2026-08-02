@@ -47,9 +47,15 @@ const description = translate(locale, "Home.description")
         set:html={description}
       />
       <div class="mt-8 flex flex-wrap gap-3">
-        <ButtonLink href={localizedPath(locale, "/projects", prefixEnglish)}>
-          {translate(locale, "Home.viewWork")}
+        <ButtonLink href={localizedPath(locale, "/services", prefixEnglish)}>
+          {translate(locale, "Home.viewServices")}
           <span aria-hidden="true">↗</span>
+        </ButtonLink>
+        <ButtonLink
+          href={localizedPath(locale, "/projects", prefixEnglish)}
+          variant="secondary"
+        >
+          {translate(locale, "Home.viewWork")}
         </ButtonLink>
         <PresentationDownload locale={locale} />
       </div>
@@ -62,7 +68,7 @@ const description = translate(locale, "Home.description")
           }</span
         >
         <a
-          href="https://www.linkedin.com/in/franz-bendezu"
+          href="https://www.linkedin.com/in/franz-bendezu/"
           class="rounded-md p-2 hover:text-accent-strong"
           target="_blank"
           rel="noreferrer"
@@ -96,6 +102,7 @@ const description = translate(locale, "Home.description")
           format="webp"
           quality={80}
           fetchpriority="high"
+          loading="eager"
           class="relative z-10 aspect-square w-[52%] rounded-full object-cover ring-4 ring-surface-raised"
         />
       </div>

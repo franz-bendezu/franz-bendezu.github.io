@@ -16,7 +16,8 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
-  localePaths?: { en: string; es: string };
+  robots?: string;
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const {
@@ -25,24 +26,22 @@ const {
   title,
   description = translate(locale, "Metadata.description"),
   image = "/opengraph-image.png",
-  localePaths,
+  robots,
+  structuredData,
 } = Astro.props;
 const defaultTitle = translate(locale, "Metadata.title.default");
 const template = translate(locale, "Metadata.title.template");
 const pageTitle = title
   ? template.replace("%s", title)
   : template.replace("%s", defaultTitle);
-const canonical = new URL(
-  canonicalPath(locale, localePaths?.[locale] ?? path),
-  Astro.site,
-);
-const alternates = localePaths
-  ? {
-      en: canonicalPath("en", localePaths.en),
-      es: canonicalPath("es", localePaths.es),
-      "x-default": canonicalPath("en", localePaths.en),
-    }
-  : alternatePaths(path);
+const canonical = new URL(canonicalPath(locale, path), Astro.site);
+const alternates = alternatePaths(path);
+const structuredDataItems = structuredData
+  ? Array.isArray(structuredData)
+    ? structuredData
+    : [structuredData]
+  : [];
+const plausibleScriptSrc = import.meta.env.PUBLIC_PLAUSIBLE_SCRIPT_SRC;
 ---
 
 <!doctype html>
@@ -52,10 +51,7 @@ const alternates = localePaths
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
-    <meta
-      name="keywords"
-      content="Software Developer, TypeScript, JavaScript, React, Astro, Node.js, Java, Spring, AWS"
-    />
+    {robots && <meta name="robots" content={robots} />}
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="canonical" href={canonical} />
     <link
@@ -85,6 +81,20 @@ const alternates = localePaths
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(image, Astro.site)} />
     <title>{pageTitle}</title>
+    {
+      structuredDataItems.map((item) => (
+        <script
+          is:inline
+          type="application/ld+json"
+          set:html={JSON.stringify(item).replaceAll("<", "\\u003c")}
+        />
+      ))
+    }
+    {
+      import.meta.env.PROD && plausibleScriptSrc && (
+        <script is:inline defer src={plausibleScriptSrc} />
+      )
+    }
     <script is:inline>
       (() => {
         const saved = localStorage.getItem("theme");
@@ -97,16 +107,15 @@ const alternates = localePaths
   </head>
   <body class="font-sans antialiased">
     <div class="flex min-h-screen flex-col bg-surface text-content">
-      <Navbar
-        locale={locale}
-        path={path}
-        pathname={Astro.url.pathname}
-        languagePath={localePaths?.[locale === "en" ? "es" : "en"]}
-      />
+      <Navbar locale={locale} path={path} pathname={Astro.url.pathname} />
       <main class="flex flex-grow flex-col items-center align-middle">
         <slot />
       </main>
-      <Footer locale={locale} />
+      <Footer
+        locale={locale}
+        prefixEnglish={Astro.url.pathname === "/en" ||
+          Astro.url.pathname.startsWith("/en/")}
+      />
     </div>
     <script>
       const themeButton = document.querySelector<HTMLButtonElement>(

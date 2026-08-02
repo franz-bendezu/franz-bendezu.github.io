@@ -5,8 +5,9 @@ import ButtonLink from "@/components/ui/ButtonLink.astro";
 import { localizedPath, translate, type Locale } from "@/lib/i18n";
 interface Props {
   locale: Locale;
+  prefixEnglish?: boolean;
 }
-const { locale } = Astro.props;
+const { locale, prefixEnglish = false } = Astro.props;
 const year = new Date().getUTCFullYear();
 ---
 
@@ -21,11 +22,13 @@ const year = new Date().getUTCFullYear();
       </p>
     </div>
     <div class="flex items-center gap-2">
-      <ButtonLink href={localizedPath(locale, "/contact")} variant="secondary"
+      <ButtonLink
+        href={localizedPath(locale, "/contact", prefixEnglish)}
+        variant="secondary"
         >{translate(locale, "Navigation.contact")}</ButtonLink
       >
       <a
-        href="https://www.linkedin.com/in/franz-antony-bendezu-isidro/"
+        href="https://www.linkedin.com/in/franz-bendezu/"
         class="rounded-md p-2 hover:text-accent-strong"
         target="_blank"
         rel="noreferrer"

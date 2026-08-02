@@ -1,0 +1,108 @@
+---
+import { ArrowRightIcon } from "@heroicons/react/20/solid";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Card from "@/components/ui/Card.astro";
+import ButtonLink from "@/components/ui/ButtonLink.astro";
+import { getServices } from "@/lib/services";
+import { localizedPath, translate, type Locale } from "@/lib/i18n";
+import { getProfile } from "@/lib/profile-content";
+import { personSchema, SITE_URL } from "@/lib/seo";
+
+interface Props {
+  locale: Locale;
+  prefixEnglish?: boolean;
+}
+const { locale, prefixEnglish = false } = Astro.props;
+const services = await getServices(locale);
+const profile = await getProfile(locale);
+const path = "/services";
+const description = translate(locale, "Services.description");
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${SITE_URL}${localizedPath(locale, path)}#page`,
+  url: `${SITE_URL}${localizedPath(locale, path)}`,
+  name: translate(locale, "Services.title"),
+  description,
+  inLanguage: locale,
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: services.map((service, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `${SITE_URL}${localizedPath(locale, `${path}/${service.slug}`)}`,
+      name: service.title,
+    })),
+  },
+  author: personSchema(profile, locale),
+};
+---
+
+<BaseLayout
+  locale={locale}
+  path={path}
+  title={translate(locale, "Services.title")}
+  description={description}
+  structuredData={structuredData}
+>
+  <section class="mx-auto w-full max-w-[75rem] px-5 py-12 sm:px-8 sm:py-20">
+    <div class="max-w-4xl">
+      <p
+        class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
+      >
+        {translate(locale, "Services.eyebrow")}
+      </p>
+      <h1 class="mt-4 text-5xl font-bold tracking-[-0.045em] sm:text-7xl">
+        {translate(locale, "Services.title")}<span class="text-accent">.</span>
+      </h1>
+      <p class="mt-6 max-w-3xl text-xl leading-relaxed text-content-muted">
+        {description}
+      </p>
+    </div>
+    <div class="mt-12 grid gap-5 md:grid-cols-2">
+      {
+        services.map((service, index) => (
+          <Card variant="interactive" class="flex flex-col p-6 sm:p-8">
+            <span class="font-mono text-sm font-bold text-accent-strong">
+              0{index + 1}
+            </span>
+            <h2 class="mt-6 text-3xl font-bold tracking-tight">
+              {service.title}
+            </h2>
+            <p class="mt-4 flex-1 leading-relaxed text-content-muted">
+              {service.description}
+            </p>
+            <a
+              href={localizedPath(
+                locale,
+                `${path}/${service.slug}`,
+                prefixEnglish,
+              )}
+              class="mt-8 inline-flex items-center gap-2 font-bold text-accent-strong"
+            >
+              {translate(locale, "Services.viewService")}
+              <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
+            </a>
+          </Card>
+        ))
+      }
+    </div>
+    <div
+      class="mt-16 rounded-2xl bg-content px-6 py-10 text-surface sm:px-10 dark:bg-surface-raised dark:text-content"
+    >
+      <h2 class="text-3xl font-bold">
+        {translate(locale, "Services.ctaTitle")}
+      </h2>
+      <p class="mt-3 max-w-2xl opacity-75">
+        {translate(locale, "Services.ctaDescription")}
+      </p>
+      <ButtonLink
+        href={localizedPath(locale, "/contact", prefixEnglish)}
+        class="mt-6"
+      >
+        {translate(locale, "Services.ctaButton")}
+        <span aria-hidden="true">↗</span>
+      </ButtonLink>
+    </div>
+  </section>
+</BaseLayout>

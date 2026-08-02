@@ -12,6 +12,11 @@ export const ROUTES_NAVBAR = [
     exact: true,
   },
   {
+    title: "services",
+    path: "/services",
+    exact: false,
+  },
+  {
     title: "about",
     path: "/about",
     exact: true,

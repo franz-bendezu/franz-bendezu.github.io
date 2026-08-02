@@ -227,6 +227,39 @@ const profiles = defineCollection({
       .strict(),
 });
 
+const serviceItemSchema = z
+  .object({ title: z.string().min(1), description: z.string().min(1) })
+  .strict();
+const services = defineCollection({
+  loader: file("./src/content/services.json"),
+  schema: z
+    .object({
+      position: z.number().int().positive(),
+      slug: z.string().min(1),
+      technologyCodes: technologyCodesSchema,
+      relatedProjects: z.array(z.string().min(1)).min(1),
+      locales: localizedValues(
+        z
+          .object({
+            title: z.string().min(1),
+            navTitle: z.string().min(1),
+            metaTitle: z.string().min(1),
+            metaDescription: z.string().min(1),
+            eyebrow: z.string().min(1),
+            description: z.string().min(1),
+            audience: z.string().min(1),
+            problems: z.array(serviceItemSchema).min(1),
+            outcomes: z.array(z.string().min(1)).min(1),
+            deliverables: z.array(z.string().min(1)).min(1),
+            process: z.array(serviceItemSchema).length(4),
+            faqs: z.array(serviceItemSchema).min(1),
+          })
+          .strict(),
+      ),
+    })
+    .strict(),
+});
+
 const resumes = defineCollection({
   loader: file("./src/content/resumes.json"),
   schema: z
@@ -261,6 +294,7 @@ export const collections = {
   certifications,
   skills,
   profiles,
+  services,
   resumes,
 };
 export { categorySchema, localeSchema, statusSchema };

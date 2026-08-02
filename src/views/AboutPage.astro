@@ -11,6 +11,7 @@ import {
   getProfile,
   getWorkExperiences,
 } from "@/lib/profile-content";
+import { personSchema, SITE_URL } from "@/lib/seo";
 interface Props {
   locale: Locale;
 }
@@ -23,6 +24,21 @@ const [work, education, profile] = await Promise.all([
 const years = getExperienceYears();
 const recent = work.slice(0, 3);
 const earlier = work.slice(3);
+const person = personSchema(profile, locale);
+const aboutUrl = `${SITE_URL}${locale === "es" ? "/es/about" : "/about"}`;
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `${aboutUrl}#profile-page`,
+    url: aboutUrl,
+    name: translate(locale, "About.title"),
+    description: translate(locale, "About.description", { years }),
+    inLanguage: locale,
+    mainEntity: person,
+  },
+  { "@context": "https://schema.org", ...person },
+];
 ---
 
 <BaseLayout
@@ -30,6 +46,7 @@ const earlier = work.slice(3);
   path="/about"
   title={translate(locale, "About.title")}
   description={translate(locale, "About.description", { years })}
+  structuredData={structuredData}
 >
   <section class="mx-auto w-full max-w-[75rem] px-5 sm:px-8 py-12 sm:py-16">
     <div class="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">

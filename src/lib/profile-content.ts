@@ -198,3 +198,4 @@ export async function getResume(locale: Locale, id = "default") {
 }
 
 export type ResumeData = Awaited<ReturnType<typeof getResume>>;
+export type ProfileContent = Awaited<ReturnType<typeof getProfile>>;
