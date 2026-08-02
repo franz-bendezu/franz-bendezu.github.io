@@ -1,22 +1,21 @@
 ---
 import { ArrowDownTrayIcon } from "@heroicons/react/20/solid";
 import ButtonLink from "@/components/ui/ButtonLink.astro";
-import { translate, type Locale } from "@/lib/i18n";
+import { useTranslations, type Locale } from "@/lib/i18n";
 
 interface Props {
   locale: Locale;
 }
 
 const { locale } = Astro.props;
+const t = useTranslations(locale);
 ---
 
 <ButtonLink
-  href={translate(locale, "Home.cvPath")}
+  href={t("Home.cvPath")}
   download="Franz Bendezu CV.pdf"
   variant="secondary"
 >
   <ArrowDownTrayIcon className="h-4 w-4" aria-hidden="true" />
-  <span class="text-sm font-semibold"
-    >{translate(locale, "Home.downloadCV")}</span
-  >
+  <span class="text-sm font-semibold">{t("Home.downloadCV")}</span>
 </ButtonLink>

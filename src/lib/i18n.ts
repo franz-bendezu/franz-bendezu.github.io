@@ -26,7 +26,7 @@ export function getMessages(locale: Locale) {
   return dictionaries[locale];
 }
 
-export function translate(
+function resolveTranslation(
   locale: Locale,
   key: string,
   values: Record<string, string | number> = {},
@@ -58,7 +58,7 @@ export function useTranslations(locale: Locale) {
     key: TranslationKey,
     values: Record<string, string | number> = {},
   ): string {
-    return translate(locale, key, values);
+    return resolveTranslation(locale, key, values);
   };
 }
 

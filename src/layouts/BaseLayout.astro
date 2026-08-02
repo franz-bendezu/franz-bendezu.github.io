@@ -6,7 +6,6 @@ import Footer from "@/components/layout/Footer.astro";
 import {
   alternatePaths,
   canonicalPath,
-  translate,
   useTranslations,
   type Locale,
 } from "@/lib/i18n";
@@ -25,14 +24,15 @@ const {
   locale,
   path = "/",
   title,
-  description = translate(locale, "Metadata.description"),
+  description: descriptionProp,
   image = "/opengraph-image.png",
   robots,
   structuredData,
 } = Astro.props;
 const t = useTranslations(locale);
-const defaultTitle = translate(locale, "Metadata.title.default");
-const template = translate(locale, "Metadata.title.template");
+const description = descriptionProp ?? t("Metadata.description");
+const defaultTitle = t("Metadata.title.default");
+const template = t("Metadata.title.template");
 const pageTitle = title
   ? template.replace("%s", title)
   : template.replace("%s", defaultTitle);

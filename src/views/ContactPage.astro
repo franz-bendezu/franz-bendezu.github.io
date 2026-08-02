@@ -3,57 +3,44 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { ContactForm } from "@/components/contact/Form";
 import ButtonLink from "@/components/ui/ButtonLink.astro";
 import Card from "@/components/ui/Card.astro";
-import { translate, type Locale } from "@/lib/i18n";
+import { useTranslations, type Locale } from "@/lib/i18n";
 import { getProfile } from "@/lib/profile-content";
 interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
+const t = useTranslations(locale);
 const profile = await getProfile(locale);
 const labels = {
-  name: translate(locale, "Contact.form.name"),
-  email: translate(locale, "Contact.form.email"),
-  company: translate(locale, "Contact.form.company"),
-  service: translate(locale, "Contact.form.service"),
-  timeline: translate(locale, "Contact.form.timeline"),
-  message: translate(locale, "Contact.form.message"),
-  send: translate(locale, "Contact.form.send"),
-  successTitle: translate(locale, "Contact.form.successTitle"),
-  successDescription: translate(locale, "Contact.form.successDescription"),
-  error: translate(locale, "Contact.form.error"),
-  recaptcha: translate(locale, "Contact.form.recaptcha"),
+  name: t("Contact.form.name"),
+  email: t("Contact.form.email"),
+  company: t("Contact.form.company"),
+  service: t("Contact.form.service"),
+  timeline: t("Contact.form.timeline"),
+  message: t("Contact.form.message"),
+  send: t("Contact.form.send"),
+  successTitle: t("Contact.form.successTitle"),
+  successDescription: t("Contact.form.successDescription"),
+  error: t("Contact.form.error"),
+  recaptcha: t("Contact.form.recaptcha"),
   services: {
-    placeholder: translate(locale, "Contact.form.services.placeholder"),
-    "mvp-development": translate(
-      locale,
-      "Contact.form.services.mvp-development",
-    ),
-    "saas-product-development": translate(
-      locale,
+    placeholder: t("Contact.form.services.placeholder"),
+    "mvp-development": t("Contact.form.services.mvp-development"),
+    "saas-product-development": t(
       "Contact.form.services.saas-product-development",
     ),
-    "internal-tools": translate(locale, "Contact.form.services.internal-tools"),
-    "landing-page-development": translate(
-      locale,
+    "internal-tools": t("Contact.form.services.internal-tools"),
+    "landing-page-development": t(
       "Contact.form.services.landing-page-development",
     ),
-    unsure: translate(locale, "Contact.form.services.unsure"),
+    unsure: t("Contact.form.services.unsure"),
   },
   timelines: {
-    placeholder: translate(locale, "Contact.form.timelines.placeholder"),
-    "under-one-month": translate(
-      locale,
-      "Contact.form.timelines.under-one-month",
-    ),
-    "one-to-three-months": translate(
-      locale,
-      "Contact.form.timelines.one-to-three-months",
-    ),
-    "over-three-months": translate(
-      locale,
-      "Contact.form.timelines.over-three-months",
-    ),
-    exploring: translate(locale, "Contact.form.timelines.exploring"),
+    placeholder: t("Contact.form.timelines.placeholder"),
+    "under-one-month": t("Contact.form.timelines.under-one-month"),
+    "one-to-three-months": t("Contact.form.timelines.one-to-three-months"),
+    "over-three-months": t("Contact.form.timelines.over-three-months"),
+    exploring: t("Contact.form.timelines.exploring"),
   },
 };
 const formId = import.meta.env.PUBLIC_FORMSPREE_ID ?? "test";
@@ -63,8 +50,8 @@ const recaptchaSiteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
 <BaseLayout
   locale={locale}
   path="/contact"
-  title={translate(locale, "Contact.title")}
-  description={translate(locale, "Contact.description")}
+  title={t("Contact.title")}
+  description={t("Contact.description")}
 >
   <section class="mx-auto w-full max-w-[75rem] px-5 sm:px-8 py-12 sm:py-20">
     <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
@@ -72,24 +59,24 @@ const recaptchaSiteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
         <p
           class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
         >
-          {translate(locale, "Contact.availability")}
+          {t("Contact.availability")}
         </p>
         <h1 class="mt-4 text-5xl font-bold tracking-[-0.045em] sm:text-7xl">
-          {translate(locale, "Contact.title")}<span class="text-accent">.</span>
+          {t("Contact.title")}<span class="text-accent">.</span>
         </h1>
         <p class="mt-6 max-w-lg text-lg leading-relaxed text-content-muted">
-          {translate(locale, "Contact.intro")}
+          {t("Contact.intro")}
         </p>
         <div class="mt-10 border-y border-divider py-5">
           <p
             class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
           >
-            {translate(locale, "Contact.emailLabel")}
+            {t("Contact.emailLabel")}
           </p><a
             class="mt-2 inline-block text-lg font-bold text-accent-strong hover:underline"
             href={`mailto:${profile.email}`}>{profile.email}</a
           ><p class="mt-2 text-sm text-content-muted">
-            {translate(locale, "Contact.response")}
+            {t("Contact.response")}
           </p>
         </div>
         <div class="mt-6 flex flex-wrap gap-3">

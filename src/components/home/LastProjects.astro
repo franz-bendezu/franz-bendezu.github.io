@@ -2,12 +2,13 @@
 import ProjectCard from "@/components/project/ProjectCard";
 import ButtonLink from "@/components/ui/ButtonLink.astro";
 import type { IProject } from "@/interfaces/project";
-import { localizedPath, translate, type Locale } from "@/lib/i18n";
+import { localizedPath, useTranslations, type Locale } from "@/lib/i18n";
 interface Props {
   projects: IProject[];
   locale: Locale;
 }
 const { projects, locale } = Astro.props;
+const t = useTranslations(locale);
 ---
 
 <section id="projects" class="py-16 sm:py-24">
@@ -19,20 +20,19 @@ const { projects, locale } = Astro.props;
         <p
           class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
         >
-          {translate(locale, "Home.lastProjects.label")}
+          {t("Home.lastProjects.label")}
         </p>
         <h2 class="mt-4 text-3xl font-bold tracking-[-0.035em] sm:text-5xl">
-          {translate(locale, "Home.lastProjects.title")}
+          {t("Home.lastProjects.title")}
         </h2>
         <p class="mt-4 text-lg text-content-muted">
-          {translate(locale, "Home.lastProjects.description")}
+          {t("Home.lastProjects.description")}
         </p>
       </div>
       <ButtonLink
         href={localizedPath(locale, "/projects")}
         variant="secondary"
-        class="shrink-0"
-        >{translate(locale, "Home.lastProjects.viewAll")}</ButtonLink
+        class="shrink-0">{t("Home.lastProjects.viewAll")}</ButtonLink
       >
     </div>
     <div class="mt-10 grid gap-5 lg:grid-cols-3">
@@ -42,11 +42,11 @@ const { projects, locale } = Astro.props;
             project={project}
             href={localizedPath(locale, `/projects/${project.code}`)}
             labels={{
-              viewProject: translate(locale, "Projects.viewProjectLink", {
+              viewProject: t("Projects.viewProjectLink", {
                 title: project.title,
               }),
-              impact: translate(locale, "Home.lastProjects.impact"),
-              caseStudy: translate(locale, "Home.lastProjects.caseStudy"),
+              impact: t("Home.lastProjects.impact"),
+              caseStudy: t("Home.lastProjects.caseStudy"),
             }}
             variant="featured"
           />

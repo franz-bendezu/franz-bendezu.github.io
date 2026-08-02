@@ -7,12 +7,7 @@ import Services from "@/components/home/Services.astro";
 import ButtonLink from "@/components/ui/ButtonLink.astro";
 import { getProjects } from "@/lib/projects";
 import { optimizeProjectBanners } from "@/lib/project-images";
-import {
-  localizedPath,
-  translate,
-  useTranslations,
-  type Locale,
-} from "@/lib/i18n";
+import { localizedPath, useTranslations, type Locale } from "@/lib/i18n";
 import { getProfile } from "@/lib/profile-content";
 import { personSchema, SITE_URL } from "@/lib/seo";
 interface Props {
@@ -27,7 +22,7 @@ const projects = await optimizeProjectBanners(
 );
 const profile = await getProfile(locale);
 const canonicalUrl = `${SITE_URL}${localizedPath(locale, "/")}`;
-const description = translate(locale, "Metadata.description");
+const description = t("Metadata.description");
 const person = personSchema(profile, locale);
 const structuredData = [
   {
@@ -70,18 +65,18 @@ const structuredData = [
       <p
         class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
       >
-        {translate(locale, "Home.cta.label")}
+        {t("Home.cta.label")}
       </p>
       <div class="mt-4 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
         <div>
           <h2 class="max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl">
-            {translate(locale, "Home.cta.title")}
+            {t("Home.cta.title")}
           </h2><p class="mt-3 max-w-2xl opacity-75">
-            {translate(locale, "Home.cta.description")}
+            {t("Home.cta.description")}
           </p>
         </div>
         <ButtonLink href={localizedPath(locale, "/contact")}
-          >{translate(locale, "Home.cta.button")}
+          >{t("Home.cta.button")}
           <span aria-hidden="true">↗</span></ButtonLink
         >
       </div>

@@ -1,12 +1,13 @@
 ---
 import NavLink from "./NavLink.astro";
 import { ROUTES_NAVBAR } from "@/constants/navbar";
-import { localizedPath, translate, type Locale } from "@/lib/i18n";
+import { localizedPath, useTranslations, type Locale } from "@/lib/i18n";
 interface Props {
   locale: Locale;
   currentPath: string;
 }
 const { locale, currentPath } = Astro.props;
+const t = useTranslations(locale);
 ---
 
 <div class="hidden items-center md:mx-2 md:flex md:gap-1 lg:mx-3">
@@ -22,7 +23,7 @@ const { locale, currentPath } = Astro.props;
           active={active}
           activeClass="text-accent-strong font-bold"
         >
-          {translate(locale, `Navigation.${route.title}`)}
+          {t(`Navigation.${route.title}`)}
         </NavLink>
       );
     })

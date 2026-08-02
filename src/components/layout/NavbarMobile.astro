@@ -2,12 +2,7 @@
 import { Bars4Icon } from "@heroicons/react/20/solid";
 import NavLink from "./NavLink.astro";
 import { ROUTES_NAVBAR } from "@/constants/navbar";
-import {
-  localizedPath,
-  translate,
-  useTranslations,
-  type Locale,
-} from "@/lib/i18n";
+import { localizedPath, useTranslations, type Locale } from "@/lib/i18n";
 import cardStyles from "@/components/ui/Card.module.css";
 
 interface Props {
@@ -47,7 +42,7 @@ const t = useTranslations(locale);
               class="block rounded-md font-medium hover:bg-surface-muted"
               activeClass="rounded-md bg-accent-soft font-bold text-accent-strong"
             >
-              {translate(locale, `Navigation.${route.title}`)}
+              {t(`Navigation.${route.title}`)}
             </NavLink>
           );
         })

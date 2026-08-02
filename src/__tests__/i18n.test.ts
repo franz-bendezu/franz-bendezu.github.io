@@ -5,7 +5,6 @@ import {
   localizedPath,
   localeFromUrl,
   stripLocale,
-  translate,
   useTranslations,
 } from "@/lib/i18n";
 
@@ -30,17 +29,18 @@ describe("i18n routing", () => {
     expect(stripLocale("/en/projects/example")).toBe("/projects/example");
   });
 
-  it("looks up, interpolates, and reports missing translations", () => {
-    expect(translate("en", "Navigation.projects")).toBe("Projects");
-    expect(translate("en", "Projects.viewProjectLink", { title: "Demo" })).toBe(
+  it("looks up and interpolates translations", () => {
+    const t = useTranslations("en");
+
+    expect(t("Navigation.projects")).toBe("Projects");
+    expect(t("Projects.viewProjectLink", { title: "Demo" })).toBe(
       "View Project Demo",
     );
-    expect(translate("en", "Missing.key")).toBe("Missing.key");
   });
 
   it("resolves the About eyebrow in both locales", () => {
-    expect(translate("en", "About.eyebrow")).toBe("Profile");
-    expect(translate("es", "About.eyebrow")).toBe("Perfil");
+    expect(useTranslations("en")("About.eyebrow")).toBe("Profile");
+    expect(useTranslations("es")("About.eyebrow")).toBe("Perfil");
   });
 
   it("creates a locale-bound UI translator", () => {
