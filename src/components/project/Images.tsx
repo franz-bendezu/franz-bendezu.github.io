@@ -73,7 +73,7 @@ function GalleryTabs({
         {images.map(({ src, srcSet, width, height, alt }) => (
           <Tab
             key={src}
-            className="border-divider bg-surface-raised hover:border-accent data-[selected]:border-accent data-[selected]:bg-accent-soft data-[selected]:ring-accent data-[selected]:ring-offset-surface-muted relative aspect-video max-h-20 cursor-pointer rounded-lg border p-2 hover:-translate-y-0.5 active:scale-[0.98] data-[selected]:ring-2 data-[selected]:ring-offset-2"
+            className="border-divider bg-surface-raised hover:border-accent data-selected:border-accent data-selected:bg-accent-soft data-selected:ring-accent data-selected:ring-offset-surface-muted relative aspect-video max-h-20 cursor-pointer rounded-lg border p-2 hover:-translate-y-0.5 active:scale-[0.98] data-selected:ring-2 data-selected:ring-offset-2"
           >
             <img
               className="h-full w-full object-contain"
