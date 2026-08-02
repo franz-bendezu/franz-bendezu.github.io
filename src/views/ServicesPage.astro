@@ -4,7 +4,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Card from "@/components/ui/Card.astro";
 import ButtonLink from "@/components/ui/ButtonLink.astro";
 import { getServices } from "@/lib/services";
-import { localizedPath, translate, type Locale } from "@/lib/i18n";
+import { localizedPath, useTranslations, type Locale } from "@/lib/i18n";
 import { getProfile } from "@/lib/profile-content";
 import { personSchema, SITE_URL } from "@/lib/seo";
 
@@ -12,16 +12,17 @@ interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
+const t = useTranslations(locale);
 const services = await getServices(locale);
 const profile = await getProfile(locale);
 const path = "/services";
-const description = translate(locale, "Services.description");
+const description = t("Services.description");
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "@id": `${SITE_URL}${localizedPath(locale, path)}#page`,
   url: `${SITE_URL}${localizedPath(locale, path)}`,
-  name: translate(locale, "Services.title"),
+  name: t("Services.title"),
   description,
   inLanguage: locale,
   mainEntity: {
@@ -40,7 +41,7 @@ const structuredData = {
 <BaseLayout
   locale={locale}
   path={path}
-  title={translate(locale, "Services.title")}
+  title={t("Services.title")}
   description={description}
   structuredData={structuredData}
 >
@@ -49,10 +50,10 @@ const structuredData = {
       <p
         class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
       >
-        {translate(locale, "Services.eyebrow")}
+        {t("Services.eyebrow")}
       </p>
       <h1 class="mt-4 text-5xl font-bold tracking-[-0.045em] sm:text-7xl">
-        {translate(locale, "Services.title")}<span class="text-accent">.</span>
+        {t("Services.title")}<span class="text-accent">.</span>
       </h1>
       <p class="mt-6 max-w-3xl text-xl leading-relaxed text-content-muted">
         {description}
@@ -75,7 +76,7 @@ const structuredData = {
               href={localizedPath(locale, `${path}/${service.slug}`)}
               class="mt-8 inline-flex items-center gap-2 font-bold text-accent-strong"
             >
-              {translate(locale, "Services.viewService")}
+              {t("Services.viewService")}
               <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
             </a>
           </Card>
@@ -86,13 +87,13 @@ const structuredData = {
       class="mt-16 rounded-2xl bg-content px-6 py-10 text-surface sm:px-10 dark:bg-surface-raised dark:text-content"
     >
       <h2 class="text-3xl font-bold">
-        {translate(locale, "Services.ctaTitle")}
+        {t("Services.ctaTitle")}
       </h2>
       <p class="mt-3 max-w-2xl opacity-75">
-        {translate(locale, "Services.ctaDescription")}
+        {t("Services.ctaDescription")}
       </p>
       <ButtonLink href={localizedPath(locale, "/contact")} class="mt-6">
-        {translate(locale, "Services.ctaButton")}
+        {t("Services.ctaButton")}
         <span aria-hidden="true">↗</span>
       </ButtonLink>
     </div>

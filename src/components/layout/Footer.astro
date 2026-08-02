@@ -2,11 +2,12 @@
 import GitHubIcon from "@/components/icon/GitHub.astro";
 import LinkedInIcon from "@/components/icon/LinkedIn.astro";
 import ButtonLink from "@/components/ui/ButtonLink.astro";
-import { localizedPath, translate, type Locale } from "@/lib/i18n";
+import { localizedPath, useTranslations, type Locale } from "@/lib/i18n";
 interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
+const t = useTranslations(locale);
 const year = new Date().getUTCFullYear();
 ---
 
@@ -17,12 +18,12 @@ const year = new Date().getUTCFullYear();
     <div>
       <p class="font-semibold">Franz Bendezu</p>
       <p class="text-sm text-content-muted">
-        {translate(locale, "Footer.madeWith")} · {year}
+        {t("Footer.madeWith")} · {year}
       </p>
     </div>
     <div class="flex items-center gap-2">
       <ButtonLink href={localizedPath(locale, "/contact")} variant="secondary"
-        >{translate(locale, "Navigation.contact")}</ButtonLink
+        >{t("Navigation.contact")}</ButtonLink
       >
       <a
         href="https://www.linkedin.com/in/franz-bendezu/"

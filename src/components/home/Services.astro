@@ -2,12 +2,13 @@
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import Card from "@/components/ui/Card.astro";
 import { getServices } from "@/lib/services";
-import { localizedPath, translate, type Locale } from "@/lib/i18n";
+import { localizedPath, useTranslations, type Locale } from "@/lib/i18n";
 
 interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
+const t = useTranslations(locale);
 const services = await getServices(locale);
 const basePath = "/services";
 ---
@@ -18,13 +19,13 @@ const basePath = "/services";
       <p
         class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
       >
-        {translate(locale, "Services.eyebrow")}
+        {t("Services.eyebrow")}
       </p>
       <h2 class="mt-4 text-3xl font-bold tracking-[-0.035em] sm:text-5xl">
-        {translate(locale, "Services.title")}
+        {t("Services.title")}
       </h2>
       <p class="mt-4 text-lg leading-relaxed text-content-muted">
-        {translate(locale, "Services.description")}
+        {t("Services.description")}
       </p>
     </div>
     <div class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -43,7 +44,7 @@ const basePath = "/services";
               data-astro-prefetch
               class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-accent-strong"
             >
-              {translate(locale, "Services.viewService")}
+              {t("Services.viewService")}
               <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
             </a>
           </Card>

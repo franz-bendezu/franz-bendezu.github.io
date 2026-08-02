@@ -8,12 +8,7 @@ import { getService } from "@/lib/services";
 import { getProjects } from "@/lib/projects";
 import { optimizeProjectBanners } from "@/lib/project-images";
 import { PROJECT_TECHNOLOGIES } from "@/constants/project-techologies";
-import {
-  localizedPath,
-  translate,
-  useTranslations,
-  type Locale,
-} from "@/lib/i18n";
+import { localizedPath, useTranslations, type Locale } from "@/lib/i18n";
 import { breadcrumbSchema, SITE_URL } from "@/lib/seo";
 
 interface Props {
@@ -60,7 +55,7 @@ const structuredData = [
       name: t("Navigation.index"),
       url: `${SITE_URL}${localizedPath(locale, "/")}`,
     },
-    { name: translate(locale, "Navigation.services"), url: servicesUrl },
+    { name: t("Navigation.services"), url: servicesUrl },
     { name: service.title, url: serviceUrl },
   ]),
 ];
@@ -79,7 +74,7 @@ const structuredData = [
         href={localizedPath(locale, basePath)}
         class="text-sm font-bold text-accent-strong"
       >
-        ← {translate(locale, "Navigation.services")}
+        ← {t("Navigation.services")}
       </a>
       <div
         class="mt-10 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end lg:gap-16"
@@ -103,7 +98,7 @@ const structuredData = [
           <p
             class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase"
           >
-            {translate(locale, "Services.audience")}
+            {t("Services.audience")}
           </p>
           <p class="mt-4 leading-relaxed text-content-muted">
             {service.audience}
@@ -118,7 +113,7 @@ const structuredData = [
       >
         <div>
           <h2 class="text-3xl font-bold">
-            {translate(locale, "Services.problems")}
+            {t("Services.problems")}
           </h2>
           <div class="mt-7 grid gap-5">
             {
@@ -135,7 +130,7 @@ const structuredData = [
         </div>
         <div>
           <h2 class="text-3xl font-bold">
-            {translate(locale, "Services.outcomes")}
+            {t("Services.outcomes")}
           </h2>
           <ul class="mt-7 space-y-4">
             {
@@ -160,7 +155,7 @@ const structuredData = [
       <div class="grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
         <div>
           <h2 class="text-3xl font-bold">
-            {translate(locale, "Services.deliverables")}
+            {t("Services.deliverables")}
           </h2>
           <ul class="mt-6 divide-y divide-divider border-y border-divider">
             {
@@ -172,7 +167,7 @@ const structuredData = [
         </div>
         <div>
           <h2 class="text-3xl font-bold">
-            {translate(locale, "Services.process")}
+            {t("Services.process")}
           </h2>
           <ol class="mt-6 grid gap-4 sm:grid-cols-2">
             {
@@ -195,7 +190,7 @@ const structuredData = [
       </div>
       <div class="mt-16 border-t border-divider pt-10">
         <h2 class="text-2xl font-bold">
-          {translate(locale, "Services.technology")}
+          {t("Services.technology")}
         </h2>
         <div class="mt-5 flex flex-wrap gap-2">
           {
@@ -212,7 +207,7 @@ const structuredData = [
     <section class="border-y border-divider bg-surface-muted py-16 sm:py-20">
       <div class="mx-auto w-full max-w-[75rem] px-5 sm:px-8">
         <h2 class="text-3xl font-bold">
-          {translate(locale, "Services.evidence")}
+          {t("Services.evidence")}
         </h2>
         <div class="mt-8 grid gap-5 lg:grid-cols-3">
           {
@@ -221,11 +216,11 @@ const structuredData = [
                 project={project}
                 href={localizedPath(locale, `/projects/${project.code}`)}
                 labels={{
-                  viewProject: translate(locale, "Projects.viewProjectLink", {
+                  viewProject: t("Projects.viewProjectLink", {
                     title: project.title,
                   }),
-                  impact: translate(locale, "Home.lastProjects.impact"),
-                  caseStudy: translate(locale, "Home.lastProjects.caseStudy"),
+                  impact: t("Home.lastProjects.impact"),
+                  caseStudy: t("Home.lastProjects.caseStudy"),
                 }}
                 variant="featured"
               />
@@ -236,7 +231,7 @@ const structuredData = [
     </section>
 
     <section class="mx-auto w-full max-w-[75rem] px-5 py-16 sm:px-8 sm:py-24">
-      <h2 class="text-3xl font-bold">{translate(locale, "Services.faq")}</h2>
+      <h2 class="text-3xl font-bold">{t("Services.faq")}</h2>
       <div class="mt-7 grid gap-4 lg:grid-cols-2">
         {
           service.faqs.map((faq) => (
@@ -255,16 +250,16 @@ const structuredData = [
         class="mt-16 rounded-2xl bg-content px-6 py-10 text-surface sm:px-10 dark:bg-surface-raised dark:text-content"
       >
         <h2 class="text-3xl font-bold">
-          {translate(locale, "Services.ctaTitle")}
+          {t("Services.ctaTitle")}
         </h2>
         <p class="mt-3 max-w-2xl opacity-75">
-          {translate(locale, "Services.ctaDescription")}
+          {t("Services.ctaDescription")}
         </p>
         <ButtonLink
           href={`${localizedPath(locale, "/contact")}?service=${service.code}`}
           class="mt-6"
         >
-          {translate(locale, "Services.ctaButton")}
+          {t("Services.ctaButton")}
           <span aria-hidden="true">↗</span>
         </ButtonLink>
       </div>

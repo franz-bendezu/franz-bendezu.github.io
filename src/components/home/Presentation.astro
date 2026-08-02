@@ -4,12 +4,7 @@ import ButtonLink from "@/components/ui/ButtonLink.astro";
 import GitHubIcon from "@/components/icon/GitHub.astro";
 import LinkedInIcon from "@/components/icon/LinkedIn.astro";
 import PresentationDownload from "./PresentationDownload.astro";
-import {
-  localizedPath,
-  translate,
-  useTranslations,
-  type Locale,
-} from "@/lib/i18n";
+import { localizedPath, useTranslations, type Locale } from "@/lib/i18n";
 import { getExperienceYears } from "@/lib/profile-content";
 import { Image } from "astro:assets";
 import profileImage from "@/assets/images/profile.webp";
@@ -19,10 +14,10 @@ interface Props {
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 const years = getExperienceYears();
-const profession = translate(locale, "Home.profession")
+const profession = t("Home.profession")
   .replaceAll("<highlight>", '<span class="text-accent-strong">')
   .replaceAll("</highlight>", "</span>");
-const description = translate(locale, "Home.description")
+const description = t("Home.description")
   .replaceAll("<GreenHighlight>", '<span class="font-semibold text-content">')
   .replaceAll("</GreenHighlight>", "</span>")
   .replaceAll("<GrayHighlight>", '<span class="font-semibold text-content">')
@@ -38,10 +33,10 @@ const description = translate(locale, "Home.description")
       <p
         class="font-mono text-xs font-bold tracking-[0.12em] text-accent-strong uppercase mb-5"
       >
-        {translate(locale, "Home.greeting")}
+        {t("Home.greeting")}
       </p>
       <h1 class="text-4xl font-bold tracking-[-0.04em] sm:text-6xl">
-        {translate(locale, "Home.name")}
+        {t("Home.name")}
       </h1>
       <h2
         class="mt-3 max-w-3xl text-3xl font-bold leading-[1.08] tracking-[-0.035em] sm:text-5xl"
@@ -53,14 +48,14 @@ const description = translate(locale, "Home.description")
       />
       <div class="mt-8 flex flex-wrap gap-3">
         <ButtonLink href={localizedPath(locale, "/services")}>
-          {translate(locale, "Home.viewServices")}
+          {t("Home.viewServices")}
           <span aria-hidden="true">↗</span>
         </ButtonLink>
         <ButtonLink
           href={localizedPath(locale, "/projects")}
           variant="secondary"
         >
-          {translate(locale, "Home.viewWork")}
+          {t("Home.viewWork")}
         </ButtonLink>
         <PresentationDownload locale={locale} />
       </div>
@@ -69,7 +64,7 @@ const description = translate(locale, "Home.description")
       >
         <span class="mr-2 inline-flex items-center gap-2"
           ><span class="h-2 w-2 rounded-full bg-emerald-500"></span>{
-            translate(locale, "Home.available")
+            t("Home.available")
           }</span
         >
         <a
@@ -116,20 +111,17 @@ const description = translate(locale, "Home.description")
       <strong class="block font-mono text-2xl text-accent-strong"
         >{years}+</strong
       ><span class="text-sm text-content-muted"
-        >{translate(locale, "Home.proof.experience")}</span
+        >{t("Home.proof.experience")}</span
       >
     </div>
     <div class="border-t border-divider py-5 sm:border-t-0 sm:border-l sm:px-6">
       <strong class="block font-mono text-lg">Backend · Frontend · Cloud</strong
-      ><span class="text-sm text-content-muted"
-        >{translate(locale, "Home.proof.focus")}</span
-      >
+      ><span class="text-sm text-content-muted">{t("Home.proof.focus")}</span>
     </div>
     <div class="border-t border-divider py-5 sm:border-t-0 sm:border-l sm:pl-6">
       <strong class="block font-mono text-sm leading-relaxed sm:text-base"
-        >{translate(locale, "Home.proof.lifecycle")}</strong
-      ><span class="text-sm text-content-muted"
-        >{translate(locale, "Home.proof.delivery")}</span
+        >{t("Home.proof.lifecycle")}</strong
+      ><span class="text-sm text-content-muted">{t("Home.proof.delivery")}</span
       >
     </div>
   </div>
