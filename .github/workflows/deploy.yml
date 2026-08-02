@@ -16,6 +16,7 @@ jobs:
     secrets:
       NEXT_PUBLIC_SPREE_ID: ${{ secrets.NEXT_PUBLIC_SPREE_ID }}
       NEXT_PUBLIC_RECAPTCHA_ID: ${{ secrets.NEXT_PUBLIC_RECAPTCHA_ID }}
+      PUBLIC_UMAMI_WEBSITE_ID: ${{ secrets.PUBLIC_UMAMI_WEBSITE_ID }}
 
   cd:
     needs: ci
@@ -27,3 +28,4 @@ jobs:
     secrets:
       NEXT_PUBLIC_SPREE_ID: ${{ secrets.NEXT_PUBLIC_SPREE_ID }}
       NEXT_PUBLIC_RECAPTCHA_ID: ${{ secrets.NEXT_PUBLIC_RECAPTCHA_ID }}
+      PUBLIC_UMAMI_WEBSITE_ID: ${{ secrets.PUBLIC_UMAMI_WEBSITE_ID }}
