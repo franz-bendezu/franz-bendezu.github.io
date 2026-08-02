@@ -1,0 +1,24 @@
+---
+import ServicePage from "@/views/ServicePage.astro";
+import { getServices } from "@/lib/services";
+import { LOCALES, type Locale } from "@/lib/i18n";
+
+export async function getStaticPaths() {
+  const servicesByLocale = await Promise.all(
+    LOCALES.map(async (locale) =>
+      (await getServices(locale)).map(({ slug: serviceSlug }) => ({
+        params: { locale, serviceSlug },
+      })),
+    ),
+  );
+  return servicesByLocale.flat();
+}
+const locale = Astro.params.locale as Locale;
+const serviceSlug = Astro.params.serviceSlug!;
+---
+
+<ServicePage
+  locale={locale}
+  slug={serviceSlug}
+  prefixEnglish={locale === "en"}
+/>
