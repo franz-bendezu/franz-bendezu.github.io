@@ -5,13 +5,14 @@ import { ProjectExplorerList } from "@/components/project/ExplorerList";
 import { PROJECT_CATEGORIES } from "@/constants/project-categories";
 import { getProjects } from "@/lib/projects";
 import { optimizeProjectBanners } from "@/lib/project-images";
-import { localizedPath, useTranslations, type Locale } from "@/lib/i18n";
+import { useLocalizedPath, useTranslations, type Locale } from "@/lib/i18n";
 import type { ProjectCategoryCodes } from "@/interfaces/project";
 interface Props {
   locale: Locale;
   category?: ProjectCategoryCodes;
 }
 const { locale, category } = Astro.props;
+const localizePath = useLocalizedPath(locale);
 const t = useTranslations(locale);
 const path = category ? `/projects/c/${category}` : "/projects";
 const projects = await getProjects(locale, category);
@@ -27,7 +28,7 @@ const [featured, archive] = await Promise.all([
   optimizeProjectBanners(rawFeatured),
   optimizeProjectBanners(rawArchive),
 ]);
-const projectBasePath = localizedPath(locale, "/projects");
+const projectBasePath = localizePath("/projects");
 const labels = {
   filteredBy: t("Projects.filteredBy"),
   empty: t("Projects.empty"),
@@ -78,8 +79,7 @@ const title = category
             ? "border-accent bg-accent-soft text-accent-strong"
             : "border-divider hover:border-accent",
         ]}
-        href={localizedPath(locale, "/projects")}
-        >{t("Projects.categories.all")}</a
+        href={localizePath("/projects")}>{t("Projects.categories.all")}</a
       >
       {
         PROJECT_CATEGORIES.map((item) => (
@@ -90,7 +90,7 @@ const title = category
                 ? "border-accent bg-accent-soft text-accent-strong"
                 : "border-divider hover:border-accent",
             ]}
-            href={localizedPath(locale, `/projects/c/${item.value}`)}
+            href={localizePath(`/projects/c/${item.value}`)}
           >
             {item.name}
           </a>
@@ -108,7 +108,7 @@ const title = category
               {featured.map((project) => (
                 <ProjectCard
                   project={project}
-                  href={localizedPath(locale, `/projects/${project.code}`)}
+                  href={localizePath(`/projects/${project.code}`)}
                   labels={{
                     viewProject: t("Projects.viewProjectLink", {
                       title: project.title,

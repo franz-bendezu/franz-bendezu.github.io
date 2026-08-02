@@ -1,12 +1,13 @@
 ---
 import NavLink from "./NavLink.astro";
 import { ROUTES_NAVBAR } from "@/constants/navbar";
-import { localizedPath, useTranslations, type Locale } from "@/lib/i18n";
+import { useLocalizedPath, useTranslations, type Locale } from "@/lib/i18n";
 interface Props {
   locale: Locale;
   currentPath: string;
 }
 const { locale, currentPath } = Astro.props;
+const localizePath = useLocalizedPath(locale);
 const t = useTranslations(locale);
 ---
 
@@ -19,7 +20,7 @@ const t = useTranslations(locale);
         : currentPath.startsWith(path);
       return (
         <NavLink
-          href={localizedPath(locale, path)}
+          href={localizePath(path)}
           active={active}
           activeClass="text-accent-strong font-bold"
         >

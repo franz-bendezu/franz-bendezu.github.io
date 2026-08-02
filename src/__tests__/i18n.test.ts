@@ -5,6 +5,7 @@ import {
   localizedPath,
   localeFromUrl,
   stripLocale,
+  useLocalizedPath,
   useTranslations,
 } from "@/lib/i18n";
 
@@ -13,6 +14,9 @@ describe("i18n routing", () => {
     expect(canonicalPath("en", "/projects")).toBe("/en/projects");
     expect(canonicalPath("es", "/projects")).toBe("/es/projects");
     expect(localizedPath("en", "/projects")).toBe("/en/projects");
+    const localizePath = useLocalizedPath("es");
+    expect(localizePath("/projects")).toBe("/es/projects");
+    expect(useLocalizedPath("es")).toBe(localizePath);
   });
 
   it("builds language alternatives", () => {

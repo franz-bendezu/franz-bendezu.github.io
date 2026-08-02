@@ -2,12 +2,13 @@
 import ProjectCard from "@/components/project/ProjectCard";
 import ButtonLink from "@/components/ui/ButtonLink.astro";
 import type { IProject } from "@/interfaces/project";
-import { localizedPath, useTranslations, type Locale } from "@/lib/i18n";
+import { useLocalizedPath, useTranslations, type Locale } from "@/lib/i18n";
 interface Props {
   projects: IProject[];
   locale: Locale;
 }
 const { projects, locale } = Astro.props;
+const localizePath = useLocalizedPath(locale);
 const t = useTranslations(locale);
 ---
 
@@ -30,7 +31,7 @@ const t = useTranslations(locale);
         </p>
       </div>
       <ButtonLink
-        href={localizedPath(locale, "/projects")}
+        href={localizePath("/projects")}
         variant="secondary"
         class="shrink-0">{t("Home.lastProjects.viewAll")}</ButtonLink
       >
@@ -40,7 +41,7 @@ const t = useTranslations(locale);
         projects.map((project) => (
           <ProjectCard
             project={project}
-            href={localizedPath(locale, `/projects/${project.code}`)}
+            href={localizePath(`/projects/${project.code}`)}
             labels={{
               viewProject: t("Projects.viewProjectLink", {
                 title: project.title,

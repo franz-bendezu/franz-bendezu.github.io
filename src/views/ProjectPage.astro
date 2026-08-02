@@ -10,13 +10,14 @@ import {
   optimizeProjectBanner,
   optimizeProjectGallery,
 } from "@/lib/project-images";
-import { localizedPath, useTranslations, type Locale } from "@/lib/i18n";
+import { useLocalizedPath, useTranslations, type Locale } from "@/lib/i18n";
 import { breadcrumbSchema, SITE_URL } from "@/lib/seo";
 interface Props {
   locale: Locale;
   code: string;
 }
 const { locale, code } = Astro.props;
+const localizePath = useLocalizedPath(locale);
 const t = useTranslations(locale);
 const localizedProjects = (await getProjects(locale)).sort(
   (a, b) => a.position - b.position,
@@ -37,8 +38,8 @@ const next =
 const period = [project.start, project.end].filter(Boolean).join(" — ");
 const path = `/projects/${code}`;
 const closeLabel = t("Project.closeGallery");
-const canonicalUrl = `${SITE_URL}${localizedPath(locale, path)}`;
-const projectsUrl = `${SITE_URL}${localizedPath(locale, "/projects")}`;
+const canonicalUrl = `${SITE_URL}${localizePath(path)}`;
+const projectsUrl = `${SITE_URL}${localizePath("/projects")}`;
 const structuredData = [
   {
     "@context": "https://schema.org",
@@ -60,7 +61,7 @@ const structuredData = [
   breadcrumbSchema([
     {
       name: t("Navigation.index"),
-      url: `${SITE_URL}${localizedPath(locale, "/")}`,
+      url: `${SITE_URL}${localizePath("/")}`,
     },
     { name: t("Projects.title"), url: projectsUrl },
     { name: project.title, url: canonicalUrl },
@@ -81,7 +82,7 @@ const structuredData = [
       class="mx-auto w-full max-w-[75rem] px-5 sm:px-8 py-12 sm:py-16 lg:py-20"
     >
       <a
-        href={localizedPath(locale, "/projects")}
+        href={localizePath("/projects")}
         class="inline-flex items-center gap-2 text-sm font-bold text-accent-strong"
         >← {t("Projects.title")}</a
       >
@@ -321,7 +322,7 @@ const structuredData = [
       {
         previous ? (
           <a
-            href={localizedPath(locale, `/projects/${previous.code}`)}
+            href={localizePath(`/projects/${previous.code}`)}
             class:list={[cardStyles.base, "p-5 hover:border-accent"]}
           >
             <>
@@ -338,7 +339,7 @@ const structuredData = [
       {
         next && (
           <a
-            href={localizedPath(locale, `/projects/${next.code}`)}
+            href={localizePath(`/projects/${next.code}`)}
             class:list={[cardStyles.base, "p-5 text-right hover:border-accent"]}
           >
             <>
@@ -353,7 +354,7 @@ const structuredData = [
     </nav>
     <section class="mx-auto w-full max-w-[75rem] px-5 sm:px-8 pb-16">
       <a
-        href={localizedPath(locale, "/contact")}
+        href={localizePath("/contact")}
         class="flex rounded-2xl bg-content p-8 text-2xl font-bold text-surface hover:-translate-y-1 sm:items-center sm:justify-between dark:bg-surface-raised dark:text-content"
         ><span>{t("Project.cta")}</span><span aria-hidden="true">↗</span></a
       >

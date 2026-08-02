@@ -4,7 +4,7 @@ import Certifications from "@/components/about/Certifications.astro";
 import EducationCard from "@/components/experience/EducationCard.astro";
 import WorkCard from "@/components/experience/WorkCard.astro";
 import cardStyles from "@/components/ui/Card.module.css";
-import { localizedPath, useTranslations, type Locale } from "@/lib/i18n";
+import { useLocalizedPath, useTranslations, type Locale } from "@/lib/i18n";
 import {
   getEducation,
   getExperienceYears,
@@ -16,6 +16,7 @@ interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
+const localizePath = useLocalizedPath(locale);
 const t = useTranslations(locale);
 const [work, education, profile] = await Promise.all([
   getWorkExperiences(locale),
@@ -26,7 +27,7 @@ const years = getExperienceYears();
 const recent = work.slice(0, 3);
 const earlier = work.slice(3);
 const person = personSchema(profile, locale);
-const aboutUrl = `${SITE_URL}${localizedPath(locale, "/about")}`;
+const aboutUrl = `${SITE_URL}${localizePath("/about")}`;
 const structuredData = [
   {
     "@context": "https://schema.org",

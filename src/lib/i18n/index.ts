@@ -12,5 +12,6 @@ export {
   localizedPath,
   normalizePath,
   stripLocale,
+  useLocalizedPath,
 } from "./routing";
 export { useTranslations, type TranslationKey } from "./translations";

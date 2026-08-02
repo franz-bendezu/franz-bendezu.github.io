@@ -12,6 +12,19 @@ export function localizedPath(locale: Locale, path = "/"): string {
   return normalizePath(getRelativeLocaleUrl(locale, route));
 }
 
+type LocalizedPathBuilder = (path?: string) => string;
+
+const localizedPathBuilders = Object.fromEntries(
+  LOCALES.map((locale) => [
+    locale,
+    (path = "/") => localizedPath(locale, path),
+  ]),
+) as Record<Locale, LocalizedPathBuilder>;
+
+export function useLocalizedPath(locale: Locale): LocalizedPathBuilder {
+  return localizedPathBuilders[locale];
+}
+
 export function canonicalPath(locale: Locale, path = "/"): string {
   return localizedPath(locale, path);
 }
