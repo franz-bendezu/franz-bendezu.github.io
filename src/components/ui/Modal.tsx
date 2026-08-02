@@ -25,7 +25,7 @@ export const Modal: FC<{
           <div className="flex min-h-full items-center justify-center p-4">
             <DialogPanel
               transition
-              className="w-full max-w-5xl rounded-xl bg-white/50 p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0 dark:bg-black/50"
+              className="w-full max-w-5xl rounded-xl bg-white/50 p-6 backdrop-blur-2xl duration-300 ease-out data-closed:transform-[scale(95%)] data-closed:opacity-0 dark:bg-black/50"
             >
               <DialogTitle
                 as="h3"
