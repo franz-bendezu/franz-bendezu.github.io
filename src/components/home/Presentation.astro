@@ -4,7 +4,12 @@ import ButtonLink from "@/components/ui/ButtonLink.astro";
 import GitHubIcon from "@/components/icon/GitHub.astro";
 import LinkedInIcon from "@/components/icon/LinkedIn.astro";
 import PresentationDownload from "./PresentationDownload.astro";
-import { localizedPath, translate, type Locale } from "@/lib/i18n";
+import {
+  localizedPath,
+  translate,
+  useTranslations,
+  type Locale,
+} from "@/lib/i18n";
 import { getExperienceYears } from "@/lib/profile-content";
 import { Image } from "astro:assets";
 import profileImage from "@/assets/images/profile.webp";
@@ -12,6 +17,7 @@ interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
+const t = useTranslations(locale);
 const years = getExperienceYears();
 const profession = translate(locale, "Home.profession")
   .replaceAll("<highlight>", '<span class="text-accent-strong">')
@@ -93,9 +99,7 @@ const description = translate(locale, "Home.description")
         />
         <Image
           src={profileImage}
-          alt={locale === "es"
-            ? "Retrato de Franz Bendezu"
-            : "Portrait of Franz Bendezu"}
+          alt={t("Home.profileImageAlt")}
           widths={[160, 256, 352]}
           sizes="(min-width: 1024px) 183px, (min-width: 640px) 133px, 108px"
           format="webp"

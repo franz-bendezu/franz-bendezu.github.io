@@ -2,7 +2,12 @@
 import { Bars4Icon } from "@heroicons/react/20/solid";
 import NavLink from "./NavLink.astro";
 import { ROUTES_NAVBAR } from "@/constants/navbar";
-import { localizedPath, translate, type Locale } from "@/lib/i18n";
+import {
+  localizedPath,
+  translate,
+  useTranslations,
+  type Locale,
+} from "@/lib/i18n";
 import cardStyles from "@/components/ui/Card.module.css";
 
 interface Props {
@@ -11,16 +16,15 @@ interface Props {
 }
 
 const { locale, currentPath } = Astro.props;
+const t = useTranslations(locale);
 ---
 
 <details class="group relative md:hidden">
   <summary
     class="inline-flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-md text-content marker:hidden hover:bg-surface-muted"
-    aria-label={locale === "es" ? "Abrir menú principal" : "Open main menu"}
+    aria-label={t("Navigation.openMenu")}
   >
-    <span class="sr-only"
-      >{locale === "es" ? "Abrir menú principal" : "Open main menu"}</span
-    >
+    <span class="sr-only">{t("Navigation.openMenu")}</span>
     <Bars4Icon className="h-6 w-6" aria-hidden="true" />
   </summary>
   <div

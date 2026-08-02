@@ -1,7 +1,7 @@
 ---
 import { CodeBracketSquareIcon } from "@heroicons/react/20/solid";
 import NavbarNavigation from "./NavbarNavigation.astro";
-import { localizedPath, stripLocale, type Locale } from "@/lib/i18n";
+import { localizedPath, LOCALES, stripLocale, type Locale } from "@/lib/i18n";
 interface Props {
   locale: Locale;
   path: string;
@@ -9,7 +9,7 @@ interface Props {
 }
 const { locale, path, pathname } = Astro.props;
 const currentPath = stripLocale(pathname);
-const otherLocale: Locale = locale === "en" ? "es" : "en";
+const otherLocale = LOCALES.find((item) => item !== locale) ?? locale;
 const languagePath = localizedPath(otherLocale, path);
 const homePath = localizedPath(locale, "/");
 ---

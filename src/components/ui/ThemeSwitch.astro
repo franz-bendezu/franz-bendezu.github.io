@@ -1,17 +1,18 @@
 ---
 import { MoonIcon, SunIcon } from "@heroicons/react/20/solid";
-import type { Locale } from "@/lib/i18n";
+import { useTranslations, type Locale } from "@/lib/i18n";
 
 interface Props {
   locale: Locale;
 }
 
 const { locale } = Astro.props;
+const t = useTranslations(locale);
 ---
 
 <button
   data-theme-toggle
-  aria-label={locale === "es" ? "Cambiar tema" : "Toggle color theme"}
+  aria-label={t("Accessibility.toggleTheme")}
   aria-pressed="false"
   type="button"
   class="flex h-10 w-10 items-center justify-center rounded-md border border-transparent p-2 hover:border-divider hover:text-accent-strong"

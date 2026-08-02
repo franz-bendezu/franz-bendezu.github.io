@@ -7,6 +7,7 @@ import {
   alternatePaths,
   canonicalPath,
   translate,
+  useTranslations,
   type Locale,
 } from "@/lib/i18n";
 
@@ -29,6 +30,7 @@ const {
   robots,
   structuredData,
 } = Astro.props;
+const t = useTranslations(locale);
 const defaultTitle = translate(locale, "Metadata.title.default");
 const template = translate(locale, "Metadata.title.template");
 const pageTitle = title
@@ -74,7 +76,7 @@ const umamiEnabled = import.meta.env.PROD && umamiWebsiteId;
     />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Franz Bendezu" />
-    <meta property="og:locale" content={locale === "es" ? "es_PE" : "en_US"} />
+    <meta property="og:locale" content={t("Metadata.ogLocale")} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />

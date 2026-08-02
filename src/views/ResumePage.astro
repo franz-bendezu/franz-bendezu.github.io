@@ -1,6 +1,6 @@
 ---
 import ResumeLayout from "@/layouts/ResumeLayout.astro";
-import { localizedPath, type Locale } from "@/lib/i18n";
+import { localizedPath, useTranslations, type Locale } from "@/lib/i18n";
 import { getResume } from "@/lib/profile-content";
 
 interface Props {
@@ -8,6 +8,7 @@ interface Props {
 }
 
 const { locale } = Astro.props;
+const t = useTranslations(locale);
 const resume = await getResume(locale);
 const { profile, labels } = resume;
 const linkText = (url: string) =>
@@ -101,9 +102,7 @@ const linkText = (url: string) =>
               </h3>
               <p>{project.shortDescription}</p>
               <p class="keywords">
-                <strong>
-                  {locale === "es" ? "Tecnologías" : "Technologies"}:
-                </strong>
+                <strong>{t("Resume.technologies")}:</strong>
                 {` ${project.tags.slice(0, 7).join(", ")}`}
               </p>
             </article>

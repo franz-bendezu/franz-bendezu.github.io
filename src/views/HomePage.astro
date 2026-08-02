@@ -7,13 +7,19 @@ import Services from "@/components/home/Services.astro";
 import ButtonLink from "@/components/ui/ButtonLink.astro";
 import { getProjects } from "@/lib/projects";
 import { optimizeProjectBanners } from "@/lib/project-images";
-import { localizedPath, translate, type Locale } from "@/lib/i18n";
+import {
+  localizedPath,
+  translate,
+  useTranslations,
+  type Locale,
+} from "@/lib/i18n";
 import { getProfile } from "@/lib/profile-content";
 import { personSchema, SITE_URL } from "@/lib/seo";
 interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
+const t = useTranslations(locale);
 const projects = await optimizeProjectBanners(
   (await getProjects(locale))
     .filter((project) => project.featured)
@@ -37,10 +43,7 @@ const structuredData = [
     "@type": "ProfilePage",
     "@id": `${canonicalUrl}#profile-page`,
     url: canonicalUrl,
-    name:
-      locale === "es"
-        ? "Franz Bendezu — Desarrollador de software e ingeniero de sistemas"
-        : "Franz Bendezu — Software developer and systems engineer",
+    name: t("Home.profilePageName"),
     description,
     inLanguage: locale,
     mainEntity: person,
@@ -52,9 +55,7 @@ const structuredData = [
 <BaseLayout
   locale={locale}
   path="/"
-  title={locale === "es"
-    ? "Desarrollador de software e ingeniero de sistemas"
-    : "Software Developer and Systems Engineer"}
+  title={t("Home.metaTitle")}
   description={description}
   structuredData={structuredData}
 >
