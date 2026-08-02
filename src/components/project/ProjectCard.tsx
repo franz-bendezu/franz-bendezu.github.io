@@ -96,6 +96,7 @@ export default function ProjectCard({
     >
       <a
         href={href}
+        data-astro-prefetch
         aria-label={label}
         title={featured ? undefined : label}
         className={featured ? "flex h-full flex-col" : "block"}

@@ -130,7 +130,7 @@ const title = category
         {category ? title : translate(locale, "Projects.archive")}
       </h2>
       <ProjectExplorerList
-        client:load
+        client:idle
         projects={archive}
         projectBasePath={projectBasePath}
         labels={labels}

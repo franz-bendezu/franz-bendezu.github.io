@@ -117,6 +117,12 @@ test("publishes canonical URLs in robots and sitemap", async ({ request }) => {
   expect(contents).toContain(
     "https://franzbendezu.me/es/services/mvp-development",
   );
+  expect(contents).toContain(
+    '<xhtml:link rel="alternate" hreflang="en" href="https://franzbendezu.me/en/services/mvp-development/"/>',
+  );
+  expect(contents).toContain(
+    '<xhtml:link rel="alternate" hreflang="es" href="https://franzbendezu.me/es/services/mvp-development/"/>',
+  );
   expect(contents).not.toContain("https://franzbendezu.me/services/");
   expect(contents).not.toContain("/projects/c/");
   expect(contents).not.toContain("/cv/");

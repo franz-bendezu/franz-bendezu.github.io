@@ -6,6 +6,9 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://franzbendezu.me",
   output: "static",
+  prefetch: {
+    defaultStrategy: "hover",
+  },
   i18n: {
     locales: ["en", "es"],
     defaultLocale: "en",
@@ -17,6 +20,13 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
+      i18n: {
+        defaultLocale: "en",
+        locales: {
+          en: "en",
+          es: "es",
+        },
+      },
       filter: (page) => {
         const path = new URL(page).pathname;
         const localized =
