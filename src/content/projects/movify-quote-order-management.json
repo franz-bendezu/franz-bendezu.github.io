@@ -95,11 +95,11 @@
       "locales": {
         "en": {
           "alt": "Customer information in quotation",
-          "description": "Quotation screen showing customer information fields including name, email, phone, and personal details for a moving service with 2 spaces and using a Taxi Cargo 1 vehicle."
+          "description": "Quotation screen showing customer information fields including name, email, and personal details for a moving service with 2 spaces and using a Taxi Cargo 1 vehicle."
         },
         "es": {
           "alt": "Customer information in quotation",
-          "description": "Quotation screen showing customer information fields including name, email, phone, and personal details for a moving service with 2 spaces and using a Taxi Cargo 1 vehicle."
+          "description": "Quotation screen showing customer information fields including name, email, and personal details for a moving service with 2 spaces and using a Taxi Cargo 1 vehicle."
         }
       }
     },

@@ -23,7 +23,6 @@ const linkText = (url: string) =>
       <p class="headline">{profile.headline}</p>
       <address class="contact">
         <span>{profile.location}</span>
-        {profile.phone && <a href={`tel:${profile.phone}`}>{profile.phone}</a>}
         <a href={`mailto:${profile.email}`}>{profile.email}</a>
         <a href={profile.website}>{linkText(profile.website)}</a>
         {

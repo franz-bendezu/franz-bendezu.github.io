@@ -73,6 +73,7 @@ export const GET = (async ({ params }) => {
   return new Response(pdf, {
     headers: {
       "Content-Type": "application/pdf",
+      "X-Robots-Tag": "noindex, nofollow, noarchive",
       "Content-Disposition": `inline; filename="Franz-Bendezu-CV-${locale.toUpperCase()}.pdf"`,
     },
   });

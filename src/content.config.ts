@@ -207,7 +207,6 @@ const profiles = defineCollection({
     z
       .object({
         email: z.email(),
-        phone: z.string().min(1).optional(),
         website: z.url(),
         portrait: image(),
         socialLinks: z.array(
