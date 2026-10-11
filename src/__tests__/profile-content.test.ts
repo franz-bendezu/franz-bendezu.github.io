@@ -84,6 +84,9 @@ describe("shared profile content", () => {
     expect(englishResume.certifications[0].name).toBe(
       "AWS Certified Cloud Practitioner",
     );
+    expect(englishResume.certifications[1].name).toBe(
+      "Professional DevOps Course",
+    );
     expect(englishResume.certifications.at(-1)?.name).toBe(
       "Professional Software Architecture Course",
     );

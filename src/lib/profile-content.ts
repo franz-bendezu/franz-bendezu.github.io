@@ -23,6 +23,10 @@ function byPosition<T extends { position: number }>(a: T, b: T) {
   return a.position - b.position;
 }
 
+function byIssuedAtDescending<T extends { issuedAt: string }>(a: T, b: T) {
+  return b.issuedAt.localeCompare(a.issuedAt);
+}
+
 function requireEntry<T>(entry: T | undefined, label: string): T {
   if (!entry) throw new Error(`Missing referenced ${label} entry`);
   return entry;
@@ -218,12 +222,14 @@ export async function getResume(locale: Locale, id = "default") {
     education: educationEntries.map((entry) =>
       localizeEducation(requireEntry(entry, "resume education"), locale),
     ),
-    certifications: certificationEntries.map((entry) =>
-      localizeCertification(
-        requireEntry(entry, "resume certification"),
-        locale,
-      ),
-    ),
+    certifications: certificationEntries
+      .map((entry) =>
+        localizeCertification(
+          requireEntry(entry, "resume certification"),
+          locale,
+        ),
+      )
+      .sort(byIssuedAtDescending),
     skills: skillEntries.map((entry) =>
       localizeSkill(requireEntry(entry, "resume skill"), locale),
     ),

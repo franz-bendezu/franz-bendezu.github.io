@@ -27,7 +27,7 @@ const linkText = (url: string) =>
         <a href={profile.website}>{linkText(profile.website)}</a>
         {
           profile.socialLinks.map((link) => (
-            <a href={link.url}>{linkText(link.url)}</a>
+            <a href={link.url}>{link.label}</a>
           ))
         }
       </address>
