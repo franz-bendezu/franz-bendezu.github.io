@@ -1,6 +1,6 @@
 {
   "professional-devops": {
-    "position": 1,
+    "position": 2,
     "issuedAt": "2023-11",
     "url": "https://platzi.com/p/franz.bendezu/curso/1431-devops/diploma/detalle/",
     "locales": {
@@ -13,7 +13,7 @@
     }
   },
   "professional-nextjs": {
-    "position": 2,
+    "position": 3,
     "issuedAt": "2023-11",
     "url": "https://platzi.com/p/franz.bendezu/curso/2707-profesional-nextjs/diploma/detalle/",
     "locales": {
@@ -26,7 +26,7 @@
     }
   },
   "azure-fundamentals": {
-    "position": 3,
+    "position": 4,
     "issuedAt": "2023-05",
     "url": "https://credly.com/badges/108c4e3d-6a95-432c-8f82-53ff7dea4bb3",
     "locales": {
@@ -39,7 +39,7 @@
     }
   },
   "aws-cloud-practitioner": {
-    "position": 4,
+    "position": 1,
     "issuedAt": "2026-09",
     "url": "https://www.credly.com/badges/35a180d5-6fb2-47b7-a373-21d91c9cfc27",
     "locales": {

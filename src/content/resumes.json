@@ -12,10 +12,10 @@
     ],
     "education": ["hanyang-cyber-university", "education-1", "icpna"],
     "certifications": [
+      "aws-cloud-practitioner",
       "professional-devops",
       "professional-nextjs",
       "azure-fundamentals",
-      "aws-cloud-practitioner",
       "cyberops-associate",
       "software-architecture"
     ],

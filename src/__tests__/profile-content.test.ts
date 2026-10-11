@@ -47,7 +47,7 @@ describe("shared profile content", () => {
       "DigitalOcean",
     ]);
     expect(englishCertifications).toHaveLength(11);
-    expect(englishCertifications[0].date).toBe("November 2023");
+    expect(englishCertifications[0].date).toBe("September 2026");
   });
 
   it("resolves the CV composition through typed collection references", async () => {
@@ -82,7 +82,7 @@ describe("shared profile content", () => {
     );
     expect(englishResume.certifications).toHaveLength(6);
     expect(englishResume.certifications[0].name).toBe(
-      "Professional DevOps Course",
+      "AWS Certified Cloud Practitioner",
     );
     expect(englishResume.certifications.at(-1)?.name).toBe(
       "Professional Software Architecture Course",
