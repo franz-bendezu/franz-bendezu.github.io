@@ -193,37 +193,32 @@
       "gitlab-ci"
     ],
     "start": "2019-07",
-    "end": "2024-01",
     "locales": {
       "en": {
-        "company": "Freelancer",
+        "company": "Independent Projects",
         "location": "Remote",
-        "role": "Software Developer",
+        "role": "Freelance Backend & Full Stack Developer",
         "startLabel": "July 2019",
-        "endLabel": "January 2024",
+        "endLabel": "Present",
         "tasks": [
-          "Developed and maintained client projects, specializing in frontend and backend technologies",
-          "Worked with technology stacks such as Java, Kotlin, JavaScript, TypeScript, Python, Vue.js, React, Angular, Spring Boot, and Node.js",
-          "Implemented REST APIs, GraphQL, and OAuth2 authentication protocols",
-          "Leveraged AWS services like S3, EC2, and Lambda for scalable solutions",
-          "Configured CI/CD pipelines using Docker, GitHub Actions, and GitLab",
-          "Optimized development processes with agile methodologies and SCRUM practices",
+          "Managed the software development lifecycle for independent projects, from requirements analysis and architecture design through development, deployment, and maintenance, using agile practices",
+          "Designed and implemented REST APIs and GraphQL services using Java, Spring Boot, Node.js, and TypeScript",
+          "Used AWS services including S3, EC2, and Lambda to support scalable solutions",
+          "Configured CI/CD pipelines with Docker, GitHub Actions, and GitLab CI/CD",
           "Created reusable internal libraries to simplify development across multiple projects"
         ]
       },
       "es": {
-        "company": "Freelancer",
+        "company": "Proyectos Independientes",
         "location": "Remoto",
-        "role": "Desarrollador de Software",
+        "role": "Desarrollador Backend y Full Stack Freelance",
         "startLabel": "Julio 2019",
-        "endLabel": "Enero 2024",
+        "endLabel": "Presente",
         "tasks": [
-          "Desarrollé y mantuve proyectos de clientes, especializándome en tecnologías frontend y backend",
-          "Trabajé con stacks tecnológicos como Java, Kotlin, JavaScript, TypeScript, Python, Vue.js, React, Angular, Spring Boot y Node.js",
-          "Implementé APIs REST, GraphQL y protocolos de autenticación OAuth2",
-          "Aproveché servicios de AWS como S3, EC2 y Lambda para soluciones escalables",
-          "Configuré pipelines CI/CD utilizando Docker, GitHub Actions y GitLab",
-          "Optimicé los procesos de desarrollo con metodologías ágiles y prácticas SCRUM",
+          "Gestioné el ciclo de vida del desarrollo de software en proyectos independientes, desde el análisis de requisitos y diseño de arquitectura hasta el desarrollo, despliegue y mantenimiento, utilizando prácticas ágiles",
+          "Diseñé e implementé APIs REST y servicios GraphQL utilizando Java, Spring Boot, Node.js y TypeScript",
+          "Utilicé servicios de AWS, incluidos S3, EC2 y Lambda, para implementar soluciones escalables",
+          "Configuré pipelines de CI/CD con Docker, GitHub Actions y GitLab CI/CD",
           "Creé bibliotecas internas reutilizables para simplificar el desarrollo en múltiples proyectos"
         ]
       }
