@@ -79,7 +79,7 @@
     "en": {
       "code": "movify-aws-migration",
       "title": "Movify.pe - Infrastructure Migration to AWS",
-      "shortDescription": "Infrastructure migration to AWS to improve deployment and availability.",
+      "shortDescription": "Led the migration to AWS, automated CI/CD workflows, and centralized operational media storage in Amazon S3.",
       "role": "Migration lead · Cloud delivery",
       "description": "From July to November 2023, I led the infrastructure migration to AWS to enhance deployment, availability, and service reliability. I established CI/CD workflows for deployment on AWS services, automating pipelines. I integrated Amazon S3 for storing photos and videos related to moving services.",
       "projectGoals": [
@@ -121,7 +121,7 @@
     "es": {
       "code": "movify-aws-migration",
       "title": "Movify.pe - Migración de Infraestructura a AWS",
-      "shortDescription": "Migración de infraestructura a AWS para mejorar el despliegue y la disponibilidad.",
+      "shortDescription": "Lideré la migración a AWS, automaticé los flujos de CI/CD y centralicé el almacenamiento de contenido operativo en Amazon S3.",
       "role": "Líder de migración · Entrega cloud",
       "description": "De julio a noviembre de 2023, lideré la migración de la infraestructura a AWS para mejorar el despliegue, la disponibilidad y la confiabilidad de los servicios clave. Establecí flujos de CI/CD para desplegar en servicios de AWS y automaticé los pipelines. Integré Amazon S3 para almacenar fotos y videos relacionados con los servicios de mudanza.",
       "projectGoals": [

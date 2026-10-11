@@ -549,6 +549,12 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
     categoryCodes: ["testing"],
   },
   {
+    code: "playwright",
+    name: "Playwright",
+    color: "#2EAD33",
+    categoryCodes: ["testing"],
+  },
+  {
     code: "junit",
     name: "JUnit",
     color: "#25A162",
@@ -699,7 +705,7 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
   },
   {
     code: "mariadb",
-    name: "Mariadb",
+    name: "MariaDB",
     logo: "/assets/icons/mariadb.svg",
     color: "#3858e9",
     categoryCodes: ["database"],
