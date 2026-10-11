@@ -198,6 +198,8 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
   {
     code: "aws-s3",
     name: "Amazon S3",
+    parentCode: "aws",
+    groupName: "S3",
     logo: "/assets/icons/aws.svg",
     color: "#FFD600",
     categoryCodes: ["cloud"],
@@ -205,6 +207,8 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
   {
     code: "aws-ec2",
     name: "Amazon EC2",
+    parentCode: "aws",
+    groupName: "EC2",
     logo: "/assets/icons/aws.svg",
     color: "#FFD600",
     categoryCodes: ["cloud"],
@@ -212,6 +216,8 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
   {
     code: "amazon-rds",
     name: "Amazon RDS",
+    parentCode: "aws",
+    groupName: "RDS",
     logo: "/assets/icons/aws.svg",
     color: "#FFD600",
     categoryCodes: ["cloud"],
@@ -219,6 +225,8 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
   {
     code: "aws-amplify",
     name: "Amazon Amplify",
+    parentCode: "aws",
+    groupName: "Amplify",
     logo: "/assets/icons/aws.svg",
     color: "#FFD600",
     categoryCodes: ["cloud"],
@@ -226,6 +234,8 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
   {
     code: "aws-lambda",
     name: "AWS Lambda",
+    parentCode: "aws",
+    groupName: "Lambda",
     logo: "/assets/icons/aws.svg",
     color: "#FFD600",
     categoryCodes: ["cloud"],
@@ -246,7 +256,7 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
   },
   {
     code: "nodejs",
-    name: "Node",
+    name: "Node.js",
     logo: "/assets/icons/nodejs.svg",
     color: "#3858e9",
     categoryCodes: ["runtime"],
@@ -274,6 +284,8 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
   {
     code: "aws-api-gateway",
     name: "API Gateway",
+    parentCode: "aws",
+    groupName: "API Gateway",
     logo: "/assets/icons/aws.svg",
     color: "#FF4F8B",
     categoryCodes: ["cloud"],
@@ -281,6 +293,8 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
   {
     code: "aws-ssm",
     name: "AWS Systems Manager",
+    parentCode: "aws",
+    groupName: "Systems Manager",
     logo: "/assets/icons/aws.svg",
     color: "#DD344C",
     categoryCodes: ["cloud"],
@@ -288,6 +302,8 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
   {
     code: "aws-step-functions",
     name: "AWS Step Functions",
+    parentCode: "aws",
+    groupName: "Step Functions",
     logo: "/assets/icons/aws.svg",
     color: "#FF4F8B",
     categoryCodes: ["cloud"],
@@ -295,6 +311,8 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
   {
     code: "aws-eks",
     name: "Amazon EKS",
+    parentCode: "aws",
+    groupName: "EKS",
     logo: "/assets/icons/aws.svg",
     color: "#FF9900",
     categoryCodes: ["cloud"],
@@ -403,6 +421,24 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
     categoryCodes: ["backend-framework"],
   },
   {
+    code: "rest-api",
+    name: "REST APIs",
+    color: "#007E9B",
+    categoryCodes: ["web-api"],
+  },
+  {
+    code: "microservices",
+    name: "Microservices",
+    color: "#007E9B",
+    categoryCodes: ["backend-framework"],
+  },
+  {
+    code: "hexagonal-architecture",
+    name: "Hexagonal Architecture",
+    color: "#007E9B",
+    categoryCodes: ["backend-framework"],
+  },
+  {
     code: "express",
     name: "Express",
     color: "#000000",
@@ -448,6 +484,8 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
   {
     code: "cloudfront",
     name: "Amazon CloudFront",
+    parentCode: "aws",
+    groupName: "CloudFront",
     logo: "/assets/icons/aws.svg",
     color: "#8C4FFF",
     categoryCodes: ["cloud"],
@@ -455,6 +493,8 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
   {
     code: "route53",
     name: "Amazon Route 53",
+    parentCode: "aws",
+    groupName: "Route 53",
     logo: "/assets/icons/aws.svg",
     color: "#8C4FFF",
     categoryCodes: ["cloud"],
@@ -672,3 +712,26 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
     categoryCodes: ["database"],
   },
 ];
+
+const technologyByCode = new Map(
+  PROJECT_TECHNOLOGIES.map((technology) => [technology.code, technology]),
+);
+
+for (const technology of PROJECT_TECHNOLOGIES) {
+  if (!technology.parentCode) continue;
+  if (!technologyByCode.has(technology.parentCode)) {
+    throw new Error(
+      `Technology ${technology.code} references unknown parent ${technology.parentCode}`,
+    );
+  }
+
+  const visited = new Set<string>([technology.code]);
+  let currentCode: string | undefined = technology.parentCode;
+  while (currentCode) {
+    if (visited.has(currentCode)) {
+      throw new Error(`Technology hierarchy contains a cycle at ${currentCode}`);
+    }
+    visited.add(currentCode);
+    currentCode = technologyByCode.get(currentCode)?.parentCode;
+  }
+}

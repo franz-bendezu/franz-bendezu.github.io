@@ -38,6 +38,8 @@
       "kafka",
       "redis",
       "eda",
+      "microservices",
+      "hexagonal-architecture",
       "postgresql"
     ],
     "start": "2025-04",
@@ -82,6 +84,7 @@
       "typescript",
       "nodejs",
       "serverless-framework",
+      "microservices",
       "postgresql",
       "dynamodb",
       "aws-lambda",
@@ -184,6 +187,7 @@
       "spring-boot",
       "nodejs",
       "graphql",
+      "rest-api",
       "oauth2",
       "aws-s3",
       "aws-ec2",
@@ -201,11 +205,9 @@
         "startLabel": "July 2019",
         "endLabel": "Present",
         "tasks": [
-          "Managed the software development lifecycle for independent projects, from requirements analysis and architecture design through development, deployment, and maintenance, using agile practices",
-          "Designed and implemented REST APIs and GraphQL services using Java, Spring Boot, Node.js, and TypeScript",
-          "Used AWS services including S3, EC2, and Lambda to support scalable solutions",
-          "Configured CI/CD pipelines with Docker, GitHub Actions, and GitLab CI/CD",
-          "Created reusable internal libraries to simplify development across multiple projects"
+          "Managed independent projects in parallel with corporate roles, covering requirements, architecture, development, deployment, and maintenance with agile practices",
+          "Designed and implemented REST APIs and GraphQL services, and created reusable libraries for multiple projects",
+          "Delivered scalable cloud solutions and automated deployment workflows"
         ]
       },
       "es": {
@@ -215,11 +217,9 @@
         "startLabel": "Julio 2019",
         "endLabel": "Presente",
         "tasks": [
-          "Gestioné el ciclo de vida del desarrollo de software en proyectos independientes, desde el análisis de requisitos y diseño de arquitectura hasta el desarrollo, despliegue y mantenimiento, utilizando prácticas ágiles",
-          "Diseñé e implementé APIs REST y servicios GraphQL utilizando Java, Spring Boot, Node.js y TypeScript",
-          "Utilicé servicios de AWS, incluidos S3, EC2 y Lambda, para implementar soluciones escalables",
-          "Configuré pipelines de CI/CD con Docker, GitHub Actions y GitLab CI/CD",
-          "Creé bibliotecas internas reutilizables para simplificar el desarrollo en múltiples proyectos"
+          "Gestioné proyectos independientes en paralelo con empleos corporativos, desde requisitos y arquitectura hasta desarrollo, despliegue y mantenimiento con prácticas ágiles",
+          "Diseñé e implementé APIs REST y servicios GraphQL, y creé bibliotecas reutilizables para múltiples proyectos",
+          "Entregué soluciones cloud escalables y flujos automatizados de despliegue"
         ]
       }
     }
@@ -238,7 +238,7 @@
         "endLabel": "October 2022",
         "tasks": [
           "Performed frontend development using Angular and managed repositories with Azure DevOps",
-          "Developed administrative panels for internal commission management at Banco Ripley",
+          "Developed administrative panels for internal commission management for Banco Ripley as a client project",
           "Contributed to the development of administrative panels for internal parameter management at Banco Falabella",
           "Implemented a supplier portal for The Leaf Company (ACS) and an activity planning application",
           "Collaborated closely with teams in Peru and Chile under SCRUM methodology"
@@ -252,7 +252,7 @@
         "endLabel": "Octubre 2022",
         "tasks": [
           "Realicé desarrollo frontend utilizando Angular y gestioné repositorios con Azure DevOps",
-          "Desarrollé paneles administrativos para la gestión interna de comisiones en Banco Ripley",
+          "Desarrollé paneles administrativos para la gestión interna de comisiones de Banco Ripley como proyecto de cliente",
           "Contribuí al desarrollo de paneles administrativos para la gestión interna de parámetros en Banco Falabella",
           "Implementé un portal de proveedores para The Leaf Company (ACS) y una aplicación de planificación de actividades",
           "Colaboré estrechamente con equipos en Perú y Chile bajo metodología SCRUM"

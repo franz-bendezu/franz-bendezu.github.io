@@ -10,6 +10,8 @@ export interface IProjectTechonologyCategory {
 export interface IBaseProjectTechnology {
   code: string;
   name: string;
+  parentCode?: string;
+  groupName?: string;
   logo?: string;
   color: string;
   categoryCodes: IProjectTechonologyCategory["value"][];

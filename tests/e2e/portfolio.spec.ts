@@ -338,7 +338,14 @@ test("renders bilingual CV pages and serves generated PDFs", async ({
       }),
     ).toBeVisible();
     await expect(page.locator(".experience")).toHaveCount(7);
-    await expect(page.locator(".certification")).toHaveCount(10);
+    await expect(page.locator(".experience .stack")).toHaveCount(7);
+    await expect(page.locator(".stack").filter({ hasText: "AWS (" })).toHaveCount(
+      2,
+    );
+    await expect(page.locator(".skills-list")).toContainText(
+      locale === "es" ? "Arquitectura" : "Architecture",
+    );
+    await expect(page.locator(".certification")).toHaveCount(6);
     await expect(page.locator(".project a").first()).toHaveAttribute(
       "href",
       locale === "es" ? /\/es\/projects\// : /\/en\/projects\//,

@@ -38,8 +38,21 @@
       }
     }
   },
-  "cyberops-associate": {
+  "aws-cloud-practitioner": {
     "position": 4,
+    "issuedAt": "2026-09",
+    "url": "https://www.credly.com/badges/35a180d5-6fb2-47b7-a373-21d91c9cfc27",
+    "locales": {
+      "en": {
+        "name": "AWS Certified Cloud Practitioner"
+      },
+      "es": {
+        "name": "AWS Certified Cloud Practitioner"
+      }
+    }
+  },
+  "cyberops-associate": {
+    "position": 5,
     "issuedAt": "2022-01",
     "url": "https://credly.com/badges/4312c90f-a2b4-4ad8-bbb3-e7b873f86695",
     "locales": {
@@ -52,7 +65,7 @@
     }
   },
   "software-architecture": {
-    "position": 5,
+    "position": 6,
     "issuedAt": "2021-10",
     "url": "https://platzi.com/p/franz.bendezu/curso/1248-pro-arquitectura/diploma/detalle/",
     "locales": {
@@ -65,7 +78,7 @@
     }
   },
   "professional-scrum": {
-    "position": 6,
+    "position": 7,
     "issuedAt": "2021-08",
     "url": "https://platzi.com/p/franz.bendezu/course/1750-scrum/diploma/detalle/",
     "locales": {
@@ -78,7 +91,7 @@
     }
   },
   "git-github": {
-    "position": 7,
+    "position": 8,
     "issuedAt": "2021-08",
     "url": "https://platzi.com/p/franz.bendezu/curso/1557-course/diploma/detalle/",
     "locales": {
@@ -91,7 +104,7 @@
     }
   },
   "google-it-automation-python": {
-    "position": 8,
+    "position": 9,
     "startedAt": "2020-06",
     "issuedAt": "2020-07",
     "url": "https://coursera.org/verify/professional-cert/EBQHHJ5LNUT5",
@@ -105,7 +118,7 @@
     }
   },
   "excel-skills-business": {
-    "position": 9,
+    "position": 10,
     "startedAt": "2020-08",
     "issuedAt": "2020-09",
     "url": "https://coursera.org/verify/specialization/Z88TCESL582W",
@@ -119,7 +132,7 @@
     }
   },
   "google-it-support": {
-    "position": 10,
+    "position": 11,
     "startedAt": "2020-09",
     "issuedAt": "2020-10",
     "url": "https://coursera.org/verify/professional-cert/AN72XYKRCANN",

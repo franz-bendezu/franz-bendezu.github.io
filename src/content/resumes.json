@@ -15,22 +15,19 @@
       "professional-devops",
       "professional-nextjs",
       "azure-fundamentals",
+      "aws-cloud-practitioner",
       "cyberops-associate",
-      "software-architecture",
-      "professional-scrum",
-      "git-github",
-      "google-it-automation-python",
-      "excel-skills-business",
-      "google-it-support"
+      "software-architecture"
     ],
     "skills": [
-      "frontend",
-      "backend",
+      "languages",
+      "backend-core",
+      "architecture",
       "cloud",
       "devops",
-      "databases",
+      "data-messaging",
       "testing",
-      "tools"
+      "frontend-core"
     ],
     "projects": [
       "movify-aws-migration",
