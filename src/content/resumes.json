@@ -41,7 +41,7 @@
         "education": "Education",
         "certifications": "Courses and Certifications",
         "skills": "Technical Skills",
-        "projects": "Selected Projects",
+        "projects": "Key Projects",
         "present": "Present"
       },
       "es": {
@@ -50,7 +50,7 @@
         "education": "Educación",
         "certifications": "Cursos y Certificaciones",
         "skills": "Habilidades Técnicas",
-        "projects": "Proyectos Seleccionados",
+        "projects": "Proyectos Principales",
         "present": "Presente"
       }
     }
