@@ -579,6 +579,18 @@ export const PROJECT_TECHNOLOGIES: IBaseProjectTechnology[] = [
     categoryCodes: ["tool"],
   },
   {
+    code: "github-copilot",
+    name: "GitHub Copilot",
+    color: "#000000",
+    categoryCodes: ["tool"],
+  },
+  {
+    code: "claude",
+    name: "Claude",
+    color: "#D97757",
+    categoryCodes: ["tool"],
+  },
+  {
     code: "gitlab",
     name: "GitLab",
     color: "#FC6D26",
