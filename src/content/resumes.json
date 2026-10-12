@@ -12,25 +12,22 @@
     ],
     "education": ["hanyang-cyber-university", "education-1", "icpna"],
     "certifications": [
+      "aws-cloud-practitioner",
       "professional-devops",
       "professional-nextjs",
       "azure-fundamentals",
       "cyberops-associate",
-      "software-architecture",
-      "professional-scrum",
-      "git-github",
-      "google-it-automation-python",
-      "excel-skills-business",
-      "google-it-support"
+      "software-architecture"
     ],
     "skills": [
-      "frontend",
-      "backend",
+      "languages",
+      "backend-core",
+      "architecture",
       "cloud",
       "devops",
-      "databases",
+      "data-messaging",
       "testing",
-      "tools"
+      "frontend-core"
     ],
     "projects": [
       "movify-aws-migration",
@@ -44,7 +41,7 @@
         "education": "Education",
         "certifications": "Courses and Certifications",
         "skills": "Technical Skills",
-        "projects": "Selected Projects",
+        "projects": "Key Projects",
         "present": "Present"
       },
       "es": {
@@ -53,7 +50,7 @@
         "education": "Educación",
         "certifications": "Cursos y Certificaciones",
         "skills": "Habilidades Técnicas",
-        "projects": "Proyectos Seleccionados",
+        "projects": "Proyectos Principales",
         "present": "Presente"
       }
     }

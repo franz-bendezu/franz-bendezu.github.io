@@ -1,9 +1,17 @@
 {
   "position": 15,
   "status": "active",
-  "tags": ["React", "Node.js", "CSS", "HTML", "JavaScript"],
+  "tags": ["Astro", "React", "TypeScript", "Playwright"],
   "categoryCode": "personal",
-  "technologyCodes": ["react", "nodejs", "css", "html", "typescript", "nextjs"],
+  "technologyCodes": [
+    "astro",
+    "react",
+    "typescript",
+    "playwright",
+    "nodejs",
+    "css",
+    "html"
+  ],
   "start": "2023-01",
   "banner": {
     "src": "../../assets/images/portfolio.webp",
@@ -46,7 +54,7 @@
     "en": {
       "code": "my-portfolio",
       "title": "My Portfolio",
-      "shortDescription": "Personal portfolio showcasing my projects and skills.",
+      "shortDescription": "Personal portfolio built with Astro to showcase software projects, professional experience, and technical skills through bilingual content. It includes automated CV generation and document validation with Playwright.",
       "description": "This is my personal portfolio where I showcase my projects, skills, and experiences. The portfolio is designed to be accessible and to display my work in a professional manner. It includes a projects section with detailed descriptions and links to the source code, as well as a skills section that highlights my technical knowledge. The portfolio is also multilingual, with support for English and Spanish.",
       "projectGoals": [
         {
@@ -102,7 +110,7 @@
     "es": {
       "code": "my-portfolio",
       "title": "Mi Portafolio",
-      "shortDescription": "Portafolio personal que muestra mis proyectos y habilidades.",
+      "shortDescription": "Portafolio personal desarrollado con Astro para presentar proyectos de software, experiencia profesional y habilidades técnicas mediante contenido bilingüe. Incluye generación automatizada del CV y validación de documentos mediante Playwright.",
       "description": "Este es mi portafolio personal donde muestro mis proyectos, habilidades y experiencias. El portafolio está diseñado para ser accesible y mostrar mi trabajo de una manera profesional. Incluye una sección de proyectos con descripciones detalladas y enlaces al código fuente, así como una sección de habilidades que destaca mis conocimientos técnicos. El portafolio también es multilingüe, con soporte para inglés y español.",
       "projectGoals": [
         {

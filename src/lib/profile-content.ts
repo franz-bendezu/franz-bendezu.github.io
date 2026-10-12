@@ -7,6 +7,7 @@ import {
 import type { Locale } from "./i18n";
 import { getProjects } from "./projects";
 import { PROJECT_TECHNOLOGIES } from "@/constants/project-techologies";
+import type { IBaseProjectTechnology } from "@/interfaces/project";
 
 export const CAREER_START = "2021-08";
 
@@ -22,9 +23,56 @@ function byPosition<T extends { position: number }>(a: T, b: T) {
   return a.position - b.position;
 }
 
+function byIssuedAtDescending<T extends { issuedAt: string }>(a: T, b: T) {
+  return b.issuedAt.localeCompare(a.issuedAt);
+}
+
 function requireEntry<T>(entry: T | undefined, label: string): T {
   if (!entry) throw new Error(`Missing referenced ${label} entry`);
   return entry;
+}
+
+function getTechnology(code: string) {
+  return requireEntry(
+    PROJECT_TECHNOLOGIES.find((technology) => technology.code === code),
+    `technology ${code}`,
+  );
+}
+
+export function formatTechnologyStack(
+  technologies: readonly Pick<
+    IBaseProjectTechnology,
+    "code" | "name" | "parentCode" | "groupName"
+  >[],
+) {
+  const stack: string[] = [];
+  const grouped = new Map<string, string[]>();
+  const groupedParents = new Set<string>();
+
+  for (const technology of technologies) {
+    if (technology.parentCode) {
+      const services = grouped.get(technology.parentCode) ?? [];
+      services.push(technology.groupName ?? technology.name);
+      grouped.set(technology.parentCode, services);
+      groupedParents.add(technology.parentCode);
+    } else if (!groupedParents.has(technology.code)) {
+      stack.push(technology.name);
+    }
+  }
+
+  for (const [parentCode, services] of grouped) {
+    const parent = getTechnology(parentCode);
+    const parentIndex = stack.indexOf(parent.name);
+    const groupedValue = `${parent.name} (${services.join(", ")})`;
+
+    if (parentIndex >= 0) {
+      stack[parentIndex] = groupedValue;
+    } else {
+      stack.push(groupedValue);
+    }
+  }
+
+  return stack.join(", ");
 }
 
 function localizeWorkExperience(
@@ -37,9 +85,7 @@ function localizeWorkExperience(
     startDate: entry.data.start,
     endDate: entry.data.end,
     link: entry.data.url,
-    technologies: entry.data.technologyCodes.map((code) =>
-      PROJECT_TECHNOLOGIES.find((technology) => technology.code === code)!,
-    ),
+    technologies: entry.data.technologyCodes.map(getTechnology),
     ...entry.data.locales[locale],
   };
 }
@@ -82,9 +128,7 @@ function localizeCertification(
 }
 
 function localizeSkill(entry: CollectionEntry<"skills">, locale: Locale) {
-  const technologies = entry.data.technologyCodes.map((code) =>
-    PROJECT_TECHNOLOGIES.find((technology) => technology.code === code)!,
-  );
+  const technologies = entry.data.technologyCodes.map(getTechnology);
 
   return {
     id: entry.id,
@@ -178,12 +222,14 @@ export async function getResume(locale: Locale, id = "default") {
     education: educationEntries.map((entry) =>
       localizeEducation(requireEntry(entry, "resume education"), locale),
     ),
-    certifications: certificationEntries.map((entry) =>
-      localizeCertification(
-        requireEntry(entry, "resume certification"),
-        locale,
-      ),
-    ),
+    certifications: certificationEntries
+      .map((entry) =>
+        localizeCertification(
+          requireEntry(entry, "resume certification"),
+          locale,
+        ),
+      )
+      .sort(byIssuedAtDescending),
     skills: skillEntries.map((entry) =>
       localizeSkill(requireEntry(entry, "resume skill"), locale),
     ),

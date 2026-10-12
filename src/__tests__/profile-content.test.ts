@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   getCertifications,
   getExperienceYears,
+  formatTechnologyStack,
   getResume,
   getSkills,
   getWorkExperiences,
@@ -29,10 +30,12 @@ describe("shared profile content", () => {
       "Apache Kafka",
       "Redis",
       "Event-Driven Architecture",
+      "Microservices",
+      "Hexagonal Architecture",
       "PostgreSQL",
     ]);
     expect(englishWork[2].endLabel).toBe("April 2025");
-    expect(englishSkills).toHaveLength(7);
+    expect(englishSkills).toHaveLength(13);
     expect(englishSkills.find(({ id }) => id === "cloud")?.items).toEqual([
       "Amazon S3",
       "Amazon EC2",
@@ -43,8 +46,8 @@ describe("shared profile content", () => {
       "Amazon Route 53",
       "DigitalOcean",
     ]);
-    expect(englishCertifications).toHaveLength(10);
-    expect(englishCertifications[0].date).toBe("November 2023");
+    expect(englishCertifications).toHaveLength(11);
+    expect(englishCertifications[0].date).toBe("September 2026");
   });
 
   it("resolves the CV composition through typed collection references", async () => {
@@ -58,7 +61,7 @@ describe("shared profile content", () => {
     expect(spanishResume.profile.summary).toContain(
       `más de ${experienceYears} años de experiencia`,
     );
-    expect(spanishResume.profile.summary.split("\n\n")).toHaveLength(3);
+    expect(spanishResume.profile.summary.split("\n\n")).toHaveLength(1);
     expect(englishResume.profile.summary).toContain(
       `over ${experienceYears} years of experience`,
     );
@@ -77,6 +80,22 @@ describe("shared profile content", () => {
     expect(spanishResume.labels.certifications).toBe(
       "Cursos y Certificaciones",
     );
+    expect(englishResume.certifications).toHaveLength(6);
+    expect(englishResume.certifications[0].name).toBe(
+      "AWS Certified Cloud Practitioner",
+    );
+    expect(englishResume.certifications[1].name).toBe(
+      "Professional DevOps Course",
+    );
+    expect(englishResume.certifications.at(-1)?.name).toBe(
+      "Professional Software Architecture Course",
+    );
+    expect(formatTechnologyStack(englishResume.workExperiences[2].technologies))
+      .toBe(
+        "Java, Spring WebFlux, TypeScript, Node.js, Serverless Framework, Microservices, PostgreSQL, DynamoDB, AWS (Lambda, API Gateway, RDS, Systems Manager, Step Functions, EKS)",
+      );
+    expect(formatTechnologyStack(englishResume.workExperiences[4].technologies))
+      .toContain("AWS (S3, EC2, Lambda)");
   });
 
   it("calculates completed career years from August 2021", () => {

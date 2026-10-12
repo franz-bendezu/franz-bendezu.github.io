@@ -1,7 +1,7 @@
 ---
 import ResumeLayout from "@/layouts/ResumeLayout.astro";
 import { useLocalizedPath, useTranslations, type Locale } from "@/lib/i18n";
-import { getResume } from "@/lib/profile-content";
+import { formatTechnologyStack, getResume } from "@/lib/profile-content";
 
 interface Props {
   locale: Locale;
@@ -27,7 +27,7 @@ const linkText = (url: string) =>
         <a href={profile.website}>{linkText(profile.website)}</a>
         {
           profile.socialLinks.map((link) => (
-            <a href={link.url}>{linkText(link.url)}</a>
+            <a href={link.url}>{link.label}</a>
           ))
         }
       </address>
@@ -81,6 +81,12 @@ const linkText = (url: string) =>
                   ))}
                 </ul>
               )}
+              {experience.technologies.length > 0 && (
+                <p class="stack">
+                  <strong>{t("Resume.technologies")}:</strong>{" "}
+                  {formatTechnologyStack(experience.technologies)}
+                </p>
+              )}
             </article>
           ))
         }
@@ -103,7 +109,7 @@ const linkText = (url: string) =>
               <p>{project.shortDescription}</p>
               <p class="keywords">
                 <strong>{t("Resume.technologies")}:</strong>
-                {` ${project.tags.slice(0, 7).join(", ")}`}
+                {` ${project.technologies.map(({ name }) => name).join(", ")}`}
               </p>
             </article>
           ))
@@ -167,8 +173,8 @@ const linkText = (url: string) =>
     padding: 14mm 16mm;
     box-shadow: 0 8px 32px rgb(15 23 42 / 14%);
     color: #111827;
-    font-size: 10pt;
-    line-height: 1.42;
+    font-size: 8.7pt;
+    line-height: 1.3;
   }
 
   .identity {
@@ -178,13 +184,13 @@ const linkText = (url: string) =>
 
   h1 {
     margin: 0;
-    font-size: 22pt;
+    font-size: 20.5pt;
     line-height: 1.1;
   }
 
   .headline {
     margin: 1.5mm 0 2.5mm;
-    font-size: 11pt;
+    font-size: 10pt;
     font-weight: 600;
   }
 
@@ -192,7 +198,7 @@ const linkText = (url: string) =>
     display: flex;
     flex-wrap: wrap;
     gap: 1mm 4mm;
-    font-size: 9pt;
+    font-size: 8pt;
     font-style: normal;
   }
 
@@ -201,20 +207,20 @@ const linkText = (url: string) =>
   }
 
   section {
-    margin-top: 5mm;
+    margin-top: 3.5mm;
   }
 
   h2 {
     margin: 0 0 2.5mm;
     border-bottom: 1px solid #374151;
     padding-bottom: 1mm;
-    font-size: 12pt;
+    font-size: 10.8pt;
     text-transform: uppercase;
   }
 
   h3 {
     margin: 0;
-    font-size: 10pt;
+    font-size: 9.2pt;
     line-height: 1.3;
   }
 
@@ -224,15 +230,18 @@ const linkText = (url: string) =>
 
   .summary p {
     white-space: pre-line;
+    font-size: 9pt;
   }
 
   .skills-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5mm 6mm;
     margin: 0;
   }
 
   .skills-list div {
     display: block;
-    margin-top: 1mm;
   }
 
   .skills-list dt,
@@ -258,7 +267,7 @@ const linkText = (url: string) =>
   }
 
   .entry-list article + article {
-    margin-top: 4mm;
+    margin-top: 2.5mm;
   }
 
   .entry-heading {
@@ -269,32 +278,44 @@ const linkText = (url: string) =>
 
   .organization {
     margin-top: 0.5mm;
-    font-size: 9.5pt;
+    font-size: 9pt;
     font-weight: 600;
   }
 
   .date {
     flex: none;
     color: #374151;
-    font-size: 9pt;
+    font-size: 8pt;
     white-space: nowrap;
   }
 
   ul {
-    margin: 1.5mm 0 0;
+    margin: 1mm 0 0;
     padding-left: 5mm;
   }
 
   li + li {
-    margin-top: 0.7mm;
+    margin-top: 0.5mm;
   }
 
   .project p {
     margin-top: 1mm;
   }
 
+  .stack {
+    margin-top: 1mm;
+    font-size: 8pt;
+  }
+
   .keywords {
-    font-size: 9pt;
+    font-size: 8pt;
+  }
+
+  .certifications-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 8mm;
+    row-gap: 1mm;
   }
 
   .certifications-list article {
@@ -304,7 +325,7 @@ const linkText = (url: string) =>
   }
 
   .certifications-list article + article {
-    margin-top: 1.8mm;
+    margin-top: 0;
   }
 
   @media print {

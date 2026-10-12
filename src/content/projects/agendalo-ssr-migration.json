@@ -68,7 +68,7 @@
     "en": {
       "code": "agendalo-ssr-migration",
       "title": "Agendalo.io - SSR Migration",
-      "shortDescription": "Migration of the frontend platform to server-side rendering (SSR) to improve SEO and platform ranking.",
+      "shortDescription": "Migrated the SPA to Nuxt SSR, improving search visibility and introducing automated unit and end-to-end testing.",
       "role": "Frontend engineer · Architecture and delivery",
       "challenge": "The platform relied on a single-page application that limited search visibility and made a safe architectural migration difficult.",
       "approach": "I migrated the frontend to Nuxt SSR, introduced unit and end-to-end coverage, and preserved the platform's critical user flows throughout the transition.",
@@ -114,7 +114,7 @@
     "es": {
       "code": "agendalo-ssr-migration",
       "title": "Agendalo.io - Migración a SSR",
-      "shortDescription": "Migración de la plataforma frontend a renderizado del lado del servidor (SSR) para mejorar el SEO y la posición de la plataforma.",
+      "shortDescription": "Migré la SPA a Nuxt SSR, mejorando la visibilidad en buscadores e incorporando pruebas unitarias y end-to-end automatizadas.",
       "role": "Ingeniero frontend · Arquitectura y entrega",
       "challenge": "La plataforma dependía de una aplicación de una sola página que limitaba la visibilidad en buscadores y hacía compleja una migración arquitectónica segura.",
       "approach": "Migré el frontend a Nuxt SSR, incorporé cobertura unitaria y end-to-end, y preservé los flujos críticos de la plataforma durante la transición.",

@@ -31,6 +31,9 @@ pnpm test:e2e
 The production build uses Astro static file endpoints and Playwright to generate
 the typed English and Spanish CV PDFs directly in `dist`.
 
+When working in the devcontainer, rebuild or reopen the container after changing
+`.devcontainer/Dockerfile` so the Playwright browser libraries are installed.
+
 ## Environment variables
 
 Create `.env.local` when testing the contact form locally:

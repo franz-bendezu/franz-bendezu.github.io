@@ -137,5 +137,96 @@
         "name": "Herramientas"
       }
     }
+  },
+  "languages": {
+    "position": 8,
+    "technologyCodes": ["java", "kotlin", "typescript", "javascript", "python"],
+    "locales": {
+      "en": {
+        "name": "Languages"
+      },
+      "es": {
+        "name": "Lenguajes"
+      }
+    }
+  },
+  "backend-core": {
+    "position": 9,
+    "technologyCodes": [
+      "spring-boot",
+      "spring-webflux",
+      "nodejs",
+      "nestjs",
+      "express",
+      "rest-api",
+      "graphql"
+    ],
+    "locales": {
+      "en": {
+        "name": "Backend"
+      },
+      "es": {
+        "name": "Backend"
+      }
+    }
+  },
+  "architecture": {
+    "position": 10,
+    "technologyCodes": [
+      "microservices",
+      "hexagonal-architecture",
+      "eda"
+    ],
+    "locales": {
+      "en": {
+        "name": "Architecture"
+      },
+      "es": {
+        "name": "Arquitectura"
+      }
+    }
+  },
+  "cloud-delivery": {
+    "position": 11,
+    "technologyCodes": [
+      "aws",
+      "docker",
+      "serverless-framework",
+      "github-actions",
+      "gitlab-ci",
+      "azure-devops"
+    ],
+    "locales": {
+      "en": {
+        "name": "Cloud & DevOps"
+      },
+      "es": {
+        "name": "Cloud y DevOps"
+      }
+    }
+  },
+  "data-messaging": {
+    "position": 12,
+    "technologyCodes": ["postgresql", "dynamodb", "redis", "kafka"],
+    "locales": {
+      "en": {
+        "name": "Data & Messaging"
+      },
+      "es": {
+        "name": "Datos y mensajería"
+      }
+    }
+  },
+  "frontend-core": {
+    "position": 13,
+    "technologyCodes": ["react", "vue", "nuxt", "angular"],
+    "locales": {
+      "en": {
+        "name": "Frontend"
+      },
+      "es": {
+        "name": "Frontend"
+      }
+    }
   }
 }
