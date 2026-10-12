@@ -242,7 +242,12 @@ test("presents featured case studies and resets archive filters", async ({
   await page.goto("/projects");
   await expect(page.locator('[data-featured-project="true"]')).toHaveCount(3);
   const explorer = page.locator("[data-project-explorer]");
-  await explorer.getByRole("button", { name: "Java", exact: true }).click();
+  const javaFilter = explorer.getByRole("button", {
+    name: "Java",
+    exact: true,
+  });
+  await javaFilter.click();
+  await expect(javaFilter).toHaveAttribute("aria-pressed", "true");
   await expect(
     explorer.getByRole("button", { name: "Clear filters" }),
   ).toBeVisible();
