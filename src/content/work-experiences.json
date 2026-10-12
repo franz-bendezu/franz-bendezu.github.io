@@ -7,6 +7,8 @@
       "react",
       "material-ui",
       "backstage",
+      "github-copilot",
+      "claude",
       "postgresql"
     ],
     "start": "2025-09",
@@ -19,8 +21,9 @@
         "startLabel": "September 2025",
         "endLabel": "Present",
         "tasks": [
-          "Participé en proyectos de software de corta duración y alto impacto para distintos clientes",
-          "Implementé y personalicé Backstage para adaptar la interfaz e integrar funcionalidades específicas según las necesidades del cliente"
+          "Contributed to short-term, high-impact software projects for different clients",
+          "Implemented and customized Backstage to adapt its user interface and add the specific integrations required by the client",
+          "Applied engineering practices including TDD, trunk-based development, and feature flags"
         ]
       },
       "es": {
@@ -30,8 +33,9 @@
         "startLabel": "Septiembre 2025",
         "endLabel": "Presente",
         "tasks": [
-          "Contributed to short-term, high-impact software projects for different clients",
-          "Implemented and customized Backstage to adapt the user interface and integrate client-specific functionality"
+          "Participé en proyectos de software de corta duración y alto impacto para distintos clientes",
+          "Implementé y personalicé Backstage para adaptar su interfaz de usuario y agregar las integraciones específicas que necesitaba el cliente",
+          "Apliqué prácticas de ingeniería como TDD, trunk-based development y feature flags"
         ]
       }
     }
@@ -41,6 +45,7 @@
     "technologyCodes": [
       "nestjs",
       "azure-devops",
+      "github-copilot",
       "kafka",
       "redis",
       "eda",
@@ -232,7 +237,7 @@
   },
   "work-4": {
     "position": 6,
-    "technologyCodes": ["angular", "azure-devops"],
+    "technologyCodes": ["angular", "typescript", "azure-devops"],
     "start": "2021-08",
     "end": "2022-10",
     "locales": {
@@ -268,7 +273,7 @@
   },
   "work-5": {
     "position": 7,
-    "technologyCodes": ["angular", "ionic"],
+    "technologyCodes": ["angular", "typescript", "ionic"],
     "start": "2021-08",
     "end": "2022-10",
     "locales": {
