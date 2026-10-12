@@ -27,6 +27,7 @@ describe("shared profile content", () => {
     ).toEqual([
       "NestJS",
       "Azure DevOps",
+      "GitHub Copilot",
       "Apache Kafka",
       "Redis",
       "Event-Driven Architecture",
@@ -94,7 +95,7 @@ describe("shared profile content", () => {
       .toBe(
         "Java, Spring WebFlux, TypeScript, Node.js, Serverless Framework, Microservices, PostgreSQL, DynamoDB, AWS (Lambda, API Gateway, RDS, Systems Manager, Step Functions, EKS)",
       );
-    expect(formatTechnologyStack(englishResume.workExperiences[4].technologies))
+    expect(formatTechnologyStack(englishResume.workExperiences[6].technologies))
       .toContain("AWS (S3, EC2, Lambda)");
   });
 
