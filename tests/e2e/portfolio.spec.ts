@@ -346,7 +346,7 @@ test("renders bilingual CV pages and serves generated PDFs", async ({
       locale === "es" ? "Arquitectura" : "Architecture",
     );
     await expect(page.locator(".certification")).toHaveCount(6);
-    await expect(page.locator(".project a").first()).toHaveAttribute(
+    await expect(page.locator(".project-links a").first()).toHaveAttribute(
       "href",
       locale === "es" ? /\/es\/projects\// : /\/en\/projects\//,
     );
